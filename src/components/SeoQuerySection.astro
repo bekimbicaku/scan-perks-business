@@ -1,0 +1,29 @@
+---
+import type { SeoQuery } from '../data/content';
+
+interface Props {
+  queries: SeoQuery[];
+  title?: string;
+}
+
+const { queries, title = 'Common Questions About Business Loyalty' } = Astro.props;
+---
+
+<section class="section section--sm seo-queries" id="loyalty-answers">
+  <div class="container">
+    <div class="section__header reveal">
+      <span class="section__label">Quick Answers</span>
+      <h2 class="section__title">{title}</h2>
+      <p class="section__subtitle">Snippet-ready answers for top searches about business loyalty, bar & restaurant loyal customers.</p>
+    </div>
+    <div class="seo-queries__grid">
+      {queries.map((q) => (
+        <article class="glass-card seo-query-card reveal">
+          <h3 class="seo-query-card__question">{q.query}</h3>
+          <p class="seo-query-card__answer">{q.answer}</p>
+          <a href={q.href} class="seo-query-card__link">{q.label}</a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

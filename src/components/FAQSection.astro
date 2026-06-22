@@ -1,0 +1,27 @@
+---
+interface Props {
+  faqs: { question: string; answer: string }[];
+  title?: string;
+}
+
+const { faqs, title = 'Frequently Asked Questions' } = Astro.props;
+---
+
+<section class="section section--sm" id="faq">
+  <div class="container">
+    <div class="section__header reveal">
+      <span class="section__label">FAQ</span>
+      <h2 class="section__title">{title}</h2>
+    </div>
+    <div class="faq-list reveal">
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-item__question" type="button">{faq.question}</button>
+          <div class="faq-item__answer">
+            <p>{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,52 @@
+---
+import { loyaltyPages } from '../data/loyaltyPages';
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="/favicon.png" alt="Scan Perks" width="36" height="36" />
+          Scan Perks
+        </div>
+        <p>Business loyalty program for bars, cafes & restaurants. QR rewards to grow loyal customers — from $10/month.</p>
+      </div>
+      <div>
+        <h4 class="footer__heading">Loyalty Programs</h4>
+        <ul class="footer__links">
+          <li><a href="/business-loyalty-program/">Business Loyalty Guide</a></li>
+          {loyaltyPages.map((p) => (
+            <li><a href={`/${p.slug}/`}>{p.title}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Product</h4>
+        <ul class="footer__links">
+          <li><a href="/features/">Features</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.scanperks.app">Download App</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Company</h4>
+        <ul class="footer__links">
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/llms.txt">LLM Docs</a></li>
+          <li><a href="/ai.txt">AI Rules</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2025 Scan Perks. All rights reserved.</span>
+      <div class="footer__socials">
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+  </div>
+</footer>

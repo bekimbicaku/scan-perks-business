@@ -1,0 +1,16 @@
+---
+interface Props {
+  keywords: string[];
+}
+
+const { keywords } = Astro.props;
+const doubled = [...keywords, ...keywords];
+---
+
+<section class="keyword-marquee" aria-hidden="true">
+  <div class="keyword-marquee__track">
+    {doubled.map((kw) => (
+      <span class="keyword-marquee__item">{kw}</span>
+    ))}
+  </div>
+</section>

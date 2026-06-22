@@ -1,0 +1,40 @@
+---
+const { active = '' } = Astro.props;
+const links = [
+  { href: '/', label: 'Home', id: 'home' },
+  { href: '/features/', label: 'Features', id: 'features' },
+  { href: '/pricing/', label: 'Pricing', id: 'pricing' },
+  { href: '/business-loyalty-program/', label: 'Loyalty Guide', id: 'guide' },
+  { href: '/blog/', label: 'Blog', id: 'blog' },
+  { href: '/about/', label: 'About', id: 'about' },
+  { href: '/contact/', label: 'Contact', id: 'contact' },
+];
+---
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <img src="/favicon.png" alt="Scan Perks business loyalty program" width="40" height="40" />
+      Scan Perks
+    </a>
+    <ul class="nav__links">
+      {links.map((link) => (
+        <li>
+          <a href={link.href} class={active === link.id ? 'active' : ''}>{link.label}</a>
+        </li>
+      ))}
+    </ul>
+    <div class="nav__cta">
+      <a href="https://play.google.com/store/apps/details?id=com.scanperks.app" class="btn btn--primary">Get Started</a>
+    </div>
+    <button class="nav__toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile">
+  {links.map((link) => (
+    <a href={link.href}>{link.label}</a>
+  ))}
+  <a href="https://play.google.com/store/apps/details?id=com.scanperks.app" class="btn btn--primary">Get Started</a>
+</div>

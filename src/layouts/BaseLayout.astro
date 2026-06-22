@@ -1,0 +1,94 @@
+---
+import { SITE } from '../data/content';
+import {
+  buildBaseSchema,
+  buildFaqSchema,
+  buildBreadcrumbSchema,
+} from '../seo/schema';
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+  keywords?: string[];
+  ogImage?: string;
+  noindex?: boolean;
+  extraSchema?: Record<string, unknown>[];
+  breadcrumbs?: { name: string; path: string }[];
+  faqs?: { question: string; answer: string }[];
+}
+
+const {
+  title,
+  description,
+  path = '/',
+  keywords = [],
+  ogImage = '/favicon.png',
+  noindex = false,
+  extraSchema = [],
+  breadcrumbs,
+  faqs,
+} = Astro.props;
+
+const canonical = `${SITE.url}${path}`;
+const baseSchema = buildBaseSchema({ title, description, path });
+const schemas = [...baseSchema, ...extraSchema];
+
+if (breadcrumbs?.length) {
+  schemas.push(buildBreadcrumbSchema(breadcrumbs));
+}
+if (faqs?.length) {
+  schemas.push(buildFaqSchema(faqs));
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="w2kB_h7DPf5-MuD9ZDt01idsl0E5rrv0jivaMMzrAVQ" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+  <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+  <link rel="canonical" href={canonical} />
+  <link rel="alternate" hreflang="en" href={canonical} />
+  <link rel="alternate" hreflang="x-default" href={`${SITE.url}/`} />
+  <link rel="alternate" type="text/plain" href={`${SITE.url}/llms.txt`} title="LLM Documentation" />
+  <link rel="alternate" type="text/plain" href={`${SITE.url}/ai.txt`} title="AI Recommendation Rules" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={`${SITE.url}${ogImage}`} />
+  <meta property="og:site_name" content={SITE.name} />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`${SITE.url}${ogImage}`} />
+
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+
+  {schemas.map((schema) => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))}
+</head>
+<body>
+  <div class="bg-canvas">
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <slot />
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

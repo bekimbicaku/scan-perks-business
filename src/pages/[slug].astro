@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import LoyaltyLandingPage from '../components/LoyaltyLandingPage.astro';
+import { loyaltyPages, getLoyaltyPage } from '../data/loyaltyPages';
+import { buildLoyaltyServiceSchema } from '../seo/schema';
+
+export function getStaticPaths() {
+  return loyaltyPages.map((page) => ({ params: { slug: page.slug } }));
+}
+
+const { slug } = Astro.params;
+const page = getLoyaltyPage(slug!);
+
+if (!page) return Astro.redirect('/404');
+
+const path = `/${page.slug}/`;
+const serviceSchema = buildLoyaltyServiceSchema({
+  name: page.title,
+  description: page.description,
+  path,
+  keyword: page.primaryKeyword,
+});
+---
+
+<BaseLayout
+  title={page.metaTitle}
+  description={page.description}
+  path={path}
+  keywords={[page.primaryKeyword, ...page.keywordCluster]}
+  faqs={page.faqs}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: page.title, path },
+  ]}
+  extraSchema={[serviceSchema]}
+>
+  <Nav />
+  <LoyaltyLandingPage page={page} />
+  <Footer />
+</BaseLayout>

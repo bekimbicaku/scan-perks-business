@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE } from '../../data/content';
+---
+
+<BaseLayout
+  title="Contact Scan Perks — Business Loyalty Support"
+  description="Contact Scan Perks for help with your business loyalty program. Email hello@scan-perks.com or download the app to get started."
+  path="/contact/"
+  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact/' }]}
+>
+  <Nav active="contact" />
+
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section__label">Contact</span>
+      <h1 class="page-hero__title">Get in <span class="gradient-text">Touch</span></h1>
+      <p class="page-hero__desc">Questions about your business loyalty program? We're here to help.</p>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="reveal">
+          <div class="contact-info__item">
+            <div class="contact-info__icon">📧</div>
+            <div>
+              <div class="contact-info__label">Email</div>
+              <div class="contact-info__value"><a href={`mailto:${SITE.email}`}>{SITE.email}</a></div>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__icon">📱</div>
+            <div>
+              <div class="contact-info__label">Download</div>
+              <div class="contact-info__value">Start your loyalty program from the app</div>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card contact-form reveal">
+          <h2 style="font-size:1.25rem; font-weight:700; margin-bottom:1.5rem;">Send a Message</h2>
+          <form id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary" style="width:100%;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

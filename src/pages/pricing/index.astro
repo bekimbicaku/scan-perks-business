@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import { blogArticles } from '../../data/blogArticles';
+import { landingContent } from '../../data/content';
+
+const pricingFaqs = landingContent.faqs.slice(0, 6);
+---
+
+<BaseLayout
+  title="Pricing — Business Loyalty Program from $10/mo | Scan Perks"
+  description="Affordable business loyalty program pricing: $10/month for small venues, $15/month for high-traffic bars & restaurants. 14-day free trial, no contracts."
+  path="/pricing/"
+  keywords={['loyalty program pricing', 'affordable loyalty app', 'business loyalty cost', 'restaurant loyalty pricing']}
+  faqs={pricingFaqs}
+  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Pricing', path: '/pricing/' }]}
+>
+  <Nav active="pricing" />
+
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section__label">Pricing</span>
+      <h1 class="page-hero__title">Affordable <span class="gradient-text">Business Loyalty</span> Pricing</h1>
+      <p class="page-hero__desc">Grow loyal customers without enterprise costs. No hidden fees, no long-term contracts.</p>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <div class="pricing-grid">
+        <div class="glass-card pricing-card reveal">
+          <div class="pricing-card__name">Starter</div>
+          <div class="pricing-card__price">$10<span>/month</span></div>
+          <p class="pricing-card__desc">Small cafes, bars, and local eateries launching their first loyalty program.</p>
+          <ul class="pricing-card__features">
+            <li>Up to 200 active customers</li>
+            <li>QR code loyalty program</li>
+            <li>Basic analytics dashboard</li>
+            <li>Push notifications (50/month)</li>
+            <li>Local discovery listing</li>
+            <li>Print-ready QR materials</li>
+          </ul>
+          <a href="https://play.google.com/store/apps/details?id=com.scanperks.app" class="btn btn--glass" style="width:100%;">Start Free Trial</a>
+        </div>
+        <div class="glass-card pricing-card pricing-card--featured reveal">
+          <div class="pricing-card__badge">Most Popular</div>
+          <div class="pricing-card__name">Growth</div>
+          <div class="pricing-card__price">$15<span>/month</span></div>
+          <p class="pricing-card__desc">High-traffic restaurants and bars that want unlimited push and full analytics.</p>
+          <ul class="pricing-card__features">
+            <li>Unlimited active customers</li>
+            <li>Advanced reward tiers</li>
+            <li>Full analytics & reports</li>
+            <li>Unlimited push notifications</li>
+            <li>Priority discovery placement</li>
+            <li>Customer segmentation</li>
+          </ul>
+          <a href="https://play.google.com/store/apps/details?id=com.scanperks.app" class="btn btn--primary" style="width:100%;">Start Free Trial</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={pricingFaqs} title="Pricing FAQ" />
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import FAQSection from '../../components/FAQSection.astro';
+---
+
+<BaseLayout
+  title="Features — QR Loyalty, Analytics & Push Offers | Scan Perks"
+  description="Scan Perks features: QR code loyalty, real-time analytics, push notifications, local discovery, and customer profiles for bars, cafes & restaurants."
+  path="/features/"
+  keywords={['loyalty program features', 'QR loyalty', 'restaurant analytics', 'push notifications loyalty']}
+  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Features', path: '/features/' }]}
+>
+  <Nav active="features" />
+
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section__label">Features</span>
+      <h1 class="page-hero__title">Everything to <span class="gradient-text">Grow Loyal Customers</span></h1>
+      <p class="page-hero__desc">QR rewards, real-time insights, and push offers — built for hospitality businesses.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="features-grid">
+        <div class="glass-card reveal">
+          <div class="feature-card__icon">📱</div>
+          <h2 class="feature-card__title">QR Code Loyalty</h2>
+          <p class="feature-card__desc">Customers scan your unique code to collect perks — no cards, no hassle. <a href="/qr-loyalty-program/" style="color:var(--cyan-400);">Learn more →</a></p>
+        </div>
+        <div class="glass-card reveal">
+          <div class="feature-card__icon">📊</div>
+          <h2 class="feature-card__title">Real-Time Analytics</h2>
+          <p class="feature-card__desc">Track visits, rewards redeemed, and loyalty trends in your live dashboard.</p>
+        </div>
+        <div class="glass-card reveal">
+          <div class="feature-card__icon">🔔</div>
+          <h2 class="feature-card__title">Push Notifications</h2>
+          <p class="feature-card__desc">Send happy hour deals and special offers instantly to loyal customers.</p>
+        </div>
+        <div class="glass-card reveal">
+          <div class="feature-card__icon">📍</div>
+          <h2 class="feature-card__title">Local Discovery</h2>
+          <p class="feature-card__desc">Get discovered by customers browsing the app for new venues.</p>
+        </div>
+        <div class="glass-card reveal">
+          <div class="feature-card__icon">👥</div>
+          <h2 class="feature-card__title">Customer Profiles</h2>
+          <p class="feature-card__desc">Understand your regulars — visit frequency, favorite rewards, patterns.</p>
+        </div>
+        <div class="glass-card reveal">
+          <div class="feature-card__icon">🖨️</div>
+          <h2 class="feature-card__title">Print-Ready QR</h2>
+          <p class="feature-card__desc">Download posters, table tents, and stickers for your venue.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container reveal">
+      <div class="cta-banner">
+        <h2 class="cta-banner__title">See Features in Action</h2>
+        <p class="cta-banner__desc">14-day free trial. Setup in 5 minutes.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.scanperks.app" class="btn btn--primary btn--lg">Start Free Trial</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

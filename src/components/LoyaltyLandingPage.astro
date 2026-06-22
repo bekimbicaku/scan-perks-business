@@ -1,0 +1,142 @@
+---
+import type { LoyaltyPage } from '../data/loyaltyPages';
+import { blogArticles } from '../data/blogArticles';
+import FAQSection from './FAQSection.astro';
+
+interface Props {
+  page: LoyaltyPage;
+}
+
+const { page } = Astro.props;
+const posts = blogArticles.filter((a) => page.supportingPosts.includes(a.slug));
+---
+
+<article>
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section__label">{page.primaryKeyword}</span>
+      <h1 class="page-hero__title">{page.title}</h1>
+      <p class="page-hero__desc">{page.description}</p>
+      <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
+        <a href="https://play.google.com/store/apps/details?id=com.scanperks.app" class="btn btn--primary btn--lg">Start Free Trial</a>
+        <a href="/pricing/" class="btn btn--glass btn--lg">View Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  {page.highlights.length > 0 && (
+    <section class="section section--sm">
+      <div class="container">
+        <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+          {page.highlights.map((h) => (
+            <div class="glass-card reveal" style="text-align:center; padding:1.25rem;">
+              <p style="font-weight:600; color:var(--blue-300);">{h}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section section--sm">
+    <div class="container">
+      {page.sections.map((section) => (
+        <div class="glass-card reveal" style="margin-bottom:1.5rem;">
+          <h2 class="feature-card__title" style="font-size:1.35rem; margin-bottom:0.75rem;">{section.heading}</h2>
+          <p class="feature-card__desc" style="font-size:1rem;">{section.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {page.localMarkets && (
+    <section class="section section--sm">
+      <div class="container reveal">
+        <div class="section__header">
+          <h2 class="section__title" style="font-size:1.75rem;">Perfect For</h2>
+        </div>
+        <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+          {page.localMarkets.map((m) => (
+            <div class="glass-card" style="text-align:center; padding:1rem;">{m}</div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section section--sm">
+    <div class="container reveal">
+      <div class="section__header">
+        <h2 class="section__title" style="font-size:1.75rem;">Scan Perks vs Alternatives</h2>
+      </div>
+      <div class="glass glass--strong" style="padding:1.5rem; overflow-x:auto;">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Scan Perks</th>
+              <th>Punch Cards</th>
+              <th>Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            {page.comparison.map((row) => (
+              <tr>
+                <td>{row.feature}</td>
+                <td class="comparison-table__highlight">{row.scanPerks}</td>
+                <td>{row.traditional}</td>
+                <td>{row.enterprise}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  {posts.length > 0 && (
+    <section class="section section--sm">
+      <div class="container">
+        <div class="section__header reveal">
+          <h2 class="section__title" style="font-size:1.75rem;">Related Guides</h2>
+        </div>
+        <div class="features-grid">
+          {posts.map((post) => (
+            <a href={`/blog/${post.slug}/`} class="glass-card reveal" style="display:block;">
+              <h3 class="feature-card__title">{post.title}</h3>
+              <p class="feature-card__desc">{post.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <FAQSection faqs={page.faqs} title={`${page.title} FAQ`} />
+
+  <section class="section section--sm">
+    <div class="container reveal">
+      <div class="cta-banner">
+        <h2 class="cta-banner__title">Start Your {page.title} Today</h2>
+        <p class="cta-banner__desc">14-day free trial. No contracts. Grow loyal customers from $10/month.</p>
+        <div class="cta-banner__actions">
+          <a href="https://play.google.com/store/apps/details?id=com.scanperks.app" class="btn btn--primary btn--lg">Get Started Free</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="section section--sm" aria-label="Related loyalty programs">
+    <div class="container">
+      <p style="text-align:center; color:var(--text-muted); font-size:0.9rem;">
+        Also see: <a href="/business-loyalty-program/" style="color:var(--blue-300);">Business Loyalty Guide</a>
+        {' · '}
+        <a href="/bar-loyalty-program/" style="color:var(--blue-300);">Bar Loyalty</a>
+        {' · '}
+        <a href="/restaurant-loyalty-program/" style="color:var(--blue-300);">Restaurant Loyalty</a>
+        {' · '}
+        <a href="/cafe-loyalty-program/" style="color:var(--blue-300);">Cafe Loyalty</a>
+      </p>
+    </div>
+  </nav>
+</article>

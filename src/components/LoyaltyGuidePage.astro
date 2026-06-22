@@ -1,0 +1,68 @@
+---
+import type { LoyaltyGuide } from '../data/loyaltyGuide';
+import FAQSection from './FAQSection.astro';
+
+interface Props {
+  guide: LoyaltyGuide;
+}
+
+const { guide } = Astro.props;
+---
+
+<article>
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section__label">Complete Guide</span>
+      <h1 class="page-hero__title">{guide.title}</h1>
+      <p class="page-hero__desc">{guide.definition}</p>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <div class="glass-card reveal" style="margin-bottom:2rem;">
+        <h2 class="feature-card__title" style="font-size:1.35rem;">What Is a Business Loyalty Program?</h2>
+        <p class="feature-card__desc" style="font-size:1rem; margin-top:0.75rem;">{guide.definition}</p>
+      </div>
+
+      <div class="section__header reveal">
+        <h2 class="section__title" style="font-size:1.75rem;">Loyalty Program Types for Hospitality</h2>
+      </div>
+      <div class="features-grid">
+        {guide.categories.map((cat) => (
+          <a href={cat.href} class="glass-card reveal" style="display:block;">
+            <h3 class="feature-card__title">{cat.title}</h3>
+            <p class="feature-card__desc">{cat.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      {guide.sections.map((s) => (
+        <div class="glass-card reveal" style="margin-bottom:1.5rem;">
+          <h2 class="feature-card__title" style="font-size:1.25rem;">{s.heading}</h2>
+          <p class="feature-card__desc" style="margin-top:0.5rem; font-size:1rem;">{s.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container reveal">
+      <h2 class="section__title" style="font-size:1.75rem; margin-bottom:1.5rem; text-align:center;">How to Start Online</h2>
+      <ol class="guide-steps glass glass--strong">
+        {guide.howToStart.map((step, i) => (
+          <li><span class="guide-steps__num">{i + 1}</span>{step}</li>
+        ))}
+      </ol>
+      <div style="text-align:center; margin-top:2rem;">
+        <a href="https://play.google.com/store/apps/details?id=com.scanperks.app" class="btn btn--primary btn--lg">Start with Scan Perks</a>
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={guide.faqs} title="Business Loyalty Program FAQ" />
+</article>

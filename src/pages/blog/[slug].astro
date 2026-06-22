@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import { blogArticles, getBlogArticle } from '../../data/blogArticles';
+import { buildBlogPostingSchema } from '../../seo/schema';
+
+export function getStaticPaths() {
+  return blogArticles.map((a) => ({ params: { slug: a.slug } }));
+}
+
+const { slug } = Astro.params;
+const article = getBlogArticle(slug!);
+if (!article) return Astro.redirect('/404');
+
+const path = `/blog/${article.slug}/`;
+---
+
+<BaseLayout
+  title={article.metaTitle}
+  description={article.description}
+  path={path}
+  keywords={article.keywords}
+  faqs={article.faqs}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog/' },
+    { name: article.title, path },
+  ]}
+  extraSchema={[
+    buildBlogPostingSchema({
+      title: article.title,
+      description: article.description,
+      path,
+      publishedAt: article.publishedAt,
+    }),
+  ]}
+>
+  <Nav active="blog" />
+
+  <article>
+    <section class="page-hero">
+      <div class="container reveal">
+        <p class="blog-card__date">{article.publishedAt}</p>
+        <h1 class="page-hero__title">{article.title}</h1>
+        <p class="page-hero__desc">{article.description}</p>
+      </div>
+    </section>
+
+    <section class="section section--sm">
+      <div class="container">
+        <div class="quick-answer reveal">
+          <p class="quick-answer__label">Quick Answer</p>
+          <p>{article.answer}</p>
+        </div>
+
+        {article.sections.map((s) => (
+          <div class="glass-card reveal" style="margin-bottom:1.5rem;">
+            <h2 class="feature-card__title" style="font-size:1.25rem;">{s.heading}</h2>
+            <p class="feature-card__desc" style="margin-top:0.5rem; font-size:1rem;">{s.body}</p>
+          </div>
+        ))}
+
+        <div class="glass-card reveal" style="margin-top:2rem;">
+          <p class="feature-card__desc">
+            Ready to launch your <a href={article.clusterPage.href} style="color:var(--cyan-400);">{article.clusterPage.anchor}</a>?
+          </p>
+          <a href="https://play.google.com/store/apps/details?id=com.scanperks.app" class="btn btn--primary" style="margin-top:1rem;">Start Free Trial</a>
+        </div>
+      </div>
+    </section>
+
+    <FAQSection faqs={article.faqs} />
+  </article>
+
+  <Footer />
+</BaseLayout>

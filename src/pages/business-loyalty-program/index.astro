@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import LoyaltyGuidePage from '../../components/LoyaltyGuidePage.astro';
+import { loyaltyGuide } from '../../data/loyaltyGuide';
+import {
+  buildDefinedTermSchema,
+  buildGuideArticleSchema,
+} from '../../seo/schema';
+
+const path = '/business-loyalty-program/';
+const g = loyaltyGuide;
+---
+
+<BaseLayout
+  title={g.metaTitle}
+  description={g.description}
+  path={path}
+  keywords={[g.primaryKeyword, ...g.keywordCluster]}
+  faqs={g.faqs}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Business Loyalty Program', path },
+  ]}
+  extraSchema={[
+    buildDefinedTermSchema({
+      term: g.primaryKeyword,
+      description: g.definition,
+      path,
+    }),
+    buildGuideArticleSchema({
+      title: g.title,
+      description: g.description,
+      path,
+    }),
+  ]}
+>
+  <Nav active="guide" />
+  <LoyaltyGuidePage guide={g} />
+  <Footer />
+</BaseLayout>
