@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /llms.txt
+Disallow: /ai.txt
 
 User-agent: GPTBot
 Allow: /
