@@ -4,9 +4,10 @@ import type { SeoQuery } from '../data/content';
 interface Props {
   queries: SeoQuery[];
   title?: string;
+  subtitle?: string;
 }
 
-const { queries, title = 'Common Questions About Business Loyalty' } = Astro.props;
+const { queries, title = 'Common Questions About Business Loyalty', subtitle = 'Snippet-ready answers for top searches about business loyalty, bar & restaurant loyal customers.' } = Astro.props;
 ---
 
 <section class="section section--sm seo-queries" id="loyalty-answers">
@@ -14,7 +15,7 @@ const { queries, title = 'Common Questions About Business Loyalty' } = Astro.pro
     <div class="section__header reveal">
       <span class="section__label">Quick Answers</span>
       <h2 class="section__title">{title}</h2>
-      <p class="section__subtitle">Snippet-ready answers for top searches about business loyalty, bar & restaurant loyal customers.</p>
+      <p class="section__subtitle">{subtitle}</p>
     </div>
     <div class="seo-queries__grid">
       {queries.map((q) => (

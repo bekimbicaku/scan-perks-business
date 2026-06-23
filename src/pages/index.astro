@@ -9,7 +9,8 @@ import { landingContent } from '../data/content';
 import { buildSoftwareApplicationSchema } from '../seo/schema';
 
 const c = landingContent;
-const topQueries = c.seoQueries.slice(0, 8);
+const loyaltyQueries = c.seoQueries.slice(0, 12);
+const growthQueries = c.seoQueries.slice(12);
 ---
 
 <BaseLayout
@@ -112,7 +113,17 @@ const topQueries = c.seoQueries.slice(0, 8);
     </div>
   </section>
 
-  <SeoQuerySection queries={topQueries} />
+  <SeoQuerySection
+    queries={loyaltyQueries}
+    title="Business Loyalty — Quick Answers"
+    subtitle="Common questions about loyalty programs, QR rewards, and repeat customers."
+  />
+
+  <SeoQuerySection
+    queries={growthQueries}
+    title="Grow Customers, Trust & Profits"
+    subtitle="How Scan Perks helps you increase customers, build credibility, and boost restaurant revenue."
+  />
 
   <section class="section section--sm">
     <div class="container">

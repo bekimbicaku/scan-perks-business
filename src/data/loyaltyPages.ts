@@ -271,16 +271,21 @@ export const loyaltyPages: LoyaltyPage[] = [
   {
     slug: 'grow-restaurant-business',
     title: 'Grow Your Restaurant Business',
-    metaTitle: 'Grow Your Restaurant Business with Loyalty Rewards | Scan Perks',
+    metaTitle: 'Grow Your Restaurant Business — Increase Customers, Revenue & Profits | Scan Perks',
     description:
-      'Grow your business with a restaurant loyalty program: repeat customers, push offers, and analytics. Scan Perks helps hospitality venues increase revenue from $10/month.',
+      'Increase customers, revenue, and profits with Scan Perks loyalty. Grow your restaurant or bar business with repeat visits, trust, and analytics from $10/month.',
     primaryKeyword: 'grow restaurant business',
     keywordCluster: [
       'grow your business',
       'grow business with loyalty',
       'increase restaurant revenue',
+      'increase business profits',
+      'increase customers restaurant',
+      'increase foot traffic',
+      'boost restaurant sales',
       'business growth hospitality',
       'repeat customer revenue',
+      'customer lifetime value',
     ],
     highlights: [
       '+24% avg repeat visits',
@@ -300,6 +305,14 @@ export const loyaltyPages: LoyaltyPage[] = [
       {
         heading: 'Affordable Growth for Independent Venues',
         body: 'You do not need a corporate budget to grow. Scan Perks costs less than a few lost punch-card stacks per month and includes local discovery so new customers find you too.',
+      },
+      {
+        heading: 'Increase Customers Without Expensive Advertising',
+        body: 'Paid ads bring one-time visitors; loyalty brings repeat customers who cost less to serve and refer friends. Scan Perks combines retention rewards with local discovery — a dual strategy to increase customers sustainably.',
+      },
+      {
+        heading: 'Grow Profits Through Customer Lifetime Value',
+        body: 'Profit growth follows when guests visit more often and spend confidently. Track lifetime value in your dashboard, optimize reward tiers, and use push offers to lift revenue on slow nights — all from $10–15/month.',
       },
     ],
     comparison: [
@@ -324,8 +337,18 @@ export const loyaltyPages: LoyaltyPage[] = [
         answer:
           'Focus on existing customers: reward returns, send timely push offers, and get listed in Scan Perks local discovery — all included from $10/month.',
       },
+      {
+        question: 'How can I increase customers at my restaurant or bar?',
+        answer:
+          'Use loyalty to boost repeat visits, list your venue in Scan Perks discovery for new local guests, and re-engage lapsed customers with push offers — a complete growth stack from $10/month.',
+      },
+      {
+        question: 'Does loyalty really increase restaurant profits?',
+        answer:
+          'Yes. Repeat customers have higher lifetime value and lower acquisition cost. Scan Perks venues report up to 24% more repeat visits — directly supporting profit growth.',
+      },
     ],
-    supportingPosts: ['how-to-increase-repeat-customers-restaurant', 'best-loyalty-app-small-business'],
+    supportingPosts: ['how-to-increase-repeat-customers-restaurant', 'how-to-increase-customers-restaurant-bar', 'increase-restaurant-revenue-profits'],
   },
 ];
 

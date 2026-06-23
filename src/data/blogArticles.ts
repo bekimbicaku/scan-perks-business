@@ -200,6 +200,147 @@ export const blogArticles: BlogArticle[] = [
       anchor: 'bar loyalty program with Scan Perks',
     },
   },
+  {
+    slug: 'how-to-increase-customers-restaurant-bar',
+    title: 'How to Increase Customers at Your Restaurant or Bar',
+    metaTitle: 'How to Increase Customers at Your Restaurant or Bar | Scan Perks',
+    description:
+      'Learn how to increase customers and foot traffic at restaurants and bars: loyalty rewards, local discovery, and push marketing with Scan Perks from $10/month.',
+    keywords: [
+      'how to increase customers',
+      'increase foot traffic restaurant',
+      'get more customers bar',
+      'increase restaurant customers',
+    ],
+    publishedAt: '2025-07-01',
+    answer:
+      'Increase customers by combining loyalty rewards (repeat visits), local app discovery (new guests), and push offers (re-engagement). Scan Perks delivers all three for bars and restaurants from $10/month — without expensive ad campaigns.',
+    sections: [
+      {
+        heading: 'Retain First, Then Grow',
+        body: 'The fastest way to increase customers profitably is keeping the ones you have. Loyal guests visit more often and bring friends. Scan Perks QR loyalty makes retention measurable before you spend on acquisition.',
+      },
+      {
+        heading: 'Get Discovered by Nearby Customers',
+        body: 'Scan Perks lists your venue in the consumer app discovery feed — putting you in front of locals actively looking for new bars, cafes, and restaurants to try.',
+      },
+      {
+        heading: 'Re-Engage Lapsed Guests with Push Offers',
+        body: 'Push notifications bring back customers who have not visited in weeks. A targeted happy hour or event invite costs nothing extra on the Growth plan.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is the cheapest way to increase restaurant customers?',
+        answer:
+          'Loyalty plus local discovery via Scan Perks starts at $10/month — far cheaper than paid social ads and focused on guests who already prefer hospitality venues like yours.',
+      },
+      {
+        question: 'How long until I see more customers with a loyalty program?',
+        answer:
+          'Most venues see measurable repeat visit increases within the first 30 days once QR codes are displayed and staff mention rewards at checkout.',
+      },
+    ],
+    clusterPage: {
+      href: '/grow-restaurant-business/',
+      label: 'Grow Restaurant Business',
+      anchor: 'grow your business with Scan Perks',
+    },
+  },
+  {
+    slug: 'build-customer-trust-hospitality-business',
+    title: 'How to Build Customer Trust in Your Bar or Restaurant',
+    metaTitle: 'Build Customer Trust — Hospitality Loyalty Tips | Scan Perks',
+    description:
+      'Build customer trust and credibility with transparent loyalty rewards. How Scan Perks helps bars, cafes & restaurants strengthen guest relationships from $10/month.',
+    keywords: [
+      'build customer trust',
+      'customer trust restaurant',
+      'business credibility',
+      'customer loyalty trust',
+    ],
+    publishedAt: '2025-07-15',
+    answer:
+      'Build customer trust with consistent, transparent rewards guests can track on their phone. Scan Perks digital loyalty replaces informal punch cards with a professional system that signals reliability and fairness — key to credibility for independent venues.',
+    sections: [
+      {
+        heading: 'Trust Comes from Consistency',
+        body: 'Guests trust venues that honor promises. Digital loyalty tracks every visit automatically — no disputed punch holes or forgotten cards. Scan Perks makes rewards fair and visible.',
+      },
+      {
+        heading: 'Professional Systems Signal Credibility',
+        body: 'A branded QR loyalty program looks as polished as chain competitors. Independent bars and restaurants build credibility when customers see the same quality experience as larger brands.',
+      },
+      {
+        heading: 'Personal Connection Through Data',
+        body: 'Knowing your regulars — visit frequency, favorite rewards — lets you personalize service. Customers feel valued when you recognize their loyalty with relevant offers.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Does loyalty software help build customer trust?',
+        answer:
+          'Yes. Transparent reward tracking and consistent perks show customers you value their business. Scan Perks makes loyalty visible and reliable.',
+      },
+      {
+        question: 'How is digital loyalty more trustworthy than punch cards?',
+        answer:
+          'Digital records cannot be lost or disputed. Customers see reward progress on their phone — building confidence that every visit counts.',
+      },
+    ],
+    clusterPage: {
+      href: '/business-loyalty-program/',
+      label: 'Business Loyalty Guide',
+      anchor: 'business loyalty program on Scan Perks',
+    },
+  },
+  {
+    slug: 'increase-restaurant-revenue-profits',
+    title: 'How to Increase Restaurant Revenue and Profits with Loyalty',
+    metaTitle: 'Increase Restaurant Revenue & Profits with Loyalty | Scan Perks',
+    description:
+      'Increase restaurant revenue and business profits through customer retention and lifetime value. Scan Perks loyalty programs from $10/month boost repeat visits and sales.',
+    keywords: [
+      'increase restaurant revenue',
+      'increase business profits',
+      'boost restaurant sales',
+      'restaurant profit growth',
+    ],
+    publishedAt: '2025-08-01',
+    answer:
+      'Increase restaurant revenue by growing repeat visits and customer lifetime value — not just one-time covers. Scan Perks loyalty programs report up to 24% more return customers, directly boosting profits for $10–15/month vs hundreds on enterprise tools.',
+    sections: [
+      {
+        heading: 'Profit Grows from Retention, Not Just Traffic',
+        body: 'Acquiring a new diner costs 5–7× more than retaining one. Scan Perks shifts focus to profitable repeat business — the foundation of sustainable restaurant revenue growth.',
+      },
+      {
+        heading: 'Increase Average Spend with Tiered Rewards',
+        body: 'Design perks that encourage slightly higher spend — appetizer add-ons, premium drink tiers, or VIP status after milestone visits. Dashboard data shows which rewards drive the most revenue.',
+      },
+      {
+        heading: 'Fill Slow Periods Without Eroding Margin',
+        body: 'Targeted push offers on quiet nights bring revenue when you need it — without blanket discounts that hurt profits. Scan Perks lets you market surgically to loyalty members.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Can a $10/month loyalty app really increase restaurant profits?',
+        answer:
+          'Yes. A handful of extra weekly visits from loyal customers typically exceeds $10–15/month in value. Scan Perks is designed for ROI-positive retention at independent venues.',
+      },
+      {
+        question: 'What metric should I track for profit growth?',
+        answer:
+          'Track repeat visit rate, redemption patterns, and visit frequency per customer in your Scan Perks dashboard — leading indicators of rising lifetime value and revenue.',
+      },
+    ],
+    clusterPage: {
+      href: '/grow-restaurant-business/',
+      label: 'Grow Restaurant Business',
+      anchor: 'increase profits with Scan Perks',
+    },
+  },
 ];
 
 export function getBlogArticle(slug: string): BlogArticle | undefined {

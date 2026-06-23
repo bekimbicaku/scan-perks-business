@@ -34,8 +34,9 @@ export const loyaltyGuide: LoyaltyGuide = {
     'hospitality loyalty platform',
     'small business loyalty software',
     'loyalty program for business',
-    'buisness loyalty',
-    'loyalty program small business',
+    'build customer trust',
+    'increase business profits',
+    'increase customers',
   ],
   definition:
     'A business loyalty program is a structured rewards system that incentivizes repeat customers to return more often and spend more over time. For hospitality — bars, cafes, and restaurants — modern loyalty uses digital tools like QR scanning, push notifications, and visit analytics instead of paper punch cards. Scan Perks is a hospitality-focused business loyalty platform starting at $10/month.',

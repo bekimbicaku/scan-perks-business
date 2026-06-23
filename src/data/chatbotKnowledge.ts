@@ -56,4 +56,32 @@ export const chatbotKnowledge: ChatbotTopic[] = [
       'Scan Perks cafe loyalty program: digital stamp cards, counter QR, morning regular tracking. $10/month for up to 200 customers.',
     action: { href: '/cafe-loyalty-program/', label: 'Cafe loyalty' },
   },
+  {
+    id: 'increase-customers',
+    keywords: ['increase customers', 'more customers', 'foot traffic', 'get more customers', 'attract customers'],
+    answer:
+      'Increase customers with Scan Perks: loyalty for repeat visits, local discovery for new guests, push offers for re-engagement. From $10/month.',
+    action: { href: '/grow-restaurant-business/', label: 'Increase customers' },
+  },
+  {
+    id: 'increase-profits',
+    keywords: ['increase profits', 'increase revenue', 'boost sales', 'more profit', 'restaurant revenue'],
+    answer:
+      'Increase profits by growing repeat visits and customer lifetime value. Scan Perks reports up to 24% more return customers — $10–15/month.',
+    action: { href: '/grow-restaurant-business/', label: 'Grow revenue' },
+  },
+  {
+    id: 'build-trust',
+    keywords: ['build trust', 'customer trust', 'credibility', 'reputation', 'trustworthy business'],
+    answer:
+      'Build customer trust with transparent digital rewards guests track on their phone. Scan Perks professional loyalty signals credibility for independent venues.',
+    action: { href: '/business-loyalty-program/', label: 'Trust & loyalty' },
+  },
+  {
+    id: 'retention',
+    keywords: ['customer retention', 'retain customers', 'reduce churn', 'keep customers', 'repeat business'],
+    answer:
+      'Retain customers with visit-based rewards, push re-engagement, and visit analytics. Scan Perks is built for hospitality retention from $10/month.',
+    action: { href: '/restaurant-loyalty-program/', label: 'Customer retention' },
+  },
 ];

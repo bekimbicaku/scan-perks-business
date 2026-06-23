@@ -6,7 +6,7 @@ Static site (Astro SSG) for Scan Perks — business loyalty program for bars, ca
 
 - **Layer 1 — Technical:** SSG, meta/canonical, sitemap.xml, robots.txt, JSON-LD
 - **Layer 2 — Content clusters:** Homepage, pillar, money pages, blog
-- **Layer 3 — AI Search:** internal docs in `ai-docs/` (not published to the website)
+- **Layer 3 — AI Search:** `public/llms.txt`, `public/ai.txt` (for AI crawlers only — no links on the public website)
 
 ## Develop
 
