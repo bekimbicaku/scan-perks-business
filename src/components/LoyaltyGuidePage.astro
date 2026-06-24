@@ -1,6 +1,7 @@
 ---
 import type { LoyaltyGuide } from '../data/loyaltyGuide';
 import FAQSection from './FAQSection.astro';
+import AppCta from './AppCta.astro';
 
 interface Props {
   guide: LoyaltyGuide;
@@ -59,7 +60,7 @@ const { guide } = Astro.props;
         ))}
       </ol>
       <div style="text-align:center; margin-top:2rem;">
-        <a href="https://play.google.com/store/apps/details?id=com.scanperks.app" class="btn btn--primary btn--lg">Start with Scan Perks</a>
+        <AppCta class="btn btn--primary btn--lg">Start with Scan Perks</AppCta>
       </div>
     </div>
   </section>

@@ -1050,6 +1050,35 @@ img {
 }
 
 /* ─── Store badges ─── */
+.store-badges-wrap {
+  width: 100%;
+}
+
+.store-badges-wrap--center {
+  text-align: center;
+}
+
+.store-badges__hint {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.store-badges__web-link {
+  color: var(--cyan-400);
+  font-weight: 600;
+}
+
+.store-badges__web-link:hover {
+  color: var(--blue-300);
+}
+
+.store-badge--web {
+  border-color: rgba(34, 211, 238, 0.35);
+  background: rgba(34, 211, 238, 0.08);
+}
+
 .store-badges {
   display: flex;
   gap: 0.75rem;

@@ -2,6 +2,7 @@
 import type { LoyaltyPage } from '../data/loyaltyPages';
 import { blogArticles } from '../data/blogArticles';
 import FAQSection from './FAQSection.astro';
+import AppCta from './AppCta.astro';
 
 interface Props {
   page: LoyaltyPage;
@@ -18,7 +19,7 @@ const posts = blogArticles.filter((a) => page.supportingPosts.includes(a.slug));
       <h1 class="page-hero__title">{page.title}</h1>
       <p class="page-hero__desc">{page.description}</p>
       <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
-        <a href="https://play.google.com/store/apps/details?id=com.scanperks.app" class="btn btn--primary btn--lg">Start Free Trial</a>
+        <AppCta class="btn btn--primary btn--lg">Start Free Trial</AppCta>
         <a href="/pricing/" class="btn btn--glass btn--lg">View Pricing</a>
       </div>
     </div>
@@ -120,7 +121,7 @@ const posts = blogArticles.filter((a) => page.supportingPosts.includes(a.slug));
         <h2 class="cta-banner__title">Start Your {page.title} Today</h2>
         <p class="cta-banner__desc">14-day free trial. No contracts. Grow loyal customers from $10/month.</p>
         <div class="cta-banner__actions">
-          <a href="https://play.google.com/store/apps/details?id=com.scanperks.app" class="btn btn--primary btn--lg">Get Started Free</a>
+          <AppCta class="btn btn--primary btn--lg">Get Started Free</AppCta>
         </div>
       </div>
     </div>

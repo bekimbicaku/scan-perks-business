@@ -5,6 +5,8 @@ import Footer from '../components/Footer.astro';
 import KeywordMarquee from '../components/KeywordMarquee.astro';
 import SeoQuerySection from '../components/SeoQuerySection.astro';
 import FAQSection from '../components/FAQSection.astro';
+import AppCta from '../components/AppCta.astro';
+import StoreBadges from '../components/StoreBadges.astro';
 import { landingContent } from '../data/content';
 import { buildSoftwareApplicationSchema } from '../seo/schema';
 
@@ -35,7 +37,7 @@ const growthQueries = c.seoQueries.slice(12);
           <p class="hero__seo-line">{c.heroSeoLine}</p>
           <p class="hero__desc">{c.heroDescription}</p>
           <div class="hero__actions">
-            <a href="https://play.google.com/store/apps/details?id=com.scanperks.app" class="btn btn--primary btn--lg">Start Free Trial</a>
+            <AppCta class="btn btn--primary btn--lg">Start Free Trial</AppCta>
             <a href="/business-loyalty-program/" class="btn btn--glass btn--lg">Loyalty Guide</a>
           </div>
           <div class="hero__stats">
@@ -160,12 +162,7 @@ const growthQueries = c.seoQueries.slice(12);
         <h2 class="cta-banner__title">Grow Loyal Customers Starting Today</h2>
         <p class="cta-banner__desc">Business loyalty program from $10/month. 14-day free trial for bars, cafes & restaurants.</p>
         <div class="cta-banner__actions">
-          <a href="https://play.google.com/store/apps/details?id=com.scanperks.app" class="store-badge">
-            <span class="store-badge__text"><small>Get it on</small><strong>Google Play</strong></span>
-          </a>
-          <a href="https://apps.apple.com/app/id6744923279" class="store-badge">
-            <span class="store-badge__text"><small>Download on the</small><strong>App Store</strong></span>
-          </a>
+          <StoreBadges />
         </div>
       </div>
     </div>

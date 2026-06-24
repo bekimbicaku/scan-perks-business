@@ -46,7 +46,7 @@ export const chatbotKnowledge: ChatbotTopic[] = [
   {
     id: 'pricing',
     keywords: ['price', 'cost', 'how much', 'subscription', 'free trial'],
-    answer: `Scan Perks costs $10/month (Starter) or $15/month (Growth). 14-day free trial, no contracts. Download: ${SITE.playStore}`,
+    answer: `Get started at ${SITE.appWebUrl} (web). Android: Google Play. iOS App Store link available. Plans: $10–15/month, 14-day free trial.`,
     action: { href: '/pricing/', label: 'View pricing' },
   },
   {

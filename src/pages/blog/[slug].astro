@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import FAQSection from '../../components/FAQSection.astro';
+import AppCta from '../../components/AppCta.astro';
 import { blogArticles, getBlogArticle } from '../../data/blogArticles';
 import { buildBlogPostingSchema } from '../../seo/schema';
 
@@ -66,7 +67,7 @@ const path = `/blog/${article.slug}/`;
           <p class="feature-card__desc">
             Ready to launch your <a href={article.clusterPage.href} style="color:var(--cyan-400);">{article.clusterPage.anchor}</a>?
           </p>
-          <a href="https://play.google.com/store/apps/details?id=com.scanperks.app" class="btn btn--primary" style="margin-top:1rem;">Start Free Trial</a>
+          <AppCta class="btn btn--primary" style="margin-top:1rem;">Start Free Trial</AppCta>
         </div>
       </div>
     </section>

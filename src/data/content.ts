@@ -4,6 +4,7 @@ export const SITE = {
   description:
     'Scan Perks is the affordable QR-based business loyalty platform for bars, cafes, and restaurants. Grow repeat customers with digital rewards starting at $10/month.',
   email: 'hello@scan-perks.com',
+  appWebUrl: 'https://app.scan-perks.com',
   appStore: 'https://apps.apple.com/app/id6744923279',
   playStore: 'https://play.google.com/store/apps/details?id=com.scanperks.app',
   social: {
@@ -217,7 +218,7 @@ export const landingContent: LandingContent = {
     {
       query: 'Do customers need to download an app for Scan Perks?',
       answer:
-        'Customers use the free Scan Perks app to scan QR codes and track rewards. For business owners, everything is managed from the same app — simple for both sides.',
+        'Business owners start at app.scan-perks.com in any browser. Android users can use Google Play; App Store link is listed for iOS. Customers scan QR codes via the Scan Perks app.',
       href: '/pricing/',
       label: 'FAQ & pricing →',
     },

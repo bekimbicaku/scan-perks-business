@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import FAQSection from '../../components/FAQSection.astro';
+import AppCta from '../../components/AppCta.astro';
 import { blogArticles } from '../../data/blogArticles';
 import { landingContent } from '../../data/content';
 
@@ -42,7 +43,7 @@ const pricingFaqs = landingContent.faqs.slice(0, 6);
             <li>Local discovery listing</li>
             <li>Print-ready QR materials</li>
           </ul>
-          <a href="https://play.google.com/store/apps/details?id=com.scanperks.app" class="btn btn--glass" style="width:100%;">Start Free Trial</a>
+          <AppCta class="btn btn--glass" style="width:100%;">Start Free Trial</AppCta>
         </div>
         <div class="glass-card pricing-card pricing-card--featured reveal">
           <div class="pricing-card__badge">Most Popular</div>
@@ -57,7 +58,7 @@ const pricingFaqs = landingContent.faqs.slice(0, 6);
             <li>Priority discovery placement</li>
             <li>Customer segmentation</li>
           </ul>
-          <a href="https://play.google.com/store/apps/details?id=com.scanperks.app" class="btn btn--primary" style="width:100%;">Start Free Trial</a>
+          <AppCta class="btn btn--primary" style="width:100%;">Start Free Trial</AppCta>
         </div>
       </div>
     </div>

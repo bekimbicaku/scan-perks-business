@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
+import StoreBadges from '../../components/StoreBadges.astro';
 import { SITE } from '../../data/content';
 ---
 
@@ -35,10 +36,13 @@ import { SITE } from '../../data/content';
           <div class="contact-info__item">
             <div class="contact-info__icon">📱</div>
             <div>
-              <div class="contact-info__label">Download</div>
-              <div class="contact-info__value">Start your loyalty program from the app</div>
+              <div class="contact-info__label">Get Started</div>
+              <div class="contact-info__value">
+                Open <a href={SITE.appWebUrl}>{SITE.appWebUrl.replace('https://', '')}</a> to launch your loyalty program
+              </div>
             </div>
           </div>
+          <StoreBadges showHint={false} centered={false} />
         </div>
         <div class="glass-card contact-form reveal">
           <h2 style="font-size:1.25rem; font-weight:700; margin-bottom:1.5rem;">Send a Message</h2>

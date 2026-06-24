@@ -1,5 +1,6 @@
 ---
 import { loyaltyPages } from '../data/loyaltyPages';
+import { SITE } from '../data/content';
 ---
 
 <footer class="footer">
@@ -27,7 +28,9 @@ import { loyaltyPages } from '../data/loyaltyPages';
           <li><a href="/features/">Features</a></li>
           <li><a href="/pricing/">Pricing</a></li>
           <li><a href="/blog/">Blog</a></li>
-          <li><a href="https://play.google.com/store/apps/details?id=com.scanperks.app">Download App</a></li>
+          <li><a href={SITE.appWebUrl} class="js-app-link" data-play-store={SITE.playStore} data-app-web={SITE.appWebUrl}>Download App</a></li>
+          <li><a href={SITE.playStore} rel="noopener noreferrer">Google Play</a></li>
+          <li><a href={SITE.appStore} rel="noopener noreferrer">App Store</a></li>
         </ul>
       </div>
       <div>

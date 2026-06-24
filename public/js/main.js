@@ -73,4 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.add('active');
     }
   });
+
+  // Smart app links: Android → Play Store, others → app.scan-perks.com
+  const isAndroid = /android/i.test(navigator.userAgent);
+  document.querySelectorAll('.js-app-link').forEach(link => {
+    const playStore = link.dataset.playStore;
+    const appWeb = link.dataset.appWeb || 'https://app.scan-perks.com';
+    if (playStore && appWeb) {
+      link.href = isAndroid ? playStore : appWeb;
+    }
+  });
 });
