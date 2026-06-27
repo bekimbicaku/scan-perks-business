@@ -38,10 +38,24 @@ export const chatbotKnowledge: ChatbotTopic[] = [
   },
   {
     id: 'qr-loyalty',
-    keywords: ['qr loyalty', 'qr code rewards', 'digital loyalty', 'qr scanning'],
+    keywords: ['qr loyalty', 'qr code loyalty program', 'qr code loyalty card', 'digital loyalty', 'qr scanning'],
     answer:
-      'Scan Perks QR code loyalty replaces punch cards. Customers scan to earn rewards; you get full analytics. Setup in 5 minutes.',
-    action: { href: '/qr-loyalty-program/', label: 'QR loyalty program' },
+      'Scan Perks is a QR code loyalty program for bars, cafes, and restaurants — digital QR loyalty card, analytics, push offers. From $10/month. Start: app.scan-perks.com',
+    action: { href: '/qr-loyalty-program/', label: 'QR code loyalty program' },
+  },
+  {
+    id: 'bar-programs',
+    keywords: ['bar loyalty programs', 'pub loyalty scheme', 'pub loyalty', 'bar loyalty program'],
+    answer:
+      'Scan Perks bar loyalty programs include pub loyalty scheme tools, QR rewards, happy-hour pushes. From $10/month.',
+    action: { href: '/bar-loyalty-program/', label: 'Bar loyalty programs' },
+  },
+  {
+    id: 'cafe-app',
+    keywords: ['cafe loyalty app', 'best coffee loyalty programs', 'coffee loyalty', 'coffee shop app'],
+    answer:
+      'Scan Perks cafe loyalty app — among the best coffee loyalty programs for independents. QR stamps, $10/month.',
+    action: { href: '/cafe-loyalty-program/', label: 'Cafe loyalty app' },
   },
   {
     id: 'pricing',

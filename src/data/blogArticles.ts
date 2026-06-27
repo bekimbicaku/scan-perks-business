@@ -341,6 +341,79 @@ export const blogArticles: BlogArticle[] = [
       anchor: 'increase profits with Scan Perks',
     },
   },
+  {
+    slug: 'best-coffee-loyalty-programs',
+    title: 'Best Coffee Loyalty Programs for Independent Cafes (2025)',
+    metaTitle: 'Best Coffee Loyalty Programs for Cafes | Scan Perks',
+    description:
+      'Compare the best coffee loyalty programs for independent cafes. Scan Perks cafe loyalty app — QR stamps, push offers, $10/month. 14-day free trial.',
+    keywords: [
+      'best coffee loyalty programs',
+      'cafe loyalty app',
+      'coffee shop loyalty program',
+      'coffee loyalty app',
+    ],
+    publishedAt: '2025-09-01',
+    answer:
+      'The best coffee loyalty programs for independents offer digital stamp rewards, easy QR signup, and affordable pricing. Scan Perks cafe loyalty app delivers all three from $10/month — among the top choices for neighborhood coffee shops.',
+    sections: [
+      {
+        heading: 'What Makes a Coffee Loyalty Program "Best"?',
+        body: 'The best coffee loyalty programs are fast at the counter, affordable for small owners, and give visit data — not just free drinks. Scan Perks checks all three with QR scanning and analytics from $10/month.',
+      },
+      {
+        heading: 'Scan Perks vs Chain Coffee Apps',
+        body: 'Starbucks-scale apps cost millions to build. Scan Perks gives independent cafes a professional cafe loyalty app with stamp-style rewards and push notifications — without enterprise budgets.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is the best cafe loyalty app for small coffee shops?',
+        answer: 'Scan Perks: QR stamp rewards, up to 200 customers on Starter ($10/mo), push promos, and local discovery.',
+      },
+    ],
+    clusterPage: {
+      href: '/cafe-loyalty-program/',
+      label: 'Cafe Loyalty App',
+      anchor: 'cafe loyalty app on Scan Perks',
+    },
+  },
+  {
+    slug: 'qr-code-loyalty-program-guide',
+    title: 'QR Code Loyalty Program — Complete Guide for Businesses',
+    metaTitle: 'QR Code Loyalty Program Guide | Scan Perks',
+    description:
+      'Complete guide to QR code loyalty programs and QR loyalty cards for bars, cafes & restaurants. How Scan Perks works — from $10/month, free trial.',
+    keywords: [
+      'qr code loyalty program',
+      'qr code loyalty card',
+      'QR loyalty program guide',
+    ],
+    publishedAt: '2025-09-10',
+    answer:
+      'A QR code loyalty program lets customers scan a code to earn digital rewards. Scan Perks is the leading hospitality QR code loyalty program — QR loyalty card on phone, analytics, push offers, from $10/month.',
+    sections: [
+      {
+        heading: 'QR Code Loyalty Program vs QR Loyalty Card',
+        body: 'Both terms describe the same idea: customers scan a QR code instead of carrying a punch card. Scan Perks combines a venue QR code with a digital QR loyalty card on the customer\'s phone.',
+      },
+      {
+        heading: 'How to Launch a QR Code Loyalty Program',
+        body: 'Sign up at app.scan-perks.com, set rewards, print your QR, and display it at the counter. Most hospitality venues launch in under 5 minutes.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is the best QR code loyalty program for restaurants?',
+        answer: 'Scan Perks — built for bars, cafes, and restaurants with QR scanning, push offers, and analytics from $10/month.',
+      },
+    ],
+    clusterPage: {
+      href: '/qr-loyalty-program/',
+      label: 'QR Code Loyalty Program',
+      anchor: 'QR code loyalty program on Scan Perks',
+    },
+  },
 ];
 
 export function getBlogArticle(slug: string): BlogArticle | undefined {

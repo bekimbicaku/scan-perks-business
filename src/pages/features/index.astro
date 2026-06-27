@@ -4,13 +4,27 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import AppCta from '../../components/AppCta.astro';
 import FAQSection from '../../components/FAQSection.astro';
+
+const featuresFaqs = [
+  {
+    question: 'Does Scan Perks include a QR code loyalty program?',
+    answer:
+      'Yes. Every Scan Perks plan includes a full QR code loyalty program — unique venue QR, digital QR loyalty card for customers, visit analytics, and push offers from $10/month.',
+  },
+  {
+    question: 'What features are included in the cafe loyalty app?',
+    answer:
+      'Stamp-style rewards, counter QR scanning, customer profiles, push notifications, print-ready materials, and local discovery — all included from $10/month.',
+  },
+];
 ---
 
 <BaseLayout
-  title="Features — QR Loyalty, Analytics & Push Offers | Scan Perks"
-  description="Scan Perks features: QR code loyalty, real-time analytics, push notifications, local discovery, and customer profiles for bars, cafes & restaurants."
+  title="QR Code Loyalty Program Features — Cafe & Bar Loyalty App | Scan Perks"
+  description="Scan Perks features: QR code loyalty program, cafe loyalty app, bar loyalty programs, push offers & analytics. Start free at app.scan-perks.com — from $10/mo."
   path="/features/"
-  keywords={['loyalty program features', 'QR loyalty', 'restaurant analytics', 'push notifications loyalty']}
+  keywords={['qr code loyalty program features', 'cafe loyalty app', 'bar loyalty programs', 'loyalty program features']}
+  faqs={featuresFaqs}
   breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Features', path: '/features/' }]}
 >
   <Nav active="features" />
@@ -18,8 +32,9 @@ import FAQSection from '../../components/FAQSection.astro';
   <section class="page-hero">
     <div class="container reveal">
       <span class="section__label">Features</span>
-      <h1 class="page-hero__title">Everything to <span class="gradient-text">Grow Loyal Customers</span></h1>
-      <p class="page-hero__desc">QR rewards, real-time insights, and push offers — built for hospitality businesses.</p>
+      <h1 class="page-hero__title">QR Code Loyalty Program <span class="gradient-text">Features</span></h1>
+      <p class="page-hero__seo-line">Cafe loyalty app, bar loyalty programs, and pub loyalty tools — all in one platform from $10/month.</p>
+      <p class="page-hero__desc">Everything you need to launch a QR code loyalty card system and grow repeat customers.</p>
     </div>
   </section>
 
@@ -28,8 +43,18 @@ import FAQSection from '../../components/FAQSection.astro';
       <div class="features-grid">
         <div class="glass-card reveal">
           <div class="feature-card__icon">📱</div>
-          <h2 class="feature-card__title">QR Code Loyalty</h2>
-          <p class="feature-card__desc">Customers scan your unique code to collect perks — no cards, no hassle. <a href="/qr-loyalty-program/" style="color:var(--cyan-400);">Learn more →</a></p>
+          <h2 class="feature-card__title">QR Code Loyalty Program</h2>
+          <p class="feature-card__desc">Full QR code loyalty program with digital QR loyalty card for customers. <a href="/qr-loyalty-program/" style="color:var(--cyan-400);">QR loyalty guide →</a></p>
+        </div>
+        <div class="glass-card reveal">
+          <div class="feature-card__icon">☕</div>
+          <h2 class="feature-card__title">Cafe Loyalty App</h2>
+          <p class="feature-card__desc">Stamp rewards and counter QR for coffee shops. <a href="/cafe-loyalty-program/" style="color:var(--cyan-400);">Cafe loyalty app →</a></p>
+        </div>
+        <div class="glass-card reveal">
+          <div class="feature-card__icon">🍺</div>
+          <h2 class="feature-card__title">Bar Loyalty Programs</h2>
+          <p class="feature-card__desc">Pub loyalty scheme tools, happy-hour pushes, regular tracking. <a href="/bar-loyalty-program/" style="color:var(--cyan-400);">Bar loyalty →</a></p>
         </div>
         <div class="glass-card reveal">
           <div class="feature-card__icon">📊</div>
@@ -46,25 +71,17 @@ import FAQSection from '../../components/FAQSection.astro';
           <h2 class="feature-card__title">Local Discovery</h2>
           <p class="feature-card__desc">Get discovered by customers browsing the app for new venues.</p>
         </div>
-        <div class="glass-card reveal">
-          <div class="feature-card__icon">👥</div>
-          <h2 class="feature-card__title">Customer Profiles</h2>
-          <p class="feature-card__desc">Understand your regulars — visit frequency, favorite rewards, patterns.</p>
-        </div>
-        <div class="glass-card reveal">
-          <div class="feature-card__icon">🖨️</div>
-          <h2 class="feature-card__title">Print-Ready QR</h2>
-          <p class="feature-card__desc">Download posters, table tents, and stickers for your venue.</p>
-        </div>
       </div>
     </div>
   </section>
 
+  <FAQSection faqs={featuresFaqs} title="Features FAQ" />
+
   <section class="section section--sm">
     <div class="container reveal">
       <div class="cta-banner">
-        <h2 class="cta-banner__title">See Features in Action</h2>
-        <p class="cta-banner__desc">14-day free trial. Setup in 5 minutes.</p>
+        <h2 class="cta-banner__title">Launch Your QR Loyalty Program Today</h2>
+        <p class="cta-banner__desc">Start at app.scan-perks.com — 14-day free trial, from $10/month.</p>
         <AppCta class="btn btn--primary btn--lg">Start Free Trial</AppCta>
       </div>
     </div>
@@ -72,3 +89,14 @@ import FAQSection from '../../components/FAQSection.astro';
 
   <Footer />
 </BaseLayout>
+
+<style>
+  .page-hero__seo-line {
+    font-size: 1.05rem;
+    color: var(--blue-300);
+    max-width: 560px;
+    margin: 0 auto 1rem;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+</style>

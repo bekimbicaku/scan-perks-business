@@ -11,8 +11,8 @@ import { landingContent } from '../data/content';
 import { buildSoftwareApplicationSchema } from '../seo/schema';
 
 const c = landingContent;
-const loyaltyQueries = c.seoQueries.slice(0, 12);
-const growthQueries = c.seoQueries.slice(12);
+const loyaltyQueries = c.seoQueries.slice(0, 14);
+const growthQueries = c.seoQueries.slice(14);
 ---
 
 <BaseLayout
@@ -81,25 +81,25 @@ const growthQueries = c.seoQueries.slice(12);
         <p class="section__subtitle">Dedicated solutions to get bar loyal customers, restaurant loyal customers, and cafe regulars — all from one platform.</p>
       </div>
       <div class="features-grid">
+        <a href="/qr-loyalty-program/" class="glass-card reveal" style="display:block; border-color: rgba(59,130,246,0.35);">
+          <div class="feature-card__icon">📱</div>
+          <h3 class="feature-card__title">QR Code Loyalty Program</h3>
+          <p class="feature-card__desc">Digital QR loyalty card — replace punch cards with smartphone scanning and full analytics.</p>
+        </a>
         <a href="/bar-loyalty-program/" class="glass-card reveal" style="display:block;">
           <div class="feature-card__icon">🍺</div>
-          <h3 class="feature-card__title">Bar Loyalty Program</h3>
-          <p class="feature-card__desc">Happy-hour pushes, free-drink tiers, and repeat visit tracking for pubs and bars.</p>
+          <h3 class="feature-card__title">Bar Loyalty Programs</h3>
+          <p class="feature-card__desc">Pub loyalty scheme, happy-hour pushes, and repeat visit tracking for bars and pubs.</p>
+        </a>
+        <a href="/cafe-loyalty-program/" class="glass-card reveal" style="display:block;">
+          <div class="feature-card__icon">☕</div>
+          <h3 class="feature-card__title">Cafe Loyalty App</h3>
+          <p class="feature-card__desc">Best coffee loyalty programs for independents — digital stamps and counter QR.</p>
         </a>
         <a href="/restaurant-loyalty-program/" class="glass-card reveal" style="display:block;">
           <div class="feature-card__icon">🍽️</div>
           <h3 class="feature-card__title">Restaurant Loyalty Program</h3>
           <p class="feature-card__desc">Retain diners with tiered rewards, analytics, and slow-night campaigns.</p>
-        </a>
-        <a href="/cafe-loyalty-program/" class="glass-card reveal" style="display:block;">
-          <div class="feature-card__icon">☕</div>
-          <h3 class="feature-card__title">Cafe Loyalty Program</h3>
-          <p class="feature-card__desc">Digital stamp cards and counter QR for coffee shops and bakeries.</p>
-        </a>
-        <a href="/qr-loyalty-program/" class="glass-card reveal" style="display:block;">
-          <div class="feature-card__icon">📱</div>
-          <h3 class="feature-card__title">QR Code Loyalty</h3>
-          <p class="feature-card__desc">Replace punch cards with smartphone scanning and full visit data.</p>
         </a>
         <a href="/grow-restaurant-business/" class="glass-card reveal" style="display:block;">
           <div class="feature-card__icon">📈</div>
@@ -118,7 +118,7 @@ const growthQueries = c.seoQueries.slice(12);
   <SeoQuerySection
     queries={loyaltyQueries}
     title="Business Loyalty — Quick Answers"
-    subtitle="Common questions about loyalty programs, QR rewards, and repeat customers."
+    subtitle="Top searches: QR code loyalty program, bar loyalty programs, cafe loyalty app, pub loyalty scheme."
   />
 
   <SeoQuerySection

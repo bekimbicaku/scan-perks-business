@@ -12,11 +12,23 @@ const { page } = Astro.props;
 const posts = blogArticles.filter((a) => page.supportingPosts.includes(a.slug));
 ---
 
+<style>
+  .page-hero__seo-line {
+    font-size: 1.05rem;
+    color: var(--blue-300);
+    max-width: 560px;
+    margin: 0 auto 1rem;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+</style>
+
 <article>
   <section class="page-hero">
     <div class="container reveal">
       <span class="section__label">{page.primaryKeyword}</span>
       <h1 class="page-hero__title">{page.title}</h1>
+      {page.heroSeoLine && <p class="page-hero__seo-line">{page.heroSeoLine}</p>}
       <p class="page-hero__desc">{page.description}</p>
       <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
         <AppCta class="btn btn--primary btn--lg">Start Free Trial</AppCta>
