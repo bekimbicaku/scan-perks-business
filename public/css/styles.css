@@ -1377,5 +1377,18 @@ img {
 
 @media (max-width: 768px) {
   .seo-queries__grid { grid-template-columns: 1fr; }
+
+  /* Reduce GPU-heavy blur on mobile — improves LCP & scroll performance */
+  .glass-card,
+  .nav,
+  .nav__mobile,
+  .hero__badge {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .hero__glow {
+    opacity: 0.4;
+  }
 }
 

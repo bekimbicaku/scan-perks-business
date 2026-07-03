@@ -4,48 +4,55 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import AnswerFirst from '../../components/AnswerFirst.astro';
 import FeatureBulletList from '../../components/FeatureBulletList.astro';
+import ComparisonTableGeo from '../../components/ComparisonTableGeo.astro';
 import CaseStudies from '../../components/CaseStudies.astro';
 import AppCta from '../../components/AppCta.astro';
 import {
   directAnswers,
-  platformStats,
+  howItWorksSteps,
   technicalDetails,
-  caseStudies,
   scanPerksFeatureList,
+  platformStats,
+  loyaltyComparisonTable,
+  caseStudies,
 } from '../../data/geoContent';
-import { buildSoftwareApplicationSchema, buildReviewSchema } from '../../seo/schema';
-import { SITE } from '../../data/content';
+import { buildSoftwareApplicationSchema, buildHowToSchema } from '../../seo/schema';
 
-const reviewSchemas = caseStudies.map((s) =>
-  buildReviewSchema({ author: s.author, reviewBody: s.reviewBody, datePublished: s.datePublished })
-);
+const howToSchema = buildHowToSchema({
+  name: 'How to set up Scan Perks QR loyalty',
+  description: 'Launch a QR code loyalty program for your cafe or bar in about 5 minutes.',
+  steps: howItWorksSteps.map((s) => ({ name: s.name, text: s.text })),
+});
 ---
 
 <BaseLayout
-  title="About Scan Perks — QR Loyalty for Cafes & Bars"
-  description="Scan Perks: 500+ venues, 50K+ loyalty members. QR cafe & bar loyalty from $10/mo. Founded 2024. iOS/Android apps, no POS required."
-  path="/about/"
-  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'About', path: '/about/' }]}
-  extraSchema={[buildSoftwareApplicationSchema(), ...reviewSchemas]}
+  title="How Scan Perks Works — QR Loyalty Setup in 5 Minutes"
+  description="Technical overview: QR loyalty setup, customer iOS/Android apps, no POS integration, data security. 500+ venues, $10/mo, 14-day free trial."
+  path="/how-it-works/"
+  keywords={['how qr loyalty works', 'cafe loyalty setup', 'qr code loyalty program setup']}
+  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'How It Works', path: '/how-it-works/' }]}
+  extraSchema={[buildSoftwareApplicationSchema(), howToSchema]}
 >
-  <Nav active="about" />
+  <Nav active="how" />
 
   <section class="page-hero">
     <div class="container reveal">
-      <span class="section__label">About</span>
-      <h1 class="page-hero__title">QR Loyalty Platform for Independent Hospitality</h1>
-      <p class="page-hero__desc">Founded {platformStats.founded}. Built for cafes, bars, and restaurants that need affordable loyalty — not enterprise contracts.</p>
+      <span class="section__label">How It Works</span>
+      <h1 class="page-hero__title">QR Loyalty Setup — Technical Overview</h1>
+      <p class="page-hero__desc">
+        How Scan Perks works for independent cafes, bars, and restaurants: QR scanning, mobile apps, and owner dashboard — no POS integration.
+      </p>
     </div>
   </section>
 
   <section class="section section--sm">
     <div class="container">
-      <AnswerFirst answer={directAnswers.home} />
+      <AnswerFirst answer={directAnswers.qr} />
 
       <div class="stats-row reveal">
-        <div class="stats-row__item"><strong>{platformStats.venues}</strong><span>venue accounts</span></div>
+        <div class="stats-row__item"><strong>{platformStats.venues}</strong><span>venues</span></div>
         <div class="stats-row__item"><strong>{platformStats.activeMembers}</strong><span>loyalty members</span></div>
-        <div class="stats-row__item"><strong>{platformStats.repeatVisitLift}</strong><span>repeat visit lift (reported)</span></div>
+        <div class="stats-row__item"><strong>{platformStats.avgSetupMinutes} min</strong><span>typical setup</span></div>
         <div class="stats-row__item"><strong>${platformStats.starterPrice}/mo</strong><span>starting price</span></div>
       </div>
     </div>
@@ -53,17 +60,24 @@ const reviewSchemas = caseStudies.map((s) =>
 
   <section class="section section--sm">
     <div class="container">
-      <h2 class="section__title" style="font-size:1.5rem; margin-bottom:1rem;">What We Build</h2>
-      <p style="color:var(--text-secondary); line-height:1.8; margin-bottom:1.5rem;">
-        Scan Perks is a QR-based business loyalty program for single-location hospitality venues. Customers use iOS or Android apps to scan a venue QR and earn stamp-style rewards. Owners manage programs at {SITE.appWebUrl} — no POS integration, no dedicated hardware.
-      </p>
+      <h2 class="section__title" style="font-size:1.5rem; margin-bottom:1.25rem;">Setup Steps</h2>
+      <FeatureBulletList
+        ordered
+        items={howItWorksSteps.map((s, i) => `${s.name}: ${s.text}`)}
+      />
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <h2 class="section__title" style="font-size:1.5rem; margin-bottom:1.25rem;">Platform Features</h2>
       <FeatureBulletList items={scanPerksFeatureList} />
     </div>
   </section>
 
   <section class="section section--sm">
     <div class="container">
-      <h2 class="section__title" style="font-size:1.5rem; margin-bottom:1rem;">Technical Overview</h2>
+      <h2 class="section__title" style="font-size:1.5rem; margin-bottom:1.25rem;">Technical Details</h2>
       <div class="tech-grid">
         <div class="glass-card tech-card">
           <h3>QR &amp; Security</h3>
@@ -74,17 +88,20 @@ const reviewSchemas = caseStudies.map((s) =>
           <p>{technicalDetails.posIntegration}</p>
         </div>
         <div class="glass-card tech-card">
-          <h3>Apps</h3>
+          <h3>Apps &amp; Platforms</h3>
           <p>{technicalDetails.apps}</p>
         </div>
         <div class="glass-card tech-card">
-          <h3>Privacy</h3>
+          <h3>Data &amp; Privacy</h3>
           <p>{technicalDetails.dataPrivacy}</p>
         </div>
       </div>
-      <p style="margin-top:1.5rem; text-align:center;">
-        <a href="/how-it-works/" class="btn btn--glass">Full technical guide →</a>
-      </p>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container reveal">
+      <ComparisonTableGeo rows={loyaltyComparisonTable} />
     </div>
   </section>
 
@@ -96,8 +113,7 @@ const reviewSchemas = caseStudies.map((s) =>
 
   <section class="section section--sm">
     <div class="container reveal" style="text-align:center;">
-      <AppCta class="btn btn--primary btn--lg">Start 14-Day Free Trial</AppCta>
-      <p style="margin-top:1rem; color:var(--text-muted);">Contact: {SITE.email}</p>
+      <AppCta class="btn btn--primary btn--lg">Start at app.scan-perks.com</AppCta>
     </div>
   </section>
 

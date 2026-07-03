@@ -4,7 +4,12 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import LoyaltyLandingPage from '../components/LoyaltyLandingPage.astro';
 import { loyaltyPages, getLoyaltyPage } from '../data/loyaltyPages';
-import { buildLoyaltyServiceSchema } from '../seo/schema';
+import {
+  barConversationalFaqs,
+  cafeConversationalFaqs,
+  qrConversationalFaqs,
+} from '../data/conversationalFaqs';
+import { buildLoyaltyServiceSchema, buildSoftwareApplicationSchema } from '../seo/schema';
 
 export function getStaticPaths() {
   return loyaltyPages.map((page) => ({ params: { slug: page.slug } }));
@@ -14,6 +19,15 @@ const { slug } = Astro.params;
 const page = getLoyaltyPage(slug!);
 
 if (!page) return Astro.redirect('/404');
+
+const conversationalBySlug: Record<string, typeof barConversationalFaqs> = {
+  'bar-loyalty-program': barConversationalFaqs,
+  'cafe-loyalty-program': cafeConversationalFaqs,
+  'qr-loyalty-program': qrConversationalFaqs,
+};
+
+const extraFaqs = conversationalBySlug[page.slug] ?? [];
+const allFaqs = [...page.faqs, ...extraFaqs];
 
 const path = `/${page.slug}/`;
 const serviceSchema = buildLoyaltyServiceSchema({
@@ -29,14 +43,14 @@ const serviceSchema = buildLoyaltyServiceSchema({
   description={page.description}
   path={path}
   keywords={[page.primaryKeyword, ...page.keywordCluster]}
-  faqs={page.faqs}
+  faqs={allFaqs}
   breadcrumbs={[
     { name: 'Home', path: '/' },
     { name: page.title, path },
   ]}
-  extraSchema={[serviceSchema]}
+  extraSchema={[serviceSchema, buildSoftwareApplicationSchema()]}
 >
   <Nav />
-  <LoyaltyLandingPage page={page} />
+  <LoyaltyLandingPage page={page} faqs={allFaqs} />
   <Footer />
 </BaseLayout>

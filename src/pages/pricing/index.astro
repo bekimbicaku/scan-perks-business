@@ -4,27 +4,37 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AppCta from '../../components/AppCta.astro';
-import { blogArticles } from '../../data/blogArticles';
-import { landingContent } from '../../data/content';
-
-const pricingFaqs = landingContent.faqs.slice(0, 6);
+import InternalLinks from '../../components/InternalLinks.astro';
+import AnswerFirst from '../../components/AnswerFirst.astro';
+import ComparisonTableGeo from '../../components/ComparisonTableGeo.astro';
+import { pricingSeo } from '../../data/pageSeo';
+import { pricingFaqs } from '../../data/conversationalFaqs';
+import { loyaltyComparisonTable, competitorComparisonIntro } from '../../data/geoContent';
+import { buildSoftwareApplicationSchema } from '../../seo/schema';
 ---
 
 <BaseLayout
-  title="Pricing — Business Loyalty Program from $10/mo | Scan Perks"
-  description="Affordable business loyalty program pricing: $10/month for small venues, $15/month for high-traffic bars & restaurants. 14-day free trial, no contracts."
+  title={pricingSeo.title}
+  description={pricingSeo.description}
   path="/pricing/"
-  keywords={['loyalty program pricing', 'affordable loyalty app', 'business loyalty cost', 'restaurant loyalty pricing']}
+  keywords={['loyalty program pricing', 'cafe loyalty app cost', 'bar loyalty program price', 'affordable loyalty app']}
   faqs={pricingFaqs}
   breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Pricing', path: '/pricing/' }]}
+  extraSchema={[buildSoftwareApplicationSchema()]}
 >
   <Nav active="pricing" />
 
   <section class="page-hero">
     <div class="container reveal">
       <span class="section__label">Pricing</span>
-      <h1 class="page-hero__title">Affordable <span class="gradient-text">Business Loyalty</span> Pricing</h1>
-      <p class="page-hero__desc">Grow loyal customers without enterprise costs. No hidden fees, no long-term contracts.</p>
+      <h1 class="page-hero__title">{pricingSeo.h1}</h1>
+      <p class="page-hero__desc">{pricingSeo.heroDesc}</p>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <AnswerFirst answer={pricingSeo.directAnswer} />
     </div>
   </section>
 
@@ -34,33 +44,45 @@ const pricingFaqs = landingContent.faqs.slice(0, 6);
         <div class="glass-card pricing-card reveal">
           <div class="pricing-card__name">Starter</div>
           <div class="pricing-card__price">$10<span>/month</span></div>
-          <p class="pricing-card__desc">Small cafes, bars, and local eateries launching their first loyalty program.</p>
+          <p class="pricing-card__desc">Small cafes, bars, and coffee shops — up to 200 loyalty members.</p>
           <ul class="pricing-card__features">
-            <li>Up to 200 active customers</li>
             <li>QR code loyalty program</li>
+            <li>Cafe loyalty app & bar tools</li>
             <li>Basic analytics dashboard</li>
-            <li>Push notifications (50/month)</li>
+            <li>50 push notifications/month</li>
             <li>Local discovery listing</li>
             <li>Print-ready QR materials</li>
           </ul>
-          <AppCta class="btn btn--glass" style="width:100%;">Start Free Trial</AppCta>
+          <AppCta class="btn btn--glass" style="width:100%;">Start 14-Day Free Trial</AppCta>
         </div>
         <div class="glass-card pricing-card pricing-card--featured reveal">
           <div class="pricing-card__badge">Most Popular</div>
           <div class="pricing-card__name">Growth</div>
           <div class="pricing-card__price">$15<span>/month</span></div>
-          <p class="pricing-card__desc">High-traffic restaurants and bars that want unlimited push and full analytics.</p>
+          <p class="pricing-card__desc">High-traffic venues — unlimited members & push offers.</p>
           <ul class="pricing-card__features">
             <li>Unlimited active customers</li>
-            <li>Advanced reward tiers</li>
-            <li>Full analytics & reports</li>
+            <li>Full pub loyalty scheme tools</li>
+            <li>Advanced analytics & reports</li>
             <li>Unlimited push notifications</li>
             <li>Priority discovery placement</li>
             <li>Customer segmentation</li>
           </ul>
-          <AppCta class="btn btn--primary" style="width:100%;">Start Free Trial</AppCta>
+          <AppCta class="btn btn--primary" style="width:100%;">Start 14-Day Free Trial</AppCta>
         </div>
       </div>
+      <p style="text-align:center; margin-top:1.5rem; color:var(--text-muted); font-size:0.9rem;">
+        vs $200+/mo enterprise loyalty — <a href="/features/" style="color:var(--cyan-400);">compare features</a>
+      </p>
+    </div>
+  </section>
+
+  <InternalLinks />
+
+  <section class="section section--sm">
+    <div class="container reveal">
+      <h2 class="section__title" style="font-size:1.35rem; margin-bottom:1rem;">Price Comparison</h2>
+      <ComparisonTableGeo rows={loyaltyComparisonTable} intro={competitorComparisonIntro} />
     </div>
   </section>
 

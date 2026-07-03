@@ -1,0 +1,13 @@
+---
+interface Props {
+  answer: string;
+  label?: string;
+}
+
+const { answer, label = 'Direct Answer' } = Astro.props;
+---
+
+<div class="quick-answer reveal" itemscope itemtype="https://schema.org/Answer">
+  <p class="quick-answer__label">{label}</p>
+  <p itemprop="text">{answer}</p>
+</div>

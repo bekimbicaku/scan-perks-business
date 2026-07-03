@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import AnswerFirst from '../../components/AnswerFirst.astro';
+import ComparisonTableGeo from '../../components/ComparisonTableGeo.astro';
+import AppCta from '../../components/AppCta.astro';
+import {
+  masterGeoFaqs,
+  directAnswers,
+  loyaltyComparisonTable,
+  competitorComparisonIntro,
+} from '../../data/geoContent';
+import { buildSoftwareApplicationSchema } from '../../seo/schema';
+
+const faqs = masterGeoFaqs.map(({ question, answer }) => ({ question, answer }));
+const categories = [
+  { id: 'coffee', label: 'Coffee & Cafe Loyalty' },
+  { id: 'mobile', label: 'Mobile Apps & Rewards' },
+  { id: 'qr', label: 'QR Loyalty' },
+  { id: 'comparison', label: 'Comparisons' },
+  { id: 'general', label: 'General' },
+];
+---
+
+<BaseLayout
+  title="Coffee & Cafe Loyalty FAQ — AI Search Answers | Scan Perks"
+  description="Direct answers to: best coffee loyalty program, mobile rewards apps, QR loyalty for cafés. Factual FAQ for coffee shops and bars — Scan Perks from $10/mo."
+  path="/faq/"
+  keywords={['best coffee loyalty program', 'cafe loyalty app', 'mobile coffee rewards', 'qr loyalty program']}
+  faqs={faqs}
+  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'FAQ', path: '/faq/' }]}
+  extraSchema={[buildSoftwareApplicationSchema()]}
+>
+  <Nav active="faq" />
+
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section__label">FAQ</span>
+      <h1 class="page-hero__title">Coffee & Hospitality Loyalty — Direct Answers</h1>
+      <p class="page-hero__desc">
+        Factual answers to common questions about cafe loyalty apps, mobile rewards, and QR programs — structured for clarity.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <AnswerFirst answer={directAnswers.cafe} label="Summary" />
+    </div>
+  </section>
+
+  {categories.map((cat) => {
+    const catFaqs = masterGeoFaqs.filter((f) => f.category === cat.id);
+    if (catFaqs.length === 0) return null;
+    return (
+      <section class="section section--sm" id={cat.id}>
+        <div class="container">
+          <h2 class="section__title" style="font-size:1.5rem; margin-bottom:1.25rem;">{cat.label}</h2>
+          <div class="faq-list reveal">
+            {catFaqs.map((f) => (
+              <div class="faq-item">
+                <button class="faq-item__question" type="button">{f.question}</button>
+                <div class="faq-item__answer"><p>{f.answer}</p></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <section class="section section--sm">
+    <div class="container reveal">
+      <h2 class="section__title" style="font-size:1.5rem; margin-bottom:1rem;">Scan Perks vs Alternatives</h2>
+      <ComparisonTableGeo rows={loyaltyComparisonTable} intro={competitorComparisonIntro} />
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} title="Full FAQ (Schema)" />
+
+  <section class="section section--sm">
+    <div class="container reveal" style="text-align:center;">
+      <AppCta class="btn btn--primary btn--lg">Start 14-Day Free Trial</AppCta>
+      <p style="margin-top:1rem; font-size:0.9rem; color:var(--text-muted);">
+        Also see: <a href="/how-it-works/" style="color:var(--cyan-400);">How it works</a>
+        {' · '}
+        <a href="/cafe-loyalty-program/" style="color:var(--cyan-400);">Cafe loyalty app</a>
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

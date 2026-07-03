@@ -1,0 +1,51 @@
+---
+import type { ComparisonRow } from '../data/geoContent';
+
+interface Props {
+  rows: ComparisonRow[];
+  intro?: string;
+  showCompetitor?: boolean;
+}
+
+const { rows, intro, showCompetitor = true } = Astro.props;
+---
+
+{intro && <p class="comparison-intro">{intro}</p>}
+<div class="glass glass--strong comparison-wrap">
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Scan Perks</th>
+        <th>Punch Cards</th>
+        <th>Enterprise</th>
+        {showCompetitor && <th>Typical Competitor</th>}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((row) => (
+        <tr>
+          <td>{row.feature}</td>
+          <td class="comparison-table__highlight">{row.scanPerks}</td>
+          <td>{row.punchCards}</td>
+          <td>{row.enterprise}</td>
+          {showCompetitor && <td>{row.competitor ?? '—'}</td>}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .comparison-intro {
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    line-height: 1.65;
+    max-width: 720px;
+  }
+
+  .comparison-wrap {
+    padding: 1.5rem;
+    overflow-x: auto;
+  }
+</style>

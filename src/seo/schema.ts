@@ -194,22 +194,70 @@ export function buildBlogPostingSchema(input: {
   };
 }
 
+export function buildHowToSchema(input: {
+  name: string;
+  description: string;
+  steps: { name: string; text: string }[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: input.name,
+    description: input.description,
+    step: input.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  };
+}
+
+export function buildReviewSchema(review: {
+  author: string;
+  reviewBody: string;
+  datePublished: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'SoftwareApplication',
+      name: SITE.name,
+      url: SITE.appWebUrl,
+    },
+    author: { '@type': 'Person', name: review.author },
+    reviewBody: review.reviewBody,
+    datePublished: review.datePublished,
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: '5',
+      bestRating: '5',
+    },
+  };
+}
+
 export function buildSoftwareApplicationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: SITE.name,
     applicationCategory: 'BusinessApplication',
-    operatingSystem: 'iOS, Android',
+    operatingSystem: 'Web, iOS, Android',
+    url: SITE.appWebUrl,
+    description: SITE.description,
     offers: {
       '@type': 'Offer',
       price: '10.00',
       priceCurrency: 'USD',
+      priceValidUntil: '2027-12-31',
+      url: `${SITE.url}/pricing/`,
+      description: '14-day free trial available',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      ratingCount: '120',
+    provider: {
+      '@type': 'Organization',
+      name: SITE.name,
+      url: SITE.url,
     },
   };
 }

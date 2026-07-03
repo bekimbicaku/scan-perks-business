@@ -17,7 +17,9 @@ const staticPages = [
   { path: '/business-loyalty-program/', priority: '0.99', changefreq: 'weekly' },
   { path: '/features/', priority: '0.95', changefreq: 'weekly' },
   { path: '/pricing/', priority: '0.95', changefreq: 'monthly' },
-  { path: '/about/', priority: '0.7', changefreq: 'monthly' },
+  { path: '/faq/', priority: '0.97', changefreq: 'weekly' },
+  { path: '/how-it-works/', priority: '0.96', changefreq: 'monthly' },
+  { path: '/about/', priority: '0.85', changefreq: 'monthly' },
   { path: '/contact/', priority: '0.7', changefreq: 'monthly' },
   { path: '/blog/', priority: '0.85', changefreq: 'weekly' },
 ];
@@ -36,7 +38,7 @@ export const GET: APIRoute = () => {
       })),
     ...blogArticles.map((a) => ({
       path: `/blog/${a.slug}/`,
-      priority: ['best-coffee-loyalty-programs', 'qr-code-loyalty-program-guide'].includes(a.slug)
+      priority: ['best-coffee-loyalty-programs', 'qr-code-loyalty-program-guide', 'best-mobile-loyalty-apps-coffee-shops-2026', 'how-to-choose-qr-loyalty-program-cafe'].includes(a.slug)
         ? '0.88'
         : '0.8',
       changefreq: 'monthly',

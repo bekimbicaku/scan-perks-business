@@ -4,39 +4,47 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import AppCta from '../../components/AppCta.astro';
 import FAQSection from '../../components/FAQSection.astro';
-
-const featuresFaqs = [
-  {
-    question: 'Does Scan Perks include a QR code loyalty program?',
-    answer:
-      'Yes. Every Scan Perks plan includes a full QR code loyalty program — unique venue QR, digital QR loyalty card for customers, visit analytics, and push offers from $10/month.',
-  },
-  {
-    question: 'What features are included in the cafe loyalty app?',
-    answer:
-      'Stamp-style rewards, counter QR scanning, customer profiles, push notifications, print-ready materials, and local discovery — all included from $10/month.',
-  },
-];
+import InternalLinks from '../../components/InternalLinks.astro';
+import AnswerFirst from '../../components/AnswerFirst.astro';
+import FeatureBulletList from '../../components/FeatureBulletList.astro';
+import { featuresSeo } from '../../data/pageSeo';
+import { featuresFaqs } from '../../data/conversationalFaqs';
+import { scanPerksFeatureList } from '../../data/geoContent';
+import { buildSoftwareApplicationSchema } from '../../seo/schema';
 ---
 
 <BaseLayout
-  title="QR Code Loyalty Program Features — Cafe & Bar Loyalty App | Scan Perks"
-  description="Scan Perks features: QR code loyalty program, cafe loyalty app, bar loyalty programs, push offers & analytics. Start free at app.scan-perks.com — from $10/mo."
+  title={featuresSeo.title}
+  description={featuresSeo.description}
   path="/features/"
-  keywords={['qr code loyalty program features', 'cafe loyalty app', 'bar loyalty programs', 'loyalty program features']}
+  keywords={['qr code loyalty program', 'cafe loyalty app', 'bar loyalty programs', 'coffee shop loyalty reward app']}
   faqs={featuresFaqs}
   breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Features', path: '/features/' }]}
+  extraSchema={[buildSoftwareApplicationSchema()]}
 >
   <Nav active="features" />
 
   <section class="page-hero">
     <div class="container reveal">
       <span class="section__label">Features</span>
-      <h1 class="page-hero__title">QR Code Loyalty Program <span class="gradient-text">Features</span></h1>
-      <p class="page-hero__seo-line">Cafe loyalty app, bar loyalty programs, and pub loyalty tools — all in one platform from $10/month.</p>
-      <p class="page-hero__desc">Everything you need to launch a QR code loyalty card system and grow repeat customers.</p>
+      <h1 class="page-hero__title">{featuresSeo.h1}</h1>
+      <p class="page-hero__seo-line">{featuresSeo.heroSeoLine}</p>
+      <p class="page-hero__desc">{featuresSeo.heroDesc}</p>
+      <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
+        <AppCta class="btn btn--primary btn--lg">Start Free — 14 Days</AppCta>
+        <a href="/pricing/" class="btn btn--glass btn--lg">See Pricing ($10/mo)</a>
+      </div>
     </div>
   </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <AnswerFirst answer={featuresSeo.directAnswer} />
+      <FeatureBulletList title="Core Features" items={scanPerksFeatureList} />
+    </div>
+  </section>
+
+  <InternalLinks />
 
   <section class="section">
     <div class="container">
@@ -44,22 +52,22 @@ const featuresFaqs = [
         <div class="glass-card reveal">
           <div class="feature-card__icon">📱</div>
           <h2 class="feature-card__title">QR Code Loyalty Program</h2>
-          <p class="feature-card__desc">Full QR code loyalty program with digital QR loyalty card for customers. <a href="/qr-loyalty-program/" style="color:var(--cyan-400);">QR loyalty guide →</a></p>
+          <p class="feature-card__desc">Full QR code loyalty program with digital QR loyalty card for customers. <a href="/qr-loyalty-program/">QR code loyalty program guide →</a></p>
         </div>
         <div class="glass-card reveal">
           <div class="feature-card__icon">☕</div>
           <h2 class="feature-card__title">Cafe Loyalty App</h2>
-          <p class="feature-card__desc">Stamp rewards and counter QR for coffee shops. <a href="/cafe-loyalty-program/" style="color:var(--cyan-400);">Cafe loyalty app →</a></p>
+          <p class="feature-card__desc">Coffee shop loyalty reward app with stamp rewards and counter QR. <a href="/cafe-loyalty-program/">Cafe loyalty app →</a></p>
         </div>
         <div class="glass-card reveal">
           <div class="feature-card__icon">🍺</div>
           <h2 class="feature-card__title">Bar Loyalty Programs</h2>
-          <p class="feature-card__desc">Pub loyalty scheme tools, happy-hour pushes, regular tracking. <a href="/bar-loyalty-program/" style="color:var(--cyan-400);">Bar loyalty →</a></p>
+          <p class="feature-card__desc">Pub loyalty scheme tools, happy-hour pushes, regular tracking. <a href="/bar-loyalty-program/">Bar loyalty programs →</a></p>
         </div>
         <div class="glass-card reveal">
           <div class="feature-card__icon">📊</div>
           <h2 class="feature-card__title">Real-Time Analytics</h2>
-          <p class="feature-card__desc">Track visits, rewards redeemed, and loyalty trends in your live dashboard.</p>
+          <p class="feature-card__desc">Track visits, rewards redeemed, and loyalty trends — see up to 24% more repeat visits.</p>
         </div>
         <div class="glass-card reveal">
           <div class="feature-card__icon">🔔</div>
@@ -80,8 +88,8 @@ const featuresFaqs = [
   <section class="section section--sm">
     <div class="container reveal">
       <div class="cta-banner">
-        <h2 class="cta-banner__title">Launch Your QR Loyalty Program Today</h2>
-        <p class="cta-banner__desc">Start at app.scan-perks.com — 14-day free trial, from $10/month.</p>
+        <h2 class="cta-banner__title">Launch in 5 Minutes — First 14 Days Free</h2>
+        <p class="cta-banner__desc">Join venues reporting 24% more repeat visits. Start at app.scan-perks.com.</p>
         <AppCta class="btn btn--primary btn--lg">Start Free Trial</AppCta>
       </div>
     </div>

@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AppCta from '../../components/AppCta.astro';
 import { blogArticles, getBlogArticle } from '../../data/blogArticles';
+import { cafeConversationalFaqs } from '../../data/conversationalFaqs';
 import { buildBlogPostingSchema } from '../../seo/schema';
 
 export function getStaticPaths() {
@@ -16,6 +17,10 @@ const article = getBlogArticle(slug!);
 if (!article) return Astro.redirect('/404');
 
 const path = `/blog/${article.slug}/`;
+
+const blogExtraFaqs =
+  article.slug === 'best-coffee-loyalty-programs' ? cafeConversationalFaqs : [];
+const allFaqs = [...article.faqs, ...blogExtraFaqs];
 ---
 
 <BaseLayout
@@ -23,7 +28,7 @@ const path = `/blog/${article.slug}/`;
   description={article.description}
   path={path}
   keywords={article.keywords}
-  faqs={article.faqs}
+  faqs={allFaqs}
   breadcrumbs={[
     { name: 'Home', path: '/' },
     { name: 'Blog', path: '/blog/' },
@@ -72,7 +77,7 @@ const path = `/blog/${article.slug}/`;
       </div>
     </section>
 
-    <FAQSection faqs={article.faqs} />
+    <FAQSection faqs={allFaqs} />
   </article>
 
   <Footer />

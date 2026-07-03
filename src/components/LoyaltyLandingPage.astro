@@ -1,15 +1,26 @@
 ---
 import type { LoyaltyPage } from '../data/loyaltyPages';
 import { blogArticles } from '../data/blogArticles';
+import { directAnswers } from '../data/geoContent';
 import FAQSection from './FAQSection.astro';
 import AppCta from './AppCta.astro';
+import AnswerFirst from './AnswerFirst.astro';
+import FeatureBulletList from './FeatureBulletList.astro';
 
 interface Props {
   page: LoyaltyPage;
+  faqs?: { question: string; answer: string }[];
 }
 
-const { page } = Astro.props;
+const { page, faqs = page.faqs } = Astro.props;
 const posts = blogArticles.filter((a) => page.supportingPosts.includes(a.slug));
+
+const slugToAnswer: Record<string, string> = {
+  'cafe-loyalty-program': directAnswers.cafe,
+  'qr-loyalty-program': directAnswers.qr,
+  'bar-loyalty-program': directAnswers.bar,
+};
+const directAnswer = page.quickAnswer ?? slugToAnswer[page.slug];
 ---
 
 <style>
@@ -37,6 +48,14 @@ const posts = blogArticles.filter((a) => page.supportingPosts.includes(a.slug));
     </div>
   </section>
 
+  {directAnswer && (
+    <section class="section section--sm">
+      <div class="container">
+        <AnswerFirst answer={directAnswer} />
+      </div>
+    </section>
+  )}
+
   {page.highlights.length > 0 && (
     <section class="section section--sm">
       <div class="container">
@@ -59,6 +78,9 @@ const posts = blogArticles.filter((a) => page.supportingPosts.includes(a.slug));
           <p class="feature-card__desc" style="font-size:1rem;">{section.body}</p>
         </div>
       ))}
+      {page.featureBullets && page.featureBullets.length > 0 && (
+        <FeatureBulletList title="Key capabilities" items={page.featureBullets} />
+      )}
     </div>
   </section>
 
@@ -125,7 +147,7 @@ const posts = blogArticles.filter((a) => page.supportingPosts.includes(a.slug));
     </section>
   )}
 
-  <FAQSection faqs={page.faqs} title={`${page.title} FAQ`} />
+  <FAQSection faqs={faqs} title={`${page.title} FAQ`} />
 
   <section class="section section--sm">
     <div class="container reveal">

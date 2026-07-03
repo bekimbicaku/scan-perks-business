@@ -5,9 +5,11 @@ import Footer from '../components/Footer.astro';
 import KeywordMarquee from '../components/KeywordMarquee.astro';
 import SeoQuerySection from '../components/SeoQuerySection.astro';
 import FAQSection from '../components/FAQSection.astro';
+import AnswerFirst from '../components/AnswerFirst.astro';
 import AppCta from '../components/AppCta.astro';
 import StoreBadges from '../components/StoreBadges.astro';
 import { landingContent } from '../data/content';
+import { directAnswers } from '../data/geoContent';
 import { buildSoftwareApplicationSchema } from '../seo/schema';
 
 const c = landingContent;
@@ -68,6 +70,17 @@ const growthQueries = c.seoQueries.slice(14);
           <div class="hero__float-card glass glass--strong hero__float-card--2">Reward unlocked!</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <AnswerFirst answer={directAnswers.home} />
+      <p style="text-align:center; margin-top:1rem; font-size:0.9rem;">
+        <a href="/faq/" style="color:var(--cyan-400); font-weight:600;">Coffee &amp; cafe loyalty FAQ →</a>
+        {' · '}
+        <a href="/how-it-works/" style="color:var(--cyan-400);">How QR loyalty works →</a>
+      </p>
     </div>
   </section>
 

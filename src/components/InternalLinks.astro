@@ -1,0 +1,72 @@
+---
+/** Internal links — GSC money pages with weak positions need homepage + features links */
+---
+
+<section class="section section--sm internal-links">
+  <div class="container">
+    <p class="internal-links__label">Explore loyalty solutions</p>
+    <nav class="internal-links__grid" aria-label="Loyalty program pages">
+      <a href="/qr-loyalty-program/" class="glass-card internal-links__card">
+        <strong>QR Code Loyalty Program</strong>
+        <span>Digital QR loyalty card — live in 5 min</span>
+      </a>
+      <a href="/cafe-loyalty-program/" class="glass-card internal-links__card">
+        <strong>Cafe Loyalty App</strong>
+        <span>Best coffee shop loyalty reward app</span>
+      </a>
+      <a href="/bar-loyalty-program/" class="glass-card internal-links__card">
+        <strong>Bar Loyalty Programs</strong>
+        <span>Pub loyalty scheme for independents</span>
+      </a>
+      <a href="/faq/" class="glass-card internal-links__card">
+        <strong>Loyalty FAQ</strong>
+        <span>Direct answers for AI &amp; conversational search</span>
+      </a>
+    </nav>
+  </div>
+</section>
+
+<style>
+  .internal-links__label {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .internal-links__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .internal-links__card {
+    display: block;
+    padding: 1.25rem;
+    transition: var(--transition);
+  }
+
+  .internal-links__card strong {
+    display: block;
+    color: var(--blue-300);
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .internal-links__card span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+
+  @media (max-width: 1024px) {
+    .internal-links__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .internal-links__grid { grid-template-columns: 1fr; }
+  }
+</style>

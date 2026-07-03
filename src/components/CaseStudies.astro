@@ -1,0 +1,66 @@
+---
+import type { CaseStudy } from '../data/geoContent';
+
+interface Props {
+  studies: CaseStudy[];
+}
+
+const { studies } = Astro.props;
+---
+
+<section class="case-studies">
+  <h2 class="section__title" style="font-size:1.75rem; margin-bottom:1.5rem;">Venue Case Studies</h2>
+  <div class="case-studies__grid">
+    {studies.map((s) => (
+      <blockquote class="glass-card case-study" itemscope itemtype="https://schema.org/Review">
+        <meta itemprop="datePublished" content={s.datePublished} />
+        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/SoftwareApplication">
+          <meta itemprop="name" content="Scan Perks" />
+        </div>
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+          <meta itemprop="ratingValue" content="5" />
+          <meta itemprop="bestRating" content="5" />
+        </div>
+        <p class="case-study__body" itemprop="reviewBody">"{s.reviewBody}"</p>
+        {s.metric && <p class="case-study__metric">{s.metric}</p>}
+        <footer class="case-study__author">
+          <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">{s.author}</span>
+          </span>
+          — {s.role}, {s.venue}
+        </footer>
+      </blockquote>
+    ))}
+  </div>
+</section>
+
+<style>
+  .case-studies__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .case-study {
+    padding: 1.5rem;
+    margin: 0;
+  }
+
+  .case-study__body {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .case-study__metric {
+    font-size: 0.8rem;
+    color: var(--cyan-400);
+    margin-bottom: 1rem;
+  }
+
+  .case-study__author {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+</style>
