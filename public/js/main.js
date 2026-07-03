@@ -50,19 +50,62 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Contact form
+  // Contact form — FormSubmit.co delivers to hello@scan-perks.com (static site, no backend)
   const form = document.getElementById('contact-form');
-  form?.addEventListener('submit', e => {
+  const statusEl = document.getElementById('form-status');
+
+  form?.addEventListener('submit', async e => {
     e.preventDefault();
+
+    const endpoint = form.dataset.endpoint;
+    if (!endpoint) return;
+
     const btn = form.querySelector('button[type="submit"]');
     const original = btn.textContent;
-    btn.textContent = 'Message Sent!';
-    btn.style.background = 'linear-gradient(135deg, #22d3ee, #3b82f6)';
-    setTimeout(() => {
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    if (statusEl) {
+      statusEl.textContent = '';
+      statusEl.className = 'form-status';
+    }
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (response.ok) {
+        form.reset();
+        if (statusEl) {
+          statusEl.textContent = 'Message sent! We will reply to your email soon.';
+          statusEl.className = 'form-status form-status--success';
+        }
+        btn.textContent = 'Message Sent!';
+        btn.style.background = 'linear-gradient(135deg, #22d3ee, #3b82f6)';
+      } else {
+        const msg = data.message || 'Could not send your message.';
+        throw new Error(msg);
+      }
+    } catch (err) {
+      if (statusEl) {
+        statusEl.textContent =
+          err.message === 'Could not send your message.'
+            ? 'Could not send your message. Please email hello@scan-perks.com directly.'
+            : `Could not send: ${err.message} Please email hello@scan-perks.com directly.`;
+        statusEl.className = 'form-status form-status--error';
+      }
       btn.textContent = original;
-      btn.style.background = '';
-      form.reset();
-    }, 3000);
+    } finally {
+      btn.disabled = false;
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.style.background = '';
+      }, 4000);
+    }
   });
 
   // Active nav link
