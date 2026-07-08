@@ -1,26 +1,34 @@
 ---
-/** Internal links — GSC money pages with weak positions need homepage + features links */
+/** Internal links — exact-match GSC keywords for top 10 rankings */
 ---
 
 <section class="section section--sm internal-links">
   <div class="container">
-    <p class="internal-links__label">Explore loyalty solutions</p>
+    <p class="internal-links__label">Top loyalty searches</p>
     <nav class="internal-links__grid" aria-label="Loyalty program pages">
-      <a href="/qr-loyalty-program/" class="glass-card internal-links__card">
-        <strong>QR Code Loyalty Program</strong>
-        <span>Digital QR loyalty card — live in 5 min</span>
-      </a>
-      <a href="/cafe-loyalty-program/" class="glass-card internal-links__card">
+      <a href="/cafe-loyalty-app/" class="glass-card internal-links__card">
         <strong>Cafe Loyalty App</strong>
-        <span>Best coffee shop loyalty reward app</span>
+        <span>Coffee shops — $10/mo, iOS &amp; Android</span>
       </a>
-      <a href="/bar-loyalty-program/" class="glass-card internal-links__card">
-        <strong>Bar Loyalty Programs</strong>
-        <span>Pub loyalty scheme for independents</span>
+      <a href="/pub-loyalty-scheme/" class="glass-card internal-links__card">
+        <strong>Pub Loyalty Scheme</strong>
+        <span>Independent pubs &amp; bars</span>
       </a>
-      <a href="/faq/" class="glass-card internal-links__card">
-        <strong>Loyalty FAQ</strong>
-        <span>Direct answers for AI &amp; conversational search</span>
+      <a href="/coffee-shop-loyalty-programs/" class="glass-card internal-links__card">
+        <strong>Coffee Shop Loyalty Programs</strong>
+        <span>Compared for independents</span>
+      </a>
+      <a href="/qr-code-loyalty-program/" class="glass-card internal-links__card">
+        <strong>QR Code Loyalty Program</strong>
+        <span>Loyalty QR — live in 5 min</span>
+      </a>
+      <a href="/pub-loyalty-card/" class="glass-card internal-links__card">
+        <strong>Pub Loyalty Card</strong>
+        <span>Digital card via QR</span>
+      </a>
+      <a href="/pricing/" class="glass-card internal-links__card">
+        <strong>$10/mo — Free Trial</strong>
+        <span>14 days, no contract</span>
       </a>
     </nav>
   </div>
@@ -39,7 +47,7 @@
 
   .internal-links__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
 
@@ -60,10 +68,6 @@
     font-size: 0.8rem;
     color: var(--text-secondary);
     line-height: 1.4;
-  }
-
-  @media (max-width: 1024px) {
-    .internal-links__grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 768px) {

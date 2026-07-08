@@ -6,6 +6,7 @@ import FAQSection from './FAQSection.astro';
 import AppCta from './AppCta.astro';
 import AnswerFirst from './AnswerFirst.astro';
 import FeatureBulletList from './FeatureBulletList.astro';
+import InternalLinks from './InternalLinks.astro';
 
 interface Props {
   page: LoyaltyPage;
@@ -17,8 +18,13 @@ const posts = blogArticles.filter((a) => page.supportingPosts.includes(a.slug));
 
 const slugToAnswer: Record<string, string> = {
   'cafe-loyalty-program': directAnswers.cafe,
+  'cafe-loyalty-app': directAnswers.cafe,
+  'coffee-shop-loyalty-programs': directAnswers.cafe,
   'qr-loyalty-program': directAnswers.qr,
+  'qr-code-loyalty-program': directAnswers.qr,
   'bar-loyalty-program': directAnswers.bar,
+  'pub-loyalty-scheme': directAnswers.bar,
+  'pub-loyalty-card': directAnswers.bar,
 };
 const directAnswer = page.quickAnswer ?? slugToAnswer[page.slug];
 ---
@@ -146,6 +152,8 @@ const directAnswer = page.quickAnswer ?? slugToAnswer[page.slug];
       </div>
     </section>
   )}
+
+  <InternalLinks />
 
   <FAQSection faqs={faqs} title={`${page.title} FAQ`} />
 

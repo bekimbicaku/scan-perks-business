@@ -62,6 +62,16 @@ export const qrConversationalFaqs: FaqItem[] = [
 
 export const barConversationalFaqs: FaqItem[] = [
   {
+    question: 'What is a pub loyalty scheme?',
+    answer:
+      'A pub loyalty scheme rewards regular drinkers with perks after each visit. Scan Perks digitizes pub loyalty schemes with QR scanning at the bar — digital pub loyalty card on phone, free-drink tiers, happy-hour push alerts — from $10/month at app.scan-perks.com.',
+  },
+  {
+    question: 'What is a pub loyalty card?',
+    answer:
+      'A pub loyalty card tracks drinks toward free pints or rewards. Scan Perks replaces plastic pub loyalty cards with a digital card on the customer\'s phone — scan QR at the bar, no lost cards, visit analytics from $10/month with 14-day free trial.',
+  },
+  {
     question: 'What are the best bar loyalty programs for independent pubs?',
     answer:
       'The best bar loyalty programs combine visit rewards, happy-hour push alerts, and regular tracking without enterprise cost. Scan Perks offers bar loyalty programs and pub loyalty scheme tools from $10/month with QR setup in 5 minutes.',

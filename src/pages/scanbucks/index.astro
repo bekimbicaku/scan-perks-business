@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import AnswerFirst from '../../components/AnswerFirst.astro';
+import AppCta from '../../components/AppCta.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import { SITE } from '../../data/content';
+import { buildSoftwareApplicationSchema } from '../../seo/schema';
+
+const scanbucksFaqs = [
+  {
+    question: 'Is Scanbucks the same as Scan Perks?',
+    answer:
+      'Yes. Scan Perks (scan-perks.com) is the hospitality loyalty platform often searched as "scanbucks" or "scan bucks." It provides QR cafe loyalty apps, pub loyalty schemes, and bar loyalty programs from $10/month at app.scan-perks.com.',
+  },
+  {
+    question: 'What is the Scan Perks app?',
+    answer:
+      'Scan Perks is a QR-based loyalty app for cafes, bars, and restaurants. Customers scan venue QR codes to earn rewards; owners manage programs at app.scan-perks.com. Available on iOS, Android, and web — 14-day free trial.',
+  },
+  {
+    question: 'How much does Scan Perks (scanbucks) cost?',
+    answer:
+      'Scan Perks costs $10/month (Starter, up to 200 members) or $15/month (Growth, unlimited). Both include QR loyalty, analytics, and a 14-day free trial with no contract.',
+  },
+];
+
+const directAnswer =
+  'Scan Perks (scan-perks.com) is the QR loyalty platform behind "scanbucks" searches — a cafe loyalty app and pub loyalty scheme for independent venues. Customers scan QR codes to earn rewards; pricing is $10–15/month with a 14-day free trial at app.scan-perks.com.';
+---
+
+<BaseLayout
+  title="Scanbucks → Scan Perks — Cafe & Pub Loyalty App"
+  description="Looking for scanbucks? Scan Perks is the QR cafe loyalty app & pub loyalty scheme — coffee shop loyalty programs from $10/mo. Start free at app.scan-perks.com."
+  path="/scanbucks/"
+  keywords={['scanbucks', 'scan perks', 'scan bucks', 'perks app', 'cafe loyalty app']}
+  faqs={scanbucksFaqs}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Scanbucks', path: '/scanbucks/' },
+  ]}
+  extraSchema={[buildSoftwareApplicationSchema()]}
+>
+  <Nav />
+
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section__label">Scanbucks</span>
+      <h1 class="page-hero__title">Looking for Scanbucks? You're at Scan Perks.</h1>
+      <p class="page-hero__desc">
+        Scan Perks is the QR loyalty platform for cafes, pubs, and bars — cafe loyalty app, pub loyalty scheme, and bar loyalty programs from $10/month.
+      </p>
+      <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
+        <AppCta class="btn btn--primary btn--lg">Start Free — app.scan-perks.com</AppCta>
+        <a href="/cafe-loyalty-program/" class="btn btn--glass btn--lg">Cafe Loyalty App</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <AnswerFirst answer={directAnswer} />
+      <ul class="scanbucks-links">
+        <li><a href="/cafe-loyalty-program/">Cafe loyalty app</a> — coffee shop loyalty programs</li>
+        <li><a href="/bar-loyalty-program/">Pub loyalty scheme</a> — pub loyalty card via QR</li>
+        <li><a href="/qr-loyalty-program/">QR code loyalty program</a> — loyalty QR for venues</li>
+        <li><a href="/pricing/">Pricing</a> — $10/mo Starter, 14-day free trial</li>
+      </ul>
+    </div>
+  </section>
+
+  <FAQSection faqs={scanbucksFaqs} title="Scanbucks / Scan Perks FAQ" />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .scanbucks-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+  }
+
+  .scanbucks-links li {
+    padding: 0.65rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+
+  .scanbucks-links a {
+    color: var(--cyan-400);
+    font-weight: 600;
+  }
+</style>

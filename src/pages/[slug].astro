@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import LoyaltyLandingPage from '../components/LoyaltyLandingPage.astro';
-import { loyaltyPages, getLoyaltyPage } from '../data/loyaltyPages';
+import { loyaltyPages, getLoyaltyPage, getAllLandingSlugs } from '../data/loyaltyPages';
 import {
   barConversationalFaqs,
   cafeConversationalFaqs,
@@ -12,19 +12,24 @@ import {
 import { buildLoyaltyServiceSchema, buildSoftwareApplicationSchema } from '../seo/schema';
 
 export function getStaticPaths() {
-  return loyaltyPages.map((page) => ({ params: { slug: page.slug } }));
+  return getAllLandingSlugs().map((slug) => ({ params: { slug } }));
 }
+
+const conversationalBySlug: Record<string, typeof barConversationalFaqs> = {
+  'bar-loyalty-program': barConversationalFaqs,
+  'cafe-loyalty-program': cafeConversationalFaqs,
+  'cafe-loyalty-app': cafeConversationalFaqs,
+  'coffee-shop-loyalty-programs': cafeConversationalFaqs,
+  'qr-loyalty-program': qrConversationalFaqs,
+  'qr-code-loyalty-program': qrConversationalFaqs,
+  'pub-loyalty-scheme': barConversationalFaqs,
+  'pub-loyalty-card': barConversationalFaqs,
+};
 
 const { slug } = Astro.params;
 const page = getLoyaltyPage(slug!);
 
 if (!page) return Astro.redirect('/404');
-
-const conversationalBySlug: Record<string, typeof barConversationalFaqs> = {
-  'bar-loyalty-program': barConversationalFaqs,
-  'cafe-loyalty-program': cafeConversationalFaqs,
-  'qr-loyalty-program': qrConversationalFaqs,
-};
 
 const extraFaqs = conversationalBySlug[page.slug] ?? [];
 const allFaqs = [...page.faqs, ...extraFaqs];

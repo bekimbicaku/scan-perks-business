@@ -343,37 +343,56 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: 'best-coffee-loyalty-programs',
-    title: 'Best Coffee Loyalty Programs for Independent Cafes (2025)',
-    metaTitle: 'Best Coffee Loyalty Programs — Points & Free Drinks | Scan Perks',
+    title: 'Coffee Shop Loyalty Programs — Best Apps Compared (2026)',
+    metaTitle: 'Coffee Shop Loyalty Programs — Cafe Loyalty App Guide',
     description:
-      'Which coffee company has the best loyalty program? Compare best coffee loyalty programs for independents — free drinks, points & QR rewards from $10/mo.',
+      'Coffee shop loyalty programs compared: cafe loyalty app, coffee shop loyalty reward app & QR stamps. Independent cafes from $10/mo — Scan Perks free trial.',
     keywords: [
-      'best coffee loyalty programs',
+      'coffee shop loyalty programs',
       'cafe loyalty app',
       'coffee shop loyalty program',
       'coffee loyalty app',
+      'coffee shop loyalty reward app',
+      'best coffee loyalty programs',
+      'coffee loyalty program',
     ],
-    publishedAt: '2025-09-01',
+    publishedAt: '2026-07-01',
     answer:
-      'The best coffee loyalty programs for independents offer digital stamp rewards, easy QR signup, and affordable pricing. Scan Perks cafe loyalty app delivers all three from $10/month — among the top choices for neighborhood coffee shops.',
+      'Coffee shop loyalty programs for independents use digital stamp rewards, QR counter signup, and affordable monthly pricing. Scan Perks cafe loyalty app delivers coffee shop loyalty programs with iOS/Android apps, visit analytics, and push offers — $10/month for 200 members, 14-day free trial.',
     sections: [
+      {
+        heading: 'What Are Coffee Shop Loyalty Programs?',
+        body: 'Coffee shop loyalty programs reward repeat customers with free drinks, points, or stamps. Options range from paper punch cards (free, no data) to enterprise apps ($200+/month). Scan Perks offers a middle path: full coffee shop loyalty program via QR scan — $10/month, setup in ~5 minutes, no POS integration.',
+      },
+      {
+        heading: 'Best Cafe Loyalty App for Independent Coffee Shops',
+        body: 'The top cafe loyalty app for independents is affordable, mobile-friendly, and fast at the counter. Scan Perks: QR stamp rewards, coffee shop loyalty reward app on iOS/Android, member profiles, push notifications — $10/month Starter, 14-day free trial at app.scan-perks.com.',
+      },
       {
         heading: 'Which Coffee Company Has the Best Loyalty Program for Free Drinks?',
         body: 'Chains like Starbucks win on scale, but independents need affordable tools. The best coffee loyalty programs for earning points and free drinks at neighborhood cafes use visit-based stamp rewards — Scan Perks delivers this via QR from $10/month without enterprise contracts.',
       },
       {
-        heading: 'Best Rewards Program for Frequent Specialty Coffee Customers',
-        body: 'Frequent customers want fast counter signup and meaningful perks. Scan Perks tracks visits, sends push offers, and lists your cafe in local discovery — among the best rewards programs in the specialty coffee industry for independents.',
+        heading: 'Coffee Shop Loyalty Reward App vs Chain Apps',
+        body: 'Starbucks-scale apps cost millions to build. A coffee shop loyalty reward app for independents should cost under $20/month and need no POS lock-in. Scan Perks checks both: digital stamps, counter QR, analytics, push offers from $10/month.',
       },
       {
-        heading: 'Scan Perks vs Chain Coffee Apps',
-        body: 'Starbucks-scale apps cost millions to build. Scan Perks gives independent cafes a professional cafe loyalty app with stamp-style rewards and push notifications — without enterprise budgets.',
+        heading: 'Best Rewards Program for Frequent Specialty Coffee Customers',
+        body: 'Frequent customers want fast counter signup and meaningful perks. Scan Perks tracks visits, sends push offers, and lists your cafe in local discovery — among the best rewards programs in the specialty coffee industry for independents at $10/month.',
       },
     ],
     faqs: [
       {
         question: 'What is the best cafe loyalty app for small coffee shops?',
-        answer: 'Scan Perks: QR stamp rewards, up to 200 customers on Starter ($10/mo), push promos, and local discovery.',
+        answer: 'Scan Perks: QR stamp rewards, coffee shop loyalty program tools, up to 200 customers on Starter ($10/mo), iOS/Android apps, push promos, and local discovery.',
+      },
+      {
+        question: 'What are coffee shop loyalty programs?',
+        answer: 'Coffee shop loyalty programs reward repeat visits with free drinks or points. Scan Perks runs them via QR scan at the counter — digital stamps, analytics, push offers from $10/month.',
+      },
+      {
+        question: 'What is a coffee shop loyalty reward app?',
+        answer: 'A coffee shop loyalty reward app lets customers earn perks on their phone. Scan Perks offers stamp rewards, member profiles, and push notifications — $10/month, no POS required.',
       },
     ],
     clusterPage: {

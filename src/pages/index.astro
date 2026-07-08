@@ -8,6 +8,7 @@ import FAQSection from '../components/FAQSection.astro';
 import AnswerFirst from '../components/AnswerFirst.astro';
 import AppCta from '../components/AppCta.astro';
 import StoreBadges from '../components/StoreBadges.astro';
+import SeoKeywordHub from '../components/SeoKeywordHub.astro';
 import { landingContent } from '../data/content';
 import { directAnswers } from '../data/geoContent';
 import { buildSoftwareApplicationSchema } from '../seo/schema';
@@ -94,20 +95,20 @@ const growthQueries = c.seoQueries.slice(14);
         <p class="section__subtitle">Dedicated solutions to get bar loyal customers, restaurant loyal customers, and cafe regulars — all from one platform.</p>
       </div>
       <div class="features-grid">
-        <a href="/qr-loyalty-program/" class="glass-card reveal" style="display:block; border-color: rgba(59,130,246,0.35);">
+        <a href="/qr-code-loyalty-program/" class="glass-card reveal" style="display:block; border-color: rgba(59,130,246,0.35);">
           <div class="feature-card__icon">📱</div>
           <h3 class="feature-card__title">QR Code Loyalty Program</h3>
-          <p class="feature-card__desc">Digital QR loyalty card — replace punch cards with smartphone scanning and full analytics.</p>
+          <p class="feature-card__desc">Loyalty QR codes and digital cards — replace punch cards with smartphone scanning.</p>
         </a>
-        <a href="/bar-loyalty-program/" class="glass-card reveal" style="display:block;">
+        <a href="/pub-loyalty-scheme/" class="glass-card reveal" style="display:block;">
           <div class="feature-card__icon">🍺</div>
-          <h3 class="feature-card__title">Bar Loyalty Programs</h3>
-          <p class="feature-card__desc">Pub loyalty scheme, happy-hour pushes, and repeat visit tracking for bars and pubs.</p>
+          <h3 class="feature-card__title">Pub Loyalty Scheme</h3>
+          <p class="feature-card__desc">Pub loyalty card, happy-hour pushes, and repeat visit tracking for bars and pubs.</p>
         </a>
-        <a href="/cafe-loyalty-program/" class="glass-card reveal" style="display:block;">
+        <a href="/cafe-loyalty-app/" class="glass-card reveal" style="display:block;">
           <div class="feature-card__icon">☕</div>
           <h3 class="feature-card__title">Cafe Loyalty App</h3>
-          <p class="feature-card__desc">Best coffee loyalty programs for independents — digital stamps and counter QR.</p>
+          <p class="feature-card__desc">Coffee shop loyalty programs for independents — digital stamps and counter QR.</p>
         </a>
         <a href="/restaurant-loyalty-program/" class="glass-card reveal" style="display:block;">
           <div class="feature-card__icon">🍽️</div>
@@ -166,6 +167,8 @@ const growthQueries = c.seoQueries.slice(14);
       </div>
     </div>
   </section>
+
+  <SeoKeywordHub />
 
   <FAQSection faqs={c.faqs} />
 

@@ -16,8 +16,13 @@ import { SITE } from '../data/content';
       <div>
         <h4 class="footer__heading">Loyalty Programs</h4>
         <ul class="footer__links">
+          <li><a href="/cafe-loyalty-app/">Cafe Loyalty App</a></li>
+          <li><a href="/pub-loyalty-scheme/">Pub Loyalty Scheme</a></li>
+          <li><a href="/coffee-shop-loyalty-programs/">Coffee Shop Loyalty</a></li>
+          <li><a href="/qr-code-loyalty-program/">QR Code Loyalty</a></li>
+          <li><a href="/pub-loyalty-card/">Pub Loyalty Card</a></li>
           <li><a href="/business-loyalty-program/">Business Loyalty Guide</a></li>
-          {loyaltyPages.map((p) => (
+          {loyaltyPages.filter((p) => !['cafe-loyalty-program', 'bar-loyalty-program', 'qr-loyalty-program'].includes(p.slug)).map((p) => (
             <li><a href={`/${p.slug}/`}>{p.title}</a></li>
           ))}
         </ul>

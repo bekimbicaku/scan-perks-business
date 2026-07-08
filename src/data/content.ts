@@ -40,9 +40,9 @@ export interface LandingContent {
 
 export const landingContent: LandingContent = {
   metaTitle:
-    'QR Code Loyalty Program & Bar Loyalty Programs | Scan Perks',
+    'Cafe Loyalty App & Pub Loyalty Scheme — QR Loyalty | Scan Perks',
   metaDescription:
-    'QR code loyalty program for bars, cafes & restaurants. Bar loyalty programs, cafe loyalty app & pub loyalty scheme — grow customers from $10/mo. Start at app.scan-perks.com.',
+    'Cafe loyalty app for coffee shops + pub loyalty scheme for bars. Coffee shop loyalty programs via QR — $10/mo, 14-day free trial. app.scan-perks.com',
   metaKeywords: [
     'qr code loyalty program',
     'qr code loyalty card',
@@ -71,9 +71,9 @@ export const landingContent: LandingContent = {
     'small business marketing restaurant',
     'boost restaurant sales',
   ],
-  heroTitle: 'Grow Your Business with Scan Perks',
+  heroTitle: 'Cafe Loyalty App & Pub Loyalty Scheme',
   heroSeoLine:
-    'QR code loyalty program for bars, cafes & restaurants — bar loyalty programs, cafe loyalty app, and pub loyalty schemes from $10/month.',
+    'Cafe loyalty app, pub loyalty scheme, and QR code loyalty program for coffee shops and bars — from $10/month.',
   heroDescription:
     'The smart loyalty system for hospitality owners who want more repeat visits, stronger customer relationships, and higher revenue — without enterprise cost.',
   keywordMarquee: [
@@ -108,6 +108,41 @@ export const landingContent: LandingContent = {
     '$10/month',
   ],
   seoQueries: [
+    {
+      query: 'What is the best cafe loyalty app for coffee shops?',
+      answer:
+        'Scan Perks is a cafe loyalty app for independent coffee shops: digital stamp rewards, counter QR scanning, iOS/Android customer apps, and visit analytics — $10/month for up to 200 members, 14-day free trial at app.scan-perks.com.',
+      href: '/cafe-loyalty-program/',
+      label: 'Cafe loyalty app →',
+    },
+    {
+      query: 'What is a pub loyalty scheme?',
+      answer:
+        'A pub loyalty scheme rewards regular drinkers with perks each visit. Scan Perks digitizes pub loyalty with a QR code at the bar — digital pub loyalty card on phone, free-drink tiers, happy-hour push alerts — $10–15/month.',
+      href: '/bar-loyalty-program/',
+      label: 'Pub loyalty scheme →',
+    },
+    {
+      query: 'What are coffee shop loyalty programs?',
+      answer:
+        'Coffee shop loyalty programs reward repeat customers with free drinks, points, or stamps. Scan Perks offers coffee shop loyalty programs via QR: customers scan at the counter, owners track visits and send push offers — from $10/month.',
+      href: '/cafe-loyalty-program/',
+      label: 'Coffee shop loyalty →',
+    },
+    {
+      query: 'What is a pub loyalty card?',
+      answer:
+        'A pub loyalty card tracks drinks toward free pints or perks. Scan Perks replaces plastic pub loyalty cards with a digital card on the customer\'s phone — scan QR at the bar, no lost cards, full analytics from $10/month.',
+      href: '/bar-loyalty-program/',
+      label: 'Pub loyalty card →',
+    },
+    {
+      query: 'What is scanbucks / Scan Perks?',
+      answer:
+        'Scan Perks (scan-perks.com) is the QR loyalty platform searched as "scanbucks." It provides cafe loyalty apps, pub loyalty schemes, and bar loyalty programs for independent venues from $10/month.',
+      href: '/scanbucks/',
+      label: 'Scanbucks → Scan Perks',
+    },
     {
       query: 'What is a QR code loyalty program?',
       answer:

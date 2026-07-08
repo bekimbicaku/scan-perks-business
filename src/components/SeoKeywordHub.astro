@@ -1,0 +1,76 @@
+---
+/** Top GSC keyword hub — exact-match internal links for top 10 rankings */
+const links = [
+  { href: '/cafe-loyalty-app/', keyword: 'Cafe Loyalty App', desc: 'Coffee shop loyalty app — $10/mo, iOS & Android' },
+  { href: '/pub-loyalty-scheme/', keyword: 'Pub Loyalty Scheme', desc: 'Digital pub loyalty for independent bars' },
+  { href: '/pub-loyalty-card/', keyword: 'Pub Loyalty Card', desc: 'Replace plastic cards with QR' },
+  { href: '/coffee-shop-loyalty-programs/', keyword: 'Coffee Shop Loyalty Programs', desc: 'Programs compared for independents' },
+  { href: '/qr-code-loyalty-program/', keyword: 'QR Code Loyalty Program', desc: 'Loyalty QR — setup in 5 minutes' },
+  { href: '/bar-loyalty-program/', keyword: 'Bar Loyalty Programs', desc: 'Happy-hour pushes & regular tracking' },
+  { href: '/cafe-loyalty-program/', keyword: 'Cafe Loyalty Program', desc: 'Full coffee shop loyalty guide' },
+  { href: '/qr-loyalty-program/', keyword: 'QR Loyalty Program', desc: 'Digital loyalty card on phone' },
+  { href: '/scanbucks/', keyword: 'Scanbucks → Scan Perks', desc: 'QR loyalty platform' },
+  { href: '/faq/', keyword: 'Loyalty FAQ', desc: 'Answers for cafe & pub owners' },
+  { href: '/pricing/', keyword: 'Pricing — $10/mo', desc: '14-day free trial' },
+  { href: '/features/', keyword: 'Features', desc: 'QR stamps, push offers, analytics' },
+];
+---
+
+<section class="section section--sm seo-keyword-hub">
+  <div class="container">
+    <div class="section__header reveal">
+      <span class="section__label">Top Searches</span>
+      <h2 class="section__title">Cafe, Pub &amp; QR Loyalty Solutions</h2>
+      <p class="section__subtitle">Find the right loyalty program for your venue — from $10/month with a 14-day free trial.</p>
+    </div>
+    <nav class="seo-keyword-hub__grid" aria-label="Top loyalty program pages">
+      {links.map((link) => (
+        <a href={link.href} class="glass-card seo-keyword-hub__card reveal">
+          <strong>{link.keyword}</strong>
+          <span>{link.desc}</span>
+        </a>
+      ))}
+    </nav>
+  </div>
+</section>
+
+<style>
+  .seo-keyword-hub__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .seo-keyword-hub__card {
+    display: block;
+    padding: 1.15rem;
+    transition: var(--transition);
+  }
+
+  .seo-keyword-hub__card:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .seo-keyword-hub__card strong {
+    display: block;
+    color: var(--blue-300);
+    font-size: 0.92rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.35;
+  }
+
+  .seo-keyword-hub__card span {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+
+  @media (max-width: 1024px) {
+    .seo-keyword-hub__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .seo-keyword-hub__grid { grid-template-columns: 1fr; }
+  }
+</style>

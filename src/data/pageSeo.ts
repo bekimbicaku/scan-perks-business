@@ -1,10 +1,10 @@
 /** CTR-optimized titles & descriptions (GSC: rank 5–8, 0% CTR on features/pricing) */
 
 export const featuresSeo = {
-  title: 'Boost Repeat Visits 24% — QR Cafe & Bar Loyalty | Scan Perks',
+  title: 'Cafe Loyalty App Features — $10/mo, 14 Days Free | Scan Perks',
   description:
-    'Stop losing regulars to chains. QR loyalty for cafés & bars — live in 5 min, from $10/mo. 14-day free trial → app.scan-perks.com',
-  h1: 'QR Loyalty That Grows Repeat Customers',
+    'Cafe loyalty app + pub loyalty scheme tools. QR stamps, push offers, iOS/Android — live in 5 min. 14-day free trial, no contract → app.scan-perks.com',
+  h1: 'Cafe Loyalty App & QR Loyalty Features',
   heroSeoLine:
     'Cafe loyalty app & bar loyalty programs — venues report up to 24% more return visits with Scan Perks.',
   heroDesc:
@@ -14,10 +14,10 @@ export const featuresSeo = {
 };
 
 export const pricingSeo = {
-  title: '$10/mo Cafe & Bar Loyalty — 14 Days Free | Scan Perks',
+  title: 'Cafe Loyalty App — $10/mo, 14-Day Free Trial | Scan Perks',
   description:
-    'Skip $200/mo enterprise tools. Café & bar loyalty from $10/mo — QR rewards, push offers, analytics. No contract. Start free → app.scan-perks.com',
-  h1: 'Simple Pricing That Pays for Itself',
+    'Coffee shop loyalty program from $10/mo. Pub loyalty scheme + QR rewards included. No $200/mo contracts. Start free → app.scan-perks.com',
+  h1: 'Cafe & Pub Loyalty — From $10/Month',
   heroDesc:
     'One extra weekly regular covers your subscription. Plans from $10/month with a 14-day free trial — cancel anytime.',
   directAnswer:
