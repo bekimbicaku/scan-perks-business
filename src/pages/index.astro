@@ -9,8 +9,9 @@ import AnswerFirst from '../components/AnswerFirst.astro';
 import AppCta from '../components/AppCta.astro';
 import StoreBadges from '../components/StoreBadges.astro';
 import SeoKeywordHub from '../components/SeoKeywordHub.astro';
-import { landingContent } from '../data/content';
+import { landingContent, SITE } from '../data/content';
 import { directAnswers } from '../data/geoContent';
+import { G2_LISTING } from '../data/g2AndOutreach';
 import { buildSoftwareApplicationSchema } from '../seo/schema';
 
 const c = landingContent;
@@ -82,6 +83,25 @@ const growthQueries = c.seoQueries.slice(14);
         {' · '}
         <a href="/how-it-works/" style="color:var(--cyan-400);">How QR loyalty works →</a>
       </p>
+    </div>
+  </section>
+
+  <section class="section section--sm g2-review-strip">
+    <div class="container reveal">
+      <div class="g2-review-strip__inner glass-card">
+        <div>
+          <p class="g2-review-strip__label">Using Scan Perks?</p>
+          <p class="g2-review-strip__text">Leave a short review on G2 — it helps other cafe &amp; pub owners find us.</p>
+        </div>
+        <a
+          href={G2_LISTING.profileUrl || SITE.social.g2}
+          class="btn btn--primary"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Leave a G2 Review →
+        </a>
+      </div>
     </div>
   </section>
 
@@ -194,5 +214,40 @@ const growthQueries = c.seoQueries.slice(14);
     margin-bottom: 1rem;
     line-height: 1.6;
     font-weight: 500;
+  }
+
+  .g2-review-strip__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .g2-review-strip__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--cyan-400);
+    margin-bottom: 0.25rem;
+  }
+
+  .g2-review-strip__text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 640px) {
+    .g2-review-strip__inner {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .g2-review-strip__inner .btn {
+      width: 100%;
+    }
   }
 </style>
