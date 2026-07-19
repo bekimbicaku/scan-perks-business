@@ -11,6 +11,7 @@ export const SITE = {
     twitter: 'https://twitter.com/scanperks',
     instagram: 'https://instagram.com/scanperks',
     linkedin: 'https://linkedin.com/company/scanperks',
+    g2: 'https://www.g2.com/products/scan-perks/reviews',
   },
 } as const;
 
@@ -112,28 +113,28 @@ export const landingContent: LandingContent = {
       query: 'What is the best cafe loyalty app for coffee shops?',
       answer:
         'Scan Perks is a cafe loyalty app for independent coffee shops: digital stamp rewards, counter QR scanning, iOS/Android customer apps, and visit analytics — $10/month for up to 200 members, 14-day free trial at app.scan-perks.com.',
-      href: '/cafe-loyalty-program/',
+      href: '/cafe-loyalty-app/',
       label: 'Cafe loyalty app →',
     },
     {
       query: 'What is a pub loyalty scheme?',
       answer:
         'A pub loyalty scheme rewards regular drinkers with perks each visit. Scan Perks digitizes pub loyalty with a QR code at the bar — digital pub loyalty card on phone, free-drink tiers, happy-hour push alerts — $10–15/month.',
-      href: '/bar-loyalty-program/',
+      href: '/pub-loyalty-scheme/',
       label: 'Pub loyalty scheme →',
     },
     {
       query: 'What are coffee shop loyalty programs?',
       answer:
         'Coffee shop loyalty programs reward repeat customers with free drinks, points, or stamps. Scan Perks offers coffee shop loyalty programs via QR: customers scan at the counter, owners track visits and send push offers — from $10/month.',
-      href: '/cafe-loyalty-program/',
+      href: '/cafe-loyalty-app/',
       label: 'Coffee shop loyalty →',
     },
     {
       query: 'What is a pub loyalty card?',
       answer:
         'A pub loyalty card tracks drinks toward free pints or perks. Scan Perks replaces plastic pub loyalty cards with a digital card on the customer\'s phone — scan QR at the bar, no lost cards, full analytics from $10/month.',
-      href: '/bar-loyalty-program/',
+      href: '/pub-loyalty-card/',
       label: 'Pub loyalty card →',
     },
     {
@@ -147,14 +148,14 @@ export const landingContent: LandingContent = {
       query: 'What is a QR code loyalty program?',
       answer:
         'A QR code loyalty program lets customers scan a code at your venue to earn digital rewards on their phone. Scan Perks is a hospitality QR code loyalty program with analytics, push offers, and QR loyalty cards — from $10/month at app.scan-perks.com.',
-      href: '/qr-loyalty-program/',
+      href: '/qr-code-loyalty-program/',
       label: 'QR code loyalty program →',
     },
     {
       query: 'What is a QR code loyalty card?',
       answer:
         'A QR code loyalty card is a digital reward card stored on a customer\'s smartphone — they scan your venue QR to collect perks. Scan Perks replaces paper punch cards with QR loyalty cards plus owner analytics from $10/month.',
-      href: '/qr-loyalty-program/',
+      href: '/qr-code-loyalty-program/',
       label: 'QR loyalty card →',
     },
     {
@@ -175,14 +176,14 @@ export const landingContent: LandingContent = {
       query: 'What is the best cafe loyalty app for coffee shops?',
       answer:
         'Scan Perks is a cafe loyalty app with digital stamp rewards, counter QR scanning, push promos, and local discovery — among the best options for independent coffee shops at $10/month.',
-      href: '/cafe-loyalty-program/',
+      href: '/cafe-loyalty-app/',
       label: 'Cafe loyalty app →',
     },
     {
       query: 'What are the best coffee loyalty programs?',
       answer:
         'The best coffee loyalty programs combine easy signup, stamp-style rewards, and owner analytics without enterprise cost. Scan Perks ranks among the best for independents — QR loyalty from $10/month.',
-      href: '/cafe-loyalty-program/',
+      href: '/cafe-loyalty-app/',
       label: 'Best coffee loyalty →',
     },
     {
@@ -203,7 +204,7 @@ export const landingContent: LandingContent = {
       query: 'What is an affordable loyalty program for cafes and coffee shops?',
       answer:
         'Scan Perks offers cafe loyalty programs from $10/month — far cheaper than enterprise solutions. Stamp-style digital rewards, customer profiles, and local discovery help coffee shops grow loyal customers without hardware.',
-      href: '/cafe-loyalty-program/',
+      href: '/cafe-loyalty-app/',
       label: 'Cafe loyalty program →',
     },
     {
@@ -217,7 +218,7 @@ export const landingContent: LandingContent = {
       query: 'What is a QR code loyalty program and how does it work?',
       answer:
         'A QR code loyalty program lets customers scan a unique code at your venue to join and collect rewards digitally. Scan Perks replaces punch cards with instant smartphone scanning — no app download required for staff, full analytics included.',
-      href: '/qr-loyalty-program/',
+      href: '/qr-code-loyalty-program/',
       label: 'QR loyalty program →',
     },
     {
@@ -252,7 +253,7 @@ export const landingContent: LandingContent = {
       query: 'Can I replace punch cards with a digital loyalty program?',
       answer:
         'Yes. Scan Perks replaces paper punch cards with QR scanning. Customers keep rewards on their phone, you get full visit data and can send push offers — something punch cards cannot do.',
-      href: '/qr-loyalty-program/',
+      href: '/qr-code-loyalty-program/',
       label: 'Digital vs punch cards →',
     },
     {
@@ -280,7 +281,7 @@ export const landingContent: LandingContent = {
       query: 'What loyalty program features do cafes need most?',
       answer:
         'Cafes need fast QR scanning at the counter, stamp-style rewards, visit tracking, and occasional push promos (new menu, seasonal drinks). Scan Perks includes all of this plus print-ready QR materials.',
-      href: '/cafe-loyalty-program/',
+      href: '/cafe-loyalty-app/',
       label: 'Cafe features →',
     },
     {
@@ -350,7 +351,7 @@ export const landingContent: LandingContent = {
       query: 'What is the best way to increase foot traffic at a cafe or coffee shop?',
       answer:
         'Reward regulars with stamp-style digital perks, promote new menu items via push notifications, and get listed in Scan Perks local discovery. Neighborhood cafes grow foot traffic by keeping morning customers loyal and visible to nearby app users.',
-      href: '/cafe-loyalty-program/',
+      href: '/cafe-loyalty-app/',
       label: 'Cafe foot traffic →',
     },
     {

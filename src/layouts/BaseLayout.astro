@@ -10,6 +10,8 @@ interface Props {
   title: string;
   description: string;
   path?: string;
+  /** Override canonical path (e.g. secondary page → primary money URL) */
+  canonicalPath?: string;
   keywords?: string[];
   ogImage?: string;
   noindex?: boolean;
@@ -22,6 +24,7 @@ const {
   title,
   description,
   path = '/',
+  canonicalPath,
   keywords = [],
   ogImage = '/favicon.png',
   noindex = false,
@@ -30,8 +33,9 @@ const {
   faqs,
 } = Astro.props;
 
-const canonical = `${SITE.url}${path}`;
-const baseSchema = buildBaseSchema({ title, description, path });
+const resolvedCanonicalPath = canonicalPath ?? path;
+const canonical = `${SITE.url}${resolvedCanonicalPath}`;
+const baseSchema = buildBaseSchema({ title, description, path: resolvedCanonicalPath });
 const schemas = [...baseSchema, ...extraSchema];
 
 if (breadcrumbs?.length) {

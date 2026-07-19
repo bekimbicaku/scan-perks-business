@@ -31,7 +31,12 @@ export function buildBaseSchema(page: SchemaPageInput) {
         email: SITE.email,
         contactType: 'customer support',
       },
-      sameAs: [SITE.social.twitter, SITE.social.instagram, SITE.social.linkedin],
+      sameAs: [
+        SITE.social.twitter,
+        SITE.social.instagram,
+        SITE.social.linkedin,
+        ...(SITE.social.g2 ? [SITE.social.g2] : []),
+      ].filter(Boolean),
     },
     {
       '@context': 'https://schema.org',

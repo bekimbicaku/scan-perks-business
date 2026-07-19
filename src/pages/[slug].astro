@@ -3,12 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import LoyaltyLandingPage from '../components/LoyaltyLandingPage.astro';
-import { loyaltyPages, getLoyaltyPage, getAllLandingSlugs } from '../data/loyaltyPages';
+import { getLoyaltyPage, getAllLandingSlugs } from '../data/loyaltyPages';
 import {
   barConversationalFaqs,
   cafeConversationalFaqs,
   qrConversationalFaqs,
 } from '../data/conversationalFaqs';
+import { getCanonicalOverrideForSlug } from '../data/seoCanonicals';
 import { buildLoyaltyServiceSchema, buildSoftwareApplicationSchema } from '../seo/schema';
 
 export function getStaticPaths() {
@@ -35,10 +36,13 @@ const extraFaqs = conversationalBySlug[page.slug] ?? [];
 const allFaqs = [...page.faqs, ...extraFaqs];
 
 const path = `/${page.slug}/`;
+const canonicalOverride = getCanonicalOverrideForSlug(page.slug);
+const servicePath = canonicalOverride ?? path;
+
 const serviceSchema = buildLoyaltyServiceSchema({
   name: page.title,
   description: page.description,
-  path,
+  path: servicePath,
   keyword: page.primaryKeyword,
 });
 ---
@@ -47,15 +51,43 @@ const serviceSchema = buildLoyaltyServiceSchema({
   title={page.metaTitle}
   description={page.description}
   path={path}
+  canonicalPath={canonicalOverride}
   keywords={[page.primaryKeyword, ...page.keywordCluster]}
   faqs={allFaqs}
   breadcrumbs={[
     { name: 'Home', path: '/' },
-    { name: page.title, path },
+    { name: page.title, path: servicePath },
   ]}
   extraSchema={[serviceSchema, buildSoftwareApplicationSchema()]}
 >
   <Nav />
+  {canonicalOverride && (
+    <div class="canonical-banner">
+      <div class="container">
+        <p>
+          Looking for the main guide?
+          <a href={canonicalOverride}>Continue to the primary page →</a>
+        </p>
+      </div>
+    </div>
+  )}
   <LoyaltyLandingPage page={page} faqs={allFaqs} />
   <Footer />
 </BaseLayout>
+
+<style>
+  .canonical-banner {
+    padding: 0.75rem 0;
+    background: rgba(34, 211, 238, 0.08);
+    border-bottom: 1px solid rgba(34, 211, 238, 0.25);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .canonical-banner a {
+    color: var(--cyan-400);
+    font-weight: 600;
+    margin-left: 0.35rem;
+  }
+</style>

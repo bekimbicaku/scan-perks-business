@@ -101,7 +101,7 @@ export const blogArticles: BlogArticle[] = [
       },
     ],
     clusterPage: {
-      href: '/cafe-loyalty-program/',
+      href: '/cafe-loyalty-app/',
       label: 'Cafe Loyalty Program',
       anchor: 'cafe loyalty program on Scan Perks',
     },
@@ -148,7 +148,7 @@ export const blogArticles: BlogArticle[] = [
       },
     ],
     clusterPage: {
-      href: '/qr-loyalty-program/',
+      href: '/qr-code-loyalty-program/',
       label: 'QR Loyalty Program',
       anchor: 'QR code loyalty program on Scan Perks',
     },
@@ -396,7 +396,7 @@ export const blogArticles: BlogArticle[] = [
       },
     ],
     clusterPage: {
-      href: '/cafe-loyalty-program/',
+      href: '/cafe-loyalty-app/',
       label: 'Cafe Loyalty App',
       anchor: 'cafe loyalty app on Scan Perks',
     },
@@ -432,7 +432,7 @@ export const blogArticles: BlogArticle[] = [
       },
     ],
     clusterPage: {
-      href: '/qr-loyalty-program/',
+      href: '/qr-code-loyalty-program/',
       label: 'QR Code Loyalty Program',
       anchor: 'QR code loyalty program on Scan Perks',
     },
@@ -483,7 +483,7 @@ export const blogArticles: BlogArticle[] = [
       },
     ],
     clusterPage: {
-      href: '/cafe-loyalty-program/',
+      href: '/cafe-loyalty-app/',
       label: 'Cafe Loyalty App',
       anchor: 'cafe loyalty app on Scan Perks',
     },
@@ -538,7 +538,7 @@ export const blogArticles: BlogArticle[] = [
       },
     ],
     clusterPage: {
-      href: '/qr-loyalty-program/',
+      href: '/qr-code-loyalty-program/',
       label: 'QR Code Loyalty Program',
       anchor: 'QR loyalty program on Scan Perks',
     },

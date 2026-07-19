@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import AppCta from '../../components/AppCta.astro';
+import { G2_LISTING } from '../../data/g2AndOutreach';
+import { SITE } from '../../data/content';
+---
+
+<BaseLayout
+  title="Scan Perks on G2 — Loyalty Software Reviews"
+  description="Scan Perks G2 profile: QR cafe & pub loyalty software from $10/mo. Read reviews or leave feedback if you use Scan Perks at your venue."
+  path="/g2/"
+  keywords={['scan perks g2', 'cafe loyalty software reviews', 'pub loyalty software']}
+  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'G2', path: '/g2/' }]}
+>
+  <Nav />
+
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section__label">G2</span>
+      <h1 class="page-hero__title">Scan Perks on G2</h1>
+      <p class="page-hero__desc">
+        {G2_LISTING.tagline}
+      </p>
+      <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
+        <a
+          href="https://www.g2.com/sellers"
+          class="btn btn--primary btn--lg"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Claim / Create G2 Listing
+        </a>
+        <AppCta class="btn btn--glass btn--lg">Start Free Trial</AppCta>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <div class="glass-card reveal" style="padding:1.75rem; margin-bottom:1.5rem;">
+        <h2 class="feature-card__title" style="font-size:1.25rem;">For venue owners using Scan Perks</h2>
+        <p class="feature-card__desc" style="margin:0.75rem 0 1rem;">
+          A short, honest G2 review helps other cafe and pub owners — and improves how Google and AI tools discover Scan Perks.
+          Mention your venue type (cafe / pub / bar), setup time, and whether you replaced punch cards.
+        </p>
+        {G2_LISTING.profileUrl ? (
+          <a
+            href={G2_LISTING.profileUrl}
+            class="btn btn--primary"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Leave a G2 Review →
+          </a>
+        ) : (
+          <p style="color:var(--text-secondary); font-size:0.95rem;">
+            G2 review link will appear here once the product profile is live.
+            Create the listing first, then set <code>profileUrl</code> in <code>src/data/g2AndOutreach.ts</code>.
+          </p>
+        )}
+      </div>
+
+      <h2 class="section__title" style="font-size:1.5rem; margin-bottom:1rem;">Copy for G2 vendor profile</h2>
+      <p style="color:var(--text-secondary); margin-bottom:1.25rem;">
+        Paste these fields when creating your listing at G2 (Sellers).
+      </p>
+
+      <div class="g2-copy-grid">
+        <div class="glass-card g2-copy-card">
+          <h3>Product name</h3>
+          <p>{G2_LISTING.productName}</p>
+        </div>
+        <div class="glass-card g2-copy-card">
+          <h3>Tagline</h3>
+          <p>{G2_LISTING.tagline}</p>
+        </div>
+        <div class="glass-card g2-copy-card g2-copy-card--wide">
+          <h3>Short description</h3>
+          <p>{G2_LISTING.shortDescription}</p>
+        </div>
+        <div class="glass-card g2-copy-card g2-copy-card--wide">
+          <h3>Full description</h3>
+          <p style="white-space:pre-line;">{G2_LISTING.fullDescription}</p>
+        </div>
+        <div class="glass-card g2-copy-card">
+          <h3>Categories</h3>
+          <ul>
+            {G2_LISTING.categories.map((c) => <li>{c}</li>)}
+          </ul>
+        </div>
+        <div class="glass-card g2-copy-card">
+          <h3>Website / product URLs</h3>
+          <ul>
+            <li><a href={G2_LISTING.website}>{G2_LISTING.website}</a></li>
+            <li><a href={G2_LISTING.productUrl}>{G2_LISTING.productUrl}</a></li>
+            {G2_LISTING.preferredSeoUrls.map((u) => (
+              <li><a href={u}>{u}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div class="glass-card g2-copy-card g2-copy-card--wide">
+          <h3>Features</h3>
+          <ul class="g2-features">
+            {G2_LISTING.features.map((f) => <li>{f}</li>)}
+          </ul>
+        </div>
+        <div class="glass-card g2-copy-card g2-copy-card--wide">
+          <h3>Pricing</h3>
+          <ul>
+            {G2_LISTING.pricing.map((p) => (
+              <li><strong>{p.name}:</strong> {p.price} — {p.detail}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <p style="margin-top:2rem; text-align:center; color:var(--text-muted); font-size:0.9rem;">
+        Contact: <a href={`mailto:${SITE.email}`} style="color:var(--cyan-400);">{SITE.email}</a>
+        {' · '}
+        <a href="/press/" style="color:var(--cyan-400);">Press &amp; backlink kit →</a>
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .g2-copy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .g2-copy-card {
+    padding: 1.35rem;
+  }
+
+  .g2-copy-card--wide {
+    grid-column: 1 / -1;
+  }
+
+  .g2-copy-card h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--cyan-400);
+    margin-bottom: 0.65rem;
+  }
+
+  .g2-copy-card p,
+  .g2-copy-card li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .g2-copy-card ul {
+    margin: 0;
+    padding-left: 1.1rem;
+  }
+
+  .g2-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.35rem 1.5rem;
+    list-style: disc;
+  }
+
+  @media (max-width: 768px) {
+    .g2-copy-grid { grid-template-columns: 1fr; }
+    .g2-features { grid-template-columns: 1fr; }
+  }
+</style>

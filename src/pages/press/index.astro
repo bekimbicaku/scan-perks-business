@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { BACKLINK_OUTREACH } from '../../data/g2AndOutreach';
+import { SITE } from '../../data/content';
+---
+
+<BaseLayout
+  title="Press & Link Kit — Pub Loyalty Card & Scheme | Scan Perks"
+  description="Preferred URLs and embed links for publishers: pub loyalty card, pub loyalty scheme, cafe loyalty app. Media kit for Scan Perks."
+  path="/press/"
+  keywords={['scan perks press', 'pub loyalty card', 'pub loyalty scheme']}
+  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Press', path: '/press/' }]}
+>
+  <Nav />
+
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section__label">Press &amp; Links</span>
+      <h1 class="page-hero__title">Link Kit for Publishers</h1>
+      <p class="page-hero__desc">
+        Preferred URLs for directories, guest posts, and reviews. Linking these pages helps independent pubs and cafes find QR loyalty tools.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <h2 class="section__title" style="font-size:1.5rem; margin-bottom:1rem;">Priority pages to link</h2>
+      <div class="press-targets">
+        {BACKLINK_OUTREACH.priorityLinkTargets.map((t) => (
+          <article class="glass-card press-card reveal">
+            <h3><a href={t.url.replace('https://scan-perks.com', '')}>{t.anchor}</a></h3>
+            <p class="press-card__url"><a href={t.url}>{t.url}</a></p>
+            <p class="press-card__why">{t.why}</p>
+            <p class="press-card__anchor">Suggested anchor text: <code>{t.anchor}</code></p>
+          </article>
+        ))}
+      </div>
+
+      <h2 class="section__title" style="font-size:1.5rem; margin:2.5rem 0 1rem;">Where to get listed</h2>
+      <ul class="press-dirs">
+        {BACKLINK_OUTREACH.targetSites.map((s) => (
+          <li class="glass-card">
+            <strong>{s.name}</strong>
+            <span>{s.type}</span>
+            {s.url ? (
+              <a href={s.url} rel="noopener noreferrer" target="_blank">Open →</a>
+            ) : (
+              <span class="muted">Outreach manually</span>
+            )}
+          </li>
+        ))}
+      </ul>
+
+      <h2 class="section__title" style="font-size:1.5rem; margin:2.5rem 0 1rem;">Embed badge (HTML)</h2>
+      <pre class="glass-card press-code"><code>{BACKLINK_OUTREACH.embedBadgeHtml}</code></pre>
+
+      <h2 class="section__title" style="font-size:1.5rem; margin:2.5rem 0 1rem;">Outreach email template</h2>
+      <pre class="glass-card press-code"><code>{BACKLINK_OUTREACH.emailTemplate}</code></pre>
+
+      <p style="margin-top:2rem; text-align:center; color:var(--text-muted);">
+        Media contact: <a href={`mailto:${SITE.email}`} style="color:var(--cyan-400);">{SITE.email}</a>
+        {' · '}
+        <a href="/g2/" style="color:var(--cyan-400);">G2 listing copy →</a>
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .press-targets {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .press-card {
+    padding: 1.5rem;
+  }
+
+  .press-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .press-card h3 a {
+    color: var(--blue-300);
+  }
+
+  .press-card__url {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .press-card__url a {
+    color: var(--cyan-400);
+    word-break: break-all;
+  }
+
+  .press-card__why {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  .press-card__anchor code {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    color: var(--cyan-400);
+    font-size: 0.85rem;
+  }
+
+  .press-dirs {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .press-dirs li {
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+  }
+
+  .press-dirs strong {
+    color: var(--white);
+  }
+
+  .press-dirs span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .press-dirs a {
+    margin-left: auto;
+    color: var(--cyan-400);
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .press-dirs .muted {
+    margin-left: auto;
+  }
+
+  .press-code {
+    padding: 1.25rem;
+    overflow-x: auto;
+    font-size: 0.8rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    white-space: pre-wrap;
+  }
+
+  @media (max-width: 768px) {
+    .press-dirs { grid-template-columns: 1fr; }
+  }
+</style>

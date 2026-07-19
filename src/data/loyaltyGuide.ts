@@ -54,12 +54,12 @@ export const loyaltyGuide: LoyaltyGuide = {
     {
       title: 'Cafe Loyalty Program',
       description: 'Digital stamp cards and counter QR for coffee shops and bakeries.',
-      href: '/cafe-loyalty-program/',
+      href: '/cafe-loyalty-app/',
     },
     {
       title: 'QR Code Loyalty',
       description: 'Contactless rewards via smartphone scanning — no plastic cards.',
-      href: '/qr-loyalty-program/',
+      href: '/qr-code-loyalty-program/',
     },
     {
       title: 'Grow Restaurant Business',

@@ -1,34 +1,35 @@
 import type { APIRoute } from 'astro';
 import { SITE } from '../data/content';
-import { loyaltyPages, getAllLandingSlugs } from '../data/loyaltyPages';
+import { loyaltyPages } from '../data/loyaltyPages';
 import { keywordLandings } from '../data/keywordLandings';
 import { blogArticles } from '../data/blogArticles';
 
 const MONEY_PAGE_PRIORITY: Record<string, string> = {
-  'cafe-loyalty-program': '0.99',
-  'bar-loyalty-program': '0.99',
-  'qr-loyalty-program': '0.98',
+  'bar-loyalty-program': '0.95',
+  'cafe-loyalty-program': '0.5',
+  'qr-loyalty-program': '0.5',
   'restaurant-loyalty-program': '0.97',
   'grow-restaurant-business': '0.96',
 };
 
 const KEYWORD_LANDING_PRIORITY: Record<string, string> = {
+  'pub-loyalty-card': '1.0',
+  'pub-loyalty-scheme': '1.0',
   'cafe-loyalty-app': '1.0',
-  'pub-loyalty-scheme': '0.99',
-  'pub-loyalty-card': '0.98',
   'coffee-shop-loyalty-programs': '0.99',
   'qr-code-loyalty-program': '0.99',
 };
 
 const staticPages = [
   { path: '/', priority: '1.0', changefreq: 'weekly' },
+  { path: '/pub-loyalty-card/', priority: '1.0', changefreq: 'weekly' },
+  { path: '/pub-loyalty-scheme/', priority: '1.0', changefreq: 'weekly' },
   { path: '/cafe-loyalty-app/', priority: '1.0', changefreq: 'weekly' },
-  { path: '/pub-loyalty-scheme/', priority: '0.99', changefreq: 'weekly' },
   { path: '/coffee-shop-loyalty-programs/', priority: '0.99', changefreq: 'weekly' },
   { path: '/qr-code-loyalty-program/', priority: '0.99', changefreq: 'weekly' },
-  { path: '/pub-loyalty-card/', priority: '0.98', changefreq: 'weekly' },
-  { path: '/bar-loyalty-program/', priority: '0.99', changefreq: 'weekly' },
-  { path: '/cafe-loyalty-program/', priority: '0.99', changefreq: 'weekly' },
+  { path: '/bar-loyalty-program/', priority: '0.95', changefreq: 'weekly' },
+  { path: '/g2/', priority: '0.9', changefreq: 'monthly' },
+  { path: '/press/', priority: '0.85', changefreq: 'monthly' },
   { path: '/faq/', priority: '0.98', changefreq: 'weekly' },
   { path: '/scanbucks/', priority: '0.95', changefreq: 'monthly' },
   { path: '/how-it-works/', priority: '0.96', changefreq: 'monthly' },
@@ -49,8 +50,10 @@ export const GET: APIRoute = () => {
       .filter((p) => !staticPaths.has(`/${p.slug}/`))
       .map((p) => ({
         path: `/${p.slug}/`,
-        priority: MONEY_PAGE_PRIORITY[p.slug] ?? KEYWORD_LANDING_PRIORITY[p.slug] ?? '0.95',
-        changefreq: 'weekly',
+        priority: MONEY_PAGE_PRIORITY[p.slug] ?? '0.9',
+        changefreq: p.slug.includes('cafe-loyalty-program') || p.slug.includes('qr-loyalty-program')
+          ? 'monthly'
+          : 'weekly',
       })),
     ...keywordLandings
       .filter((p) => !staticPaths.has(`/${p.slug}/`))
