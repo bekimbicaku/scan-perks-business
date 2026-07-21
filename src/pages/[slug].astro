@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import LoyaltyLandingPage from '../components/LoyaltyLandingPage.astro';
+import LocalizedLanding from '../components/LocalizedLanding.astro';
 import { getLoyaltyPage, getAllLandingSlugs } from '../data/loyaltyPages';
 import {
   barConversationalFaqs,
@@ -11,9 +12,21 @@ import {
 } from '../data/conversationalFaqs';
 import { getCanonicalOverrideForSlug } from '../data/seoCanonicals';
 import { buildLoyaltyServiceSchema, buildSoftwareApplicationSchema } from '../seo/schema';
+import { enNicheSlugPaths, findDefByEnSlug, getHreflangLinks } from '../i18n/pages';
 
 export function getStaticPaths() {
-  return getAllLandingSlugs().map((slug) => ({ params: { slug } }));
+  const loyalty = getAllLandingSlugs().map((slug) => ({
+    params: { slug },
+    props: { kind: 'loyalty' as const },
+  }));
+  const existing = new Set(getAllLandingSlugs());
+  const niches = enNicheSlugPaths()
+    .filter(({ slug }) => !existing.has(slug))
+    .map(({ slug }) => ({
+      params: { slug },
+      props: { kind: 'niche' as const },
+    }));
+  return [...loyalty, ...niches];
 }
 
 const conversationalBySlug: Record<string, typeof barConversationalFaqs> = {
@@ -28,52 +41,88 @@ const conversationalBySlug: Record<string, typeof barConversationalFaqs> = {
 };
 
 const { slug } = Astro.params;
-const page = getLoyaltyPage(slug!);
+const kind = Astro.props.kind as 'loyalty' | 'niche';
 
-if (!page) return Astro.redirect('/404');
+const nicheDef = kind === 'niche' ? findDefByEnSlug(slug!) : undefined;
+const nicheContent = nicheDef?.content.en;
 
-const extraFaqs = conversationalBySlug[page.slug] ?? [];
-const allFaqs = [...page.faqs, ...extraFaqs];
+const page = kind === 'loyalty' ? getLoyaltyPage(slug!) : undefined;
+if (kind === 'loyalty' && !page) return Astro.redirect('/404');
+if (kind === 'niche' && !nicheDef) return Astro.redirect('/404');
 
-const path = `/${page.slug}/`;
-const canonicalOverride = getCanonicalOverrideForSlug(page.slug);
+const extraFaqs = page ? conversationalBySlug[page.slug] ?? [] : [];
+const allFaqs = page ? [...page.faqs, ...extraFaqs] : nicheContent?.faqs ?? [];
+
+const path = page ? `/${page.slug}/` : `/${nicheContent!.slug}/`;
+const canonicalOverride = page ? getCanonicalOverrideForSlug(page.slug) : undefined;
 const servicePath = canonicalOverride ?? path;
 
-const serviceSchema = buildLoyaltyServiceSchema({
-  name: page.title,
-  description: page.description,
-  path: servicePath,
-  keyword: page.primaryKeyword,
-});
+const i18nDef =
+  nicheDef ??
+  findDefByEnSlug(page?.slug ?? '') ??
+  (canonicalOverride ? findDefByEnSlug(canonicalOverride.replace(/\//g, '')) : undefined);
+const hreflangLinks = i18nDef ? getHreflangLinks(i18nDef) : undefined;
+
+const serviceSchema = page
+  ? buildLoyaltyServiceSchema({
+      name: page.title,
+      description: page.description,
+      path: servicePath,
+      keyword: page.primaryKeyword,
+    })
+  : null;
 ---
 
-<BaseLayout
-  title={page.metaTitle}
-  description={page.description}
-  path={path}
-  canonicalPath={canonicalOverride}
-  keywords={[page.primaryKeyword, ...page.keywordCluster]}
-  faqs={allFaqs}
-  breadcrumbs={[
-    { name: 'Home', path: '/' },
-    { name: page.title, path: servicePath },
-  ]}
-  extraSchema={[serviceSchema, buildSoftwareApplicationSchema()]}
->
-  <Nav />
-  {canonicalOverride && (
-    <div class="canonical-banner">
-      <div class="container">
-        <p>
-          Looking for the main guide?
-          <a href={canonicalOverride}>Continue to the primary page →</a>
-        </p>
+{nicheDef && nicheContent ? (
+  <BaseLayout
+    title={nicheContent.metaTitle}
+    description={nicheContent.description}
+    path={path}
+    lang="en"
+    hreflangLinks={hreflangLinks}
+    keywords={nicheContent.keywords}
+    faqs={nicheContent.faqs}
+    breadcrumbs={[
+      { name: 'Home', path: '/' },
+      { name: nicheContent.h1, path },
+    ]}
+    extraSchema={[buildSoftwareApplicationSchema()]}
+  >
+    <Nav />
+    <LocalizedLanding locale="en" content={nicheContent} />
+    <Footer />
+  </BaseLayout>
+) : page ? (
+  <BaseLayout
+    title={page.metaTitle}
+    description={page.description}
+    path={path}
+    canonicalPath={canonicalOverride}
+    lang="en"
+    hreflangLinks={hreflangLinks}
+    keywords={[page.primaryKeyword, ...page.keywordCluster]}
+    faqs={allFaqs}
+    breadcrumbs={[
+      { name: 'Home', path: '/' },
+      { name: page.title, path: servicePath },
+    ]}
+    extraSchema={[serviceSchema!, buildSoftwareApplicationSchema()]}
+  >
+    <Nav />
+    {canonicalOverride && (
+      <div class="canonical-banner">
+        <div class="container">
+          <p>
+            Looking for the main guide?
+            <a href={canonicalOverride}>Continue to the primary page →</a>
+          </p>
+        </div>
       </div>
-    </div>
-  )}
-  <LoyaltyLandingPage page={page} faqs={allFaqs} />
-  <Footer />
-</BaseLayout>
+    )}
+    <LoyaltyLandingPage page={page} faqs={allFaqs} />
+    <Footer />
+  </BaseLayout>
+) : null}
 
 <style>
   .canonical-banner {

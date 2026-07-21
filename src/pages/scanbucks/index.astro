@@ -7,6 +7,7 @@ import AppCta from '../../components/AppCta.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import { SITE } from '../../data/content';
 import { buildSoftwareApplicationSchema } from '../../seo/schema';
+import { getHreflangLinks, getPageDef } from '../../i18n/pages';
 
 const scanbucksFaqs = [
   {
@@ -34,6 +35,8 @@ const directAnswer =
   title="Scanbucks → Scan Perks — Cafe & Pub Loyalty App"
   description="Looking for scanbucks? Scan Perks is the QR cafe loyalty app & pub loyalty scheme — coffee shop loyalty programs from $10/mo. Start free at app.scan-perks.com."
   path="/scanbucks/"
+  lang="en"
+  hreflangLinks={getHreflangLinks(getPageDef('scanbucks')!)}
   keywords={['scanbucks', 'scan perks', 'scan bucks', 'perks app', 'cafe loyalty app']}
   faqs={scanbucksFaqs}
   breadcrumbs={[
@@ -42,7 +45,7 @@ const directAnswer =
   ]}
   extraSchema={[buildSoftwareApplicationSchema()]}
 >
-  <Nav />
+  <Nav pageId="scanbucks" />
 
   <section class="page-hero">
     <div class="container reveal">

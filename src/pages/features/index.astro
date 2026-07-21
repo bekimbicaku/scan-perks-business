@@ -11,18 +11,21 @@ import { featuresSeo } from '../../data/pageSeo';
 import { featuresFaqs } from '../../data/conversationalFaqs';
 import { scanPerksFeatureList } from '../../data/geoContent';
 import { buildSoftwareApplicationSchema } from '../../seo/schema';
+import { getHreflangLinks, getPageDef } from '../../i18n/pages';
 ---
 
 <BaseLayout
   title={featuresSeo.title}
   description={featuresSeo.description}
   path="/features/"
+  lang="en"
+  hreflangLinks={getHreflangLinks(getPageDef('features')!)}
   keywords={['qr code loyalty program', 'cafe loyalty app', 'bar loyalty programs', 'coffee shop loyalty reward app']}
   faqs={featuresFaqs}
   breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Features', path: '/features/' }]}
   extraSchema={[buildSoftwareApplicationSchema()]}
 >
-  <Nav active="features" />
+  <Nav active="features" pageId="features" />
 
   <section class="page-hero">
     <div class="container reveal">

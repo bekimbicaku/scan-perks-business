@@ -1,0 +1,11 @@
+/* TEAM */
+Founder & Developer: Bekim Biçaku
+Site: Scan Perks (https://scan-perks.com)
+Role: Founder and developer of the Scan Perks QR loyalty platform for cafes, bars, and restaurants
+LinkedIn: https://www.linkedin.com/in/bekim-bi%C3%A7aku/
+Contact: hello@scan-perks.com
+
+/* SITE */
+Standards: HTML5, Schema.org Person + Organization
+Last update: 2026
+Language: EN (root), ES, DE, FR, IT

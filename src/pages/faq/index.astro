@@ -13,6 +13,7 @@ import {
   competitorComparisonIntro,
 } from '../../data/geoContent';
 import { buildSoftwareApplicationSchema } from '../../seo/schema';
+import { getHreflangLinks, getPageDef } from '../../i18n/pages';
 
 const faqs = masterGeoFaqs.map(({ question, answer }) => ({ question, answer }));
 const categories = [
@@ -28,12 +29,14 @@ const categories = [
   title="Coffee & Cafe Loyalty FAQ — AI Search Answers | Scan Perks"
   description="Direct answers to: best coffee loyalty program, mobile rewards apps, QR loyalty for cafés. Factual FAQ for coffee shops and bars — Scan Perks from $10/mo."
   path="/faq/"
+  lang="en"
+  hreflangLinks={getHreflangLinks(getPageDef('faq')!)}
   keywords={['best coffee loyalty program', 'cafe loyalty app', 'mobile coffee rewards', 'qr loyalty program']}
   faqs={faqs}
   breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'FAQ', path: '/faq/' }]}
   extraSchema={[buildSoftwareApplicationSchema()]}
 >
-  <Nav active="faq" />
+  <Nav active="faq" pageId="faq" />
 
   <section class="page-hero">
     <div class="container reveal">

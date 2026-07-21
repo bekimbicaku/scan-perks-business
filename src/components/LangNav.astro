@@ -1,39 +1,51 @@
 ---
-import { SITE } from '../data/content';
-import AppCta from './AppCta.astro';
-import { LOCALES, LOCALE_META } from '../i18n/config';
+import type { Locale } from '../i18n/config';
+import { DEFAULT_LOCALE, LOCALES, LOCALE_META, localePath } from '../i18n/config';
+import { ui } from '../i18n/ui';
 import { getPageDef, pageHref } from '../i18n/pages';
+import AppCta from './AppCta.astro';
 
 interface Props {
+  locale?: Locale;
   active?: string;
-  /** Localized page id for language switcher (home, pricing, features, cafe-loyalty, …) */
+  switchPath?: string;
   pageId?: string;
 }
 
-const { active = '', pageId = 'home' } = Astro.props;
+const { locale = DEFAULT_LOCALE, active = '', pageId } = Astro.props;
+const t = ui[locale];
+
+const home = getPageDef('home')!;
+const features = getPageDef('features')!;
+const pricing = getPageDef('pricing')!;
+const faq = getPageDef('faq')!;
+const how = getPageDef('how-it-works')!;
+const about = getPageDef('about')!;
+const cafe = getPageDef('cafe-loyalty')!;
+
 const links = [
-  { href: '/', label: 'Home', id: 'home' },
-  { href: '/features/', label: 'Features', id: 'features' },
-  { href: '/pricing/', label: 'Pricing', id: 'pricing' },
-  { href: '/faq/', label: 'FAQ', id: 'faq' },
-  { href: '/how-it-works/', label: 'How It Works', id: 'how' },
-  { href: '/business-loyalty-program/', label: 'Loyalty Guide', id: 'guide' },
-  { href: '/blog/', label: 'Blog', id: 'blog' },
-  { href: '/about/', label: 'About', id: 'about' },
-  { href: '/contact/', label: 'Contact', id: 'contact' },
+  { href: pageHref(home, locale), label: t.nav.home, id: 'home' },
+  { href: pageHref(features, locale), label: t.nav.features, id: 'features' },
+  { href: pageHref(pricing, locale), label: t.nav.pricing, id: 'pricing' },
+  { href: pageHref(cafe, locale), label: cafe.content[locale].h1.split('—')[0].trim().slice(0, 28), id: 'cafe' },
+  { href: pageHref(faq, locale), label: t.nav.faq, id: 'faq' },
+  { href: pageHref(how, locale), label: t.nav.how, id: 'how' },
+  { href: pageHref(about, locale), label: t.nav.about, id: 'about' },
 ];
 
-function switchHref(target: (typeof LOCALES)[number]): string {
-  const def = getPageDef(pageId);
-  if (def) return pageHref(def, target);
-  return target === 'en' ? '/' : `/${target}/`;
+function switchHref(target: Locale): string {
+  if (pageId) {
+    const def = getPageDef(pageId);
+    if (def) return pageHref(def, target);
+  }
+  return localePath(target, '/');
 }
 ---
 
 <nav class="nav">
   <div class="nav__inner">
-    <a href="/" class="nav__logo">
-      <img src="/favicon.png" alt="Scan Perks business loyalty program" width="40" height="40" />
+    <a href={pageHref(home, locale)} class="nav__logo">
+      <img src="/favicon.png" alt="Scan Perks" width="40" height="40" />
       Scan Perks
     </a>
     <ul class="nav__links">
@@ -44,17 +56,17 @@ function switchHref(target: (typeof LOCALES)[number]): string {
       ))}
     </ul>
     <div class="nav__cta" style="display:flex; align-items:center; gap:0.75rem;">
-      <label class="lang-switch" aria-label="Language">
-        <span class="lang-switch__label">English</span>
+      <label class="lang-switch" aria-label={t.footer.language}>
+        <span class="lang-switch__label">{LOCALE_META[locale].nativeName}</span>
         <select class="lang-switch__select" onchange="location.href=this.value">
           {LOCALES.map((l) => (
-            <option value={switchHref(l)} selected={l === 'en'}>
+            <option value={switchHref(l)} selected={l === locale}>
               {LOCALE_META[l].nativeName}
             </option>
           ))}
         </select>
       </label>
-      <AppCta>Get Started</AppCta>
+      <AppCta>{t.nav.getStarted}</AppCta>
     </div>
     <button class="nav__toggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -67,12 +79,12 @@ function switchHref(target: (typeof LOCALES)[number]): string {
   ))}
   <div style="padding:0.5rem 0; display:flex; flex-wrap:wrap; gap:0.5rem;">
     {LOCALES.map((l) => (
-      <a href={switchHref(l)} style={l === 'en' ? 'color:var(--cyan-400);font-weight:700;' : ''}>
+      <a href={switchHref(l)} style={l === locale ? 'color:var(--cyan-400);font-weight:700;' : ''}>
         {LOCALE_META[l].nativeName}
       </a>
     ))}
   </div>
-  <AppCta class="btn btn--primary">Get Started</AppCta>
+  <AppCta class="btn btn--primary">{t.nav.getStarted}</AppCta>
 </div>
 
 <style>

@@ -15,6 +15,7 @@ import {
 } from '../../data/geoContent';
 import { buildSoftwareApplicationSchema, buildReviewSchema } from '../../seo/schema';
 import { SITE } from '../../data/content';
+import { getHreflangLinks, getPageDef } from '../../i18n/pages';
 
 const reviewSchemas = caseStudies.map((s) =>
   buildReviewSchema({ author: s.author, reviewBody: s.reviewBody, datePublished: s.datePublished })
@@ -25,10 +26,12 @@ const reviewSchemas = caseStudies.map((s) =>
   title="About Scan Perks — QR Loyalty for Cafes & Bars"
   description="Scan Perks: 500+ venues, 50K+ loyalty members. QR cafe & bar loyalty from $10/mo. Founded 2024. iOS/Android apps, no POS required."
   path="/about/"
+  lang="en"
+  hreflangLinks={getHreflangLinks(getPageDef('about')!)}
   breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'About', path: '/about/' }]}
   extraSchema={[buildSoftwareApplicationSchema(), ...reviewSchemas]}
 >
-  <Nav active="about" />
+  <Nav active="about" pageId="about" />
 
   <section class="page-hero">
     <div class="container reveal">
@@ -100,8 +103,6 @@ const reviewSchemas = caseStudies.map((s) =>
       <p style="margin-top:1rem; color:var(--text-muted);">Contact: {SITE.email}</p>
       <p style="margin-top:1.25rem;">
         <a href="/g2/" class="btn btn--glass">Scan Perks on G2 →</a>
-        {' '}
-        <a href="/press/" class="btn btn--glass">Press &amp; link kit →</a>
       </p>
     </div>
   </section>

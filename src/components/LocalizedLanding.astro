@@ -1,0 +1,60 @@
+---
+import type { Locale } from '../i18n/config';
+import type { LocalizedPageContent } from '../i18n/localizedPages';
+import { ui } from '../i18n/ui';
+import { getPageDef, pageHref } from '../i18n/pages';
+import AppCta from './AppCta.astro';
+import FAQSection from './FAQSection.astro';
+import FeatureBulletList from './FeatureBulletList.astro';
+import AnswerFirst from './AnswerFirst.astro';
+
+interface Props {
+  locale: Locale;
+  content: LocalizedPageContent;
+}
+
+const { locale, content } = Astro.props;
+const t = ui[locale];
+const pricingDef = getPageDef('pricing')!;
+const pricingHref = pageHref(pricingDef, locale);
+---
+
+<article>
+  <section class="page-hero">
+    <div class="container reveal">
+      <h1 class="page-hero__title">{content.h1}</h1>
+      <p class="page-hero__seo-line">{content.heroLine}</p>
+      <p class="page-hero__desc">{content.description}</p>
+      <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
+        <AppCta class="btn btn--primary btn--lg">{t.cta.startTrial}</AppCta>
+        <a href={pricingHref} class="btn btn--glass btn--lg">{t.cta.viewPricing}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <AnswerFirst answer={content.directAnswer} label={t.common.quickAnswer} />
+      {content.bullets.length > 0 && <FeatureBulletList title="" items={content.bullets} />}
+      {content.sections.map((s) => (
+        <div class="glass-card reveal" style="margin-bottom:1.5rem;">
+          <h2 class="feature-card__title" style="font-size:1.25rem;">{s.heading}</h2>
+          <p class="feature-card__desc" style="margin-top:0.5rem;">{s.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {content.faqs.length > 0 && <FAQSection faqs={content.faqs} />}
+</article>
+
+<style>
+  .page-hero__seo-line {
+    font-size: 1.05rem;
+    color: var(--blue-300);
+    max-width: 560px;
+    margin: 0 auto 1rem;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+</style>

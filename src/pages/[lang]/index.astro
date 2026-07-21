@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LangNav from '../../components/LangNav.astro';
+import LangFooter from '../../components/LangFooter.astro';
+import LocalizedLanding from '../../components/LocalizedLanding.astro';
+import AppCta from '../../components/AppCta.astro';
+import type { Locale } from '../../i18n/config';
+import { ui } from '../../i18n/ui';
+import { getPageDef, pageHref, getHreflangLinks, allLocalizedPageDefs } from '../../i18n/pages';
+import { buildSoftwareApplicationSchema } from '../../seo/schema';
+import { G2_LISTING } from '../../data/g2AndOutreach';
+
+export function getStaticPaths() {
+  return (['es', 'de', 'fr', 'it'] as const).map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Locale;
+
+const home = getPageDef('home')!;
+const content = home.content[lang];
+const t = ui[lang];
+const path = pageHref(home, lang);
+const hreflangLinks = getHreflangLinks(home);
+
+const highlightIds = [
+  'cafe-loyalty',
+  'pub-loyalty',
+  'qr-loyalty',
+  'bakery',
+  'bubble-tea',
+  'ice-cream',
+  'pizza',
+  'faq',
+  'how-it-works',
+  'guide',
+];
+const highlights = allLocalizedPageDefs.filter((p) => highlightIds.includes(p.id));
+const productIds = ['pricing', 'features', 'about', 'contact', 'scanbucks'];
+const productLinks = allLocalizedPageDefs.filter((p) => productIds.includes(p.id));
+---
+
+<BaseLayout
+  title={content.metaTitle}
+  description={content.description}
+  path={path}
+  lang={lang}
+  hreflangLinks={hreflangLinks}
+  keywords={content.keywords}
+  faqs={content.faqs}
+  extraSchema={[buildSoftwareApplicationSchema()]}
+>
+  <LangNav locale={lang} active="home" pageId="home" />
+
+  <LocalizedLanding locale={lang} content={content} />
+
+  <section class="section">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2 class="section__title">{t.footer.loyalty}</h2>
+      </div>
+      <div class="features-grid">
+        {highlights.map((p) => (
+          <a href={pageHref(p, lang)} class="glass-card reveal" style="display:block;">
+            <h3 class="feature-card__title">{p.content[lang].h1}</h3>
+            <p class="feature-card__desc">{p.content[lang].heroLine}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2 class="section__title">{t.footer.product}</h2>
+      </div>
+      <div class="features-grid">
+        {productLinks.map((p) => (
+          <a href={pageHref(p, lang)} class="glass-card reveal" style="display:block;">
+            <h3 class="feature-card__title">{p.content[lang].h1}</h3>
+            <p class="feature-card__desc">{p.content[lang].heroLine}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container reveal" style="text-align:center;">
+      <AppCta class="btn btn--primary btn--lg">{t.cta.startTrial}</AppCta>
+      <p style="margin-top:1rem;">
+        <a href={G2_LISTING.profileUrl} class="btn btn--glass" rel="noopener noreferrer" target="_blank">
+          {t.cta.leaveReview}
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <LangFooter locale={lang} />
+</BaseLayout>

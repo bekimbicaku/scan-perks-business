@@ -11,18 +11,21 @@ import { pricingSeo } from '../../data/pageSeo';
 import { pricingFaqs } from '../../data/conversationalFaqs';
 import { loyaltyComparisonTable, competitorComparisonIntro } from '../../data/geoContent';
 import { buildSoftwareApplicationSchema } from '../../seo/schema';
+import { getHreflangLinks, getPageDef } from '../../i18n/pages';
 ---
 
 <BaseLayout
   title={pricingSeo.title}
   description={pricingSeo.description}
   path="/pricing/"
+  lang="en"
+  hreflangLinks={getHreflangLinks(getPageDef('pricing')!)}
   keywords={['loyalty program pricing', 'cafe loyalty app cost', 'bar loyalty program price', 'affordable loyalty app']}
   faqs={pricingFaqs}
   breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Pricing', path: '/pricing/' }]}
   extraSchema={[buildSoftwareApplicationSchema()]}
 >
-  <Nav active="pricing" />
+  <Nav active="pricing" pageId="pricing" />
 
   <section class="page-hero">
     <div class="container reveal">

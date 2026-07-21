@@ -1,4 +1,5 @@
 import { SITE } from '../data/content';
+import { FOUNDER } from '../data/founder';
 
 export interface SchemaPageInput {
   title: string;
@@ -16,16 +17,47 @@ export interface BreadcrumbItem {
   path: string;
 }
 
+function founderPersonNode() {
+  return {
+    '@type': 'Person' as const,
+    '@id': `${SITE.url}/#founder`,
+    name: FOUNDER.name,
+    alternateName: [...FOUNDER.alternateName],
+    jobTitle: FOUNDER.jobTitle,
+    description: FOUNDER.description,
+    url: FOUNDER.url,
+    email: FOUNDER.email,
+    sameAs: [...FOUNDER.sameAs],
+    worksFor: {
+      '@type': 'Organization' as const,
+      '@id': `${SITE.url}/#organization`,
+      name: SITE.name,
+      url: SITE.url,
+    },
+    knowsAbout: [
+      'QR loyalty programs',
+      'Cafe loyalty apps',
+      'Pub loyalty schemes',
+      'Scan Perks',
+      'Hospitality customer retention',
+    ],
+  };
+}
+
 export function buildBaseSchema(page: SchemaPageInput) {
   const url = `${SITE.url}${page.path}`;
+  const founder = founderPersonNode();
   return [
     {
       '@context': 'https://schema.org',
       '@type': 'Organization',
+      '@id': `${SITE.url}/#organization`,
       name: SITE.name,
       url: SITE.url,
       logo: `${SITE.url}/favicon.png`,
       description: SITE.description,
+      founder,
+      foundingDate: '2024',
       contactPoint: {
         '@type': 'ContactPoint',
         email: SITE.email,
@@ -40,10 +72,15 @@ export function buildBaseSchema(page: SchemaPageInput) {
     },
     {
       '@context': 'https://schema.org',
+      ...founder,
+    },
+    {
+      '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: SITE.name,
       url: SITE.url,
       description: SITE.description,
+      publisher: { '@id': `${SITE.url}/#organization` },
       potentialAction: {
         '@type': 'SearchAction',
         target: `${SITE.url}/business-loyalty-program/?q={search_term_string}`,
@@ -168,7 +205,13 @@ export function buildGuideArticleSchema(input: {
     headline: input.title,
     description: input.description,
     url: `${SITE.url}${input.path}`,
-    author: { '@type': 'Organization', name: SITE.name },
+    author: {
+      '@type': 'Person',
+      '@id': `${SITE.url}/#founder`,
+      name: FOUNDER.name,
+      jobTitle: FOUNDER.jobTitle,
+      sameAs: [...FOUNDER.sameAs],
+    },
     publisher: {
       '@type': 'Organization',
       name: SITE.name,
@@ -190,7 +233,13 @@ export function buildBlogPostingSchema(input: {
     description: input.description,
     url: `${SITE.url}${input.path}`,
     datePublished: input.publishedAt,
-    author: { '@type': 'Organization', name: SITE.name },
+    author: {
+      '@type': 'Person',
+      name: FOUNDER.name,
+      jobTitle: FOUNDER.jobTitle,
+      url: SITE.url,
+      sameAs: [...FOUNDER.sameAs],
+    },
     publisher: {
       '@type': 'Organization',
       name: SITE.name,
@@ -251,6 +300,18 @@ export function buildSoftwareApplicationSchema() {
     operatingSystem: 'Web, iOS, Android',
     url: SITE.appWebUrl,
     description: SITE.description,
+    author: {
+      '@type': 'Person',
+      '@id': `${SITE.url}/#founder`,
+      name: FOUNDER.name,
+      jobTitle: FOUNDER.jobTitle,
+      sameAs: [...FOUNDER.sameAs],
+    },
+    creator: {
+      '@type': 'Person',
+      '@id': `${SITE.url}/#founder`,
+      name: FOUNDER.name,
+    },
     offers: {
       '@type': 'Offer',
       price: '10.00',
@@ -261,6 +322,7 @@ export function buildSoftwareApplicationSchema() {
     },
     provider: {
       '@type': 'Organization',
+      '@id': `${SITE.url}/#organization`,
       name: SITE.name,
       url: SITE.url,
     },

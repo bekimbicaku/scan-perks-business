@@ -1,0 +1,107 @@
+---
+import type { Locale } from '../i18n/config';
+import { DEFAULT_LOCALE, LOCALES, LOCALE_META } from '../i18n/config';
+import { ui } from '../i18n/ui';
+import { getPageDef, pageHref, allLocalizedPageDefs } from '../i18n/pages';
+import { SITE } from '../data/content';
+import { G2_LISTING } from '../data/g2AndOutreach';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = DEFAULT_LOCALE } = Astro.props;
+const t = ui[locale];
+const home = getPageDef('home')!;
+
+const moneyLinks = allLocalizedPageDefs
+  .filter((p) => ['cafe-loyalty', 'pub-loyalty', 'qr-loyalty', 'bakery', 'bubble-tea', 'ice-cream'].includes(p.id))
+  .map((p) => ({
+    href: pageHref(p, locale),
+    label: p.content[locale].h1.length > 40 ? p.content[locale].h1.slice(0, 38) + '…' : p.content[locale].h1,
+  }));
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="/favicon.png" alt="Scan Perks" width="36" height="36" />
+          Scan Perks
+        </div>
+        <p>{t.footer.tagline}</p>
+      </div>
+      <div>
+        <h4 class="footer__heading">{t.footer.loyalty}</h4>
+        <ul class="footer__links">
+          {moneyLinks.map((l) => (
+            <li><a href={l.href}>{l.label}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">{t.footer.product}</h4>
+        <ul class="footer__links">
+          <li><a href={pageHref(getPageDef('features')!, locale)}>{t.nav.features}</a></li>
+          <li><a href={pageHref(getPageDef('pricing')!, locale)}>{t.nav.pricing}</a></li>
+          {locale === 'en' && (
+            <>
+              <li><a href="/faq/">{t.nav.faq}</a></li>
+              <li><a href="/how-it-works/">{t.nav.how}</a></li>
+              <li><a href="/blog/">{t.nav.blog}</a></li>
+            </>
+          )}
+          {locale !== 'en' && (
+            <>
+              <li><a href={pageHref(getPageDef('faq')!, locale)}>{t.nav.faq}</a></li>
+              <li><a href={pageHref(getPageDef('how-it-works')!, locale)}>{t.nav.how}</a></li>
+              <li><a href={pageHref(getPageDef('scanbucks')!, locale)}>Scanbucks</a></li>
+              <li><a href={pageHref(getPageDef('guide')!, locale)}>{t.footer.loyalty}</a></li>
+            </>
+          )}
+          <li>
+            <a href={SITE.appWebUrl} class="js-app-link" data-play-store={SITE.playStore} data-app-web={SITE.appWebUrl}>
+              {t.nav.getStarted}
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">{t.footer.company}</h4>
+        <ul class="footer__links">
+          {locale === 'en' && (
+            <>
+              <li><a href="/about/">{t.nav.about}</a></li>
+              <li><a href="/contact/">{t.nav.contact}</a></li>
+              <li><a href="/g2/">G2</a></li>
+            </>
+          )}
+          {locale !== 'en' && (
+            <>
+              <li><a href={pageHref(getPageDef('about')!, locale)}>{t.nav.about}</a></li>
+              <li><a href={pageHref(getPageDef('contact')!, locale)}>{t.nav.contact}</a></li>
+              <li><a href={pageHref(getPageDef('faq')!, locale)}>{t.nav.faq}</a></li>
+              <li><a href={pageHref(getPageDef('how-it-works')!, locale)}>{t.nav.how}</a></li>
+            </>
+          )}
+          <li><a href={G2_LISTING.profileUrl} rel="noopener noreferrer" target="_blank">{t.cta.leaveReview}</a></li>
+        </ul>
+        <p style="margin-top:1rem; font-size:0.75rem; color:var(--text-muted);">{t.footer.language}</p>
+        <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.35rem;">
+          {LOCALES.map((l) => (
+            <a
+              href={pageHref(home, l)}
+              style={`font-size:0.8rem; ${l === locale ? 'color:var(--cyan-400);font-weight:700;' : 'color:var(--text-secondary);'}`}
+            >
+              {LOCALE_META[l].nativeName}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; {new Date().getFullYear()} Scan Perks</span>
+    </div>
+  </div>
+</footer>

@@ -8,6 +8,7 @@ import {
   buildDefinedTermSchema,
   buildGuideArticleSchema,
 } from '../../seo/schema';
+import { getHreflangLinks, getPageDef } from '../../i18n/pages';
 
 const path = '/business-loyalty-program/';
 const g = loyaltyGuide;
@@ -17,6 +18,8 @@ const g = loyaltyGuide;
   title={g.metaTitle}
   description={g.description}
   path={path}
+  lang="en"
+  hreflangLinks={getHreflangLinks(getPageDef('guide')!)}
   keywords={[g.primaryKeyword, ...g.keywordCluster]}
   faqs={g.faqs}
   breadcrumbs={[
@@ -36,7 +39,7 @@ const g = loyaltyGuide;
     }),
   ]}
 >
-  <Nav active="guide" />
+  <Nav active="guide" pageId="guide" />
   <LoyaltyGuidePage guide={g} />
   <Footer />
 </BaseLayout>

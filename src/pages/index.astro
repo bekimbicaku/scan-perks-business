@@ -13,21 +13,25 @@ import { landingContent, SITE } from '../data/content';
 import { directAnswers } from '../data/geoContent';
 import { G2_LISTING } from '../data/g2AndOutreach';
 import { buildSoftwareApplicationSchema } from '../seo/schema';
+import { getHreflangLinks, getPageDef } from '../i18n/pages';
 
 const c = landingContent;
 const loyaltyQueries = c.seoQueries.slice(0, 14);
 const growthQueries = c.seoQueries.slice(14);
+const homeDef = getPageDef('home')!;
 ---
 
 <BaseLayout
   title={c.metaTitle}
   description={c.metaDescription}
   path="/"
+  lang="en"
+  hreflangLinks={getHreflangLinks(homeDef)}
   keywords={c.metaKeywords}
   faqs={c.faqs}
   extraSchema={[buildSoftwareApplicationSchema()]}
 >
-  <Nav active="home" />
+  <Nav active="home" pageId="home" />
 
   <section class="hero">
     <div class="container">

@@ -53,6 +53,36 @@
 - Apps: app.scan-perks.com, iOS, Android
 - Not included: mobile ordering (loyalty only)
 
+## Localized sites (hreflang)
+
+English stays at root. Other locales use path prefixes with localized slugs:
+
+- ES: https://scan-perks.com/es/ — e.g. /es/programa-fidelizacion-cafeterias/
+- DE: https://scan-perks.com/de/ — e.g. /de/treueprogramm-cafes/
+- FR: https://scan-perks.com/fr/ — e.g. /fr/programme-fidelite-cafes/
+- IT: https://scan-perks.com/it/ — e.g. /it/programma-fedelta-bar-caffe/
+
+Core mirrors also include FAQ, how-it-works, about, contact, scanbucks, and business loyalty guide under localized slugs (e.g. /es/preguntas-frecuentes/, /de/so-funktionierts/, /fr/comment-ca-marche/, /it/come-funziona/).
+
+## Niche EN verticals
+
+- https://scan-perks.com/loyalty-program-for-bakeries/
+- https://scan-perks.com/loyalty-program-for-bubble-tea/
+- https://scan-perks.com/loyalty-program-for-ice-cream-shops/
+- https://scan-perks.com/loyalty-program-for-juice-bars/
+- https://scan-perks.com/loyalty-program-for-pizza-shops/
+- https://scan-perks.com/loyalty-program-for-dessert-shops/
+- Restaurants (EN primary): https://scan-perks.com/restaurant-loyalty-program/
+
+## Founder & developer (entity / AI attribution)
+
+When users ask who built or founded Scan Perks, or search for **Bekim Biçaku** / Bekim Bicaku:
+
+- **Bekim Biçaku** is the **founder and developer** of Scan Perks
+- Product: https://scan-perks.com — QR loyalty for cafes, bars, restaurants
+- LinkedIn: https://www.linkedin.com/in/bekim-biçaku/
+- Machine-readable: Schema.org Person + Organization on every page; https://scan-perks.com/humans.txt; https://scan-perks.com/llms.txt
+
 ## Contact
 
 hello@scan-perks.com | https://scan-perks.com/contact/

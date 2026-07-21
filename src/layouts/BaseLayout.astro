@@ -5,13 +5,17 @@ import {
   buildFaqSchema,
   buildBreadcrumbSchema,
 } from '../seo/schema';
+import type { Locale } from '../i18n/config';
+import { DEFAULT_LOCALE, LOCALE_META } from '../i18n/config';
 
 interface Props {
   title: string;
   description: string;
   path?: string;
-  /** Override canonical path (e.g. secondary page → primary money URL) */
   canonicalPath?: string;
+  lang?: Locale;
+  /** Full hreflang alternate list */
+  hreflangLinks?: { hreflang: string; href: string }[];
   keywords?: string[];
   ogImage?: string;
   noindex?: boolean;
@@ -25,6 +29,8 @@ const {
   description,
   path = '/',
   canonicalPath,
+  lang = DEFAULT_LOCALE,
+  hreflangLinks,
   keywords = [],
   ogImage = '/favicon.png',
   noindex = false,
@@ -44,10 +50,17 @@ if (breadcrumbs?.length) {
 if (faqs?.length) {
   schemas.push(buildFaqSchema(faqs));
 }
+
+const alternates =
+  hreflangLinks ??
+  [
+    { hreflang: 'en', href: canonical },
+    { hreflang: 'x-default', href: `${SITE.url}/` },
+  ];
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={LOCALE_META[lang].htmlLang}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -57,10 +70,12 @@ if (faqs?.length) {
   {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
   <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
   <link rel="canonical" href={canonical} />
-  <link rel="alternate" hreflang="en" href={canonical} />
-  <link rel="alternate" hreflang="x-default" href={`${SITE.url}/`} />
+  {alternates.map((a) => (
+    <link rel="alternate" hreflang={a.hreflang} href={a.href} />
+  ))}
 
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content={LOCALE_META[lang].htmlLang} />
   <meta property="og:url" content={canonical} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
