@@ -20,17 +20,15 @@ const features = getPageDef('features')!;
 const pricing = getPageDef('pricing')!;
 const faq = getPageDef('faq')!;
 const how = getPageDef('how-it-works')!;
-const about = getPageDef('about')!;
-const cafe = getPageDef('cafe-loyalty')!;
+const contact = getPageDef('contact')!;
 
+/** Top bar: 5 links — extras stay in footer */
 const links = [
-  { href: pageHref(home, locale), label: t.nav.home, id: 'home' },
   { href: pageHref(features, locale), label: t.nav.features, id: 'features' },
   { href: pageHref(pricing, locale), label: t.nav.pricing, id: 'pricing' },
-  { href: pageHref(cafe, locale), label: cafe.content[locale].h1.split('—')[0].trim().slice(0, 28), id: 'cafe' },
-  { href: pageHref(faq, locale), label: t.nav.faq, id: 'faq' },
   { href: pageHref(how, locale), label: t.nav.how, id: 'how' },
-  { href: pageHref(about, locale), label: t.nav.about, id: 'about' },
+  { href: pageHref(faq, locale), label: t.nav.faq, id: 'faq' },
+  { href: pageHref(contact, locale), label: t.nav.contact, id: 'contact' },
 ];
 
 function switchHref(target: Locale): string {

@@ -2,41 +2,32 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LangNav from '../../components/LangNav.astro';
 import LangFooter from '../../components/LangFooter.astro';
-import LocalizedLanding from '../../components/LocalizedLanding.astro';
 import AppCta from '../../components/AppCta.astro';
+import StoreBadges from '../../components/StoreBadges.astro';
+import ScanDemo from '../../components/ScanDemo.astro';
 import type { Locale } from '../../i18n/config';
 import { ui } from '../../i18n/ui';
-import { getPageDef, pageHref, getHreflangLinks, allLocalizedPageDefs } from '../../i18n/pages';
+import { getPageDef, pageHref, getHreflangLinks } from '../../i18n/pages';
 import { buildSoftwareApplicationSchema } from '../../seo/schema';
 import { G2_LISTING } from '../../data/g2AndOutreach';
+import { SITE } from '../../data/content';
 
 export function getStaticPaths() {
   return (['es', 'de', 'fr', 'it'] as const).map((lang) => ({ params: { lang } }));
 }
 
 const lang = Astro.params.lang as Locale;
-
 const home = getPageDef('home')!;
 const content = home.content[lang];
 const t = ui[lang];
 const path = pageHref(home, lang);
-const hreflangLinks = getHreflangLinks(home);
+const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
 
-const highlightIds = [
-  'cafe-loyalty',
-  'pub-loyalty',
-  'qr-loyalty',
-  'bakery',
-  'bubble-tea',
-  'ice-cream',
-  'pizza',
-  'faq',
-  'how-it-works',
-  'guide',
-];
-const highlights = allLocalizedPageDefs.filter((p) => highlightIds.includes(p.id));
-const productIds = ['pricing', 'features', 'about', 'contact', 'scanbucks'];
-const productLinks = allLocalizedPageDefs.filter((p) => productIds.includes(p.id));
+const cafe = getPageDef('cafe-loyalty')!;
+const pub = getPageDef('pub-loyalty')!;
+const qr = getPageDef('qr-loyalty')!;
+const pricing = getPageDef('pricing')!;
+const how = getPageDef('how-it-works')!;
 ---
 
 <BaseLayout
@@ -44,57 +35,201 @@ const productLinks = allLocalizedPageDefs.filter((p) => productIds.includes(p.id
   description={content.description}
   path={path}
   lang={lang}
-  hreflangLinks={hreflangLinks}
+  hreflangLinks={getHreflangLinks(home)}
   keywords={content.keywords}
   faqs={content.faqs}
   extraSchema={[buildSoftwareApplicationSchema()]}
 >
   <LangNav locale={lang} active="home" pageId="home" />
 
-  <LocalizedLanding locale={lang} content={content} />
-
-  <section class="section">
+  <section class="hero hero--action">
     <div class="container">
-      <div class="section__header reveal">
-        <h2 class="section__title">{t.footer.loyalty}</h2>
-      </div>
-      <div class="features-grid">
-        {highlights.map((p) => (
-          <a href={pageHref(p, lang)} class="glass-card reveal" style="display:block;">
-            <h3 class="feature-card__title">{p.content[lang].h1}</h3>
-            <p class="feature-card__desc">{p.content[lang].heroLine}</p>
-          </a>
-        ))}
+      <div class="hero__content">
+        <div>
+          <div class="hero__badge">
+            <span class="hero__badge-dot"></span>
+            Scan Perks
+          </div>
+          <h1 class="hero__title">{content.h1}</h1>
+          <p class="hero__lead">
+            {content.heroLine}
+            <span>{content.bullets.slice(0, 3).join(' · ')}</span>
+          </p>
+          <div class="hero__actions">
+            <AppCta class="btn btn--primary btn--lg">{t.cta.startTrial}</AppCta>
+            <a href={g2Url} class="btn btn--glass btn--lg" rel="noopener noreferrer" target="_blank">
+              {t.cta.leaveReview}
+            </a>
+          </div>
+          <div class="hero__store-row">
+            <StoreBadges showHint={false} centered={false} />
+          </div>
+        </div>
+        <div class="hero__visual">
+          <ScanDemo />
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section section--sm">
     <div class="container">
-      <div class="section__header reveal">
-        <h2 class="section__title">{t.footer.product}</h2>
+      <div class="action-steps">
+        <div class="action-step reveal">
+          <span class="action-step__num">1</span>
+          <h2 class="action-step__title">{t.cta.startTrial}</h2>
+          <p class="action-step__desc">app.scan-perks.com</p>
+          <AppCta class="btn btn--primary">{t.nav.getStarted}</AppCta>
+        </div>
+        <div class="action-step reveal">
+          <span class="action-step__num">2</span>
+          <h2 class="action-step__title">{t.nav.how}</h2>
+          <p class="action-step__desc">QR → stamps → rewards</p>
+          <a href={pageHref(how, lang)} class="btn btn--glass">{t.nav.how}</a>
+        </div>
+        <div class="action-step reveal">
+          <span class="action-step__num">3</span>
+          <h2 class="action-step__title">G2</h2>
+          <p class="action-step__desc">{t.cta.leaveReview}</p>
+          <a href={g2Url} class="btn btn--glass" rel="noopener noreferrer" target="_blank">{t.cta.leaveReview}</a>
+        </div>
       </div>
-      <div class="features-grid">
-        {productLinks.map((p) => (
-          <a href={pageHref(p, lang)} class="glass-card reveal" style="display:block;">
-            <h3 class="feature-card__title">{p.content[lang].h1}</h3>
-            <p class="feature-card__desc">{p.content[lang].heroLine}</p>
-          </a>
-        ))}
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <div class="venue-cta reveal">
+        <a href={pageHref(cafe, lang)} class="venue-cta__card">{cafe.content[lang].h1.slice(0, 28)}</a>
+        <a href={pageHref(pub, lang)} class="venue-cta__card">{pub.content[lang].h1.slice(0, 28)}</a>
+        <a href={pageHref(qr, lang)} class="venue-cta__card">{qr.content[lang].h1.slice(0, 28)}</a>
+        <a href={pageHref(pricing, lang)} class="venue-cta__card venue-cta__card--accent">{t.nav.pricing}</a>
       </div>
     </div>
   </section>
 
   <section class="section section--sm">
     <div class="container reveal" style="text-align:center;">
-      <AppCta class="btn btn--primary btn--lg">{t.cta.startTrial}</AppCta>
-      <p style="margin-top:1rem;">
-        <a href={G2_LISTING.profileUrl} class="btn btn--glass" rel="noopener noreferrer" target="_blank">
-          {t.cta.leaveReview}
-        </a>
-      </p>
+      <div class="cta-banner">
+        <h2 class="cta-banner__title">{content.h1}</h2>
+        <p class="cta-banner__desc">{content.heroLine}</p>
+        <div class="cta-banner__actions" style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;">
+          <AppCta class="btn btn--primary btn--lg">{t.cta.startTrial}</AppCta>
+          <a href={g2Url} class="btn btn--glass btn--lg" rel="noopener noreferrer" target="_blank">{t.cta.leaveReview}</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <LangFooter locale={lang} />
 </BaseLayout>
+
+<style>
+  .hero--action {
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero__lead {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin: 0 0 1.75rem;
+    max-width: 28rem;
+  }
+
+  .hero__lead span {
+    display: block;
+    margin-top: 0.4rem;
+    color: var(--blue-300);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .hero__store-row {
+    margin-top: 1.25rem;
+  }
+
+  .hero__store-row :global(.store-badges) {
+    justify-content: flex-start;
+  }
+
+  .action-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .action-step {
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.03);
+    text-align: center;
+  }
+
+  .action-step__num {
+    display: inline-flex;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(34, 211, 238, 0.15);
+    color: var(--cyan-400);
+    font-weight: 800;
+    font-size: 0.9rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .action-step__title {
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem;
+    color: #fff;
+  }
+
+  .action-step__desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0 0 1.15rem;
+  }
+
+  .venue-cta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+  }
+
+  .venue-cta__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0.75rem;
+    border-radius: 10px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-align: center;
+    transition: border-color 0.2s, color 0.2s, transform 0.2s;
+  }
+
+  .venue-cta__card:hover {
+    border-color: rgba(34, 211, 238, 0.45);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .venue-cta__card--accent {
+    border-color: rgba(34, 211, 238, 0.4);
+    color: var(--cyan-400);
+  }
+
+  @media (max-width: 900px) {
+    .action-steps { grid-template-columns: 1fr; }
+    .venue-cta { grid-template-columns: 1fr 1fr; }
+    .hero__store-row :global(.store-badges) { justify-content: center; }
+    .hero__lead { margin-left: auto; margin-right: auto; }
+  }
+</style>

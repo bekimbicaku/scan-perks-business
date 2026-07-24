@@ -2,23 +2,17 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import KeywordMarquee from '../components/KeywordMarquee.astro';
-import SeoQuerySection from '../components/SeoQuerySection.astro';
-import FAQSection from '../components/FAQSection.astro';
-import AnswerFirst from '../components/AnswerFirst.astro';
 import AppCta from '../components/AppCta.astro';
 import StoreBadges from '../components/StoreBadges.astro';
-import SeoKeywordHub from '../components/SeoKeywordHub.astro';
+import ScanDemo from '../components/ScanDemo.astro';
 import { landingContent, SITE } from '../data/content';
-import { directAnswers } from '../data/geoContent';
 import { G2_LISTING } from '../data/g2AndOutreach';
 import { buildSoftwareApplicationSchema } from '../seo/schema';
 import { getHreflangLinks, getPageDef } from '../i18n/pages';
 
 const c = landingContent;
-const loyaltyQueries = c.seoQueries.slice(0, 14);
-const growthQueries = c.seoQueries.slice(14);
 const homeDef = getPageDef('home')!;
+const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
 ---
 
 <BaseLayout
@@ -33,47 +27,45 @@ const homeDef = getPageDef('home')!;
 >
   <Nav active="home" pageId="home" />
 
-  <section class="hero">
+  <section class="hero hero--action">
     <div class="container">
       <div class="hero__content">
         <div>
           <div class="hero__badge">
             <span class="hero__badge-dot"></span>
-            Business Loyalty Program
+            QR loyalty for cafes, pubs &amp; bars
           </div>
-          <h1 class="hero__title">{c.heroTitle}</h1>
-          <p class="hero__seo-line">{c.heroSeoLine}</p>
-          <p class="hero__desc">{c.heroDescription}</p>
+          <h1 class="hero__title">Scan Perks</h1>
+          <p class="hero__lead">
+            Customers scan. Earn stamps. Come back.
+            <span>Launch in 5 minutes — from $10/mo.</span>
+          </p>
           <div class="hero__actions">
-            <AppCta class="btn btn--primary btn--lg">Start Free Trial</AppCta>
-            <a href="/business-loyalty-program/" class="btn btn--glass btn--lg">Loyalty Guide</a>
+            <AppCta class="btn btn--primary btn--lg">Open App — Free Trial</AppCta>
+            <a href={g2Url} class="btn btn--glass btn--lg" rel="noopener noreferrer" target="_blank">
+              Leave a G2 Review
+            </a>
+          </div>
+          <div class="hero__store-row">
+            <StoreBadges showHint={false} centered={false} />
           </div>
           <div class="hero__stats">
             <div>
               <div class="hero__stat-value">500+</div>
-              <div class="hero__stat-label">Businesses</div>
+              <div class="hero__stat-label">Venues</div>
             </div>
             <div>
               <div class="hero__stat-value">50K+</div>
-              <div class="hero__stat-label">Active Users</div>
+              <div class="hero__stat-label">Members</div>
             </div>
             <div>
-              <div class="hero__stat-value">14 Days</div>
-              <div class="hero__stat-label">Free Trial</div>
+              <div class="hero__stat-value">14 days</div>
+              <div class="hero__stat-label">Free trial</div>
             </div>
           </div>
         </div>
         <div class="hero__visual">
-          <div class="hero__phone">
-            <div class="hero__phone-screen">
-              <div class="hero__qr" aria-hidden="true">
-                {Array.from({ length: 25 }).map(() => <span></span>)}
-              </div>
-              <p class="hero__phone-text">Scan to earn rewards — bar & restaurant loyal customers</p>
-            </div>
-          </div>
-          <div class="hero__float-card glass glass--strong hero__float-card--1">+24% repeat visits</div>
-          <div class="hero__float-card glass glass--strong hero__float-card--2">Reward unlocked!</div>
+          <ScanDemo />
         </div>
       </div>
     </div>
@@ -81,128 +73,51 @@ const homeDef = getPageDef('home')!;
 
   <section class="section section--sm">
     <div class="container">
-      <AnswerFirst answer={directAnswers.home} />
-      <p style="text-align:center; margin-top:1rem; font-size:0.9rem;">
-        <a href="/faq/" style="color:var(--cyan-400); font-weight:600;">Coffee &amp; cafe loyalty FAQ →</a>
-        {' · '}
-        <a href="/how-it-works/" style="color:var(--cyan-400);">How QR loyalty works →</a>
-      </p>
-    </div>
-  </section>
-
-  <section class="section section--sm g2-review-strip">
-    <div class="container reveal">
-      <div class="g2-review-strip__inner glass-card">
-        <div>
-          <p class="g2-review-strip__label">Using Scan Perks?</p>
-          <p class="g2-review-strip__text">Leave a short review on G2 — it helps other cafe &amp; pub owners find us.</p>
+      <div class="action-steps">
+        <div class="action-step reveal">
+          <span class="action-step__num">1</span>
+          <h2 class="action-step__title">Open the app</h2>
+          <p class="action-step__desc">Go to app.scan-perks.com or download on iOS / Android.</p>
+          <AppCta class="btn btn--primary">Start free trial</AppCta>
         </div>
-        <a
-          href={G2_LISTING.profileUrl || SITE.social.g2}
-          class="btn btn--primary"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Leave a G2 Review →
-        </a>
+        <div class="action-step reveal">
+          <span class="action-step__num">2</span>
+          <h2 class="action-step__title">Print your QR</h2>
+          <p class="action-step__desc">Set stamp rewards and put the code on the counter.</p>
+          <a href="/how-it-works/" class="btn btn--glass">See how it works</a>
+        </div>
+        <div class="action-step reveal">
+          <span class="action-step__num">3</span>
+          <h2 class="action-step__title">Share the love</h2>
+          <p class="action-step__desc">Using Scan Perks? A short G2 review helps other owners find us.</p>
+          <a href={g2Url} class="btn btn--glass" rel="noopener noreferrer" target="_blank">Leave G2 review →</a>
+        </div>
       </div>
     </div>
   </section>
-
-  <KeywordMarquee keywords={c.keywordMarquee} />
-
-  <section class="section">
-    <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label">Grow Your Business</span>
-        <h2 class="section__title">Loyalty Programs for Every Venue</h2>
-        <p class="section__subtitle">Dedicated solutions to get bar loyal customers, restaurant loyal customers, and cafe regulars — all from one platform.</p>
-      </div>
-      <div class="features-grid">
-        <a href="/qr-code-loyalty-program/" class="glass-card reveal" style="display:block; border-color: rgba(59,130,246,0.35);">
-          <div class="feature-card__icon">📱</div>
-          <h3 class="feature-card__title">QR Code Loyalty Program</h3>
-          <p class="feature-card__desc">Loyalty QR codes and digital cards — replace punch cards with smartphone scanning.</p>
-        </a>
-        <a href="/pub-loyalty-scheme/" class="glass-card reveal" style="display:block;">
-          <div class="feature-card__icon">🍺</div>
-          <h3 class="feature-card__title">Pub Loyalty Scheme</h3>
-          <p class="feature-card__desc">Pub loyalty card, happy-hour pushes, and repeat visit tracking for bars and pubs.</p>
-        </a>
-        <a href="/cafe-loyalty-app/" class="glass-card reveal" style="display:block;">
-          <div class="feature-card__icon">☕</div>
-          <h3 class="feature-card__title">Cafe Loyalty App</h3>
-          <p class="feature-card__desc">Coffee shop loyalty programs for independents — digital stamps and counter QR.</p>
-        </a>
-        <a href="/restaurant-loyalty-program/" class="glass-card reveal" style="display:block;">
-          <div class="feature-card__icon">🍽️</div>
-          <h3 class="feature-card__title">Restaurant Loyalty Program</h3>
-          <p class="feature-card__desc">Retain diners with tiered rewards, analytics, and slow-night campaigns.</p>
-        </a>
-        <a href="/grow-restaurant-business/" class="glass-card reveal" style="display:block;">
-          <div class="feature-card__icon">📈</div>
-          <h3 class="feature-card__title">Grow Restaurant Business</h3>
-          <p class="feature-card__desc">Use loyalty as a growth engine — more repeat customers, higher lifetime value.</p>
-        </a>
-        <a href="/business-loyalty-program/" class="glass-card reveal" style="display:block;">
-          <div class="feature-card__icon">📘</div>
-          <h3 class="feature-card__title">Business Loyalty Guide</h3>
-          <p class="feature-card__desc">Complete encyclopedia: what is a business loyalty program and how to start.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <SeoQuerySection
-    queries={loyaltyQueries}
-    title="Business Loyalty — Quick Answers"
-    subtitle="Top searches: QR code loyalty program, bar loyalty programs, cafe loyalty app, pub loyalty scheme."
-  />
-
-  <SeoQuerySection
-    queries={growthQueries}
-    title="Grow Customers, Trust & Profits"
-    subtitle="How Scan Perks helps you increase customers, build credibility, and boost restaurant revenue."
-  />
 
   <section class="section section--sm">
     <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label">How It Works</span>
-        <h2 class="section__title">Launch Your Loyalty Program in Minutes</h2>
-      </div>
-      <div class="steps">
-        <div class="glass-card step reveal">
-          <h3 class="step__title">Sign Up</h3>
-          <p class="step__desc">Create your business account in under 5 minutes. 14-day free trial.</p>
-        </div>
-        <div class="glass-card step reveal">
-          <h3 class="step__title">Set Rewards</h3>
-          <p class="step__desc">Design perks for bar loyal customers or restaurant regulars.</p>
-        </div>
-        <div class="glass-card step reveal">
-          <h3 class="step__title">Display QR</h3>
-          <p class="step__desc">Print your code and place it at the counter or tables.</p>
-        </div>
-        <div class="glass-card step reveal">
-          <h3 class="step__title">Grow Loyalty</h3>
-          <p class="step__desc">Track visits, send push offers, and grow your business.</p>
-        </div>
+      <div class="venue-cta reveal">
+        <a href="/cafe-loyalty-app/" class="venue-cta__card">Cafe loyalty</a>
+        <a href="/pub-loyalty-scheme/" class="venue-cta__card">Pub loyalty</a>
+        <a href="/qr-code-loyalty-program/" class="venue-cta__card">QR loyalty</a>
+        <a href="/pricing/" class="venue-cta__card venue-cta__card--accent">Pricing $10/mo</a>
       </div>
     </div>
   </section>
-
-  <SeoKeywordHub />
-
-  <FAQSection faqs={c.faqs} />
 
   <section class="section section--sm">
     <div class="container reveal">
       <div class="cta-banner">
-        <h2 class="cta-banner__title">Grow Loyal Customers Starting Today</h2>
-        <p class="cta-banner__desc">Business loyalty program from $10/month. 14-day free trial for bars, cafes & restaurants.</p>
-        <div class="cta-banner__actions">
-          <StoreBadges />
+        <h2 class="cta-banner__title">Ready to grow regulars?</h2>
+        <p class="cta-banner__desc">Open the app, start your 14-day trial, or leave a review if you already use Scan Perks.</p>
+        <div class="cta-banner__actions cta-banner__actions--stack">
+          <div class="cta-banner__btns">
+            <AppCta class="btn btn--primary btn--lg">Open app.scan-perks.com</AppCta>
+            <a href={g2Url} class="btn btn--glass btn--lg" rel="noopener noreferrer" target="_blank">G2 Review</a>
+          </div>
+          <StoreBadges showHint={false} />
         </div>
       </div>
     </div>
@@ -212,46 +127,138 @@ const homeDef = getPageDef('home')!;
 </BaseLayout>
 
 <style>
-  .hero__seo-line {
-    font-size: 1.1rem;
+  .hero--action {
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero__lead {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin: 0 0 1.75rem;
+    max-width: 28rem;
+  }
+
+  .hero__lead span {
+    display: block;
+    margin-top: 0.35rem;
     color: var(--blue-300);
-    margin-bottom: 1rem;
-    line-height: 1.6;
-    font-weight: 500;
-  }
-
-  .g2-review-strip__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.25rem;
-    padding: 1.25rem 1.5rem;
-    flex-wrap: wrap;
-  }
-
-  .g2-review-strip__label {
-    font-size: 0.75rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--cyan-400);
-    margin-bottom: 0.25rem;
+    font-size: 1.05rem;
   }
 
-  .g2-review-strip__text {
-    font-size: 0.95rem;
+  .hero__store-row {
+    margin-top: 1.25rem;
+  }
+
+  .hero__store-row :global(.store-badges) {
+    justify-content: flex-start;
+  }
+
+  .action-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .action-step {
+    padding: 1.5rem;
+    border-radius: var(--radius-md, 16px);
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.03);
+    text-align: center;
+  }
+
+  .action-step__num {
+    display: inline-flex;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(34, 211, 238, 0.15);
+    color: var(--cyan-400);
+    font-weight: 800;
+    font-size: 0.9rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .action-step__title {
+    font-size: 1.15rem;
+    margin: 0 0 0.5rem;
+    color: #fff;
+  }
+
+  .action-step__desc {
+    font-size: 0.9rem;
     color: var(--text-secondary);
     line-height: 1.5;
+    margin: 0 0 1.15rem;
   }
 
-  @media (max-width: 640px) {
-    .g2-review-strip__inner {
-      flex-direction: column;
-      text-align: center;
+  .venue-cta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+  }
+
+  .venue-cta__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0.75rem;
+    border-radius: var(--radius-sm, 10px);
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: border-color 0.2s, color 0.2s, transform 0.2s;
+  }
+
+  .venue-cta__card:hover {
+    border-color: rgba(34, 211, 238, 0.45);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .venue-cta__card--accent {
+    border-color: rgba(34, 211, 238, 0.4);
+    color: var(--cyan-400);
+  }
+
+  .cta-banner__actions--stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .cta-banner__btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  @media (max-width: 900px) {
+    .action-steps {
+      grid-template-columns: 1fr;
     }
 
-    .g2-review-strip__inner .btn {
-      width: 100%;
+    .venue-cta {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hero__store-row :global(.store-badges) {
+      justify-content: center;
+    }
+
+    .hero__lead {
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 </style>

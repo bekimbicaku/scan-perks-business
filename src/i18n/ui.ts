@@ -24,7 +24,7 @@ export const ui: Record<Locale, UiStrings> = {
       blog: 'Blog',
       about: 'About',
       contact: 'Contact',
-      getStarted: 'Get Started',
+      getStarted: 'Open App',
     },
     footer: {
       tagline: 'QR loyalty for cafes, bars & restaurants — from $10/month.',
@@ -33,7 +33,7 @@ export const ui: Record<Locale, UiStrings> = {
       company: 'Company',
       language: 'Language',
     },
-    cta: { startTrial: 'Start Free Trial', viewPricing: 'View Pricing', leaveReview: 'Leave a G2 Review →' },
+    cta: { startTrial: 'Open App — Free Trial', viewPricing: 'View Pricing', leaveReview: 'Leave a G2 Review →' },
     common: { quickAnswer: 'Direct Answer', alsoSee: 'Also see', related: 'Related' },
   },
   es: {
@@ -46,7 +46,7 @@ export const ui: Record<Locale, UiStrings> = {
       blog: 'Blog',
       about: 'Nosotros',
       contact: 'Contacto',
-      getStarted: 'Empezar',
+      getStarted: 'Abrir app',
     },
     footer: {
       tagline: 'Fidelización QR para cafeterías, bares y restaurantes — desde 10 $/mes.',
@@ -55,7 +55,7 @@ export const ui: Record<Locale, UiStrings> = {
       company: 'Empresa',
       language: 'Idioma',
     },
-    cta: { startTrial: 'Prueba gratis 14 días', viewPricing: 'Ver precios', leaveReview: 'Dejar reseña en G2 →' },
+    cta: { startTrial: 'Abrir app — prueba gratis', viewPricing: 'Ver precios', leaveReview: 'Dejar reseña en G2 →' },
     common: { quickAnswer: 'Respuesta directa', alsoSee: 'Ver también', related: 'Relacionado' },
   },
   de: {
@@ -68,7 +68,7 @@ export const ui: Record<Locale, UiStrings> = {
       blog: 'Blog',
       about: 'Über uns',
       contact: 'Kontakt',
-      getStarted: 'Loslegen',
+      getStarted: 'App öffnen',
     },
     footer: {
       tagline: 'QR-Treueprogramm für Cafés, Bars & Restaurants — ab 10 $/Monat.',
@@ -77,7 +77,7 @@ export const ui: Record<Locale, UiStrings> = {
       company: 'Unternehmen',
       language: 'Sprache',
     },
-    cta: { startTrial: '14 Tage kostenlos testen', viewPricing: 'Preise ansehen', leaveReview: 'G2-Bewertung schreiben →' },
+    cta: { startTrial: 'App öffnen — 14 Tage gratis', viewPricing: 'Preise ansehen', leaveReview: 'G2-Bewertung schreiben →' },
     common: { quickAnswer: 'Kurze Antwort', alsoSee: 'Siehe auch', related: 'Ähnlich' },
   },
   fr: {
@@ -90,7 +90,7 @@ export const ui: Record<Locale, UiStrings> = {
       blog: 'Blog',
       about: 'À propos',
       contact: 'Contact',
-      getStarted: 'Commencer',
+      getStarted: 'Ouvrir l’app',
     },
     footer: {
       tagline: 'Fidélité QR pour cafés, bars et restaurants — dès 10 $/mois.',
@@ -99,7 +99,7 @@ export const ui: Record<Locale, UiStrings> = {
       company: 'Entreprise',
       language: 'Langue',
     },
-    cta: { startTrial: 'Essai gratuit 14 jours', viewPricing: 'Voir les tarifs', leaveReview: 'Laisser un avis G2 →' },
+    cta: { startTrial: 'Ouvrir l’app — essai gratuit', viewPricing: 'Voir les tarifs', leaveReview: 'Laisser un avis G2 →' },
     common: { quickAnswer: 'Réponse directe', alsoSee: 'Voir aussi', related: 'Connexe' },
   },
   it: {
@@ -112,7 +112,7 @@ export const ui: Record<Locale, UiStrings> = {
       blog: 'Blog',
       about: 'Chi siamo',
       contact: 'Contatti',
-      getStarted: 'Inizia',
+      getStarted: 'Apri app',
     },
     footer: {
       tagline: 'Loyalty QR per caffè, bar e ristoranti — da 10 $/mese.',
@@ -121,7 +121,7 @@ export const ui: Record<Locale, UiStrings> = {
       company: 'Azienda',
       language: 'Lingua',
     },
-    cta: { startTrial: 'Prova gratis 14 giorni', viewPricing: 'Vedi prezzi', leaveReview: 'Lascia una recensione G2 →' },
+    cta: { startTrial: 'Apri app — prova gratis', viewPricing: 'Vedi prezzi', leaveReview: 'Lascia una recensione G2 →' },
     common: { quickAnswer: 'Risposta diretta', alsoSee: 'Vedi anche', related: 'Correlati' },
   },
 };

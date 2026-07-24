@@ -1,5 +1,6 @@
 ---
 import { SITE } from '../data/content';
+import { G2_LISTING } from '../data/g2AndOutreach';
 ---
 
 <footer class="footer">
@@ -10,7 +11,12 @@ import { SITE } from '../data/content';
           <img src="/favicon.png" alt="Scan Perks" width="36" height="36" />
           Scan Perks
         </div>
-        <p>Business loyalty program for bars, cafes & restaurants. QR rewards to grow loyal customers — from $10/month.</p>
+        <p>QR loyalty for cafes, pubs & restaurants — from $10/month.</p>
+        <p style="margin-top:0.75rem;">
+          <a href={SITE.appWebUrl} class="js-app-link" data-play-store={SITE.playStore} data-app-web={SITE.appWebUrl} style="color:var(--cyan-400);font-weight:600;">
+            Open app.scan-perks.com →
+          </a>
+        </p>
       </div>
       <div>
         <h4 class="footer__heading">Loyalty Programs</h4>
@@ -21,6 +27,7 @@ import { SITE } from '../data/content';
           <li><a href="/coffee-shop-loyalty-programs/">Coffee Shop Loyalty</a></li>
           <li><a href="/qr-code-loyalty-program/">QR Code Loyalty</a></li>
           <li><a href="/bar-loyalty-program/">Bar Loyalty Programs</a></li>
+          <li><a href="/restaurant-loyalty-program/">Restaurant Loyalty</a></li>
           <li><a href="/business-loyalty-program/">Business Loyalty Guide</a></li>
         </ul>
       </div>
@@ -29,10 +36,10 @@ import { SITE } from '../data/content';
         <ul class="footer__links">
           <li><a href="/features/">Features</a></li>
           <li><a href="/pricing/">Pricing</a></li>
-          <li><a href="/faq/">FAQ</a></li>
           <li><a href="/how-it-works/">How It Works</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/scanbucks/">Scanbucks</a></li>
           <li><a href="/blog/">Blog</a></li>
-          <li><a href={SITE.appWebUrl} class="js-app-link" data-play-store={SITE.playStore} data-app-web={SITE.appWebUrl}>Download App</a></li>
           <li><a href={SITE.playStore} rel="noopener noreferrer">Google Play</a></li>
           <li><a href={SITE.appStore} rel="noopener noreferrer">App Store</a></li>
         </ul>
@@ -43,15 +50,20 @@ import { SITE } from '../data/content';
           <li><a href="/about/">About Us</a></li>
           <li><a href="/contact/">Contact</a></li>
           <li><a href="/g2/">G2 Profile</a></li>
+          <li>
+            <a href={G2_LISTING.profileUrl || SITE.social.g2} rel="noopener noreferrer" target="_blank">
+              Leave a G2 Review
+            </a>
+          </li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
-      <span>&copy; 2025 Scan Perks. All rights reserved.</span>
+      <span>&copy; {new Date().getFullYear()} Scan Perks. All rights reserved.</span>
       <div class="footer__socials">
-        <a href="#" aria-label="Twitter">𝕏</a>
-        <a href="#" aria-label="Instagram">IG</a>
-        <a href="#" aria-label="LinkedIn">in</a>
+        <a href={SITE.social.twitter} aria-label="Twitter" rel="noopener noreferrer">𝕏</a>
+        <a href={SITE.social.instagram} aria-label="Instagram" rel="noopener noreferrer">IG</a>
+        <a href={SITE.social.linkedin} aria-label="LinkedIn" rel="noopener noreferrer">in</a>
       </div>
     </div>
   </div>

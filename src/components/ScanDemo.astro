@@ -1,0 +1,346 @@
+---
+/** Animated demo: phone scans QR → stamps fill → perk unlocks */
+---
+
+<div class="scan-demo" aria-hidden="true">
+  <div class="scan-demo__stage">
+    <div class="scan-demo__poster">
+      <div class="scan-demo__poster-label">Scan for rewards</div>
+      <div class="scan-demo__qr">
+        {Array.from({ length: 36 }).map((_, i) => (
+          <span class:list={[{ 'scan-demo__qr-cell--dark': [0,1,2,5,6,7,8,9,14,16,18,21,23,25,28,29,30,33,34,35].includes(i) }]}></span>
+        ))}
+        <div class="scan-demo__laser"></div>
+      </div>
+    </div>
+
+    <div class="scan-demo__phone">
+      <div class="scan-demo__notch"></div>
+      <div class="scan-demo__screen">
+        <p class="scan-demo__app-name">Scan Perks</p>
+        <div class="scan-demo__stamps">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <div class={`scan-demo__stamp scan-demo__stamp--${i + 1}`}>
+              <span>✓</span>
+            </div>
+          ))}
+        </div>
+        <div class="scan-demo__unlock">
+          <strong>Free drink unlocked!</strong>
+          <span>9th coffee is on us</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scan-demo__perk scan-demo__perk--1">☕ +1</div>
+    <div class="scan-demo__perk scan-demo__perk--2">🍺 +1</div>
+    <div class="scan-demo__perk scan-demo__perk--3">🎁</div>
+  </div>
+</div>
+
+<style>
+  .scan-demo {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    perspective: 900px;
+  }
+
+  .scan-demo__stage {
+    position: relative;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .scan-demo__poster {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(-6deg);
+    width: 150px;
+    padding: 1rem 0.85rem 1.1rem;
+    background: linear-gradient(160deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9));
+    border: 1px solid rgba(34, 211, 238, 0.35);
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    z-index: 1;
+  }
+
+  .scan-demo__poster-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--cyan-400);
+    text-align: center;
+    margin-bottom: 0.65rem;
+  }
+
+  .scan-demo__qr {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 3px;
+    padding: 8px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .scan-demo__qr span {
+    aspect-ratio: 1;
+    background: #e2e8f0;
+    border-radius: 1px;
+  }
+
+  .scan-demo__qr-cell--dark {
+    background: #0f172a !important;
+  }
+
+  .scan-demo__laser {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #22d3ee, #3b82f6, transparent);
+    box-shadow: 0 0 12px #22d3ee, 0 0 24px rgba(34, 211, 238, 0.6);
+    animation: scanLaser 2.8s ease-in-out infinite;
+  }
+
+  @keyframes scanLaser {
+    0%, 100% { top: 8%; opacity: 0.4; }
+    50% { top: 88%; opacity: 1; }
+  }
+
+  .scan-demo__phone {
+    position: relative;
+    width: 200px;
+    height: 380px;
+    margin-left: 40px;
+    background: linear-gradient(160deg, #1e293b, #0f172a);
+    border-radius: 28px;
+    border: 2px solid rgba(148, 163, 184, 0.35);
+    box-shadow:
+      0 30px 60px rgba(0, 0, 0, 0.5),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+    z-index: 2;
+    animation: phoneBob 4s ease-in-out infinite;
+  }
+
+  @keyframes phoneBob {
+    0%, 100% { transform: translateY(0) rotate(3deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+  }
+
+  .scan-demo__notch {
+    width: 72px;
+    height: 8px;
+    background: #020617;
+    border-radius: 0 0 8px 8px;
+    margin: 10px auto 0;
+  }
+
+  .scan-demo__screen {
+    margin: 12px 12px 16px;
+    height: calc(100% - 40px);
+    border-radius: 18px;
+    background: radial-gradient(ellipse at top, rgba(34, 211, 238, 0.12), transparent 55%),
+      linear-gradient(180deg, #0b1220, #111827);
+    padding: 1rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scan-demo__app-name {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    letter-spacing: 0.04em;
+  }
+
+  .scan-demo__stamps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.45rem;
+    width: 100%;
+  }
+
+  .scan-demo__stamp {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px dashed rgba(148, 163, 184, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: transparent;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .scan-demo__stamp span {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+
+  .scan-demo__stamp--1 { animation: stampFill 8s ease-in-out infinite; animation-delay: 0.4s; }
+  .scan-demo__stamp--2 { animation: stampFill 8s ease-in-out infinite; animation-delay: 0.9s; }
+  .scan-demo__stamp--3 { animation: stampFill 8s ease-in-out infinite; animation-delay: 1.4s; }
+  .scan-demo__stamp--4 { animation: stampFill 8s ease-in-out infinite; animation-delay: 1.9s; }
+  .scan-demo__stamp--5 { animation: stampFill 8s ease-in-out infinite; animation-delay: 2.4s; }
+  .scan-demo__stamp--6 { animation: stampFill 8s ease-in-out infinite; animation-delay: 2.9s; }
+  .scan-demo__stamp--7 { animation: stampFill 8s ease-in-out infinite; animation-delay: 3.4s; }
+  .scan-demo__stamp--8 { animation: stampFill 8s ease-in-out infinite; animation-delay: 3.9s; }
+
+  @keyframes stampFill {
+    0%, 8% {
+      border-color: rgba(148, 163, 184, 0.35);
+      background: rgba(255, 255, 255, 0.03);
+      color: transparent;
+      box-shadow: none;
+    }
+    12%, 72% {
+      border-color: #22d3ee;
+      background: rgba(34, 211, 238, 0.2);
+      color: #22d3ee;
+      box-shadow: 0 0 12px rgba(34, 211, 238, 0.35);
+    }
+    78%, 100% {
+      border-color: rgba(148, 163, 184, 0.35);
+      background: rgba(255, 255, 255, 0.03);
+      color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  .scan-demo__stamp--1 span,
+  .scan-demo__stamp--2 span,
+  .scan-demo__stamp--3 span,
+  .scan-demo__stamp--4 span,
+  .scan-demo__stamp--5 span,
+  .scan-demo__stamp--6 span,
+  .scan-demo__stamp--7 span,
+  .scan-demo__stamp--8 span {
+    animation: stampCheck 8s ease-in-out infinite;
+  }
+  .scan-demo__stamp--1 span { animation-delay: 0.4s; }
+  .scan-demo__stamp--2 span { animation-delay: 0.9s; }
+  .scan-demo__stamp--3 span { animation-delay: 1.4s; }
+  .scan-demo__stamp--4 span { animation-delay: 1.9s; }
+  .scan-demo__stamp--5 span { animation-delay: 2.4s; }
+  .scan-demo__stamp--6 span { animation-delay: 2.9s; }
+  .scan-demo__stamp--7 span { animation-delay: 3.4s; }
+  .scan-demo__stamp--8 span { animation-delay: 3.9s; }
+
+  @keyframes stampCheck {
+    0%, 8% { opacity: 0; transform: scale(0.4); }
+    12%, 72% { opacity: 1; transform: scale(1); }
+    78%, 100% { opacity: 0; transform: scale(0.4); }
+  }
+
+  .scan-demo__unlock {
+    margin-top: auto;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(34, 211, 238, 0.25), rgba(59, 130, 246, 0.2));
+    border: 1px solid rgba(34, 211, 238, 0.45);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(8px) scale(0.95);
+    animation: unlockPop 8s ease-in-out infinite;
+  }
+
+  .scan-demo__unlock strong {
+    display: block;
+    font-size: 0.78rem;
+    color: #fff;
+    margin-bottom: 0.15rem;
+  }
+
+  .scan-demo__unlock span {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+  }
+
+  @keyframes unlockPop {
+    0%, 48% { opacity: 0; transform: translateY(8px) scale(0.95); }
+    55%, 72% { opacity: 1; transform: translateY(0) scale(1); }
+    80%, 100% { opacity: 0; transform: translateY(-4px) scale(0.95); }
+  }
+
+  .scan-demo__perk {
+    position: absolute;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #22d3ee;
+    text-shadow: 0 0 16px rgba(34, 211, 238, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  .scan-demo__perk--1 {
+    left: 28%;
+    top: 35%;
+    animation: perkFloat 8s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  .scan-demo__perk--2 {
+    left: 22%;
+    top: 48%;
+    animation: perkFloat 8s ease-in-out infinite;
+    animation-delay: 2.2s;
+  }
+
+  .scan-demo__perk--3 {
+    left: 32%;
+    top: 28%;
+    font-size: 1.4rem;
+    animation: perkFloat 8s ease-in-out infinite;
+    animation-delay: 4.2s;
+  }
+
+  @keyframes perkFloat {
+    0%, 5% { opacity: 0; transform: translate(0, 0) scale(0.6); }
+    15% { opacity: 1; transform: translate(20px, -30px) scale(1.1); }
+    35% { opacity: 0; transform: translate(40px, -70px) scale(0.8); }
+    100% { opacity: 0; }
+  }
+
+  @media (max-width: 640px) {
+    .scan-demo__stage { height: 360px; }
+    .scan-demo__poster {
+      width: 110px;
+      left: 4%;
+      padding: 0.7rem 0.55rem;
+    }
+    .scan-demo__phone {
+      width: 170px;
+      height: 320px;
+      margin-left: 20px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scan-demo__laser,
+    .scan-demo__phone,
+    .scan-demo__stamp,
+    .scan-demo__stamp span,
+    .scan-demo__unlock,
+    .scan-demo__perk {
+      animation: none !important;
+    }
+    .scan-demo__unlock { opacity: 1; transform: none; }
+    .scan-demo__stamp {
+      border-color: #22d3ee;
+      background: rgba(34, 211, 238, 0.2);
+      color: #22d3ee;
+    }
+    .scan-demo__stamp span { opacity: 1; transform: none; }
+  }
+</style>
