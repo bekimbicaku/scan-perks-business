@@ -1,0 +1,179 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { BACKLINK_OUTREACH, G2_LISTING } from '../../data/g2AndOutreach';
+import { SITE } from '../../data/content';
+
+/** Private outreach kit — noindex, not in nav/sitemap. Bookmark for yourself. */
+---
+
+<BaseLayout
+  title="Backlink Outreach Kit (Private) | Scan Perks"
+  description="US/UK backlink checklist and email templates for Scan Perks."
+  path="/outreach/"
+  noindex={true}
+>
+  <Nav />
+
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section__label">Private · noindex</span>
+      <h1 class="page-hero__title">US / UK Backlink Kit</h1>
+      <p class="page-hero__desc">
+        Link only these three URLs. Do not push the blog pages that sit at position 60–70.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <h2 class="section__title" style="font-size:1.35rem;">Priority URLs (in order)</h2>
+      <ol class="outreach-list">
+        {BACKLINK_OUTREACH.priorityLinkTargets.map((t) => (
+          <li class="glass-card outreach-card">
+            <a href={t.url}>{t.url}</a>
+            <p><strong>Anchor:</strong> <code>{t.anchor}</code> · {t.market}</p>
+            <p class="muted">{t.why}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <h2 class="section__title" style="font-size:1.35rem;">This week’s checklist</h2>
+      <ul class="outreach-check">
+        {BACKLINK_OUTREACH.weeklyChecklist.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+      <p style="margin-top:1rem;">
+        <a href={G2_LISTING.profileUrl} class="btn btn--primary" rel="noopener noreferrer" target="_blank">
+          Open G2 profile →
+        </a>
+        {' '}
+        <a href={`mailto:${SITE.email}`} class="btn btn--glass">Email {SITE.email}</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <h2 class="section__title" style="font-size:1.35rem;">Where to get links</h2>
+      <div class="outreach-targets">
+        {BACKLINK_OUTREACH.targetSites.map((t) => (
+          <article class="glass-card outreach-card">
+            <h3>
+              {t.url ? <a href={t.url} rel="noopener noreferrer" target="_blank">{t.name}</a> : t.name}
+            </h3>
+            <p class="badge">{t.type} · {t.market}</p>
+            <p>{t.action}</p>
+            <p>
+              Link: <a href={t.linkTo}>{t.linkTo}</a><br />
+              Anchor: <code>{t.anchor}</code>
+            </p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <h2 class="section__title" style="font-size:1.35rem;">Email — UK pubs</h2>
+      <pre class="glass-card outreach-code"><code>{BACKLINK_OUTREACH.emailUkPub}</code></pre>
+      <h2 class="section__title" style="font-size:1.35rem; margin-top:2rem;">Email — US bars</h2>
+      <pre class="glass-card outreach-code"><code>{BACKLINK_OUTREACH.emailUsBar}</code></pre>
+      <h2 class="section__title" style="font-size:1.35rem; margin-top:2rem;">Email — US cafes</h2>
+      <pre class="glass-card outreach-code"><code>{BACKLINK_OUTREACH.emailUsCafe}</code></pre>
+      <h2 class="section__title" style="font-size:1.35rem; margin-top:2rem;">Directory blurb</h2>
+      <pre class="glass-card outreach-code"><code>{BACKLINK_OUTREACH.directoryBlurb}</code></pre>
+      <h2 class="section__title" style="font-size:1.35rem; margin-top:2rem;">Embed HTML</h2>
+      <pre class="glass-card outreach-code"><code>{BACKLINK_OUTREACH.embedBadgeHtml}</code></pre>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .outreach-list {
+    list-style: decimal;
+    padding-left: 1.25rem;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .outreach-card {
+    padding: 1.15rem 1.25rem;
+  }
+
+  .outreach-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .outreach-card a {
+    color: var(--cyan-400);
+    font-weight: 600;
+    word-break: break-all;
+  }
+
+  .outreach-card .muted,
+  .muted {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.35rem;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--cyan-400);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+
+  .outreach-check {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .outreach-check li {
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .outreach-check li::before {
+    content: '☐ ';
+    color: var(--cyan-400);
+  }
+
+  .outreach-targets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .outreach-code {
+    padding: 1.25rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .outreach-targets {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

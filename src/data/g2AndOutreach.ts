@@ -1,4 +1,4 @@
-/** G2 listing copy + review CTA — paste into G2 vendor profile */
+/** G2 listing copy + US/UK backlink outreach kit (Aug 2026 GSC) */
 
 export const G2_LISTING = {
   productName: 'Scan Perks',
@@ -7,8 +7,8 @@ export const G2_LISTING = {
   website: 'https://scan-perks.com',
   productUrl: 'https://app.scan-perks.com',
   preferredSeoUrls: [
-    'https://scan-perks.com/pub-loyalty-scheme/',
     'https://scan-perks.com/pub-loyalty-card/',
+    'https://scan-perks.com/pub-loyalty-scheme/',
     'https://scan-perks.com/cafe-loyalty-app/',
   ],
   categories: [
@@ -50,35 +50,204 @@ Platforms: Web dashboard (owners), iOS App Store and Google Play (customers).`,
   ],
 } as const;
 
-/** Backlink outreach — preferred URLs + email templates for publishers */
+export type OutreachTarget = {
+  name: string;
+  url: string;
+  type: 'Directory' | 'Guest post' | 'Community' | 'Review' | 'Launch';
+  market: 'US' | 'UK' | 'Global';
+  action: string;
+  linkTo: string;
+  anchor: string;
+};
+
+/** Concrete US/UK targets — do these in order (highest SEO leverage first) */
 export const BACKLINK_OUTREACH = {
+  /** GSC: closest to top 10 — push these URLs only in outreach */
   priorityLinkTargets: [
     {
       url: 'https://scan-perks.com/pub-loyalty-card/',
       anchor: 'pub loyalty card',
-      why: 'Best GSC position (~31–34). Highest chance of top 10 with external links.',
+      why: 'Best ranking opportunity (US/UK impressions, position ~28–34). #1 link target.',
+      market: 'US+UK' as const,
     },
     {
       url: 'https://scan-perks.com/pub-loyalty-scheme/',
       anchor: 'pub loyalty scheme',
-      why: 'Strong UK query (72 impressions, pos ~35). Ideal for UK hospitality blogs.',
+      why: 'Strong UK query; also US bars searching “loyalty scheme”. #2 link target.',
+      market: 'UK+US' as const,
     },
     {
       url: 'https://scan-perks.com/cafe-loyalty-app/',
       anchor: 'cafe loyalty app',
-      why: 'Primary cafe URL (canonical). Use for coffee / cafe directories.',
+      why: 'Primary US cafe URL. Use for coffee directories & cafe blogs only.',
+      market: 'US' as const,
     },
   ],
-  targetSites: [
-    { name: 'G2', url: 'https://www.g2.com', type: 'Directory' },
-    { name: 'Capterra', url: 'https://www.capterra.com', type: 'Directory' },
-    { name: 'GetApp', url: 'https://www.getapp.com', type: 'Directory' },
-    { name: 'Product Hunt', url: 'https://www.producthunt.com', type: 'Launch' },
-    { name: 'AlternativeTo', url: 'https://alternativeto.net', type: 'Directory' },
-    { name: 'UK hospitality blogs / pub trade press', url: '', type: 'Guest post' },
-    { name: 'Coffee / cafe indie blogs', url: '', type: 'Guest post' },
-    { name: 'Reddit r/barowners, r/coffee (helpful replies only)', url: 'https://reddit.com', type: 'Community' },
+
+  weeklyChecklist: [
+    'Ask 3 customers to leave a G2 review (link product URLs in profile description)',
+    'Submit or refresh 1 software directory (Capterra / GetApp / AlternativeTo)',
+    'Send 5 guest-post or resource emails (UK pub blogs OR US cafe blogs)',
+    '1 helpful Reddit/forum reply with contextual link (no spam)',
+    'Confirm G2 + directories link to /pub-loyalty-card/ or /cafe-loyalty-app/ (not homepage only)',
   ],
+
+  targetSites: [
+    {
+      name: 'G2 — Scan Perks profile',
+      url: 'https://www.g2.com/products/scan-perks/reviews',
+      type: 'Review' as const,
+      market: 'US' as const,
+      action: 'Paste shortDescription + preferredSeoUrls in product profile. Request reviews from venues.',
+      linkTo: 'https://scan-perks.com/pub-loyalty-card/',
+      anchor: 'pub loyalty card',
+    },
+    {
+      name: 'Capterra',
+      url: 'https://www.capterra.com/vendors/sign-up/',
+      type: 'Directory' as const,
+      market: 'US' as const,
+      action: 'Create vendor listing. Website = scan-perks.com. Feature link: /cafe-loyalty-app/ and /pub-loyalty-card/.',
+      linkTo: 'https://scan-perks.com/cafe-loyalty-app/',
+      anchor: 'cafe loyalty app',
+    },
+    {
+      name: 'GetApp',
+      url: 'https://www.getapp.com/',
+      type: 'Directory' as const,
+      market: 'US' as const,
+      action: 'Same as Capterra (Gartner network). Categories: Loyalty Management, Restaurant.',
+      linkTo: 'https://scan-perks.com/cafe-loyalty-app/',
+      anchor: 'cafe loyalty app',
+    },
+    {
+      name: 'AlternativeTo',
+      url: 'https://alternativeto.net/',
+      type: 'Directory' as const,
+      market: 'Global' as const,
+      action: 'Add Scan Perks as alternative to Punchh / Thanx / Loyverse Loyalty. Link /cafe-loyalty-app/.',
+      linkTo: 'https://scan-perks.com/cafe-loyalty-app/',
+      anchor: 'cafe loyalty app',
+    },
+    {
+      name: 'Product Hunt',
+      url: 'https://www.producthunt.com/',
+      type: 'Launch' as const,
+      market: 'US' as const,
+      action: 'Launch or refresh. First comment: link pub loyalty card + cafe loyalty app.',
+      linkTo: 'https://scan-perks.com/pub-loyalty-card/',
+      anchor: 'digital pub loyalty card',
+    },
+    {
+      name: 'Softonic / SaaSHub / Slashdot software',
+      url: 'https://www.saashub.com/',
+      type: 'Directory' as const,
+      market: 'Global' as const,
+      action: 'List under hospitality loyalty. Prefer /pub-loyalty-scheme/ for UK-facing blurbs.',
+      linkTo: 'https://scan-perks.com/pub-loyalty-scheme/',
+      anchor: 'pub loyalty scheme',
+    },
+    {
+      name: 'Morning Advertiser / UK pub trade',
+      url: 'https://www.morningadvertiser.co.uk/',
+      type: 'Guest post' as const,
+      market: 'UK' as const,
+      action: 'Pitch: “Digital pub loyalty cards vs paper punch cards for independents”. Link /pub-loyalty-card/.',
+      linkTo: 'https://scan-perks.com/pub-loyalty-card/',
+      anchor: 'pub loyalty card',
+    },
+    {
+      name: 'Pub & Bar Magazine / The Spirits Business (UK)',
+      url: 'https://www.thespiritsbusiness.com/',
+      type: 'Guest post' as const,
+      market: 'UK' as const,
+      action: 'Pitch resource roundup on pub loyalty schemes. Link /pub-loyalty-scheme/.',
+      linkTo: 'https://scan-perks.com/pub-loyalty-scheme/',
+      anchor: 'pub loyalty scheme',
+    },
+    {
+      name: 'Bar & Restaurant / US hospitality blogs',
+      url: 'https://www.barandrestaurant.com/',
+      type: 'Guest post' as const,
+      market: 'US' as const,
+      action: 'Pitch: bar loyalty programs without POS. Link /bar-loyalty-program/ + /pub-loyalty-card/.',
+      linkTo: 'https://scan-perks.com/pub-loyalty-card/',
+      anchor: 'digital pub loyalty card',
+    },
+    {
+      name: 'Sprudge / Perfect Daily Grind (coffee)',
+      url: 'https://sprudge.com/',
+      type: 'Guest post' as const,
+      market: 'US' as const,
+      action: 'Pitch independent cafe loyalty (not Starbucks). Link /cafe-loyalty-app/ only.',
+      linkTo: 'https://scan-perks.com/cafe-loyalty-app/',
+      anchor: 'cafe loyalty app',
+    },
+    {
+      name: 'Reddit r/barowners, r/ThePub, r/coffee',
+      url: 'https://www.reddit.com/r/barowners/',
+      type: 'Community' as const,
+      market: 'US' as const,
+      action: 'Answer “loyalty app?” threads helpfully. Link once if relevant — never spam.',
+      linkTo: 'https://scan-perks.com/pub-loyalty-card/',
+      anchor: 'pub loyalty card',
+    },
+  ] satisfies OutreachTarget[],
+
+  emailUkPub: `Subject: Resource for your readers — digital pub loyalty cards
+
+Hi {{name}},
+
+I enjoyed your piece on {{topic}}. Many independent pubs still use paper punch cards that get lost and give zero visit data.
+
+We published a practical guide on replacing them with a digital pub loyalty card (QR at the bar, ~$10/month, no POS):
+
+https://scan-perks.com/pub-loyalty-card/
+
+Also useful for UK readers searching “pub loyalty scheme”:
+https://scan-perks.com/pub-loyalty-scheme/
+
+Happy to send a short quote, screenshot, or custom blurb if you ever cover loyalty / regulars.
+
+Best,
+{{your_name}}
+Scan Perks — https://scan-perks.com
+hello@scan-perks.com`,
+
+  emailUsBar: `Subject: Bar loyalty without POS — resource for independents
+
+Hi {{name}},
+
+Saw your article on {{topic}}. US bar owners often ask for loyalty that works without switching to Square/Toast.
+
+This page explains a digital pub/bar loyalty card via QR (14-day free trial, $10/mo):
+
+https://scan-perks.com/pub-loyalty-card/
+
+Related: https://scan-perks.com/bar-loyalty-program/
+
+Open to a quote or guest tip if helpful.
+
+Best,
+{{your_name}}
+Scan Perks`,
+
+  emailUsCafe: `Subject: Cafe loyalty app for independents (not a chain rewards app)
+
+Hi {{name}},
+
+Your readers who own coffee shops often land on Starbucks-style “rewards app” articles. We wrote a clear guide for cafe owners who need their own loyalty program:
+
+https://scan-perks.com/cafe-loyalty-app/
+
+QR stamps, iOS/Android, no POS — from $10/month.
+
+Happy to contribute a short expert quote.
+
+Best,
+{{your_name}}
+Scan Perks`,
+
   emailTemplate: `Subject: Quick resource on pub loyalty cards for your readers
 
 Hi {{name}},
@@ -95,5 +264,8 @@ Happy to share a short quote or custom blurb if helpful.
 Best,
 {{your_name}}
 Scan Perks — https://scan-perks.com`,
-  embedBadgeHtml: `<a href="https://scan-perks.com/pub-loyalty-scheme/" title="Pub loyalty scheme by Scan Perks">Pub loyalty scheme — Scan Perks</a>`,
+
+  embedBadgeHtml: `<a href="https://scan-perks.com/pub-loyalty-card/" title="Pub loyalty card by Scan Perks">Pub loyalty card — Scan Perks</a>`,
+
+  directoryBlurb: `Scan Perks — QR loyalty for independent pubs, bars, and cafes. Digital pub loyalty card & cafe loyalty app from $10/mo. No POS. https://scan-perks.com/pub-loyalty-card/ | https://scan-perks.com/cafe-loyalty-app/`,
 } as const;

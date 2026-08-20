@@ -97,16 +97,15 @@ export const GET: APIRoute = () => {
   }
 
   for (const a of blogArticles) {
+    const weakBlog = ['best-coffee-loyalty-programs', 'best-mobile-loyalty-apps-coffee-shops-2026'].includes(
+      a.slug
+    );
+    const supportBlog = ['bar-customer-retention-tips', 'qr-code-vs-punch-cards', 'best-loyalty-app-small-business'].includes(
+      a.slug
+    );
     push({
       path: `/blog/${a.slug}/`,
-      priority: [
-        'best-coffee-loyalty-programs',
-        'qr-code-loyalty-program-guide',
-        'best-mobile-loyalty-apps-coffee-shops-2026',
-        'how-to-choose-qr-loyalty-program-cafe',
-      ].includes(a.slug)
-        ? '0.92'
-        : '0.8',
+      priority: weakBlog ? '0.55' : supportBlog ? '0.78' : '0.65',
       changefreq: 'monthly',
       lastmod: a.publishedAt,
     });

@@ -78,21 +78,23 @@ export const keywordLandings: LoyaltyPage[] = [
   },
   {
     slug: 'pub-loyalty-scheme',
-    title: 'Pub Loyalty Scheme',
-    metaTitle: 'Pub Loyalty Scheme for Bars — Digital QR $10/mo | Scan Perks',
+    title: 'Pub Loyalty Scheme for Independent Pubs & Bars',
+    metaTitle: 'Pub Loyalty Scheme — Digital QR for Pubs & Bars $10/mo | Scan Perks',
     description:
-      'Pub loyalty scheme for independent pubs & US bars. Digital loyalty card, free-drink tiers, happy-hour pushes — $10/mo, 14-day free trial.',
+      'Launch a pub loyalty scheme for UK pubs & US bars. Digital loyalty card, free-drink tiers, happy-hour pushes — $10/mo, 14-day free trial, no POS.',
     primaryKeyword: 'pub loyalty scheme',
     heroSeoLine:
-      'Pub loyalty scheme for independent pubs — QR rewards, digital pub loyalty card, happy-hour push alerts from $10/month.',
+      'Pub loyalty scheme for independent pubs and bars — QR rewards, digital loyalty card, happy-hour push alerts from $10/month.',
     quickAnswer:
-      'A pub loyalty scheme rewards regular drinkers with perks each visit. Scan Perks digitizes your pub loyalty scheme with a bar QR code — customers earn free-drink tiers on a digital pub loyalty card, you send happy-hour pushes and track regulars — $10/month, 14-day free trial.',
+      'A pub loyalty scheme rewards regular drinkers with perks each visit. Scan Perks digitizes your pub loyalty scheme with a bar QR code: customers earn free-drink tiers on a digital pub loyalty card, you send happy-hour pushes and track regulars — $10/month, 14-day free trial, no POS required.',
     keywordCluster: [
       'pub loyalty scheme',
       'pub loyalty program',
       'pub loyalty card',
       'pub loyalty cards',
       'bar loyalty scheme',
+      'bar loyalty program',
+      'loyalty scheme for pubs',
     ],
     highlights: ['Digital pub loyalty card', 'Happy-hour pushes', 'Free-drink tiers', '$10/month'],
     featureBullets: [
@@ -106,19 +108,23 @@ export const keywordLandings: LoyaltyPage[] = [
     sections: [
       {
         heading: 'What Is a Pub Loyalty Scheme?',
-        body: 'A pub loyalty scheme rewards repeat drinkers — typically a free pint after every 10 purchases, or member discounts on slow nights. Traditional schemes use paper cards that get lost. Scan Perks runs a digital pub loyalty scheme: one QR code at the bar, rewards on every customer\'s phone.',
+        body: 'A pub loyalty scheme is the full program — reward rules, the customer card, and how staff redeem free drinks. Typical UK offer: free pint after 10 purchases. US bars use the same idea under “bar loyalty.” Scan Perks runs the scheme digitally with one QR at the bar.',
+      },
+      {
+        heading: 'Pub Loyalty Scheme vs Paper Punch Cards',
+        body: 'Paper schemes are free to print but lose cards and data. A digital pub loyalty scheme logs every visit, stops “lost card” disputes, and lets you push midweek specials. Closely related: the customer-facing digital pub loyalty card at /pub-loyalty-card/.',
       },
       {
         heading: 'Pub Loyalty Scheme vs Enterprise Bar Software',
-        body: 'Enterprise loyalty suites cost $200+/month and require POS integration. Scan Perks pub loyalty scheme is built for single-location pubs at $10–15/month — setup in ~5 minutes, no contracts, 14-day free trial.',
+        body: 'Enterprise loyalty suites cost $200+/month and often require POS integration. Scan Perks pub loyalty scheme is built for single-location pubs and bars at $10–15/month — setup in ~5 minutes, no contracts, 14-day free trial.',
       },
       {
         heading: 'How to Launch a Pub Loyalty Scheme in One Day',
-        body: 'Sign up at app.scan-perks.com, configure free-drink tiers, download your bar QR poster, and train staff to mention the scheme. Most pubs go live the same day. Growth plan adds unlimited push notifications for happy-hour campaigns.',
+        body: 'Sign up at app.scan-perks.com, configure free-drink tiers, download your bar QR poster, and train staff to mention the scheme (“Scan for your loyalty card”). Most pubs go live the same day. Growth plan adds unlimited push notifications for happy-hour campaigns.',
       },
       {
-        heading: 'Best Pub Loyalty Scheme Features',
-        body: 'Look for: digital pub loyalty card (not plastic), visit tracking, push notifications, and affordable pricing. Scan Perks includes all four — plus analytics showing who your regulars are and when they visit.',
+        heading: 'UK Pubs & US Bars — Same Product',
+        body: 'Google UK favors “pub loyalty scheme” and “pub loyalty card.” Google US favors “bar loyalty programs.” Scan Perks is one QR loyalty product covering both markets — iOS/Android customer apps, owner dashboard, analytics from $10/month.',
       },
     ],
     comparison: [
@@ -142,43 +148,63 @@ export const keywordLandings: LoyaltyPage[] = [
         answer:
           'Scan Perks — QR pub loyalty scheme with digital cards, analytics, and happy-hour pushes. No POS required, $10/month.',
       },
+      {
+        question: 'Is a pub loyalty scheme the same as a bar loyalty program?',
+        answer:
+          'Yes for independents — same QR rewards idea. UK says “pub loyalty scheme”; US often says “bar loyalty program.” See also /bar-loyalty-program/ and /pub-loyalty-card/.',
+      },
     ],
-    supportingPosts: ['bar-customer-retention-tips', 'best-loyalty-app-small-business'],
-    localMarkets: ['Independent pubs', 'Sports bars', 'Craft beer bars'],
+    supportingPosts: ['bar-customer-retention-tips'],
+    localMarkets: ['Independent pubs', 'UK free houses', 'US sports bars', 'Craft beer bars'],
   },
   {
     slug: 'pub-loyalty-card',
-    title: 'Pub Loyalty Card',
-    metaTitle: 'Pub Loyalty Card App — Replace Punch Cards $10/mo | Scan Perks',
+    title: 'Pub Loyalty Card for Pubs & Bars',
+    metaTitle: 'Pub Loyalty Card — Digital QR for Pubs & Bars $10/mo | Scan Perks',
     description:
-      'Digital pub loyalty card for pubs & bars — replace plastic/paper punch cards. Track visits, happy-hour pushes — $10/mo free trial for owners.',
+      'Best digital pub loyalty card for UK pubs & US bars. Replace paper punch cards with QR — track visits, happy-hour pushes, $10/mo free trial.',
     primaryKeyword: 'pub loyalty card',
     heroSeoLine:
-      'Digital pub loyalty card for independent pubs — QR scan at the bar, never lost, full analytics from $10/month.',
+      'Digital pub loyalty card for independent pubs and bars — scan at the bar, never lose a card, analytics from $10/month.',
     quickAnswer:
-      'A pub loyalty card tracks drinks toward free pints or rewards. Scan Perks replaces plastic pub loyalty cards with a digital card on the customer\'s phone — scan your bar QR each visit, stamps add automatically, owners get visit analytics and push tools from $10/month.',
-    keywordCluster: ['pub loyalty card', 'pub loyalty cards', 'bar loyalty cards', 'digital pub loyalty card'],
+      'A pub loyalty card tracks drinks toward free pints or rewards. Scan Perks replaces paper and plastic pub loyalty cards with a digital card on the customer phone: guests scan your bar QR each visit, stamps add automatically, and owners get visit analytics plus happy-hour push tools from $10/month — ideal for UK pubs and US neighborhood bars.',
+    keywordCluster: [
+      'pub loyalty card',
+      'pub loyalty cards',
+      'bar loyalty cards',
+      'digital pub loyalty card',
+      'pub loyalty punch card',
+      'bar loyalty card app',
+    ],
     highlights: ['No plastic cards', 'QR at bar', 'Visit tracking', '$10/month'],
     featureBullets: [
-      'Digital pub loyalty card stored on customer phone',
+      'Digital pub loyalty card on customer phone (iOS & Android)',
       'Replaces paper pub loyalty cards and punch cards',
-      'QR scan at bar — contactless',
+      'QR scan at bar — contactless, no POS',
       'Free-drink tiers when stamp threshold met',
-      'Owner dashboard with regular customer list',
-      '$10/month — 14-day free trial',
+      'Owner dashboard with regulars list',
+      '$10/month Starter — 14-day free trial',
     ],
     sections: [
       {
-        heading: 'Paper Pub Loyalty Cards vs Digital',
-        body: 'Paper pub loyalty cards get lost, forged, and provide no data. A digital pub loyalty card on the customer\'s phone cannot be lost — every scan is logged, and you can push happy-hour offers to cardholders instantly.',
+        heading: 'Why Pub Loyalty Cards Still Matter in 2026',
+        body: 'UK and US drinkers expect a reason to come back midweek. A pub loyalty card (buy 9, get 1 free or stamp tiers) is the simplest offer staff can explain in one sentence. Paper cards still dominate independents — but they get lost, forged, and give zero data. A digital pub loyalty card keeps the same offer and adds analytics.',
+      },
+      {
+        heading: 'Paper Pub Loyalty Cards vs Digital QR',
+        body: 'Paper pub loyalty cards cost pennies to print but provide no visit history and die when wallets are emptied. A digital pub loyalty card cannot be lost: every scan is logged, and you can push Tuesday or happy-hour offers to cardholders instantly. Scan Perks: QR at the bar, stamps on the phone, from $10/month.',
       },
       {
         heading: 'How the Scan Perks Pub Loyalty Card Works',
-        body: 'Display your venue QR at the bar. First-time customers scan to get a digital pub loyalty card. Each return visit scan adds a stamp. When they hit your reward threshold (e.g. 10 drinks = 1 free), staff redeem in the dashboard.',
+        body: '1) Create an account at app.scan-perks.com. 2) Set reward rules (e.g. 10 drinks = 1 free). 3) Print your bar QR. 4) Guests scan once to open a digital pub loyalty card, then scan every visit. 5) Redeem free drinks in the dashboard. Typical setup: under 5 minutes — no POS, no hardware.',
       },
       {
-        heading: 'Pub Loyalty Cards for Independent Pubs',
-        body: 'Chain pubs use proprietary apps. Independents need affordable pub loyalty cards without enterprise cost. Scan Perks: $10/month, iOS/Android customer apps, full pub loyalty card program with analytics.',
+        heading: 'Pub Loyalty Cards for UK Pubs & US Bars',
+        body: 'UK searches often use “pub loyalty card” and “pub loyalty scheme”; US owners search “bar loyalty programs” and “loyalty cards for bars.” Scan Perks covers both: one digital card product, happy-hour pushes, visit tracking, iOS/Android apps — $10/month Starter or $15/month Growth.',
+      },
+      {
+        heading: 'Pub Loyalty Card Pricing',
+        body: 'Starter $10/month (up to 200 members). Growth $15/month (unlimited members and pushes). Both include the digital pub loyalty card, analytics, and print-ready QR. 14-day free trial, cancel anytime — no annual contract.',
       },
     ],
     comparison: [
@@ -191,16 +217,26 @@ export const keywordLandings: LoyaltyPage[] = [
       {
         question: 'What is a pub loyalty card?',
         answer:
-          'A pub loyalty card tracks visits toward free drinks or perks. Scan Perks offers a digital pub loyalty card via QR scan — no plastic, from $10/month.',
+          'A pub loyalty card tracks visits toward free drinks or perks. Scan Perks offers a digital pub loyalty card via QR scan — no plastic, from $10/month for independent pubs and bars.',
       },
       {
         question: 'What are the best pub loyalty cards for independent pubs?',
         answer:
-          'Digital pub loyalty cards outperform paper. Scan Perks: QR-based pub loyalty card with analytics and push notifications — $10/month, 14-day trial.',
+          'Digital pub loyalty cards outperform paper. Scan Perks: QR-based pub loyalty card with analytics and push notifications — $10/month, 14-day trial at app.scan-perks.com.',
+      },
+      {
+        question: 'Can US bars use a pub loyalty card?',
+        answer:
+          'Yes. US bars use the same digital loyalty card product — often called a bar loyalty card. Scan Perks works for pubs and bars without POS integration.',
+      },
+      {
+        question: 'Pub loyalty card vs pub loyalty scheme — what is the difference?',
+        answer:
+          'A pub loyalty card is the customer-facing stamp/card. A pub loyalty scheme is the overall program (rules, rewards, pushes). Scan Perks includes both: see also /pub-loyalty-scheme/.',
       },
     ],
     supportingPosts: ['bar-customer-retention-tips'],
-    localMarkets: ['Pubs', 'Sports bars', 'Neighborhood bars'],
+    localMarkets: ['UK pubs', 'US sports bars', 'Neighborhood bars', 'Craft beer bars'],
   },
   {
     slug: 'coffee-shop-loyalty-programs',

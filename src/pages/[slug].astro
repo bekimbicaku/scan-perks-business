@@ -11,7 +11,7 @@ import {
   qrConversationalFaqs,
 } from '../data/conversationalFaqs';
 import { getCanonicalOverrideForSlug } from '../data/seoCanonicals';
-import { buildLoyaltyServiceSchema, buildSoftwareApplicationSchema } from '../seo/schema';
+import { buildLoyaltyServiceSchema, buildSoftwareApplicationSchema, buildHowToSchema } from '../seo/schema';
 import { enNicheSlugPaths, findDefByEnSlug, getHreflangLinks } from '../i18n/pages';
 
 export function getStaticPaths() {
@@ -71,6 +71,31 @@ const serviceSchema = page
       keyword: page.primaryKeyword,
     })
   : null;
+
+const pubHowTo =
+  page && (page.slug === 'pub-loyalty-card' || page.slug === 'pub-loyalty-scheme')
+    ? buildHowToSchema({
+        name:
+          page.slug === 'pub-loyalty-card'
+            ? 'How to launch a digital pub loyalty card'
+            : 'How to launch a pub loyalty scheme',
+        description:
+          'Set up QR pub loyalty for an independent pub or bar in about 5 minutes — no POS required.',
+        steps: [
+          { name: 'Create account', text: 'Sign up at app.scan-perks.com and start the 14-day free trial.' },
+          { name: 'Set reward tiers', text: 'Choose stamp rules such as 10 drinks = 1 free pint.' },
+          { name: 'Print your bar QR', text: 'Download the print-ready QR poster and display it at the bar.' },
+          {
+            name: 'Guests scan & earn',
+            text: 'Customers open a digital pub loyalty card on their phone and scan each visit.',
+          },
+        ],
+      })
+    : null;
+
+const loyaltyExtraSchema = [serviceSchema, buildSoftwareApplicationSchema(), pubHowTo].filter(
+  Boolean
+) as Record<string, unknown>[];
 ---
 
 {nicheDef && nicheContent ? (
@@ -106,7 +131,7 @@ const serviceSchema = page
       { name: 'Home', path: '/' },
       { name: page.title, path: servicePath },
     ]}
-    extraSchema={[serviceSchema!, buildSoftwareApplicationSchema()]}
+    extraSchema={loyaltyExtraSchema}
   >
     <Nav />
     {canonicalOverride && (
