@@ -343,10 +343,10 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: 'best-coffee-loyalty-programs',
-    title: 'Coffee Shop Loyalty Programs — Best Apps Compared (2026)',
-    metaTitle: 'Coffee Shop Loyalty Programs — Cafe Loyalty App Guide',
+    title: 'Coffee Shop Loyalty Programs for Independent Cafes (2026)',
+    metaTitle: 'Best Coffee Shop Loyalty Programs for Cafe Owners 2026 | Scan Perks',
     description:
-      'Coffee shop loyalty programs compared: cafe loyalty app, coffee shop loyalty reward app & QR stamps. Independent cafes from $10/mo — Scan Perks free trial.',
+      'Best coffee shop loyalty programs for independent cafe owners — not Starbucks. Compare cafe loyalty apps with QR stamps from $10/mo. Free trial.',
     keywords: [
       'coffee shop loyalty programs',
       'cafe loyalty app',
@@ -374,7 +374,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         heading: 'Coffee Shop Loyalty Reward App vs Chain Apps',
-        body: 'Starbucks-scale apps cost millions to build. A coffee shop loyalty reward app for independents should cost under $20/month and need no POS lock-in. Scan Perks checks both: digital stamps, counter QR, analytics, push offers from $10/month.',
+        body: 'Starbucks-scale apps cost millions to build and are for chain customers — not cafe owners. A coffee shop loyalty reward app for independents should cost under $20/month and need no POS lock-in. Scan Perks checks both: digital stamps, counter QR, analytics, push offers from $10/month. If you searched for Starbucks Rewards or Dunkin, that is a different product; Scan Perks is B2B software for your cafe.',
       },
       {
         heading: 'Best Rewards Program for Frequent Specialty Coffee Customers',
@@ -439,10 +439,10 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: 'best-mobile-loyalty-apps-coffee-shops-2026',
-    title: 'Best Mobile Loyalty Apps for Coffee Shops (2026)',
-    metaTitle: 'Best Mobile Coffee Loyalty Apps 2026 — iPhone & Android | Scan Perks',
+    title: 'Best Mobile Loyalty Apps for Coffee Shop Owners (2026)',
+    metaTitle: 'Best Cafe Loyalty Apps for Owners — iPhone & Android 2026 | Scan Perks',
     description:
-      'What is the best coffee rewards program on iPhone or Android? Compare mobile loyalty apps for independent coffee shops — QR rewards, pricing, POS needs.',
+      'Best coffee loyalty apps for cafe owners on iPhone/Android — not chain consumer apps. QR stamps, no POS, from $10/mo. Compare Scan Perks.',
     keywords: [
       'best mobile coffee loyalty app',
       'coffee rewards program iphone android',

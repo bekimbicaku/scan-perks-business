@@ -10,7 +10,7 @@ export const cafeConversationalFaqs: FaqItem[] = [
     question:
       'Which coffee company has the best loyalty program for earning points and free drinks?',
     answer:
-      'Starbucks Rewards leads among national chains for points and free drinks. For independent coffee shops, Scan Perks offers visit-based stamp rewards (e.g. buy 9, get 1 free), iOS/Android customer apps, and owner analytics from $10/month at app.scan-perks.com — without enterprise app budgets.',
+      'Among national chains, Starbucks Rewards leads for consumer points and free drinks. That is a different product from cafe software. If you own an independent coffee shop in the US, Scan Perks is a cafe loyalty app you run yourself: QR stamp rewards, iOS/Android apps, owner analytics — $10/month at app.scan-perks.com.',
   },
   {
     question:

@@ -45,11 +45,15 @@ export function findByLocaleSlug(
 }
 
 export function getHreflangLinks(def: LocalizedPageDef): { hreflang: string; href: string }[] {
+  const enHref = `${SITE.url}${pageHref(def, 'en')}`;
   const links = (['en', 'es', 'de', 'fr', 'it'] as Locale[]).map((locale) => ({
     hreflang: locale,
     href: `${SITE.url}${pageHref(def, locale)}`,
   }));
-  links.push({ hreflang: 'x-default', href: `${SITE.url}${pageHref(def, 'en')}` });
+  // Help Google match US/UK English SERPs to apex EN URLs
+  links.push({ hreflang: 'en-US', href: enHref });
+  links.push({ hreflang: 'en-GB', href: enHref });
+  links.push({ hreflang: 'x-default', href: enHref });
   return links;
 }
 

@@ -41,9 +41,9 @@ export interface LandingContent {
 
 export const landingContent: LandingContent = {
   metaTitle:
-    'Cafe Loyalty App & Pub Loyalty Scheme — QR Loyalty | Scan Perks',
+    'Cafe Loyalty App for Coffee Shop Owners — QR Rewards $10/mo | Scan Perks',
   metaDescription:
-    'Cafe loyalty app for coffee shops + pub loyalty scheme for bars. Coffee shop loyalty programs via QR — $10/mo, 14-day free trial. app.scan-perks.com',
+    'Cafe loyalty app & pub loyalty for independent owners (US cafes, bars, pubs). QR stamps, iOS/Android, no POS — $10/mo, 14-day free trial at app.scan-perks.com',
   metaKeywords: [
     'qr code loyalty program',
     'qr code loyalty card',

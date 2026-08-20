@@ -31,10 +31,10 @@ export interface LoyaltyPage {
 export const loyaltyPages: LoyaltyPage[] = [
   {
     slug: 'bar-loyalty-program',
-    title: 'Pub Loyalty Scheme & Bar Loyalty Programs',
-    metaTitle: 'Pub Loyalty Scheme & Bar Loyalty Programs | Scan Perks',
+    title: 'Bar Loyalty Programs for US Bars & Pubs',
+    metaTitle: 'Bar Loyalty Programs for Bars — QR Rewards $10/mo | Scan Perks',
     description:
-      'Pub loyalty scheme + digital pub loyalty card for bars. Bar loyalty programs with QR rewards, happy-hour pushes — $10/mo, 14-day free trial.',
+      'Bar loyalty programs for US bars & pubs. QR rewards, digital loyalty card, happy-hour pushes — $10/mo, 14-day free trial for owners.',
     primaryKeyword: 'pub loyalty scheme',
     heroSeoLine:
       'Pub loyalty scheme, pub loyalty card, and bar loyalty programs — QR rewards for independent pubs and sports bars from $10/month.',
@@ -194,9 +194,9 @@ export const loyaltyPages: LoyaltyPage[] = [
   {
     slug: 'cafe-loyalty-program',
     title: 'Cafe Loyalty App',
-    metaTitle: 'Cafe Loyalty App — Coffee Shop Loyalty Programs | Scan Perks',
+    metaTitle: 'Cafe Loyalty App for Coffee Shops — See Primary Guide | Scan Perks',
     description:
-      'Top cafe loyalty app for coffee shops. Coffee shop loyalty programs with QR stamps, free drinks & iOS/Android apps — $10/mo, 14-day free trial.',
+      'Looking for a cafe loyalty app? Our primary guide is at /cafe-loyalty-app/ — QR stamps for coffee shop owners, $10/mo free trial.',
     primaryKeyword: 'cafe loyalty app',
     heroSeoLine:
       'Cafe loyalty app and coffee shop loyalty programs for independents — digital stamps, coffee shop loyalty reward app from $10/month.',

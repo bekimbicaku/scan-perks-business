@@ -40,14 +40,14 @@ export const localizedPages: LocalizedPageDef[] = [
   page('home', '/', {
     en: {
       slug: '',
-      metaTitle: 'Cafe Loyalty App & Pub Loyalty Scheme — QR Loyalty | Scan Perks',
+      metaTitle: 'Cafe Loyalty App for Coffee Shop Owners — QR Rewards $10/mo | Scan Perks',
       description:
-        'Cafe loyalty app for coffee shops + pub loyalty scheme for bars. QR rewards from $10/mo. 14-day free trial.',
+        'Cafe loyalty app & pub loyalty for independent owners (US cafes, bars, pubs). QR stamps, iOS/Android, no POS — $10/mo, 14-day free trial.',
       h1: 'Cafe Loyalty App & Pub Loyalty Scheme',
-      heroLine: 'QR loyalty for cafes, bars & restaurants — from $10/month.',
+      heroLine: 'QR loyalty for cafe & bar owners — from $10/month.',
       directAnswer:
-        'Scan Perks is a QR loyalty platform for independent cafes, bars, and restaurants. Customers scan a venue QR to earn stamp rewards; owners manage programs at app.scan-perks.com from $10/month.',
-      bullets: ['QR stamp rewards', 'iOS & Android apps', 'No POS required', '$10/mo Starter'],
+        'Scan Perks is QR loyalty software for independent cafe, bar, and restaurant owners — not a chain consumer rewards app. Customers scan your venue QR to earn stamps; you manage programs at app.scan-perks.com from $10/month.',
+      bullets: ['For venue owners', 'QR stamp rewards', 'iOS & Android', '$10/mo Starter'],
       sections: [],
       faqs: [],
       keywords: ['cafe loyalty app', 'pub loyalty scheme', 'qr code loyalty program'],

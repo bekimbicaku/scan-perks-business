@@ -166,7 +166,12 @@ export function buildLoyaltyServiceSchema(input: {
       url: SITE.url,
     },
     serviceType: input.keyword,
-    areaServed: { '@type': 'Country', name: 'United States' },
+    areaServed: [
+      { '@type': 'Country', name: 'United States' },
+      { '@type': 'Country', name: 'United Kingdom' },
+      { '@type': 'Country', name: 'Canada' },
+      { '@type': 'Country', name: 'Australia' },
+    ],
     offers: {
       '@type': 'Offer',
       price: '10.00',

@@ -4,10 +4,10 @@ import type { LoyaltyPage } from './loyaltyPages';
 export const keywordLandings: LoyaltyPage[] = [
   {
     slug: 'cafe-loyalty-app',
-    title: 'Cafe Loyalty App',
-    metaTitle: 'Cafe Loyalty App — Coffee Shops from $10/mo | Scan Perks',
+    title: 'Cafe Loyalty App for Coffee Shop Owners',
+    metaTitle: 'Cafe Loyalty App for Coffee Shops — $10/mo Free Trial | Scan Perks',
     description:
-      'Cafe loyalty app for independent coffee shops. QR stamps, iOS/Android, free drinks — $10/mo, 14-day trial. app.scan-perks.com',
+      'Cafe loyalty app for independent coffee shop owners (not a chain rewards app). QR stamps, iOS/Android, no POS — $10/mo, 14-day free trial.',
     primaryKeyword: 'cafe loyalty app',
     heroSeoLine:
       'The cafe loyalty app built for independent coffee shops — digital stamps, counter QR, iOS & Android from $10/month.',
@@ -57,7 +57,12 @@ export const keywordLandings: LoyaltyPage[] = [
       {
         question: 'What is the best cafe loyalty app for coffee shops?',
         answer:
-          'Scan Perks is a leading cafe loyalty app for independents: QR stamps, iOS/Android apps, analytics, push offers — $10/month, 14-day trial at app.scan-perks.com.',
+          'For independent cafe owners (not Starbucks customers): Scan Perks — QR stamps, iOS/Android apps, analytics, push offers — $10/month, 14-day trial at app.scan-perks.com.',
+      },
+      {
+        question: 'Is Scan Perks a Starbucks or Dunkin rewards app?',
+        answer:
+          'No. Scan Perks is software for cafe owners to run their own loyalty program. Customers earn stamps at your shop — it is not a national chain rewards account.',
       },
       {
         question: 'How much does a cafe loyalty app cost?',
@@ -74,9 +79,9 @@ export const keywordLandings: LoyaltyPage[] = [
   {
     slug: 'pub-loyalty-scheme',
     title: 'Pub Loyalty Scheme',
-    metaTitle: 'Pub Loyalty Scheme — Digital QR from $10/mo | Scan Perks',
+    metaTitle: 'Pub Loyalty Scheme for Bars — Digital QR $10/mo | Scan Perks',
     description:
-      'Pub loyalty scheme for independent pubs & bars. Digital pub loyalty card, free-drink tiers, happy-hour pushes — $10/mo free trial.',
+      'Pub loyalty scheme for independent pubs & US bars. Digital loyalty card, free-drink tiers, happy-hour pushes — $10/mo, 14-day free trial.',
     primaryKeyword: 'pub loyalty scheme',
     heroSeoLine:
       'Pub loyalty scheme for independent pubs — QR rewards, digital pub loyalty card, happy-hour push alerts from $10/month.',
@@ -144,9 +149,9 @@ export const keywordLandings: LoyaltyPage[] = [
   {
     slug: 'pub-loyalty-card',
     title: 'Pub Loyalty Card',
-    metaTitle: 'Pub Loyalty Card — Digital QR for Pubs | Scan Perks',
+    metaTitle: 'Pub Loyalty Card App — Replace Punch Cards $10/mo | Scan Perks',
     description:
-      'Replace plastic pub loyalty cards with a digital pub loyalty card on QR. Track visits, send happy-hour pushes — $10/mo, free trial.',
+      'Digital pub loyalty card for pubs & bars — replace plastic/paper punch cards. Track visits, happy-hour pushes — $10/mo free trial for owners.',
     primaryKeyword: 'pub loyalty card',
     heroSeoLine:
       'Digital pub loyalty card for independent pubs — QR scan at the bar, never lost, full analytics from $10/month.',
@@ -199,10 +204,10 @@ export const keywordLandings: LoyaltyPage[] = [
   },
   {
     slug: 'coffee-shop-loyalty-programs',
-    title: 'Coffee Shop Loyalty Programs',
-    metaTitle: 'Coffee Shop Loyalty Programs — Compared 2026 | Scan Perks',
+    title: 'Coffee Shop Loyalty Programs for Independents',
+    metaTitle: 'Coffee Shop Loyalty Programs for Owners — $10/mo | Scan Perks',
     description:
-      'Coffee shop loyalty programs for independents compared. Cafe loyalty app with QR stamps — $10/mo, iOS/Android, 14-day free trial.',
+      'Coffee shop loyalty programs for independent cafe owners (not chain apps). QR stamps, iOS/Android — $10/mo, 14-day free trial.',
     primaryKeyword: 'coffee shop loyalty programs',
     heroSeoLine:
       'Coffee shop loyalty programs for independent cafes — digital stamps, free drinks, and analytics from $10/month.',
@@ -265,10 +270,10 @@ export const keywordLandings: LoyaltyPage[] = [
   },
   {
     slug: 'qr-code-loyalty-program',
-    title: 'QR Code Loyalty Program',
-    metaTitle: 'QR Code Loyalty Program — Cafes & Bars $10/mo | Scan Perks',
+    title: 'QR Code Loyalty Program for Cafe & Bar Owners',
+    metaTitle: 'QR Code Loyalty Program for Owners — $10/mo Free Trial | Scan Perks',
     description:
-      'QR code loyalty program for cafes, bars & coffee shops. Loyalty QR, digital card, analytics — setup in 5 min. Free trial.',
+      'QR code loyalty program for coffee shop & bar owners. Digital stamps, no POS, setup in 5 min — $10/mo, 14-day free trial.',
     primaryKeyword: 'qr code loyalty program',
     heroSeoLine:
       'QR code loyalty program for hospitality — loyalty QR codes, digital cards, and visit analytics from $10/month.',
