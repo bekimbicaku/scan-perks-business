@@ -132,6 +132,7 @@ const loyaltyExtraSchema = [serviceSchema, buildSoftwareApplicationSchema(), pub
       { name: page.title, path: servicePath },
     ]}
     extraSchema={loyaltyExtraSchema}
+    noindex={Boolean(canonicalOverride)}
   >
     <Nav />
     {canonicalOverride && (

@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.scan-perks.com" }],
+      "destination": "https://scan-perks.com/:path*",
+      "permanent": true
+    }
+  ]
+}

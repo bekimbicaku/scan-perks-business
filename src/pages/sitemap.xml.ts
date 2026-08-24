@@ -97,17 +97,16 @@ export const GET: APIRoute = () => {
   }
 
   for (const a of blogArticles) {
-    const weakBlog = ['best-coffee-loyalty-programs', 'best-mobile-loyalty-apps-coffee-shops-2026'].includes(
+    const weakBlog = ['best-mobile-loyalty-apps-coffee-shops-2026'].includes(a.slug);
+    const priorityBlog = ['best-coffee-loyalty-programs', 'qr-code-vs-punch-cards', 'bar-customer-retention-tips'].includes(
       a.slug
     );
-    const supportBlog = ['bar-customer-retention-tips', 'qr-code-vs-punch-cards', 'best-loyalty-app-small-business'].includes(
-      a.slug
-    );
+    const supportBlog = ['best-loyalty-app-small-business'].includes(a.slug);
     push({
       path: `/blog/${a.slug}/`,
-      priority: weakBlog ? '0.55' : supportBlog ? '0.78' : '0.65',
-      changefreq: 'monthly',
-      lastmod: a.publishedAt,
+      priority: priorityBlog ? '0.95' : supportBlog ? '0.78' : weakBlog ? '0.55' : '0.65',
+      changefreq: 'weekly',
+      lastmod: a.updatedAt ?? a.publishedAt,
     });
   }
 

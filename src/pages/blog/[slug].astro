@@ -21,6 +21,16 @@ const path = `/blog/${article.slug}/`;
 const blogExtraFaqs =
   article.slug === 'best-coffee-loyalty-programs' ? cafeConversationalFaqs : [];
 const allFaqs = [...article.faqs, ...blogExtraFaqs];
+
+const schema = buildBlogPostingSchema({
+  title: article.title,
+  description: article.description,
+  path,
+  publishedAt: article.publishedAt,
+});
+if (article.updatedAt) {
+  (schema as Record<string, unknown>).dateModified = article.updatedAt;
+}
 ---
 
 <BaseLayout
@@ -34,23 +44,23 @@ const allFaqs = [...article.faqs, ...blogExtraFaqs];
     { name: 'Blog', path: '/blog/' },
     { name: article.title, path },
   ]}
-  extraSchema={[
-    buildBlogPostingSchema({
-      title: article.title,
-      description: article.description,
-      path,
-      publishedAt: article.publishedAt,
-    }),
-  ]}
+  extraSchema={[schema]}
 >
   <Nav active="blog" />
 
   <article>
     <section class="page-hero">
       <div class="container reveal">
-        <p class="blog-card__date">{article.publishedAt}</p>
+        <p class="blog-card__date">
+          {article.publishedAt}
+          {article.updatedAt && ` · Updated ${article.updatedAt}`}
+        </p>
         <h1 class="page-hero__title">{article.title}</h1>
         <p class="page-hero__desc">{article.description}</p>
+        <div class="hero__actions" style="justify-content:center; margin-top:1.25rem;">
+          <AppCta class="btn btn--primary btn--lg">Open App — Free Trial</AppCta>
+          <a href={article.clusterPage.href} class="btn btn--glass btn--lg">{article.clusterPage.label}</a>
+        </div>
       </div>
     </section>
 
@@ -67,6 +77,49 @@ const allFaqs = [...article.faqs, ...blogExtraFaqs];
             <p class="feature-card__desc" style="margin-top:0.5rem; font-size:1rem;">{s.body}</p>
           </div>
         ))}
+
+        {article.comparison && article.comparison.length > 0 && (
+          <div class="glass-card reveal" style="margin-bottom:1.5rem; overflow-x:auto;">
+            <h2 class="feature-card__title" style="font-size:1.25rem; margin-bottom:1rem;">
+              Coffee loyalty comparison
+            </h2>
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Scan Perks</th>
+                  <th>Paper cards</th>
+                  <th>Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                {article.comparison.map((row) => (
+                  <tr>
+                    <td>{row.feature}</td>
+                    <td class="comparison-table__highlight">{row.scanPerks}</td>
+                    <td>{row.traditional}</td>
+                    <td>{row.enterprise}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+
+        {article.relatedLinks && article.relatedLinks.length > 0 && (
+          <nav class="glass-card reveal" style="margin-bottom:1.5rem;" aria-label="Related guides">
+            <h2 class="feature-card__title" style="font-size:1.15rem; margin-bottom:0.75rem;">
+              Related guides
+            </h2>
+            <ul style="margin:0; padding-left:1.1rem; color:var(--text-secondary); line-height:1.8;">
+              {article.relatedLinks.map((l) => (
+                <li>
+                  <a href={l.href} style="color:var(--cyan-400); font-weight:600;">{l.label}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
 
         <div class="glass-card reveal" style="margin-top:2rem;">
           <p class="feature-card__desc">
