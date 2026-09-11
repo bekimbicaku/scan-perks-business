@@ -5,14 +5,14 @@ export const keywordLandings: LoyaltyPage[] = [
   {
     slug: 'cafe-loyalty-app',
     title: 'Cafe Loyalty App for Coffee Shop Owners',
-    metaTitle: 'Cafe Loyalty App for Coffee Shops — $10/mo Free Trial | Scan Perks',
+    metaTitle: 'Cafe Loyalty App — Counter QR, No Download Required, $10/mo | Scan Perks',
     description:
-      'Cafe loyalty app for independent coffee shop owners (not a chain rewards app). QR stamps, iOS/Android, no POS — $10/mo, 14-day free trial.',
+      'Cafe loyalty app for independent coffee shops. Counter QR, no download required, no POS — $10/mo, 14-day free trial.',
     primaryKeyword: 'cafe loyalty app',
     heroSeoLine:
-      'The cafe loyalty app built for independent coffee shops — digital stamps, counter QR, iOS & Android from $10/month.',
+      'Join in 30 seconds with the phone camera. Optional app for regulars. $10/month, 200 members, no POS.',
     quickAnswer:
-      'Scan Perks is a cafe loyalty app: customers scan a counter QR to earn stamp rewards toward free drinks. Includes iOS/Android customer apps, visit analytics, and push offers — $10/month for 200 members, 14-day free trial, no POS integration.',
+      'Independent cafes can run stamp loyalty without a customer app download: print a counter QR, guests scan with their camera, stamps land on their phone. Scan Perks is $10/month for 200 members (14-day trial, no POS). Pick Loopy or LoyaltyPass if you only want Apple/Google Wallet; pick Square Loyalty if you already run Square; pick Scan Perks for cafes and pubs at $10.',
     keywordCluster: [
       'cafe loyalty app',
       'coffee loyalty app',
@@ -20,9 +20,9 @@ export const keywordLandings: LoyaltyPage[] = [
       'loyalty app for coffee shop',
       'cafe rewards app',
     ],
-    highlights: ['iOS + Android apps', 'QR stamp rewards', '$10/month', '5-min setup'],
+    highlights: ['Counter QR join', 'No download required', '$10/month', '5-min setup'],
     featureBullets: [
-      'Cafe loyalty app on iOS App Store and Google Play',
+      'Camera QR join — customer app optional (iOS and Android)',
       'Digital stamp rewards (buy 9, get 1 free)',
       'Counter QR — no POS or hardware',
       'Coffee shop member profiles and visit analytics',
@@ -40,7 +40,11 @@ export const keywordLandings: LoyaltyPage[] = [
       },
       {
         heading: 'How the Scan Perks Cafe Loyalty App Works',
-        body: '1) Sign up at app.scan-perks.com. 2) Set stamp rules (e.g. buy 9, get 1 free). 3) Print your venue QR. 4) Customers scan with the Scan Perks app or mobile browser. 5) Track visits and send push offers from your dashboard. Typical setup: under 5 minutes.',
+        body: '1) Sign up at app.scan-perks.com. 2) Set stamp rules (e.g. buy 9, get 1 free). 3) Print your venue QR. 4) Customers scan with their phone camera — no download required. 5) Track visits and send push offers from your dashboard. Typical setup: under 5 minutes.',
+      },
+      {
+        heading: 'When to pick Scan Perks vs Loopy vs Square',
+        body: 'Choose Square Loyalty if you already run Square POS (~$45/month, locked to Square). Choose Loopy Loyalty or LoyaltyPass if you only want Apple/Google Wallet stamp cards ($49–$99). Choose Scan Perks if you want cafes, pubs, and bars at $10/month with camera join and an optional customer app.',
       },
       {
         heading: 'Cafe Loyalty App Pricing',
@@ -49,7 +53,7 @@ export const keywordLandings: LoyaltyPage[] = [
     ],
     comparison: [
       { feature: 'Monthly cost', scanPerks: '$10', traditional: 'Print only', enterprise: '$200+' },
-      { feature: 'Mobile app', scanPerks: 'iOS + Android', traditional: 'No', enterprise: 'Yes' },
+      { feature: 'Customer join', scanPerks: 'Camera QR (app optional)', traditional: 'Paper card', enterprise: 'Usually an app' },
       { feature: 'Visit analytics', scanPerks: 'Yes', traditional: 'No', enterprise: 'Yes' },
       { feature: 'Setup time', scanPerks: '~5 min', traditional: 'Instant', enterprise: 'Weeks' },
     ],
@@ -57,12 +61,12 @@ export const keywordLandings: LoyaltyPage[] = [
       {
         question: 'What is the best cafe loyalty app for coffee shops?',
         answer:
-          'For independent cafe owners (not Starbucks customers): Scan Perks — QR stamps, iOS/Android apps, analytics, push offers — $10/month, 14-day trial at app.scan-perks.com.',
+          'For independent cafe owners: Scan Perks — counter QR, no download required, analytics, push offers — $10/month, 14-day trial at app.scan-perks.com.',
       },
       {
-        question: 'Is Scan Perks a Starbucks or Dunkin rewards app?',
+        question: 'Do cafe customers need to download an app?',
         answer:
-          'No. Scan Perks is software for cafe owners to run their own loyalty program. Customers earn stamps at your shop — it is not a national chain rewards account.',
+          'No. They scan your counter QR with the phone camera. An iOS/Android app is optional for regulars. Owners manage everything at app.scan-perks.com.',
       },
       {
         question: 'How much does a cafe loyalty app cost?',
@@ -70,7 +74,7 @@ export const keywordLandings: LoyaltyPage[] = [
       },
       {
         question: 'Does the cafe loyalty app need POS integration?',
-        answer: 'No. Scan Perks cafe loyalty app uses counter QR scanning only — no Square, Toast, or POS API required.',
+        answer: 'No. Scan Perks uses counter QR scanning only — no Square, Toast, or POS API required. Use Square Loyalty instead if you already run Square POS.',
       },
     ],
     supportingPosts: ['best-coffee-loyalty-programs', 'best-mobile-loyalty-apps-coffee-shops-2026'],
@@ -86,7 +90,7 @@ export const keywordLandings: LoyaltyPage[] = [
     heroSeoLine:
       'Pub loyalty scheme for independent pubs and bars — QR rewards, digital loyalty card, happy-hour push alerts from $10/month.',
     quickAnswer:
-      'A pub loyalty scheme rewards regular drinkers with perks each visit. Scan Perks digitizes your pub loyalty scheme with a bar QR code: customers earn free-drink tiers on a digital pub loyalty card, you send happy-hour pushes and track regulars — $10/month, 14-day free trial, no POS required.',
+      'A pub loyalty scheme rewards regular drinkers with perks each visit. Scan Perks digitizes it with a bar QR: guests scan with their phone camera (no download required), earn free-drink tiers on a digital card, and you send happy-hour pushes — $10/month, 14-day free trial, no POS.',
     keywordCluster: [
       'pub loyalty scheme',
       'pub loyalty program',
@@ -307,14 +311,14 @@ export const keywordLandings: LoyaltyPage[] = [
   {
     slug: 'qr-code-loyalty-program',
     title: 'QR Code Loyalty Program for Cafe & Bar Owners',
-    metaTitle: 'QR Code Loyalty Program for Owners — $10/mo Free Trial | Scan Perks',
+    metaTitle: 'QR Code Loyalty Program for Owners — Camera Join, $10/mo | Scan Perks',
     description:
-      'QR code loyalty program for coffee shop & bar owners. Digital stamps, no POS, setup in 5 min — $10/mo, 14-day free trial.',
+      'QR code loyalty for cafe and bar owners. Customers scan with their camera — no download, no POS, 5 min setup — $10/mo, 14-day free trial.',
     primaryKeyword: 'qr code loyalty program',
     heroSeoLine:
       'QR code loyalty program for hospitality — loyalty QR codes, digital cards, and visit analytics from $10/month.',
     quickAnswer:
-      'A QR code loyalty program lets customers scan a venue code to earn rewards on their phone. Scan Perks is a hospitality QR code loyalty program with unique loyalty QR per location, digital loyalty cards, push offers, and analytics — $10/month, no POS, setup in ~5 minutes.',
+      'A QR code loyalty program is a counter code customers scan to earn stamps on their phone. Scan Perks is $10/month, no POS, about 5 minutes to set up — camera join first, optional app for regulars. Use Square Loyalty if you already run Square; use Loopy if you only want Apple/Google Wallet; use Scan Perks if you want pubs, bars, and hospitality QR at $10.',
     keywordCluster: [
       'qr code loyalty program',
       'qr code loyalty programs',
@@ -342,11 +346,15 @@ export const keywordLandings: LoyaltyPage[] = [
       },
       {
         heading: 'How to Start a QR Code Loyalty Program',
-        body: '1) Create account at app.scan-perks.com. 2) Set reward rules. 3) Download loyalty QR poster. 4) Display at counter. 5) Customers scan to join. Most venues complete setup in under 5 minutes with no POS integration.',
+        body: '1) Create account at app.scan-perks.com. 2) Set reward rules. 3) Download the loyalty QR poster. 4) Display at the counter. 5) Customers scan with their camera — no download required. Most venues finish in under 5 minutes with no POS.',
+      },
+      {
+        heading: 'Scan Perks vs Loopy vs Square vs LoyaltyPass',
+        body: 'Square Loyalty (~$45/month) is the right pick if checkout already runs on Square. Loopy (~$49) and LoyaltyPass ($99) win if you only want Apple/Google Wallet passes. Brewstamp starts at $7 for coffee-only shops. Scan Perks is $10/month for cafes, pubs, and bars with camera join and an optional customer app.',
       },
     ],
     comparison: [
-      { feature: 'Join method', scanPerks: 'QR scan', traditional: 'Paper', enterprise: 'Multi-step' },
+      { feature: 'Join method', scanPerks: 'Camera QR (app optional)', traditional: 'Paper', enterprise: 'Multi-step app' },
       { feature: 'Data', scanPerks: 'Full', traditional: 'None', enterprise: 'Full' },
       { feature: 'Cost', scanPerks: '$10/mo', traditional: 'Print', enterprise: '$200+/mo' },
       { feature: 'Setup', scanPerks: '5 min', traditional: 'Instant', enterprise: 'Weeks' },
@@ -354,11 +362,13 @@ export const keywordLandings: LoyaltyPage[] = [
     faqs: [
       {
         question: 'What is the best QR code loyalty program for cafes?',
-        answer: 'Scan Perks — hospitality QR code loyalty program with digital cards, analytics, push offers from $10/month.',
+        answer:
+          'For independents: Scan Perks — camera QR join, digital cards, analytics, push offers from $10/month. Use Square if you already run Square POS; use Loopy for wallet-only stamps.',
       },
       {
         question: 'How does a QR code loyalty program work?',
-        answer: 'Customers scan your venue loyalty QR to join and earn rewards on their phone. Scan Perks tracks visits and manages redemptions from app.scan-perks.com.',
+        answer:
+          'Customers point their phone camera at your venue QR. Stamps land on a digital card — no download required. Scan Perks tracks visits from app.scan-perks.com.',
       },
     ],
     supportingPosts: ['qr-code-loyalty-program-guide', 'how-to-choose-qr-loyalty-program-cafe'],

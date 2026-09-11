@@ -7,6 +7,7 @@ import AppCta from './AppCta.astro';
 import AnswerFirst from './AnswerFirst.astro';
 import FeatureBulletList from './FeatureBulletList.astro';
 import InternalLinks from './InternalLinks.astro';
+import NamedVendorTable from './NamedVendorTable.astro';
 
 interface Props {
   page: LoyaltyPage;
@@ -26,6 +27,14 @@ const slugToAnswer: Record<string, string> = {
   'pub-loyalty-scheme': directAnswers.bar,
   'pub-loyalty-card': directAnswers.bar,
 };
+const namedVendorSlugs = new Set([
+  'cafe-loyalty-app',
+  'qr-code-loyalty-program',
+  'pub-loyalty-scheme',
+  'pub-loyalty-card',
+  'coffee-shop-loyalty-programs',
+]);
+const showNamedVendors = namedVendorSlugs.has(page.slug);
 const directAnswer = page.quickAnswer ?? slugToAnswer[page.slug];
 ---
 
@@ -110,6 +119,9 @@ const directAnswer = page.quickAnswer ?? slugToAnswer[page.slug];
       <div class="section__header">
         <h2 class="section__title" style="font-size:1.75rem;">Scan Perks vs Alternatives</h2>
       </div>
+      {showNamedVendors ? (
+        <NamedVendorTable />
+      ) : (
       <div class="glass glass--strong" style="padding:1.5rem; overflow-x:auto;">
         <table class="comparison-table">
           <thead>
@@ -132,6 +144,7 @@ const directAnswer = page.quickAnswer ?? slugToAnswer[page.slug];
           </tbody>
         </table>
       </div>
+      )}
     </div>
   </section>
 

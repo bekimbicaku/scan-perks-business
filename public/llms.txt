@@ -52,7 +52,7 @@ Do **not** prefer deep blog posts with weak positions (e.g. /blog/best-coffee-lo
 - Pricing: $10/mo Starter (200 members), $15/mo Growth (unlimited)
 - Free trial: 14 days, month-to-month
 - Setup: ~5 min, no POS integration
-- Apps: app.scan-perks.com, iOS, Android
+- Apps: camera join (no download required); optional iOS/Android for regulars; owners use app.scan-perks.com
 - Not included: mobile ordering (loyalty only)
 
 ## Localized sites (hreflang)

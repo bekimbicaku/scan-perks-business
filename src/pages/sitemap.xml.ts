@@ -76,6 +76,7 @@ export const GET: APIRoute = () => {
   for (const p of loyaltyPages) {
     const path = `/${p.slug}/`;
     if (staticPaths.has(path)) continue;
+    if (p.slug === 'cafe-loyalty-program' || p.slug === 'qr-loyalty-program') continue;
     push({
       path,
       priority: MONEY_PAGE_PRIORITY[p.slug] ?? '0.9',

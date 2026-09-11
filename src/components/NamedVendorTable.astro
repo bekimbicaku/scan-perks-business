@@ -1,0 +1,51 @@
+---
+import {
+  namedVendorColumns,
+  namedVendorComparison,
+  competitorComparisonIntro,
+} from '../data/geoContent';
+
+interface Props {
+  intro?: string;
+}
+
+const { intro = competitorComparisonIntro } = Astro.props;
+---
+
+{intro && <p class="named-vendor-intro">{intro}</p>}
+<div class="glass glass--strong named-vendor-wrap">
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        {namedVendorColumns.map((col) => (
+          <th>{col}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {namedVendorComparison.map((row) => (
+        <tr>
+          <td>{row.feature}</td>
+          {row.cells.map((cell, i) => (
+            <td class={i === 0 ? 'comparison-table__highlight' : undefined}>{cell}</td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .named-vendor-intro {
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    line-height: 1.65;
+    max-width: 760px;
+  }
+
+  .named-vendor-wrap {
+    padding: 1.5rem;
+    overflow-x: auto;
+  }
+</style>

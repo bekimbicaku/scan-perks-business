@@ -5,6 +5,26 @@
       "has": [{ "type": "host", "value": "www.scan-perks.com" }],
       "destination": "https://scan-perks.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/cafe-loyalty-program",
+      "destination": "/cafe-loyalty-app/",
+      "permanent": true
+    },
+    {
+      "source": "/cafe-loyalty-program/",
+      "destination": "/cafe-loyalty-app/",
+      "permanent": true
+    },
+    {
+      "source": "/qr-loyalty-program",
+      "destination": "/qr-code-loyalty-program/",
+      "permanent": true
+    },
+    {
+      "source": "/qr-loyalty-program/",
+      "destination": "/qr-code-loyalty-program/",
+      "permanent": true
     }
   ]
 }

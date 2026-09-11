@@ -8,14 +8,14 @@ export const localizedVerticals: LocalizedPageDef[] = [
     content: {
       en: {
         slug: 'cafe-loyalty-app',
-        metaTitle: 'Cafe Loyalty App for Coffee Shops — $10/mo Free Trial | Scan Perks',
+        metaTitle: 'Cafe Loyalty App — Counter QR, No Download Required, $10/mo | Scan Perks',
         description:
-          'Cafe loyalty app for independent coffee shop owners (not a chain rewards app). QR stamps, iOS/Android, no POS — $10/mo, 14-day free trial.',
+          'Cafe loyalty app for independent coffee shops. Counter QR, no download required, no POS — $10/mo, 14-day free trial.',
         h1: 'Cafe Loyalty App for Coffee Shop Owners',
-        heroLine: 'Digital stamps for independent coffee shops — from $10/month.',
+        heroLine: 'Join in 30 seconds with the phone camera. Optional app for regulars.',
         directAnswer:
-          'Scan Perks is a cafe loyalty app for owners: customers scan a counter QR to earn stamp rewards. iOS/Android apps, analytics, $10/month for 200 members, no POS. Not a Starbucks/Dunkin consumer app.',
-        bullets: ['For cafe owners', 'iOS & Android', 'QR stamps', '$10/mo'],
+          'Independent cafes can run stamp loyalty without a customer app download: print a counter QR, guests scan with their camera. Scan Perks is $10/month for 200 members, no POS. Not a Starbucks/Dunkin consumer app.',
+        bullets: ['For cafe owners', 'Camera QR join', 'App optional', '$10/mo'],
         sections: [
           {
             heading: 'Built for cafe owners — not chain customers',
@@ -26,7 +26,7 @@ export const localizedVerticals: LocalizedPageDef[] = [
           {
             question: 'What is the best cafe loyalty app for coffee shops?',
             answer:
-              'For independent owners: Scan Perks — QR stamps, $10/month, iOS/Android, 14-day trial at app.scan-perks.com. Not a national chain rewards app.',
+              'For independent owners: Scan Perks — camera QR, no download required, $10/month, 14-day trial at app.scan-perks.com. Not a national chain rewards app.',
           },
         ],
         keywords: ['cafe loyalty app', 'coffee shop loyalty app', 'loyalty app for coffee shop owners'],

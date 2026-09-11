@@ -193,17 +193,17 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
   page('how-it-works', '/how-it-works/', {
     en: {
       slug: 'how-it-works',
-      metaTitle: 'How Scan Perks Works — Cafe Loyalty Setup in 5 Min',
-      description: 'QR loyalty setup for cafes & bars: scan, stamp, reward. No POS. $10/mo, 14-day trial.',
-      h1: 'How Scan Perks Works',
-      heroLine: 'Launch QR loyalty in about 5 minutes.',
+      metaTitle: 'Set Up Cafe & Pub Loyalty in 5 Minutes — QR, No POS, $10/mo',
+      description: 'Print a counter QR. Customers scan with their camera — no download required. $10/mo, 14-day trial.',
+      h1: 'How Scan Perks works: print a QR, customers scan, stamps go on their phone',
+      heroLine: 'Camera join in seconds. Optional app for regulars.',
       directAnswer:
-        'Create an account at app.scan-perks.com, set stamp rewards, print your counter QR, and customers scan to earn. Owners manage everything from web or mobile — no POS.',
-      bullets: ['1. Create account', '2. Set rewards', '3. Print QR', '4. Customers scan'],
+        'Create an account at app.scan-perks.com, set stamp rewards, print your counter QR. Customers scan with their phone camera — no download required. Owners manage everything from the web dashboard. No POS.',
+      bullets: ['1. Create account', '2. Set rewards', '3. Print QR', '4. Customers scan with camera'],
       sections: [
         {
           heading: 'For customers',
-          body: 'They open the Scan Perks app (or web), scan your venue QR after purchase, and collect stamps toward free drinks or perks.',
+          body: 'They point their phone camera at your venue QR after purchase and collect stamps toward free drinks. An iOS/Android app is optional for regulars.',
         },
         {
           heading: 'For owners',

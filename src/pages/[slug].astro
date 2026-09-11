@@ -72,6 +72,27 @@ const serviceSchema = page
     })
   : null;
 
+const cafeHowTo =
+  page && (page.slug === 'cafe-loyalty-app' || page.slug === 'qr-code-loyalty-program')
+    ? buildHowToSchema({
+        name:
+          page.slug === 'cafe-loyalty-app'
+            ? 'How to set up a cafe loyalty app with a counter QR'
+            : 'How to start a QR code loyalty program',
+        description:
+          'Print a counter QR. Customers scan with their phone camera — no download required. About 5 minutes, no POS.',
+        steps: [
+          { name: 'Create account', text: 'Sign up at app.scan-perks.com and start the 14-day free trial.' },
+          { name: 'Set stamp rules', text: 'Choose a reward such as buy 9, get 1 free.' },
+          { name: 'Print your QR', text: 'Download the print-ready poster and display it at the counter.' },
+          {
+            name: 'Customers scan with their camera',
+            text: 'Guests point their phone camera at the poster. No download required. An iOS/Android app is optional for regulars.',
+          },
+        ],
+      })
+    : null;
+
 const pubHowTo =
   page && (page.slug === 'pub-loyalty-card' || page.slug === 'pub-loyalty-scheme')
     ? buildHowToSchema({
@@ -87,13 +108,13 @@ const pubHowTo =
           { name: 'Print your bar QR', text: 'Download the print-ready QR poster and display it at the bar.' },
           {
             name: 'Guests scan & earn',
-            text: 'Customers open a digital pub loyalty card on their phone and scan each visit.',
+            text: 'Customers scan the bar QR with their phone camera — no download required — and collect stamps on a digital pub loyalty card.',
           },
         ],
       })
     : null;
 
-const loyaltyExtraSchema = [serviceSchema, buildSoftwareApplicationSchema(), pubHowTo].filter(
+const loyaltyExtraSchema = [serviceSchema, buildSoftwareApplicationSchema(), pubHowTo, cafeHowTo].filter(
   Boolean
 ) as Record<string, unknown>[];
 ---
