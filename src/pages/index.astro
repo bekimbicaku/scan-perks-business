@@ -5,9 +5,11 @@ import Footer from '../components/Footer.astro';
 import AppCta from '../components/AppCta.astro';
 import StoreBadges from '../components/StoreBadges.astro';
 import ScanDemo from '../components/ScanDemo.astro';
+import PromoVideos from '../components/PromoVideos.astro';
 import { landingContent, SITE } from '../data/content';
 import { G2_LISTING } from '../data/g2AndOutreach';
-import { buildSoftwareApplicationSchema } from '../seo/schema';
+import { promoVideos } from '../data/videos';
+import { buildSoftwareApplicationSchema, buildVideoSchema } from '../seo/schema';
 import { getHreflangLinks, getPageDef } from '../i18n/pages';
 
 const c = landingContent;
@@ -23,7 +25,7 @@ const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
   hreflangLinks={getHreflangLinks(homeDef)}
   keywords={c.metaKeywords}
   faqs={c.faqs}
-  extraSchema={[buildSoftwareApplicationSchema()]}
+  extraSchema={[buildSoftwareApplicationSchema(), ...promoVideos.map(buildVideoSchema)]}
 >
   <Nav active="home" pageId="home" />
 
@@ -95,6 +97,8 @@ const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
       </div>
     </div>
   </section>
+
+  <PromoVideos />
 
   <section class="section section--sm">
     <div class="container">

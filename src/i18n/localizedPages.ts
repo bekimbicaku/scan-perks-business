@@ -40,9 +40,9 @@ export const localizedPages: LocalizedPageDef[] = [
   page('home', '/', {
     en: {
       slug: '',
-      metaTitle: 'Cafe Loyalty App for Coffee Shop Owners — QR Rewards $10/mo | Scan Perks',
+      metaTitle: 'Scan Perks — QR Loyalty for Cafes & Pubs, $10/mo',
       description:
-        'Cafe loyalty app & pub loyalty for independent owners (US cafes, bars, pubs). QR stamps, iOS/Android, no POS — $10/mo, 14-day free trial.',
+        'Scan Perks is QR loyalty for independent cafes, pubs and bars. Customers scan your counter QR with their camera — no download, no POS. $10/mo, 14-day free trial.',
       h1: 'Cafe Loyalty App & Pub Loyalty Scheme',
       heroLine: 'QR loyalty for cafe & bar owners — from $10/month.',
       directAnswer:

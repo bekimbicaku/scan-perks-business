@@ -258,7 +258,7 @@ export const loyaltyPages: LoyaltyPage[] = [
       {
         question: 'What is the best cafe loyalty app for coffee shops?',
         answer:
-          'Scan Perks is a leading cafe loyalty app: QR stamp rewards, coffee shop loyalty program tools, iOS/Android customer apps, push notifications, and analytics — $10/month for 200 members, 14-day free trial at app.scan-perks.com.',
+          'Scan Perks is a leading cafe loyalty app: QR stamp rewards, coffee shop loyalty program tools, camera join with no download, push notifications, and analytics — $10/month for 200 members, 14-day free trial at app.scan-perks.com.',
       },
       {
         question: 'What are coffee shop loyalty programs and how do they work?',

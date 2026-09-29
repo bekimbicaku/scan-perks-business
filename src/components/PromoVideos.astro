@@ -1,0 +1,96 @@
+---
+import { promoVideos } from '../data/videos';
+
+interface Props {
+  title?: string;
+  intro?: string;
+}
+
+const {
+  title = 'See Scan Perks in 40 seconds',
+  intro = 'How customers join with the phone camera, collect stamps, and get your offers — for cafes by day and bars after hours.',
+} = Astro.props;
+---
+
+<section class="section section--sm" aria-labelledby="promo-videos-title">
+  <div class="container reveal">
+    <div class="section__header">
+      <h2 id="promo-videos-title" class="section__title" style="font-size:1.75rem;">{title}</h2>
+      <p class="promo-videos__intro">{intro}</p>
+    </div>
+    <div class="promo-videos">
+      {promoVideos.map((v) => (
+        <figure class="promo-videos__item">
+          <video
+            class="promo-videos__video"
+            src={v.src}
+            poster={v.poster}
+            controls
+            playsinline
+            preload="none"
+            width="720"
+            height="1280"
+            aria-label={v.title}
+          ></video>
+          <figcaption class="promo-videos__caption">
+            <strong>{v.title}</strong>
+            <span>{v.description}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .promo-videos__intro {
+    color: var(--text-secondary);
+    max-width: 620px;
+    margin: 0.5rem auto 0;
+    line-height: 1.6;
+  }
+
+  .promo-videos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 320px));
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .promo-videos__item {
+    margin: 0;
+  }
+
+  .promo-videos__video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    border-radius: var(--radius-md, 16px);
+    border: 1px solid var(--glass-border);
+    background: #0b1220;
+    object-fit: cover;
+  }
+
+  .promo-videos__caption {
+    margin-top: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+
+  .promo-videos__caption strong {
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 700px) {
+    .promo-videos {
+      grid-template-columns: minmax(0, 320px);
+    }
+  }
+</style>

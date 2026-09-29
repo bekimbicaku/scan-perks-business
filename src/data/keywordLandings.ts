@@ -83,9 +83,9 @@ export const keywordLandings: LoyaltyPage[] = [
   {
     slug: 'pub-loyalty-scheme',
     title: 'Pub Loyalty Scheme for Independent Pubs & Bars',
-    metaTitle: 'Pub Loyalty Scheme — Digital QR for Pubs & Bars $10/mo | Scan Perks',
+    metaTitle: 'Pub Loyalty Scheme Ideas & 1-Day Setup for UK Pubs — $10/mo',
     description:
-      'Launch a pub loyalty scheme for UK pubs & US bars. Digital loyalty card, free-drink tiers, happy-hour pushes — $10/mo, 14-day free trial, no POS.',
+      'Pub loyalty scheme ideas that work — free pint after 10, quiz-night double stamps, birthday pint — and how to run one with a bar QR. $10/mo, no POS, 14-day free trial.',
     primaryKeyword: 'pub loyalty scheme',
     heroSeoLine:
       'Pub loyalty scheme for independent pubs and bars — QR rewards, digital loyalty card, happy-hour push alerts from $10/month.',
@@ -115,6 +115,10 @@ export const keywordLandings: LoyaltyPage[] = [
         body: 'A pub loyalty scheme is the full program — reward rules, the customer card, and how staff redeem free drinks. Typical UK offer: free pint after 10 purchases. US bars use the same idea under “bar loyalty.” Scan Perks runs the scheme digitally with one QR at the bar.',
       },
       {
+        heading: '6 Pub Loyalty Scheme Ideas That Bring Regulars Back',
+        body: '1) Free pint after 10 — the classic, easy for staff to explain. 2) Quiz-night double stamps — fills your quietest night. 3) Birthday pint — collects dates and gives a reason to visit that week. 4) Midweek boost — an extra stamp Monday to Wednesday. 5) Match-day early bird — a stamp for arriving before kick-off. 6) Bring-a-mate — a bonus stamp when a new member joins with a regular. Set any of these as stamp rules in Scan Perks and announce them with a push.',
+      },
+      {
         heading: 'Pub Loyalty Scheme vs Paper Punch Cards',
         body: 'Paper schemes are free to print but lose cards and data. A digital pub loyalty scheme logs every visit, stops “lost card” disputes, and lets you push midweek specials. Closely related: the customer-facing digital pub loyalty card at /pub-loyalty-card/.',
       },
@@ -128,7 +132,7 @@ export const keywordLandings: LoyaltyPage[] = [
       },
       {
         heading: 'UK Pubs & US Bars — Same Product',
-        body: 'Google UK favors “pub loyalty scheme” and “pub loyalty card.” Google US favors “bar loyalty programs.” Scan Perks is one QR loyalty product covering both markets — iOS/Android customer apps, owner dashboard, analytics from $10/month.',
+        body: 'Google UK favors “pub loyalty scheme” and “pub loyalty card.” Google US favors “bar loyalty programs.” Scan Perks is one QR loyalty product covering both markets — camera join with no download, owner dashboard, analytics from $10/month.',
       },
     ],
     comparison: [
@@ -164,9 +168,9 @@ export const keywordLandings: LoyaltyPage[] = [
   {
     slug: 'pub-loyalty-card',
     title: 'Pub Loyalty Card for Pubs & Bars',
-    metaTitle: 'Pub Loyalty Card — Digital QR for Pubs & Bars $10/mo | Scan Perks',
+    metaTitle: 'Digital Pub Loyalty Card — Replace Paper Stamp Cards, $10/mo',
     description:
-      'Best digital pub loyalty card for UK pubs & US bars. Replace paper punch cards with QR — track visits, happy-hour pushes, $10/mo free trial.',
+      'Swap paper pub loyalty cards for a digital card guests open by scanning your bar QR with their camera. No lost cards, visit data, happy-hour pushes — $10/mo, 14-day trial.',
     primaryKeyword: 'pub loyalty card',
     heroSeoLine:
       'Digital pub loyalty card for independent pubs and bars — scan at the bar, never lose a card, analytics from $10/month.',
@@ -182,7 +186,7 @@ export const keywordLandings: LoyaltyPage[] = [
     ],
     highlights: ['No plastic cards', 'QR at bar', 'Visit tracking', '$10/month'],
     featureBullets: [
-      'Digital pub loyalty card on customer phone (iOS & Android)',
+      'Digital pub loyalty card opens from a camera scan — no download',
       'Replaces paper pub loyalty cards and punch cards',
       'QR scan at bar — contactless, no POS',
       'Free-drink tiers when stamp threshold met',
@@ -204,7 +208,7 @@ export const keywordLandings: LoyaltyPage[] = [
       },
       {
         heading: 'Pub Loyalty Cards for UK Pubs & US Bars',
-        body: 'UK searches often use “pub loyalty card” and “pub loyalty scheme”; US owners search “bar loyalty programs” and “loyalty cards for bars.” Scan Perks covers both: one digital card product, happy-hour pushes, visit tracking, iOS/Android apps — $10/month Starter or $15/month Growth.',
+        body: 'UK searches often use “pub loyalty card” and “pub loyalty scheme”; US owners search “bar loyalty programs” and “loyalty cards for bars.” Scan Perks covers both: one digital card product, happy-hour pushes, visit tracking, camera join (optional app for regulars) — $10/month Starter or $15/month Growth.',
       },
       {
         heading: 'Pub Loyalty Card Pricing',
@@ -247,12 +251,12 @@ export const keywordLandings: LoyaltyPage[] = [
     title: 'Coffee Shop Loyalty Programs for Independents',
     metaTitle: 'Coffee Shop Loyalty Programs for Owners — $10/mo | Scan Perks',
     description:
-      'Coffee shop loyalty programs for independent cafe owners (not chain apps). QR stamps, iOS/Android — $10/mo, 14-day free trial.',
+      'Coffee shop loyalty programs for independent cafe owners (not chain apps). Stamp, points and tier ideas; customers join with the phone camera — $10/mo, 14-day free trial.',
     primaryKeyword: 'coffee shop loyalty programs',
     heroSeoLine:
       'Coffee shop loyalty programs for independent cafes — digital stamps, free drinks, and analytics from $10/month.',
     quickAnswer:
-      'Coffee shop loyalty programs reward repeat customers with free drinks, points, or stamps. Scan Perks offers coffee shop loyalty programs via QR: customers scan at the counter, earn digital rewards on iOS/Android, owners get analytics and push offers — $10/month, no POS required.',
+      'Coffee shop loyalty programs reward repeat customers with free drinks, points, or stamps. Scan Perks runs them via a counter QR: customers scan with the phone camera (no download required), earn digital stamps, and owners get analytics and push offers — $10/month, no POS required.',
     keywordCluster: [
       'coffee shop loyalty programs',
       'coffee shop loyalty program',
@@ -264,7 +268,7 @@ export const keywordLandings: LoyaltyPage[] = [
     featureBullets: [
       'Full coffee shop loyalty program via QR',
       'Digital stamp rewards (configurable rules)',
-      'Coffee shop loyalty reward app — iOS & Android',
+      'Camera join — no customer download (optional iOS/Android app)',
       'Member profiles and visit frequency data',
       'Push notifications for slow periods',
       '14-day free trial at app.scan-perks.com',
@@ -276,7 +280,7 @@ export const keywordLandings: LoyaltyPage[] = [
       },
       {
         heading: 'Coffee Shop Loyalty Programs: Cost Comparison',
-        body: 'Paper punch cards: $0 software, no data. Enterprise suites: $200–500/month. Scan Perks coffee shop loyalty programs: $10/month for 200 members — includes digital rewards, analytics, push offers, and customer apps.',
+        body: 'Paper punch cards: $0 software, no data. Enterprise suites: $200–500/month. Scan Perks coffee shop loyalty programs: $10/month for 200 members — includes digital rewards, analytics, push offers, and camera join with no customer download.',
       },
       {
         heading: 'How to Choose a Coffee Shop Loyalty Program',
@@ -290,7 +294,7 @@ export const keywordLandings: LoyaltyPage[] = [
     comparison: [
       { feature: 'Program type', scanPerks: 'Digital stamps', traditional: 'Paper', enterprise: 'Points API' },
       { feature: 'Monthly cost', scanPerks: '$10', traditional: '$0', enterprise: '$200+' },
-      { feature: 'Mobile app', scanPerks: 'Yes', traditional: 'No', enterprise: 'Yes' },
+      { feature: 'Customer join', scanPerks: 'Camera QR', traditional: 'Paper card', enterprise: 'App install' },
       { feature: 'Best for', scanPerks: 'Independents', traditional: 'Tiny ops', enterprise: 'Chains' },
     ],
     faqs: [
@@ -302,7 +306,7 @@ export const keywordLandings: LoyaltyPage[] = [
       {
         question: 'What is the best coffee shop loyalty program for small cafes?',
         answer:
-          'Scan Perks: stamp-style coffee shop loyalty program with iOS/Android apps, analytics, and push offers — $10/month, 14-day free trial.',
+          'Scan Perks: stamp-style coffee shop loyalty program with camera join (no download), analytics, and push offers — $10/month, 14-day free trial. See the 5-app price comparison at /blog/best-coffee-loyalty-programs/.',
       },
     ],
     supportingPosts: ['best-coffee-loyalty-programs', 'how-to-choose-qr-loyalty-program-cafe'],

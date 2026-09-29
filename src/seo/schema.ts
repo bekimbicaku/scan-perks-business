@@ -53,6 +53,7 @@ export function buildBaseSchema(page: SchemaPageInput) {
       '@type': 'Organization',
       '@id': `${SITE.url}/#organization`,
       name: SITE.name,
+      alternateName: [...SITE.alternateName],
       url: SITE.url,
       logo: `${SITE.url}/favicon.png`,
       description: SITE.description,
@@ -68,6 +69,8 @@ export function buildBaseSchema(page: SchemaPageInput) {
         SITE.social.instagram,
         SITE.social.linkedin,
         ...(SITE.social.g2 ? [SITE.social.g2] : []),
+        SITE.appStore,
+        SITE.playStore,
       ].filter(Boolean),
     },
     {
@@ -78,6 +81,7 @@ export function buildBaseSchema(page: SchemaPageInput) {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: SITE.name,
+      alternateName: [...SITE.alternateName],
       url: SITE.url,
       description: SITE.description,
       publisher: { '@id': `${SITE.url}/#organization` },
@@ -272,6 +276,32 @@ export function buildHowToSchema(input: {
   };
 }
 
+export function buildVideoSchema(video: {
+  title: string;
+  description: string;
+  src: string;
+  poster: string;
+  duration: string;
+  uploadDate: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: video.title,
+    description: video.description,
+    thumbnailUrl: `${SITE.url}${video.poster}`,
+    contentUrl: `${SITE.url}${video.src}`,
+    uploadDate: video.uploadDate,
+    duration: video.duration,
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${SITE.url}/#organization`,
+      name: SITE.name,
+      logo: { '@type': 'ImageObject', url: `${SITE.url}/favicon.png` },
+    },
+  };
+}
+
 export function buildReviewSchema(review: {
   author: string;
   reviewBody: string;
@@ -304,7 +334,15 @@ export function buildSoftwareApplicationSchema() {
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web, iOS, Android',
     url: SITE.appWebUrl,
+    sameAs: [SITE.appStore, SITE.playStore],
     description: SITE.description,
+    featureList: [
+      'Customers join by scanning a counter QR with the phone camera — no download',
+      'Digital stamp cards and free-drink reward tiers',
+      'Visit analytics and regulars list',
+      'Push offers for slow days and happy hour',
+      'No POS integration required',
+    ],
     author: {
       '@type': 'Person',
       '@id': `${SITE.url}/#founder`,

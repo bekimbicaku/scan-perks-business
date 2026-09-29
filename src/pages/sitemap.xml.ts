@@ -23,15 +23,15 @@ const KEYWORD_LANDING_PRIORITY: Record<string, string> = {
 };
 
 const staticPages = [
-  { path: '/', priority: '1.0', changefreq: 'weekly' },
-  { path: '/pub-loyalty-card/', priority: '1.0', changefreq: 'weekly' },
-  { path: '/pub-loyalty-scheme/', priority: '1.0', changefreq: 'weekly' },
-  { path: '/cafe-loyalty-app/', priority: '1.0', changefreq: 'weekly' },
-  { path: '/coffee-shop-loyalty-programs/', priority: '0.99', changefreq: 'weekly' },
-  { path: '/qr-code-loyalty-program/', priority: '0.99', changefreq: 'weekly' },
+  { path: '/', priority: '1.0', changefreq: 'weekly', lastmod: '2026-09-29' },
+  { path: '/pub-loyalty-card/', priority: '1.0', changefreq: 'weekly', lastmod: '2026-09-29' },
+  { path: '/pub-loyalty-scheme/', priority: '1.0', changefreq: 'weekly', lastmod: '2026-09-29' },
+  { path: '/cafe-loyalty-app/', priority: '1.0', changefreq: 'weekly', lastmod: '2026-09-11' },
+  { path: '/coffee-shop-loyalty-programs/', priority: '0.99', changefreq: 'weekly', lastmod: '2026-09-29' },
+  { path: '/qr-code-loyalty-program/', priority: '0.99', changefreq: 'weekly', lastmod: '2026-09-11' },
   { path: '/bar-loyalty-program/', priority: '0.95', changefreq: 'weekly' },
   { path: '/g2/', priority: '0.9', changefreq: 'monthly' },
-  { path: '/faq/', priority: '0.98', changefreq: 'weekly' },
+  { path: '/faq/', priority: '0.98', changefreq: 'weekly', lastmod: '2026-09-29' },
   { path: '/scanbucks/', priority: '0.95', changefreq: 'monthly' },
   { path: '/how-it-works/', priority: '0.96', changefreq: 'monthly' },
   { path: '/business-loyalty-program/', priority: '0.97', changefreq: 'weekly' },
@@ -98,14 +98,13 @@ export const GET: APIRoute = () => {
   }
 
   for (const a of blogArticles) {
-    const weakBlog = ['best-mobile-loyalty-apps-coffee-shops-2026'].includes(a.slug);
-    const priorityBlog = ['best-coffee-loyalty-programs', 'qr-code-vs-punch-cards', 'bar-customer-retention-tips'].includes(
+    const priorityBlog = ['best-coffee-loyalty-programs', 'best-mobile-loyalty-apps-coffee-shops-2026', 'qr-code-vs-punch-cards', 'bar-customer-retention-tips'].includes(
       a.slug
     );
     const supportBlog = ['best-loyalty-app-small-business'].includes(a.slug);
     push({
       path: `/blog/${a.slug}/`,
-      priority: priorityBlog ? '0.95' : supportBlog ? '0.78' : weakBlog ? '0.55' : '0.65',
+      priority: priorityBlog ? '0.95' : supportBlog ? '0.78' : '0.65',
       changefreq: 'weekly',
       lastmod: a.updatedAt ?? a.publishedAt,
     });

@@ -8,6 +8,8 @@ import ComparisonTableGeo from '../../components/ComparisonTableGeo.astro';
 import NamedVendorTable from '../../components/NamedVendorTable.astro';
 import CaseStudies from '../../components/CaseStudies.astro';
 import AppCta from '../../components/AppCta.astro';
+import PromoVideos from '../../components/PromoVideos.astro';
+import { promoVideos } from '../../data/videos';
 import {
   directAnswers,
   howItWorksSteps,
@@ -17,7 +19,7 @@ import {
   loyaltyComparisonTable,
   caseStudies,
 } from '../../data/geoContent';
-import { buildSoftwareApplicationSchema, buildHowToSchema } from '../../seo/schema';
+import { buildSoftwareApplicationSchema, buildHowToSchema, buildVideoSchema } from '../../seo/schema';
 import { getHreflangLinks, getPageDef } from '../../i18n/pages';
 
 const howToSchema = buildHowToSchema({
@@ -35,7 +37,7 @@ const howToSchema = buildHowToSchema({
   hreflangLinks={getHreflangLinks(getPageDef('how-it-works')!)}
   keywords={['how qr loyalty works', 'cafe loyalty setup', 'qr code loyalty program setup']}
   breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'How It Works', path: '/how-it-works/' }]}
-  extraSchema={[buildSoftwareApplicationSchema(), howToSchema]}
+  extraSchema={[buildSoftwareApplicationSchema(), howToSchema, ...promoVideos.map(buildVideoSchema)]}
 >
   <Nav active="how" pageId="how-it-works" />
 
@@ -71,6 +73,8 @@ const howToSchema = buildHowToSchema({
       />
     </div>
   </section>
+
+  <PromoVideos title="Watch it work" />
 
   <section class="section section--sm">
     <div class="container">

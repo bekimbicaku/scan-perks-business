@@ -4,6 +4,7 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AppCta from '../../components/AppCta.astro';
+import NamedVendorTable from '../../components/NamedVendorTable.astro';
 import { blogArticles, getBlogArticle } from '../../data/blogArticles';
 import { cafeConversationalFaqs } from '../../data/conversationalFaqs';
 import { buildBlogPostingSchema } from '../../seo/schema';
@@ -31,6 +32,18 @@ const schema = buildBlogPostingSchema({
 if (article.updatedAt) {
   (schema as Record<string, unknown>).dateModified = article.updatedAt;
 }
+const extraSchema: Record<string, unknown>[] = [schema];
+if (article.namedVendors) {
+  extraSchema.push({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: article.title,
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    itemListElement: ['Scan Perks', 'Loopy Loyalty', 'Square Loyalty', 'LoyaltyPass', 'Brewstamp'].map(
+      (name, i) => ({ '@type': 'ListItem', position: i + 1, name })
+    ),
+  });
+}
 ---
 
 <BaseLayout
@@ -44,7 +57,7 @@ if (article.updatedAt) {
     { name: 'Blog', path: '/blog/' },
     { name: article.title, path },
   ]}
-  extraSchema={[schema]}
+  extraSchema={extraSchema}
 >
   <Nav active="blog" />
 
@@ -77,6 +90,15 @@ if (article.updatedAt) {
             <p class="feature-card__desc" style="margin-top:0.5rem; font-size:1rem;">{s.body}</p>
           </div>
         ))}
+
+        {article.namedVendors && (
+          <div class="reveal" style="margin-bottom:1.5rem;">
+            <h2 class="feature-card__title" style="font-size:1.25rem; margin-bottom:1rem;">
+              Coffee shop loyalty apps compared
+            </h2>
+            <NamedVendorTable />
+          </div>
+        )}
 
         {article.comparison && article.comparison.length > 0 && (
           <div class="glass-card reveal" style="margin-bottom:1.5rem; overflow-x:auto;">
