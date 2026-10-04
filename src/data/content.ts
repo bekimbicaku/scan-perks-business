@@ -1,5 +1,6 @@
 export const SITE = {
   name: 'Scan Perks',
+  alternateName: ['ScanPerks', 'Scan-Perks'],
   url: 'https://scan-perks.com',
   description:
     'Scan Perks — QR code loyalty program for bars, cafes & restaurants. Bar loyalty programs, cafe loyalty app, pub loyalty scheme. From $10/month.',

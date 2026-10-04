@@ -280,5 +280,54 @@ export const masterGeoFaqs: GeoFaq[] = [
   },
 ];
 
+export interface NamedVendorRow {
+  feature: string;
+  cells: string[];
+}
+
+/** Named vendors — what #1 pages use so Google/AI can extract a shopping table. */
+export const namedVendorColumns = [
+  'Scan Perks',
+  'Loopy Loyalty',
+  'Square Loyalty',
+  'LoyaltyPass',
+  'Brewstamp',
+] as const;
+
+export const namedVendorComparison: NamedVendorRow[] = [
+  {
+    feature: 'Starting price',
+    cells: ['$10/mo', '~$49/mo', '~$45/mo', '$99/mo', '$7/mo'],
+  },
+  {
+    feature: 'Customer join',
+    cells: [
+      'Camera QR (app optional)',
+      'Apple / Google Wallet',
+      'Square checkout',
+      'Apple / Google Wallet',
+      'Camera QR + wallet',
+    ],
+  },
+  {
+    feature: 'POS required',
+    cells: ['No', 'No', 'Square only', 'No', 'No'],
+  },
+  {
+    feature: 'Hospitality pubs & bars',
+    cells: ['Yes', 'Generic local', 'If on Square', 'Generic local', 'Coffee-focused'],
+  },
+  {
+    feature: 'When to pick them instead',
+    cells: [
+      'Cafes, pubs, bars at $10',
+      'Wallet-only stamp cards',
+      'You already run Square POS',
+      'Budget is $99+ for Wallet UX',
+      'Coffee-only at $7',
+    ],
+  },
+];
+
 export const competitorComparisonIntro =
-  'Objective comparison for independent hospitality venues (single location, under 200–500 daily covers). Enterprise suites omitted — they target multi-location franchises at $200+/month.';
+  'Public list prices as of Sep 2026. Pick Square if you already run Square POS; pick Loopy or LoyaltyPass for wallet-only stamps; pick Scan Perks for cafes, pubs, and bars at $10/month with camera join (app optional).';
