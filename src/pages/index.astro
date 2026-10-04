@@ -5,11 +5,9 @@ import Footer from '../components/Footer.astro';
 import AppCta from '../components/AppCta.astro';
 import StoreBadges from '../components/StoreBadges.astro';
 import ScanDemo from '../components/ScanDemo.astro';
-import PromoVideos from '../components/PromoVideos.astro';
 import { landingContent, SITE } from '../data/content';
 import { G2_LISTING } from '../data/g2AndOutreach';
-import { promoVideos } from '../data/videos';
-import { buildSoftwareApplicationSchema, buildVideoSchema } from '../seo/schema';
+import { buildSoftwareApplicationSchema } from '../seo/schema';
 import { getHreflangLinks, getPageDef } from '../i18n/pages';
 
 const c = landingContent;
@@ -25,7 +23,7 @@ const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
   hreflangLinks={getHreflangLinks(homeDef)}
   keywords={c.metaKeywords}
   faqs={c.faqs}
-  extraSchema={[buildSoftwareApplicationSchema(), ...promoVideos.map(buildVideoSchema)]}
+  extraSchema={[buildSoftwareApplicationSchema()]}
 >
   <Nav active="home" pageId="home" />
 
@@ -37,16 +35,14 @@ const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
             <span class="hero__badge-dot"></span>
             QR loyalty for cafes, pubs &amp; bars
           </div>
-          <h1 class="hero__title">Scan Perks</h1>
+          <h1 class="hero__title">Cafe Loyalty App</h1>
           <p class="hero__lead">
-            Customers scan your counter QR. No download required.
-            <span>Launch in 5 minutes — from $10/mo.</span>
+            Customers scan. Earn stamps. Come back.
+            <span>Owners launch in 5 minutes — from $10/mo. Guests use the app free.</span>
           </p>
           <div class="hero__actions">
-            <AppCta class="btn btn--primary btn--lg">Open App — Free Trial</AppCta>
-            <a href={g2Url} class="btn btn--glass btn--lg" rel="noopener noreferrer" target="_blank">
-              Leave a G2 Review
-            </a>
+            <AppCta class="btn btn--primary btn--lg">Start Free Trial — Owners</AppCta>
+            <AppCta class="btn btn--glass btn--lg">Get the Rewards App</AppCta>
           </div>
           <div class="hero__store-row">
             <StoreBadges showHint={false} centered={false} />
@@ -78,34 +74,32 @@ const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
       <div class="action-steps">
         <div class="action-step reveal">
           <span class="action-step__num">1</span>
+          <h2 class="action-step__title">Open the app</h2>
+          <p class="action-step__desc">Go to app.scan-perks.com or download on iOS / Android.</p>
+          <AppCta class="btn btn--primary">Start free trial</AppCta>
+        </div>
+        <div class="action-step reveal">
+          <span class="action-step__num">2</span>
           <h2 class="action-step__title">Print your QR</h2>
           <p class="action-step__desc">Set stamp rewards and put the code on the counter.</p>
           <a href="/how-it-works/" class="btn btn--glass">See how it works</a>
         </div>
         <div class="action-step reveal">
-          <span class="action-step__num">2</span>
-          <h2 class="action-step__title">Customers scan</h2>
-          <p class="action-step__desc">Phone camera is enough — no download required. Optional app for regulars.</p>
-          <a href="/qr-code-loyalty-program/" class="btn btn--glass">QR code loyalty program</a>
-        </div>
-        <div class="action-step reveal">
           <span class="action-step__num">3</span>
-          <h2 class="action-step__title">Open the dashboard</h2>
-          <p class="action-step__desc">Go to app.scan-perks.com. Track stamps and send slow-day offers.</p>
-          <AppCta class="btn btn--primary">Start free trial</AppCta>
+          <h2 class="action-step__title">Share the love</h2>
+          <p class="action-step__desc">Using Scan Perks? A short G2 review helps other owners find us.</p>
+          <a href={g2Url} class="btn btn--glass" rel="noopener noreferrer" target="_blank">Leave G2 review →</a>
         </div>
       </div>
     </div>
   </section>
-
-  <PromoVideos />
 
   <section class="section section--sm">
     <div class="container">
       <div class="venue-cta reveal">
         <a href="/pub-loyalty-card/" class="venue-cta__card venue-cta__card--accent">Pub loyalty card</a>
         <a href="/pub-loyalty-scheme/" class="venue-cta__card">Pub loyalty scheme</a>
-        <a href="/cafe-loyalty-app/" class="venue-cta__card">Cafe loyalty app</a>
+        <a href="/cafe-loyalty-app/" class="venue-cta__card">Cafe loyalty</a>
         <a href="/bar-loyalty-program/" class="venue-cta__card">Bar loyalty</a>
       </div>
     </div>
@@ -115,7 +109,7 @@ const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
     <div class="container reveal">
       <div class="cta-banner">
         <h2 class="cta-banner__title">Ready to grow regulars?</h2>
-        <p class="cta-banner__desc">Print a QR, start your 14-day trial, or leave a review if you already use Scan Perks.</p>
+        <p class="cta-banner__desc">Open the app, start your 14-day trial, or leave a review if you already use Scan Perks.</p>
         <div class="cta-banner__actions cta-banner__actions--stack">
           <div class="cta-banner__btns">
             <AppCta class="btn btn--primary btn--lg">Open app.scan-perks.com</AppCta>

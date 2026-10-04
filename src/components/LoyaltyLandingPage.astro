@@ -20,6 +20,8 @@ const posts = blogArticles.filter((a) => page.supportingPosts.includes(a.slug));
 const slugToAnswer: Record<string, string> = {
   'cafe-loyalty-program': directAnswers.cafe,
   'cafe-loyalty-app': directAnswers.cafe,
+  'coffee-loyalty-app': directAnswers.cafe,
+  'coffee-shop-loyalty-app': directAnswers.cafe,
   'coffee-shop-loyalty-programs': directAnswers.cafe,
   'qr-loyalty-program': directAnswers.qr,
   'qr-code-loyalty-program': directAnswers.qr,
@@ -57,9 +59,12 @@ const directAnswer = page.quickAnswer ?? slugToAnswer[page.slug];
       {page.heroSeoLine && <p class="page-hero__seo-line">{page.heroSeoLine}</p>}
       <p class="page-hero__desc">{page.description}</p>
       <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
-        <AppCta class="btn btn--primary btn--lg">Start Free Trial</AppCta>
-        <a href="/pricing/" class="btn btn--glass btn--lg">View Pricing</a>
+        <AppCta class="btn btn--primary btn--lg">Start Free Trial — Owners</AppCta>
+        <AppCta class="btn btn--glass btn--lg">Get the Rewards App</AppCta>
       </div>
+      <p style="margin-top:0.75rem; font-size:0.9rem; opacity:0.85;">
+        Customers: free. Owners: 14-day trial · No POS · From $10/mo
+      </p>
     </div>
   </section>
 

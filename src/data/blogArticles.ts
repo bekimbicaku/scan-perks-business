@@ -350,10 +350,10 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: 'best-coffee-loyalty-programs',
-    title: 'Best Loyalty Apps for Coffee Shops (2026): 5 Compared by Price',
-    metaTitle: 'Best Loyalty Apps for Coffee Shops 2026 — 5 Compared by Price',
+    title: 'Best Coffee Shop Loyalty Programs for Cafe Owners (2026)',
+    metaTitle: 'Best Coffee Loyalty Programs 2026 for Cafe Owners — Free Trial',
     description:
-      'Scan Perks, Loopy Loyalty, Square Loyalty, LoyaltyPass and Brewstamp compared for independent cafe owners: price, how customers join, POS needs, and who each one suits.',
+      'Best coffee shop loyalty programs for owners (not Starbucks): cafe loyalty app, QR stamps, mobile rewards. Compare options — start free trial at $10/mo.',
     keywords: [
       'best coffee loyalty programs',
       'coffee shop loyalty programs',
@@ -368,9 +368,9 @@ export const blogArticles: BlogArticle[] = [
       'coffeeshop loyalty program',
     ],
     publishedAt: '2026-07-01',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-04',
     answer:
-      'The five loyalty apps most independent coffee shops compare in 2026 are Scan Perks ($10/mo, customers join with the phone camera), Loopy Loyalty (~$49/mo, Apple/Google Wallet cards), Square Loyalty (~$45/mo, needs Square POS), LoyaltyPass ($99/mo, Wallet cards) and Brewstamp ($7/mo, coffee-only). Pick Square if you already take payments on Square; pick Scan Perks if you want no POS change, no customer download, and one tool for a cafe or bar at $10/month.',
+      'The five loyalty apps most independent coffee shops compare in 2026 are Scan Perks ($10/mo, customers join with the phone camera — no download required), Loopy Loyalty (~$49/mo, Apple/Google Wallet cards), Square Loyalty (~$45/mo, needs Square POS), LoyaltyPass ($99/mo, Wallet cards) and Brewstamp ($7/mo, coffee-only). Pick Square if you already take payments on Square; pick Scan Perks if you want no POS change, browser join, and one tool for a cafe or bar at $10/month with a 14-day free trial at app.scan-perks.com.',
     sections: [
       {
         heading: 'How we compared them',
@@ -401,6 +401,10 @@ export const blogArticles: BlogArticle[] = [
         body: 'Already on Square POS: Square Loyalty. Want the card in Apple/Google Wallet above all: Loopy Loyalty or LoyaltyPass. Coffee only, lowest price: Brewstamp. Independent cafe, pub or bar that wants camera join, no POS change and push offers at $10/month: Scan Perks. Paper punch cards are still free, but they get lost and give you no visit data.',
       },
       {
+        heading: 'Best Cafe Loyalty App for Mobile Rewards (iPhone & Android)',
+        body: 'Queries like “mobile rewards program for coffee shops” and “best loyalty app for cafes” want owner software with customer apps. Scan Perks includes iOS and Android apps, QR join at the counter, stamp tiers (e.g. buy 9 get 1 free), and push for slow mornings — $10/month Starter (200 members) or $15/month Growth. Guests can also join in-browser with no download.',
+      },
+      {
         heading: 'How to launch in one afternoon',
         body: '1) Open app.scan-perks.com and start the 14-day trial. 2) Set your stamp rule (for example buy 9, get the 10th free). 3) Print your counter QR. 4) Ask every customer to scan with their camera. Most cafes go live in about 5 minutes. Full product page: cafe loyalty app.',
       },
@@ -418,6 +422,21 @@ export const blogArticles: BlogArticle[] = [
           'Scan Perks and Brewstamp let customers join by scanning a QR with the phone camera. Loopy Loyalty and LoyaltyPass add a pass to Apple/Google Wallet. Square Loyalty works at Square checkout.',
       },
       {
+        question: 'What is the best loyalty program for cafes?',
+        answer:
+          'For owners: QR stamps under $20/month with mobile apps and no POS lock-in. Scan Perks — $10/month Starter, free trial at app.scan-perks.com.',
+      },
+      {
+        question: 'What is the best rewards app for coffee shop purchases?',
+        answer:
+          'Owners use Scan Perks so guests earn stamps on purchases via QR and redeem free drinks. Start at https://app.scan-perks.com.',
+      },
+      {
+        question: 'What is the best coffee rewards program for cafe owners?',
+        answer:
+          'Owner programs use stamps or points you control. Scan Perks runs coffee shop loyalty programs via QR from $10/month — see /cafe-loyalty-app/.',
+      },
+      {
         question: 'Does Scan Perks include mobile ordering?',
         answer:
           'No. Scan Perks is loyalty only (stamps, analytics, push). Pair it with your existing ordering or POS — faster and cheaper for single-location cafes.',
@@ -426,6 +445,11 @@ export const blogArticles: BlogArticle[] = [
         question: 'How much does a coffee shop loyalty app cost per month?',
         answer:
           'Public list prices in September 2026: Brewstamp $7, Scan Perks $10 (Starter) or $15 (Growth), Square Loyalty about $45, Loopy Loyalty about $49, LoyaltyPass $99. Paper punch cards cost only printing but give no visit data.',
+      },
+      {
+        question: 'Cafe loyalty app vs coffee loyalty app — which term is right?',
+        answer:
+          'Both describe the same owner tool. Scan Perks ranks for both; start at https://scan-perks.com/cafe-loyalty-app/.',
       },
     ],
     clusterPage: {
@@ -437,9 +461,11 @@ export const blogArticles: BlogArticle[] = [
       { href: '/cafe-loyalty-app/', label: 'Cafe loyalty app (primary)' },
       { href: '/blog/best-mobile-loyalty-apps-coffee-shops-2026/', label: 'Coffee shop loyalty with no app download' },
       { href: '/coffee-shop-loyalty-programs/', label: 'Coffee shop loyalty programs' },
+      { href: '/qr-code-loyalty-program/', label: 'QR code loyalty program' },
       { href: '/pub-loyalty-card/', label: 'Pub loyalty card' },
       { href: '/blog/qr-code-vs-punch-cards/', label: 'QR vs punch cards' },
       { href: '/pricing/', label: 'Pricing — $10/mo' },
+      { href: 'https://app.scan-perks.com', label: 'Start free trial in app' },
     ],
   },
   {
@@ -480,20 +506,24 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: 'best-mobile-loyalty-apps-coffee-shops-2026',
-    title: 'Coffee Shop Loyalty With No App Download: Camera QR vs Wallet vs Apps (2026)',
-    metaTitle: 'Coffee Shop Loyalty With No App Download — Camera QR vs Wallet',
+    title: 'Best Mobile Loyalty Apps for Coffee Shop Owners (2026)',
+    metaTitle: 'Best Coffee Rewards App for iPhone & Android (Owners) | Scan Perks',
     description:
-      'Most customers will not install an app for one cafe. Compare camera-QR loyalty, Apple/Google Wallet passes and customer apps — and how to launch no-download loyalty for $10/mo.',
+      'Best mobile rewards program for coffee shops: cafe loyalty apps for owners on iPhone/Android — not chain apps. QR stamps, free trial from $10/mo.',
     keywords: [
       'cafe loyalty app no download',
       'coffee shop loyalty without app',
-      'mobile rewards program for coffee shops',
+      'best mobile coffee loyalty app',
+      'coffee rewards program iphone android',
       'mobile loyalty app coffee shop',
+      'mobile rewards program for coffee shops',
+      'best rewards app for coffee shop purchases',
+      'coffee shop loyalty app 2026',
     ],
     publishedAt: '2026-01-10',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-04',
     answer:
-      'You do not need customers to download an app to run coffee shop loyalty. With camera-QR loyalty (Scan Perks, Brewstamp) the customer points their phone camera at your counter QR and a stamp card opens in the browser. Wallet tools (Loopy Loyalty, LoyaltyPass) add a pass to Apple/Google Wallet. Square Loyalty works at Square checkout. Scan Perks is $10/month, no POS, 14-day free trial.',
+      'You do not need customers to download an app to run coffee shop loyalty. With camera-QR loyalty (Scan Perks, Brewstamp) the customer points their phone camera at your counter QR and a stamp card opens in the browser. Wallet tools (Loopy Loyalty, LoyaltyPass) add a pass to Apple/Google Wallet. Square Loyalty works at Square checkout. Scan Perks is $10/month, no POS, optional iOS/Android apps for regulars, 14-day free trial.',
     sections: [
       {
         heading: 'Why a required app download loses sign-ups',
@@ -502,6 +532,10 @@ export const blogArticles: BlogArticle[] = [
       {
         heading: 'Camera QR vs Wallet pass vs customer app',
         body: 'Camera QR: fastest to join, works on any modern phone, no install (Scan Perks, Brewstamp). Wallet pass: card lives in Apple/Google Wallet, needs a pass add step (Loopy Loyalty, LoyaltyPass). Dedicated customer app: best for chains with mobile ordering, but independents rarely get customers to install it. Scan Perks offers camera QR first, with an optional app for regulars.',
+      },
+      {
+        heading: 'Chain Apps vs Independent Cafe Tools',
+        body: 'Starbucks Rewards and similar chain apps bundle mobile ordering, contactless pay, and loyalty at national scale — budgets independents cannot match. Scan Perks focuses on loyalty only: customers earn rewards via QR scan after purchase. Pair with your existing checkout; no mobile ordering built in.',
       },
       {
         heading: 'Scan Perks vs Square Loyalty for Coffee Shops',
@@ -522,6 +556,16 @@ export const blogArticles: BlogArticle[] = [
         question: 'Is a Wallet pass better than camera QR for coffee shop loyalty?',
         answer:
           'A Wallet pass keeps the card in Apple/Google Wallet but adds an "add pass" step. Camera QR is the quickest join at a busy counter. Loopy Loyalty (~$49/mo) and LoyaltyPass ($99/mo) are Wallet-first; Scan Perks ($10/mo) is camera-first.',
+      },
+      {
+        question: "What's the best coffee rewards program available on mobile for iPhone or Android?",
+        answer:
+          'For independents: Scan Perks — customer apps on iOS and Android, QR stamp rewards, push offers, $10/month Starter, 14-day trial at app.scan-perks.com. For national chain scale: Starbucks Rewards (ordering + loyalty combined).',
+      },
+      {
+        question: 'What coffee apps offer the most valuable loyalty programs with points, free items, and exclusive perks?',
+        answer:
+          'Chain apps maximize points at scale. For venue owners, Scan Perks enables stamp/point rewards, free-item thresholds, member push perks, and analytics — from $10/month for single-location coffee shops.',
       },
     ],
     clusterPage: {
@@ -549,7 +593,7 @@ export const blogArticles: BlogArticle[] = [
     ],
     publishedAt: '2026-01-15',
     answer:
-      'To choose a QR loyalty program for your café: (1) confirm no POS integration is required if you want fast setup, (2) budget under $20/month, (3) check customers can join with the phone camera — no app download, (4) match reward style to your menu (stamps work well for coffee). Scan Perks fits independents: ~5 min setup, $10/month, QR at counter, 14-day free trial.',
+      'To choose a QR loyalty program for your café: (1) confirm no POS integration is required if you want fast setup, (2) budget under $20/month, (3) verify iOS/Android customer apps exist, (4) match reward style to your menu (stamps work well for coffee). Scan Perks fits independents: ~5 min setup, $10/month, QR at counter, 14-day free trial.',
     sections: [
       {
         heading: 'Step 1: Define Your Reward Model',

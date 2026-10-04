@@ -1,9 +1,8 @@
 export const SITE = {
   name: 'Scan Perks',
-  alternateName: ['ScanPerks', 'Scan-Perks'],
   url: 'https://scan-perks.com',
   description:
-    'Scan Perks is QR loyalty software for independent cafes, pubs and bars. Customers join by scanning a counter QR with the phone camera — no download, no POS. From $10/month with a 14-day free trial.',
+    'Scan Perks — QR code loyalty program for bars, cafes & restaurants. Bar loyalty programs, cafe loyalty app, pub loyalty scheme. From $10/month.',
   email: 'hello@scan-perks.com',
   appWebUrl: 'https://app.scan-perks.com',
   appStore: 'https://apps.apple.com/app/id6744923279',
@@ -41,9 +40,10 @@ export interface LandingContent {
 }
 
 export const landingContent: LandingContent = {
-  metaTitle: 'Scan Perks — QR Loyalty for Cafes & Pubs, $10/mo',
+  metaTitle:
+    'Cafe Loyalty App & Coffee Rewards — iPhone, Android, Free Trial',
   metaDescription:
-    'Scan Perks is QR loyalty for independent cafes, pubs and bars. Customers scan your counter QR with their camera — no download, no POS. $10/mo, 14-day free trial.',
+    'Customers: earn free drinks at local cafes on iPhone or Android. Owners: launch QR loyalty in 5 minutes for $10/mo. 14-day free trial. US, UK, Canada.',
   metaKeywords: [
     'qr code loyalty program',
     'qr code loyalty card',
@@ -112,7 +112,7 @@ export const landingContent: LandingContent = {
     {
       query: 'What is the best cafe loyalty app for coffee shops?',
       answer:
-        'Scan Perks is a cafe loyalty app for independent coffee shops: digital stamp rewards, counter QR that customers scan with the phone camera (no download), and visit analytics — $10/month for up to 200 members, 14-day free trial at app.scan-perks.com.',
+        'Scan Perks is a cafe loyalty app for independent coffee shops: digital stamp rewards, counter QR scanning, iOS/Android customer apps, and visit analytics — $10/month for up to 200 members, 14-day free trial at app.scan-perks.com.',
       href: '/cafe-loyalty-app/',
       label: 'Cafe loyalty app →',
     },

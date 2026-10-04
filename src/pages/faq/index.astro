@@ -26,12 +26,19 @@ const categories = [
 ---
 
 <BaseLayout
-  title="Cafe & Pub Loyalty FAQ — Pricing, Setup, No-Download QR"
-  description="Owner answers on cafe and pub loyalty: what it costs, how customers join with the phone camera, Square vs Loopy vs Scan Perks, and setup in 5 minutes from $10/mo."
+  title="Best Loyalty Program for Cafes? FAQ + Free Trial | Scan Perks"
+  description="Answers: best loyalty program for cafes, cafe loyalty app no download, mobile coffee rewards, QR loyalty. Owners: start free trial at app.scan-perks.com ($10/mo)."
   path="/faq/"
   lang="en"
   hreflangLinks={getHreflangLinks(getPageDef('faq')!)}
-  keywords={['best coffee loyalty program', 'cafe loyalty app', 'mobile coffee rewards', 'qr loyalty program']}
+  keywords={[
+    'best coffee loyalty program',
+    'best loyalty program for cafes',
+    'cafe loyalty app',
+    'cafe loyalty app no download',
+    'mobile coffee rewards',
+    'qr loyalty program',
+  ]}
   faqs={faqs}
   breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'FAQ', path: '/faq/' }]}
   extraSchema={[buildSoftwareApplicationSchema()]}
@@ -41,10 +48,14 @@ const categories = [
   <section class="page-hero">
     <div class="container reveal">
       <span class="section__label">FAQ</span>
-      <h1 class="page-hero__title">Cafe &amp; Pub Loyalty FAQ for Owners</h1>
+      <h1 class="page-hero__title">Coffee & Hospitality Loyalty — Direct Answers</h1>
       <p class="page-hero__desc">
-        Straight answers for cafe, pub and bar owners: pricing, how customers join without an app, and how Scan Perks compares with Square, Loopy and others.
+        Factual answers for cafe and pub owners about loyalty apps, mobile rewards, and QR programs — then open the app and start your free trial.
       </p>
+      <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
+        <AppCta class="btn btn--primary btn--lg">Open App — Free Trial</AppCta>
+        <a href="/cafe-loyalty-app/" class="btn btn--glass btn--lg">Cafe Loyalty App</a>
+      </div>
     </div>
   </section>
 

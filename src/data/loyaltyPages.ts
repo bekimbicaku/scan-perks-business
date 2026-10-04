@@ -32,9 +32,9 @@ export const loyaltyPages: LoyaltyPage[] = [
   {
     slug: 'bar-loyalty-program',
     title: 'Bar Loyalty Programs for US Bars & Pubs',
-    metaTitle: 'Bar Loyalty Programs for Bars — QR Rewards $10/mo | Scan Perks',
+    metaTitle: 'Bar Loyalty Programs for US Bars — Free Trial $10/mo | Scan Perks',
     description:
-      'Bar loyalty programs for US bars & pubs. QR rewards, digital loyalty card, happy-hour pushes — $10/mo, 14-day free trial for owners.',
+      'Bar loyalty programs for US bars & pubs: QR rewards, digital loyalty card, happy-hour pushes. Start free trial for owners — $10/mo, no POS.',
     primaryKeyword: 'pub loyalty scheme',
     heroSeoLine:
       'Pub loyalty scheme, pub loyalty card, and bar loyalty programs — QR rewards for independent pubs and sports bars from $10/month.',

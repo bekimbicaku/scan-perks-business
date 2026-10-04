@@ -18,25 +18,29 @@ const KEYWORD_LANDING_PRIORITY: Record<string, string> = {
   'pub-loyalty-card': '1.0',
   'pub-loyalty-scheme': '1.0',
   'cafe-loyalty-app': '1.0',
+  'coffee-loyalty-app': '1.0',
+  'coffee-shop-loyalty-app': '1.0',
   'coffee-shop-loyalty-programs': '0.99',
   'qr-code-loyalty-program': '0.99',
 };
 
 const staticPages = [
-  { path: '/', priority: '1.0', changefreq: 'weekly', lastmod: '2026-09-29' },
-  { path: '/pub-loyalty-card/', priority: '1.0', changefreq: 'weekly', lastmod: '2026-09-29' },
-  { path: '/pub-loyalty-scheme/', priority: '1.0', changefreq: 'weekly', lastmod: '2026-09-29' },
-  { path: '/cafe-loyalty-app/', priority: '1.0', changefreq: 'weekly', lastmod: '2026-09-11' },
-  { path: '/coffee-shop-loyalty-programs/', priority: '0.99', changefreq: 'weekly', lastmod: '2026-09-29' },
-  { path: '/qr-code-loyalty-program/', priority: '0.99', changefreq: 'weekly', lastmod: '2026-09-11' },
+  { path: '/', priority: '1.0', changefreq: 'weekly', lastmod: '2026-10-04' },
+  { path: '/pub-loyalty-card/', priority: '1.0', changefreq: 'weekly', lastmod: '2026-10-04' },
+  { path: '/pub-loyalty-scheme/', priority: '1.0', changefreq: 'weekly', lastmod: '2026-10-04' },
+  { path: '/cafe-loyalty-app/', priority: '1.0', changefreq: 'weekly', lastmod: '2026-10-04' },
+  { path: '/coffee-loyalty-app/', priority: '1.0', changefreq: 'weekly', lastmod: '2026-10-04' },
+  { path: '/coffee-shop-loyalty-app/', priority: '1.0', changefreq: 'weekly', lastmod: '2026-10-04' },
+  { path: '/coffee-shop-loyalty-programs/', priority: '0.99', changefreq: 'weekly', lastmod: '2026-10-04' },
+  { path: '/qr-code-loyalty-program/', priority: '1.0', changefreq: 'weekly', lastmod: '2026-10-04' },
   { path: '/bar-loyalty-program/', priority: '0.95', changefreq: 'weekly' },
   { path: '/g2/', priority: '0.9', changefreq: 'monthly' },
-  { path: '/faq/', priority: '0.98', changefreq: 'weekly', lastmod: '2026-09-29' },
+  { path: '/faq/', priority: '0.98', changefreq: 'weekly', lastmod: '2026-10-04' },
   { path: '/scanbucks/', priority: '0.95', changefreq: 'monthly' },
-  { path: '/how-it-works/', priority: '0.96', changefreq: 'monthly' },
+  { path: '/how-it-works/', priority: '0.98', changefreq: 'weekly', lastmod: '2026-10-04' },
   { path: '/business-loyalty-program/', priority: '0.97', changefreq: 'weekly' },
   { path: '/features/', priority: '0.95', changefreq: 'weekly' },
-  { path: '/pricing/', priority: '0.95', changefreq: 'monthly' },
+  { path: '/pricing/', priority: '0.98', changefreq: 'weekly', lastmod: '2026-10-04' },
   { path: '/about/', priority: '0.85', changefreq: 'monthly' },
   { path: '/contact/', priority: '0.7', changefreq: 'monthly' },
   { path: '/blog/', priority: '0.85', changefreq: 'weekly' },
@@ -76,7 +80,6 @@ export const GET: APIRoute = () => {
   for (const p of loyaltyPages) {
     const path = `/${p.slug}/`;
     if (staticPaths.has(path)) continue;
-    if (p.slug === 'cafe-loyalty-program' || p.slug === 'qr-loyalty-program') continue;
     push({
       path,
       priority: MONEY_PAGE_PRIORITY[p.slug] ?? '0.9',
@@ -98,13 +101,14 @@ export const GET: APIRoute = () => {
   }
 
   for (const a of blogArticles) {
-    const priorityBlog = ['best-coffee-loyalty-programs', 'best-mobile-loyalty-apps-coffee-shops-2026', 'qr-code-vs-punch-cards', 'bar-customer-retention-tips'].includes(
+    const weakBlog = ['best-mobile-loyalty-apps-coffee-shops-2026'].includes(a.slug);
+    const priorityBlog = ['best-coffee-loyalty-programs', 'qr-code-vs-punch-cards', 'bar-customer-retention-tips'].includes(
       a.slug
     );
     const supportBlog = ['best-loyalty-app-small-business'].includes(a.slug);
     push({
       path: `/blog/${a.slug}/`,
-      priority: priorityBlog ? '0.95' : supportBlog ? '0.78' : '0.65',
+      priority: priorityBlog ? '0.95' : supportBlog ? '0.78' : weakBlog ? '0.55' : '0.65',
       changefreq: 'weekly',
       lastmod: a.updatedAt ?? a.publishedAt,
     });

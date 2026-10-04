@@ -15,6 +15,8 @@ export const PRIMARY_MONEY_URLS = {
   pubLoyaltyScheme: '/pub-loyalty-scheme/',
   pubLoyaltyCard: '/pub-loyalty-card/',
   coffeeShopLoyalty: '/coffee-shop-loyalty-programs/',
+  coffeeLoyaltyApp: '/coffee-loyalty-app/',
+  coffeeShopLoyaltyApp: '/coffee-shop-loyalty-app/',
   qrCodeLoyalty: '/qr-code-loyalty-program/',
   barLoyalty: '/bar-loyalty-program/',
 } as const;

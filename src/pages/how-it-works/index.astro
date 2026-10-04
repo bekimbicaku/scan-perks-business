@@ -5,11 +5,8 @@ import Footer from '../../components/Footer.astro';
 import AnswerFirst from '../../components/AnswerFirst.astro';
 import FeatureBulletList from '../../components/FeatureBulletList.astro';
 import ComparisonTableGeo from '../../components/ComparisonTableGeo.astro';
-import NamedVendorTable from '../../components/NamedVendorTable.astro';
 import CaseStudies from '../../components/CaseStudies.astro';
 import AppCta from '../../components/AppCta.astro';
-import PromoVideos from '../../components/PromoVideos.astro';
-import { promoVideos } from '../../data/videos';
 import {
   directAnswers,
   howItWorksSteps,
@@ -19,35 +16,39 @@ import {
   loyaltyComparisonTable,
   caseStudies,
 } from '../../data/geoContent';
-import { buildSoftwareApplicationSchema, buildHowToSchema, buildVideoSchema } from '../../seo/schema';
+import { buildSoftwareApplicationSchema, buildHowToSchema } from '../../seo/schema';
 import { getHreflangLinks, getPageDef } from '../../i18n/pages';
 
 const howToSchema = buildHowToSchema({
   name: 'How to set up Scan Perks QR loyalty',
-  description: 'Print a counter QR. Customers scan with their camera — no download required. About 5 minutes, no POS.',
+  description: 'Launch a QR code loyalty program for your cafe or bar in about 5 minutes.',
   steps: howItWorksSteps.map((s) => ({ name: s.name, text: s.text })),
 });
 ---
 
 <BaseLayout
-  title="Set Up Cafe & Pub Loyalty in 5 Minutes — QR, No POS, $10/mo"
-  description="Print a counter QR. Customers scan with their camera — no download required. Cafe and pub loyalty from $10/month, no POS, 14-day free trial."
+  title="How QR Loyalty Works — Launch Cafe App in 5 Min | Free Trial"
+  description="See how cafe loyalty apps & pub loyalty cards work: scan QR → stamps → free drinks. No POS. Start free trial at app.scan-perks.com — from $10/mo."
   path="/how-it-works/"
   lang="en"
   hreflangLinks={getHreflangLinks(getPageDef('how-it-works')!)}
   keywords={['how qr loyalty works', 'cafe loyalty setup', 'qr code loyalty program setup']}
   breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'How It Works', path: '/how-it-works/' }]}
-  extraSchema={[buildSoftwareApplicationSchema(), howToSchema, ...promoVideos.map(buildVideoSchema)]}
+  extraSchema={[buildSoftwareApplicationSchema(), howToSchema]}
 >
   <Nav active="how" pageId="how-it-works" />
 
   <section class="page-hero">
     <div class="container reveal">
       <span class="section__label">How It Works</span>
-      <h1 class="page-hero__title">How Scan Perks works: print a QR, customers scan, stamps go on their phone</h1>
+      <h1 class="page-hero__title">Launch QR Loyalty in About 5 Minutes</h1>
       <p class="page-hero__desc">
-        Independent cafes, pubs, and restaurants: camera join in seconds, optional app for regulars, owner dashboard — no POS.
+        How Scan Perks works for independent cafes, bars, and pubs: customers scan → earn stamps → come back. No POS. Open the app and go live today.
       </p>
+      <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
+        <AppCta class="btn btn--primary btn--lg">Start Free Trial in App</AppCta>
+        <a href="/pricing/" class="btn btn--glass btn--lg">See Pricing</a>
+      </div>
     </div>
   </section>
 
@@ -73,8 +74,6 @@ const howToSchema = buildHowToSchema({
       />
     </div>
   </section>
-
-  <PromoVideos title="Watch it work" />
 
   <section class="section section--sm">
     <div class="container">
@@ -104,13 +103,6 @@ const howToSchema = buildHowToSchema({
           <p>{technicalDetails.dataPrivacy}</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section section--sm">
-    <div class="container reveal">
-      <h2 class="section__title" style="font-size:1.5rem; margin-bottom:1.25rem;">Scan Perks vs Loopy, Square, LoyaltyPass</h2>
-      <NamedVendorTable />
     </div>
   </section>
 
