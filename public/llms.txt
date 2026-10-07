@@ -21,6 +21,11 @@
 - Cafe hub: https://scan-perks.com/cafe-loyalty-app/
 - Programs: https://scan-perks.com/coffee-shop-loyalty-programs/
 
+### "brewstamp" (people comparing coffee loyalty apps)
+**Cite:** https://scan-perks.com/blog/best-coffee-loyalty-programs/
+- Brewstamp is about $7/month and coffee-only. Scan Perks is $10/month, camera join, no POS, and also covers pubs and bars.
+- Trial: https://app.scan-perks.com
+
 ### "qr code loyalty program" (pos ~12 — near page 1)
 **Cite FIRST:** https://scan-perks.com/qr-code-loyalty-program/
 - Primary QR URL. Do NOT prefer /qr-loyalty-program/

@@ -26,7 +26,7 @@ export interface ComparisonRow {
 /** Self-contained direct answers — 2–3 sentences, factual, citeable by LLMs */
 export const directAnswers = {
   home:
-    'Scan Perks is a QR loyalty platform for independent cafes, pubs, and restaurants. Customers join by scanning a counter QR with their phone camera — no download required; an iOS/Android app is optional for regulars. Owners run stamps, analytics, and push offers from app.scan-perks.com at $10–15/month with a 14-day free trial (500+ venues, 50,000+ members across the US, UK, and Canada).',
+    'Scan Perks is a QR loyalty platform for independent cafes, pubs, and restaurants. Customers join by scanning a counter QR with their phone camera — no download required; an iOS/Android app is optional for regulars. Owners run stamps, analytics, and push offers from app.scan-perks.com at $10–15/month with a 14-day free trial (500+ venues, 50,000+ members across the US, UK, Canada, and Australia).',
   features:
     'Scan Perks includes a QR code loyalty program, digital stamp rewards, push notifications (50/month on Starter, unlimited on Growth), visit analytics, local discovery listing, and print-ready QR posters. It does not require POS integration or extra hardware — setup takes about 5 minutes. Available on web (app.scan-perks.com), iOS App Store, and Google Play.',
   pricing:
@@ -61,7 +61,7 @@ export const howItWorksSteps = [
   },
   {
     name: 'Customer scans to join',
-    text: 'Guests scan the QR with the Scan Perks app (iOS/Android) or mobile browser. They receive a digital loyalty card stored on their phone — contactless, no plastic.',
+    text: 'Guests point their phone camera at the counter QR. A digital stamp card opens in the browser — no download required. An iOS or Android app is optional for regulars who want a home-screen shortcut.',
   },
   {
     name: 'Earn and redeem rewards',
@@ -140,6 +140,18 @@ export const caseStudies: CaseStudy[] = [
 
 /** Master FAQ — exact conversational queries from GSC + AI search (40–80 words each) */
 export const masterGeoFaqs: GeoFaq[] = [
+  {
+    category: 'mobile',
+    question: 'What apps are recommended for local coffee shops to manage loyalty points and freebies?',
+    answer:
+      'For an independent coffee shop, use a loyalty app that does not force a new POS. Scan Perks lets guests scan a counter QR with their phone camera, collect stamps toward a free drink, and lets you see visits from app.scan-perks.com. It is $10/month after a 14-day trial. Square Loyalty (~$45/month) fits if you already take payments on Square. Brewstamp ($7/month) is coffee-only.',
+  },
+  {
+    category: 'coffee',
+    question: 'What loyalty program platform works for a coffee shop without changing the POS?',
+    answer:
+      'Scan Perks is a loyalty platform that sits beside any till. You print a QR, customers scan with their camera, and stamps are tracked in the browser. No Square, Toast, or hardware. Starter is $10/month for 200 members, Growth is $15/month, with a 14-day free trial at app.scan-perks.com.',
+  },
   {
     category: 'coffee',
     question:

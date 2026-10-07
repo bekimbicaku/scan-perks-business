@@ -35,11 +35,11 @@ export const loyaltyPages: LoyaltyPage[] = [
     metaTitle: 'Bar Loyalty Programs for US Bars — Free Trial $10/mo | Scan Perks',
     description:
       'Bar loyalty programs for US bars & pubs: QR rewards, digital loyalty card, happy-hour pushes. Start free trial for owners — $10/mo, no POS.',
-    primaryKeyword: 'pub loyalty scheme',
+    primaryKeyword: 'bar loyalty programs',
     heroSeoLine:
-      'Pub loyalty scheme, pub loyalty card, and bar loyalty programs — QR rewards for independent pubs and sports bars from $10/month.',
+      'Bar loyalty programs for US bars — customers scan a QR at the bar, stamps land on their phone, you send happy-hour offers. From $10/month.',
     quickAnswer:
-      'Scan Perks is a pub loyalty scheme and bar loyalty program in one: customers scan a QR code at the bar to earn rewards on a digital pub loyalty card (no plastic). Happy-hour push alerts, visit analytics, free-drink tiers — $10/month Starter, 14-day free trial.',
+      'A bar loyalty program rewards regulars with free drinks after repeat visits. Scan Perks runs it with a bar QR: guests scan with their phone camera (no download), earn a digital card, and you send happy-hour pushes — $10/month, 14-day free trial, no POS. UK pubs looking for a pub loyalty card or scheme should use those pages; this one is for US bar owners.',
     keywordCluster: [
       'pub loyalty scheme',
       'pub loyalty card',

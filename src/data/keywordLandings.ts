@@ -73,6 +73,11 @@ export const keywordLandings: LoyaltyPage[] = [
     ],
     faqs: [
       {
+        question: 'Scan Perks vs Brewstamp — which cafe loyalty app?',
+        answer:
+          'Brewstamp is $7/month and coffee-only. Scan Perks is $10/month with camera join and no POS, and it also covers pubs and bars. Start a 14-day trial at app.scan-perks.com.',
+      },
+      {
         question: 'What is the best cafe loyalty app for coffee shops?',
         answer:
           'For independent cafe owners (not Starbucks customers): Scan Perks — counter QR, no download required, analytics, push offers — $10/month, 14-day trial at app.scan-perks.com.',
@@ -117,9 +122,9 @@ export const keywordLandings: LoyaltyPage[] = [
   {
     slug: 'pub-loyalty-scheme',
     title: 'Pub Loyalty Scheme for Independent Pubs & Bars',
-    metaTitle: 'Pub Loyalty Scheme for Pubs & Bars — Free Trial $10/mo | Scan Perks',
+    metaTitle: 'Pub Loyalty Scheme for UK Pubs — from £8/mo Free Trial',
     description:
-      'Start a digital pub loyalty scheme today: QR free-drink tiers, happy-hour pushes, digital card. UK pubs & US bars — 14-day free trial at app.scan-perks.com.',
+      'Pub loyalty scheme for UK pubs: free pint after 10, quiz-night stamps, happy-hour pushes. From $10/mo (about £8). No POS. 14-day free trial.',
     primaryKeyword: 'pub loyalty scheme',
     heroSeoLine:
       'Pub loyalty scheme for independent pubs and bars — QR rewards, digital loyalty card, happy-hour push alerts from $10/month.',
@@ -198,9 +203,9 @@ export const keywordLandings: LoyaltyPage[] = [
   {
     slug: 'pub-loyalty-card',
     title: 'Pub Loyalty Card for Pubs & Bars',
-    metaTitle: 'Digital Pub Loyalty Card — Replace Punch Cards | Free Trial Scan Perks',
+    metaTitle: 'Pub Loyalty Card — Digital Stamp Card from £8/mo',
     description:
-      'Best digital pub loyalty card for UK pubs & US bars. Guests scan QR — never lose a card. Happy-hour pushes, analytics. Start free trial — $10/mo.',
+      'Replace paper pub loyalty cards. Guests scan your bar QR with their camera — no lost cards. UK pubs and US bars, from $10/mo (about £8). 14-day free trial.',
     primaryKeyword: 'pub loyalty card',
     heroSeoLine:
       'Digital pub loyalty card for independent pubs and bars — scan at the bar, never lose a card, analytics from $10/month.',
@@ -347,7 +352,7 @@ export const keywordLandings: LoyaltyPage[] = [
     title: 'QR Code Loyalty Program for Cafe & Bar Owners',
     metaTitle: 'QR Code Loyalty Program — No POS, Free Trial, $10/mo | Scan Perks',
     description:
-      'Launch a QR code loyalty program in 5 minutes: digital stamps, loyalty QR poster, iOS/Android. No POS. Start free trial → app.scan-perks.com',
+      'QR code loyalty program for cafe and bar owners. Customers scan with their camera — no download, no POS. Live in 5 minutes. $10/mo, 14-day free trial.',
     primaryKeyword: 'qr code loyalty program',
     heroSeoLine:
       'QR code loyalty program for hospitality — loyalty QR codes, digital cards, and visit analytics from $10/month.',
@@ -424,9 +429,9 @@ export const keywordLandings: LoyaltyPage[] = [
   {
     slug: 'coffee-loyalty-app',
     title: 'Coffee Loyalty App for Shops & Customers',
-    metaTitle: 'Coffee Loyalty App — iPhone & Android Rewards | Free Trial',
+    metaTitle: 'Coffee Loyalty App for Cafe Owners — $10/mo Free Trial',
     description:
-      'Coffee loyalty app for iPhone and Android. Customers earn free drinks at local cafes. Owners launch QR stamps in 5 minutes — $10/mo, 14-day free trial.',
+      'Coffee loyalty app for independent cafe owners, not a chain rewards account. Camera QR, no POS. $10/mo, 14-day free trial at app.scan-perks.com.',
     primaryKeyword: 'coffee loyalty app',
     heroSeoLine:
       'The coffee loyalty app on iPhone and Android — customers scan, earn stamps, get free drinks. Cafes go live from $10/month.',
@@ -495,9 +500,9 @@ export const keywordLandings: LoyaltyPage[] = [
   {
     slug: 'coffee-shop-loyalty-app',
     title: 'Coffee Shop Loyalty App for Owners & Regulars',
-    metaTitle: 'Coffee Shop Loyalty App — QR Stamps, iPhone & Android',
+    metaTitle: 'Coffee Shop Loyalty App — $10/mo, 14-Day Free Trial',
     description:
-      'Coffee shop loyalty app with QR stamps. Regulars earn free drinks on iPhone or Android. Owners launch in 5 minutes — $10/mo free trial, no POS.',
+      'Coffee shop loyalty app for owners: counter QR, stamp rewards, no POS. Guests join with the phone camera. $10/mo, 14-day free trial.',
     primaryKeyword: 'coffee shop loyalty app',
     heroSeoLine:
       'A coffee shop loyalty app that regulars actually use — scan at the counter, stamps on the phone, free drink when the card fills.',

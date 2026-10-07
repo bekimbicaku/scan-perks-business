@@ -5,8 +5,12 @@ import Footer from '../../components/Footer.astro';
 import AnswerFirst from '../../components/AnswerFirst.astro';
 import FeatureBulletList from '../../components/FeatureBulletList.astro';
 import ComparisonTableGeo from '../../components/ComparisonTableGeo.astro';
+import NamedVendorTable from '../../components/NamedVendorTable.astro';
 import CaseStudies from '../../components/CaseStudies.astro';
 import AppCta from '../../components/AppCta.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import PromoVideos from '../../components/PromoVideos.astro';
+import { promoVideos } from '../../data/videos';
 import {
   directAnswers,
   howItWorksSteps,
@@ -16,8 +20,26 @@ import {
   loyaltyComparisonTable,
   caseStudies,
 } from '../../data/geoContent';
-import { buildSoftwareApplicationSchema, buildHowToSchema } from '../../seo/schema';
+import { buildSoftwareApplicationSchema, buildHowToSchema, buildVideoSchema } from '../../seo/schema';
 import { getHreflangLinks, getPageDef } from '../../i18n/pages';
+
+const howFaqs = [
+  {
+    question: 'How does a QR code loyalty program work?',
+    answer:
+      'You print a QR for the counter. The customer scans it with their phone camera and a digital stamp card opens — no download. Each visit adds a stamp. When they hit your rule (for example 9 coffees), staff redeem the free drink in the dashboard at app.scan-perks.com.',
+  },
+  {
+    question: 'Do customers need to download an app to join?',
+    answer:
+      'No. The phone camera is enough. An iOS or Android app is optional for regulars who want a shortcut. Owners always use app.scan-perks.com.',
+  },
+  {
+    question: 'How long does Scan Perks take to set up and what does it cost?',
+    answer:
+      'Most cafes and bars go live in about 5 minutes: create the venue, set a stamp rule, print the QR. Starter is $10/month (about £8) for 200 members, Growth is $15/month. 14-day free trial, no POS, cancel anytime.',
+  },
+];
 
 const howToSchema = buildHowToSchema({
   name: 'How to set up Scan Perks QR loyalty',
@@ -27,26 +49,27 @@ const howToSchema = buildHowToSchema({
 ---
 
 <BaseLayout
-  title="How QR Loyalty Works — Launch Cafe App in 5 Min | Free Trial"
-  description="See how cafe loyalty apps & pub loyalty cards work: scan QR → stamps → free drinks. No POS. Start free trial at app.scan-perks.com — from $10/mo."
+  title="How QR Code Loyalty Works — No Download, $10/mo"
+  description="Customers scan your counter QR with their phone camera — no download. Stamps, free drinks, owner dashboard. $10/mo, 14-day free trial, no POS."
   path="/how-it-works/"
   lang="en"
   hreflangLinks={getHreflangLinks(getPageDef('how-it-works')!)}
   keywords={['how qr loyalty works', 'cafe loyalty setup', 'qr code loyalty program setup']}
   breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'How It Works', path: '/how-it-works/' }]}
-  extraSchema={[buildSoftwareApplicationSchema(), howToSchema]}
+  faqs={howFaqs}
+  extraSchema={[buildSoftwareApplicationSchema(), howToSchema, ...promoVideos.map(buildVideoSchema)]}
 >
   <Nav active="how" pageId="how-it-works" />
 
   <section class="page-hero">
     <div class="container reveal">
       <span class="section__label">How It Works</span>
-      <h1 class="page-hero__title">Launch QR Loyalty in About 5 Minutes</h1>
+      <h1 class="page-hero__title">How a QR loyalty program works</h1>
       <p class="page-hero__desc">
-        How Scan Perks works for independent cafes, bars, and pubs: customers scan → earn stamps → come back. No POS. Open the app and go live today.
+        Print a counter QR. Customers scan with their phone camera — no download. Stamps land on their phone. You track visits from app.scan-perks.com. About 5 minutes, from $10/month.
       </p>
       <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
-        <AppCta class="btn btn--primary btn--lg">Start Free Trial in App</AppCta>
+        <AppCta class="btn btn--primary btn--lg">Start 14-day free trial</AppCta>
         <a href="/pricing/" class="btn btn--glass btn--lg">See Pricing</a>
       </div>
     </div>
@@ -74,6 +97,8 @@ const howToSchema = buildHowToSchema({
       />
     </div>
   </section>
+
+  <PromoVideos title="Watch it work" />
 
   <section class="section section--sm">
     <div class="container">
@@ -108,6 +133,13 @@ const howToSchema = buildHowToSchema({
 
   <section class="section section--sm">
     <div class="container reveal">
+      <h2 class="section__title" style="font-size:1.5rem; margin-bottom:1.25rem;">Scan Perks vs Loopy, Square, and Brewstamp</h2>
+      <NamedVendorTable />
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container reveal">
       <ComparisonTableGeo rows={loyaltyComparisonTable} />
     </div>
   </section>
@@ -118,9 +150,11 @@ const howToSchema = buildHowToSchema({
     </div>
   </section>
 
+  <FAQSection faqs={howFaqs} title="QR loyalty questions" />
+
   <section class="section section--sm">
     <div class="container reveal" style="text-align:center;">
-      <AppCta class="btn btn--primary btn--lg">Start at app.scan-perks.com</AppCta>
+      <AppCta class="btn btn--primary btn--lg">Start 14-day free trial</AppCta>
     </div>
   </section>
 

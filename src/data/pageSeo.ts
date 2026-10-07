@@ -16,7 +16,7 @@ export const featuresSeo = {
 export const pricingSeo = {
   title: '$10/mo Loyalty App Pricing — 14-Day Free Trial (No Contract) | Scan Perks',
   description:
-    'Transparent loyalty software pricing for cafe & pub owners: Starter $10/mo, Growth $15/mo. Start free trial now at app.scan-perks.com — cancel anytime.',
+    'From $10/mo for cafe and pub owners — less than Square Loyalty (~$45) or Loopy (~$49). 14-day free trial, no contract, no POS. Start at app.scan-perks.com.',
   h1: 'Cafe & Pub Loyalty — From $10/Month',
   heroDesc:
     'One extra weekly regular covers your plan. Starter $10/mo · Growth $15/mo · start your 14-day free trial in the app today.',
