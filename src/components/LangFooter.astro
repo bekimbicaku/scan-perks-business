@@ -27,13 +27,13 @@ const moneyLinks = allLocalizedPageDefs
     <div class="footer__grid">
       <div class="footer__brand">
         <div class="footer__logo">
-          <img src="/favicon.png" alt="Scan Perks" width="36" height="36" />
+          <img src="/favicon.png" alt="" width="315" height="295" />
           Scan Perks
         </div>
         <p>{t.footer.tagline}</p>
       </div>
       <div>
-        <h4 class="footer__heading">{t.footer.loyalty}</h4>
+        <h2 class="footer__heading">{t.footer.loyalty}</h2>
         <ul class="footer__links">
           {moneyLinks.map((l) => (
             <li><a href={l.href}>{l.label}</a></li>
@@ -41,7 +41,7 @@ const moneyLinks = allLocalizedPageDefs
         </ul>
       </div>
       <div>
-        <h4 class="footer__heading">{t.footer.product}</h4>
+        <h2 class="footer__heading">{t.footer.product}</h2>
         <ul class="footer__links">
           <li><a href={pageHref(getPageDef('features')!, locale)}>{t.nav.features}</a></li>
           <li><a href={pageHref(getPageDef('pricing')!, locale)}>{t.nav.pricing}</a></li>
@@ -68,7 +68,7 @@ const moneyLinks = allLocalizedPageDefs
         </ul>
       </div>
       <div>
-        <h4 class="footer__heading">{t.footer.company}</h4>
+        <h2 class="footer__heading">{t.footer.company}</h2>
         <ul class="footer__links">
           {locale === 'en' && (
             <>

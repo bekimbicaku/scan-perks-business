@@ -1,4 +1,22 @@
 /* ─── Design Tokens ─── */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('/fonts/outfit-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('/fonts/outfit-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
   --navy-950: #020617;
   --navy-900: #0a1628;
@@ -18,7 +36,7 @@
   --glass-highlight: rgba(255, 255, 255, 0.2);
   --text-primary: #f8fafc;
   --text-secondary: rgba(248, 250, 252, 0.7);
-  --text-muted: rgba(248, 250, 252, 0.45);
+  --text-muted: #94a3b8;
   --glow-blue: rgba(59, 130, 246, 0.4);
   --glow-cyan: rgba(34, 211, 238, 0.3);
   --radius-sm: 12px;
@@ -208,7 +226,8 @@ img {
 
 .nav__logo img {
   width: 40px;
-  height: 40px;
+  height: auto;
+  aspect-ratio: 315 / 295;
   border-radius: 10px;
 }
 
@@ -416,8 +435,8 @@ img {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.5); }
-  50% { opacity: 0.7; box-shadow: 0 0 0 8px rgba(34, 211, 238, 0); }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.35); }
 }
 
 .hero__title {
@@ -1019,11 +1038,13 @@ img {
 
 .footer__logo img {
   width: 36px;
-  height: 36px;
+  height: auto;
+  aspect-ratio: 315 / 295;
   border-radius: 8px;
 }
 
 .footer__heading {
+  margin-top: 0;
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;

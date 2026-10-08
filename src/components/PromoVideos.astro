@@ -31,7 +31,15 @@ const {
             width="720"
             height="1280"
             aria-label={v.title}
-          ></video>
+          >
+            <track
+              kind="captions"
+              src={v.src.replace('.mp4', '.vtt')}
+              srclang="en"
+              label="English"
+              default
+            />
+          </video>
           <figcaption class="promo-videos__caption">
             <strong>{v.title}</strong>
             <span>{v.description}</span>
