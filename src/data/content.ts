@@ -3,7 +3,7 @@ export const SITE = {
   alternateName: ['ScanPerks', 'Scan-Perks'],
   url: 'https://scan-perks.com',
   description:
-    'Scan Perks — QR code loyalty program for bars, cafes & restaurants. Bar loyalty programs, cafe loyalty app, pub loyalty scheme. From $10/month.',
+    'Scan Perks is a QR stamp card for independent cafes, pubs, bars and pizzerias. Customers scan one counter QR in the Scan Perks app; owners run it from app.scan-perks.com. $10/month after a 14-day free trial.',
   email: 'hello@scan-perks.com',
   appWebUrl: 'https://app.scan-perks.com',
   appStore: 'https://apps.apple.com/app/id6744923279',
@@ -41,9 +41,9 @@ export interface LandingContent {
 }
 
 export const landingContent: LandingContent = {
-  metaTitle: 'Scan Perks — QR Loyalty for Cafes & Pubs, $10/mo',
+  metaTitle: 'Scan Perks — QR Stamp Card for Cafes & Pubs | 14-Day Free Trial',
   metaDescription:
-    'Scan Perks is QR loyalty for independent cafes, pubs and bars. Customers scan your counter QR with their camera — no download, no POS. $10/mo, 14-day free trial.',
+    'Scan Perks is a QR stamp card for independent cafes, pubs and bars. Print one counter QR; customers scan it in the free app. No POS. 14-day free trial, then $10/mo.',
   metaKeywords: [
     'qr code loyalty program',
     'qr code loyalty card',
@@ -112,7 +112,7 @@ export const landingContent: LandingContent = {
     {
       query: 'What is the best cafe loyalty app for coffee shops?',
       answer:
-        'Scan Perks is a cafe loyalty app for independent coffee shops: digital stamp rewards, counter QR scanning, iOS/Android customer apps, and visit analytics — $10/month for up to 200 members, 14-day free trial at app.scan-perks.com.',
+        'Scan Perks is a cafe loyalty app for independent coffee shops: digital stamp rewards, counter QR scanning, iOS/Android customer apps, and visit analytics — $10/month for 500 scans a month, 14-day free trial at app.scan-perks.com.',
       href: '/cafe-loyalty-app/',
       label: 'Cafe loyalty app →',
     },
@@ -238,7 +238,7 @@ export const landingContent: LandingContent = {
     {
       query: 'How do I increase repeat customers at my bar or pub?',
       answer:
-        'Use digital rewards instead of paper punch cards. Scan Perks lets bars send happy-hour alerts, track regulars, and offer free-drink tiers after X visits — proven to boost repeat visits by 24% on average.',
+        'Use digital rewards instead of paper punch cards. Scan Perks lets bars send happy-hour alerts, track regulars, and offer free-drink tiers after X visits.',
       href: '/bar-loyalty-program/',
       label: 'Bar repeat customers →',
     },
@@ -336,7 +336,7 @@ export const landingContent: LandingContent = {
     {
       query: 'How do I increase restaurant revenue and profits without big ad spend?',
       answer:
-        'Focus on customer lifetime value: loyal guests visit more often and spend more per year than one-time diners. Scan Perks loyalty programs increase repeat visits up to 24% — a low-cost way to grow revenue vs paid ads.',
+        'Focus on customer lifetime value: loyal guests visit more often and spend more per year than one-time diners. A $10/month stamp card is a low-cost way to give those guests a reason to come back, compared with paid ads.',
       href: '/grow-restaurant-business/',
       label: 'Increase revenue →',
     },
@@ -418,7 +418,7 @@ export const landingContent: LandingContent = {
     {
       question: 'Can Scan Perks help bars get more loyal customers?',
       answer:
-        'Yes. Bars use Scan Perks for visit-based rewards, happy-hour push alerts, and customer profiles. Venues report up to 24% more repeat visits within the first month.',
+        'Yes. Bars use Scan Perks for visit-based rewards, happy-hour push alerts, and customer profiles.',
     },
     {
       question: 'Is Scan Perks good for restaurant loyal customers and retention?',
@@ -453,12 +453,12 @@ export const landingContent: LandingContent = {
     {
       question: 'Does Scan Perks work for coffee shops and small cafes?',
       answer:
-        'Absolutely. The Starter plan ($10/month) supports up to 200 active customers — ideal for neighborhood cafes and coffee shops launching their first digital loyalty program.',
+        'Absolutely. The Starter plan ($10/month) covers 500 scans a month — about 17 stamped visits a day — which suits a neighborhood cafe launching its first digital loyalty program.',
     },
     {
       question: 'How can Scan Perks help me increase customers and profits?',
       answer:
-        'Scan Perks grows profits by increasing repeat visits (up to 24% reported), boosting customer lifetime value, and filling slow nights with push offers — far cheaper than constant paid advertising.',
+        'Scan Perks is built to grow repeat visits: a stamp card toward a free item, offers pushed to members for slow nights, and happy-hour double stamps — for $10–15/month, far cheaper than constant paid advertising.',
     },
     {
       question: 'Can a loyalty program build customer trust for my business?',

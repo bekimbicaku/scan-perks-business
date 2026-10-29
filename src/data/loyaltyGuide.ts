@@ -129,7 +129,7 @@ export const loyaltyGuide: LoyaltyGuide = {
     {
       question: 'Do business loyalty programs actually grow revenue?',
       answer:
-        'Yes. Loyal customers visit more often and refer friends. Scan Perks users report up to 24% more repeat visits when rewards and push offers are used consistently.',
+        'Yes. Loyal customers visit more often and refer friends. A stamp card toward a free item, plus offers pushed to members, gives regulars a concrete reason to return.',
     },
     {
       question: 'How is Scan Perks different from generic loyalty apps?',
