@@ -1,13 +1,15 @@
 ---
-import { SITE } from '../data/content';
+import { appSignupUrl } from '../data/content';
 
 interface Props {
   class?: string;
+  /** Button position, sent as utm_content. */
+  position?: string;
 }
 
-const { class: className = 'btn btn--primary' } = Astro.props;
+const { class: className = 'btn btn--primary', position = 'cta' } = Astro.props;
 ---
 
-<a href={SITE.appWebUrl} class={className}>
+<a href={appSignupUrl(Astro.url.pathname, position)} class={className}>
   <slot />
 </a>

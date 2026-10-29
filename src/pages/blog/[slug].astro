@@ -6,6 +6,7 @@ import FAQSection from '../../components/FAQSection.astro';
 import AppCta from '../../components/AppCta.astro';
 import NamedVendorTable from '../../components/NamedVendorTable.astro';
 import { blogArticles, getBlogArticle } from '../../data/blogArticles';
+import { SITE, appSignupUrl } from '../../data/content';
 import { cafeConversationalFaqs } from '../../data/conversationalFaqs';
 import { buildBlogPostingSchema } from '../../seo/schema';
 
@@ -18,6 +19,8 @@ const article = getBlogArticle(slug!);
 if (!article) return Astro.redirect('/404');
 
 const path = `/blog/${article.slug}/`;
+const linkHref = (href: string, position: string) =>
+  href.startsWith(SITE.appWebUrl) ? appSignupUrl(path, position) : href;
 
 const blogExtraFaqs =
   article.slug === 'best-coffee-loyalty-programs' ? cafeConversationalFaqs : [];
@@ -71,7 +74,7 @@ if (article.namedVendors) {
         <h1 class="page-hero__title">{article.title}</h1>
         <p class="page-hero__desc">{article.description}</p>
         <div class="hero__actions" style="justify-content:center; margin-top:1.25rem;">
-          <AppCta class="btn btn--primary btn--lg">Open App — Free Trial</AppCta>
+          <AppCta class="btn btn--primary btn--lg" position="hero">Open App — Free Trial</AppCta>
           <a href={article.clusterPage.href} class="btn btn--glass btn--lg">{article.clusterPage.label}</a>
         </div>
       </div>
@@ -84,10 +87,32 @@ if (article.namedVendors) {
           <p>{article.answer}</p>
         </div>
 
+        <div class="glass-card reveal" style="margin-bottom:1.5rem;">
+          <p class="feature-card__desc" style="font-size:1rem;">
+            <strong>Own a cafe, pub or bar?</strong> Scan Perks is a counter-QR stamp card: customers scan it in the free
+            Scan Perks app and collect stamps toward a reward you choose. Set up in about 5 minutes at app.scan-perks.com;
+            14-day free trial with no card, then $10/month.
+          </p>
+          <div class="hero__actions" style="margin-top:1rem;">
+            <AppCta class="btn btn--primary" position="owner-box">Start 14-day free trial</AppCta>
+            <a href={article.clusterPage.href} class="btn btn--glass">{article.clusterPage.label}</a>
+          </div>
+        </div>
+
         {article.sections.map((s) => (
           <div class="glass-card reveal" style="margin-bottom:1.5rem;">
             <h2 class="feature-card__title" style="font-size:1.25rem;">{s.heading}</h2>
             <p class="feature-card__desc" style="margin-top:0.5rem; font-size:1rem;">{s.body}</p>
+            {s.links && (
+              <p style="margin-top:0.75rem;">
+                {s.links.map((l, i) => (
+                  <>
+                    {i > 0 && ' · '}
+                    <a href={linkHref(l.href, 'section-link')} style="color:var(--cyan-400); font-weight:600;">{l.label} →</a>
+                  </>
+                ))}
+              </p>
+            )}
           </div>
         ))}
 
@@ -136,7 +161,7 @@ if (article.namedVendors) {
             <ul style="margin:0; padding-left:1.1rem; color:var(--text-secondary); line-height:1.8;">
               {article.relatedLinks.map((l) => (
                 <li>
-                  <a href={l.href} style="color:var(--cyan-400); font-weight:600;">{l.label}</a>
+                  <a href={linkHref(l.href, 'related-link')} style="color:var(--cyan-400); font-weight:600;">{l.label}</a>
                 </li>
               ))}
             </ul>
@@ -147,7 +172,7 @@ if (article.namedVendors) {
           <p class="feature-card__desc">
             Ready to launch your <a href={article.clusterPage.href} style="color:var(--cyan-400);">{article.clusterPage.anchor}</a>?
           </p>
-          <AppCta class="btn btn--primary" style="margin-top:1rem;">Start Free Trial</AppCta>
+          <AppCta class="btn btn--primary" style="margin-top:1rem;" position="bottom">Start Free Trial</AppCta>
         </div>
       </div>
     </section>

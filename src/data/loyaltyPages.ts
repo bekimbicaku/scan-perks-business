@@ -1,6 +1,7 @@
 export interface LoyaltySection {
   heading: string;
   body: string;
+  links?: { href: string; label: string }[];
 }
 
 export interface LoyaltyComparison {

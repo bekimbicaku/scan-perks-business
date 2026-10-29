@@ -16,6 +16,18 @@ export const SITE = {
   },
 } as const;
 
+/** Signup link to the app, tagged with the page and the button position for UTM reporting. */
+export function appSignupUrl(pagePath: string, content: string): string {
+  const campaign = pagePath.replace(/^\/+|\/+$/g, '').replace(/\//g, '-') || 'home';
+  const params = new URLSearchParams({
+    utm_source: 'scan-perks.com',
+    utm_medium: 'website',
+    utm_campaign: campaign,
+    utm_content: content,
+  });
+  return `${SITE.appWebUrl}/?${params}`;
+}
+
 export interface FaqItem {
   question: string;
   answer: string;

@@ -44,6 +44,27 @@ export const keywordLandings: LoyaltyPage[] = [
       {
         heading: 'How the Scan Perks Cafe Loyalty App Works',
         body: '1) Sign up at app.scan-perks.com and open the Business tab. 2) Set your stamp rule (e.g. 8 stamps, free coffee) and leave the welcome stamp on. 3) Tap Create my QR — your 14-day trial starts, no card. 4) Print it; customers scan it in the Scan Perks app. 5) Track visits and push offers to members. Typical setup: under 5 minutes.',
+        links: [
+          { href: '/how-it-works/', label: 'Every setup step' },
+          { href: 'https://app.scan-perks.com', label: 'Start the 14-day free trial' },
+        ],
+      },
+      {
+        heading: 'How Many Stamps Should a Cafe Loyalty Card Have?',
+        body: 'Most independent cafes use 8 to 10 stamps for one free drink, and Scan Perks suggests 8 stamps and a free coffee as the starting rule. Leave the welcome stamp on so the first scan already shows 1 of 8 — a card that starts at zero is easier to ignore. The cost is small: with a $4 coffee that costs about $1 to make, an 8-stamp card gives back roughly 3% of what that customer spent.',
+      },
+      {
+        heading: 'What Staff Say at the Till',
+        body: 'Loyalty only works if staff mention it. One sentence is enough: “Open Scan Perks, tap Scan, and point it at this. Eight visits and the coffee is free — the first stamp is on the house.” Put the QR by the till at eye level, and write app.scan-perks.com under it for people who need to install the app first.',
+      },
+      {
+        heading: 'How Customers Redeem the Free Coffee',
+        body: 'When a card is full, the customer gets a reward in the Scan Perks app with its own QR code. They show it at the counter and the owner scans it from the Scan Perks app signed in as the venue. Each reward can be redeemed once, so screenshots and second attempts do not work.',
+      },
+      {
+        heading: 'What Happens When the 14-Day Trial Ends',
+        body: 'The trial starts when you tap Create my QR, and it needs no card. Before day 14, add a card to move onto Starter at $10/month. If you do not, the QR stops adding new stamps until billing starts — customers keep the stamps they already have.',
+        links: [{ href: '/pricing/', label: 'Starter vs Growth' }],
       },
       {
         heading: 'When to pick Scan Perks vs Loopy vs Square',
@@ -107,7 +128,19 @@ export const keywordLandings: LoyaltyPage[] = [
       },
       {
         question: 'How much does a cafe loyalty app cost?',
-        answer: 'Scan Perks cafe loyalty app costs $10/month (Starter) or $15/month (Growth). 14-day free trial included.',
+        answer: 'Scan Perks cafe loyalty app costs $10/month (Starter, 500 scans a month) or $15/month (Growth, unlimited). Every venue starts with a 14-day free trial with no card.',
+      },
+      {
+        question: 'How many stamps should a coffee loyalty card have?',
+        answer: '8 to 10 stamps for one free drink is the usual range for independent cafes. Scan Perks suggests 8 stamps and a free coffee, with a welcome stamp so the first visit already counts.',
+      },
+      {
+        question: 'Can a customer get two stamps in one visit?',
+        answer: 'No. Scan Perks allows one scan per venue per day. If you turn on happy hour, a scan during your chosen hours counts double.',
+      },
+      {
+        question: 'What happens after the 14-day free trial?',
+        answer: 'Add a card to continue on Starter at $10/month. Without billing, the QR stops adding new stamps after day 14; stamps customers already earned are kept.',
       },
       {
         question: 'Does the cafe loyalty app need POS integration?',
@@ -127,7 +160,7 @@ export const keywordLandings: LoyaltyPage[] = [
     heroSeoLine:
       'Pub loyalty scheme for independent pubs and bars — QR rewards, digital loyalty card, happy-hour push alerts from $10/month.',
     quickAnswer:
-      'A pub loyalty scheme rewards regular drinkers with perks each visit. Scan Perks digitizes your pub loyalty scheme with a bar QR code: customers earn free-drink tiers on a digital pub loyalty card, you send happy-hour pushes and track regulars — $10/month, 14-day free trial, no POS required.',
+      'A pub loyalty scheme rewards regular drinkers with perks each visit. Scan Perks digitizes your pub loyalty scheme with a bar QR code: customers earn free-drink tiers on a digital pub loyalty card, you can turn on happy-hour double stamps, push offers to members and track regulars — $10/month after a 14-day free trial, no POS required.',
     keywordCluster: [
       'pub loyalty scheme',
       'pub loyalty program',
@@ -137,12 +170,13 @@ export const keywordLandings: LoyaltyPage[] = [
       'bar loyalty program',
       'loyalty scheme for pubs',
     ],
-    highlights: ['Digital pub loyalty card', 'Happy-hour pushes', 'Free-drink tiers', '$10/month'],
+    highlights: ['Digital pub loyalty card', 'Happy-hour double stamps', 'Free pint after 10', '$10/month'],
     featureBullets: [
       'Pub loyalty scheme via QR scan at the bar',
       'Digital pub loyalty card on customer phone',
       'Free-drink reward tiers (configurable)',
-      'Happy-hour and event push notifications',
+      'Happy-hour double stamps on the days and hours you choose',
+      'Offers pushed to members',
       'Regular customer visit analytics',
       'No POS integration — $10–15/month',
     ],
@@ -161,16 +195,29 @@ export const keywordLandings: LoyaltyPage[] = [
       },
       {
         heading: 'How to Launch a Pub Loyalty Scheme in One Day',
-        body: 'Sign up at app.scan-perks.com, configure free-drink tiers, download your bar QR poster, and train staff to mention the scheme (“Scan for your loyalty card”). Most pubs go live the same day. Growth plan adds unlimited push notifications for happy-hour campaigns.',
+        body: 'Sign up at app.scan-perks.com, configure free-drink tiers, download your bar QR poster, and train staff to mention the scheme (“Scan for your loyalty card”). Most pubs go live the same day. Busy pubs that pass 500 scans a month move to Growth at $15/month for unlimited scans.',
+        links: [{ href: 'https://app.scan-perks.com', label: 'Start the 14-day free trial' }],
+      },
+      {
+        heading: 'Designing the Scheme: Threshold, Reward, Quiet Nights',
+        body: 'Keep the rule one sentence long. A free pint (or soft drink) after 10 stamps is the common UK pub offer; regulars who come twice a week earn it in about five weeks. Use happy hour for quiet nights: set it to, say, Tuesday 7–11pm and each scan in that window counts double. Leave the welcome stamp on and turn on birthday treats for members who add a birthday.',
+      },
+      {
+        heading: 'Pub Loyalty Schemes and UK Licensing',
+        body: 'Under the Licensing Act 2003 mandatory conditions, premises must not run irresponsible drinks promotions. A visit-based scheme fits that better than a per-drink one: Scan Perks gives one stamp per visit per day, so it rewards coming back, not drinking more in one sitting. Check your own premises licence and local guidance before launch; this is not legal advice.',
       },
       {
         heading: 'UK Pubs & US Bars — Same Product',
-        body: 'Google UK favors “pub loyalty scheme” and “pub loyalty card.” Google US favors “bar loyalty programs.” Scan Perks is one QR loyalty product covering both markets — iOS/Android customer apps, owner dashboard, analytics from $10/month.',
+        body: 'Google UK favors “pub loyalty scheme” and “pub loyalty card.” Google US favors “bar loyalty programs.” Scan Perks is one QR loyalty product covering both markets — iOS/Android customer apps, owner dashboard, analytics from $10/month (billed in US dollars, about £7.50–£8).',
+        links: [
+          { href: '/pub-loyalty-card/', label: 'Pub loyalty card' },
+          { href: '/bar-loyalty-program/', label: 'Bar loyalty programs (US)' },
+        ],
       },
     ],
     comparison: [
       { feature: 'Pub loyalty card', scanPerks: 'Digital QR', traditional: 'Paper card', enterprise: 'App + card' },
-      { feature: 'Happy-hour pushes', scanPerks: 'Included', traditional: 'No', enterprise: 'Extra $' },
+      { feature: 'Happy-hour double stamps', scanPerks: 'Included', traditional: 'No', enterprise: 'Extra $' },
       { feature: 'Monthly cost', scanPerks: '$10–15', traditional: 'Free', enterprise: '$200+' },
       { feature: 'Lost cards', scanPerks: 'Never', traditional: 'Often', enterprise: 'Rare' },
     ],
@@ -187,7 +234,22 @@ export const keywordLandings: LoyaltyPage[] = [
       {
         question: 'What is the best pub loyalty scheme for small pubs?',
         answer:
-          'Scan Perks — QR pub loyalty scheme with digital cards, analytics, and happy-hour pushes. No POS required, $10/month.',
+          'Scan Perks — QR pub loyalty scheme with digital cards, analytics, happy-hour double stamps and offers pushed to members. No POS required, $10/month after a 14-day free trial.',
+      },
+      {
+        question: 'Is a pub loyalty scheme allowed under UK licensing rules?',
+        answer:
+          'Loyalty schemes are common in UK pubs, but promotions must not encourage irresponsible drinking under the Licensing Act 2003 mandatory conditions. Scan Perks stamps once per visit per day, which rewards return visits rather than volume. Check your premises licence; this is not legal advice.',
+      },
+      {
+        question: 'What reward works best for a pub loyalty scheme?',
+        answer:
+          'A free pint or soft drink after 10 visits is the most common, because staff can explain it in one sentence. Add double stamps on a quiet night with Scan Perks happy hour.',
+      },
+      {
+        question: 'Can I run a pub loyalty scheme without changing my till?',
+        answer:
+          'Yes. Scan Perks needs no POS: regulars scan a QR at the bar in the Scan Perks app, and you run the scheme from app.scan-perks.com.',
       },
       {
         question: 'Is a pub loyalty scheme the same as a bar loyalty program?',
@@ -208,7 +270,7 @@ export const keywordLandings: LoyaltyPage[] = [
     heroSeoLine:
       'Digital pub loyalty card for independent pubs and bars — scan at the bar, never lose a card, analytics from $10/month.',
     quickAnswer:
-      'A pub loyalty card tracks drinks toward free pints or rewards. Scan Perks replaces paper and plastic pub loyalty cards with a digital card on the customer phone: guests scan your bar QR each visit, stamps add automatically, and owners get visit analytics plus happy-hour push tools from $10/month — ideal for UK pubs and US neighborhood bars.',
+      'A pub loyalty card tracks drinks toward free pints or rewards. Scan Perks replaces paper and plastic pub loyalty cards with a digital card on the customer phone: guests scan your bar QR each visit, stamps add automatically, and owners get visit analytics, happy-hour double stamps and offers pushed to members from $10/month after a 14-day free trial — for UK pubs and US neighborhood bars.',
     keywordCluster: [
       'pub loyalty card',
       'pub loyalty cards',
@@ -237,7 +299,20 @@ export const keywordLandings: LoyaltyPage[] = [
       },
       {
         heading: 'How the Scan Perks Pub Loyalty Card Works',
-        body: '1) Create an account at app.scan-perks.com. 2) Set reward rules (e.g. 10 drinks = 1 free). 3) Print your bar QR. 4) Guests scan once to open a digital pub loyalty card, then scan every visit. 5) Redeem free drinks in the dashboard. Typical setup: under 5 minutes — no POS, no hardware.',
+        body: '1) Create an account at app.scan-perks.com. 2) Set reward rules (e.g. 10 drinks = 1 free). 3) Print your bar QR. 4) Regulars scan it in the free Scan Perks app — the first scan opens their card, then one stamp per visit. 5) When a card is full, they show the reward QR and you scan it from the Scan Perks app signed in as the venue. Typical setup: under 5 minutes — no POS, no hardware.',
+        links: [
+          { href: '/how-it-works/', label: 'Every setup step' },
+          { href: 'https://app.scan-perks.com', label: 'Start the 14-day free trial' },
+        ],
+      },
+      {
+        heading: 'Pub Loyalty Card Ideas That Work',
+        body: 'Free pint after 10 stamps is the classic and the easiest for staff to explain. Quiz night: set happy hour to that evening so every scan counts double. Birthday drink: leave birthday treats on for members who add a birthday. First visit: keep the welcome stamp on so a new card starts at 1 of 10. Pick one reward and keep it for a few months; changing it weekly confuses regulars.',
+        links: [{ href: '/pub-loyalty-scheme/', label: 'Designing a pub loyalty scheme' }],
+      },
+      {
+        heading: 'Do Regulars Need to Download an App?',
+        body: 'Yes, the free Scan Perks app on iPhone or Android. That is the trade-off for push offers and birthday treats. If a regular points the phone camera at the QR, it opens your pub’s page with the reward and a link to the app. Tell staff to say: “Open Scan Perks, tap Scan, point it at this — ten visits and the pint is on us.”',
       },
       {
         heading: 'Pub Loyalty Cards for UK Pubs & US Bars',
@@ -263,7 +338,22 @@ export const keywordLandings: LoyaltyPage[] = [
       {
         question: 'What are the best pub loyalty cards for independent pubs?',
         answer:
-          'Digital pub loyalty cards outperform paper. Scan Perks: QR-based pub loyalty card with analytics and push notifications — $10/month, 14-day trial at app.scan-perks.com.',
+          'For an independent pub, a digital card that staff can explain in one sentence. Scan Perks: QR-based pub loyalty card with analytics and push offers — $10/month after a 14-day free trial at app.scan-perks.com.',
+      },
+      {
+        question: 'How do I set up a digital pub loyalty card?',
+        answer:
+          'Sign up at app.scan-perks.com, open the Business tab, set the rule (for example 10 stamps for a free pint), tap Create my QR and print it for the bar. The 14-day free trial starts then, with no card.',
+      },
+      {
+        question: 'Can I give double stamps on quiz night?',
+        answer:
+          'Yes. Scan Perks happy hour lets you choose days and hours; every scan in that window counts double.',
+      },
+      {
+        question: 'How do regulars redeem a free pint?',
+        answer:
+          'A full card gives the regular a reward QR in the app. You scan it from the Scan Perks app signed in as the venue, and each reward can be used once.',
       },
       {
         question: 'Can US bars use a pub loyalty card?',
@@ -386,11 +476,28 @@ export const keywordLandings: LoyaltyPage[] = [
       },
       {
         heading: 'How to Start a QR Code Loyalty Program',
-        body: '1) Create account at app.scan-perks.com. 2) Set reward rules. 3) Download the loyalty QR poster. 4) Display at the counter. 5) Customers scan it in the free Scan Perks app. Most venues finish in under 5 minutes with no POS.',
+        body: '1) Create an account at app.scan-perks.com and open the Business tab. 2) Set the reward rule (for example 8 stamps for a free coffee). 3) Tap Create my QR — the 14-day free trial starts, no card. 4) Share the QR to yourself, print it, and put it at the counter. 5) Customers scan it in the free Scan Perks app. Most venues finish in under 5 minutes with no POS.',
+        links: [
+          { href: '/how-it-works/', label: 'Every setup step' },
+          { href: 'https://app.scan-perks.com', label: 'Start the 14-day free trial' },
+        ],
+      },
+      {
+        heading: 'What Is Inside a Scan Perks Loyalty QR Code?',
+        body: 'The printed code is a normal web link to your venue page on app.scan-perks.com. Point a phone camera at it and the page opens with your reward and a link to the Scan Perks app. Scan it from the Scan tab inside the app and a stamp lands on that customer’s card. One code per venue; you never reprint it when the reward changes.',
+      },
+      {
+        heading: 'How a QR Loyalty Program Stops Abuse',
+        body: 'Each customer can collect one stamp per venue per day, so scanning the poster ten times does not fill a card. Earned rewards carry their own QR, which only the venue owner’s login can redeem, and each reward works once. That covers the two common tricks with paper cards: extra stamps and reused freebies.',
+      },
+      {
+        heading: 'Where to Put the Loyalty QR',
+        body: 'At the till at eye level, where people wait for their order; on the bar for pubs; on a table tent if guests pay at the table. Add one line under it — “Scan in the Scan Perks app for a stamp” — and app.scan-perks.com for anyone who needs the app first. A poster no one mentions gets few scans, so give staff one sentence to say.',
       },
       {
         heading: 'Scan Perks vs Loopy vs Square vs LoyaltyPass',
         body: 'Square Loyalty (~$45/month) is the right pick if checkout already runs on Square. Loopy (~$49) and LoyaltyPass ($99) win if you only want Apple/Google Wallet passes. Brewstamp starts at $7 for coffee-only shops. Scan Perks is $10/month for cafes, pubs, and bars with a counter QR scanned in its customer app.',
+        links: [{ href: '/blog/best-coffee-loyalty-programs/', label: 'Full price comparison' }],
       },
     ],
     comparison: [
@@ -414,6 +521,21 @@ export const keywordLandings: LoyaltyPage[] = [
         question: 'Is a QR loyalty program free?',
         answer:
           'Scan Perks offers a 14-day free trial with no card. After that, Starter is $10/month (500 scans a month) or Growth $15/month (unlimited). No annual contract.',
+      },
+      {
+        question: 'Can customers scan the same loyalty QR code twice?',
+        answer:
+          'They can scan it, but Scan Perks adds only one stamp per venue per day. Rewards also carry their own QR that only the venue owner can redeem, once.',
+      },
+      {
+        question: 'Do customers need an app to scan a loyalty QR code?',
+        answer:
+          'With Scan Perks, yes: stamps are collected in the free Scan Perks app on iPhone or Android. A phone camera opens your venue page with a link to the app.',
+      },
+      {
+        question: 'What is a QR code loyalty card?',
+        answer:
+          'It is the digital stamp card a customer holds in the app, filled by scanning your venue QR. The QR code loyalty program is the whole setup: your reward rule, the printed code, and redemption.',
       },
       {
         question: 'What is a QR code rewards program vs a punch card?',
