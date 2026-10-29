@@ -33,7 +33,7 @@ export const chatbotKnowledge: ChatbotTopic[] = [
     id: 'grow-business',
     keywords: ['grow business', 'grow restaurant', 'grow your business', 'increase revenue'],
     answer:
-      'Grow your business with Scan Perks loyalty: more repeat visits, push offers, and local discovery. Venues report up to 24% more return customers.',
+      'Grow your business with Scan Perks loyalty: more repeat visits, push offers, and local discovery.',
     action: { href: '/grow-restaurant-business/', label: 'Grow with loyalty' },
   },
   {
@@ -67,7 +67,7 @@ export const chatbotKnowledge: ChatbotTopic[] = [
     id: 'cafe',
     keywords: ['cafe', 'coffee shop', 'coffee loyalty', 'bakery rewards'],
     answer:
-      'Scan Perks cafe loyalty program: digital stamp cards, counter QR, morning regular tracking. $10/month for up to 200 customers.',
+      'Scan Perks cafe loyalty program: digital stamp cards, counter QR, morning regular tracking. $10/month for 500 scans a month.',
     action: { href: '/cafe-loyalty-app/', label: 'Cafe loyalty' },
   },
   {
@@ -81,7 +81,7 @@ export const chatbotKnowledge: ChatbotTopic[] = [
     id: 'increase-profits',
     keywords: ['increase profits', 'increase revenue', 'boost sales', 'more profit', 'restaurant revenue'],
     answer:
-      'Increase profits by growing repeat visits and customer lifetime value. Scan Perks reports up to 24% more return customers — $10–15/month.',
+      'Increase profits by growing repeat visits and customer lifetime value. Scan Perks gives regulars a stamp card and pushed offers for $10–15/month.',
     action: { href: '/grow-restaurant-business/', label: 'Grow revenue' },
   },
   {

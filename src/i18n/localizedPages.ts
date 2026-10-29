@@ -42,7 +42,7 @@ export const localizedPages: LocalizedPageDef[] = [
       slug: '',
       metaTitle: 'Scan Perks — QR Loyalty for Cafes & Pubs, $10/mo',
       description:
-        'Scan Perks is QR loyalty for independent cafes, pubs and bars. Customers scan your counter QR with their camera — no download, no POS. $10/mo, 14-day free trial.',
+        'Scan Perks is a QR stamp card for independent cafes, pubs and bars. Print one counter QR; customers scan it in the free app. No POS. 14-day free trial, then $10/mo.',
       h1: 'Cafe Loyalty App & Pub Loyalty Scheme',
       heroLine: 'QR loyalty for cafe & bar owners — from $10/month.',
       directAnswer:
@@ -170,7 +170,7 @@ export const localizedPages: LocalizedPageDef[] = [
       h1: 'Cafe & Pub Loyalty — From $10/Month',
       heroLine: 'One extra weekly regular covers your subscription.',
       directAnswer:
-        'Scan Perks costs $10/month (Starter, 200 members) or $15/month (Growth, unlimited). 14-day free trial, no annual contract.',
+        'Scan Perks costs $10/month (Starter, 500 scans a month) or $15/month (Growth, unlimited). 14-day free trial with no card, no annual contract.',
       bullets: ['Starter $10/mo', 'Growth $15/mo', '14-day free trial', 'Cancel anytime'],
       sections: [],
       faqs: [
@@ -188,7 +188,7 @@ export const localizedPages: LocalizedPageDef[] = [
       h1: 'Precios simples para cafeterías y bares',
       heroLine: 'Un cliente habitual extra a la semana cubre la suscripción.',
       directAnswer:
-        'Scan Perks cuesta 10 $/mes (Starter, 200 socios) o 15 $/mes (Growth, ilimitado). Prueba 14 días, sin contrato anual.',
+        'Scan Perks cuesta 10 $/mes (Starter, 500 escaneos al mes) o 15 $/mes (Growth, ilimitado). Prueba 14 días, sin contrato anual.',
       bullets: ['Starter 10 $/mes', 'Growth 15 $/mes', '14 días gratis', 'Cancela cuando quieras'],
       sections: [],
       faqs: [
@@ -206,7 +206,7 @@ export const localizedPages: LocalizedPageDef[] = [
       h1: 'Preise für Cafés & Bars',
       heroLine: 'Ein Extra-Stammgast pro Woche deckt das Abo.',
       directAnswer:
-        'Scan Perks kostet 10 $/Monat (Starter, 200 Mitglieder) oder 15 $/Monat (Growth, unbegrenzt). 14 Tage Test, monatlich kündbar.',
+        'Scan Perks kostet 10 $/Monat (Starter, 500 Scans im Monat) oder 15 $/Monat (Growth, unbegrenzt). 14 Tage Test, monatlich kündbar.',
       bullets: ['Starter 10 $', 'Growth 15 $', '14 Tage gratis', 'Jederzeit kündbar'],
       sections: [],
       faqs: [
@@ -224,7 +224,7 @@ export const localizedPages: LocalizedPageDef[] = [
       h1: 'Tarifs pour cafés et bars',
       heroLine: 'Un habitué de plus par semaine couvre l’abonnement.',
       directAnswer:
-        'Scan Perks coûte 10 $/mois (Starter, 200 membres) ou 15 $/mois (Growth, illimité). Essai 14 jours, sans contrat annuel.',
+        'Scan Perks coûte 10 $/mois (Starter, 500 scans par mois) ou 15 $/mois (Growth, illimité). Essai 14 jours, sans contrat annuel.',
       bullets: ['Starter 10 $', 'Growth 15 $', '14 jours gratuits', 'Résiliable'],
       sections: [],
       faqs: [
@@ -242,7 +242,7 @@ export const localizedPages: LocalizedPageDef[] = [
       h1: 'Prezzi per bar e caffè',
       heroLine: 'Un cliente abituale in più a settimana copre l’abbonamento.',
       directAnswer:
-        'Scan Perks costa 10 $/mese (Starter, 200 membri) o 15 $/mese (Growth, illimitato). Prova 14 giorni, senza vincoli annuali.',
+        'Scan Perks costa 10 $/mese (Starter, 500 scansioni al mese) o 15 $/mese (Growth, illimitato). Prova 14 giorni, senza vincoli annuali.',
       bullets: ['Starter 10 $', 'Growth 15 $', '14 giorni gratis', 'Disdici quando vuoi'],
       sections: [],
       faqs: [

@@ -29,7 +29,7 @@ Who it's for: Single-location independents that want a cafe loyalty app or pub l
 
 Setup: Most venues go live in under 5 minutes — no hardware, no POS API.
 
-Pricing: $10/month (Starter, up to 200 members) or $15/month (Growth, unlimited). 14-day free trial, no annual contract.
+Pricing: $10/month (Starter, up to 500 scans a month) or $15/month (Growth, unlimited scans). 14-day free trial with no card, no annual contract.
 
 Platforms: Web dashboard (owners), iOS App Store and Google Play (customers).`,
   features: [
@@ -44,7 +44,7 @@ Platforms: Web dashboard (owners), iOS App Store and Google Play (customers).`,
     'No POS required',
   ],
   pricing: [
-    { name: 'Starter', price: '$10/month', detail: 'Up to 200 members, 50 push notifications/month' },
+    { name: 'Starter', price: '$10/month', detail: 'Up to 500 scans a month' },
     { name: 'Growth', price: '$15/month', detail: 'Unlimited members & push notifications' },
     { name: 'Free trial', price: '14 days', detail: 'No annual contract' },
   ],

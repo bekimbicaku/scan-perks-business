@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import StoreBadges from '../../components/StoreBadges.astro';
-import { SITE } from '../../data/content';
+import { SITE, appSignupUrl } from '../../data/content';
 import { getHreflangLinks, getPageDef } from '../../i18n/pages';
 ---
 
@@ -41,7 +41,7 @@ import { getHreflangLinks, getPageDef } from '../../i18n/pages';
             <div>
               <div class="contact-info__label">Get Started</div>
               <div class="contact-info__value">
-                Open <a href={SITE.appWebUrl}>{SITE.appWebUrl.replace('https://', '')}</a> to launch your loyalty program
+                Open <a href={appSignupUrl(Astro.url.pathname, 'contact')}>{SITE.appWebUrl.replace('https://', '')}</a> to launch your loyalty program
               </div>
             </div>
           </div>
