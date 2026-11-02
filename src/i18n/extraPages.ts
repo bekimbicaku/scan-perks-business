@@ -43,7 +43,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
         },
         {
           question: 'How much does cafe loyalty software cost?',
-          answer: 'Scan Perks: $10/month Starter (200 members) or $15/month Growth (unlimited).',
+          answer: 'Scan Perks: $10/month Starter (500 scans a month) or $15/month Growth (unlimited), after a 14-day free trial.',
         },
       ],
       keywords: ['cafe loyalty faq', 'best coffee loyalty program', 'qr loyalty questions'],
@@ -194,16 +194,16 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     en: {
       slug: 'how-it-works',
       metaTitle: 'Set Up Cafe & Pub Loyalty in 5 Minutes — QR, No POS, $10/mo',
-      description: 'Print a counter QR. Customers scan with their camera — no download required. $10/mo, 14-day trial.',
+      description: 'Print a counter QR. Customers scan it in the free Scan Perks app. 14-day free trial, then $10/mo.',
       h1: 'How Scan Perks works: print a QR, customers scan, stamps go on their phone',
-      heroLine: 'Camera join in seconds. Optional app for regulars.',
+      heroLine: 'One counter QR. Customers scan it in the Scan Perks app.',
       directAnswer:
-        'Create an account at app.scan-perks.com, set stamp rewards, print your counter QR. Customers scan with their phone camera — no download required. Owners manage everything from the web dashboard. No POS.',
-      bullets: ['1. Create account', '2. Set rewards', '3. Print QR', '4. Customers scan with camera'],
+        'Create an account at app.scan-perks.com, set stamp rewards, print your counter QR. Customers scan it in the free Scan Perks app (iPhone or Android). Owners manage everything from the web dashboard. No POS.',
+      bullets: ['1. Create account', '2. Set rewards', '3. Print QR', '4. Customers scan in the app'],
       sections: [
         {
           heading: 'For customers',
-          body: 'They point their phone camera at your venue QR after purchase and collect stamps toward free drinks. An iOS/Android app is optional for regulars.',
+          body: 'They open the free Scan Perks app, tap Scan, and point it at your venue QR after purchase to collect stamps toward a free drink. A phone camera opens your venue page with an app link.',
         },
         {
           heading: 'For owners',
@@ -332,12 +332,12 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     en: {
       slug: 'about',
       metaTitle: 'About Scan Perks — QR Loyalty for Cafes & Bars',
-      description: 'Scan Perks: 500+ venues, 50K+ members. QR cafe & bar loyalty from $10/mo. Founded 2024.',
+      description: 'Scan Perks is a QR stamp card for independent cafes and bars. 14-day free trial, then $10/mo. Founded 2024.',
       h1: 'About Scan Perks',
       heroLine: 'QR loyalty built for independent hospitality.',
       directAnswer:
-        'Scan Perks is a QR loyalty platform for independent cafes, bars, and restaurants. 500+ venues, 50K+ members, from $10/month, founded 2024 — no POS required.',
-      bullets: ['500+ venues', '50K+ members', 'From $10/mo', 'Founded 2024'],
+        'Scan Perks is a QR loyalty platform for independent cafes, bars, and restaurants. From $10/month after a 14-day free trial, founded 2024 — no POS required.',
+      bullets: ['14-day free trial', 'From $10/mo', 'No POS', 'Founded 2024'],
       sections: [
         {
           heading: 'Our mission',
@@ -350,12 +350,12 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     es: {
       slug: 'nosotros',
       metaTitle: 'Sobre Scan Perks — fidelización QR',
-      description: '500+ locales, 50K+ socios. Fidelización para cafeterías y bares desde 10 $/mes. Fundado en 2024.',
+      description: 'Tarjeta de sellos QR para cafeterías y bares independientes. Prueba gratis de 14 días, luego desde 10 $/mes. Fundado en 2024.',
       h1: 'Sobre Scan Perks',
       heroLine: 'Fidelización QR para hospitality independiente.',
       directAnswer:
-        'Scan Perks es una plataforma de fidelización QR para cafeterías, bares y restaurantes independientes. 500+ locales, desde 10 $/mes, fundada en 2024.',
-      bullets: ['500+ locales', '50K+ socios', 'Desde 10 $/mes', '2024'],
+        'Scan Perks es una plataforma de fidelización QR para cafeterías, bares y restaurantes independientes. Prueba gratis de 14 días, desde 10 $/mes, fundada en 2024.',
+      bullets: ['Prueba de 14 días', 'Desde 10 $/mes', 'Sin TPV', '2024'],
       sections: [
         {
           heading: 'Misión',
@@ -368,12 +368,12 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     de: {
       slug: 'ueber-uns',
       metaTitle: 'Über Scan Perks — QR-Treueprogramm',
-      description: '500+ Betriebe, 50K+ Mitglieder. Café- & Bar-Loyalty ab 10 $/Monat. Gegründet 2024.',
+      description: 'QR-Stempelkarte für unabhängige Cafés und Bars. 14 Tage kostenlos testen, danach ab 10 $/Monat. Gegründet 2024.',
       h1: 'Über Scan Perks',
       heroLine: 'QR-Loyalty für unabhängige Gastronomie.',
       directAnswer:
-        'Scan Perks ist eine QR-Loyalty-Plattform für unabhängige Cafés, Bars und Restaurants. 500+ Betriebe, ab 10 $/Monat, gegründet 2024.',
-      bullets: ['500+ Betriebe', '50K+ Mitglieder', 'Ab 10 $', 'Seit 2024'],
+        'Scan Perks ist eine QR-Loyalty-Plattform für unabhängige Cafés, Bars und Restaurants. 14 Tage kostenlos testen, ab 10 $/Monat, gegründet 2024.',
+      bullets: ['14 Tage gratis', 'Ab 10 $', 'Ohne Kassensystem', 'Seit 2024'],
       sections: [
         {
           heading: 'Mission',
@@ -386,12 +386,12 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     fr: {
       slug: 'a-propos',
       metaTitle: 'À propos de Scan Perks — fidélité QR',
-      description: '500+ établissements, 50K+ membres. Fidélité café/bar dès 10 $/mois. Fondé en 2024.',
+      description: 'Carte à tampons QR pour cafés et bars indépendants. Essai gratuit de 14 jours, puis dès 10 $/mois. Fondé en 2024.',
       h1: 'À propos de Scan Perks',
       heroLine: 'Fidélité QR pour l’hospitality indépendante.',
       directAnswer:
-        'Scan Perks est une plateforme de fidélité QR pour cafés, bars et restaurants indépendants. 500+ établissements, dès 10 $/mois, fondée en 2024.',
-      bullets: ['500+ lieux', '50K+ membres', 'Dès 10 $', '2024'],
+        'Scan Perks est une plateforme de fidélité QR pour cafés, bars et restaurants indépendants. Essai gratuit de 14 jours, dès 10 $/mois, fondée en 2024.',
+      bullets: ['Essai de 14 jours', 'Dès 10 $', 'Sans caisse', '2024'],
       sections: [
         {
           heading: 'Mission',
@@ -404,12 +404,12 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     it: {
       slug: 'chi-siamo',
       metaTitle: 'Chi siamo — Scan Perks loyalty QR',
-      description: '500+ locali, 50K+ membri. Loyalty per bar e caffè da 10 $/mese. Fondato nel 2024.',
+      description: 'Tessera a timbri QR per bar e caffè indipendenti. Prova gratuita di 14 giorni, poi da 10 $/mese. Fondato nel 2024.',
       h1: 'Chi siamo — Scan Perks',
       heroLine: 'Loyalty QR per l’hospitality indipendente.',
       directAnswer:
-        'Scan Perks è una piattaforma loyalty QR per bar, caffè e ristoranti indipendenti. 500+ locali, da 10 $/mese, fondata nel 2024.',
-      bullets: ['500+ locali', '50K+ membri', 'Da 10 $', 'Dal 2024'],
+        'Scan Perks è una piattaforma loyalty QR per bar, caffè e ristoranti indipendenti. Prova gratuita di 14 giorni, da 10 $/mese, fondata nel 2024.',
+      bullets: ['Prova di 14 giorni', 'Da 10 $', 'Senza cassa', 'Dal 2024'],
       sections: [
         {
           heading: 'Missione',

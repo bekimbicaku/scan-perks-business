@@ -8,6 +8,7 @@ import AnswerFirst from './AnswerFirst.astro';
 import FeatureBulletList from './FeatureBulletList.astro';
 import InternalLinks from './InternalLinks.astro';
 import NamedVendorTable from './NamedVendorTable.astro';
+import { SITE, appSignupUrl } from '../data/content';
 
 interface Props {
   page: LoyaltyPage;
@@ -59,8 +60,8 @@ const directAnswer = page.quickAnswer ?? slugToAnswer[page.slug];
       {page.heroSeoLine && <p class="page-hero__seo-line">{page.heroSeoLine}</p>}
       <p class="page-hero__desc">{page.description}</p>
       <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
-        <AppCta class="btn btn--primary btn--lg">Start Free Trial — Owners</AppCta>
-        <AppCta class="btn btn--glass btn--lg">Get the Rewards App</AppCta>
+        <AppCta class="btn btn--primary btn--lg" position="hero">Start Free Trial — Owners</AppCta>
+        <AppCta class="btn btn--glass btn--lg" position="hero-customer">Get the Rewards App</AppCta>
       </div>
       <p style="margin-top:0.75rem; font-size:0.9rem; opacity:0.85;">
         Customers: free. Owners: 14-day trial · No POS · From $10/mo
@@ -96,6 +97,16 @@ const directAnswer = page.quickAnswer ?? slugToAnswer[page.slug];
         <div class="glass-card reveal" style="margin-bottom:1.5rem;">
           <h2 class="feature-card__title" style="font-size:1.35rem; margin-bottom:0.75rem;">{section.heading}</h2>
           <p class="feature-card__desc" style="font-size:1rem;">{section.body}</p>
+          {section.links && (
+            <p style="margin-top:0.75rem;">
+              {section.links.map((l, i) => (
+                <>
+                  {i > 0 && ' · '}
+                  <a href={l.href.startsWith(SITE.appWebUrl) ? appSignupUrl(Astro.url.pathname, 'section-link') : l.href} style="color:var(--cyan-400); font-weight:600;">{l.label} →</a>
+                </>
+              ))}
+            </p>
+          )}
         </div>
       ))}
       {page.featureBullets && page.featureBullets.length > 0 && (
@@ -181,7 +192,7 @@ const directAnswer = page.quickAnswer ?? slugToAnswer[page.slug];
         <h2 class="cta-banner__title">Start Your {page.title} Today</h2>
         <p class="cta-banner__desc">14-day free trial. No contracts. Grow loyal customers from $10/month.</p>
         <div class="cta-banner__actions">
-          <AppCta class="btn btn--primary btn--lg">Get Started Free</AppCta>
+          <AppCta class="btn btn--primary btn--lg" position="bottom">Get Started Free</AppCta>
         </div>
       </div>
     </div>

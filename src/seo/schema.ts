@@ -110,14 +110,14 @@ export function buildBaseSchema(page: SchemaPageInput) {
           name: 'Starter Plan',
           price: '10.00',
           priceCurrency: 'USD',
-          description: 'Business loyalty program for small venues — up to 200 customers',
+          description: 'QR stamp loyalty for one venue — up to 500 scans a month. 14-day free trial, no card.',
         },
         {
           '@type': 'Offer',
           name: 'Growth Plan',
           price: '15.00',
           priceCurrency: 'USD',
-          description: 'Full loyalty platform for high-traffic bars and restaurants',
+          description: 'Unlimited scans for busy bars, cafes, and restaurants. 14-day free trial, no card.',
         },
       ],
     },
@@ -302,30 +302,6 @@ export function buildVideoSchema(video: {
   };
 }
 
-export function buildReviewSchema(review: {
-  author: string;
-  reviewBody: string;
-  datePublished: string;
-}) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Review',
-    itemReviewed: {
-      '@type': 'SoftwareApplication',
-      name: SITE.name,
-      url: SITE.appWebUrl,
-    },
-    author: { '@type': 'Person', name: review.author },
-    reviewBody: review.reviewBody,
-    datePublished: review.datePublished,
-    reviewRating: {
-      '@type': 'Rating',
-      ratingValue: '5',
-      bestRating: '5',
-    },
-  };
-}
-
 export function buildSoftwareApplicationSchema() {
   return {
     '@context': 'https://schema.org',
@@ -337,7 +313,7 @@ export function buildSoftwareApplicationSchema() {
     sameAs: [SITE.appStore, SITE.playStore],
     description: SITE.description,
     featureList: [
-      'Customers join by scanning a counter QR with the phone camera — no download',
+      'One counter QR per venue; customers scan it in the free Scan Perks app',
       'Digital stamp cards and free-drink reward tiers',
       'Visit analytics and regulars list',
       'Push offers for slow days and happy hour',
@@ -361,7 +337,7 @@ export function buildSoftwareApplicationSchema() {
       priceCurrency: 'USD',
       priceValidUntil: '2027-12-31',
       url: `${SITE.url}/pricing/`,
-      description: '14-day free trial available',
+      description: 'Starter plan, 500 scans a month. 14-day free trial, no card to start.',
     },
     provider: {
       '@type': 'Organization',

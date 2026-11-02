@@ -4,32 +4,26 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import AnswerFirst from '../../components/AnswerFirst.astro';
 import FeatureBulletList from '../../components/FeatureBulletList.astro';
-import CaseStudies from '../../components/CaseStudies.astro';
 import AppCta from '../../components/AppCta.astro';
 import {
   directAnswers,
   platformStats,
   technicalDetails,
-  caseStudies,
   scanPerksFeatureList,
 } from '../../data/geoContent';
-import { buildSoftwareApplicationSchema, buildReviewSchema } from '../../seo/schema';
+import { buildSoftwareApplicationSchema } from '../../seo/schema';
 import { SITE } from '../../data/content';
 import { getHreflangLinks, getPageDef } from '../../i18n/pages';
-
-const reviewSchemas = caseStudies.map((s) =>
-  buildReviewSchema({ author: s.author, reviewBody: s.reviewBody, datePublished: s.datePublished })
-);
 ---
 
 <BaseLayout
   title="About Scan Perks — QR Loyalty for Cafes & Bars"
-  description="Scan Perks: 500+ venues, 50K+ loyalty members. QR cafe & bar loyalty from $10/mo. Founded 2024. iOS/Android apps, no POS required."
+  description="Scan Perks is a QR stamp card for independent cafes, pubs and bars. $10/mo after a 14-day free trial, no POS. Founded 2024 by Bekim Biçaku."
   path="/about/"
   lang="en"
   hreflangLinks={getHreflangLinks(getPageDef('about')!)}
   breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'About', path: '/about/' }]}
-  extraSchema={[buildSoftwareApplicationSchema(), ...reviewSchemas]}
+  extraSchema={[buildSoftwareApplicationSchema()]}
 >
   <Nav active="about" pageId="about" />
 
@@ -46,9 +40,9 @@ const reviewSchemas = caseStudies.map((s) =>
       <AnswerFirst answer={directAnswers.home} />
 
       <div class="stats-row reveal">
-        <div class="stats-row__item"><strong>{platformStats.venues}</strong><span>venue accounts</span></div>
-        <div class="stats-row__item"><strong>{platformStats.activeMembers}</strong><span>loyalty members</span></div>
-        <div class="stats-row__item"><strong>{platformStats.repeatVisitLift}</strong><span>repeat visit lift (reported)</span></div>
+        <div class="stats-row__item"><strong>{platformStats.freeTrialDays} days</strong><span>free trial, no card</span></div>
+        <div class="stats-row__item"><strong>{platformStats.starterScans}</strong><span>scans/month on Starter</span></div>
+        <div class="stats-row__item"><strong>{platformStats.avgSetupMinutes} min</strong><span>typical setup</span></div>
         <div class="stats-row__item"><strong>${platformStats.starterPrice}/mo</strong><span>starting price</span></div>
       </div>
     </div>
@@ -88,12 +82,6 @@ const reviewSchemas = caseStudies.map((s) =>
       <p style="margin-top:1.5rem; text-align:center;">
         <a href="/how-it-works/" class="btn btn--glass">See how it works →</a>
       </p>
-    </div>
-  </section>
-
-  <section class="section section--sm">
-    <div class="container">
-      <CaseStudies studies={caseStudies} />
     </div>
   </section>
 

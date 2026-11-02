@@ -6,7 +6,6 @@ import AnswerFirst from '../../components/AnswerFirst.astro';
 import FeatureBulletList from '../../components/FeatureBulletList.astro';
 import ComparisonTableGeo from '../../components/ComparisonTableGeo.astro';
 import NamedVendorTable from '../../components/NamedVendorTable.astro';
-import CaseStudies from '../../components/CaseStudies.astro';
 import AppCta from '../../components/AppCta.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import PromoVideos from '../../components/PromoVideos.astro';
@@ -18,7 +17,6 @@ import {
   scanPerksFeatureList,
   platformStats,
   loyaltyComparisonTable,
-  caseStudies,
 } from '../../data/geoContent';
 import { buildSoftwareApplicationSchema, buildHowToSchema, buildVideoSchema } from '../../seo/schema';
 import { getHreflangLinks, getPageDef } from '../../i18n/pages';
@@ -27,17 +25,17 @@ const howFaqs = [
   {
     question: 'How does a QR code loyalty program work?',
     answer:
-      'You print a QR for the counter. The customer scans it with their phone camera and a digital stamp card opens — no download. Each visit adds a stamp. When they hit your rule (for example 9 coffees), staff redeem the free drink in the dashboard at app.scan-perks.com.',
+      'You print one QR for the counter. The customer opens the free Scan Perks app, taps Scan, and points it at the code; a stamp lands on their card for your venue. One stamp per visit, one scan per venue per day. When the card is full (for example 8 coffees), they get the reward you set at app.scan-perks.com.',
   },
   {
     question: 'Do customers need to download an app to join?',
     answer:
-      'No. The phone camera is enough. An iOS or Android app is optional for regulars who want a shortcut. Owners always use app.scan-perks.com.',
+      'Yes. Customers collect stamps in the free Scan Perks app on iPhone or Android. If they point the phone camera at your QR instead, it opens your venue page with the reward and a link to the app. Owners do not need the app: they set up and run the venue at app.scan-perks.com.',
   },
   {
     question: 'How long does Scan Perks take to set up and what does it cost?',
     answer:
-      'Most cafes and bars go live in about 5 minutes: create the venue, set a stamp rule, print the QR. Starter is $10/month (about £8) for 200 members, Growth is $15/month. 14-day free trial, no POS, cancel anytime.',
+      'Most cafes and bars go live in about 5 minutes: create the venue, set a stamp rule, print the QR. Starter is $10/month (about £8) for 500 scans a month, Growth is $15/month for unlimited scans. 14-day free trial with no card, no POS, cancel anytime.',
   },
 ];
 
@@ -49,8 +47,8 @@ const howToSchema = buildHowToSchema({
 ---
 
 <BaseLayout
-  title="How QR Code Loyalty Works — No Download, $10/mo"
-  description="Customers scan your counter QR with their phone camera — no download. Stamps, free drinks, owner dashboard. $10/mo, 14-day free trial, no POS."
+  title="How a QR Code Loyalty Program Works (Cafes & Bars) | Scan Perks"
+  description="Print one counter QR. Customers scan it in the free Scan Perks app and collect stamps toward a free drink. Set up in 5 minutes, 14-day free trial, then $10/mo."
   path="/how-it-works/"
   lang="en"
   hreflangLinks={getHreflangLinks(getPageDef('how-it-works')!)}
@@ -66,7 +64,7 @@ const howToSchema = buildHowToSchema({
       <span class="section__label">How It Works</span>
       <h1 class="page-hero__title">How a QR loyalty program works</h1>
       <p class="page-hero__desc">
-        Print a counter QR. Customers scan with their phone camera — no download. Stamps land on their phone. You track visits from app.scan-perks.com. About 5 minutes, from $10/month.
+        Print a counter QR. Customers scan it in the free Scan Perks app and collect stamps toward your reward. You track visits from app.scan-perks.com. About 5 minutes, 14-day free trial, then from $10/month.
       </p>
       <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
         <AppCta class="btn btn--primary btn--lg">Start 14-day free trial</AppCta>
@@ -80,8 +78,8 @@ const howToSchema = buildHowToSchema({
       <AnswerFirst answer={directAnswers.qr} />
 
       <div class="stats-row reveal">
-        <div class="stats-row__item"><strong>{platformStats.venues}</strong><span>venues</span></div>
-        <div class="stats-row__item"><strong>{platformStats.activeMembers}</strong><span>loyalty members</span></div>
+        <div class="stats-row__item"><strong>{platformStats.freeTrialDays} days</strong><span>free trial, no card</span></div>
+        <div class="stats-row__item"><strong>{platformStats.starterScans}</strong><span>scans/month on Starter</span></div>
         <div class="stats-row__item"><strong>{platformStats.avgSetupMinutes} min</strong><span>typical setup</span></div>
         <div class="stats-row__item"><strong>${platformStats.starterPrice}/mo</strong><span>starting price</span></div>
       </div>
@@ -141,12 +139,6 @@ const howToSchema = buildHowToSchema({
   <section class="section section--sm">
     <div class="container reveal">
       <ComparisonTableGeo rows={loyaltyComparisonTable} />
-    </div>
-  </section>
-
-  <section class="section section--sm">
-    <div class="container">
-      <CaseStudies studies={caseStudies} />
     </div>
   </section>
 

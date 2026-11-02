@@ -64,7 +64,7 @@ function switchHref(target: Locale): string {
           ))}
         </select>
       </label>
-      <AppCta>{t.nav.getStarted}</AppCta>
+      <AppCta position="nav">{t.nav.getStarted}</AppCta>
     </div>
     <button class="nav__toggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -82,7 +82,7 @@ function switchHref(target: Locale): string {
       </a>
     ))}
   </div>
-  <AppCta class="btn btn--primary">{t.nav.getStarted}</AppCta>
+  <AppCta class="btn btn--primary" position="nav-mobile">{t.nav.getStarted}</AppCta>
 </div>
 
 <style>

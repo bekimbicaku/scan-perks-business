@@ -1,5 +1,5 @@
 ---
-import { SITE } from '../data/content';
+import { SITE, appSignupUrl } from '../data/content';
 
 interface Props {
   showHint?: boolean;
@@ -12,12 +12,12 @@ const { showHint = true, centered = true } = Astro.props;
 <div class:list={['store-badges-wrap', { 'store-badges-wrap--center': centered }]}>
   {showHint && (
     <p class="store-badges__hint">
-      Get started at <a href={SITE.appWebUrl} class="store-badges__web-link">{SITE.appWebUrl.replace('https://', '')}</a>
+      Get started at <a href={appSignupUrl(Astro.url.pathname, 'store-hint')} class="store-badges__web-link">{SITE.appWebUrl.replace('https://', '')}</a>
       — or download from your store below.
     </p>
   )}
   <div class="store-badges">
-    <a href={SITE.appWebUrl} class="store-badge store-badge--web">
+    <a href={appSignupUrl(Astro.url.pathname, 'store-badge')} class="store-badge store-badge--web">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="currentColor"/></svg>
       <span class="store-badge__text"><small>Open web app</small><strong>app.scan-perks.com</strong></span>
     </a>

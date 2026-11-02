@@ -33,7 +33,7 @@ import { getHreflangLinks, getPageDef } from '../../i18n/pages';
       <h1 class="page-hero__title">{pricingSeo.h1}</h1>
       <p class="page-hero__desc">{pricingSeo.heroDesc}</p>
       <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
-        <AppCta class="btn btn--primary btn--lg">Start 14-day free trial</AppCta>
+        <AppCta class="btn btn--primary btn--lg" position="hero">Start 14-day free trial</AppCta>
         <a href="/how-it-works/" class="btn btn--glass btn--lg">See How It Works</a>
       </div>
     </div>
@@ -51,31 +51,28 @@ import { getHreflangLinks, getPageDef } from '../../i18n/pages';
         <div class="glass-card pricing-card reveal">
           <div class="pricing-card__name">Starter</div>
           <div class="pricing-card__price">$10<span>/month</span></div>
-          <p class="pricing-card__desc">Small cafes, bars, and coffee shops — up to 200 loyalty members.</p>
+          <p class="pricing-card__desc">Small cafes, bars, and coffee shops — up to 500 scans a month.</p>
           <ul class="pricing-card__features">
-            <li>QR code loyalty program</li>
-            <li>Cafe loyalty app & bar tools</li>
-            <li>Basic analytics dashboard</li>
-            <li>50 push notifications/month</li>
-            <li>Local discovery listing</li>
-            <li>Print-ready QR materials</li>
+            <li>One counter QR and digital stamp card</li>
+            <li>500 scans a month</li>
+            <li>Welcome stamp, birthday treats, happy hour</li>
+            <li>Offers pushed to members</li>
+            <li>Basic analytics</li>
+            <li>Listed in the app's Nearby list</li>
           </ul>
-          <AppCta class="btn btn--glass" style="width:100%;">Start 14-Day Free Trial</AppCta>
+          <AppCta class="btn btn--glass" style="width:100%;" position="starter">Start 14-Day Free Trial</AppCta>
         </div>
         <div class="glass-card pricing-card pricing-card--featured reveal">
-          <div class="pricing-card__badge">Most Popular</div>
           <div class="pricing-card__name">Growth</div>
           <div class="pricing-card__price">$15<span>/month</span></div>
-          <p class="pricing-card__desc">High-traffic venues — unlimited members & push offers.</p>
+          <p class="pricing-card__desc">Busy venues — unlimited scans.</p>
           <ul class="pricing-card__features">
-            <li>Unlimited active customers</li>
-            <li>Full pub loyalty scheme tools</li>
-            <li>Advanced analytics & reports</li>
-            <li>Unlimited push notifications</li>
-            <li>Priority discovery placement</li>
-            <li>Customer segmentation</li>
+            <li>Everything in Starter</li>
+            <li>Unlimited scans</li>
+            <li>Advanced analytics</li>
+            <li>Priority support</li>
           </ul>
-          <AppCta class="btn btn--primary" style="width:100%;">Start 14-Day Free Trial</AppCta>
+          <AppCta class="btn btn--primary" style="width:100%;" position="growth">Start 14-Day Free Trial</AppCta>
         </div>
       </div>
       <p style="text-align:center; margin-top:1.5rem; color:var(--text-muted); font-size:0.9rem;">

@@ -1,5 +1,5 @@
 ---
-import { SITE } from '../data/content';
+import { SITE, appSignupUrl } from '../data/content';
 import { G2_LISTING } from '../data/g2AndOutreach';
 ---
 
@@ -13,7 +13,7 @@ import { G2_LISTING } from '../data/g2AndOutreach';
         </div>
         <p>QR loyalty for cafes, pubs & restaurants — from $10/month.</p>
         <p style="margin-top:0.75rem;">
-          <a href={SITE.appWebUrl} style="color:var(--cyan-400);font-weight:600;">
+          <a href={appSignupUrl(Astro.url.pathname, 'footer')} style="color:var(--cyan-400);font-weight:600;">
             Open app.scan-perks.com →
           </a>
         </p>
