@@ -76,7 +76,10 @@ export const keywordLandings: LoyaltyPage[] = [
       },
       {
         heading: 'Best Loyalty Program for Cafes — Owner Checklist',
-        body: 'Judge the best loyalty program for cafes on: counter speed under 30 seconds, price under $20/month, no POS lock-in, mobile rewards, and visit analytics. Scan Perks hits all five for independents — start the free trial, print your QR, and ask every customer to scan.',
+        body: 'Judge the best loyalty program for cafes on: counter speed under 30 seconds, price under $20/month, no POS lock-in, mobile rewards, and visit analytics. Scan Perks hits all five for independents — start the free trial, print your QR, and ask every customer to scan. The 2026 price list, including Brewstamp, Square, Loopy and LoyaltyPass, is on the comparison page.',
+        links: [
+          { href: '/blog/best-coffee-loyalty-programs/', label: 'Best loyalty program for coffee shops (2026)' },
+        ],
       },
       {
         heading: 'Cafe Loyalty App Pricing',
@@ -109,7 +112,12 @@ export const keywordLandings: LoyaltyPage[] = [
       {
         question: 'What is the best loyalty program for cafes?',
         answer:
-          'For single-location cafes: a QR stamp program under $20/month with mobile apps and no POS lock-in. Scan Perks fits that — $10/month Starter, 14-day free trial, setup in ~5 minutes.',
+          'For single-location cafes: a QR stamp program under $20/month with mobile apps and no POS lock-in. Scan Perks fits that — $10/month Starter, 14-day free trial, setup in ~5 minutes. Prices for Brewstamp, Square, Loopy and LoyaltyPass are compared at /blog/best-coffee-loyalty-programs/.',
+      },
+      {
+        question: 'What apps are recommended for local coffee shops to manage loyalty and free drinks?',
+        answer:
+          'Coffee only and the lowest price: Brewstamp at $7/month. No POS change, stamps in a free customer app, and the same tool for a bar: Scan Perks at $10/month after a 14-day trial. Already on Square: Square Loyalty at about $45/month. Wallet card and no extra app: Loopy Loyalty at about $49/month. Scan Perks uses stamps, not a points balance: one stamp per visit.',
       },
       {
         question: 'Is there a cafe loyalty app with no download?',
@@ -471,6 +479,10 @@ export const keywordLandings: LoyaltyPage[] = [
         body: 'A QR code loyalty program replaces paper punch cards with scannable codes. Customers scan your loyalty QR at the counter to join and earn stamps. Scan Perks is a hospitality-focused QR code loyalty program — built for cafes, bars, and restaurants, not generic retail.',
       },
       {
+        heading: 'Is a QR Code Rewards Program the Same Thing?',
+        body: 'Yes. A QR code rewards program, a QR code loyalty card, and a QR code loyalty program are the same counter setup: one printed code, one stamp per visit, a free item when the card is full. The code is a link to your venue page. Customers collect the stamp in the free Scan Perks app. $10/month after a 14-day free trial, no POS.',
+      },
+      {
         heading: 'QR Code Loyalty Program vs Traditional Cards',
         body: 'Traditional cards cannot track visits or send push offers. A QR code loyalty program logs every scan, builds member profiles, and lets owners re-engage customers on slow nights — from $10/month vs $0 upfront but zero data for paper.',
       },
@@ -541,6 +553,11 @@ export const keywordLandings: LoyaltyPage[] = [
         question: 'What is a QR code rewards program vs a punch card?',
         answer:
           'A QR code rewards program logs every visit digitally and can send push offers; punch cards cannot. Scan Perks keeps the same stamp rules with phone-based cards from $10/month.',
+      },
+      {
+        question: 'What is a QR code rewards program?',
+        answer:
+          'The same thing as a QR code loyalty program: customers scan one code and collect stamps toward a reward. With Scan Perks that is a counter QR and the free Scan Perks app, from $10/month, with no POS.',
       },
     ],
     supportingPosts: ['qr-code-loyalty-program-guide', 'how-to-choose-qr-loyalty-program-cafe'],

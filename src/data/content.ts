@@ -334,7 +334,7 @@ export const landingContent: LandingContent = {
     {
       query: 'How do push notifications help bars and restaurants get more visits?',
       answer:
-        'Push notifications send happy hour deals, event invites, and limited offers instantly to customers who already love your venue. Scan Perks includes unlimited push on the Growth plan to fill slow nights.',
+        'A push offer reaches members who already visit. Send a happy-hour or slow-night offer; one a week is enough. Growth means unlimited scans, not unlimited messages.',
       href: '/bar-loyalty-program/',
       label: 'Push offers for bars →',
     },

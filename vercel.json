@@ -25,6 +25,26 @@
       "source": "/qr-loyalty-program/",
       "destination": "/qr-code-loyalty-program/",
       "permanent": true
+    },
+    {
+      "source": "/coffee-loyalty-app",
+      "destination": "/cafe-loyalty-app/",
+      "permanent": true
+    },
+    {
+      "source": "/coffee-loyalty-app/",
+      "destination": "/cafe-loyalty-app/",
+      "permanent": true
+    },
+    {
+      "source": "/coffee-shop-loyalty-app",
+      "destination": "/cafe-loyalty-app/",
+      "permanent": true
+    },
+    {
+      "source": "/coffee-shop-loyalty-app/",
+      "destination": "/cafe-loyalty-app/",
+      "permanent": true
     }
   ],
   "headers": [

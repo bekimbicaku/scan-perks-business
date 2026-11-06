@@ -5,6 +5,9 @@
 export const CANONICAL_OVERRIDES: Record<string, string> = {
   'cafe-loyalty-program': '/cafe-loyalty-app/',
   'qr-loyalty-program': '/qr-code-loyalty-program/',
+  // Nov 2026 GSC: these exact-match URLs have no impressions. The queries rank on /cafe-loyalty-app/.
+  'coffee-loyalty-app': '/cafe-loyalty-app/',
+  'coffee-shop-loyalty-app': '/cafe-loyalty-app/',
   // bar page keeps its own URL (US "bar loyalty") but UK pub queries prefer these:
   // no override — instead we push internal links to pub-loyalty-*
 };
@@ -15,8 +18,8 @@ export const PRIMARY_MONEY_URLS = {
   pubLoyaltyScheme: '/pub-loyalty-scheme/',
   pubLoyaltyCard: '/pub-loyalty-card/',
   coffeeShopLoyalty: '/coffee-shop-loyalty-programs/',
-  coffeeLoyaltyApp: '/coffee-loyalty-app/',
-  coffeeShopLoyaltyApp: '/coffee-shop-loyalty-app/',
+  coffeeLoyaltyApp: '/cafe-loyalty-app/',
+  coffeeShopLoyaltyApp: '/cafe-loyalty-app/',
   qrCodeLoyalty: '/qr-code-loyalty-program/',
   barLoyalty: '/bar-loyalty-program/',
 } as const;
