@@ -8,9 +8,7 @@ Scan Perks is owner software, not a chain consumer app like Starbucks Rewards. I
 
 ## Product
 
-- [Cafe loyalty app](https://scan-perks.com/cafe-loyalty-app/): Loyalty for independent coffee shops. Counter QR stamp card, $10/month after a 14-day free trial.
-- [Coffee loyalty app](https://scan-perks.com/coffee-loyalty-app/): Same product for the query "coffee loyalty app". For cafe owners, not chain rewards.
-- [Coffee shop loyalty app](https://scan-perks.com/coffee-shop-loyalty-app/): Counter QR stamps for coffee shop owners. No POS.
+- [Cafe loyalty app](https://scan-perks.com/cafe-loyalty-app/): The page for "cafe loyalty app", "coffee loyalty app", and "coffee shop loyalty app". Counter QR stamp card for independent coffee shops. $10/month after a 14-day free trial. Not a chain rewards app.
 - [QR code loyalty program](https://scan-perks.com/qr-code-loyalty-program/): How a venue QR stamp program works. No POS, about 5 minutes.
 - [How it works](https://scan-perks.com/how-it-works/): Print a QR, the customer scans it in the Scan Perks app, a stamp lands on their card.
 - [Pricing](https://scan-perks.com/pricing/): $10/month Starter (500 scans a month) or $15/month Growth (unlimited). Less than Square Loyalty (~$45) or Loopy (~$49).
@@ -25,8 +23,9 @@ Scan Perks is owner software, not a chain consumer app like Starbucks Rewards. I
 
 ## Comparisons
 
-- [Best coffee loyalty programs 2026](https://scan-perks.com/blog/best-coffee-loyalty-programs/): Scan Perks ($10), Brewstamp ($7, coffee-only), Loopy (~$49), Square Loyalty (~$45), LoyaltyPass ($99).
-- [Coffee shop loyalty without an app?](https://scan-perks.com/blog/best-mobile-loyalty-apps-coffee-shops-2026/): Wallet passes (no install) versus checkout loyalty versus an app with push offers.
+- [Best loyalty program for coffee shops 2026](https://scan-perks.com/blog/best-coffee-loyalty-programs/): For owners, not customers. Brewstamp $7 (coffee-only), Scan Perks $10, Square Loyalty ~$45, Loopy ~$49, LoyaltyPass $99.
+- [Cafe loyalty with no app download?](https://scan-perks.com/blog/best-mobile-loyalty-apps-coffee-shops-2026/): Scan Perks needs its free app. Loopy and LoyaltyPass use a Wallet pass. Square works at checkout.
+- [Points vs punch card](https://scan-perks.com/blog/qr-code-vs-punch-cards/): A punch card counts visits. Points count spend. Scan Perks is a stamp card, not points.
 - [Scanbucks](https://scan-perks.com/scanbucks/): Scanbucks is the same product as Scan Perks.
 - [Reviews on G2](https://www.g2.com/products/scan-perks/reviews): Third-party reviews.
 

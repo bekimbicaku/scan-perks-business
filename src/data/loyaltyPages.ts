@@ -76,7 +76,7 @@ export const loyaltyPages: LoyaltyPage[] = [
       },
       {
         heading: 'Push Offers That Fill Slow Nights',
-        body: 'Send happy-hour deals and event invites directly to phones. Unlike social posts, push notifications reach customers who already love your bar. Growth plan includes unlimited push — perfect for Tuesday trivia or midweek specials.',
+        body: 'Send a happy-hour or trivia-night offer to members. Unlike a social post, it reaches people who already come in. One offer a week is enough. Growth means unlimited scans, not unlimited messages.',
       },
       {
         heading: 'Pub Loyalty Card — Digital, Not Plastic',
