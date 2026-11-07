@@ -14,7 +14,7 @@ export const cafeConversationalFaqs: FaqItem[] = [
   {
     question: 'Cafe loyalty app vs Square Loyalty — which should I use?',
     answer:
-      'Use Square Loyalty if you already run Square POS (~$45/month). Use Scan Perks if you want POS-agnostic QR stamps at $10/month for an independent cafe, pub, or bar.',
+      'Use Square Loyalty if you already run Square (included in Square Plus at $49/month per location). Use Scan Perks if you want POS-agnostic QR stamps at $10/month for an independent cafe, pub, or bar.',
   },
   {
     question:
@@ -165,7 +165,7 @@ export const featuresFaqs: FaqItem[] = [
   {
     question: 'How does Scan Perks compare to Square Loyalty?',
     answer:
-      'Square Loyalty requires Square POS and costs roughly $45+/month. Scan Perks is POS-agnostic: QR scan at counter, $10–15/month, no Square lock-in. Choose Square if all payments run on Square; choose Scan Perks for faster setup and lower cost at independents.',
+      'Square Loyalty requires Square and is included in Square Plus at $49/month per location. Scan Perks is POS-agnostic: QR scan at the counter, $10–15/month, no Square lock-in. Choose Square if all payments run on Square; choose Scan Perks for a lower loyalty-only price at independents.',
   },
   {
     question: 'How fast can I launch Scan Perks at my venue?',

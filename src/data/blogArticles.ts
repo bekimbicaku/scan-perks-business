@@ -360,10 +360,10 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: 'best-coffee-loyalty-programs',
-    title: 'Best Loyalty Program for Coffee Shops (2026)',
-    metaTitle: 'Best Loyalty Program for Coffee Shops (2026) — From $7',
+    title: 'Best Loyalty Program for Coffee Shops (2026): 5 Compared',
+    metaTitle: 'Best Loyalty Program for Coffee Shops (2026): 5 Compared',
     description:
-      'For cafe owners, not a chain rewards app. Brewstamp $7, Scan Perks $10, Square ~$45, Loopy ~$49, LoyaltyPass $99 a month.',
+      'Best loyalty program for coffee shops in 2026, for owners: Scan Perks $10/mo, Brewstamp $12/mo, Loopy $25/mo, Square Plus $49/mo.',
     keywords: [
       'best coffee loyalty programs',
       'coffee shop loyalty programs',
@@ -380,13 +380,13 @@ export const blogArticles: BlogArticle[] = [
       'brewstamp alternative',
     ],
     publishedAt: '2026-07-01',
-    updatedAt: '2026-11-06',
+    updatedAt: '2026-11-07',
     answer:
-      'The best loyalty program for an independent coffee shop in 2026 is whichever of these five matches the till you already have. Brewstamp is $7/month and coffee-only. Scan Perks is $10/month: customers scan a counter QR in the free Scan Perks app, you do not change POS, and the same tool covers a pub or bar, with a 14-day free trial and no card. Square Loyalty is about $45/month if you already take payments on Square. Loopy Loyalty is about $49/month for Apple and Google Wallet cards. LoyaltyPass is $99/month for Wallet cards. This page is for owners choosing software, not a list of chain rewards for customers.',
+      'The best loyalty program for an independent coffee shop in 2026 is whichever of these five matches the till you already have. Prices below were checked on 7 Nov 2026. Scan Perks is $10/month: customers scan a counter QR in the free Scan Perks app, you do not change POS, and the same tool covers a pub or bar, with a 14-day free trial and no card. Brewstamp is coffee-only: free for the first 50 stamps, then $12/month. Loopy Loyalty Starter is $25/month for an Apple or Google Wallet card. Square Loyalty is included in Square Plus at $49/month per location, and only if you already take payments on Square. LoyaltyPass does not list a monthly cafe plan; its pricing page starts at a $9,500 custom build. This page is for owners choosing software, not a list of chain rewards for customers.',
     sections: [
       {
         heading: 'How we compared them',
-        body: 'We looked at what matters at a busy counter: starting monthly price, how a customer joins (QR in an app, Wallet pass or checkout), whether you must switch POS, and whether the tool suits more than coffee. Prices are public list prices as of September 2026 — check each vendor before you buy. These are tools you run at your venue, not chain consumer apps like Starbucks Rewards.',
+        body: 'We looked at what matters at a busy counter: starting monthly price, how a customer joins (QR in an app, Wallet pass or checkout), whether you must switch POS, and whether the tool suits more than coffee. Prices are public list prices checked on 7 Nov 2026 — check each vendor before you buy. These are tools you run at your venue, not chain consumer apps like Starbucks Rewards.',
       },
       {
         heading: 'Looking for coffee rewards as a customer?',
@@ -404,24 +404,24 @@ export const blogArticles: BlogArticle[] = [
         ],
       },
       {
-        heading: '2. Loopy Loyalty — best for Wallet-only stamp cards (~$49/mo)',
-        body: 'Loopy issues stamp cards as Apple Wallet and Google Wallet passes, with no POS required. A good fit if you specifically want the card to live in Wallet and you are comfortable paying about five times the Scan Perks entry price. Aimed at local businesses in general rather than hospitality.',
+        heading: '2. Loopy Loyalty — Wallet stamp cards at $25/mo',
+        body: 'Loopy issues stamp cards as Apple Wallet and Google Wallet passes, with no POS required. Starter is $25/month for one location (pricing page, 7 Nov 2026). A fit if the card has to live in Wallet. Aimed at local businesses in general rather than hospitality.',
       },
       {
-        heading: '3. Square Loyalty — best if you already run Square POS (~$45/mo)',
-        body: 'Square Loyalty is tied to Square checkout: customers earn at the point of sale using their phone number. If every payment already runs through Square, it is the least extra work. If you use another POS, you would have to switch payments to use it — Scan Perks and the Wallet tools do not need that.',
+        heading: '3. Square Loyalty — included with Square Plus ($49/mo per location)',
+        body: 'Square Loyalty is tied to Square checkout: customers earn at the point of sale using their phone number. On the US pricing page it is included in Square Plus at $49/month per location (checked 7 Nov 2026), not sold as a separate add-on. If every payment already runs through Square, it is the least extra work. If you use another POS, you would have to switch payments to use it — Scan Perks, Loopy and Brewstamp do not need that.',
       },
       {
-        heading: '4. LoyaltyPass — Wallet cards with a higher budget ($99/mo)',
-        body: 'LoyaltyPass also uses Apple/Google Wallet passes and needs no POS. At $99/month it suits businesses that want a polished Wallet experience and have the budget; for a single-location cafe it is the most expensive option in this list.',
+        heading: '4. LoyaltyPass — custom build, not a monthly cafe plan',
+        body: 'LoyaltyPass’s pricing page lists custom loyalty builds from $9,500, not a monthly price for a single cafe (checked 7 Nov 2026). For a Wallet stamp card on a monthly plan, Loopy Loyalty Starter is $25/month.',
       },
       {
-        heading: '5. Brewstamp — cheapest coffee-only option ($7/mo)',
-        body: 'Brewstamp combines camera QR with Wallet and is built specifically for coffee shops. If you only sell coffee and want the lowest price, it is worth a look. If you also run a bar, pub or bakery counter, Scan Perks covers those for $3 more per month.',
+        heading: '5. Brewstamp — coffee-only, free for 50 stamps then $12/mo',
+        body: 'Brewstamp is a browser stamp card for coffee shops, with Apple and Google Wallet and no customer app. The first 50 stamps are free; Pro is $12/month for one shop (brewstamp.app, 7 Nov 2026). Scan Perks is $10/month and also covers a pub or bar, but customers use the Scan Perks app.',
       },
       {
         heading: 'Which one should you pick?',
-        body: 'Already on Square POS: Square Loyalty. Want the card in Apple/Google Wallet above all: Loopy Loyalty or LoyaltyPass. Coffee only, lowest price: Brewstamp. Independent cafe, pub or bar that wants a counter QR, no POS change and push offers at $10/month: Scan Perks. Paper punch cards are still free, but they get lost and give you no visit data.',
+        body: 'Already on Square: Square Loyalty, which comes with Square Plus at $49/month per location. Wallet card and no extra app: Loopy Loyalty at $25/month. Coffee only, and a free first 50 stamps is enough to test: Brewstamp, then $12/month. Independent cafe, pub or bar that wants a counter QR, no POS change and push offers at $10/month: Scan Perks. LoyaltyPass quotes custom builds from $9,500, which is a different purchase. Paper punch cards are still free, but they get lost and give you no visit data.',
         links: [
           { href: '/qr-code-loyalty-program/', label: 'How a QR code loyalty program works' },
           { href: '/pub-loyalty-card/', label: 'Running a pub or bar? Pub loyalty card' },
@@ -450,17 +450,17 @@ export const blogArticles: BlogArticle[] = [
       {
         question: 'What is the best loyalty program for coffee shops in 2026?',
         answer:
-          'Match it to the till you have. Coffee only, lowest price: Brewstamp at $7/month. No POS change, a counter QR, and the same tool for a cafe or bar: Scan Perks at $10/month after a 14-day free trial with no card. Already on Square: Square Loyalty at about $45/month. The card has to live in Apple or Google Wallet: Loopy Loyalty at about $49/month, or LoyaltyPass at $99/month.',
+          'Match it to the till you have. Prices checked 7 Nov 2026. No POS change, a counter QR, and the same tool for a cafe or bar: Scan Perks at $10/month after a 14-day free trial with no card. Coffee only, no customer app: Brewstamp, free for the first 50 stamps, then $12/month. Already on Square: Square Loyalty, included in Square Plus at $49/month per location. Wallet card and no extra app: Loopy Loyalty Starter at $25/month. LoyaltyPass lists custom builds from $9,500, not a monthly cafe plan.',
       },
       {
         question: 'Is Scan Perks a Brewstamp alternative?',
         answer:
-          'Yes, for cafes that also want pubs and bars. Brewstamp is $7/month and coffee-only. Scan Perks is $10/month, customers scan a counter QR in its app, no POS, and it covers cafes, pubs, and bars. 14-day free trial at app.scan-perks.com.',
+          'Yes, for cafes that also want pubs and bars. Brewstamp is coffee-only: free for the first 50 stamps, then $12/month, and customers do not install an app. Scan Perks is $10/month, customers scan a counter QR in its app, no POS, and it covers cafes, pubs, and bars. 14-day free trial at app.scan-perks.com.',
       },
       {
         question: 'What is the best loyalty app for a small coffee shop?',
         answer:
-          'It depends on your setup. Already on Square POS: Square Loyalty (~$45/mo). Wallet-only cards: Loopy Loyalty (~$49/mo). Coffee-only on the lowest budget: Brewstamp ($7/mo). No POS change, push offers and cafe + bar support: Scan Perks ($10/mo, 14-day free trial).',
+          'It depends on your setup. Already on Square: Square Loyalty, included in Square Plus at $49/month per location. Wallet card, no extra app: Loopy Loyalty at $25/month. Coffee only: Brewstamp, free for 50 stamps then $12/month. No POS change, push offers and cafe + bar support: Scan Perks at $10/month after a 14-day free trial.',
       },
       {
         question: 'Which coffee shop loyalty app does not need a customer download?',
@@ -490,7 +490,7 @@ export const blogArticles: BlogArticle[] = [
       {
         question: 'How much does a coffee shop loyalty app cost per month?',
         answer:
-          'Public list prices in September 2026: Brewstamp $7, Scan Perks $10 (Starter) or $15 (Growth), Square Loyalty about $45, Loopy Loyalty about $49, LoyaltyPass $99. Paper punch cards cost only printing but give no visit data.',
+          'Public list prices checked 7 Nov 2026: Scan Perks $10 (Starter, 500 scans a month) or $15 (Growth, unlimited). Brewstamp is free for the first 50 stamps, then $12. Loopy Loyalty Starter is $25. Square Loyalty is included in Square Plus at $49 per location. LoyaltyPass lists custom builds from $9,500, not a monthly plan. Paper punch cards cost only printing but give no visit data.',
       },
       {
         question: 'Cafe loyalty app vs coffee loyalty app — which term is right?',
@@ -563,9 +563,9 @@ export const blogArticles: BlogArticle[] = [
       'wallet pass vs loyalty app',
     ],
     publishedAt: '2026-01-10',
-    updatedAt: '2026-11-06',
+    updatedAt: '2026-11-07',
     answer:
-      'Not always. Wallet tools (Loopy Loyalty ~$49/mo, LoyaltyPass $99/mo) add a stamp card to Apple/Google Wallet with no extra app, and Square Loyalty works at Square checkout by phone number. App-based QR loyalty such as Scan Perks ($10/mo, 14-day free trial) asks customers to install one free app, and in return you can push offers and birthday treats to them. Pick Wallet if zero install matters most; pick an app if you want to bring regulars back with offers.',
+      'Not always. Loopy Loyalty adds a stamp card to Apple or Google Wallet with no extra app (Starter $25/month). Brewstamp opens in the browser (free for 50 stamps, then $12/month). Square Loyalty works at Square checkout and comes with Square Plus at $49/month per location. Scan Perks ($10/month, 14-day free trial) asks customers to install one free app, and in return you can push offers and birthday treats to them. Pick Wallet or a browser card if zero install matters most; pick an app if you want to bring regulars back with offers. Prices checked 7 Nov 2026.',
     sections: [
       {
         heading: 'What an app download costs you, and what it buys',
@@ -581,7 +581,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         heading: 'Scan Perks vs Square Loyalty for Coffee Shops',
-        body: 'Square Loyalty requires Square POS (~$45+/month bundled). Scan Perks is POS-agnostic at $10–15/month with ~5-minute setup. Choose Square if all payments run on Square; choose Scan Perks for lower cost and faster launch without changing payment systems.',
+        body: 'Square Loyalty requires Square and comes with Square Plus at $49/month per location. Scan Perks is POS-agnostic at $10–15/month with ~5-minute setup. Choose Square if all payments run on Square; choose Scan Perks for a lower loyalty-only price and a launch that does not change the till.',
       },
       {
         heading: 'Pricing Snapshot (2026)',
@@ -597,7 +597,7 @@ export const blogArticles: BlogArticle[] = [
       {
         question: 'Is a Wallet pass better than an app for coffee shop loyalty?',
         answer:
-          'A Wallet pass skips the app install but gives you fewer ways to reach the customer later. An app costs one install and lets you push offers. Loopy Loyalty (~$49/mo) and LoyaltyPass ($99/mo) are Wallet-first; Scan Perks ($10/mo) is app-based.',
+          'A Wallet pass skips the app install but gives you fewer ways to reach the customer later. An app costs one install and lets you push offers. Loopy Loyalty ($25/month) is Wallet-first. Brewstamp ($12/month after 50 stamps) opens in the browser. Scan Perks ($10/month) is app-based.',
       },
       {
         question: "What's the best coffee rewards program available on mobile for iPhone or Android?",
