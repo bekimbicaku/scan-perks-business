@@ -14,10 +14,10 @@ export const featuresSeo = {
 };
 
 export const pricingSeo = {
-  title: '$10/mo Loyalty App Pricing — 14-Day Free Trial (No Contract) | Scan Perks',
+  title: '$10/mo Loyalty App — 14-Day Free Trial, No Contract',
   description:
-    'From $10/mo for cafe and pub owners — less than Square Loyalty (~$45) or Loopy (~$49). 14-day free trial, no contract, no POS. Start at app.scan-perks.com.',
-  h1: 'Cafe & Pub Loyalty — From $10/Month',
+    'From $10/mo for cafe and pub owners. Square Plus is $49/mo per location and includes loyalty. Loopy is $25/mo. 14-day trial, no contract, no POS.',
+  h1: '$10/mo Loyalty App — 14-Day Free Trial, No Contract',
   heroDesc:
     'One extra weekly regular covers your plan. Starter $10/mo · Growth $15/mo · start your 14-day free trial in the app today.',
   directAnswer:

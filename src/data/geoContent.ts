@@ -87,7 +87,7 @@ export const scanPerksFeatureList = [
 ] as const;
 
 export const loyaltyComparisonTable: ComparisonRow[] = [
-  { feature: 'Monthly cost', scanPerks: '$10–15', punchCards: '$0–20 printing', enterprise: '$200–500+', competitor: 'Square Loyalty ~$45+' },
+  { feature: 'Monthly cost', scanPerks: '$10–15', punchCards: '$0–20 printing', enterprise: '$200–500+', competitor: 'Square Plus $49/mo' },
   { feature: 'Setup time', scanPerks: '~5 minutes', punchCards: 'Immediate', enterprise: 'Weeks', competitor: '1–3 days' },
   { feature: 'POS required', scanPerks: 'No', punchCards: 'No', enterprise: 'Often yes', competitor: 'Square POS only' },
   { feature: 'Mobile app (customer)', scanPerks: 'iOS + Android (required)', punchCards: 'No', enterprise: 'Yes', competitor: 'Varies' },
@@ -103,7 +103,7 @@ export const masterGeoFaqs: GeoFaq[] = [
     category: 'mobile',
     question: 'What apps are recommended for local coffee shops to manage loyalty points and freebies?',
     answer:
-      'For an independent coffee shop, use a loyalty app that does not force a new POS. Scan Perks gives you one counter QR; guests scan it in the free Scan Perks app, collect stamps toward a free drink, and you see visits at app.scan-perks.com. It is $10/month after a 14-day free trial with no card. Square Loyalty (~$45/month) fits if you already take payments on Square. Brewstamp ($7/month) is coffee-only.',
+      'For an independent coffee shop, use a loyalty app that does not force a new POS. Scan Perks gives you one counter QR; guests scan it in the free Scan Perks app, collect stamps toward a free drink, and you see visits at app.scan-perks.com. It is $10/month after a 14-day free trial with no card. Square Loyalty fits if you already take payments on Square (included in Square Plus at $49/month per location). Brewstamp is coffee-only: free for the first 50 stamps, then $12/month. Loopy Loyalty is a Wallet card at $25/month. Prices checked 7 Nov 2026.',
   },
   {
     category: 'coffee',
@@ -181,7 +181,7 @@ export const masterGeoFaqs: GeoFaq[] = [
     category: 'comparison',
     question: 'How does Scan Perks compare to Square Loyalty?',
     answer:
-      'Square Loyalty requires Square POS and costs roughly $45+/month for similar features. Scan Perks is POS-agnostic: QR scan at counter, $10–15/month, no Square lock-in. Choose Square if you already run all payments on Square; choose Scan Perks for independent venues wanting faster setup and lower cost.',
+      'Square Loyalty requires Square and is included in Square Plus at $49/month per location (US pricing page, 7 Nov 2026). Scan Perks is POS-agnostic: QR scan at the counter, $10–15/month, no Square lock-in. Choose Square if you already run all payments on Square; choose Scan Perks for independent venues that want a lower loyalty-only price and a faster setup.',
   },
   {
     category: 'comparison',
@@ -268,7 +268,7 @@ export const namedVendorColumns = [
 export const namedVendorComparison: NamedVendorRow[] = [
   {
     feature: 'Starting price',
-    cells: ['$10/mo', '~$49/mo', '~$45/mo', '$99/mo', '$7/mo'],
+    cells: ['$10/mo', '$25/mo', 'Square Plus $49/mo', 'Custom from $9,500', '$12/mo after 50 stamps'],
   },
   {
     feature: 'Customer join',
@@ -292,13 +292,13 @@ export const namedVendorComparison: NamedVendorRow[] = [
     feature: 'When to pick them instead',
     cells: [
       'Cafes, pubs, bars at $10',
-      'Wallet-only stamp cards',
-      'You already run Square POS',
-      'Budget is $99+ for Wallet UX',
-      'Coffee-only at $7',
+      'Wallet card at $25/mo',
+      'You already run Square',
+      'Custom build, not a monthly plan',
+      'Coffee-only, then $12/mo',
     ],
   },
 ];
 
 export const competitorComparisonIntro =
-  'Public list prices as of Sep 2026. Pick Square if you already run Square POS; pick Loopy or LoyaltyPass for wallet-only stamps; pick Scan Perks for cafes, pubs, and bars at $10/month with a counter QR scanned in the Scan Perks app.';
+  'Public list prices checked 7 Nov 2026. Brewstamp is free for the first 50 stamps, then $12/month. Loopy Loyalty Starter is $25/month. Square Loyalty is included in Square Plus at $49/month per location. LoyaltyPass lists custom builds from $9,500. Scan Perks is $10/month after a 14-day trial, with a counter QR scanned in the Scan Perks app.';
