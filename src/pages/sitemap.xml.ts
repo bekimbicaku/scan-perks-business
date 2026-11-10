@@ -58,6 +58,8 @@ const staticPages = [
   { path: '/about/', priority: '0.85', changefreq: 'monthly' },
   { path: '/contact/', priority: '0.7', changefreq: 'monthly' },
   { path: '/blog/', priority: '0.85', changefreq: 'weekly' },
+  { path: '/tools/scan-for-stamps/', priority: '0.6', changefreq: 'monthly', lastmod: '2026-11-10' },
+  { path: '/tools/stamp-card-cost/', priority: '0.6', changefreq: 'monthly', lastmod: '2026-11-10' },
 ];
 
 type SitemapUrl = {
