@@ -9,11 +9,12 @@ import { LOCALES } from '../i18n/config';
 
 /**
  * URLs that only redirect, or that are noindex. Not listed.
- * Redirects: vercel.json (canonical-override slugs) and astro.config.mjs (/press).
+ * Redirects: vercel.json (canonical-override slugs, blog guide) and astro.config.mjs (/press, blog guide).
  */
 const NOT_INDEXABLE = new Set<string>([
   ...Object.keys(CANONICAL_OVERRIDES).map((slug) => `/${slug}/`),
   '/press/',
+  '/blog/qr-code-loyalty-program-guide/',
   '/outreach/',
 ]);
 

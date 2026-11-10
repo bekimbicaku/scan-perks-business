@@ -561,7 +561,7 @@ export const keywordLandings: LoyaltyPage[] = [
           `The same thing as a QR code loyalty program: customers scan one code and collect stamps toward a reward. With Scan Perks that is a counter QR and the free Scan Perks app, from ${phrases.en.starterPerMonth}, with no POS.`,
       },
     ],
-    supportingPosts: ['qr-code-loyalty-program-guide', 'how-to-choose-qr-loyalty-program-cafe'],
+    supportingPosts: ['how-to-choose-qr-loyalty-program-cafe'],
     localMarkets: ['Cafes', 'Bars', 'Restaurants'],
   },
   {

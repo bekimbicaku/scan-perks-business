@@ -372,7 +372,7 @@ export const loyaltyPages: LoyaltyPage[] = [
           'Yes for growth: QR programs provide visit tracking, push notifications, and customer profiles — benefits punch cards cannot offer.',
       },
     ],
-    supportingPosts: ['qr-code-loyalty-program-guide', 'how-to-choose-qr-loyalty-program-cafe', 'qr-code-vs-punch-cards', 'best-loyalty-app-small-business'],
+    supportingPosts: ['how-to-choose-qr-loyalty-program-cafe', 'qr-code-vs-punch-cards', 'best-loyalty-app-small-business'],
   },
   {
     slug: 'grow-restaurant-business',

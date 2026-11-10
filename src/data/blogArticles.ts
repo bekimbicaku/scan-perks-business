@@ -517,42 +517,6 @@ export const blogArticles: BlogArticle[] = [
     ],
   },
   {
-    slug: 'qr-code-loyalty-program-guide',
-    title: 'QR Code Loyalty Program — Complete Guide for Businesses',
-    metaTitle: 'QR Code Loyalty Program Guide | Scan Perks',
-    description:
-      `Complete guide to QR code loyalty programs and QR loyalty cards for bars, cafes & restaurants. How Scan Perks works — from ${phrases.en.starterPerMonth}, free trial.`,
-    keywords: [
-      'qr code loyalty program',
-      'qr code loyalty card',
-      'QR loyalty program guide',
-    ],
-    publishedAt: '2025-09-10',
-    answer:
-      `A QR code loyalty program lets customers scan a code to earn digital rewards. Scan Perks is a hospitality QR code loyalty program — QR loyalty card on phone, analytics, push offers, from ${phrases.en.starterPerMonth}.`,
-    sections: [
-      {
-        heading: 'QR Code Loyalty Program vs QR Loyalty Card',
-        body: 'Both terms describe the same idea: customers scan a QR code instead of carrying a punch card. Scan Perks combines a venue QR code with a digital QR loyalty card on the customer\'s phone.',
-      },
-      {
-        heading: 'How to Launch a QR Code Loyalty Program',
-        body: 'Sign up at app.scan-perks.com, set rewards, print your QR, and display it at the counter. Most hospitality venues launch in under 5 minutes.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'What is the best QR code loyalty program for restaurants?',
-        answer: `Scan Perks — built for bars, cafes, and restaurants with QR scanning, push offers, and analytics from ${phrases.en.starterPerMonth}.`,
-      },
-    ],
-    clusterPage: {
-      href: '/qr-code-loyalty-program/',
-      label: 'QR Code Loyalty Program',
-      anchor: 'QR code loyalty program on Scan Perks',
-    },
-  },
-  {
     slug: 'best-mobile-loyalty-apps-coffee-shops-2026',
     title: 'Coffee Shop Loyalty Without an App Download?',
     metaTitle: 'Cafe Loyalty App with No Download? Wallet vs App (2026)',

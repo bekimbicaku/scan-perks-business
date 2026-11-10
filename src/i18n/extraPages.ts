@@ -494,7 +494,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     },
     fr: {
       slug: 'contact',
-      metaTitle: 'Contact Scan Perks — fidélité café',
+      metaTitle: 'Contacter Scan Perks — fidélité café',
       description: `Contactez Scan Perks : hello@scan-perks.com. Essai ${phrases.fr.trialDays} sur app.scan-perks.com.`,
       h1: 'Contact',
       heroLine: 'Des questions sur la fidélité QR ?',
@@ -513,7 +513,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
           answer: 'Par e-mail à hello@scan-perks.com ou via le formulaire de cette page.',
         },
       ],
-      keywords: ['contact scan perks', 'support fidélité café'],
+      keywords: ['contacter scan perks', 'support fidélité café'],
     },
     it: {
       slug: 'contatti',

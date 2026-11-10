@@ -37,10 +37,10 @@ Scan Perks is owner software, not a chain consumer app like Starbucks Rewards. I
 
 ## Other languages
 
-- [Español](https://scan-perks.com/es/): Programa de fidelización para cafeterías.
-- [Deutsch](https://scan-perks.com/de/): Treueprogramm für Cafés.
+- [Español](https://scan-perks.com/es/): Tarjeta de sellos QR para cafeterías, pubs y bares.
+- [Deutsch](https://scan-perks.com/de/): QR-Stempelkarte für Cafés, Pubs und Bars.
 - [Français](https://scan-perks.com/fr/): Programme de fidélité pour cafés.
-- [Italiano](https://scan-perks.com/it/): Programma fedeltà per bar e caffè.
+- [Italiano](https://scan-perks.com/it/): Carta a timbri QR per caffè, pub e bar.
 
 ## Contact
 
