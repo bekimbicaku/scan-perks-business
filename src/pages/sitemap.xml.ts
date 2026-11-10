@@ -57,6 +57,8 @@ const staticPages = [
   { path: '/pricing/', priority: '0.98', changefreq: 'weekly', lastmod: '2026-10-07' },
   { path: '/about/', priority: '0.85', changefreq: 'monthly' },
   { path: '/contact/', priority: '0.7', changefreq: 'monthly' },
+  { path: '/privacy/', priority: '0.3', changefreq: 'yearly', lastmod: '2026-11-10' },
+  { path: '/terms/', priority: '0.3', changefreq: 'yearly', lastmod: '2026-11-10' },
   { path: '/blog/', priority: '0.85', changefreq: 'weekly' },
   { path: '/tools/scan-for-stamps/', priority: '0.6', changefreq: 'monthly', lastmod: '2026-11-10' },
   { path: '/tools/stamp-card-cost/', priority: '0.6', changefreq: 'monthly', lastmod: '2026-11-10' },

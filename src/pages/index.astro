@@ -78,19 +78,27 @@ const homeDef = getPageDef('home')!;
     </div>
   </section>
 
-  <section class="section section--sm" aria-label="Photos still to add">
+  <section class="section section--sm" aria-label="Owner dashboard and counter QR">
     <div class="container">
-      <div class="asset-todos">
-        <div class="asset-todo">
-          <p class="asset-todo__kicker">TODO</p>
-          <p class="asset-todo__title">Dashboard screenshot</p>
-          <p class="asset-todo__note">Add a real capture of the owner dashboard.</p>
-        </div>
-        <div class="asset-todo">
-          <p class="asset-todo__kicker">TODO</p>
-          <p class="asset-todo__title">QR on the counter</p>
-          <p class="asset-todo__note">Add a real photo of the QR on a counter.</p>
-        </div>
+      <div class="product-shots">
+        <figure class="product-shot">
+          <img
+            src="/images/owner-dashboard.png"
+            alt="Owner dashboard in the Scan Perks app, with the venue tools, trial status, and QR code"
+            width="390"
+            height="900"
+          />
+          <figcaption>Owner dashboard</figcaption>
+        </figure>
+        <figure class="product-shot">
+          <img
+            src="/images/counter-qr.png"
+            alt="Counter QR in the Scan Perks app, on the poster a venue prints for the counter"
+            width="780"
+            height="1688"
+          />
+          <figcaption>QR for the counter</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -115,13 +123,9 @@ const homeDef = getPageDef('home')!;
     </div>
   </section>
 
-  <section class="section section--sm" aria-label="Quote still to add">
+  <section class="section section--sm" aria-label="How a stamp is collected">
     <div class="container">
-      <div class="asset-todo asset-todo--quote">
-        <p class="asset-todo__kicker">TODO</p>
-        <p class="asset-todo__title">Customer quote</p>
-        <p class="asset-todo__note">Add one quote from a real venue owner.</p>
-      </div>
+      <p class="fact-line">{phrases.en.stampLine}</p>
     </div>
   </section>
 
@@ -137,51 +141,43 @@ const homeDef = getPageDef('home')!;
 </BaseLayout>
 
 <style>
-  .asset-todos {
+  .product-shots {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.25rem;
+    align-items: start;
   }
 
-  .asset-todo {
-    min-height: 16rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    gap: 0.4rem;
-    padding: 1.25rem;
-    border: 2px dashed rgba(148, 163, 184, 0.55);
+  .product-shot {
+    margin: 0;
+    padding: 1.25rem 1.25rem 1rem;
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-md, 16px);
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.03);
   }
 
-  .asset-todo--quote {
-    min-height: 10rem;
-    max-width: 40rem;
+  .product-shot img {
+    display: block;
+    width: min(100%, 280px);
+    height: auto;
     margin: 0 auto;
+    border-radius: 12px;
   }
 
-  .asset-todo__kicker {
-    margin: 0;
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    color: var(--cyan-400);
-  }
-
-  .asset-todo__title {
-    margin: 0;
-    color: #fff;
-    font-size: 1.15rem;
-    font-weight: 700;
-  }
-
-  .asset-todo__note {
-    margin: 0;
+  .product-shot figcaption {
+    margin: 0.9rem 0 0;
     color: var(--text-secondary);
     font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .fact-line {
+    max-width: 40rem;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    font-size: 1.15rem;
     line-height: 1.5;
+    text-align: center;
   }
 
   .venue-cta {
@@ -228,7 +224,7 @@ const homeDef = getPageDef('home')!;
   }
 
   @media (max-width: 900px) {
-    .asset-todos {
+    .product-shots {
       grid-template-columns: 1fr;
     }
 

@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE } from '../../data/content';
+import { phrases, siteFacts } from '../../data/site-facts';
+
+const perDay = siteFacts.scansPerCustomerPerVenuePerDay;
+const stampLimit =
+  perDay === 1
+    ? 'A customer can collect one stamp at a venue per day.'
+    : `A customer can collect ${perDay} stamps at a venue per day.`;
+---
+
+<BaseLayout
+  title="Terms — Scan Perks"
+  description={`How Scan Perks works: one venue per login, a ${phrases.en.trial}, and stamps collected in the app.`}
+  path="/terms/"
+  lang="en"
+  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Terms', path: '/terms/' }]}
+>
+  <Nav />
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Terms</h1>
+      <p class="page-hero__desc">How the stamp card works for a venue and for a customer.</p>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container legal">
+      <h2>The product</h2>
+      <p>Scan Perks is a QR stamp card for a cafe, pub, or bar. {phrases.en.stampLine}</p>
+      <p>{stampLimit}</p>
+
+      <h2>Owners</h2>
+      <p>
+        You start a venue in the app. Each login is {phrases.en.forOneVenue}.
+        You set the stamp rule and print the counter QR.
+        A new venue gets a {phrases.en.trial}, {phrases.en.noCard}.
+        After the trial, Starter is {phrases.en.starterPerMonth} for {phrases.en.scans}.
+        Growth is {phrases.en.growthPerMonth} for {phrases.en.unlimitedScans}.
+      </p>
+      <p>
+        A paid plan is billed by Stripe. From the app you can open Stripe's billing portal to update the payment method or cancel the subscription.
+      </p>
+      <p>The reward is the venue's to give. Scan Perks records the stamp and the reward text.</p>
+
+      <h2>Accounts</h2>
+      <p>
+        You need an account to collect stamps or to run a venue.
+        Deleting an account in the app removes that account's scans, rewards, and account record, then deletes the sign-in.
+        Questions: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: 40rem;
+  }
+
+  .legal h2 {
+    margin: 2rem 0 0.6rem;
+    font-size: 1.25rem;
+  }
+
+  .legal h2:first-child {
+    margin-top: 0;
+  }
+
+  .legal p {
+    margin: 0 0 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .legal a {
+    color: var(--cyan-400);
+    font-weight: 600;
+  }
+</style>

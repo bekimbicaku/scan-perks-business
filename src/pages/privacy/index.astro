@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE } from '../../data/content';
+import { phrases, siteFacts } from '../../data/site-facts';
+
+const perDay = siteFacts.scansPerCustomerPerVenuePerDay;
+const stampLimit =
+  perDay === 1
+    ? 'A customer can add one stamp at a venue per day.'
+    : `A customer can add ${perDay} stamps at a venue per day.`;
+---
+
+<BaseLayout
+  title="Privacy — Scan Perks"
+  description="What Scan Perks stores: your account, your venue, stamps, and scans."
+  path="/privacy/"
+  lang="en"
+  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Privacy', path: '/privacy/' }]}
+>
+  <Nav />
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Privacy</h1>
+      <p class="page-hero__desc">What the Scan Perks app stores when you use it.</p>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container legal">
+      <h2>Account</h2>
+      <p>
+        Creating an account stores your name and email. The password stays with the sign-in service.
+        The account record also stores a referral code, favorites, a scan streak, whether notifications are on, and when you last opened the app.
+        You can add a birthday as a month and a day. The year is not stored.
+      </p>
+      <p>If you name a usual cafe, that name and city are stored on the account.</p>
+
+      <h2>Venue</h2>
+      <p>
+        A venue record stores the venue name and type, email, phone, street, city, and postal code.
+        If you add them, it also stores a logo, a short description, opening hours, and review links.
+        It stores the counter QR, the stamp rule, and whether the venue is on the trial or a paid plan.
+      </p>
+
+      <h2>Stamps and scans</h2>
+      <p>
+        A stamp is a scan on your account: the venue, the stamp count, and the time. {stampLimit}
+        The venue keeps scan totals. For each person who scanned, it stores the account id, the stamp count, and the last scan time.
+        A full card stores a reward: the venue, the reward text, whether it was redeemed, and an expiry date.
+      </p>
+      <p>If you rate a visit, the venue stores that rating with your account id.</p>
+
+      <h2>Notifications and payment</h2>
+      <p>
+        If you turn on notifications in the phone app, the account stores a push token, the phone platform, and the device name.
+        A paid plan is billed by Stripe. The account can store the Stripe customer id and subscription id. Card details are entered in Stripe.
+        The trial is a {phrases.en.trial} with {phrases.en.noCard}.
+      </p>
+
+      <h2>Deleting an account</h2>
+      <p>
+        Deleting an account removes that account's scans, rewards, and account record, then deletes the sign-in.
+        The venue record is separate. Email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> to ask about it.
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: 40rem;
+  }
+
+  .legal h2 {
+    margin: 2rem 0 0.6rem;
+    font-size: 1.25rem;
+  }
+
+  .legal h2:first-child {
+    margin-top: 0;
+  }
+
+  .legal p {
+    margin: 0 0 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .legal a {
+    color: var(--cyan-400);
+    font-weight: 600;
+  }
+</style>
