@@ -14,11 +14,12 @@ import {
 import { buildSoftwareApplicationSchema } from '../../seo/schema';
 import { SITE } from '../../data/content';
 import { getHreflangLinks, getPageDef } from '../../i18n/pages';
+import { phrases } from '../../data/site-facts';
 ---
 
 <BaseLayout
   title="About Scan Perks — QR Loyalty for Cafes & Bars"
-  description="Scan Perks is a QR stamp card for independent cafes, pubs and bars. $10/mo after a 14-day free trial, no POS. Founded 2024 by Bekim Biçaku."
+  description={`Scan Perks is a QR stamp card for independent cafes, pubs and bars. ${phrases.en.starterPerMo} after a ${phrases.en.trial}, no POS. Founded 2024 by Bekim Biçaku.`}
   path="/about/"
   lang="en"
   hreflangLinks={getHreflangLinks(getPageDef('about')!)}
@@ -40,7 +41,7 @@ import { getHreflangLinks, getPageDef } from '../../i18n/pages';
       <AnswerFirst answer={directAnswers.home} />
 
       <div class="stats-row reveal">
-        <div class="stats-row__item"><strong>{platformStats.freeTrialDays} days</strong><span>free trial, no card</span></div>
+        <div class="stats-row__item"><strong>{platformStats.freeTrialDays} days</strong><span>free trial, {phrases.en.noCard}</span></div>
         <div class="stats-row__item"><strong>{platformStats.starterScans}</strong><span>scans/month on Starter</span></div>
         <div class="stats-row__item"><strong>{platformStats.avgSetupMinutes} min</strong><span>typical setup</span></div>
         <div class="stats-row__item"><strong>${platformStats.starterPrice}/mo</strong><span>starting price</span></div>
@@ -87,7 +88,7 @@ import { getHreflangLinks, getPageDef } from '../../i18n/pages';
 
   <section class="section section--sm">
     <div class="container reveal" style="text-align:center;">
-      <AppCta class="btn btn--primary btn--lg">Start 14-Day Free Trial</AppCta>
+      <AppCta class="btn btn--primary btn--lg">Start {phrases.en.trialCap}</AppCta>
       <p style="margin-top:1rem; color:var(--text-muted);">Contact: {SITE.email}</p>
       <p style="margin-top:1.25rem;">
         <a href="/g2/" class="btn btn--glass">Scan Perks on G2 →</a>

@@ -1,4 +1,5 @@
 import type { Locale } from './config';
+import { phrases } from '../data/site-facts';
 
 export interface UiStrings {
   nav: { home: string; features: string; pricing: string; faq: string; how: string; blog: string; about: string; contact: string; getStarted: string };
@@ -27,7 +28,7 @@ export const ui: Record<Locale, UiStrings> = {
       getStarted: 'Open App',
     },
     footer: {
-      tagline: 'QR loyalty for cafes, bars & restaurants — from $10/month.',
+      tagline: `QR loyalty for cafes, bars & restaurants — from ${phrases.en.starterPerMonth}.`,
       loyalty: 'Loyalty Programs',
       product: 'Product',
       company: 'Company',
@@ -49,7 +50,7 @@ export const ui: Record<Locale, UiStrings> = {
       getStarted: 'Abrir app',
     },
     footer: {
-      tagline: 'Fidelización QR para cafeterías, bares y restaurantes — desde 10 $/mes.',
+      tagline: `Fidelización QR para cafeterías, bares y restaurantes — desde ${phrases.es.starterPerMonth}.`,
       loyalty: 'Programas de fidelización',
       product: 'Producto',
       company: 'Empresa',
@@ -71,13 +72,13 @@ export const ui: Record<Locale, UiStrings> = {
       getStarted: 'App öffnen',
     },
     footer: {
-      tagline: 'QR-Treueprogramm für Cafés, Bars & Restaurants — ab 10 $/Monat.',
+      tagline: `QR-Treueprogramm für Cafés, Bars & Restaurants — ab ${phrases.de.starterPerMonth}.`,
       loyalty: 'Treueprogramme',
       product: 'Produkt',
       company: 'Unternehmen',
       language: 'Sprache',
     },
-    cta: { startTrial: 'App öffnen — 14 Tage gratis', viewPricing: 'Preise ansehen', leaveReview: 'G2-Bewertung schreiben →' },
+    cta: { startTrial: `App öffnen — ${phrases.de.trialDays} gratis`, viewPricing: 'Preise ansehen', leaveReview: 'G2-Bewertung schreiben →' },
     common: { quickAnswer: 'Kurze Antwort', alsoSee: 'Siehe auch', related: 'Ähnlich' },
   },
   fr: {
@@ -93,7 +94,7 @@ export const ui: Record<Locale, UiStrings> = {
       getStarted: 'Ouvrir l’app',
     },
     footer: {
-      tagline: 'Fidélité QR pour cafés, bars et restaurants — dès 10 $/mois.',
+      tagline: `Fidélité QR pour cafés, bars et restaurants — dès ${phrases.fr.starterPerMonth}.`,
       loyalty: 'Programmes de fidélité',
       product: 'Produit',
       company: 'Entreprise',
@@ -115,7 +116,7 @@ export const ui: Record<Locale, UiStrings> = {
       getStarted: 'Apri app',
     },
     footer: {
-      tagline: 'Loyalty QR per caffè, bar e ristoranti — da 10 $/mese.',
+      tagline: `Loyalty QR per caffè, bar e ristoranti — da ${phrases.it.starterPerMonth}.`,
       loyalty: 'Programmi loyalty',
       product: 'Prodotto',
       company: 'Azienda',

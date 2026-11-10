@@ -12,6 +12,7 @@ import { pricingFaqs } from '../../data/conversationalFaqs';
 import { loyaltyComparisonTable, competitorComparisonIntro } from '../../data/geoContent';
 import { buildSoftwareApplicationSchema } from '../../seo/schema';
 import { getHreflangLinks, getPageDef } from '../../i18n/pages';
+import { phrases } from '../../data/site-facts';
 ---
 
 <BaseLayout
@@ -33,7 +34,7 @@ import { getHreflangLinks, getPageDef } from '../../i18n/pages';
       <h1 class="page-hero__title">{pricingSeo.h1}</h1>
       <p class="page-hero__desc">{pricingSeo.heroDesc}</p>
       <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
-        <AppCta class="btn btn--primary btn--lg" position="hero">Start 14-day free trial</AppCta>
+        <AppCta class="btn btn--primary btn--lg" position="hero">Start {phrases.en.trial}</AppCta>
         <a href="/how-it-works/" class="btn btn--glass btn--lg">See How It Works</a>
       </div>
     </div>
@@ -50,29 +51,29 @@ import { getHreflangLinks, getPageDef } from '../../i18n/pages';
       <div class="pricing-grid">
         <div class="glass-card pricing-card reveal">
           <div class="pricing-card__name">Starter</div>
-          <div class="pricing-card__price">$10<span>/month</span></div>
-          <p class="pricing-card__desc">Small cafes, bars, and coffee shops — up to 500 scans a month.</p>
+          <div class="pricing-card__price">{phrases.en.starterPrice}<span>/month</span></div>
+          <p class="pricing-card__desc">Small cafes, bars, and coffee shops — {phrases.en.scansUpTo}.</p>
           <ul class="pricing-card__features">
             <li>One counter QR and digital stamp card</li>
-            <li>500 scans a month</li>
+            <li>{phrases.en.scans}</li>
             <li>Welcome stamp, birthday treats, happy hour</li>
             <li>Offers pushed to members</li>
             <li>Basic analytics</li>
             <li>Listed in the app's Nearby list</li>
           </ul>
-          <AppCta class="btn btn--glass" style="width:100%;" position="starter">Start 14-Day Free Trial</AppCta>
+          <AppCta class="btn btn--glass" style="width:100%;" position="starter">Start {phrases.en.trialCap}</AppCta>
         </div>
         <div class="glass-card pricing-card pricing-card--featured reveal">
           <div class="pricing-card__name">Growth</div>
-          <div class="pricing-card__price">$15<span>/month</span></div>
-          <p class="pricing-card__desc">Busy venues — unlimited scans.</p>
+          <div class="pricing-card__price">{phrases.en.growthPrice}<span>/month</span></div>
+          <p class="pricing-card__desc">Busy venues — {phrases.en.unlimitedScans}.</p>
           <ul class="pricing-card__features">
             <li>Everything in Starter</li>
-            <li>Unlimited scans</li>
+            <li>{phrases.en.unlimitedScansCap}</li>
             <li>Advanced analytics</li>
             <li>Priority support</li>
           </ul>
-          <AppCta class="btn btn--primary" style="width:100%;" position="growth">Start 14-Day Free Trial</AppCta>
+          <AppCta class="btn btn--primary" style="width:100%;" position="growth">Start {phrases.en.trialCap}</AppCta>
         </div>
       </div>
       <p style="text-align:center; margin-top:1.5rem; color:var(--text-muted); font-size:0.9rem;">

@@ -1,0 +1,6 @@
+---
+description: Product facts live in src/data/site-facts.ts
+alwaysApply: true
+---
+
+Product facts (prices, plan limits, trial terms, whether customers need the app, competitor prices) live in ONE file: src/data/site-facts.ts. Never hard-code these in a page or a translation. Never invent statistics, testimonials or customer counts. If a fact is missing, stop and ask. All marketing pages use the shared components. One primary CTA label: "Start free trial". Do not add meta keywords. Do not add FAQ entries that duplicate an existing question on the same page.

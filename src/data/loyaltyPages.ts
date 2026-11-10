@@ -33,14 +33,14 @@ export const loyaltyPages: LoyaltyPage[] = [
   {
     slug: 'bar-loyalty-program',
     title: 'Bar Loyalty Programs for US Bars & Pubs',
-    metaTitle: 'Bar Loyalty Programs for US Bars — Free Trial $10/mo | Scan Perks',
+    metaTitle: `Bar Loyalty Programs for US Bars — Free Trial ${phrases.en.starterPerMo} | Scan Perks`,
     description:
-      'Bar loyalty programs for US bars & pubs: a QR stamp card, free drink after X visits, happy-hour double stamps. 14-day free trial, then $10/mo, no POS.',
+      `Bar loyalty programs for US bars & pubs: a QR stamp card, free drink after X visits, happy-hour double stamps. ${phrases.en.trial}, then ${phrases.en.starterPerMo}, no POS.`,
     primaryKeyword: 'bar loyalty programs',
     heroSeoLine:
-      'Bar loyalty programs for US bars — customers scan a QR at the bar, stamps land on their phone, you send happy-hour offers. From $10/month.',
+      `Bar loyalty programs for US bars — customers scan a QR at the bar, stamps land on their phone, you send happy-hour offers. From ${phrases.en.starterPerMonth}.`,
     quickAnswer:
-      'A bar loyalty program rewards regulars with free drinks after repeat visits. Scan Perks runs it with a bar QR: guests scan it in the free Scan Perks app, earn stamps on a digital card, and you send happy-hour pushes — $10/month, 14-day free trial, no POS. UK pubs looking for a pub loyalty card or scheme should use those pages; this one is for US bar owners.',
+      `A bar loyalty program rewards regulars with free drinks after repeat visits. Scan Perks runs it with a bar QR: guests scan it in the free Scan Perks app, earn stamps on a digital card, and you send happy-hour pushes — ${phrases.en.starterPerMonth}, ${phrases.en.trial}, no POS. UK pubs looking for a pub loyalty card or scheme should use those pages; this one is for US bar owners.`,
     keywordCluster: [
       'pub loyalty scheme',
       'pub loyalty card',
@@ -58,7 +58,7 @@ export const loyaltyPages: LoyaltyPage[] = [
       'Happy-hour push notifications',
       'Free-drink reward tiers',
       'Visit tracking for regulars',
-      'No contracts — from $10/month',
+      `No contracts — from ${phrases.en.starterPerMonth}`,
     ],
     localMarkets: ['Sports bars', 'Craft beer pubs', 'Cocktail lounges', 'Neighborhood bars'],
     featureBullets: [
@@ -66,8 +66,8 @@ export const loyaltyPages: LoyaltyPage[] = [
       'Pub loyalty scheme with free-drink tiers',
       'Happy-hour and event push notifications',
       'Regular customer visit analytics',
-      'No POS integration — $10–15/month',
-      '14-day free trial at app.scan-perks.com',
+      `No POS integration — ${phrases.en.rangeBareMonth}`,
+      `${phrases.en.trial} at app.scan-perks.com`,
     ],
     sections: [
       {
@@ -76,7 +76,7 @@ export const loyaltyPages: LoyaltyPage[] = [
       },
       {
         heading: 'Push Offers That Fill Slow Nights',
-        body: 'Send a happy-hour or trivia-night offer to members. Unlike a social post, it reaches people who already come in. One offer a week is enough. Growth means unlimited scans, not unlimited messages.',
+        body: `Send a happy-hour or trivia-night offer to members. Unlike a social post, it reaches people who already come in. One offer a week is enough. Growth means ${phrases.en.unlimitedScans}, not unlimited messages.`,
       },
       {
         heading: 'Pub Loyalty Card — Digital, Not Plastic',
@@ -88,11 +88,11 @@ export const loyaltyPages: LoyaltyPage[] = [
       },
       {
         heading: 'Affordable Bar Loyalty Software',
-        body: 'Enterprise loyalty tools cost $200+/month. Scan Perks is purpose-built for independent bars at $10–15/month. Setup in 5 minutes, no hardware, cancel anytime.',
+        body: `Enterprise loyalty tools cost $200+/month. Scan Perks is purpose-built for independent bars at ${phrases.en.rangeBareMonth}. Setup in 5 minutes, no hardware, cancel anytime.`,
       },
     ],
     comparison: [
-      { feature: 'Monthly cost', scanPerks: '$10–15', traditional: 'Free (no data)', enterprise: '$200+' },
+      { feature: 'Monthly cost', scanPerks: phrases.en.rangeBare, traditional: 'Free (no data)', enterprise: '$200+' },
       { feature: 'Customer data', scanPerks: 'Full analytics', traditional: 'None', enterprise: 'Complex' },
       { feature: 'Push offers', scanPerks: 'Included', traditional: 'No', enterprise: 'Extra cost' },
       { feature: 'Setup time', scanPerks: '5 minutes', traditional: 'Instant', enterprise: 'Weeks' },
@@ -101,17 +101,17 @@ export const loyaltyPages: LoyaltyPage[] = [
       {
         question: 'What are the best bar loyalty programs for pubs?',
         answer:
-          'Scan Perks is among the best bar loyalty programs for independent pubs: QR scanning, pub loyalty scheme rewards, push notifications, and visit tracking from $10/month with a 14-day free trial.',
+          `Scan Perks is among the best bar loyalty programs for independent pubs: QR scanning, pub loyalty scheme rewards, push notifications, and visit tracking from ${phrases.en.starterPerMonth} with a ${phrases.en.trial}.`,
       },
       {
         question: 'What is a pub loyalty card and how does it work?',
         answer:
-          'A pub loyalty card tracks visits toward free drinks or perks. Scan Perks replaces plastic pub loyalty cards with a digital card on the customer\'s phone — scan your bar QR each visit, rewards accumulate automatically, from $10/month.',
+          `A pub loyalty card tracks visits toward free drinks or perks. Scan Perks replaces plastic pub loyalty cards with a digital card on the customer's phone — scan your bar QR each visit, rewards accumulate automatically, from ${phrases.en.starterPerMonth}.`,
       },
       {
         question: 'What are the best pub loyalty cards for independent pubs?',
         answer:
-          'Digital pub loyalty cards outperform paper: they cannot be lost and provide visit data. Scan Perks pub loyalty cards work via QR scan at the bar — free-drink tiers, push notifications, analytics from $10/month with 14-day free trial.',
+          `Digital pub loyalty cards outperform paper: they cannot be lost and provide visit data. Scan Perks pub loyalty cards work via QR scan at the bar — free-drink tiers, push notifications, analytics from ${phrases.en.starterPerMonth} with ${phrases.en.trial}.`,
       },
       {
         question: 'What is a pub loyalty scheme and how does it work?',
@@ -136,7 +136,7 @@ export const loyaltyPages: LoyaltyPage[] = [
     title: 'Restaurant Loyalty Program',
     metaTitle: 'Restaurant Loyalty Program — Retain Loyal Customers | Scan Perks',
     description:
-      'Build restaurant loyal customers with QR rewards, visit analytics, and push offers. Affordable restaurant loyalty program from $10/month. Free 14-day trial.',
+      `Build restaurant loyal customers with QR rewards, visit analytics, and push offers. Affordable restaurant loyalty program from ${phrases.en.starterPerMonth}. Free ${phrases.en.trialShort}.`,
     primaryKeyword: 'restaurant loyalty program',
     keywordCluster: [
       'restaurant loyal customers',
@@ -164,13 +164,13 @@ export const loyaltyPages: LoyaltyPage[] = [
       },
       {
         heading: 'Grow Restaurant Business Without Enterprise Cost',
-        body: 'Chain restaurants spend thousands on loyalty tech. Scan Perks gives independents the same QR rewards, push offers, and analytics for $10–15/month with zero setup fees.',
+        body: `Chain restaurants spend thousands on loyalty tech. Scan Perks gives independents the same QR rewards, push offers, and analytics for ${phrases.en.rangeBareMonth} with zero setup fees.`,
       },
     ],
     comparison: [
       { feature: 'Repeat visit tracking', scanPerks: 'Real-time', traditional: 'No', enterprise: 'Yes' },
       { feature: 'Push re-engagement', scanPerks: 'Included', traditional: 'No', enterprise: 'Add-on' },
-      { feature: 'Price', scanPerks: '$10–15/mo', traditional: '$0', enterprise: '$200+/mo' },
+      { feature: 'Price', scanPerks: `${phrases.en.rangeBare}/mo`, traditional: '$0', enterprise: '$200+/mo' },
       { feature: 'Local discovery', scanPerks: 'Free', traditional: 'No', enterprise: 'Rare' },
     ],
     faqs: [
@@ -187,7 +187,7 @@ export const loyaltyPages: LoyaltyPage[] = [
       {
         question: 'How much does restaurant loyalty software cost?',
         answer:
-          'Scan Perks starts at $10/month with a 14-day free trial. Enterprise restaurant loyalty platforms often cost $200+ per month with annual contracts.',
+          `Scan Perks starts at ${phrases.en.starterPerMonth} with a ${phrases.en.trial}. Enterprise restaurant loyalty platforms often cost $200+ per month with annual contracts.`,
       },
     ],
     supportingPosts: ['how-to-increase-repeat-customers-restaurant', 'qr-code-vs-punch-cards'],
@@ -197,12 +197,12 @@ export const loyaltyPages: LoyaltyPage[] = [
     title: 'Cafe Loyalty App',
     metaTitle: 'Cafe Loyalty App for Coffee Shops — See Primary Guide | Scan Perks',
     description:
-      'Looking for a cafe loyalty app? Our primary guide is at /cafe-loyalty-app/ — QR stamps for coffee shop owners, $10/mo free trial.',
+      `Looking for a cafe loyalty app? Our primary guide is at /cafe-loyalty-app/ — QR stamps for coffee shop owners, ${phrases.en.starterPerMo} free trial.`,
     primaryKeyword: 'cafe loyalty app',
     heroSeoLine:
-      'Cafe loyalty app and coffee shop loyalty programs for independents — digital stamps, coffee shop loyalty reward app from $10/month.',
+      `Cafe loyalty app and coffee shop loyalty programs for independents — digital stamps, coffee shop loyalty reward app from ${phrases.en.starterPerMonth}.`,
     quickAnswer:
-      'Scan Perks is a cafe loyalty app for coffee shops: customers scan a counter QR to earn free-drink rewards on a digital stamp card. Coffee shop loyalty programs include visit analytics, push offers, and iOS/Android apps — $10/month for 500 scans a month, 14-day free trial, no POS required.',
+      `Scan Perks is a cafe loyalty app for coffee shops: customers scan a counter QR to earn free-drink rewards on a digital stamp card. Coffee shop loyalty programs include visit analytics, push offers, and iOS/Android apps — ${phrases.en.starterPerMonth} for ${phrases.en.scans}, ${phrases.en.trial}, no POS required.`,
     keywordCluster: [
       'cafe loyalty app',
       'coffee shop loyalty programs',
@@ -229,16 +229,16 @@ export const loyaltyPages: LoyaltyPage[] = [
       'Counter QR — no POS integration',
       'Visit analytics and member profiles',
       'Push offers for slow periods',
-      '$10/month for up to 500 scans a month',
+      `${phrases.en.starterPerMonth} for ${phrases.en.scansUpTo}`,
     ],
     sections: [
       {
         heading: 'Coffee Shop Loyalty Programs — Compared',
-        body: 'Coffee shop loyalty programs range from paper punch cards (free, no data) to enterprise suites ($200+/month). Scan Perks sits in the middle: full coffee shop loyalty program features — digital stamps, member profiles, push offers — at $10/month for independents.',
+        body: `Coffee shop loyalty programs range from paper punch cards (free, no data) to enterprise suites ($200+/month). Scan Perks sits in the middle: full coffee shop loyalty program features — digital stamps, member profiles, push offers — at ${phrases.en.starterPerMonth} for independents.`,
       },
       {
         heading: 'Coffee Shop Loyalty Reward App — Built for Independents',
-        body: 'A coffee shop loyalty reward app should be fast at the counter and cheap to run. Scan Perks lets customers scan QR codes to earn free drinks — no plastic cards, no enterprise contracts. Starter plan: 500 scans a month for $10/month.',
+        body: `A coffee shop loyalty reward app should be fast at the counter and cheap to run. Scan Perks lets customers scan QR codes to earn free drinks — no plastic cards, no enterprise contracts. Starter plan: ${phrases.en.scans} for ${phrases.en.starterPerMonth}.`,
       },
       {
         heading: 'Simple QR Setup at the Counter',
@@ -246,35 +246,35 @@ export const loyaltyPages: LoyaltyPage[] = [
       },
       {
         heading: 'Among the Best Coffee Loyalty Programs for Independents',
-        body: 'Chain coffee apps dominate headlines — but independent cafes need affordable loyalty too. Scan Perks ranks among the best coffee loyalty programs for small shops: digital stamps, QR at the counter, and push promos from $10/month.',
+        body: `Chain coffee apps dominate headlines — but independent cafes need affordable loyalty too. Scan Perks ranks among the best coffee loyalty programs for small shops: digital stamps, QR at the counter, and push promos from ${phrases.en.starterPerMonth}.`,
       },
     ],
     comparison: [
       { feature: 'Stamp rewards', scanPerks: 'Digital', traditional: 'Paper', enterprise: 'Custom' },
       { feature: 'Customer profiles', scanPerks: 'Yes', traditional: 'No', enterprise: 'Yes' },
-      { feature: 'Monthly cost', scanPerks: '$10', traditional: 'Card printing', enterprise: '$200+' },
+      { feature: 'Monthly cost', scanPerks: phrases.en.starterPrice, traditional: 'Card printing', enterprise: '$200+' },
       { feature: 'Push promos', scanPerks: 'Yes', traditional: 'No', enterprise: 'Extra' },
     ],
     faqs: [
       {
         question: 'What is the best cafe loyalty app for coffee shops?',
         answer:
-          'Scan Perks is a cafe loyalty app: QR stamp rewards, coffee shop loyalty program tools, a counter QR scanned in the Scan Perks app, push notifications, and analytics — $10/month for 500 scans a month, 14-day free trial at app.scan-perks.com.',
+          `Scan Perks is a cafe loyalty app: QR stamp rewards, coffee shop loyalty program tools, a counter QR scanned in the Scan Perks app, push notifications, and analytics — ${phrases.en.starterPerMonth} for ${phrases.en.scans}, ${phrases.en.trial} at app.scan-perks.com.`,
       },
       {
         question: 'What are coffee shop loyalty programs and how do they work?',
         answer:
-          'Coffee shop loyalty programs reward repeat customers with free drinks, points, or stamps. Scan Perks runs coffee shop loyalty programs via counter QR scan — customers join on their phone, owners track visits and send push offers from $10/month.',
+          `Coffee shop loyalty programs reward repeat customers with free drinks, points, or stamps. Scan Perks runs coffee shop loyalty programs via counter QR scan — customers join on their phone, owners track visits and send push offers from ${phrases.en.starterPerMonth}.`,
       },
       {
         question: 'What is a coffee shop loyalty reward app?',
         answer:
-          'A coffee shop loyalty reward app lets customers earn perks digitally. Scan Perks is a coffee shop loyalty reward app with stamp-style rewards, member profiles, and push notifications — no POS integration, $10/month Starter plan.',
+          `A coffee shop loyalty reward app lets customers earn perks digitally. Scan Perks is a coffee shop loyalty reward app with stamp-style rewards, member profiles, and push notifications — no POS integration, ${phrases.en.starterPerMonth} Starter plan.`,
       },
       {
         question: 'What are the best coffee loyalty programs in 2025?',
         answer:
-          'The best coffee loyalty programs combine easy customer signup, digital stamp rewards, and owner analytics without enterprise pricing. Scan Perks offers all three for neighborhood cafes at $10/month.',
+          `The best coffee loyalty programs combine easy customer signup, digital stamp rewards, and owner analytics without enterprise pricing. Scan Perks offers all three for neighborhood cafes at ${phrases.en.starterPerMonth}.`,
       },
       {
         question: 'Do cafes need expensive loyalty hardware?',
@@ -284,7 +284,7 @@ export const loyaltyPages: LoyaltyPage[] = [
       {
         question: 'Can a small cafe afford a loyalty program?',
         answer:
-          'Yes. Scan Perks Starter is $10/month for up to 500 scans a month — designed for independent cafes and coffee shops.',
+          `Yes. Scan Perks Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scansUpTo} — designed for independent cafes and coffee shops.`,
       },
     ],
     supportingPosts: ['best-coffee-loyalty-programs', 'best-mobile-loyalty-apps-coffee-shops-2026', 'best-loyalty-app-small-business', 'qr-code-vs-punch-cards'],
@@ -294,12 +294,12 @@ export const loyaltyPages: LoyaltyPage[] = [
     title: 'QR Code Loyalty Program',
     metaTitle: 'QR Code Loyalty Program — Loyalty QR for Cafes & Bars',
     description:
-      'QR code loyalty program + loyalty QR for coffee shops & pubs. Digital QR loyalty card, analytics — $10/mo, setup in 5 min. Free trial.',
+      `QR code loyalty program + loyalty QR for coffee shops & pubs. Digital QR loyalty card, analytics — ${phrases.en.starterPerMo}, setup in 5 min. Free trial.`,
     primaryKeyword: 'qr code loyalty program',
     heroSeoLine:
-      'QR code loyalty program, loyalty QR codes, and digital QR loyalty cards — hospitality rewards from $10/month.',
+      `QR code loyalty program, loyalty QR codes, and digital QR loyalty cards — hospitality rewards from ${phrases.en.starterPerMonth}.`,
     quickAnswer:
-      'A QR code loyalty program lets customers scan a venue code to earn rewards on their phone. Scan Perks provides loyalty QR codes per location, digital QR loyalty cards, visit analytics, and push offers — from $10/month, no POS integration, setup in ~5 minutes.',
+      `A QR code loyalty program lets customers scan a venue code to earn rewards on their phone. Scan Perks provides loyalty QR codes per location, digital QR loyalty cards, visit analytics, and push offers — from ${phrases.en.starterPerMonth}, no POS integration, setup in ~5 minutes.`,
     keywordCluster: [
       'qr code loyalty program',
       'qr code loyalty programs',
@@ -324,7 +324,7 @@ export const loyaltyPages: LoyaltyPage[] = [
       'Contactless scan — no plastic cards',
       'Visit logging and redemption tracking',
       'No POS integration required',
-      'Setup in ~5 minutes; $10/month Starter',
+      `Setup in ~5 minutes; ${phrases.en.starterPerMonth} Starter`,
     ],
     sections: [
       {
@@ -348,13 +348,13 @@ export const loyaltyPages: LoyaltyPage[] = [
       { feature: 'Join method', scanPerks: 'QR scan', traditional: 'Paper card', enterprise: 'App + card' },
       { feature: 'Visit data', scanPerks: 'Automatic', traditional: 'None', enterprise: 'Yes' },
       { feature: 'Lost cards', scanPerks: 'Impossible', traditional: 'Common', enterprise: 'Rare' },
-      { feature: 'Cost', scanPerks: '$10–15/mo', traditional: 'Print cost', enterprise: '$200+/mo' },
+      { feature: 'Cost', scanPerks: `${phrases.en.rangeBare}/mo`, traditional: 'Print cost', enterprise: '$200+/mo' },
     ],
     faqs: [
       {
         question: 'What is a QR code loyalty program?',
         answer:
-          'A QR code loyalty program lets customers scan a unique code at your venue to join and earn digital rewards. Scan Perks is a hospitality-focused QR code loyalty program with analytics, push offers, and print-ready materials from $10/month.',
+          `A QR code loyalty program lets customers scan a unique code at your venue to join and earn digital rewards. Scan Perks is a hospitality-focused QR code loyalty program with analytics, push offers, and print-ready materials from ${phrases.en.starterPerMonth}.`,
       },
       {
         question: 'What is a QR code loyalty card?',
@@ -379,7 +379,7 @@ export const loyaltyPages: LoyaltyPage[] = [
     title: 'Grow Your Restaurant Business',
     metaTitle: 'Grow Your Restaurant Business — Increase Customers, Revenue & Profits | Scan Perks',
     description:
-      'Increase customers, revenue, and profits with Scan Perks loyalty. Grow your restaurant or bar business with repeat visits, trust, and analytics from $10/month.',
+      `Increase customers, revenue, and profits with Scan Perks loyalty. Grow your restaurant or bar business with repeat visits, trust, and analytics from ${phrases.en.starterPerMonth}.`,
     primaryKeyword: 'grow restaurant business',
     keywordCluster: [
       'grow your business',
@@ -417,12 +417,12 @@ export const loyaltyPages: LoyaltyPage[] = [
       },
       {
         heading: 'Grow Profits Through Customer Lifetime Value',
-        body: 'Profit growth follows when guests visit more often and spend confidently. Track lifetime value in your dashboard, optimize reward tiers, and use push offers to lift revenue on slow nights — all from $10–15/month.',
+        body: `Profit growth follows when guests visit more often and spend confidently. Track lifetime value in your dashboard, optimize reward tiers, and use push offers to lift revenue on slow nights — all from ${phrases.en.rangeBareMonth}.`,
       },
     ],
     comparison: [
       { feature: 'Growth focus', scanPerks: 'Retention + discovery', traditional: 'Retention only', enterprise: 'Multi-location' },
-      { feature: 'Investment', scanPerks: '$10–15/mo', traditional: 'Low', enterprise: 'High' },
+      { feature: 'Investment', scanPerks: `${phrases.en.rangeBare}/mo`, traditional: 'Low', enterprise: 'High' },
       { feature: 'Time to value', scanPerks: 'Days', traditional: 'Weeks', enterprise: 'Months' },
       { feature: 'Push marketing', scanPerks: 'Built-in', traditional: 'No', enterprise: 'Add-on' },
     ],
@@ -435,17 +435,17 @@ export const loyaltyPages: LoyaltyPage[] = [
       {
         question: 'What is the ROI of a business loyalty program?',
         answer:
-          'At $10–15/month, one or two extra visits a week from regulars typically covers the cost of the program.',
+          `At ${phrases.en.rangeBareMonth}, one or two extra visits a week from regulars typically covers the cost of the program.`,
       },
       {
         question: 'How do I grow my business without a big marketing budget?',
         answer:
-          'Focus on existing customers: reward returns, send timely push offers, and get listed in Scan Perks local discovery — all included from $10/month.',
+          `Focus on existing customers: reward returns, send timely push offers, and get listed in Scan Perks local discovery — all included from ${phrases.en.starterPerMonth}.`,
       },
       {
         question: 'How can I increase customers at my restaurant or bar?',
         answer:
-          'Use loyalty to boost repeat visits, list your venue in Scan Perks discovery for new local guests, and re-engage lapsed customers with push offers — a complete growth stack from $10/month.',
+          `Use loyalty to boost repeat visits, list your venue in Scan Perks discovery for new local guests, and re-engage lapsed customers with push offers — a complete growth stack from ${phrases.en.starterPerMonth}.`,
       },
       {
         question: 'Does loyalty really increase restaurant profits?',
@@ -458,6 +458,7 @@ export const loyaltyPages: LoyaltyPage[] = [
 ];
 
 import { keywordLandings } from './keywordLandings';
+import { phrases } from './site-facts';
 
 export function getLoyaltyPage(slug: string): LoyaltyPage | undefined {
   return [...loyaltyPages, ...keywordLandings].find((p) => p.slug === slug);

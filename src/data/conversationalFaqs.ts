@@ -1,3 +1,4 @@
+import { phrases } from './site-facts';
 /** Conversational / AI Overview query targets from GSC */
 
 export interface FaqItem {
@@ -9,24 +10,24 @@ export const cafeConversationalFaqs: FaqItem[] = [
   {
     question: 'Do cafe customers need to download an app to join loyalty?',
     answer:
-      'With Scan Perks, yes: customers scan your counter QR in the free Scan Perks app (iPhone or Android). If they point the phone camera at it, it opens your venue page with an app link. Loopy and LoyaltyPass use Apple/Google Wallet with no extra app; Square Loyalty needs Square POS. Scan Perks is $10/month, no POS.',
+      `With Scan Perks, yes: customers scan your counter QR in the free Scan Perks app (iPhone or Android). If they point the phone camera at it, it opens your venue page with an app link. Loopy and LoyaltyPass use Apple/Google Wallet with no extra app; Square Loyalty needs Square POS. Scan Perks is ${phrases.en.starterPerMonth}, no POS.`,
   },
   {
     question: 'Cafe loyalty app vs Square Loyalty — which should I use?',
     answer:
-      'Use Square Loyalty if you already run Square (included in Square Plus at $49/month per location). Use Scan Perks if you want POS-agnostic QR stamps at $10/month for an independent cafe, pub, or bar.',
+      `Use Square Loyalty if you already run Square (included in Square Plus at ${phrases.en.squarePerMonthLocation}). Use Scan Perks if you want POS-agnostic QR stamps at ${phrases.en.starterPerMonth} for an independent cafe, pub, or bar.`,
   },
   {
     question:
       'Which coffee company has the best loyalty program for earning points and free drinks?',
     answer:
-      'Among national chains, Starbucks Rewards leads for consumer points and free drinks. That is a different product from cafe software. If you own an independent coffee shop in the US, Scan Perks is a cafe loyalty app you run yourself: QR stamp rewards, iOS/Android apps, owner analytics — $10/month at app.scan-perks.com.',
+      `Among national chains, Starbucks Rewards leads for consumer points and free drinks. That is a different product from cafe software. If you own an independent coffee shop in the US, Scan Perks is a cafe loyalty app you run yourself: QR stamp rewards, iOS/Android apps, owner analytics — ${phrases.en.starterPerMonth} at app.scan-perks.com.`,
   },
   {
     question:
       'Who has the best rewards program in the specialty coffee industry for frequent customers?',
     answer:
-      'Specialty coffee independents need fast counter signup and visit rewards, not million-dollar apps. Scan Perks provides QR stamp loyalty, push offers, and visit tracking for frequent customers — $10/month Starter (500 scans a month) or $15/month Growth, 14-day free trial.',
+      `Specialty coffee independents need fast counter signup and visit rewards, not million-dollar apps. Scan Perks provides QR stamp loyalty, push offers, and visit tracking for frequent customers — ${phrases.en.starterPerMonth} Starter (${phrases.en.scans}) or ${phrases.en.growthPerMonth} Growth, ${phrases.en.trial}.`,
   },
   {
     question:
@@ -38,22 +39,22 @@ export const cafeConversationalFaqs: FaqItem[] = [
     question:
       "What's the best coffee rewards program available on mobile for iPhone or Android?",
     answer:
-      'For iPhone and Android, Scan Perks customer apps let guests scan venue QR codes to earn stamp rewards. Owners manage at app.scan-perks.com. Starter: $10/month for 500 scans a month. Setup: ~5 minutes, no hardware.',
+      `For iPhone and Android, Scan Perks customer apps let guests scan venue QR codes to earn stamp rewards. Owners manage at app.scan-perks.com. Starter: ${phrases.en.starterPerMonth} for ${phrases.en.scans}. Setup: ~5 minutes, no hardware.`,
   },
   {
     question: 'What is the best coffee shop loyalty reward app for small businesses?',
     answer:
-      'Scan Perks is a coffee shop loyalty reward app with digital stamps, counter QR scanning, customer profiles, and push notifications. Starter plan covers 500 scans a month for $10/month after a 14-day free trial — built for neighborhood cafes.',
+      `Scan Perks is a coffee shop loyalty reward app with digital stamps, counter QR scanning, customer profiles, and push notifications. Starter plan covers ${phrases.en.scans} for ${phrases.en.starterPerMonth} after a ${phrases.en.trial} — built for neighborhood cafes.`,
   },
   {
     question: 'What is the best cafe loyalty app in 2026?',
     answer:
-      'For independents, the best cafe loyalty app is affordable, QR-based, and includes analytics. Scan Perks: ~5 minute setup, stamp-style rewards, repeat-visit tracking, iOS/Android apps — $10/month after a 14-day free trial at app.scan-perks.com.',
+      `For independents, the best cafe loyalty app is affordable, QR-based, and includes analytics. Scan Perks: ~5 minute setup, stamp-style rewards, repeat-visit tracking, iOS/Android apps — ${phrases.en.starterPerMonth} after a ${phrases.en.trial} at app.scan-perks.com.`,
   },
   {
     question: 'What is the best loyalty program for cafes?',
     answer:
-      'For single-location cafes: QR stamp loyalty under $20/month with mobile apps and no POS lock-in. Scan Perks matches that — $10/month Starter, 14-day free trial, setup in about 5 minutes.',
+      `For single-location cafes: QR stamp loyalty under $20/month with mobile apps and no POS lock-in. Scan Perks matches that — ${phrases.en.starterPerMonth} Starter, ${phrases.en.trial}, setup in about 5 minutes.`,
   },
   {
     question: 'What is the best rewards app for coffee shop purchases?',
@@ -63,7 +64,7 @@ export const cafeConversationalFaqs: FaqItem[] = [
   {
     question: 'Which apps are best for coffee shop owners?',
     answer:
-      'Coffee shop owners typically need a till plus a loyalty app that does not replace it. Scan Perks is an app for coffee shop owners focused on QR loyalty, member analytics, and push offers — $10/month, 14-day free trial, no POS switch.',
+      `Coffee shop owners typically need a till plus a loyalty app that does not replace it. Scan Perks is an app for coffee shop owners focused on QR loyalty, member analytics, and push offers — ${phrases.en.starterPerMonth}, ${phrases.en.trial}, no POS switch.`,
   },
   {
     question: 'Is there a cafe loyalty app no download option?',
@@ -73,7 +74,7 @@ export const cafeConversationalFaqs: FaqItem[] = [
   {
     question: 'What is a mobile rewards program for coffee shops?',
     answer:
-      'A mobile rewards program lets coffee shop regulars earn stamps on their phone. Scan Perks provides counter QR, digital stamps, owner analytics, and push offers from $10/month.',
+      `A mobile rewards program lets coffee shop regulars earn stamps on their phone. Scan Perks provides counter QR, digital stamps, owner analytics, and push offers from ${phrases.en.starterPerMonth}.`,
   },
 ];
 
@@ -81,7 +82,7 @@ export const qrConversationalFaqs: FaqItem[] = [
   {
     question: 'What is the best QR code loyalty program for cafes and bars?',
     answer:
-      'Scan Perks is a hospitality QR code loyalty program: unique venue QR scanned in the Scan Perks app, visit analytics, and push offers. Built for cafes, bars, and restaurants from $10/month. Use Square if you already run Square POS; Loopy if you only want Wallet passes.',
+      `Scan Perks is a hospitality QR code loyalty program: unique venue QR scanned in the Scan Perks app, visit analytics, and push offers. Built for cafes, bars, and restaurants from ${phrases.en.starterPerMonth}. Use Square if you already run Square POS; Loopy if you only want Wallet passes.`,
   },
   {
     question: 'How does a QR code loyalty program compare to a QR code loyalty card?',
@@ -91,7 +92,7 @@ export const qrConversationalFaqs: FaqItem[] = [
   {
     question: 'Is a QR code loyalty program worth it for small coffee shops?',
     answer:
-      'Yes. At $10/month, a QR code loyalty program typically pays for itself with a few extra weekly visits. Scan Perks includes print-ready QR materials, push notifications, and customer data that punch cards cannot provide.',
+      `At ${phrases.en.starterPerMonth}, Scan Perks includes print-ready QR materials, push notifications, and customer data that punch cards cannot provide.`,
   },
 ];
 
@@ -99,27 +100,27 @@ export const barConversationalFaqs: FaqItem[] = [
   {
     question: 'What is a pub loyalty scheme?',
     answer:
-      'A pub loyalty scheme rewards regular drinkers with perks after each visit. Scan Perks digitizes pub loyalty schemes with QR scanning at the bar — digital pub loyalty card on phone, free-drink tiers, happy-hour push alerts — from $10/month at app.scan-perks.com.',
+      `A pub loyalty scheme rewards regular drinkers with perks after each visit. Scan Perks digitizes pub loyalty schemes with QR scanning at the bar — digital pub loyalty card on phone, free-drink tiers, happy-hour push alerts — from ${phrases.en.starterPerMonth} at app.scan-perks.com.`,
   },
   {
     question: 'What is a pub loyalty card?',
     answer:
-      'A pub loyalty card tracks drinks toward free pints or rewards. Scan Perks replaces plastic pub loyalty cards with a digital card on the customer\'s phone — scan QR at the bar, no lost cards, visit analytics from $10/month with 14-day free trial.',
+      `A pub loyalty card tracks drinks toward free pints or rewards. Scan Perks replaces plastic pub loyalty cards with a digital card on the customer's phone — scan QR at the bar, no lost cards, visit analytics from ${phrases.en.starterPerMonth} with ${phrases.en.trial}.`,
   },
   {
     question: 'What are the best bar loyalty programs for independent pubs?',
     answer:
-      'The best bar loyalty programs combine visit rewards, happy-hour push alerts, and regular tracking without enterprise cost. Scan Perks offers bar loyalty programs and pub loyalty scheme tools from $10/month with QR setup in 5 minutes.',
+      `The best bar loyalty programs combine visit rewards, happy-hour push alerts, and regular tracking without enterprise cost. Scan Perks offers bar loyalty programs and pub loyalty scheme tools from ${phrases.en.starterPerMonth} with QR setup in 5 minutes.`,
   },
   {
     question: 'How does a pub loyalty scheme work with QR codes?',
     answer:
-      'Customers scan your pub\'s QR code to join the loyalty scheme and earn perks each visit. Scan Perks tracks regulars, sends event and happy-hour pushes, and replaces lost punch cards — from $10–15/month.',
+      `Customers scan your pub's QR code to join the loyalty scheme and earn perks each visit. Scan Perks tracks regulars, sends event and happy-hour pushes, and replaces lost punch cards — from ${phrases.en.rangeBareMonth}.`,
   },
   {
     question: 'What is the cheapest pub loyalty scheme for small bars?',
     answer:
-      'Scan Perks Starter is $10/month for up to 500 scans a month — among the most affordable pub loyalty scheme options with full QR rewards, analytics, and a 14-day free trial. No contracts.',
+      `Scan Perks Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scansUpTo} — among the most affordable pub loyalty scheme options with full QR rewards, analytics, and a ${phrases.en.trial}. No contracts.`,
   },
 ];
 
@@ -127,17 +128,17 @@ export const pricingFaqs: FaqItem[] = [
   {
     question: 'How much does a cafe or bar loyalty program cost per month?',
     answer:
-      'Scan Perks costs $10/month (Starter, up to 500 scans a month) or $15/month (Growth, unlimited). Both include QR loyalty, analytics, and a 14-day free trial — vs $200+/month for enterprise loyalty software.',
+      `Scan Perks costs ${phrases.en.starterPerMonth} (Starter, ${phrases.en.scansUpTo}) or ${phrases.en.growthPerMonth} (Growth, ${phrases.en.unlimitedScans}). Both include QR loyalty, analytics, and a ${phrases.en.trial} — vs $200+/month for enterprise loyalty software.`,
   },
   {
     question: 'Is there a free trial for Scan Perks loyalty software?',
     answer:
-      'Yes — every plan includes a 14-day free trial with no long-term contract. Start at app.scan-perks.com, set your rewards, and print your QR code the same day.',
+      `Yes — every plan includes a ${phrases.en.trial} with ${phrases.en.noCard} and no long-term contract. Start at app.scan-perks.com, set your rewards, and print your QR code the same day.`,
   },
   {
-    question: 'What is included in the $10/month Starter loyalty plan?',
+    question: `What is included in the ${phrases.en.starterPerMonth} Starter loyalty plan?`,
     answer:
-      'Starter includes one counter QR and stamp card, up to 500 scans a month, basic analytics, offers pushed to members, happy hour and birthday treats, and a listing in the app\'s Nearby list.',
+      `Starter includes one counter QR and stamp card, ${phrases.en.scansUpTo}, basic analytics, offers pushed to members, happy hour and birthday treats, and a listing in the app's Nearby list.`,
   },
   {
     question: 'Can I cancel my Scan Perks subscription anytime?',
@@ -150,12 +151,12 @@ export const featuresFaqs: FaqItem[] = [
   {
     question: 'Does Scan Perks include a QR code loyalty program?',
     answer:
-      'Yes. Every plan includes a full QR code loyalty program — unique venue QR, digital loyalty card for customers, visit analytics, and push offers from $10/month.',
+      `Yes. Every plan includes a full QR code loyalty program — unique venue QR, digital loyalty card for customers, visit analytics, and push offers from ${phrases.en.starterPerMonth}.`,
   },
   {
     question: 'What features does the Scan Perks cafe loyalty app include?',
     answer:
-      'Digital stamp rewards, counter QR scanning, customer profiles, push notifications, print-ready QR posters, and local discovery — all from $10/month.',
+      `Digital stamp rewards, counter QR scanning, customer profiles, push notifications, print-ready QR posters, and local discovery — all from ${phrases.en.starterPerMonth}.`,
   },
   {
     question: 'Can Scan Perks help bars run a pub loyalty scheme?',
@@ -165,7 +166,7 @@ export const featuresFaqs: FaqItem[] = [
   {
     question: 'How does Scan Perks compare to Square Loyalty?',
     answer:
-      'Square Loyalty requires Square and is included in Square Plus at $49/month per location. Scan Perks is POS-agnostic: QR scan at the counter, $10–15/month, no Square lock-in. Choose Square if all payments run on Square; choose Scan Perks for a lower loyalty-only price at independents.',
+      `Square Loyalty requires Square and is included in Square Plus at ${phrases.en.squarePerMonthLocation}. Scan Perks is POS-agnostic: QR scan at the counter, ${phrases.en.rangeBareMonth}, no Square lock-in. Choose Square if all payments run on Square; choose Scan Perks for a lower loyalty-only price at independents.`,
   },
   {
     question: 'How fast can I launch Scan Perks at my venue?',

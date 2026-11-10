@@ -9,6 +9,7 @@ import FeatureBulletList from './FeatureBulletList.astro';
 import InternalLinks from './InternalLinks.astro';
 import NamedVendorTable from './NamedVendorTable.astro';
 import { SITE, appSignupUrl } from '../data/content';
+import { phrases } from '../data/site-facts';
 
 interface Props {
   page: LoyaltyPage;
@@ -64,7 +65,7 @@ const directAnswer = page.quickAnswer ?? slugToAnswer[page.slug];
         <AppCta class="btn btn--glass btn--lg" position="hero-customer">Get the Rewards App</AppCta>
       </div>
       <p style="margin-top:0.75rem; font-size:0.9rem; opacity:0.85;">
-        Customers: free. Owners: 14-day trial · No POS · From $10/mo
+        Customers: free. Owners: {phrases.en.trialShort} · No POS · From {phrases.en.starterPerMo}
       </p>
     </div>
   </section>
@@ -190,7 +191,7 @@ const directAnswer = page.quickAnswer ?? slugToAnswer[page.slug];
     <div class="container reveal">
       <div class="cta-banner">
         <h2 class="cta-banner__title">Start Your {page.title} Today</h2>
-        <p class="cta-banner__desc">14-day free trial. No contracts. Grow loyal customers from $10/month.</p>
+        <p class="cta-banner__desc">{phrases.en.trial}. No contracts. Grow loyal customers from {phrases.en.starterPerMonth}.</p>
         <div class="cta-banner__actions">
           <AppCta class="btn btn--primary btn--lg" position="bottom">Get Started Free</AppCta>
         </div>

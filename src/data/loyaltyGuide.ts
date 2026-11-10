@@ -1,4 +1,5 @@
 import type { FaqItem } from './content';
+import { phrases } from './site-facts';
 
 export interface GuideCategory {
   title: string;
@@ -26,7 +27,7 @@ export const loyaltyGuide: LoyaltyGuide = {
   title: 'Business Loyalty Program',
   metaTitle: 'Business Loyalty Program — Complete Guide for Hospitality | Scan Perks',
   description:
-    'What is a business loyalty program? Learn how bars, cafes & restaurants use QR rewards to grow loyal customers. Compare options and start with Scan Perks from $10/month.',
+    `What is a business loyalty program? Learn how bars, cafes & restaurants use QR rewards to grow loyal customers. Compare options and start with Scan Perks from ${phrases.en.starterPerMonth}.`,
   primaryKeyword: 'business loyalty program',
   keywordCluster: [
     'business loyalty',
@@ -39,7 +40,7 @@ export const loyaltyGuide: LoyaltyGuide = {
     'increase customers',
   ],
   definition:
-    'A business loyalty program is a structured rewards system that incentivizes repeat customers to return more often and spend more over time. For hospitality — bars, cafes, and restaurants — modern loyalty uses digital tools like QR scanning, push notifications, and visit analytics instead of paper punch cards. Scan Perks is a hospitality-focused business loyalty platform starting at $10/month.',
+    `A business loyalty program is a structured rewards system that incentivizes repeat customers to return more often and spend more over time. For hospitality — bars, cafes, and restaurants — modern loyalty uses digital tools like QR scanning, push notifications, and visit analytics instead of paper punch cards. Scan Perks is a hospitality-focused business loyalty platform starting at ${phrases.en.starterPerMonth}.`,
   categories: [
     {
       title: 'Bar Loyalty Program',
@@ -107,7 +108,7 @@ export const loyaltyGuide: LoyaltyGuide = {
     },
     {
       heading: 'Start Your Business Loyalty Program Online',
-      body: 'Download Scan Perks, create your venue profile, set rewards, and print your QR code. Most businesses launch in under 5 minutes with a 14-day free trial — no credit card required to explore.',
+      body: `Download Scan Perks, create your venue profile, set rewards, and print your QR code. Most businesses launch in under 5 minutes with a ${phrases.en.trial} — ${phrases.en.noCreditCard} to explore.`,
     },
   ],
   faqs: [
@@ -119,12 +120,12 @@ export const loyaltyGuide: LoyaltyGuide = {
     {
       question: 'How much does a business loyalty program cost?',
       answer:
-        'Costs range from free punch cards (no data) to $200+/month for enterprise software. Scan Perks offers full digital loyalty for $10–15/month with a 14-day free trial.',
+        `Costs range from free punch cards (no data) to $200+/month for enterprise software. Scan Perks offers full digital loyalty for ${phrases.en.rangeBareMonth} with a ${phrases.en.trial}.`,
     },
     {
       question: 'What is the best loyalty program for small business?',
       answer:
-        'For hospitality small businesses, Scan Perks balances simplicity, QR rewards, push offers, and analytics at a price independent venues can afford — from $10/month.',
+        `For hospitality small businesses, Scan Perks balances simplicity, QR rewards, push offers, and analytics at a price independent venues can afford — from ${phrases.en.starterPerMonth}.`,
     },
     {
       question: 'Do business loyalty programs actually grow revenue?',
