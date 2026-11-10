@@ -9,6 +9,7 @@ import { blogArticles, getBlogArticle } from '../../data/blogArticles';
 import { SITE, appSignupUrl } from '../../data/content';
 import { cafeConversationalFaqs } from '../../data/conversationalFaqs';
 import { buildBlogPostingSchema } from '../../seo/schema';
+import { phrases } from '../../data/site-facts';
 
 export function getStaticPaths() {
   return blogArticles.map((a) => ({ params: { slug: a.slug } }));
@@ -91,10 +92,10 @@ if (article.namedVendors) {
           <p class="feature-card__desc" style="font-size:1rem;">
             <strong>Own a cafe, pub or bar?</strong> Scan Perks is a counter-QR stamp card: customers scan it in the free
             Scan Perks app and collect stamps toward a reward you choose. Set up in about 5 minutes at app.scan-perks.com;
-            14-day free trial with no card, then $10/month.
+            {phrases.en.trial} with {phrases.en.noCard}, then {phrases.en.starterPerMonth}.
           </p>
           <div class="hero__actions" style="margin-top:1rem;">
-            <AppCta class="btn btn--primary" position="owner-box">Start 14-day free trial</AppCta>
+            <AppCta class="btn btn--primary" position="owner-box">Start {phrases.en.trial}</AppCta>
             <a href={article.clusterPage.href} class="btn btn--glass">{article.clusterPage.label}</a>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { SITE } from '../data/content';
 import { FOUNDER } from '../data/founder';
+import { phrases } from '../data/site-facts';
 
 export interface SchemaPageInput {
   title: string;
@@ -108,16 +109,16 @@ export function buildBaseSchema(page: SchemaPageInput) {
         {
           '@type': 'Offer',
           name: 'Starter Plan',
-          price: '10.00',
+          price: phrases.en.priceSchemaStarter,
           priceCurrency: 'USD',
-          description: 'QR stamp loyalty for one venue — up to 500 scans a month. 14-day free trial, no card.',
+          description: `QR stamp loyalty ${phrases.en.forOneVenue} — ${phrases.en.scansUpTo}. ${phrases.en.trial}, ${phrases.en.noCard}.`,
         },
         {
           '@type': 'Offer',
           name: 'Growth Plan',
-          price: '15.00',
+          price: phrases.en.priceSchemaGrowth,
           priceCurrency: 'USD',
-          description: 'Unlimited scans for busy bars, cafes, and restaurants. 14-day free trial, no card.',
+          description: `${phrases.en.unlimitedScansCap} for busy bars, cafes, and restaurants. ${phrases.en.trial}, ${phrases.en.noCard}.`,
         },
       ],
     },
@@ -178,7 +179,7 @@ export function buildLoyaltyServiceSchema(input: {
     ],
     offers: {
       '@type': 'Offer',
-      price: '10.00',
+      price: phrases.en.priceSchemaStarter,
       priceCurrency: 'USD',
       url: `${SITE.url}/pricing/`,
     },
@@ -333,11 +334,11 @@ export function buildSoftwareApplicationSchema() {
     },
     offers: {
       '@type': 'Offer',
-      price: '10.00',
+      price: phrases.en.priceSchemaStarter,
       priceCurrency: 'USD',
       priceValidUntil: '2027-12-31',
       url: `${SITE.url}/pricing/`,
-      description: 'Starter plan, 500 scans a month. 14-day free trial, no card to start.',
+      description: `Starter plan, ${phrases.en.scans}. ${phrases.en.trial}, ${phrases.en.noCard} to start.`,
     },
     provider: {
       '@type': 'Organization',

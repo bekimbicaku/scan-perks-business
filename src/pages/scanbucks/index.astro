@@ -8,32 +8,33 @@ import FAQSection from '../../components/FAQSection.astro';
 import { SITE } from '../../data/content';
 import { buildSoftwareApplicationSchema } from '../../seo/schema';
 import { getHreflangLinks, getPageDef } from '../../i18n/pages';
+import { phrases } from '../../data/site-facts';
 
 const scanbucksFaqs = [
   {
     question: 'Is Scanbucks the same as Scan Perks?',
     answer:
-      'Yes. Scan Perks (scan-perks.com) is the hospitality loyalty platform often searched as "scanbucks" or "scan bucks." It provides QR cafe loyalty apps, pub loyalty schemes, and bar loyalty programs from $10/month at app.scan-perks.com.',
+      `Yes. Scan Perks (scan-perks.com) is the hospitality loyalty platform often searched as "scanbucks" or "scan bucks." It provides QR cafe loyalty apps, pub loyalty schemes, and bar loyalty programs from ${phrases.en.starterPerMonth} at app.scan-perks.com.`,
   },
   {
     question: 'What is the Scan Perks app?',
     answer:
-      'Scan Perks is a QR-based loyalty app for cafes, bars, and restaurants. Customers scan venue QR codes to earn rewards; owners manage programs at app.scan-perks.com. Available on iOS, Android, and web — 14-day free trial.',
+      `Scan Perks is a QR-based loyalty app for cafes, bars, and restaurants. Customers scan venue QR codes to earn rewards; owners manage programs at app.scan-perks.com. ${phrases.en.stampLine} ${phrases.en.trial}.`,
   },
   {
     question: 'How much does Scan Perks (scanbucks) cost?',
     answer:
-      'Scan Perks costs $10/month (Starter, up to 500 scans a month) or $15/month (Growth, unlimited scans). Every venue starts with a 14-day free trial, no card and no contract.',
+      `Scan Perks costs ${phrases.en.starterPerMonth} (Starter, ${phrases.en.scansUpTo}) or ${phrases.en.growthPerMonth} (Growth, ${phrases.en.unlimitedScans}). Every venue starts with a ${phrases.en.trial}, ${phrases.en.noCard} and no contract.`,
   },
 ];
 
 const directAnswer =
-  'Scan Perks (scan-perks.com) is the QR loyalty platform behind "scanbucks" searches — a cafe loyalty app and pub loyalty scheme for independent venues. Customers scan QR codes to earn rewards; pricing is $10–15/month with a 14-day free trial at app.scan-perks.com.';
+  `Scan Perks (scan-perks.com) is the QR loyalty platform behind "scanbucks" searches — a cafe loyalty app and pub loyalty scheme for independent venues. Customers scan QR codes to earn rewards; pricing is ${phrases.en.rangeBareMonth} with a ${phrases.en.trial} at app.scan-perks.com.`;
 ---
 
 <BaseLayout
-  title="Scanbucks = Scan Perks — Cafe & Pub Loyalty App $10/mo"
-  description="Scanbucks is Scan Perks: QR cafe loyalty app & pub loyalty card for owners. iOS/Android, no POS — $10/mo, 14-day free trial at app.scan-perks.com."
+  title={`Scanbucks = Scan Perks — Cafe & Pub Loyalty App ${phrases.en.starterPerMo}`}
+  description={`Scanbucks is Scan Perks: QR cafe loyalty app & pub loyalty card for owners. iOS/Android, no POS — ${phrases.en.starterPerMo}, ${phrases.en.trial} at app.scan-perks.com.`}
   path="/scanbucks/"
   lang="en"
   hreflangLinks={getHreflangLinks(getPageDef('scanbucks')!)}
@@ -52,7 +53,7 @@ const directAnswer =
       <span class="section__label">Scanbucks</span>
       <h1 class="page-hero__title">Looking for Scanbucks? You're at Scan Perks.</h1>
       <p class="page-hero__desc">
-        Scan Perks is the QR loyalty platform for cafes, pubs, and bars — cafe loyalty app, pub loyalty scheme, and bar loyalty programs from $10/month.
+        Scan Perks is the QR loyalty platform for cafes, pubs, and bars — cafe loyalty app, pub loyalty scheme, and bar loyalty programs from {phrases.en.starterPerMonth}.
       </p>
       <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
         <AppCta class="btn btn--primary btn--lg">Start Free — app.scan-perks.com</AppCta>
@@ -68,7 +69,7 @@ const directAnswer =
         <li><a href="/cafe-loyalty-app/">Cafe loyalty app</a> — coffee shop loyalty programs</li>
         <li><a href="/bar-loyalty-program/">Pub loyalty scheme</a> — pub loyalty card via QR</li>
         <li><a href="/qr-code-loyalty-program/">QR code loyalty program</a> — loyalty QR for venues</li>
-        <li><a href="/pricing/">Pricing</a> — $10/mo Starter, 14-day free trial</li>
+        <li><a href="/pricing/">Pricing</a> — {phrases.en.starterPerMo} Starter, {phrases.en.trial}</li>
       </ul>
     </div>
   </section>

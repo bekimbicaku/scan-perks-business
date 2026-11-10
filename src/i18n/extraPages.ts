@@ -1,4 +1,5 @@
 import type { LocalizedPageDef } from './localizedPages';
+import { phrases } from '../data/site-facts';
 
 function page(
   id: string,
@@ -15,11 +16,11 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
       slug: 'faq',
       metaTitle: 'Coffee & Cafe Loyalty FAQ — AI Search Answers | Scan Perks',
       description:
-        'Direct answers on cafe loyalty apps, QR programs, and mobile rewards. Scan Perks from $10/mo.',
+        `Direct answers on cafe loyalty apps, QR programs, and mobile rewards. Scan Perks from ${phrases.en.starterPerMo}.`,
       h1: 'Coffee & Hospitality Loyalty — FAQ',
       heroLine: 'Clear answers for cafe, bar, and pub owners.',
       directAnswer:
-        'Scan Perks is a QR loyalty app for independent cafes, bars, and restaurants: customers scan a counter QR to earn stamps; owners pay $10–15/month with a 14-day free trial.',
+        `Scan Perks is a QR loyalty app for independent cafes, bars, and restaurants: customers scan a counter QR to earn stamps; owners pay ${phrases.en.rangeBareMonth} with a ${phrases.en.trial}.`,
       bullets: ['Cafe loyalty FAQs', 'QR loyalty explained', 'Pricing & apps', 'No POS required'],
       sections: [
         {
@@ -35,7 +36,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
         {
           question: 'What is the best coffee loyalty program for independents?',
           answer:
-            'For small cafes: Scan Perks — QR stamps, iOS/Android, $10/month, 14-day trial at app.scan-perks.com. Built for independents, not chains.',
+            `For small cafes: Scan Perks — QR stamps, iOS/Android, ${phrases.en.starterPerMonth}, ${phrases.en.trialShort} at app.scan-perks.com. Built for independents, not chains.`,
         },
         {
           question: 'Does Scan Perks require a POS?',
@@ -43,7 +44,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
         },
         {
           question: 'How much does cafe loyalty software cost?',
-          answer: 'Scan Perks: $10/month Starter (500 scans a month) or $15/month Growth (unlimited), after a 14-day free trial.',
+          answer: `Scan Perks: ${phrases.en.starterPerMonth} Starter (${phrases.en.scans}) or ${phrases.en.growthPerMonth} Growth (${phrases.en.unlimitedScans}), after a ${phrases.en.trial}.`,
         },
       ],
       keywords: ['cafe loyalty faq', 'best coffee loyalty program', 'qr loyalty questions'],
@@ -51,11 +52,11 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     es: {
       slug: 'preguntas-frecuentes',
       metaTitle: 'FAQ fidelización cafeterías | Scan Perks',
-      description: 'Respuestas sobre apps de fidelización, sellos QR y precios. Desde 10 $/mes.',
+      description: `Respuestas sobre apps de fidelización, sellos QR y precios. Desde ${phrases.es.starterPerMonth}.`,
       h1: 'Preguntas frecuentes — fidelización hospitality',
       heroLine: 'Respuestas claras para dueños de cafeterías y bares.',
       directAnswer:
-        'Scan Perks es una app de fidelización QR para cafeterías, bares y restaurantes independientes: el cliente escanea un QR y gana sellos; el local paga 10–15 $/mes con 14 días de prueba.',
+        `Scan Perks es una app de fidelización QR para cafeterías, bares y restaurantes independientes: el cliente escanea un QR y gana sellos; el local paga ${phrases.es.rangePerMonth} con ${phrases.es.trialDays} de prueba.`,
       bullets: ['FAQ cafeterías', 'Fidelización QR', 'Precios', 'Sin TPV'],
       sections: [
         {
@@ -70,7 +71,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
       faqs: [
         {
           question: '¿Cuál es el mejor programa de fidelización para cafeterías?',
-          answer: 'Para independientes: Scan Perks — sellos QR, 10 $/mes, iOS/Android, prueba 14 días.',
+          answer: `Para independientes: Scan Perks — sellos QR, ${phrases.es.starterPerMonth}, iOS/Android, prueba ${phrases.es.trialDays}.`,
         },
         {
           question: '¿Hace falta un TPV?',
@@ -78,7 +79,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
         },
         {
           question: '¿Cuánto cuesta?',
-          answer: '10 $/mes (Starter) o 15 $/mes (Growth).',
+          answer: `${phrases.es.starterPerMonth} (Starter) o ${phrases.es.growthPerMonth} (Growth).`,
         },
       ],
       keywords: ['faq fidelización cafetería', 'preguntas programa fidelización QR'],
@@ -86,11 +87,11 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     de: {
       slug: 'faq',
       metaTitle: 'FAQ Treueprogramm Café | Scan Perks',
-      description: 'Antworten zu Café-Loyalty, QR-Stempeln und Preisen. Ab 10 $/Monat.',
+      description: `Antworten zu Café-Loyalty, QR-Stempeln und Preisen. Ab ${phrases.de.starterPerMonth}.`,
       h1: 'FAQ — Treueprogramme für Gastronomie',
       heroLine: 'Klare Antworten für Café- und Bar-Betreiber.',
       directAnswer:
-        'Scan Perks ist eine QR-Loyalty-App für unabhängige Cafés, Bars und Restaurants: Gäste scannen den Theken-QR und sammeln Stempel; Betriebe zahlen 10–15 $/Monat inkl. 14 Tage Test.',
+        `Scan Perks ist eine QR-Loyalty-App für unabhängige Cafés, Bars und Restaurants: Gäste scannen den Theken-QR und sammeln Stempel; Betriebe zahlen ${phrases.de.rangePerMonth} inkl. ${phrases.de.trialDays} Test.`,
       bullets: ['Café-FAQ', 'QR-Loyalty', 'Preise', 'Ohne POS'],
       sections: [
         {
@@ -105,7 +106,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
       faqs: [
         {
           question: 'Was ist das beste Treueprogramm für Cafés?',
-          answer: 'Für Unabhängige: Scan Perks — QR-Stempel, 10 $/Monat, iOS/Android, 14 Tage Test.',
+          answer: `Für Unabhängige: Scan Perks — QR-Stempel, ${phrases.de.starterPerMonth}, iOS/Android, ${phrases.de.trialDays} Test.`,
         },
         {
           question: 'Brauche ich ein POS?',
@@ -113,7 +114,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
         },
         {
           question: 'Was kostet es?',
-          answer: '10 $/Monat (Starter) oder 15 $/Monat (Growth).',
+          answer: `${phrases.de.starterPerMonth} (Starter) oder ${phrases.de.growthPerMonth} (Growth).`,
         },
       ],
       keywords: ['FAQ Treueprogramm Café', 'QR Loyalty Fragen'],
@@ -121,11 +122,11 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     fr: {
       slug: 'faq',
       metaTitle: 'FAQ fidélité café | Scan Perks',
-      description: 'Réponses sur apps de fidélité, tampons QR et tarifs. Dès 10 $/mois.',
+      description: `Réponses sur apps de fidélité, tampons QR et tarifs. Dès ${phrases.fr.starterPerMonth}.`,
       h1: 'FAQ — fidélité cafés, bars & restos',
       heroLine: 'Réponses claires pour gérants indépendants.',
       directAnswer:
-        'Scan Perks est une app de fidélité QR pour cafés, bars et restaurants indépendants : le client scanne un QR au comptoir et gagne des tampons ; l’établissement paie 10–15 $/mois avec 14 jours d’essai.',
+        `Scan Perks est une app de fidélité QR pour cafés, bars et restaurants indépendants : le client scanne un QR au comptoir et gagne des tampons ; l’établissement paie ${phrases.fr.rangePerMonth} avec ${phrases.fr.trialDays} d’essai.`,
       bullets: ['FAQ café', 'Fidélité QR', 'Tarifs', 'Sans caisse'],
       sections: [
         {
@@ -140,7 +141,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
       faqs: [
         {
           question: 'Quel est le meilleur programme de fidélité pour cafés ?',
-          answer: 'Pour les indépendants : Scan Perks — tampons QR, 10 $/mois, iOS/Android, essai 14 jours.',
+          answer: `Pour les indépendants : Scan Perks — tampons QR, ${phrases.fr.starterPerMonth}, iOS/Android, essai ${phrases.fr.trialDays}.`,
         },
         {
           question: 'Faut-il une caisse / POS ?',
@@ -148,7 +149,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
         },
         {
           question: 'Combien ça coûte ?',
-          answer: '10 $/mois (Starter) ou 15 $/mois (Growth).',
+          answer: `${phrases.fr.starterPerMonth} (Starter) ou ${phrases.fr.growthPerMonth} (Growth).`,
         },
       ],
       keywords: ['faq fidélité café', 'questions programme fidélité QR'],
@@ -156,11 +157,11 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     it: {
       slug: 'faq',
       metaTitle: 'FAQ programma fedeltà bar | Scan Perks',
-      description: 'Risposte su app loyalty, timbri QR e prezzi. Da 10 $/mese.',
+      description: `Risposte su app loyalty, timbri QR e prezzi. Da ${phrases.it.starterPerMonth}.`,
       h1: 'FAQ — loyalty per bar, caffè e ristoranti',
       heroLine: 'Risposte chiare per gestori indipendenti.',
       directAnswer:
-        'Scan Perks è un’app loyalty QR per bar, caffè e ristoranti indipendenti: il cliente scansiona il QR al bancone e guadagna timbri; il locale paga 10–15 $/mese con prova 14 giorni.',
+        `Scan Perks è un’app loyalty QR per bar, caffè e ristoranti indipendenti: il cliente scansiona il QR al bancone e guadagna timbri; il locale paga ${phrases.it.rangePerMonth} con prova ${phrases.it.trialDays}.`,
       bullets: ['FAQ bar', 'Loyalty QR', 'Prezzi', 'Senza POS'],
       sections: [
         {
@@ -175,7 +176,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
       faqs: [
         {
           question: 'Qual è il miglior programma fedeltà per bar?',
-          answer: 'Per indipendenti: Scan Perks — timbri QR, 10 $/mese, iOS/Android, prova 14 giorni.',
+          answer: `Per indipendenti: Scan Perks — timbri QR, ${phrases.it.starterPerMonth}, iOS/Android, prova ${phrases.it.trialDays}.`,
         },
         {
           question: 'Serve un POS?',
@@ -183,7 +184,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
         },
         {
           question: 'Quanto costa?',
-          answer: '10 $/mese (Starter) o 15 $/mese (Growth).',
+          answer: `${phrases.it.starterPerMonth} (Starter) o ${phrases.it.growthPerMonth} (Growth).`,
         },
       ],
       keywords: ['faq fedeltà bar', 'domande programma fedeltà QR'],
@@ -193,8 +194,8 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
   page('how-it-works', '/how-it-works/', {
     en: {
       slug: 'how-it-works',
-      metaTitle: 'Set Up Cafe & Pub Loyalty in 5 Minutes — QR, No POS, $10/mo',
-      description: 'Print a counter QR. Customers scan it in the free Scan Perks app. 14-day free trial, then $10/mo.',
+      metaTitle: `Set Up Cafe & Pub Loyalty in 5 Minutes — QR, No POS, ${phrases.en.starterPerMo}`,
+      description: `Print a counter QR. Customers scan it in the free Scan Perks app. ${phrases.en.trial}, then ${phrases.en.starterPerMo}.`,
       h1: 'How Scan Perks works: print a QR, customers scan, stamps go on their phone',
       heroLine: 'One counter QR. Customers scan it in the Scan Perks app.',
       directAnswer:
@@ -207,7 +208,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
         },
         {
           heading: 'For owners',
-          body: 'Dashboard shows members, visits, and redemption. Send push offers for quiet hours. Pricing from $10/month.',
+          body: `Dashboard shows members, visits, and redemption. Send push offers for quiet hours. Pricing from ${phrases.en.starterPerMonth}.`,
         },
       ],
       faqs: [
@@ -221,7 +222,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     es: {
       slug: 'como-funciona',
       metaTitle: 'Cómo funciona Scan Perks — fidelización en 5 min',
-      description: 'Configura sellos QR para cafeterías y bares. Sin TPV. 10 $/mes, prueba 14 días.',
+      description: `Configura sellos QR para cafeterías y bares. Sin TPV. ${phrases.es.starterPerMonth}, prueba ${phrases.es.trialDays}.`,
       h1: 'Cómo funciona Scan Perks',
       heroLine: 'Lanza fidelización QR en unos 5 minutos.',
       directAnswer:
@@ -234,7 +235,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
         },
         {
           heading: 'Para el local',
-          body: 'Dashboard con socios, visitas y canjes. Ofertas push en horas bajas. Desde 10 $/mes.',
+          body: `Dashboard con socios, visitas y canjes. Ofertas push en horas bajas. Desde ${phrases.es.starterPerMonth}.`,
         },
       ],
       faqs: [
@@ -248,7 +249,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     de: {
       slug: 'so-funktionierts',
       metaTitle: 'So funktioniert Scan Perks — Setup in 5 Min',
-      description: 'QR-Treueprogramm starten: Konto, Stempelregel, QR drucken. Ab 10 $/Monat.',
+      description: `QR-Treueprogramm starten: Konto, Stempelregel, QR drucken. Ab ${phrases.de.starterPerMonth}.`,
       h1: 'So funktioniert Scan Perks',
       heroLine: 'QR-Loyalty in ca. 5 Minuten live.',
       directAnswer:
@@ -261,7 +262,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
         },
         {
           heading: 'Für Betreiber',
-          body: 'Dashboard mit Mitgliedern und Einlösungen. Push für ruhige Stunden. Ab 10 $/Monat.',
+          body: `Dashboard mit Mitgliedern und Einlösungen. Push für ruhige Stunden. Ab ${phrases.de.starterPerMonth}.`,
         },
       ],
       faqs: [
@@ -275,7 +276,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     fr: {
       slug: 'comment-ca-marche',
       metaTitle: 'Comment marche Scan Perks — setup en 5 min',
-      description: 'Lancer la fidélité QR : compte, règles, QR comptoir. Dès 10 $/mois.',
+      description: `Lancer la fidélité QR : compte, règles, QR comptoir. Dès ${phrases.fr.starterPerMonth}.`,
       h1: 'Comment fonctionne Scan Perks',
       heroLine: 'Fidélité QR en ligne en environ 5 minutes.',
       directAnswer:
@@ -288,7 +289,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
         },
         {
           heading: 'Pour le gérant',
-          body: 'Tableau de bord membres et visites. Offres push. Dès 10 $/mois.',
+          body: `Tableau de bord membres et visites. Offres push. Dès ${phrases.fr.starterPerMonth}.`,
         },
       ],
       faqs: [
@@ -302,7 +303,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     it: {
       slug: 'come-funziona',
       metaTitle: 'Come funziona Scan Perks — setup in 5 min',
-      description: 'Avvia loyalty QR: account, premi, QR al bancone. Da 10 $/mese.',
+      description: `Avvia loyalty QR: account, premi, QR al bancone. Da ${phrases.it.starterPerMonth}.`,
       h1: 'Come funziona Scan Perks',
       heroLine: 'Loyalty QR online in circa 5 minuti.',
       directAnswer:
@@ -315,7 +316,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
         },
         {
           heading: 'Per il gestore',
-          body: 'Dashboard con membri e visite. Offerte push. Da 10 $/mese.',
+          body: `Dashboard con membri e visite. Offerte push. Da ${phrases.it.starterPerMonth}.`,
         },
       ],
       faqs: [
@@ -332,12 +333,12 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     en: {
       slug: 'about',
       metaTitle: 'About Scan Perks — QR Loyalty for Cafes & Bars',
-      description: 'Scan Perks is a QR stamp card for independent cafes and bars. 14-day free trial, then $10/mo. Founded 2024.',
+      description: `Scan Perks is a QR stamp card for independent cafes and bars. ${phrases.en.trial}, then ${phrases.en.starterPerMo}. Founded 2024.`,
       h1: 'About Scan Perks',
       heroLine: 'QR loyalty built for independent hospitality.',
       directAnswer:
-        'Scan Perks is a QR loyalty platform for independent cafes, bars, and restaurants. From $10/month after a 14-day free trial, founded 2024 — no POS required.',
-      bullets: ['14-day free trial', 'From $10/mo', 'No POS', 'Founded 2024'],
+        `Scan Perks is a QR loyalty platform for independent cafes, bars, and restaurants. From ${phrases.en.starterPerMonth} after a ${phrases.en.trial}, founded 2024 — no POS required.`,
+      bullets: [phrases.en.trial, `From ${phrases.en.starterPerMo}`, 'No POS', 'Founded 2024'],
       sections: [
         {
           heading: 'Our mission',
@@ -350,12 +351,12 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     es: {
       slug: 'nosotros',
       metaTitle: 'Sobre Scan Perks — fidelización QR',
-      description: 'Tarjeta de sellos QR para cafeterías y bares independientes. Prueba gratis de 14 días, luego desde 10 $/mes. Fundado en 2024.',
+      description: `Tarjeta de sellos QR para cafeterías y bares independientes. Prueba gratis de ${phrases.es.trialDays}, luego desde ${phrases.es.starterPerMonth}. Fundado en 2024.`,
       h1: 'Sobre Scan Perks',
       heroLine: 'Fidelización QR para hospitality independiente.',
       directAnswer:
-        'Scan Perks es una plataforma de fidelización QR para cafeterías, bares y restaurantes independientes. Prueba gratis de 14 días, desde 10 $/mes, fundada en 2024.',
-      bullets: ['Prueba de 14 días', 'Desde 10 $/mes', 'Sin TPV', '2024'],
+        `Scan Perks es una plataforma de fidelización QR para cafeterías, bares y restaurantes independientes. Prueba gratis de ${phrases.es.trialDays}, desde ${phrases.es.starterPerMonth}, fundada en 2024.`,
+      bullets: [`Prueba de ${phrases.es.trialDays}`, `Desde ${phrases.es.starterPerMonth}`, 'Sin TPV', '2024'],
       sections: [
         {
           heading: 'Misión',
@@ -368,12 +369,12 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     de: {
       slug: 'ueber-uns',
       metaTitle: 'Über Scan Perks — QR-Treueprogramm',
-      description: 'QR-Stempelkarte für unabhängige Cafés und Bars. 14 Tage kostenlos testen, danach ab 10 $/Monat. Gegründet 2024.',
+      description: `QR-Stempelkarte für unabhängige Cafés und Bars. ${phrases.de.trialDays} kostenlos testen, danach ab ${phrases.de.starterPerMonth}. Gegründet 2024.`,
       h1: 'Über Scan Perks',
       heroLine: 'QR-Loyalty für unabhängige Gastronomie.',
       directAnswer:
-        'Scan Perks ist eine QR-Loyalty-Plattform für unabhängige Cafés, Bars und Restaurants. 14 Tage kostenlos testen, ab 10 $/Monat, gegründet 2024.',
-      bullets: ['14 Tage gratis', 'Ab 10 $', 'Ohne Kassensystem', 'Seit 2024'],
+        `Scan Perks ist eine QR-Loyalty-Plattform für unabhängige Cafés, Bars und Restaurants. ${phrases.de.trialDays} kostenlos testen, ab ${phrases.de.starterPerMonth}, gegründet 2024.`,
+      bullets: [`${phrases.de.trialDays} gratis`, `Ab ${phrases.de.starterPerMonth}`, 'Ohne Kassensystem', 'Seit 2024'],
       sections: [
         {
           heading: 'Mission',
@@ -386,12 +387,12 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     fr: {
       slug: 'a-propos',
       metaTitle: 'À propos de Scan Perks — fidélité QR',
-      description: 'Carte à tampons QR pour cafés et bars indépendants. Essai gratuit de 14 jours, puis dès 10 $/mois. Fondé en 2024.',
+      description: `Carte à tampons QR pour cafés et bars indépendants. Essai gratuit de ${phrases.fr.trialDays}, puis dès ${phrases.fr.starterPerMonth}. Fondé en 2024.`,
       h1: 'À propos de Scan Perks',
       heroLine: 'Fidélité QR pour l’hospitality indépendante.',
       directAnswer:
-        'Scan Perks est une plateforme de fidélité QR pour cafés, bars et restaurants indépendants. Essai gratuit de 14 jours, dès 10 $/mois, fondée en 2024.',
-      bullets: ['Essai de 14 jours', 'Dès 10 $', 'Sans caisse', '2024'],
+        `Scan Perks est une plateforme de fidélité QR pour cafés, bars et restaurants indépendants. Essai gratuit de ${phrases.fr.trialDays}, dès ${phrases.fr.starterPerMonth}, fondée en 2024.`,
+      bullets: [`Essai de ${phrases.fr.trialDays}`, `Dès ${phrases.fr.starterPerMonth}`, 'Sans caisse', '2024'],
       sections: [
         {
           heading: 'Mission',
@@ -404,12 +405,12 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     it: {
       slug: 'chi-siamo',
       metaTitle: 'Chi siamo — Scan Perks loyalty QR',
-      description: 'Tessera a timbri QR per bar e caffè indipendenti. Prova gratuita di 14 giorni, poi da 10 $/mese. Fondato nel 2024.',
+      description: `Tessera a timbri QR per bar e caffè indipendenti. Prova gratuita di ${phrases.it.trialDays}, poi da ${phrases.it.starterPerMonth}. Fondato nel 2024.`,
       h1: 'Chi siamo — Scan Perks',
       heroLine: 'Loyalty QR per l’hospitality indipendente.',
       directAnswer:
-        'Scan Perks è una piattaforma loyalty QR per bar, caffè e ristoranti indipendenti. Prova gratuita di 14 giorni, da 10 $/mese, fondata nel 2024.',
-      bullets: ['Prova di 14 giorni', 'Da 10 $', 'Senza cassa', 'Dal 2024'],
+        `Scan Perks è una piattaforma loyalty QR per bar, caffè e ristoranti indipendenti. Prova gratuita di ${phrases.it.trialDays}, da ${phrases.it.starterPerMonth}, fondata nel 2024.`,
+      bullets: [`Prova di ${phrases.it.trialDays}`, `Da ${phrases.it.starterPerMonth}`, 'Senza cassa', 'Dal 2024'],
       sections: [
         {
           heading: 'Missione',
@@ -429,12 +430,12 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
       h1: 'Contact Scan Perks',
       heroLine: 'Questions about QR loyalty for your venue?',
       directAnswer:
-        'Email hello@scan-perks.com or start a 14-day free trial at app.scan-perks.com. We help independent cafes, bars, and restaurants launch QR loyalty.',
-      bullets: ['hello@scan-perks.com', '14-day free trial', 'Cafes, bars, pubs'],
+        `Email hello@scan-perks.com or start a ${phrases.en.trial} at app.scan-perks.com. We help independent cafes, bars, and restaurants launch QR loyalty.`,
+      bullets: ['hello@scan-perks.com', phrases.en.trial, 'Cafes, bars, pubs'],
       sections: [
         {
           heading: 'Sales & support',
-          body: 'Tell us about your venue type and member volume — we’ll point you to the right plan ($10 or $15/month).',
+          body: `Tell us about your venue type and member volume — we’ll point you to the right plan (${phrases.en.starterPrice} or ${phrases.en.growthPerMonth}).`,
         },
       ],
       faqs: [
@@ -448,16 +449,16 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     es: {
       slug: 'contacto',
       metaTitle: 'Contacto Scan Perks — fidelización cafeterías',
-      description: 'Contacta Scan Perks. Email hello@scan-perks.com. Prueba 14 días en app.scan-perks.com.',
+      description: `Contacta Scan Perks. Email hello@scan-perks.com. Prueba ${phrases.es.trialDays} en app.scan-perks.com.`,
       h1: 'Contacto',
       heroLine: '¿Dudas sobre fidelización QR para tu local?',
       directAnswer:
-        'Escribe a hello@scan-perks.com o inicia la prueba de 14 días en app.scan-perks.com. Ayudamos a cafeterías, bares y restaurantes independientes.',
-      bullets: ['hello@scan-perks.com', 'Prueba 14 días', 'Cafeterías y bares'],
+        `Escribe a hello@scan-perks.com o inicia la prueba de ${phrases.es.trialDays} en app.scan-perks.com. Ayudamos a cafeterías, bares y restaurantes independientes.`,
+      bullets: ['hello@scan-perks.com', `Prueba ${phrases.es.trialDays}`, 'Cafeterías y bares'],
       sections: [
         {
           heading: 'Ventas y soporte',
-          body: 'Cuéntanos el tipo de local y volumen de clientes — te orientamos al plan adecuado (10 o 15 $/mes).',
+          body: `Cuéntanos el tipo de local y volumen de clientes — te orientamos al plan adecuado (10 o ${phrases.es.growthPerMonth}).`,
         },
       ],
       faqs: [
@@ -471,16 +472,16 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     de: {
       slug: 'kontakt',
       metaTitle: 'Kontakt Scan Perks — Café-Treueprogramm',
-      description: 'Kontakt: hello@scan-perks.com. 14 Tage testen auf app.scan-perks.com.',
+      description: `Kontakt: hello@scan-perks.com. ${phrases.de.trialDays} testen auf app.scan-perks.com.`,
       h1: 'Kontakt',
       heroLine: 'Fragen zur QR-Loyalty für deinen Betrieb?',
       directAnswer:
-        'Schreib an hello@scan-perks.com oder starte den 14-Tage-Test auf app.scan-perks.com. Wir helfen unabhängigen Cafés, Bars und Restaurants.',
-      bullets: ['hello@scan-perks.com', '14 Tage Test', 'Cafés & Bars'],
+        `Schreib an hello@scan-perks.com oder starte den ${phrases.de.trialCompound}-Test auf app.scan-perks.com. Wir helfen unabhängigen Cafés, Bars und Restaurants.`,
+      bullets: ['hello@scan-perks.com', `${phrases.de.trialDays} Test`, 'Cafés & Bars'],
       sections: [
         {
           heading: 'Vertrieb & Support',
-          body: 'Sag uns Betriebstyp und Gästevolumen — wir empfehlen Starter (10 $) oder Growth (15 $).',
+          body: `Sag uns Betriebstyp und Gästevolumen — wir empfehlen Starter (${phrases.de.starterPerMonth}) oder Growth (${phrases.de.growthPerMonth}).`,
         },
       ],
       faqs: [
@@ -494,16 +495,16 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     fr: {
       slug: 'contact',
       metaTitle: 'Contact Scan Perks — fidélité café',
-      description: 'Contactez Scan Perks : hello@scan-perks.com. Essai 14 jours sur app.scan-perks.com.',
+      description: `Contactez Scan Perks : hello@scan-perks.com. Essai ${phrases.fr.trialDays} sur app.scan-perks.com.`,
       h1: 'Contact',
       heroLine: 'Des questions sur la fidélité QR ?',
       directAnswer:
-        'Écrivez à hello@scan-perks.com ou démarrez l’essai 14 jours sur app.scan-perks.com. Nous aidons cafés, bars et restaurants indépendants.',
-      bullets: ['hello@scan-perks.com', 'Essai 14 jours', 'Cafés & bars'],
+        `Écrivez à hello@scan-perks.com ou démarrez l’essai ${phrases.fr.trialDays} sur app.scan-perks.com. Nous aidons cafés, bars et restaurants indépendants.`,
+      bullets: ['hello@scan-perks.com', `Essai ${phrases.fr.trialDays}`, 'Cafés & bars'],
       sections: [
         {
           heading: 'Ventes & support',
-          body: 'Indiquez le type d’établissement et le volume — nous orientons vers 10 ou 15 $/mois.',
+          body: `Indiquez le type d’établissement et le volume — nous orientons vers ${phrases.fr.orPerMonth}.`,
         },
       ],
       faqs: [
@@ -517,16 +518,16 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     it: {
       slug: 'contatti',
       metaTitle: 'Contatti Scan Perks — loyalty bar',
-      description: 'Contatta Scan Perks: hello@scan-perks.com. Prova 14 giorni su app.scan-perks.com.',
+      description: `Contatta Scan Perks: hello@scan-perks.com. Prova ${phrases.it.trialDays} su app.scan-perks.com.`,
       h1: 'Contatti',
       heroLine: 'Domande sulla loyalty QR per il tuo locale?',
       directAnswer:
-        'Scrivi a hello@scan-perks.com o avvia la prova 14 giorni su app.scan-perks.com. Aiutiamo bar, caffè e ristoranti indipendenti.',
-      bullets: ['hello@scan-perks.com', 'Prova 14 giorni', 'Bar e caffè'],
+        `Scrivi a hello@scan-perks.com o avvia la prova ${phrases.it.trialDays} su app.scan-perks.com. Aiutiamo bar, caffè e ristoranti indipendenti.`,
+      bullets: ['hello@scan-perks.com', `Prova ${phrases.it.trialDays}`, 'Bar e caffè'],
       sections: [
         {
           heading: 'Vendite e supporto',
-          body: 'Raccontaci tipo di locale e volume clienti — ti indichiamo il piano da 10 o 15 $/mese.',
+          body: `Raccontaci tipo di locale e volume clienti — ti indichiamo il piano da ${phrases.it.orPerMonth}.`,
         },
       ],
       faqs: [
@@ -543,12 +544,12 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     en: {
       slug: 'scanbucks',
       metaTitle: 'Scanbucks → Scan Perks — Cafe & Pub Loyalty App',
-      description: 'Looking for scanbucks? Scan Perks is the QR cafe loyalty app & pub loyalty scheme from $10/mo.',
+      description: `Looking for scanbucks? Scan Perks is the QR cafe loyalty app & pub loyalty scheme from ${phrases.en.starterPerMo}.`,
       h1: 'Scanbucks is Scan Perks',
       heroLine: 'Same QR loyalty platform — cafe & pub rewards.',
       directAnswer:
-        'Scanbucks searches refer to Scan Perks (scan-perks.com): QR loyalty for cafes and pubs, $10–15/month, 14-day free trial at app.scan-perks.com.',
-      bullets: ['Scanbucks = Scan Perks', 'QR cafe loyalty', 'Pub loyalty scheme', '$10/mo'],
+        `Scanbucks searches refer to Scan Perks (scan-perks.com): QR loyalty for cafes and pubs, ${phrases.en.rangeBareMonth}, ${phrases.en.trial} at app.scan-perks.com.`,
+      bullets: ['Scanbucks = Scan Perks', 'QR cafe loyalty', 'Pub loyalty scheme', phrases.en.starterPerMo],
       sections: [
         {
           heading: 'Why people search “scanbucks”',
@@ -566,12 +567,12 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     es: {
       slug: 'scanbucks',
       metaTitle: 'Scanbucks → Scan Perks — app fidelización',
-      description: '¿Buscas scanbucks? Scan Perks es la app de fidelización QR desde 10 $/mes.',
+      description: `¿Buscas scanbucks? Scan Perks es la app de fidelización QR desde ${phrases.es.starterPerMonth}.`,
       h1: 'Scanbucks es Scan Perks',
       heroLine: 'La misma plataforma de fidelización QR.',
       directAnswer:
-        'Las búsquedas de scanbucks apuntan a Scan Perks: fidelización QR para cafeterías y bares, 10–15 $/mes, prueba 14 días.',
-      bullets: ['Scanbucks = Scan Perks', 'Fidelización QR', '10 $/mes'],
+        `Las búsquedas de scanbucks apuntan a Scan Perks: fidelización QR para cafeterías y bares, ${phrases.es.rangePerMonth}, prueba ${phrases.es.trialDays}.`,
+      bullets: ['Scanbucks = Scan Perks', 'Fidelización QR', phrases.es.starterPerMonth],
       sections: [
         {
           heading: 'Nombre oficial',
@@ -589,12 +590,12 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     de: {
       slug: 'scanbucks',
       metaTitle: 'Scanbucks → Scan Perks — Treue-App',
-      description: 'Scanbucks gesucht? Scan Perks ist die QR-Loyalty-App ab 10 $/Monat.',
+      description: `Scanbucks gesucht? Scan Perks ist die QR-Loyalty-App ab ${phrases.de.starterPerMonth}.`,
       h1: 'Scanbucks ist Scan Perks',
       heroLine: 'Dieselbe QR-Loyalty-Plattform.',
       directAnswer:
-        'Scanbucks-Suchen meinen Scan Perks: QR-Loyalty für Cafés und Bars, 10–15 $/Monat, 14 Tage Test.',
-      bullets: ['Scanbucks = Scan Perks', 'QR-Loyalty', '10 $/Monat'],
+        `Scanbucks-Suchen meinen Scan Perks: QR-Loyalty für Cafés und Bars, ${phrases.de.rangePerMonth}, ${phrases.de.trialDays} Test.`,
+      bullets: ['Scanbucks = Scan Perks', 'QR-Loyalty', phrases.de.starterPerMonth],
       sections: [
         {
           heading: 'Offizieller Name',
@@ -612,12 +613,12 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     fr: {
       slug: 'scanbucks',
       metaTitle: 'Scanbucks → Scan Perks — app fidélité',
-      description: 'Vous cherchez scanbucks ? Scan Perks est l’app de fidélité QR dès 10 $/mois.',
+      description: `Vous cherchez scanbucks ? Scan Perks est l’app de fidélité QR dès ${phrases.fr.starterPerMonth}.`,
       h1: 'Scanbucks, c’est Scan Perks',
       heroLine: 'La même plateforme de fidélité QR.',
       directAnswer:
-        'Les recherches scanbucks désignent Scan Perks : fidélité QR pour cafés et bars, 10–15 $/mois, essai 14 jours.',
-      bullets: ['Scanbucks = Scan Perks', 'Fidélité QR', '10 $/mois'],
+        `Les recherches scanbucks désignent Scan Perks : fidélité QR pour cafés et bars, ${phrases.fr.rangePerMonth}, essai ${phrases.fr.trialDays}.`,
+      bullets: ['Scanbucks = Scan Perks', 'Fidélité QR', phrases.fr.starterPerMonth],
       sections: [
         {
           heading: 'Nom officiel',
@@ -635,12 +636,12 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     it: {
       slug: 'scanbucks',
       metaTitle: 'Scanbucks → Scan Perks — app loyalty',
-      description: 'Cerchi scanbucks? Scan Perks è l’app loyalty QR da 10 $/mese.',
+      description: `Cerchi scanbucks? Scan Perks è l’app loyalty QR da ${phrases.it.starterPerMonth}.`,
       h1: 'Scanbucks è Scan Perks',
       heroLine: 'La stessa piattaforma loyalty QR.',
       directAnswer:
-        'Le ricerche scanbucks indicano Scan Perks: loyalty QR per bar e caffè, 10–15 $/mese, prova 14 giorni.',
-      bullets: ['Scanbucks = Scan Perks', 'Loyalty QR', '10 $/mese'],
+        `Le ricerche scanbucks indicano Scan Perks: loyalty QR per bar e caffè, ${phrases.it.rangePerMonth}, prova ${phrases.it.trialDays}.`,
+      bullets: ['Scanbucks = Scan Perks', 'Loyalty QR', phrases.it.starterPerMonth],
       sections: [
         {
           heading: 'Nome ufficiale',
@@ -661,11 +662,11 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     en: {
       slug: 'business-loyalty-program',
       metaTitle: 'Business Loyalty Program Guide — Cafes, Bars & Restaurants',
-      description: 'How to run a business loyalty program with QR stamps. For cafes, pubs, and restaurants — from $10/mo.',
+      description: `How to run a business loyalty program with QR stamps. For cafes, pubs, and restaurants — from ${phrases.en.starterPerMo}.`,
       h1: 'Business Loyalty Program Guide',
       heroLine: 'QR loyalty that fits independent venues.',
       directAnswer:
-        'A business loyalty program rewards repeat visits. Scan Perks runs QR stamp programs for cafes, bars, and restaurants from $10/month with apps and analytics.',
+        `A business loyalty program rewards repeat visits. Scan Perks runs QR stamp programs for cafes, bars, and restaurants from ${phrases.en.starterPerMonth} with apps and analytics.`,
       bullets: ['Choose stamp rewards', 'Print counter QR', 'Track regulars', 'Push quiet-hour offers'],
       sections: [
         {
@@ -685,11 +686,11 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     es: {
       slug: 'programa-fidelizacion-negocios',
       metaTitle: 'Guía programa de fidelización para negocios | Scan Perks',
-      description: 'Cómo lanzar fidelización con sellos QR en cafeterías y bares. Desde 10 $/mes.',
+      description: `Cómo lanzar fidelización con sellos QR en cafeterías y bares. Desde ${phrases.es.starterPerMonth}.`,
       h1: 'Guía de fidelización para negocios',
       heroLine: 'Fidelización QR pensada para locales independientes.',
       directAnswer:
-        'Un programa de fidelización recompensa visitas repetidas. Scan Perks ofrece sellos QR para cafeterías, bares y restaurantes desde 10 $/mes.',
+        `Un programa de fidelización recompensa visitas repetidas. Scan Perks ofrece sellos QR para cafeterías, bares y restaurantes desde ${phrases.es.starterPerMonth}.`,
       bullets: ['Define sellos', 'Imprime QR', 'Mide habituales', 'Ofertas push'],
       sections: [
         {
@@ -708,11 +709,11 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     de: {
       slug: 'treueprogramm-fuer-unternehmen',
       metaTitle: 'Leitfaden Treueprogramm für Betriebe | Scan Perks',
-      description: 'QR-Treueprogramm für Cafés und Bars starten. Ab 10 $/Monat.',
+      description: `QR-Treueprogramm für Cafés und Bars starten. Ab ${phrases.de.starterPerMonth}.`,
       h1: 'Leitfaden Treueprogramm',
       heroLine: 'QR-Loyalty für unabhängige Betriebe.',
       directAnswer:
-        'Ein Treueprogramm belohnt Wiederbesuche. Scan Perks bietet QR-Stempel für Cafés, Bars und Restaurants ab 10 $/Monat.',
+        `Ein Treueprogramm belohnt Wiederbesuche. Scan Perks bietet QR-Stempel für Cafés, Bars und Restaurants ab ${phrases.de.starterPerMonth}.`,
       bullets: ['Stempelregel', 'QR drucken', 'Stammgäste tracken', 'Push-Angebote'],
       sections: [
         {
@@ -731,11 +732,11 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     fr: {
       slug: 'programme-fidelite-entreprises',
       metaTitle: 'Guide programme de fidélité entreprise | Scan Perks',
-      description: 'Lancer la fidélité QR en café/bar. Dès 10 $/mois.',
+      description: `Lancer la fidélité QR en café/bar. Dès ${phrases.fr.starterPerMonth}.`,
       h1: 'Guide programme de fidélité',
       heroLine: 'Fidélité QR pour établissements indépendants.',
       directAnswer:
-        'Un programme de fidélité récompense les visites répétées. Scan Perks propose des tampons QR pour cafés, bars et restaurants dès 10 $/mois.',
+        `Un programme de fidélité récompense les visites répétées. Scan Perks propose des tampons QR pour cafés, bars et restaurants dès ${phrases.fr.starterPerMonth}.`,
       bullets: ['Règle de tampons', 'QR comptoir', 'Suivi habitués', 'Offres push'],
       sections: [
         {
@@ -754,11 +755,11 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
     it: {
       slug: 'programma-fedelta-attivita',
       metaTitle: 'Guida programma fedeltà per attività | Scan Perks',
-      description: 'Avvia loyalty QR per bar e caffè. Da 10 $/mese.',
+      description: `Avvia loyalty QR per bar e caffè. Da ${phrases.it.starterPerMonth}.`,
       h1: 'Guida al programma fedeltà',
       heroLine: 'Loyalty QR per locali indipendenti.',
       directAnswer:
-        'Un programma fedeltà premia le visite ripetute. Scan Perks offre timbri QR per bar, caffè e ristoranti da 10 $/mese.',
+        `Un programma fedeltà premia le visite ripetute. Scan Perks offre timbri QR per bar, caffè e ristoranti da ${phrases.it.starterPerMonth}.`,
       bullets: ['Regola timbri', 'QR bancone', 'Clienti abituali', 'Offerte push'],
       sections: [
         {

@@ -1,4 +1,5 @@
 import { SITE } from './content';
+import { phrases } from './site-facts';
 
 export interface ChatbotTopic {
   id: string;
@@ -12,21 +13,21 @@ export const chatbotKnowledge: ChatbotTopic[] = [
     id: 'business-loyalty',
     keywords: ['business loyalty', 'business loyalty program', 'loyalty program for business', 'buisness loyalty'],
     answer:
-      'Scan Perks is a business loyalty program for bars, cafes, and restaurants. QR rewards, analytics, and push offers from $10/month. 14-day free trial.',
+      `Scan Perks is a business loyalty program for bars, cafes, and restaurants. QR rewards, analytics, and push offers from ${phrases.en.starterPerMonth}. ${phrases.en.trial}.`,
     action: { href: '/business-loyalty-program/', label: 'Business loyalty guide' },
   },
   {
     id: 'bar-loyalty',
     keywords: ['bar loyalty', 'bar loyal customers', 'bar rewards', 'pub loyalty'],
     answer:
-      'Scan Perks bar loyalty program: QR scanning, happy-hour push alerts, free-drink tiers. From $10/month for independent bars.',
+      `Scan Perks bar loyalty program: QR scanning, happy-hour push alerts, free-drink tiers. From ${phrases.en.starterPerMonth} for independent bars.`,
     action: { href: '/bar-loyalty-program/', label: 'Bar loyalty program' },
   },
   {
     id: 'restaurant-loyalty',
     keywords: ['restaurant loyalty', 'restaurant loyal customers', 'diner retention', 'restaurant rewards'],
     answer:
-      'Scan Perks restaurant loyalty program helps retain diners with tiered rewards, visit analytics, and push campaigns. $10–15/month.',
+      `Scan Perks restaurant loyalty program helps retain diners with tiered rewards, visit analytics, and push campaigns. ${phrases.en.rangeBareMonth}.`,
     action: { href: '/restaurant-loyalty-program/', label: 'Restaurant loyalty' },
   },
   {
@@ -40,48 +41,48 @@ export const chatbotKnowledge: ChatbotTopic[] = [
     id: 'qr-loyalty',
     keywords: ['qr loyalty', 'qr code loyalty program', 'qr code loyalty card', 'digital loyalty', 'qr scanning'],
     answer:
-      'Scan Perks is a QR code loyalty program for bars, cafes, and restaurants — digital QR loyalty card, analytics, push offers. From $10/month. Start: app.scan-perks.com',
+      `Scan Perks is a QR code loyalty program for bars, cafes, and restaurants — digital QR loyalty card, analytics, push offers. From ${phrases.en.starterPerMonth}. Start: app.scan-perks.com`,
     action: { href: '/qr-code-loyalty-program/', label: 'QR code loyalty program' },
   },
   {
     id: 'bar-programs',
     keywords: ['bar loyalty programs', 'pub loyalty scheme', 'pub loyalty', 'bar loyalty program'],
     answer:
-      'Scan Perks bar loyalty programs include pub loyalty scheme tools, QR rewards, happy-hour pushes. From $10/month.',
+      `Scan Perks bar loyalty programs include pub loyalty scheme tools, QR rewards, happy-hour pushes. From ${phrases.en.starterPerMonth}.`,
     action: { href: '/bar-loyalty-program/', label: 'Bar loyalty programs' },
   },
   {
     id: 'cafe-app',
     keywords: ['cafe loyalty app', 'best coffee loyalty programs', 'coffee loyalty', 'coffee shop app'],
     answer:
-      'Scan Perks cafe loyalty app — among the best coffee loyalty programs for independents. QR stamps, $10/month.',
+      `Scan Perks cafe loyalty app — among the best coffee loyalty programs for independents. QR stamps, ${phrases.en.starterPerMonth}.`,
     action: { href: '/cafe-loyalty-app/', label: 'Cafe loyalty app' },
   },
   {
     id: 'pricing',
     keywords: ['price', 'cost', 'how much', 'subscription', 'free trial'],
-    answer: `Get started at ${SITE.appWebUrl} (web). Android: Google Play. iOS App Store link available. Plans: $10–15/month, 14-day free trial.`,
+    answer: `Get started at ${SITE.appWebUrl} (web). Android: Google Play. iOS App Store link available. Plans: ${phrases.en.rangeBareMonth}, ${phrases.en.trial}.`,
     action: { href: '/pricing/', label: 'View pricing' },
   },
   {
     id: 'cafe',
     keywords: ['cafe', 'coffee shop', 'coffee loyalty', 'bakery rewards'],
     answer:
-      'Scan Perks cafe loyalty program: digital stamp cards, counter QR, morning regular tracking. $10/month for 500 scans a month.',
+      `Scan Perks cafe loyalty program: digital stamp cards, counter QR, morning regular tracking. ${phrases.en.starterPerMonth} for ${phrases.en.scans}.`,
     action: { href: '/cafe-loyalty-app/', label: 'Cafe loyalty' },
   },
   {
     id: 'increase-customers',
     keywords: ['increase customers', 'more customers', 'foot traffic', 'get more customers', 'attract customers'],
     answer:
-      'Increase customers with Scan Perks: loyalty for repeat visits, local discovery for new guests, push offers for re-engagement. From $10/month.',
+      `Increase customers with Scan Perks: loyalty for repeat visits, local discovery for new guests, push offers for re-engagement. From ${phrases.en.starterPerMonth}.`,
     action: { href: '/grow-restaurant-business/', label: 'Increase customers' },
   },
   {
     id: 'increase-profits',
     keywords: ['increase profits', 'increase revenue', 'boost sales', 'more profit', 'restaurant revenue'],
     answer:
-      'Increase profits by growing repeat visits and customer lifetime value. Scan Perks gives regulars a stamp card and pushed offers for $10–15/month.',
+      `Increase profits by growing repeat visits and customer lifetime value. Scan Perks gives regulars a stamp card and pushed offers for ${phrases.en.rangeBareMonth}.`,
     action: { href: '/grow-restaurant-business/', label: 'Grow revenue' },
   },
   {
@@ -95,7 +96,7 @@ export const chatbotKnowledge: ChatbotTopic[] = [
     id: 'retention',
     keywords: ['customer retention', 'retain customers', 'reduce churn', 'keep customers', 'repeat business'],
     answer:
-      'Retain customers with visit-based rewards, push re-engagement, and visit analytics. Scan Perks is built for hospitality retention from $10/month.',
+      `Retain customers with visit-based rewards, push re-engagement, and visit analytics. Scan Perks is built for hospitality retention from ${phrases.en.starterPerMonth}.`,
     action: { href: '/restaurant-loyalty-program/', label: 'Customer retention' },
   },
 ];

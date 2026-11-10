@@ -1,9 +1,10 @@
+import { phrases } from './site-facts';
 /** G2 listing copy + US/UK backlink outreach kit (Aug 2026 GSC) */
 
 export const G2_LISTING = {
   productName: 'Scan Perks',
   tagline:
-    'QR loyalty for cafes, bars & pubs. Digital stamp rewards, push offers & analytics from $10/mo. No POS required.',
+    `QR loyalty for cafes, bars & pubs. Digital stamp rewards, push offers & analytics from ${phrases.en.starterPerMo}. No POS required.`,
   website: 'https://scan-perks.com',
   productUrl: 'https://app.scan-perks.com',
   preferredSeoUrls: [
@@ -18,7 +19,7 @@ export const G2_LISTING = {
     'Small Business Software',
   ],
   profileUrl: 'https://www.g2.com/products/scan-perks/reviews',
-  shortDescription: `Scan Perks is a QR-based loyalty platform for independent cafes, bars, pubs, and restaurants. Customers scan a venue QR code to earn stamp-style rewards on iPhone or Android; owners manage rewards, analytics, and push offers from app.scan-perks.com — from $10/month with a 14-day free trial. No POS integration or hardware required.`,
+  shortDescription: `Scan Perks is a QR-based loyalty platform for independent cafes, bars, pubs, and restaurants. Customers scan a venue QR code to earn stamp-style rewards on iPhone or Android; owners manage rewards, analytics, and push offers from app.scan-perks.com — from ${phrases.en.starterPerMonth} with a ${phrases.en.trial}. No POS integration or hardware required.`,
   fullDescription: `Scan Perks is a QR-based loyalty platform built for independent hospitality venues — coffee shops, cafes, bars, pubs, and restaurants.
 
 Instead of paper punch cards or expensive enterprise software, venue owners display a unique QR code at the counter or bar. Customers scan with their iPhone or Android to join a digital loyalty program, earn stamp-style rewards (e.g. buy 9, get 1 free), and keep a digital loyalty card on their phone.
@@ -29,7 +30,7 @@ Who it's for: Single-location independents that want a cafe loyalty app or pub l
 
 Setup: Most venues go live in under 5 minutes — no hardware, no POS API.
 
-Pricing: $10/month (Starter, up to 500 scans a month) or $15/month (Growth, unlimited scans). 14-day free trial with no card, no annual contract.
+Pricing: ${phrases.en.starterPerMonth} (Starter, ${phrases.en.scansUpTo}) or ${phrases.en.growthPerMonth} (Growth, ${phrases.en.unlimitedScans}). ${phrases.en.trial} with ${phrases.en.noCard}, no annual contract.
 
 Platforms: Web dashboard (owners), iOS App Store and Google Play (customers).`,
   features: [
@@ -44,9 +45,9 @@ Platforms: Web dashboard (owners), iOS App Store and Google Play (customers).`,
     'No POS required',
   ],
   pricing: [
-    { name: 'Starter', price: '$10/month', detail: 'Up to 500 scans a month' },
-    { name: 'Growth', price: '$15/month', detail: 'Unlimited members & push notifications' },
-    { name: 'Free trial', price: '14 days', detail: 'No annual contract' },
+    { name: 'Starter', price: phrases.en.starterPerMonth, detail: phrases.en.scansUpToCap },
+    { name: 'Growth', price: phrases.en.growthPerMonth, detail: phrases.en.unlimitedScans },
+    { name: 'Free trial', price: phrases.en.trialDays, detail: 'No annual contract' },
   ],
 } as const;
 
@@ -200,7 +201,7 @@ Hi {{name}},
 
 I enjoyed your piece on {{topic}}. Many independent pubs still use paper punch cards that get lost and give zero visit data.
 
-We published a practical guide on replacing them with a digital pub loyalty card (QR at the bar, ~$10/month, no POS):
+We published a practical guide on replacing them with a digital pub loyalty card (QR at the bar, ~${phrases.en.starterPerMonth}, no POS):
 
 https://scan-perks.com/pub-loyalty-card/
 
@@ -220,7 +221,7 @@ Hi {{name}},
 
 Saw your article on {{topic}}. US bar owners often ask for loyalty that works without switching to Square/Toast.
 
-This page explains a digital pub/bar loyalty card via QR (14-day free trial, $10/mo):
+This page explains a digital pub/bar loyalty card via QR (${phrases.en.trial}, ${phrases.en.starterPerMo}):
 
 https://scan-perks.com/pub-loyalty-card/
 
@@ -240,7 +241,7 @@ Your readers who own coffee shops often land on Starbucks-style “rewards app�
 
 https://scan-perks.com/cafe-loyalty-app/
 
-QR stamps, iOS/Android, no POS — from $10/month.
+QR stamps, iOS/Android, no POS — from ${phrases.en.starterPerMonth}.
 
 Happy to contribute a short expert quote.
 
@@ -267,5 +268,5 @@ Scan Perks — https://scan-perks.com`,
 
   embedBadgeHtml: `<a href="https://scan-perks.com/pub-loyalty-card/" title="Pub loyalty card by Scan Perks">Pub loyalty card — Scan Perks</a>`,
 
-  directoryBlurb: `Scan Perks — QR loyalty for independent pubs, bars, and cafes. Digital pub loyalty card & cafe loyalty app from $10/mo. No POS. https://scan-perks.com/pub-loyalty-card/ | https://scan-perks.com/cafe-loyalty-app/`,
+  directoryBlurb: `Scan Perks — QR loyalty for independent pubs, bars, and cafes. Digital pub loyalty card & cafe loyalty app from ${phrases.en.starterPerMo}. No POS. https://scan-perks.com/pub-loyalty-card/ | https://scan-perks.com/cafe-loyalty-app/`,
 } as const;

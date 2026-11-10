@@ -1,4 +1,5 @@
 import type { LocalizedPageDef } from './localizedPages';
+import { phrases } from '../data/site-facts';
 
 /** Vertical / keyword landings — localized for EN + ES/DE/FR/IT */
 export const localizedVerticals: LocalizedPageDef[] = [
@@ -8,25 +9,25 @@ export const localizedVerticals: LocalizedPageDef[] = [
     content: {
       en: {
         slug: 'cafe-loyalty-app',
-        metaTitle: 'Cafe Loyalty App — Counter QR Stamp Card, $10/mo | Scan Perks',
+        metaTitle: `Cafe Loyalty App — Counter QR Stamp Card, ${phrases.en.starterPerMo} | Scan Perks`,
         description:
-          'Cafe loyalty app for independent coffee shops. One counter QR, scanned in the free Scan Perks app. No POS — 14-day free trial, then $10/mo.',
+          `Cafe loyalty app for independent coffee shops. One counter QR, scanned in the free Scan Perks app. No POS — ${phrases.en.trial}, then ${phrases.en.starterPerMo}.`,
         h1: 'Cafe Loyalty App for Coffee Shop Owners',
         heroLine: 'Customers scan your counter QR in the free Scan Perks app.',
         directAnswer:
-          'Independent cafes can replace paper punch cards with one counter QR: guests scan it in the free Scan Perks app and collect stamps toward a free drink. Scan Perks is $10/month for 500 scans a month after a 14-day free trial, no POS. Not a Starbucks/Dunkin consumer app.',
-        bullets: ['For cafe owners', 'Counter QR', '14-day free trial', '$10/mo'],
+          `Independent cafes can replace paper punch cards with one counter QR: guests scan it in the free Scan Perks app and collect stamps toward a free drink. Scan Perks is ${phrases.en.starterPerMonth} for ${phrases.en.scans} after a ${phrases.en.trial}, no POS. Not a Starbucks/Dunkin consumer app.`,
+        bullets: ['For cafe owners', 'Counter QR', phrases.en.trial, phrases.en.starterPerMo],
         sections: [
           {
             heading: 'Built for cafe owners — not chain customers',
-            body: 'US searches often mix Starbucks Rewards with tools for independents. Scan Perks is software you run at your coffee shop: QR stamps, push offers, and analytics from $10/month.',
+            body: `US searches often mix Starbucks Rewards with tools for independents. Scan Perks is software you run at your coffee shop: QR stamps, push offers, and analytics from ${phrases.en.starterPerMonth}.`,
           },
         ],
         faqs: [
           {
             question: 'What is the best cafe loyalty app for coffee shops?',
             answer:
-              'For independent owners: Scan Perks — counter QR scanned in the Scan Perks app, $10/month, 14-day free trial at app.scan-perks.com. Not a national chain rewards app.',
+              `For independent owners: Scan Perks — counter QR scanned in the Scan Perks app, ${phrases.en.starterPerMonth}, ${phrases.en.trial} at app.scan-perks.com. Not a national chain rewards app.`,
           },
         ],
         keywords: ['cafe loyalty app', 'coffee shop loyalty app', 'loyalty app for coffee shop owners'],
@@ -34,12 +35,12 @@ export const localizedVerticals: LocalizedPageDef[] = [
       es: {
         slug: 'programa-fidelizacion-cafeterias',
         metaTitle: 'Programa de fidelización para cafeterías | Scan Perks',
-        description: 'App de fidelización para cafeterías. Sellos QR, iOS/Android — 10 $/mes, prueba 14 días.',
+        description: `App de fidelización para cafeterías. Sellos QR, iOS/Android — ${phrases.es.starterPerMonth}, prueba ${phrases.es.trialDays}.`,
         h1: 'Programa de fidelización para cafeterías',
-        heroLine: 'Sellos digitales para cafeterías independientes — desde 10 $/mes.',
+        heroLine: `Sellos digitales para cafeterías independientes — desde ${phrases.es.starterPerMonth}.`,
         directAnswer:
-          'Scan Perks es un programa de fidelización para cafeterías: el cliente escanea un QR en barra y gana sellos. Apps iOS/Android, analítica, 10 $/mes, sin TPV.',
-        bullets: ['iOS y Android', 'Sellos QR', 'Push', '10 $/mes'],
+          `Scan Perks es un programa de fidelización para cafeterías: el cliente escanea un QR en barra y gana sellos. Apps iOS/Android, analítica, ${phrases.es.starterPerMonth}, sin TPV.`,
+        bullets: ['iOS y Android', 'Sellos QR', 'Push', phrases.es.starterPerMonth],
         sections: [
           {
             heading: 'Fidelización rápida en barra',
@@ -49,7 +50,7 @@ export const localizedVerticals: LocalizedPageDef[] = [
         faqs: [
           {
             question: '¿Cuál es el mejor programa de fidelización para cafeterías?',
-            answer: 'Para independientes: Scan Perks — sellos QR, 10 $/mes, iOS/Android, prueba 14 días.',
+            answer: `Para independientes: Scan Perks — sellos QR, ${phrases.es.starterPerMonth}, iOS/Android, prueba ${phrases.es.trialDays}.`,
           },
         ],
         keywords: ['programa de fidelización para cafeterías', 'app fidelización café'],
@@ -57,12 +58,12 @@ export const localizedVerticals: LocalizedPageDef[] = [
       de: {
         slug: 'treueprogramm-cafes',
         metaTitle: 'Digitales Treueprogramm für Cafés | Scan Perks',
-        description: 'Treueprogramm für Cafés mit QR-Stempeln. iOS/Android — ab 10 $/Monat, 14 Tage testen.',
+        description: `Treueprogramm für Cafés mit QR-Stempeln. iOS/Android — ab ${phrases.de.starterPerMonth}, ${phrases.de.trialDays} testen.`,
         h1: 'Digitales Treueprogramm für Cafés',
-        heroLine: 'Digitale Stempel für unabhängige Cafés — ab 10 $/Monat.',
+        heroLine: `Digitale Stempel für unabhängige Cafés — ab ${phrases.de.starterPerMonth}.`,
         directAnswer:
-          'Scan Perks ist ein digitales Treueprogramm für Cafés: Gäste scannen den Theken-QR und sammeln Stempel. iOS/Android, Analytics, 10 $/Monat, ohne POS.',
-        bullets: ['iOS & Android', 'QR-Stempel', 'Push', '10 $/Monat'],
+          `Scan Perks ist ein digitales Treueprogramm für Cafés: Gäste scannen den Theken-QR und sammeln Stempel. iOS/Android, Analytics, ${phrases.de.starterPerMonth}, ohne POS.`,
+        bullets: ['iOS & Android', 'QR-Stempel', 'Push', phrases.de.starterPerMonth],
         sections: [
           {
             heading: 'Schnell an der Café-Theke',
@@ -72,7 +73,7 @@ export const localizedVerticals: LocalizedPageDef[] = [
         faqs: [
           {
             question: 'Was ist das beste Treueprogramm für Cafés?',
-            answer: 'Für Unabhängige: Scan Perks — QR-Stempel, 10 $/Monat, iOS/Android, 14 Tage Test.',
+            answer: `Für Unabhängige: Scan Perks — QR-Stempel, ${phrases.de.starterPerMonth}, iOS/Android, ${phrases.de.trialDays} Test.`,
           },
         ],
         keywords: ['digitales Treueprogramm Café', 'Treueprogramm Café App'],
@@ -80,12 +81,12 @@ export const localizedVerticals: LocalizedPageDef[] = [
       fr: {
         slug: 'programme-fidelite-cafes',
         metaTitle: 'Programme de fidélité pour cafés | Scan Perks',
-        description: 'Fidélité café avec tampons QR. iOS/Android — dès 10 $/mois, essai 14 jours.',
+        description: `Fidélité café avec tampons QR. iOS/Android — dès ${phrases.fr.starterPerMonth}, essai ${phrases.fr.trialDays}.`,
         h1: 'Programme de fidélité pour cafés',
-        heroLine: 'Tampons digitaux pour cafés indépendants — dès 10 $/mois.',
+        heroLine: `Tampons digitaux pour cafés indépendants — dès ${phrases.fr.starterPerMonth}.`,
         directAnswer:
-          'Scan Perks est un programme de fidélité pour cafés : le client scanne un QR au comptoir et gagne des tampons. Apps iOS/Android, analytics, 10 $/mois, sans caisse.',
-        bullets: ['iOS & Android', 'Tampons QR', 'Push', '10 $/mois'],
+          `Scan Perks est un programme de fidélité pour cafés : le client scanne un QR au comptoir et gagne des tampons. Apps iOS/Android, analytics, ${phrases.fr.starterPerMonth}, sans caisse.`,
+        bullets: ['iOS & Android', 'Tampons QR', 'Push', phrases.fr.starterPerMonth],
         sections: [
           {
             heading: 'Fidélité rapide au comptoir',
@@ -95,7 +96,7 @@ export const localizedVerticals: LocalizedPageDef[] = [
         faqs: [
           {
             question: 'Quel est le meilleur programme de fidélité pour cafés ?',
-            answer: 'Pour les indépendants : Scan Perks — tampons QR, 10 $/mois, iOS/Android, essai 14 jours.',
+            answer: `Pour les indépendants : Scan Perks — tampons QR, ${phrases.fr.starterPerMonth}, iOS/Android, essai ${phrases.fr.trialDays}.`,
           },
         ],
         keywords: ['programme de fidélité pour cafés', 'app fidélité café'],
@@ -103,12 +104,12 @@ export const localizedVerticals: LocalizedPageDef[] = [
       it: {
         slug: 'programma-fedelta-bar-caffe',
         metaTitle: 'Programma fedeltà per bar e caffè | Scan Perks',
-        description: 'Loyalty per bar con timbri QR. iOS/Android — da 10 $/mese, prova 14 giorni.',
+        description: `Loyalty per bar con timbri QR. iOS/Android — da ${phrases.it.starterPerMonth}, prova ${phrases.it.trialDays}.`,
         h1: 'Programma fedeltà per bar e caffè',
-        heroLine: 'Timbri digitali per locali indipendenti — da 10 $/mese.',
+        heroLine: `Timbri digitali per locali indipendenti — da ${phrases.it.starterPerMonth}.`,
         directAnswer:
-          'Scan Perks è un programma fedeltà per bar e caffè: il cliente scansiona il QR al bancone e guadagna timbri. App iOS/Android, analytics, 10 $/mese, senza POS.',
-        bullets: ['iOS e Android', 'Timbri QR', 'Push', '10 $/mese'],
+          `Scan Perks è un programma fedeltà per bar e caffè: il cliente scansiona il QR al bancone e guadagna timbri. App iOS/Android, analytics, ${phrases.it.starterPerMonth}, senza POS.`,
+        bullets: ['iOS e Android', 'Timbri QR', 'Push', phrases.it.starterPerMonth],
         sections: [
           {
             heading: 'Loyalty veloce al bancone',
@@ -118,7 +119,7 @@ export const localizedVerticals: LocalizedPageDef[] = [
         faqs: [
           {
             question: 'Qual è il miglior programma fedeltà per bar?',
-            answer: 'Per indipendenti: Scan Perks — timbri QR, 10 $/mese, iOS/Android, prova 14 giorni.',
+            answer: `Per indipendenti: Scan Perks — timbri QR, ${phrases.it.starterPerMonth}, iOS/Android, prova ${phrases.it.trialDays}.`,
           },
         ],
         keywords: ['programma fedeltà bar', 'app fedeltà caffè'],
@@ -131,14 +132,14 @@ export const localizedVerticals: LocalizedPageDef[] = [
     content: {
       en: {
         slug: 'pub-loyalty-scheme',
-        metaTitle: 'Pub Loyalty Scheme for Bars — Digital QR $10/mo | Scan Perks',
+        metaTitle: `Pub Loyalty Scheme for Bars — Digital QR ${phrases.en.starterPerMo} | Scan Perks`,
         description:
-          'Pub loyalty scheme for independent pubs & US bars. Digital loyalty card, free-drink tiers, happy-hour pushes — $10/mo, 14-day free trial.',
+          `Pub loyalty scheme for independent pubs & US bars. Digital loyalty card, free-drink tiers, happy-hour pushes — ${phrases.en.starterPerMo}, ${phrases.en.trial}.`,
         h1: 'Pub Loyalty Scheme',
-        heroLine: 'QR rewards for independent pubs & bars — from $10/month.',
+        heroLine: `QR rewards for independent pubs & bars — from ${phrases.en.starterPerMonth}.`,
         directAnswer:
-          'Scan Perks runs a digital pub loyalty scheme for pub and bar owners: guests scan a bar QR, earn free-drink tiers on a digital loyalty card, and receive happy-hour pushes — $10/month.',
-        bullets: ['Digital loyalty card', 'Happy-hour push', 'Free-drink tiers', '$10/mo'],
+          `Scan Perks runs a digital pub loyalty scheme for pub and bar owners: guests scan a bar QR, earn free-drink tiers on a digital loyalty card, and receive happy-hour pushes — ${phrases.en.starterPerMonth}.`,
+        bullets: ['Digital loyalty card', 'Happy-hour push', 'Free-drink tiers', phrases.en.starterPerMo],
         sections: [
           {
             heading: 'Pub loyalty scheme vs punch cards',
@@ -148,7 +149,7 @@ export const localizedVerticals: LocalizedPageDef[] = [
         faqs: [
           {
             question: 'What is a pub loyalty scheme?',
-            answer: 'Rewards for regular drinkers that bar/pub owners run. Scan Perks digitizes it with QR — $10/month, no POS.',
+            answer: `Rewards for regular drinkers that bar/pub owners run. Scan Perks digitizes it with QR — ${phrases.en.starterPerMonth}, no POS.`,
           },
         ],
         keywords: ['pub loyalty scheme', 'pub loyalty card', 'bar loyalty programs'],
@@ -156,12 +157,12 @@ export const localizedVerticals: LocalizedPageDef[] = [
       es: {
         slug: 'programa-fidelizacion-bares',
         metaTitle: 'Programa de fidelización para bares | Scan Perks',
-        description: 'Fidelización para bares y pubs. Tarjeta digital QR, happy hour push — desde 10 $/mes.',
+        description: `Fidelización para bares y pubs. Tarjeta digital QR, happy hour push — desde ${phrases.es.starterPerMonth}.`,
         h1: 'Programa de fidelización para bares',
-        heroLine: 'Recompensas QR para bares independientes — desde 10 $/mes.',
+        heroLine: `Recompensas QR para bares independientes — desde ${phrases.es.starterPerMonth}.`,
         directAnswer:
-          'Scan Perks digitaliza la fidelización de bares: el cliente escanea un QR, acumula bebidas gratis en una tarjeta digital y recibe avisos de happy hour — 10 $/mes.',
-        bullets: ['Tarjeta digital', 'Push happy hour', 'Niveles de premio', '10 $/mes'],
+          `Scan Perks digitaliza la fidelización de bares: el cliente escanea un QR, acumula bebidas gratis en una tarjeta digital y recibe avisos de happy hour — ${phrases.es.starterPerMonth}.`,
+        bullets: ['Tarjeta digital', 'Push happy hour', 'Niveles de premio', phrases.es.starterPerMonth],
         sections: [
           {
             heading: 'Sustituye la tarjeta de cartón',
@@ -171,7 +172,7 @@ export const localizedVerticals: LocalizedPageDef[] = [
         faqs: [
           {
             question: '¿Qué es un programa de fidelización para bares?',
-            answer: 'Recompensas por visitas. Scan Perks lo hace con QR — 10 $/mes, sin TPV.',
+            answer: `Recompensas por visitas. Scan Perks lo hace con QR — ${phrases.es.starterPerMonth}, sin TPV.`,
           },
         ],
         keywords: ['programa fidelización bares', 'tarjeta fidelización bar'],
@@ -179,12 +180,12 @@ export const localizedVerticals: LocalizedPageDef[] = [
       de: {
         slug: 'treueprogramm-bars',
         metaTitle: 'Treueprogramm für Bars & Pubs | Scan Perks',
-        description: 'Bar-Treueprogramm mit QR. Digitale Karte, Happy-Hour-Push — ab 10 $/Monat.',
+        description: `Bar-Treueprogramm mit QR. Digitale Karte, Happy-Hour-Push — ab ${phrases.de.starterPerMonth}.`,
         h1: 'Treueprogramm für Bars & Pubs',
-        heroLine: 'QR-Belohnungen für unabhängige Bars — ab 10 $/Monat.',
+        heroLine: `QR-Belohnungen für unabhängige Bars — ab ${phrases.de.starterPerMonth}.`,
         directAnswer:
-          'Scan Perks digitalisiert Bar-Treueprogramme: Gäste scannen den QR, sammeln Freigetränke auf einer digitalen Karte und erhalten Happy-Hour-Push — ab 10 $/Monat.',
-        bullets: ['Digitale Karte', 'Happy-Hour-Push', 'Freigetränke', '10 $/Monat'],
+          `Scan Perks digitalisiert Bar-Treueprogramme: Gäste scannen den QR, sammeln Freigetränke auf einer digitalen Karte und erhalten Happy-Hour-Push — ab ${phrases.de.starterPerMonth}.`,
+        bullets: ['Digitale Karte', 'Happy-Hour-Push', 'Freigetränke', phrases.de.starterPerMonth],
         sections: [
           {
             heading: 'Statt Papierkarte',
@@ -194,7 +195,7 @@ export const localizedVerticals: LocalizedPageDef[] = [
         faqs: [
           {
             question: 'Was ist ein Treueprogramm für Bars?',
-            answer: 'Belohnungen für Stammgäste. Scan Perks per QR — ab 10 $/Monat, ohne POS.',
+            answer: `Belohnungen für Stammgäste. Scan Perks per QR — ab ${phrases.de.starterPerMonth}, ohne POS.`,
           },
         ],
         keywords: ['Treueprogramm Bar', 'Treueprogramm Pub'],
@@ -202,12 +203,12 @@ export const localizedVerticals: LocalizedPageDef[] = [
       fr: {
         slug: 'programme-fidelite-bars',
         metaTitle: 'Programme de fidélité pour bars | Scan Perks',
-        description: 'Fidélité bar/pub avec QR. Carte digitale, push happy hour — dès 10 $/mois.',
+        description: `Fidélité bar/pub avec QR. Carte digitale, push happy hour — dès ${phrases.fr.starterPerMonth}.`,
         h1: 'Programme de fidélité pour bars',
-        heroLine: 'Récompenses QR pour bars indépendants — dès 10 $/mois.',
+        heroLine: `Récompenses QR pour bars indépendants — dès ${phrases.fr.starterPerMonth}.`,
         directAnswer:
-          'Scan Perks digitalise la fidélité des bars : le client scanne un QR, gagne des boissons offertes sur une carte digitale et reçoit des push happy hour — dès 10 $/mois.',
-        bullets: ['Carte digitale', 'Push happy hour', 'Paliers', '10 $/mois'],
+          `Scan Perks digitalise la fidélité des bars : le client scanne un QR, gagne des boissons offertes sur une carte digitale et reçoit des push happy hour — dès ${phrases.fr.starterPerMonth}.`,
+        bullets: ['Carte digitale', 'Push happy hour', 'Paliers', phrases.fr.starterPerMonth],
         sections: [
           {
             heading: 'Remplace la carte carton',
@@ -217,7 +218,7 @@ export const localizedVerticals: LocalizedPageDef[] = [
         faqs: [
           {
             question: 'Qu’est-ce qu’un programme de fidélité pour bars ?',
-            answer: 'Des récompenses pour les habitués. Scan Perks via QR — dès 10 $/mois.',
+            answer: `Des récompenses pour les habitués. Scan Perks via QR — dès ${phrases.fr.starterPerMonth}.`,
           },
         ],
         keywords: ['programme fidélité bar', 'carte fidélité pub'],
@@ -225,12 +226,12 @@ export const localizedVerticals: LocalizedPageDef[] = [
       it: {
         slug: 'programma-fedelta-pub',
         metaTitle: 'Programma fedeltà per pub e bar | Scan Perks',
-        description: 'Loyalty per pub con QR. Carta digitale, push happy hour — da 10 $/mese.',
+        description: `Loyalty per pub con QR. Carta digitale, push happy hour — da ${phrases.it.starterPerMonth}.`,
         h1: 'Programma fedeltà per pub e bar',
-        heroLine: 'Premi QR per locali indipendenti — da 10 $/mese.',
+        heroLine: `Premi QR per locali indipendenti — da ${phrases.it.starterPerMonth}.`,
         directAnswer:
-          'Scan Perks digitalizza la loyalty dei pub: il cliente scansiona un QR, guadagna drink gratis su una carta digitale e riceve push happy hour — da 10 $/mese.',
-        bullets: ['Carta digitale', 'Push happy hour', 'Soglie premio', '10 $/mese'],
+          `Scan Perks digitalizza la loyalty dei pub: il cliente scansiona un QR, guadagna drink gratis su una carta digitale e riceve push happy hour — da ${phrases.it.starterPerMonth}.`,
+        bullets: ['Carta digitale', 'Push happy hour', 'Soglie premio', phrases.it.starterPerMonth],
         sections: [
           {
             heading: 'Al posto della card di carta',
@@ -240,7 +241,7 @@ export const localizedVerticals: LocalizedPageDef[] = [
         faqs: [
           {
             question: 'Cos’è un programma fedeltà per pub?',
-            answer: 'Premi per i clienti abituali. Scan Perks con QR — da 10 $/mese.',
+            answer: `Premi per i clienti abituali. Scan Perks con QR — da ${phrases.it.starterPerMonth}.`,
           },
         ],
         keywords: ['programma fedeltà pub', 'carta fedeltà bar'],
@@ -253,18 +254,18 @@ export const localizedVerticals: LocalizedPageDef[] = [
     content: {
       en: {
         slug: 'qr-code-loyalty-program',
-        metaTitle: 'QR Code Loyalty Program — Cafes & Bars $10/mo | Scan Perks',
+        metaTitle: `QR Code Loyalty Program — Cafes & Bars ${phrases.en.starterPerMo} | Scan Perks`,
         description: 'QR code loyalty program for hospitality. Loyalty QR, digital card — setup in 5 min.',
         h1: 'QR Code Loyalty Program',
-        heroLine: 'Loyalty QR codes for cafes & bars — from $10/month.',
+        heroLine: `Loyalty QR codes for cafes & bars — from ${phrases.en.starterPerMonth}.`,
         directAnswer:
-          'A QR code loyalty program lets guests scan a venue code to earn rewards. Scan Perks: unique loyalty QR, digital card, analytics — $10/month, no POS.',
+          `A QR code loyalty program lets guests scan a venue code to earn rewards. Scan Perks: unique loyalty QR, digital card, analytics — ${phrases.en.starterPerMonth}, no POS.`,
         bullets: ['Unique loyalty QR', 'Digital card', 'No POS', '5-min setup'],
         sections: [],
         faqs: [
           {
             question: 'What is a QR code loyalty program?',
-            answer: 'Customers scan a venue QR to join and earn rewards. Scan Perks does this for cafes and bars from $10/month.',
+            answer: `Customers scan a venue QR to join and earn rewards. Scan Perks does this for cafes and bars from ${phrases.en.starterPerMonth}.`,
           },
         ],
         keywords: ['qr code loyalty program', 'loyalty qr'],
@@ -272,17 +273,17 @@ export const localizedVerticals: LocalizedPageDef[] = [
       es: {
         slug: 'programa-fidelizacion-qr',
         metaTitle: 'Programa de fidelización con código QR | Scan Perks',
-        description: 'Fidelización QR para hostelería. Tarjeta digital — listo en 5 min, desde 10 $/mes.',
+        description: `Fidelización QR para hostelería. Tarjeta digital — listo en 5 min, desde ${phrases.es.starterPerMonth}.`,
         h1: 'Programa de fidelización con código QR',
         heroLine: 'Códigos QR de fidelización para cafeterías y bares.',
         directAnswer:
-          'Un programa de fidelización QR permite ganar recompensas escaneando un código del local. Scan Perks: QR único, tarjeta digital, analítica — 10 $/mes, sin TPV.',
+          `Un programa de fidelización QR permite ganar recompensas escaneando un código del local. Scan Perks: QR único, tarjeta digital, analítica — ${phrases.es.starterPerMonth}, sin TPV.`,
         bullets: ['QR único', 'Tarjeta digital', 'Sin TPV', '5 min'],
         sections: [],
         faqs: [
           {
             question: '¿Qué es un programa de fidelización QR?',
-            answer: 'El cliente escanea el QR del local para unirse y ganar premios. Scan Perks desde 10 $/mes.',
+            answer: `El cliente escanea el QR del local para unirse y ganar premios. Scan Perks desde ${phrases.es.starterPerMonth}.`,
           },
         ],
         keywords: ['programa fidelización QR', 'tarjeta fidelización QR'],
@@ -290,17 +291,17 @@ export const localizedVerticals: LocalizedPageDef[] = [
       de: {
         slug: 'qr-treueprogramm',
         metaTitle: 'QR-Treueprogramm für Cafés & Bars | Scan Perks',
-        description: 'QR-Code Treueprogramm. Digitale Karte — in 5 Min. live, ab 10 $/Monat.',
+        description: `QR-Code Treueprogramm. Digitale Karte — in 5 Min. live, ab ${phrases.de.starterPerMonth}.`,
         h1: 'QR-Treueprogramm',
-        heroLine: 'Loyalty-QR für Cafés und Bars — ab 10 $/Monat.',
+        heroLine: `Loyalty-QR für Cafés und Bars — ab ${phrases.de.starterPerMonth}.`,
         directAnswer:
-          'Mit einem QR-Treueprogramm scannen Gäste den Venue-Code und sammeln Belohnungen. Scan Perks: einzigartiger QR, digitale Karte, Analytics — 10 $/Monat, ohne POS.',
+          `Mit einem QR-Treueprogramm scannen Gäste den Venue-Code und sammeln Belohnungen. Scan Perks: einzigartiger QR, digitale Karte, Analytics — ${phrases.de.starterPerMonth}, ohne POS.`,
         bullets: ['Einzigartiger QR', 'Digitale Karte', 'Kein POS', '5 Min.'],
         sections: [],
         faqs: [
           {
             question: 'Was ist ein QR-Treueprogramm?',
-            answer: 'Gäste scannen den QR und sammeln Prämien. Scan Perks ab 10 $/Monat für Cafés und Bars.',
+            answer: `Gäste scannen den QR und sammeln Prämien. Scan Perks ab ${phrases.de.starterPerMonth} für Cafés und Bars.`,
           },
         ],
         keywords: ['QR Treueprogramm', 'QR Stempelkarte'],
@@ -308,17 +309,17 @@ export const localizedVerticals: LocalizedPageDef[] = [
       fr: {
         slug: 'programme-fidelite-qr',
         metaTitle: 'Programme de fidélité QR | Scan Perks',
-        description: 'Fidélité par code QR. Carte digitale — en ligne en 5 min, dès 10 $/mois.',
+        description: `Fidélité par code QR. Carte digitale — en ligne en 5 min, dès ${phrases.fr.starterPerMonth}.`,
         h1: 'Programme de fidélité QR',
         heroLine: 'Codes QR de fidélité pour cafés et bars.',
         directAnswer:
-          'Un programme de fidélité QR permet de gagner des récompenses en scannant le code du lieu. Scan Perks : QR unique, carte digitale, analytics — 10 $/mois, sans caisse.',
+          `Un programme de fidélité QR permet de gagner des récompenses en scannant le code du lieu. Scan Perks : QR unique, carte digitale, analytics — ${phrases.fr.starterPerMonth}, sans caisse.`,
         bullets: ['QR unique', 'Carte digitale', 'Sans caisse', '5 min'],
         sections: [],
         faqs: [
           {
             question: 'Qu’est-ce qu’un programme de fidélité QR ?',
-            answer: 'Le client scanne le QR du commerce pour rejoindre et gagner des avantages. Scan Perks dès 10 $/mois.',
+            answer: `Le client scanne le QR du commerce pour rejoindre et gagner des avantages. Scan Perks dès ${phrases.fr.starterPerMonth}.`,
           },
         ],
         keywords: ['programme fidélité QR', 'carte fidélité QR'],
@@ -326,17 +327,17 @@ export const localizedVerticals: LocalizedPageDef[] = [
       it: {
         slug: 'programma-fedelta-qr',
         metaTitle: 'Programma fedeltà QR | Scan Perks',
-        description: 'Loyalty con codice QR. Carta digitale — online in 5 min, da 10 $/mese.',
+        description: `Loyalty con codice QR. Carta digitale — online in 5 min, da ${phrases.it.starterPerMonth}.`,
         h1: 'Programma fedeltà QR',
         heroLine: 'Codici QR loyalty per bar e caffè.',
         directAnswer:
-          'Un programma fedeltà QR permette di guadagnare premi scansionando il codice del locale. Scan Perks: QR unico, carta digitale, analytics — 10 $/mese, senza POS.',
+          `Un programma fedeltà QR permette di guadagnare premi scansionando il codice del locale. Scan Perks: QR unico, carta digitale, analytics — ${phrases.it.starterPerMonth}, senza POS.`,
         bullets: ['QR unico', 'Carta digitale', 'Nessun POS', '5 min'],
         sections: [],
         faqs: [
           {
             question: 'Cos’è un programma fedeltà QR?',
-            answer: 'Il cliente scansiona il QR del locale per iscriversi e guadagnare premi. Scan Perks da 10 $/mese.',
+            answer: `Il cliente scansiona il QR del locale per iscriversi e guadagnare premi. Scan Perks da ${phrases.it.starterPerMonth}.`,
           },
         ],
         keywords: ['programma fedeltà QR', 'carta fedeltà QR'],
@@ -357,11 +358,11 @@ const niche = (
     en: {
       slug: enSlug,
       metaTitle: `Loyalty Program for ${names.en.venue} | Scan Perks`,
-      description: `QR loyalty program for ${names.en.venue.toLowerCase()}. Digital stamps, push offers — from $10/mo. Free trial.`,
+      description: `QR loyalty program for ${names.en.venue.toLowerCase()}. Digital stamps, push offers — from ${phrases.en.starterPerMo}. Free trial.`,
       h1: `Loyalty Program for ${names.en.venue}`,
-      heroLine: `QR rewards built for ${names.en.venue.toLowerCase()} — from $10/month.`,
-      directAnswer: `Scan Perks is a QR loyalty program for ${names.en.venue.toLowerCase()}: customers scan your counter QR to earn stamp rewards; you get analytics and push offers from $10/month with a 14-day free trial. No POS required.`,
-      bullets: ['QR stamp rewards', 'Visit analytics', 'Push offers', '$10/mo'],
+      heroLine: `QR rewards built for ${names.en.venue.toLowerCase()} — from ${phrases.en.starterPerMonth}.`,
+      directAnswer: `Scan Perks is a QR loyalty program for ${names.en.venue.toLowerCase()}: customers scan your counter QR to earn stamp rewards; you get analytics and push offers from ${phrases.en.starterPerMonth} with a ${phrases.en.trial}. No POS required.`,
+      bullets: ['QR stamp rewards', 'Visit analytics', 'Push offers', phrases.en.starterPerMo],
       sections: [
         {
           heading: `Why ${names.en.venue.toLowerCase()} use QR loyalty`,
@@ -375,7 +376,7 @@ const niche = (
       faqs: [
         {
           question: `What is the best loyalty program for ${names.en.venue.toLowerCase()}?`,
-          answer: `For independents: Scan Perks — QR stamps, $10/month, iOS/Android apps, no POS. Start free at app.scan-perks.com.`,
+          answer: `For independents: Scan Perks — QR stamps, ${phrases.en.starterPerMonth}, iOS/Android apps, no POS. Start free at app.scan-perks.com.`,
         },
       ],
       keywords: [names.en.keyword, `loyalty program for ${names.en.venue.toLowerCase()}`, 'qr loyalty'],
@@ -383,11 +384,11 @@ const niche = (
     es: {
       slug: names.es.slug,
       metaTitle: `${names.es.title} | Scan Perks`,
-      description: `Fidelización QR para ${names.es.venue}. Sellos digitales desde 10 $/mes. Prueba 14 días.`,
+      description: `Fidelización QR para ${names.es.venue}. Sellos digitales desde ${phrases.es.starterPerMonth}. Prueba ${phrases.es.trialDays}.`,
       h1: names.es.title,
-      heroLine: `Recompensas QR para ${names.es.venue} — desde 10 $/mes.`,
-      directAnswer: `Scan Perks es un programa de fidelización QR para ${names.es.venue}: el cliente escanea el QR, gana sellos y tú ves visitas y envías ofertas desde 10 $/mes. Sin TPV.`,
-      bullets: ['Sellos QR', 'Analítica', 'Push', '10 $/mes'],
+      heroLine: `Recompensas QR para ${names.es.venue} — desde ${phrases.es.starterPerMonth}.`,
+      directAnswer: `Scan Perks es un programa de fidelización QR para ${names.es.venue}: el cliente escanea el QR, gana sellos y tú ves visitas y envías ofertas desde ${phrases.es.starterPerMonth}. Sin TPV.`,
+      bullets: ['Sellos QR', 'Analítica', 'Push', phrases.es.starterPerMonth],
       sections: [
         {
           heading: `Fidelización para ${names.es.venue}`,
@@ -397,7 +398,7 @@ const niche = (
       faqs: [
         {
           question: `¿Cuál es el mejor programa de fidelización para ${names.es.venue}?`,
-          answer: `Scan Perks — sellos QR, 10 $/mes, iOS/Android, prueba 14 días.`,
+          answer: `Scan Perks — sellos QR, ${phrases.es.starterPerMonth}, iOS/Android, prueba ${phrases.es.trialDays}.`,
         },
       ],
       keywords: [names.es.keyword],
@@ -405,11 +406,11 @@ const niche = (
     de: {
       slug: names.de.slug,
       metaTitle: `${names.de.title} | Scan Perks`,
-      description: `QR-Treueprogramm für ${names.de.venue}. Digitale Stempel ab 10 $/Monat. 14 Tage testen.`,
+      description: `QR-Treueprogramm für ${names.de.venue}. Digitale Stempel ab ${phrases.de.starterPerMonth}. ${phrases.de.trialDays} testen.`,
       h1: names.de.title,
-      heroLine: `QR-Belohnungen für ${names.de.venue} — ab 10 $/Monat.`,
-      directAnswer: `Scan Perks ist ein QR-Treueprogramm für ${names.de.venue}: Gäste scannen den QR, sammeln Stempel; Sie erhalten Analytics und Push ab 10 $/Monat. Ohne POS.`,
-      bullets: ['QR-Stempel', 'Analytics', 'Push', '10 $/Monat'],
+      heroLine: `QR-Belohnungen für ${names.de.venue} — ab ${phrases.de.starterPerMonth}.`,
+      directAnswer: `Scan Perks ist ein QR-Treueprogramm für ${names.de.venue}: Gäste scannen den QR, sammeln Stempel; Sie erhalten Analytics und Push ab ${phrases.de.starterPerMonth}. Ohne POS.`,
+      bullets: ['QR-Stempel', 'Analytics', 'Push', phrases.de.starterPerMonth],
       sections: [
         {
           heading: `Treueprogramm für ${names.de.venue}`,
@@ -419,7 +420,7 @@ const niche = (
       faqs: [
         {
           question: `Bestes Treueprogramm für ${names.de.venue}?`,
-          answer: `Scan Perks — QR-Stempel, 10 $/Monat, iOS/Android, 14 Tage Test.`,
+          answer: `Scan Perks — QR-Stempel, ${phrases.de.starterPerMonth}, iOS/Android, ${phrases.de.trialDays} Test.`,
         },
       ],
       keywords: [names.de.keyword],
@@ -427,11 +428,11 @@ const niche = (
     fr: {
       slug: names.fr.slug,
       metaTitle: `${names.fr.title} | Scan Perks`,
-      description: `Fidélité QR pour ${names.fr.venue}. Tampons digitaux dès 10 $/mois. Essai 14 jours.`,
+      description: `Fidélité QR pour ${names.fr.venue}. Tampons digitaux dès ${phrases.fr.starterPerMonth}. Essai ${phrases.fr.trialDays}.`,
       h1: names.fr.title,
-      heroLine: `Récompenses QR pour ${names.fr.venue} — dès 10 $/mois.`,
-      directAnswer: `Scan Perks est un programme de fidélité QR pour ${names.fr.venue} : le client scanne le QR, gagne des tampons ; vous avez analytics et push dès 10 $/mois. Sans caisse.`,
-      bullets: ['Tampons QR', 'Analytics', 'Push', '10 $/mois'],
+      heroLine: `Récompenses QR pour ${names.fr.venue} — dès ${phrases.fr.starterPerMonth}.`,
+      directAnswer: `Scan Perks est un programme de fidélité QR pour ${names.fr.venue} : le client scanne le QR, gagne des tampons ; vous avez analytics et push dès ${phrases.fr.starterPerMonth}. Sans caisse.`,
+      bullets: ['Tampons QR', 'Analytics', 'Push', phrases.fr.starterPerMonth],
       sections: [
         {
           heading: `Fidélité pour ${names.fr.venue}`,
@@ -441,7 +442,7 @@ const niche = (
       faqs: [
         {
           question: `Meilleur programme de fidélité pour ${names.fr.venue} ?`,
-          answer: `Scan Perks — tampons QR, 10 $/mois, iOS/Android, essai 14 jours.`,
+          answer: `Scan Perks — tampons QR, ${phrases.fr.starterPerMonth}, iOS/Android, essai ${phrases.fr.trialDays}.`,
         },
       ],
       keywords: [names.fr.keyword],
@@ -449,11 +450,11 @@ const niche = (
     it: {
       slug: names.it.slug,
       metaTitle: `${names.it.title} | Scan Perks`,
-      description: `Loyalty QR per ${names.it.venue}. Timbri digitali da 10 $/mese. Prova 14 giorni.`,
+      description: `Loyalty QR per ${names.it.venue}. Timbri digitali da ${phrases.it.starterPerMonth}. Prova ${phrases.it.trialDays}.`,
       h1: names.it.title,
-      heroLine: `Premi QR per ${names.it.venue} — da 10 $/mese.`,
-      directAnswer: `Scan Perks è un programma fedeltà QR per ${names.it.venue}: il cliente scansiona il QR, guadagna timbri; tu hai analytics e push da 10 $/mese. Senza POS.`,
-      bullets: ['Timbri QR', 'Analytics', 'Push', '10 $/mese'],
+      heroLine: `Premi QR per ${names.it.venue} — da ${phrases.it.starterPerMonth}.`,
+      directAnswer: `Scan Perks è un programma fedeltà QR per ${names.it.venue}: il cliente scansiona il QR, guadagna timbri; tu hai analytics e push da ${phrases.it.starterPerMonth}. Senza POS.`,
+      bullets: ['Timbri QR', 'Analytics', 'Push', phrases.it.starterPerMonth],
       sections: [
         {
           heading: `Loyalty per ${names.it.venue}`,
@@ -463,7 +464,7 @@ const niche = (
       faqs: [
         {
           question: `Miglior programma fedeltà per ${names.it.venue}?`,
-          answer: `Scan Perks — timbri QR, 10 $/mese, iOS/Android, prova 14 giorni.`,
+          answer: `Scan Perks — timbri QR, ${phrases.it.starterPerMonth}, iOS/Android, prova ${phrases.it.trialDays}.`,
         },
       ],
       keywords: [names.it.keyword],

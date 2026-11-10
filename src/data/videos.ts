@@ -1,3 +1,4 @@
+import { phrases } from './site-facts';
 export interface PromoVideo {
   id: string;
   title: string;
@@ -14,7 +15,7 @@ export const promoVideos: PromoVideo[] = [
     id: 'promo',
     title: 'Scan Perks in 37 seconds — QR loyalty for cafes',
     description:
-      'Customers scan the QR on your counter in the Scan Perks app. Every visit earns a stamp, offers land on their phone, and you see every visit in the dashboard. $10/month, 14-day free trial, no contract, no POS.',
+      `Customers scan the QR on your counter in the Scan Perks app. Every visit earns a stamp, offers land on their phone, and you see every visit in the dashboard. ${phrases.en.starterPerMonth}, ${phrases.en.trial}, no contract, no POS.`,
     src: '/videos/scan-perks-promo-9x16.mp4',
     poster: '/videos/scan-perks-promo-9x16.jpg',
     duration: 'PT37S',

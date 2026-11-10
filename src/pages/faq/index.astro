@@ -14,6 +14,7 @@ import {
 } from '../../data/geoContent';
 import { buildSoftwareApplicationSchema } from '../../seo/schema';
 import { getHreflangLinks, getPageDef } from '../../i18n/pages';
+import { phrases } from '../../data/site-facts';
 
 const faqs = masterGeoFaqs.map(({ question, answer }) => ({ question, answer }));
 const categories = [
@@ -26,8 +27,8 @@ const categories = [
 ---
 
 <BaseLayout
-  title="Best Loyalty Program for Cafes — $10/mo, No POS"
-  description="Best loyalty program for cafes, for owners: a stamp card from $10/mo, no POS, 14-day trial. Square Plus, Loopy and Brewstamp prices included."
+  title={`Best Loyalty Program for Cafes — ${phrases.en.starterPerMo}, No POS`}
+  description={`Best loyalty program for cafes, for owners: a stamp card from ${phrases.en.starterPerMo}, no POS, ${phrases.en.trialShort}. Square Plus, Loopy and Brewstamp prices included.`}
   path="/faq/"
   lang="en"
   hreflangLinks={getHreflangLinks(getPageDef('faq')!)}
@@ -48,9 +49,9 @@ const categories = [
   <section class="page-hero">
     <div class="container reveal">
       <span class="section__label">FAQ</span>
-      <h1 class="page-hero__title">Best Loyalty Program for Cafes — $10/mo, No POS</h1>
+      <h1 class="page-hero__title">Best Loyalty Program for Cafes — {phrases.en.starterPerMo}, No POS</h1>
       <p class="page-hero__desc">
-        For cafe and pub owners: customers use the free Scan Perks app, one stamp per visit, $10 or $15 a month after a 14-day trial, no POS.
+        For cafe and pub owners: customers use the free Scan Perks app, one stamp per visit, {phrases.en.orMonth} after a {phrases.en.trialShort}, no POS.
         The 2026 price comparison is on
         <a href="/blog/best-coffee-loyalty-programs/">the best loyalty program for coffee shops</a>.
       </p>
@@ -98,7 +99,7 @@ const categories = [
 
   <section class="section section--sm">
     <div class="container reveal" style="text-align:center;">
-      <AppCta class="btn btn--primary btn--lg">Start 14-Day Free Trial</AppCta>
+      <AppCta class="btn btn--primary btn--lg">Start {phrases.en.trialCap}</AppCta>
       <p style="margin-top:1rem; font-size:0.9rem; color:var(--text-muted);">
         Also see:
         <a href="/pub-loyalty-card/" style="color:var(--cyan-400);">Pub loyalty card</a>

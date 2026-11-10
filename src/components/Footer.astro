@@ -1,6 +1,7 @@
 ---
 import { SITE, appSignupUrl } from '../data/content';
 import { G2_LISTING } from '../data/g2AndOutreach';
+import { phrases } from '../data/site-facts';
 ---
 
 <footer class="footer">
@@ -11,7 +12,7 @@ import { G2_LISTING } from '../data/g2AndOutreach';
           <img src="/favicon.png" alt="" width="315" height="295" />
           Scan Perks
         </div>
-        <p>QR loyalty for cafes, pubs & restaurants — from $10/month.</p>
+        <p>QR loyalty for cafes, pubs & restaurants — from {phrases.en.starterPerMonth}.</p>
         <p style="margin-top:0.75rem;">
           <a href={appSignupUrl(Astro.url.pathname, 'footer')} style="color:var(--cyan-400);font-weight:600;">
             Open app.scan-perks.com →
@@ -38,7 +39,6 @@ import { G2_LISTING } from '../data/g2AndOutreach';
           <li><a href="/pricing/">Pricing</a></li>
           <li><a href="/how-it-works/">How It Works</a></li>
           <li><a href="/faq/">FAQ</a></li>
-          <li><a href="/scanbucks/">Scanbucks</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href={SITE.playStore} rel="noopener noreferrer">Google Play</a></li>
           <li><a href={SITE.appStore} rel="noopener noreferrer">App Store</a></li>

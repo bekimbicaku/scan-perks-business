@@ -13,6 +13,7 @@ import {
 import { getCanonicalOverrideForSlug } from '../data/seoCanonicals';
 import { buildLoyaltyServiceSchema, buildSoftwareApplicationSchema, buildHowToSchema } from '../seo/schema';
 import { enNicheSlugPaths, findDefByEnSlug, getHreflangLinks } from '../i18n/pages';
+import { phrases } from '../data/site-facts';
 
 export function getStaticPaths() {
   const loyalty = getAllLandingSlugs().map((slug) => ({
@@ -84,7 +85,7 @@ const cafeHowTo =
         description:
           'Print a counter QR. Customers scan it in the free Scan Perks app. About 5 minutes, no POS.',
         steps: [
-          { name: 'Create account', text: 'Sign up at app.scan-perks.com and start the 14-day free trial.' },
+          { name: 'Create account', text: `Sign up at app.scan-perks.com and start the ${phrases.en.trial}.` },
           { name: 'Set stamp rules', text: 'Choose a reward such as 8 stamps for a free coffee.' },
           { name: 'Print your QR', text: 'Tap Create my QR, print it, and put it by the till.' },
           {
@@ -105,7 +106,7 @@ const pubHowTo =
         description:
           'Set up QR pub loyalty for an independent pub or bar in about 5 minutes — no POS required.',
         steps: [
-          { name: 'Create account', text: 'Sign up at app.scan-perks.com and start the 14-day free trial.' },
+          { name: 'Create account', text: `Sign up at app.scan-perks.com and start the ${phrases.en.trial}.` },
           { name: 'Set reward tiers', text: 'Choose stamp rules such as 10 drinks = 1 free pint.' },
           { name: 'Print your bar QR', text: 'Download the print-ready QR poster and display it at the bar.' },
           {
