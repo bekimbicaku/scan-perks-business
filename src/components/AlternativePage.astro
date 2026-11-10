@@ -1,0 +1,83 @@
+---
+import type { Alternative } from '../data/alternatives';
+import {
+  alternativeMeta,
+  competitorPriceLabel,
+  scanPerksColumn,
+} from '../data/alternatives';
+import { phrases } from '../data/site-facts';
+import AnswerFirst from './AnswerFirst.astro';
+import AppCta from './AppCta.astro';
+import InternalLinks from './InternalLinks.astro';
+
+interface Props {
+  page: Alternative;
+}
+
+const { page } = Astro.props;
+const meta = alternativeMeta(page);
+const price = competitorPriceLabel(page.price);
+const pos = page.posRequired.endsWith('.') ? page.posRequired : `${page.posRequired}.`;
+const rows = [
+  { feature: 'Price', scanPerks: scanPerksColumn.price, them: price.text },
+  { feature: 'Join method', scanPerks: scanPerksColumn.joinMethod, them: page.joinMethod },
+  { feature: 'POS required', scanPerks: scanPerksColumn.posRequired, them: page.posRequired },
+  { feature: 'When to pick them instead', scanPerks: scanPerksColumn.pickInstead, them: page.pickInstead },
+];
+const answer = `${page.name} price: ${price.text}. Customers join via ${page.joinMethod}. POS required: ${pos} When to pick ${page.name} instead: ${page.pickInstead} Scan Perks is ${scanPerksColumn.price} after a ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.stampLine}`;
+---
+
+<article>
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section__label">Alternative</span>
+      <h1 class="page-hero__title">{meta.heading}</h1>
+      <p class="page-hero__desc">{meta.description}</p>
+      <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
+        <AppCta class="btn btn--primary btn--lg" position="hero">Start free trial</AppCta>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <AnswerFirst answer={answer} />
+      <h2 class="section__title" style="font-size:1.5rem; margin:2rem 0 1.25rem;">
+        Scan Perks vs {page.name}
+      </h2>
+      <div class="glass glass--strong" style="padding:1.5rem; overflow-x:auto;">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>{scanPerksColumn.name}</th>
+              <th>{page.name}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row) => (
+              <tr>
+                <td>{row.feature}</td>
+                <td class="comparison-table__highlight">{row.scanPerks}</td>
+                <td>
+                  {row.feature === 'Price' && price.sourceUrl ? (
+                    <>
+                      {row.them}{' '}
+                      <a href={price.sourceUrl} rel="noopener noreferrer">
+                        source, checked {price.checkedOn}
+                      </a>
+                    </>
+                  ) : (
+                    row.them
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <InternalLinks />
+</article>

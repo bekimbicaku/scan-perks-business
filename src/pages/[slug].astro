@@ -2,8 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import AlternativePage from '../components/AlternativePage.astro';
 import LoyaltyLandingPage from '../components/LoyaltyLandingPage.astro';
 import LocalizedLanding from '../components/LocalizedLanding.astro';
+import { alternativeMeta, alternativePages, getAlternative } from '../data/alternatives';
 import { getLoyaltyPage, getAllLandingSlugs } from '../data/loyaltyPages';
 import { getCanonicalOverrideForSlug } from '../data/seoCanonicals';
 import { buildLoyaltyServiceSchema, buildHowToSchema } from '../seo/schema';
@@ -22,22 +24,32 @@ export function getStaticPaths() {
       params: { slug },
       props: { kind: 'niche' as const },
     }));
-  return [...loyalty, ...niches];
+  const alternatives = alternativePages.map((item) => ({
+    params: { slug: item.slug },
+    props: { kind: 'alternative' as const },
+  }));
+  return [...loyalty, ...niches, ...alternatives];
 }
 
 const { slug } = Astro.params;
-const kind = Astro.props.kind as 'loyalty' | 'niche';
+const kind = Astro.props.kind as 'loyalty' | 'niche' | 'alternative';
 
 const nicheDef = kind === 'niche' ? findDefByEnSlug(slug!) : undefined;
 const nicheContent = nicheDef?.content.en;
 
 const page = kind === 'loyalty' ? getLoyaltyPage(slug!) : undefined;
+const alternative = kind === 'alternative' ? getAlternative(slug!) : undefined;
 if (kind === 'loyalty' && !page) return Astro.redirect('/404');
 if (kind === 'niche' && !nicheDef) return Astro.redirect('/404');
+if (kind === 'alternative' && !alternative) return Astro.redirect('/404');
 
 const allFaqs = page ? page.faqs : nicheContent?.faqs ?? [];
 
-const path = page ? `/${page.slug}/` : `/${nicheContent!.slug}/`;
+const path = alternative
+  ? `/${alternative.slug}/`
+  : page
+    ? `/${page.slug}/`
+    : `/${nicheContent!.slug}/`;
 const canonicalOverride = page ? getCanonicalOverrideForSlug(page.slug) : undefined;
 const servicePath = canonicalOverride ?? path;
 
@@ -96,9 +108,25 @@ const pubHowTo =
     : null;
 
 const loyaltyExtraSchema = [serviceSchema, pubHowTo, cafeHowTo].filter(Boolean) as Record<string, unknown>[];
+const altMeta = alternative ? alternativeMeta(alternative) : undefined;
 ---
 
-{nicheDef && nicheContent ? (
+{alternative && altMeta ? (
+  <BaseLayout
+    title={altMeta.title}
+    description={altMeta.description}
+    path={path}
+    lang="en"
+    breadcrumbs={[
+      { name: 'Home', path: '/' },
+      { name: altMeta.heading, path },
+    ]}
+  >
+    <Nav />
+    <AlternativePage page={alternative} />
+    <Footer />
+  </BaseLayout>
+) : nicheDef && nicheContent ? (
   <BaseLayout
     title={nicheContent.metaTitle}
     description={nicheContent.description}
