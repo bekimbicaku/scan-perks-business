@@ -11,7 +11,7 @@ import {
   qrConversationalFaqs,
 } from '../data/conversationalFaqs';
 import { getCanonicalOverrideForSlug } from '../data/seoCanonicals';
-import { buildLoyaltyServiceSchema, buildSoftwareApplicationSchema, buildHowToSchema } from '../seo/schema';
+import { buildLoyaltyServiceSchema, buildHowToSchema } from '../seo/schema';
 import { enNicheSlugPaths, findDefByEnSlug, getHreflangLinks } from '../i18n/pages';
 import { phrases } from '../data/site-facts';
 
@@ -60,11 +60,8 @@ const path = page ? `/${page.slug}/` : `/${nicheContent!.slug}/`;
 const canonicalOverride = page ? getCanonicalOverrideForSlug(page.slug) : undefined;
 const servicePath = canonicalOverride ?? path;
 
-const i18nDef =
-  nicheDef ??
-  findDefByEnSlug(page?.slug ?? '') ??
-  (canonicalOverride ? findDefByEnSlug(canonicalOverride.replace(/\//g, '')) : undefined);
-const hreflangLinks = i18nDef ? getHreflangLinks(i18nDef) : undefined;
+const i18nDef = nicheDef ?? (canonicalOverride ? undefined : findDefByEnSlug(page?.slug ?? ''));
+const hreflangLinks = canonicalOverride ? [] : i18nDef ? getHreflangLinks(i18nDef) : undefined;
 
 const serviceSchema = page
   ? buildLoyaltyServiceSchema({
@@ -117,9 +114,7 @@ const pubHowTo =
       })
     : null;
 
-const loyaltyExtraSchema = [serviceSchema, buildSoftwareApplicationSchema(), pubHowTo, cafeHowTo].filter(
-  Boolean
-) as Record<string, unknown>[];
+const loyaltyExtraSchema = [serviceSchema, pubHowTo, cafeHowTo].filter(Boolean) as Record<string, unknown>[];
 ---
 
 {nicheDef && nicheContent ? (
@@ -129,13 +124,11 @@ const loyaltyExtraSchema = [serviceSchema, buildSoftwareApplicationSchema(), pub
     path={path}
     lang="en"
     hreflangLinks={hreflangLinks}
-    keywords={nicheContent.keywords}
     faqs={nicheContent.faqs}
     breadcrumbs={[
       { name: 'Home', path: '/' },
       { name: nicheContent.h1, path },
     ]}
-    extraSchema={[buildSoftwareApplicationSchema()]}
   >
     <Nav />
     <LocalizedLanding locale="en" content={nicheContent} />
@@ -149,7 +142,6 @@ const loyaltyExtraSchema = [serviceSchema, buildSoftwareApplicationSchema(), pub
     canonicalPath={canonicalOverride}
     lang="en"
     hreflangLinks={hreflangLinks}
-    keywords={[page.primaryKeyword, ...page.keywordCluster]}
     faqs={allFaqs}
     breadcrumbs={[
       { name: 'Home', path: '/' },

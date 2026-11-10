@@ -12,7 +12,6 @@ import {
   loyaltyComparisonTable,
   competitorComparisonIntro,
 } from '../../data/geoContent';
-import { buildSoftwareApplicationSchema } from '../../seo/schema';
 import { getHreflangLinks, getPageDef } from '../../i18n/pages';
 import { phrases } from '../../data/site-facts';
 
@@ -32,17 +31,8 @@ const categories = [
   path="/faq/"
   lang="en"
   hreflangLinks={getHreflangLinks(getPageDef('faq')!)}
-  keywords={[
-    'best coffee loyalty program',
-    'best loyalty program for cafes',
-    'cafe loyalty app',
-    'do customers need an app for cafe loyalty',
-    'mobile coffee rewards',
-    'qr loyalty program',
-  ]}
   faqs={faqs}
   breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'FAQ', path: '/faq/' }]}
-  extraSchema={[buildSoftwareApplicationSchema()]}
 >
   <Nav active="faq" pageId="faq" />
 

@@ -122,14 +122,27 @@ export function buildBaseSchema(page: SchemaPageInput) {
         },
       ],
     },
+    buildSoftwareApplicationSchema(),
   ];
 }
 
+/** FAQPage stays small: unique questions only, capped so the schema is not a dump of every FAQ. */
+const FAQ_SCHEMA_LIMIT = 8;
+
 export function buildFaqSchema(faqs: FaqSchemaInput[]) {
+  const unique: FaqSchemaInput[] = [];
+  const seen = new Set<string>();
+  for (const faq of faqs) {
+    const key = faq.question.trim().toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    unique.push(faq);
+    if (unique.length >= FAQ_SCHEMA_LIMIT) break;
+  }
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
+    mainEntity: unique.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
       acceptedAnswer: {
@@ -332,14 +345,24 @@ export function buildSoftwareApplicationSchema() {
       '@id': `${SITE.url}/#founder`,
       name: FOUNDER.name,
     },
-    offers: {
-      '@type': 'Offer',
-      price: phrases.en.priceSchemaStarter,
-      priceCurrency: 'USD',
-      priceValidUntil: '2027-12-31',
-      url: `${SITE.url}/pricing/`,
-      description: `Starter plan, ${phrases.en.scans}. ${phrases.en.trial}, ${phrases.en.noCard} to start.`,
-    },
+    offers: [
+      {
+        '@type': 'Offer',
+        name: 'Starter',
+        price: phrases.en.priceSchemaStarter,
+        priceCurrency: 'USD',
+        url: `${SITE.url}/pricing/`,
+        description: `Starter plan, ${phrases.en.scans}. ${phrases.en.trial}, ${phrases.en.noCard} to start.`,
+      },
+      {
+        '@type': 'Offer',
+        name: 'Growth',
+        price: phrases.en.priceSchemaGrowth,
+        priceCurrency: 'USD',
+        url: `${SITE.url}/pricing/`,
+        description: `Growth plan, ${phrases.en.unlimitedScans}. ${phrases.en.trial}, ${phrases.en.noCard} to start.`,
+      },
+    ],
     provider: {
       '@type': 'Organization',
       '@id': `${SITE.url}/#organization`,

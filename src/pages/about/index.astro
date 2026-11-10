@@ -11,7 +11,6 @@ import {
   technicalDetails,
   scanPerksFeatureList,
 } from '../../data/geoContent';
-import { buildSoftwareApplicationSchema } from '../../seo/schema';
 import { SITE } from '../../data/content';
 import { getHreflangLinks, getPageDef } from '../../i18n/pages';
 import { phrases } from '../../data/site-facts';
@@ -24,7 +23,6 @@ import { phrases } from '../../data/site-facts';
   lang="en"
   hreflangLinks={getHreflangLinks(getPageDef('about')!)}
   breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'About', path: '/about/' }]}
-  extraSchema={[buildSoftwareApplicationSchema()]}
 >
   <Nav active="about" pageId="about" />
 

@@ -3,8 +3,19 @@ import { SITE } from '../data/content';
 import { loyaltyPages } from '../data/loyaltyPages';
 import { keywordLandings } from '../data/keywordLandings';
 import { blogArticles } from '../data/blogArticles';
-import { allLocalizedPageDefs, pageHref } from '../i18n/pages';
-import { LOCALES, type Locale } from '../i18n/config';
+import { CANONICAL_OVERRIDES } from '../data/seoCanonicals';
+import { allLocalizedPageDefs, getHreflangLinks, pageHref } from '../i18n/pages';
+import { LOCALES } from '../i18n/config';
+
+/**
+ * URLs that only redirect, or that are noindex. Not listed.
+ * Redirects: vercel.json (canonical-override slugs) and astro.config.mjs (/press).
+ */
+const NOT_INDEXABLE = new Set<string>([
+  ...Object.keys(CANONICAL_OVERRIDES).map((slug) => `/${slug}/`),
+  '/press/',
+  '/outreach/',
+]);
 
 const MONEY_PAGE_PRIORITY: Record<string, string> = {
   'bar-loyalty-program': '0.95',
@@ -70,7 +81,12 @@ export const GET: APIRoute = () => {
   const urls: SitemapUrl[] = [];
 
   const push = (u: SitemapUrl) => {
-    if (seen.has(u.path)) return;
+    if (NOT_INDEXABLE.has(u.path)) return;
+    if (seen.has(u.path)) {
+      const prev = urls.find((item) => item.path === u.path);
+      if (prev && !prev.alternates && u.alternates) prev.alternates = u.alternates;
+      return;
+    }
     seen.add(u.path);
     urls.push(u);
   };
@@ -115,11 +131,10 @@ export const GET: APIRoute = () => {
   }
 
   for (const def of allLocalizedPageDefs) {
-    const alternates = (LOCALES as readonly Locale[]).map((locale) => ({
-      hreflang: locale,
-      href: `${SITE.url}${pageHref(def, locale)}`,
-    }));
-    alternates.push({ hreflang: 'x-default', href: `${SITE.url}${pageHref(def, 'en')}` });
+    const alternates = getHreflangLinks(def).filter((link) => {
+      const path = new URL(link.href).pathname;
+      return !NOT_INDEXABLE.has(path.endsWith('/') ? path : `${path}/`);
+    });
 
     for (const locale of LOCALES) {
       const path = pageHref(def, locale);
@@ -138,6 +153,15 @@ export const GET: APIRoute = () => {
         alternates,
       });
     }
+  }
+
+  for (const u of urls) {
+    if (u.alternates?.length) continue;
+    const href = `${SITE.url}${u.path}`;
+    u.alternates = [
+      { hreflang: 'en', href },
+      { hreflang: 'x-default', href },
+    ];
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

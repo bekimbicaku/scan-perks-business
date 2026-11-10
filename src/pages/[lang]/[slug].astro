@@ -12,7 +12,6 @@ import {
   pageHref,
   PREFIXED_LOCALES,
 } from '../../i18n/pages';
-import { buildSoftwareApplicationSchema } from '../../seo/schema';
 
 export function getStaticPaths() {
   const paths: { params: { lang: string; slug: string }; props: { pageId: string } }[] = [];
@@ -44,13 +43,11 @@ const home = getPageDef('home')!;
   path={path}
   lang={lang}
   hreflangLinks={getHreflangLinks(def)}
-  keywords={content.keywords}
   faqs={content.faqs}
   breadcrumbs={[
     { name: 'Home', path: pageHref(home, lang) },
     { name: content.h1, path },
   ]}
-  extraSchema={[buildSoftwareApplicationSchema()]}
 >
   <LangNav
     locale={lang}
