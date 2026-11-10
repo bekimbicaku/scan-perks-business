@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import StoreBadges from '../../components/StoreBadges.astro';
+import Icon from '../../components/Icon.astro';
 import { SITE, appSignupUrl } from '../../data/content';
 import { getHreflangLinks, getPageDef } from '../../i18n/pages';
 ---
@@ -30,14 +31,14 @@ import { getHreflangLinks, getPageDef } from '../../i18n/pages';
       <div class="contact-grid">
         <div class="reveal">
           <div class="contact-info__item">
-            <div class="contact-info__icon">📧</div>
+            <div class="contact-info__icon"><Icon name="mail" /></div>
             <div>
               <div class="contact-info__label">Email</div>
               <div class="contact-info__value"><a href={`mailto:${SITE.email}`}>{SITE.email}</a></div>
             </div>
           </div>
           <div class="contact-info__item">
-            <div class="contact-info__icon">📱</div>
+            <div class="contact-info__icon"><Icon name="phone" /></div>
             <div>
               <div class="contact-info__label">Get Started</div>
               <div class="contact-info__value">

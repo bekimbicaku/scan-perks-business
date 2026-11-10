@@ -1,0 +1,62 @@
+---
+interface Props {
+  n: number;
+  title: string;
+  description: string;
+}
+
+const { n, title, description } = Astro.props;
+---
+
+<div class="step-list__item reveal">
+  <span class="step-list__num">{n}</span>
+  <h2 class="step-list__title">{title}</h2>
+  <p class="step-list__desc">{description}</p>
+  <div class="step-list__action">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .step-list__item {
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+  }
+
+  .step-list__num {
+    display: inline-flex;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    font-weight: var(--weight-black);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-3);
+  }
+
+  .step-list__title {
+    font-size: var(--text-md);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-snug);
+    margin: 0 0 var(--space-2);
+    color: var(--color-text);
+  }
+
+  .step-list__desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-body);
+    margin: 0 0 var(--space-5);
+  }
+
+  .step-list__action:empty {
+    display: none;
+  }
+</style>

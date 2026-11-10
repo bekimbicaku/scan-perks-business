@@ -8,6 +8,9 @@ import AnswerFirst from './AnswerFirst.astro';
 import FeatureBulletList from './FeatureBulletList.astro';
 import InternalLinks from './InternalLinks.astro';
 import NamedVendorTable from './NamedVendorTable.astro';
+import Hero from './Hero.astro';
+import ComparisonTable from './ComparisonTable.astro';
+import CTASection from './CTASection.astro';
 import { SITE, appSignupUrl } from '../data/content';
 import { phrases } from '../data/site-facts';
 
@@ -42,33 +45,20 @@ const showNamedVendors = namedVendorSlugs.has(page.slug);
 const directAnswer = page.quickAnswer ?? slugToAnswer[page.slug];
 ---
 
-<style>
-  .page-hero__seo-line {
-    font-size: 1.05rem;
-    color: var(--blue-300);
-    max-width: 560px;
-    margin: 0 auto 1rem;
-    line-height: 1.6;
-    font-weight: 500;
-  }
-</style>
-
 <article>
-  <section class="page-hero">
-    <div class="container reveal">
-      <span class="section__label">{page.primaryKeyword}</span>
-      <h1 class="page-hero__title">{page.title}</h1>
-      {page.heroSeoLine && <p class="page-hero__seo-line">{page.heroSeoLine}</p>}
-      <p class="page-hero__desc">{page.description}</p>
-      <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
-        <AppCta class="btn btn--primary btn--lg" position="hero">Start free trial</AppCta>
-        <AppCta class="btn btn--glass btn--lg" position="hero-customer">Get the Rewards App</AppCta>
-      </div>
-      <p style="margin-top:0.75rem; font-size:0.9rem; opacity:0.85;">
-        Customers: free. Owners: {phrases.en.trialShort} · No POS · From {phrases.en.starterPerMo}
-      </p>
+  <Hero>
+    <span class="section__label">{page.primaryKeyword}</span>
+    <h1 class="page-hero__title">{page.title}</h1>
+    {page.heroSeoLine && <p class="page-hero__seo-line">{page.heroSeoLine}</p>}
+    <p class="page-hero__desc">{page.description}</p>
+    <div class="hero__actions hero__actions--center">
+      <AppCta class="btn btn--primary btn--lg" position="hero">Start free trial</AppCta>
+      <AppCta class="btn btn--glass btn--lg" position="hero-customer">Get the Rewards App</AppCta>
     </div>
-  </section>
+    <p class="page-hero__note">
+      Customers: free. Owners: {phrases.en.trialShort} · No POS · From {phrases.en.starterPerMo}
+    </p>
+  </Hero>
 
   {directAnswer && (
     <section class="section section--sm">
@@ -139,28 +129,15 @@ const directAnswer = page.quickAnswer ?? slugToAnswer[page.slug];
       {showNamedVendors ? (
         <NamedVendorTable />
       ) : (
-      <div class="glass glass--strong" style="padding:1.5rem; overflow-x:auto;">
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Scan Perks</th>
-              <th>Punch Cards</th>
-              <th>Enterprise</th>
-            </tr>
-          </thead>
-          <tbody>
-            {page.comparison.map((row) => (
-              <tr>
-                <td>{row.feature}</td>
-                <td class="comparison-table__highlight">{row.scanPerks}</td>
-                <td>{row.traditional}</td>
-                <td>{row.enterprise}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+        <ComparisonTable
+          columns={[
+            { key: 'feature', label: 'Feature' },
+            { key: 'scanPerks', label: 'Scan Perks', highlight: true },
+            { key: 'traditional', label: 'Punch Cards' },
+            { key: 'enterprise', label: 'Enterprise' },
+          ]}
+          rows={page.comparison}
+        />
       )}
     </div>
   </section>
@@ -187,17 +164,12 @@ const directAnswer = page.quickAnswer ?? slugToAnswer[page.slug];
 
   <FAQSection faqs={faqs} title={`${page.title} FAQ`} />
 
-  <section class="section section--sm">
-    <div class="container reveal">
-      <div class="cta-banner">
-        <h2 class="cta-banner__title">Start Your {page.title} Today</h2>
-        <p class="cta-banner__desc">{phrases.en.trial}. No contracts. Grow loyal customers from {phrases.en.starterPerMonth}.</p>
-        <div class="cta-banner__actions">
-          <AppCta class="btn btn--primary btn--lg" position="bottom">Start free trial</AppCta>
-        </div>
-      </div>
-    </div>
-  </section>
+  <CTASection
+    title={`Start Your ${page.title} Today`}
+    description={`${phrases.en.trial}. No contracts. Grow loyal customers from ${phrases.en.starterPerMonth}.`}
+  >
+    <AppCta class="btn btn--primary btn--lg" position="bottom">Start free trial</AppCta>
+  </CTASection>
 
   <nav class="section section--sm" aria-label="Related loyalty programs">
     <div class="container">

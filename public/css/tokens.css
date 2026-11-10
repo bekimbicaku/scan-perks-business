@@ -1,0 +1,99 @@
+/* Marketing-site tokens. Shared components use these names.
+   Body text is checked at 4.5:1 on the page, on panels, and on a glass card.
+   White button text is checked at 4.5:1 on both action blues. */
+
+:root {
+  --color-bg: #020617;
+  --color-bg-raised: #0a1628;
+  --color-bg-panel: #0f2744;
+  --color-surface: rgba(255, 255, 255, 0.06);
+  --color-surface-strong: rgba(255, 255, 255, 0.1);
+  --color-border: rgba(255, 255, 255, 0.14);
+  --color-border-strong: rgba(255, 255, 255, 0.22);
+
+  --color-text: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #b7c5d6;
+  --color-blue: #3b82f6;
+  --color-blue-bright: #60a5fa;
+  --color-link: #93c5fd;
+  --color-accent: #22d3ee;
+  --color-accent-soft: rgba(34, 211, 238, 0.16);
+  --color-action: #1d4ed8;
+  --color-action-hover: #2563eb;
+  --color-focus: #67e8f9;
+  --color-glow: rgba(37, 99, 235, 0.4);
+
+  --navy-950: var(--color-bg);
+  --navy-900: var(--color-bg-raised);
+  --navy-800: var(--color-bg-panel);
+  --navy-700: #1a365d;
+  --navy-600: #1e3a5f;
+  --blue-500: var(--color-blue);
+  --blue-400: var(--color-blue-bright);
+  --blue-300: var(--color-link);
+  --blue-200: #bae6fd;
+  --blue-100: #e0f2fe;
+  --blue-50: #f0f9ff;
+  --cyan-400: var(--color-accent);
+  --white: #ffffff;
+  --glass-bg: var(--color-surface);
+  --glass-border: var(--color-border);
+  --glass-highlight: var(--color-border-strong);
+  --text-primary: var(--color-text);
+  --text-secondary: var(--color-text-secondary);
+  --text-muted: var(--color-text-muted);
+  --glow-blue: var(--color-glow);
+  --glow-cyan: rgba(34, 211, 238, 0.3);
+
+  --font-sans: 'Outfit', 'Inter', system-ui, sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.875rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 3.5rem;
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-body: 1.6;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 800;
+  --tracking-tight: -0.03em;
+  --tracking-wide: 0.08em;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 40px;
+  --radius-full: 999px;
+
+  --shadow-sm: 0 4px 16px rgba(2, 6, 23, 0.28);
+  --shadow-md: 0 16px 40px rgba(2, 6, 23, 0.35);
+  --shadow-lg: 0 28px 70px rgba(2, 6, 23, 0.45);
+  --shadow-glow: 0 8px 28px rgba(37, 99, 235, 0.4);
+  --shadow-focus: 0 0 0 3px rgba(103, 232, 249, 0.55);
+
+  --nav-height: 72px;
+  --target-min: 44px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

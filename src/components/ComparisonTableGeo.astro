@@ -1,5 +1,6 @@
 ---
 import type { ComparisonRow } from '../data/geoContent';
+import ComparisonTable from './ComparisonTable.astro';
 
 interface Props {
   rows: ComparisonRow[];
@@ -8,44 +9,24 @@ interface Props {
 }
 
 const { rows, intro, showCompetitor = true } = Astro.props;
+
+const columns = [
+  { key: 'feature', label: 'Feature' },
+  { key: 'scanPerks', label: 'Scan Perks', highlight: true },
+  { key: 'punchCards', label: 'Punch Cards' },
+  { key: 'enterprise', label: 'Enterprise' },
+  ...(showCompetitor ? [{ key: 'competitor', label: 'Typical Competitor' }] : []),
+];
 ---
 
-{intro && <p class="comparison-intro">{intro}</p>}
-<div class="glass glass--strong comparison-wrap">
-  <table class="comparison-table">
-    <thead>
-      <tr>
-        <th>Feature</th>
-        <th>Scan Perks</th>
-        <th>Punch Cards</th>
-        <th>Enterprise</th>
-        {showCompetitor && <th>Typical Competitor</th>}
-      </tr>
-    </thead>
-    <tbody>
-      {rows.map((row) => (
-        <tr>
-          <td>{row.feature}</td>
-          <td class="comparison-table__highlight">{row.scanPerks}</td>
-          <td>{row.punchCards}</td>
-          <td>{row.enterprise}</td>
-          {showCompetitor && <td>{row.competitor ?? '—'}</td>}
-        </tr>
-      ))}
-    </tbody>
-  </table>
-</div>
-
-<style>
-  .comparison-intro {
-    color: var(--text-secondary);
-    margin-bottom: 1.25rem;
-    line-height: 1.65;
-    max-width: 720px;
-  }
-
-  .comparison-wrap {
-    padding: 1.5rem;
-    overflow-x: auto;
-  }
-</style>
+<ComparisonTable
+  columns={columns}
+  intro={intro}
+  rows={rows.map((row) => ({
+    feature: row.feature,
+    scanPerks: row.scanPerks,
+    punchCards: row.punchCards,
+    enterprise: row.enterprise,
+    competitor: row.competitor ?? '—',
+  }))}
+/>

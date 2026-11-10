@@ -6,6 +6,10 @@ import AppCta from '../components/AppCta.astro';
 import StoreBadges from '../components/StoreBadges.astro';
 import ScanDemo from '../components/ScanDemo.astro';
 import PromoVideos from '../components/PromoVideos.astro';
+import Hero from '../components/Hero.astro';
+import StepList from '../components/StepList.astro';
+import Step from '../components/Step.astro';
+import CTASection from '../components/CTASection.astro';
 import { landingContent } from '../data/content';
 import { promoVideos } from '../data/videos';
 import { buildVideoSchema } from '../seo/schema';
@@ -27,63 +31,50 @@ const homeDef = getPageDef('home')!;
 >
   <Nav active="home" pageId="home" />
 
-  <section class="hero hero--action">
-    <div class="container">
-      <div class="hero__content">
+  <Hero variant="home">
+    <div>
+      <h1 class="hero__title">QR stamp card for cafes, pubs and bars</h1>
+      <p class="hero__lead">
+        One counter QR. Customers scan it in the free Scan Perks app and collect stamps toward your reward.
+        <span>Set up in 5 minutes. {phrases.en.trial}, {phrases.en.noCard} — then {phrases.en.starterPerMo}.</span>
+      </p>
+      <div class="hero__actions">
+        <AppCta class="btn btn--primary btn--lg" position="hero">Start free trial</AppCta>
+        <a href="/how-it-works/" class="btn btn--glass btn--lg">See how it works</a>
+      </div>
+      <div class="hero__stats">
         <div>
-          <h1 class="hero__title">QR stamp card for cafes, pubs and bars</h1>
-          <p class="hero__lead">
-            One counter QR. Customers scan it in the free Scan Perks app and collect stamps toward your reward.
-            <span>Set up in 5 minutes. {phrases.en.trial}, {phrases.en.noCard} — then {phrases.en.starterPerMo}.</span>
-          </p>
-          <div class="hero__actions">
-            <AppCta class="btn btn--primary btn--lg" position="hero">Start free trial</AppCta>
-            <a href="/how-it-works/" class="btn btn--glass btn--lg">See how it works</a>
-          </div>
-          <div class="hero__stats">
-            <div>
-              <div class="hero__stat-value">{phrases.en.starterPerMo}</div>
-              <div class="hero__stat-label">After the trial</div>
-            </div>
-            <div>
-              <div class="hero__stat-value">5 min</div>
-              <div class="hero__stat-label">Setup</div>
-            </div>
-            <div>
-              <div class="hero__stat-value">{phrases.en.trialDays}</div>
-              <div class="hero__stat-label">Free trial</div>
-            </div>
-          </div>
+          <div class="hero__stat-value">{phrases.en.starterPerMo}</div>
+          <div class="hero__stat-label">After the trial</div>
         </div>
-        <div class="hero__visual">
-          <ScanDemo />
+        <div>
+          <div class="hero__stat-value">5 min</div>
+          <div class="hero__stat-label">Setup</div>
+        </div>
+        <div>
+          <div class="hero__stat-value">{phrases.en.trialDays}</div>
+          <div class="hero__stat-label">Free trial</div>
         </div>
       </div>
     </div>
-  </section>
+    <div class="hero__visual">
+      <ScanDemo />
+    </div>
+  </Hero>
 
   <section class="section section--sm">
     <div class="container">
-      <div class="action-steps">
-        <div class="action-step reveal">
-          <span class="action-step__num">1</span>
-          <h2 class="action-step__title">Print your QR</h2>
-          <p class="action-step__desc">Set stamp rewards and put the code on the counter.</p>
+      <StepList>
+        <Step n={1} title="Print your QR" description="Set stamp rewards and put the code on the counter.">
           <a href="/how-it-works/" class="btn btn--glass">See how it works</a>
-        </div>
-        <div class="action-step reveal">
-          <span class="action-step__num">2</span>
-          <h2 class="action-step__title">Customers scan</h2>
-          <p class="action-step__desc">They open the free Scan Perks app (iPhone or Android), tap Scan, and get a stamp. A phone camera opens your venue page.</p>
+        </Step>
+        <Step n={2} title="Customers scan" description="They open the free Scan Perks app (iPhone or Android), tap Scan, and get a stamp. A phone camera opens your venue page.">
           <a href="/qr-code-loyalty-program/" class="btn btn--glass">QR code loyalty program</a>
-        </div>
-        <div class="action-step reveal">
-          <span class="action-step__num">3</span>
-          <h2 class="action-step__title">Open the dashboard</h2>
-          <p class="action-step__desc">Go to app.scan-perks.com. Track stamps and send slow-day offers.</p>
+        </Step>
+        <Step n={3} title="Open the dashboard" description="Go to app.scan-perks.com. Track stamps and send slow-day offers.">
           <AppCta class="btn btn--primary" position="steps">Start free trial</AppCta>
-        </div>
-      </div>
+        </Step>
+      </StepList>
     </div>
   </section>
 
@@ -134,17 +125,9 @@ const homeDef = getPageDef('home')!;
     </div>
   </section>
 
-  <section class="section section--sm">
-    <div class="container reveal">
-      <div class="cta-banner">
-        <h2 class="cta-banner__title">Ready to grow regulars?</h2>
-        <p class="cta-banner__desc">Open the app and start your {phrases.en.trialShort}.</p>
-        <div class="cta-banner__actions">
-          <AppCta class="btn btn--primary btn--lg" position="bottom">Start free trial</AppCta>
-        </div>
-      </div>
-    </div>
-  </section>
+  <CTASection title="Ready to grow regulars?" description={`Open the app and start your ${phrases.en.trialShort}.`}>
+    <AppCta class="btn btn--primary btn--lg" position="bottom">Start free trial</AppCta>
+  </CTASection>
 
   <div class="trial-bar">
     <AppCta class="btn btn--primary btn--lg" position="sticky">Start free trial</AppCta>
@@ -154,74 +137,6 @@ const homeDef = getPageDef('home')!;
 </BaseLayout>
 
 <style>
-  .hero--action {
-    padding-top: 7rem;
-    padding-bottom: 3rem;
-  }
-
-  .hero__title {
-    font-size: clamp(1.85rem, 4.2vw, 3.05rem);
-    line-height: 1.12;
-    max-width: 14em;
-  }
-
-  .hero__lead {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
-    margin: 0 0 1.75rem;
-    max-width: 28rem;
-  }
-
-  .hero__lead span {
-    display: block;
-    margin-top: 0.35rem;
-    color: var(--blue-300);
-    font-weight: 600;
-    font-size: 1.05rem;
-  }
-
-  .action-steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-  }
-
-  .action-step {
-    padding: 1.5rem;
-    border-radius: var(--radius-md, 16px);
-    border: 1px solid var(--glass-border);
-    background: rgba(255, 255, 255, 0.03);
-    text-align: center;
-  }
-
-  .action-step__num {
-    display: inline-flex;
-    width: 2rem;
-    height: 2rem;
-    align-items: center;
-    justify-content: center;
-    border-radius: 999px;
-    background: rgba(34, 211, 238, 0.15);
-    color: var(--cyan-400);
-    font-weight: 800;
-    font-size: 0.9rem;
-    margin-bottom: 0.85rem;
-  }
-
-  .action-step__title {
-    font-size: 1.15rem;
-    margin: 0 0 0.5rem;
-    color: #fff;
-  }
-
-  .action-step__desc {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    margin: 0 0 1.15rem;
-  }
-
   .asset-todos {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -279,13 +194,14 @@ const homeDef = getPageDef('home')!;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem 0.75rem;
-    border-radius: var(--radius-sm, 10px);
-    border: 1px solid var(--glass-border);
-    background: rgba(255, 255, 255, 0.03);
-    color: var(--text-secondary);
-    font-weight: 600;
-    font-size: 0.9rem;
+    min-height: var(--target-min);
+    padding: var(--space-4) var(--space-3);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    font-weight: var(--weight-semibold);
+    font-size: var(--text-sm);
     text-align: center;
     transition: border-color 0.2s, color 0.2s, transform 0.2s;
   }
@@ -312,7 +228,6 @@ const homeDef = getPageDef('home')!;
   }
 
   @media (max-width: 900px) {
-    .action-steps,
     .asset-todos {
       grid-template-columns: 1fr;
     }

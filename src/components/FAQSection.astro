@@ -5,6 +5,7 @@ interface Props {
 }
 
 const { faqs, title = 'Frequently Asked Questions' } = Astro.props;
+const baseId = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'faq';
 ---
 
 <section class="section section--sm" id="faq">
@@ -14,10 +15,18 @@ const { faqs, title = 'Frequently Asked Questions' } = Astro.props;
       <h2 class="section__title">{title}</h2>
     </div>
     <div class="faq-list reveal">
-      {faqs.map((faq) => (
+      {faqs.map((faq, i) => (
         <div class="faq-item">
-          <button class="faq-item__question" type="button">{faq.question}</button>
-          <div class="faq-item__answer">
+          <button
+            class="faq-item__question"
+            type="button"
+            id={`${baseId}-q-${i}`}
+            aria-expanded="false"
+            aria-controls={`${baseId}-a-${i}`}
+          >
+            {faq.question}
+          </button>
+          <div class="faq-item__answer" id={`${baseId}-a-${i}`} role="region" aria-labelledby={`${baseId}-q-${i}`}>
             <p>{faq.answer}</p>
           </div>
         </div>

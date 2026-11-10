@@ -1,0 +1,19 @@
+---
+interface Props {
+  name: 'phone' | 'coffee' | 'beer' | 'chart' | 'bell' | 'pin' | 'mail';
+}
+
+const { name } = Astro.props;
+
+const paths: Record<Props['name'], string> = {
+  phone: '<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',
+  coffee: '<path d="M4 8h12v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4Z"/><path d="M16 9h2a3 3 0 0 1 0 6h-2"/><path d="M7 4v1M10 4v1M13 4v1"/>',
+  beer: '<path d="M6 8h8v9a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3Z"/><path d="M14 10h2.5a2.5 2.5 0 0 1 0 5H14"/><path d="M7 5h6"/>',
+  chart: '<path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 16v-5"/><path d="M12 16V8"/><path d="M16 16v-3"/>',
+  bell: '<path d="M6 16V10a6 6 0 1 1 12 0v6"/><path d="M4 16h16"/><path d="M10 19a2 2 0 0 0 4 0"/>',
+  pin: '<path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+  mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 7 9-7"/>',
+};
+---
+
+<svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={paths[name]} />

@@ -7,6 +7,8 @@ import AppCta from '../../components/AppCta.astro';
 import InternalLinks from '../../components/InternalLinks.astro';
 import AnswerFirst from '../../components/AnswerFirst.astro';
 import ComparisonTableGeo from '../../components/ComparisonTableGeo.astro';
+import Hero from '../../components/Hero.astro';
+import PricingCards from '../../components/PricingCards.astro';
 import { pricingSeo } from '../../data/pageSeo';
 import { pricingFaqs } from '../../data/conversationalFaqs';
 import { loyaltyComparisonTable, competitorComparisonIntro } from '../../data/geoContent';
@@ -25,17 +27,15 @@ import { phrases } from '../../data/site-facts';
 >
   <Nav active="pricing" pageId="pricing" />
 
-  <section class="page-hero">
-    <div class="container reveal">
-      <span class="section__label">Pricing</span>
-      <h1 class="page-hero__title">{pricingSeo.h1}</h1>
-      <p class="page-hero__desc">{pricingSeo.heroDesc}</p>
-      <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
-        <AppCta class="btn btn--primary btn--lg" position="hero">Start free trial</AppCta>
-        <a href="/how-it-works/" class="btn btn--glass btn--lg">See How It Works</a>
-      </div>
+  <Hero>
+    <span class="section__label">Pricing</span>
+    <h1 class="page-hero__title">{pricingSeo.h1}</h1>
+    <p class="page-hero__desc">{pricingSeo.heroDesc}</p>
+    <div class="hero__actions hero__actions--center">
+      <AppCta class="btn btn--primary btn--lg" position="hero">Start free trial</AppCta>
+      <a href="/how-it-works/" class="btn btn--glass btn--lg">See How It Works</a>
     </div>
-  </section>
+  </Hero>
 
   <section class="section section--sm">
     <div class="container">
@@ -45,34 +45,7 @@ import { phrases } from '../../data/site-facts';
 
   <section class="section section--sm">
     <div class="container">
-      <div class="pricing-grid">
-        <div class="glass-card pricing-card reveal">
-          <div class="pricing-card__name">Starter</div>
-          <div class="pricing-card__price">{phrases.en.starterPrice}<span>/month</span></div>
-          <p class="pricing-card__desc">Small cafes, bars, and coffee shops — {phrases.en.scansUpTo}.</p>
-          <ul class="pricing-card__features">
-            <li>One counter QR and digital stamp card</li>
-            <li>{phrases.en.scans}</li>
-            <li>Welcome stamp, birthday treats, happy hour</li>
-            <li>Offers pushed to members</li>
-            <li>Basic analytics</li>
-            <li>Listed in the app's Nearby list</li>
-          </ul>
-          <AppCta class="btn btn--glass" style="width:100%;" position="starter">Start free trial</AppCta>
-        </div>
-        <div class="glass-card pricing-card pricing-card--featured reveal">
-          <div class="pricing-card__name">Growth</div>
-          <div class="pricing-card__price">{phrases.en.growthPrice}<span>/month</span></div>
-          <p class="pricing-card__desc">Busy venues — {phrases.en.unlimitedScans}.</p>
-          <ul class="pricing-card__features">
-            <li>Everything in Starter</li>
-            <li>{phrases.en.unlimitedScansCap}</li>
-            <li>Advanced analytics</li>
-            <li>Priority support</li>
-          </ul>
-          <AppCta class="btn btn--primary" style="width:100%;" position="growth">Start free trial</AppCta>
-        </div>
-      </div>
+      <PricingCards />
       <p style="text-align:center; margin-top:1.25rem; color:var(--text-secondary); font-weight:600;">{phrases.en.noCardNeeded}</p>
       <p style="text-align:center; margin-top:1.5rem; color:var(--text-muted); font-size:0.9rem;">
         vs $200+/mo enterprise loyalty — <a href="/features/" style="color:var(--cyan-400);">compare features</a>
