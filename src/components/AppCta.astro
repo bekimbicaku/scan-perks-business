@@ -8,8 +8,9 @@ interface Props {
 }
 
 const { class: className = 'btn btn--primary', position = 'cta' } = Astro.props;
+const label = (await Astro.slots.render('default')).replace(/\s+/g, ' ').trim();
+const appPath = label === 'Start free trial' ? '/business/start' : '/';
+const href = appSignupUrl(Astro.url.pathname, position, appPath);
 ---
 
-<a href={appSignupUrl(Astro.url.pathname, position)} class={className}>
-  <slot />
-</a>
+<a href={href} class={className} set:html={label} />
