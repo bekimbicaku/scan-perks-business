@@ -7,6 +7,7 @@ import {
 } from '../seo/schema';
 import type { Locale } from '../i18n/config';
 import { DEFAULT_LOCALE, LOCALE_META } from '../i18n/config';
+import { ogImageForPath } from '../seo/shareImage';
 
 interface Props {
   title: string;
@@ -14,9 +15,8 @@ interface Props {
   path?: string;
   canonicalPath?: string;
   lang?: Locale;
-  /** Full hreflang alternate list */
+  /** Full hreflang alternate list. Pass [] to emit none. */
   hreflangLinks?: { hreflang: string; href: string }[];
-  keywords?: string[];
   ogImage?: string;
   noindex?: boolean;
   extraSchema?: Record<string, unknown>[];
@@ -31,8 +31,7 @@ const {
   canonicalPath,
   lang = DEFAULT_LOCALE,
   hreflangLinks,
-  keywords = [],
-  ogImage = '/favicon.png',
+  ogImage,
   noindex = false,
   extraSchema = [],
   breadcrumbs,
@@ -53,17 +52,25 @@ if (faqs?.length) {
 
 const alternates =
   hreflangLinks ??
-  (lang === 'en'
-    ? [
-        { hreflang: 'en', href: canonical },
-        { hreflang: 'en-US', href: canonical },
-        { hreflang: 'en-GB', href: canonical },
-        { hreflang: 'x-default', href: `${SITE.url}/` },
-      ]
-    : [
-        { hreflang: lang, href: canonical },
-        { hreflang: 'x-default', href: `${SITE.url}/` },
-      ]);
+  [
+    { hreflang: lang === 'en' ? 'en' : lang, href: canonical },
+    { hreflang: 'x-default', href: canonical },
+  ];
+
+const imagePath = ogImage ?? ogImageForPath(resolvedCanonicalPath);
+const imageUrl = imagePath.startsWith('http') ? imagePath : `${SITE.url}${imagePath}`;
+
+/** One &amp; in the head. Astro's attribute renderer would emit &#38; instead. */
+function attr(value: string): string {
+  return value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+}
+
+const textMeta = `<title>${attr(title)}</title>
+<meta name="description" content="${attr(description)}" />
+<meta property="og:title" content="${attr(title)}" />
+<meta property="og:description" content="${attr(description)}" />
+<meta name="twitter:title" content="${attr(title)}" />
+<meta name="twitter:description" content="${attr(description)}" />`;
 ---
 
 <!DOCTYPE html>
@@ -72,9 +79,7 @@ const alternates =
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="w2kB_h7DPf5-MuD9ZDt01idsl0E5rrv0jivaMMzrAVQ" />
-  <title>{title}</title>
-  <meta name="description" content={description} />
-  {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+  <Fragment set:html={textMeta} />
   <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-image-preview:large'} />
   <link rel="canonical" href={canonical} />
   {alternates.map((a) => (
@@ -85,15 +90,14 @@ const alternates =
   <meta property="og:locale" content={lang === 'en' ? 'en_US' : LOCALE_META[lang].htmlLang} />
   {lang === 'en' && <meta property="og:locale:alternate" content="en_GB" />}
   <meta property="og:url" content={canonical} />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:image" content={`${SITE.url}${ogImage}`} />
+  <meta property="og:image" content={imageUrl} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:site_name" content={SITE.name} />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={`${SITE.url}${ogImage}`} />
+  <meta name="twitter:image" content={imageUrl} />
 
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin />

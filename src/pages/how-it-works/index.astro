@@ -18,7 +18,7 @@ import {
   platformStats,
   loyaltyComparisonTable,
 } from '../../data/geoContent';
-import { buildSoftwareApplicationSchema, buildHowToSchema, buildVideoSchema } from '../../seo/schema';
+import { buildHowToSchema, buildVideoSchema } from '../../seo/schema';
 import { getHreflangLinks, getPageDef } from '../../i18n/pages';
 import { phrases } from '../../data/site-facts';
 
@@ -53,10 +53,9 @@ const howToSchema = buildHowToSchema({
   path="/how-it-works/"
   lang="en"
   hreflangLinks={getHreflangLinks(getPageDef('how-it-works')!)}
-  keywords={['how qr loyalty works', 'cafe loyalty setup', 'qr code loyalty program setup']}
   breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'How It Works', path: '/how-it-works/' }]}
   faqs={howFaqs}
-  extraSchema={[buildSoftwareApplicationSchema(), howToSchema, ...promoVideos.map(buildVideoSchema)]}
+  extraSchema={[howToSchema, ...promoVideos.map(buildVideoSchema)]}
 >
   <Nav active="how" pageId="how-it-works" />
 

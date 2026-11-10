@@ -9,7 +9,7 @@ import PromoVideos from '../components/PromoVideos.astro';
 import { landingContent, SITE } from '../data/content';
 import { G2_LISTING } from '../data/g2AndOutreach';
 import { promoVideos } from '../data/videos';
-import { buildSoftwareApplicationSchema, buildVideoSchema } from '../seo/schema';
+import { buildVideoSchema } from '../seo/schema';
 import { getHreflangLinks, getPageDef } from '../i18n/pages';
 import { phrases } from '../data/site-facts';
 
@@ -24,9 +24,8 @@ const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
   path="/"
   lang="en"
   hreflangLinks={getHreflangLinks(homeDef)}
-  keywords={c.metaKeywords}
   faqs={c.faqs}
-  extraSchema={[buildSoftwareApplicationSchema(), ...promoVideos.map(buildVideoSchema)]}
+  extraSchema={promoVideos.map(buildVideoSchema)}
 >
   <Nav active="home" pageId="home" />
 

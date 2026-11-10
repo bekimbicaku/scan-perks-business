@@ -6,7 +6,6 @@ import AnswerFirst from '../../components/AnswerFirst.astro';
 import AppCta from '../../components/AppCta.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import { SITE } from '../../data/content';
-import { buildSoftwareApplicationSchema } from '../../seo/schema';
 import { getHreflangLinks, getPageDef } from '../../i18n/pages';
 import { phrases } from '../../data/site-facts';
 
@@ -38,13 +37,11 @@ const directAnswer =
   path="/scanbucks/"
   lang="en"
   hreflangLinks={getHreflangLinks(getPageDef('scanbucks')!)}
-  keywords={['scanbucks', 'scan perks', 'scan bucks', 'perks app', 'cafe loyalty app']}
   faqs={scanbucksFaqs}
   breadcrumbs={[
     { name: 'Home', path: '/' },
     { name: 'Scanbucks', path: '/scanbucks/' },
   ]}
-  extraSchema={[buildSoftwareApplicationSchema()]}
 >
   <Nav pageId="scanbucks" />
 

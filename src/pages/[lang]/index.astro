@@ -8,7 +8,6 @@ import ScanDemo from '../../components/ScanDemo.astro';
 import type { Locale } from '../../i18n/config';
 import { ui } from '../../i18n/ui';
 import { getPageDef, pageHref, getHreflangLinks } from '../../i18n/pages';
-import { buildSoftwareApplicationSchema } from '../../seo/schema';
 import { G2_LISTING } from '../../data/g2AndOutreach';
 import { SITE } from '../../data/content';
 
@@ -36,9 +35,7 @@ const how = getPageDef('how-it-works')!;
   path={path}
   lang={lang}
   hreflangLinks={getHreflangLinks(home)}
-  keywords={content.keywords}
   faqs={content.faqs}
-  extraSchema={[buildSoftwareApplicationSchema()]}
 >
   <LangNav locale={lang} active="home" pageId="home" />
 
