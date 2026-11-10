@@ -6,8 +6,7 @@ import AppCta from '../components/AppCta.astro';
 import StoreBadges from '../components/StoreBadges.astro';
 import ScanDemo from '../components/ScanDemo.astro';
 import PromoVideos from '../components/PromoVideos.astro';
-import { landingContent, SITE } from '../data/content';
-import { G2_LISTING } from '../data/g2AndOutreach';
+import { landingContent } from '../data/content';
 import { promoVideos } from '../data/videos';
 import { buildVideoSchema } from '../seo/schema';
 import { getHreflangLinks, getPageDef } from '../i18n/pages';
@@ -15,7 +14,6 @@ import { phrases } from '../data/site-facts';
 
 const c = landingContent;
 const homeDef = getPageDef('home')!;
-const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
 ---
 
 <BaseLayout
@@ -33,21 +31,14 @@ const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
     <div class="container">
       <div class="hero__content">
         <div>
-          <div class="hero__badge">
-            <span class="hero__badge-dot"></span>
-            QR loyalty for cafes, pubs &amp; bars
-          </div>
-          <h1 class="hero__title">Scan Perks</h1>
+          <h1 class="hero__title">QR stamp card for cafes, pubs and bars</h1>
           <p class="hero__lead">
             One counter QR. Customers scan it in the free Scan Perks app and collect stamps toward your reward.
             <span>Set up in 5 minutes. {phrases.en.trial}, {phrases.en.noCard} — then {phrases.en.starterPerMo}.</span>
           </p>
           <div class="hero__actions">
-            <AppCta class="btn btn--primary btn--lg" position="hero">Start {phrases.en.trial}</AppCta>
-            <a href="/cafe-loyalty-app/" class="btn btn--glass btn--lg">Cafe loyalty app</a>
-          </div>
-          <div class="hero__store-row">
-            <StoreBadges showHint={false} centered={false} />
+            <AppCta class="btn btn--primary btn--lg" position="hero">Start free trial</AppCta>
+            <a href="/how-it-works/" class="btn btn--glass btn--lg">See how it works</a>
           </div>
           <div class="hero__stats">
             <div>
@@ -90,7 +81,24 @@ const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
           <span class="action-step__num">3</span>
           <h2 class="action-step__title">Open the dashboard</h2>
           <p class="action-step__desc">Go to app.scan-perks.com. Track stamps and send slow-day offers.</p>
-          <AppCta class="btn btn--primary" position="steps">Start {phrases.en.trial}</AppCta>
+          <AppCta class="btn btn--primary" position="steps">Start free trial</AppCta>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sm" aria-label="Photos still to add">
+    <div class="container">
+      <div class="asset-todos">
+        <div class="asset-todo">
+          <p class="asset-todo__kicker">TODO</p>
+          <p class="asset-todo__title">Dashboard screenshot</p>
+          <p class="asset-todo__note">Add a real capture of the owner dashboard.</p>
+        </div>
+        <div class="asset-todo">
+          <p class="asset-todo__kicker">TODO</p>
+          <p class="asset-todo__title">QR on the counter</p>
+          <p class="asset-todo__note">Add a real photo of the QR on a counter.</p>
         </div>
       </div>
     </div>
@@ -111,19 +119,36 @@ const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
 
   <section class="section section--sm">
     <div class="container reveal">
+      <h2 class="stamps__title">Already collecting stamps?</h2>
+      <StoreBadges showHint={false} />
+    </div>
+  </section>
+
+  <section class="section section--sm" aria-label="Quote still to add">
+    <div class="container">
+      <div class="asset-todo asset-todo--quote">
+        <p class="asset-todo__kicker">TODO</p>
+        <p class="asset-todo__title">Customer quote</p>
+        <p class="asset-todo__note">Add one quote from a real venue owner.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container reveal">
       <div class="cta-banner">
         <h2 class="cta-banner__title">Ready to grow regulars?</h2>
-        <p class="cta-banner__desc">Open the app, start your {phrases.en.trialShort}, or leave a review if you already use Scan Perks.</p>
-        <div class="cta-banner__actions cta-banner__actions--stack">
-          <div class="cta-banner__btns">
-            <AppCta class="btn btn--primary btn--lg" position="bottom">Open app.scan-perks.com</AppCta>
-            <a href={g2Url} class="btn btn--glass btn--lg" rel="noopener noreferrer" target="_blank">G2 Review</a>
-          </div>
-          <StoreBadges showHint={false} />
+        <p class="cta-banner__desc">Open the app and start your {phrases.en.trialShort}.</p>
+        <div class="cta-banner__actions">
+          <AppCta class="btn btn--primary btn--lg" position="bottom">Start free trial</AppCta>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="trial-bar">
+    <AppCta class="btn btn--primary btn--lg" position="sticky">Start free trial</AppCta>
+  </div>
 
   <Footer />
 </BaseLayout>
@@ -132,6 +157,12 @@ const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
   .hero--action {
     padding-top: 7rem;
     padding-bottom: 3rem;
+  }
+
+  .hero__title {
+    font-size: clamp(1.85rem, 4.2vw, 3.05rem);
+    line-height: 1.12;
+    max-width: 14em;
   }
 
   .hero__lead {
@@ -148,14 +179,6 @@ const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
     color: var(--blue-300);
     font-weight: 600;
     font-size: 1.05rem;
-  }
-
-  .hero__store-row {
-    margin-top: 1.25rem;
-  }
-
-  .hero__store-row :global(.store-badges) {
-    justify-content: flex-start;
   }
 
   .action-steps {
@@ -199,6 +222,53 @@ const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
     margin: 0 0 1.15rem;
   }
 
+  .asset-todos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .asset-todo {
+    min-height: 16rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 0.4rem;
+    padding: 1.25rem;
+    border: 2px dashed rgba(148, 163, 184, 0.55);
+    border-radius: var(--radius-md, 16px);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .asset-todo--quote {
+    min-height: 10rem;
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+
+  .asset-todo__kicker {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: var(--cyan-400);
+  }
+
+  .asset-todo__title {
+    margin: 0;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  .asset-todo__note {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
   .venue-cta {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -231,22 +301,19 @@ const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
     color: var(--cyan-400);
   }
 
-  .cta-banner__actions--stack {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.25rem;
+  .stamps__title {
+    text-align: center;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    margin-bottom: 1.5rem;
   }
 
-  .cta-banner__btns {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    justify-content: center;
+  .trial-bar {
+    display: none;
   }
 
   @media (max-width: 900px) {
-    .action-steps {
+    .action-steps,
+    .asset-todos {
       grid-template-columns: 1fr;
     }
 
@@ -254,13 +321,34 @@ const g2Url = G2_LISTING.profileUrl || SITE.social.g2;
       grid-template-columns: 1fr 1fr;
     }
 
-    .hero__store-row :global(.store-badges) {
-      justify-content: center;
-    }
-
+    .hero__title,
     .hero__lead {
       margin-left: auto;
       margin-right: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .trial-bar {
+      display: flex;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1001;
+      justify-content: center;
+      padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+      background: rgba(2, 6, 23, 0.94);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .trial-bar :global(.btn) {
+      width: 100%;
+      max-width: 28rem;
+    }
+
+    :global(.footer) {
+      padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
     }
   }
 </style>
