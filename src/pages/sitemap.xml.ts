@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import { SITE } from '../data/content';
+import { alternativePages } from '../data/alternatives';
 import { loyaltyPages } from '../data/loyaltyPages';
 import { keywordLandings } from '../data/keywordLandings';
 import { blogArticles } from '../data/blogArticles';
@@ -114,6 +115,15 @@ export const GET: APIRoute = () => {
       path,
       priority: KEYWORD_LANDING_PRIORITY[p.slug] ?? '0.98',
       changefreq: 'weekly',
+    });
+  }
+
+  for (const p of alternativePages) {
+    push({
+      path: `/${p.slug}/`,
+      priority: '0.8',
+      changefreq: 'monthly',
+      lastmod: '2026-11-10',
     });
   }
 
