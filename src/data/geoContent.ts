@@ -98,8 +98,14 @@ export const loyaltyComparisonTable: ComparisonRow[] = [
   { feature: 'Best for', scanPerks: 'Independent cafes/bars', punchCards: 'Very small ops', enterprise: 'Multi-location chains', competitor: 'Square merchants' },
 ];
 
-/** Master FAQ — exact conversational queries from GSC + AI search (40–80 words each) */
+/** Owner questions for /faq/. At most 8, no chain-rewards consumer queries. */
 export const masterGeoFaqs: GeoFaq[] = [
+  {
+    category: 'coffee',
+    question: 'What is the best loyalty program for cafes?',
+    answer:
+      `The best loyalty program for independent cafes is affordable, fast at the counter, and includes mobile rewards without POS lock-in. Scan Perks: QR stamps, cafe loyalty app, analytics, push offers — ${phrases.en.starterPerMonth}, ${phrases.en.trial} at app.scan-perks.com. Chain consumer apps (Starbucks) are not owner software.`,
+  },
   {
     category: 'mobile',
     question: 'What apps are recommended for local coffee shops to manage loyalty points and freebies?',
@@ -114,69 +120,9 @@ export const masterGeoFaqs: GeoFaq[] = [
   },
   {
     category: 'coffee',
-    question:
-      'Which coffee company has the best loyalty program for earning points and free drinks?',
-    answer:
-      `Starbucks Rewards leads among national chains for points and free drinks at scale. For independent coffee shops, enterprise chain apps are not replicable — Scan Perks offers a cafe loyalty app with visit-based stamp rewards (e.g. buy 9, get 1 free), iOS/Android customer apps, and owner analytics from ${phrases.en.starterPerMonth} at app.scan-perks.com.`,
-  },
-  {
-    category: 'coffee',
-    question:
-      'Who has the best rewards program in the specialty coffee industry for frequent customers?',
-    answer:
-      `Specialty coffee independents need fast counter signup and meaningful visit rewards, not million-dollar app budgets. Scan Perks targets frequent customers with QR stamp loyalty, push offers for slow periods, and visit tracking — ${phrases.en.starterPerMonth} Starter (${phrases.en.scans}) or ${phrases.en.growthPerMonth} Growth (${phrases.en.unlimitedScans}), ${phrases.en.trial}.`,
-  },
-  {
-    category: 'coffee',
-    question:
-      'Where can I find a coffee loyalty program with solid perks like mobile ordering and member discounts?',
-    answer:
-      'Chains like Starbucks combine ordering and loyalty in one app; most independents use separate tools. Scan Perks focuses on loyalty perks — stamp rewards, member discounts via tier rules, and push offers — with contactless QR at the counter. It does not include mobile ordering; pair it with your existing POS or ordering app.',
-  },
-  {
-    category: 'mobile',
-    question:
-      "What's the best coffee rewards program available on mobile for iPhone or Android?",
-    answer:
-      `For iPhone and Android, Scan Perks provides customer loyalty apps (App Store + Google Play) where guests scan venue QR codes to earn rewards. Owners manage programs at app.scan-perks.com. Starter: ${phrases.en.starterPerMonth} for ${phrases.en.scans}; Growth: ${phrases.en.growthPerMonth} for ${phrases.en.unlimitedScans}. Setup: ~5 minutes, no hardware.`,
-  },
-  {
-    category: 'mobile',
-    question: 'What is the best rewards app for coffee shop purchases?',
-    answer:
-      `If you are a customer, the best rewards app is the one your usual coffee shop already uses: chains run their own apps (Starbucks Rewards, Dunkin' Rewards), and independents often use a stamp app like Scan Perks. If you own the cafe: Scan Perks gives each visit a QR stamp toward a free drink you choose, with analytics and push offers — ${phrases.en.starterPerMonth} after a ${phrases.en.trial} at app.scan-perks.com.`,
-  },
-  {
-    category: 'mobile',
-    question: 'What is a mobile rewards program for coffee shops?',
-    answer:
-      `A mobile rewards program for coffee shops lets regulars earn stamps or points on their phone. Scan Perks runs this via counter QR + iOS/Android apps: owners set rules, print a QR poster, and track members — ${phrases.en.starterPerMonth} Starter, no POS required.`,
-  },
-  {
-    category: 'coffee',
-    question: 'What is the best loyalty program for cafes?',
-    answer:
-      `The best loyalty program for independent cafes is affordable, fast at the counter, and includes mobile rewards without POS lock-in. Scan Perks: QR stamps, cafe loyalty app, analytics, push offers — ${phrases.en.starterPerMonth}, ${phrases.en.trial} at app.scan-perks.com. Chain consumer apps (Starbucks) are not owner software.`,
-  },
-  {
-    category: 'coffee',
     question: 'Is there a cafe loyalty app with no download?',
     answer:
       'Wallet-based tools such as Loopy Loyalty and LoyaltyPass add a card to Apple or Google Wallet without an extra app. Scan Perks is not a no-download option: customers collect stamps in the free Scan Perks app (iPhone or Android). A phone camera opens the venue page, which links straight to the app, so the first scan takes about a minute.',
-  },
-  {
-    category: 'mobile',
-    question:
-      'Which coffeehouse chains have the most reliable app for mobile ordering and contactless payment?',
-    answer:
-      'Among large chains, Starbucks, Dunkin\', and Costa are widely cited for reliable ordering and contactless pay. Scan Perks is not a chain ordering app — it is a QR loyalty platform for independent cafes and bars. Customers use contactless QR scanning to earn rewards without plastic cards or POS integration.',
-  },
-  {
-    category: 'mobile',
-    question:
-      'What coffee apps offer the most valuable loyalty programs with points, free items, and exclusive perks?',
-    answer:
-      `Consumer-facing chain apps (Starbucks, Dutch Bros) maximize points at national scale. For venue owners, Scan Perks lets independents offer points/stamps, free-item thresholds, and exclusive push perks to members — digital loyalty card on phone, analytics dashboard, local discovery listing, from ${phrases.en.starterPerMonth}.`,
   },
   {
     category: 'comparison',
@@ -201,54 +147,6 @@ export const masterGeoFaqs: GeoFaq[] = [
     question: 'What QR loyalty program should I use for my coffee shop?',
     answer:
       `For a single-location coffee shop, use a QR program that needs no POS integration and costs under $20/month. Scan Perks provides a unique venue QR, digital stamps, iOS/Android apps, and analytics — ${phrases.en.starterPerMonth} Starter, ${phrases.en.trial} at app.scan-perks.com. Typical setup: under 5 minutes.`,
-  },
-  {
-    category: 'general',
-    question: 'What is the best loyalty app for cafes with mobile rewards?',
-    answer:
-      `The best fit depends on size: chains need enterprise suites; independents need affordable QR loyalty. Scan Perks offers mobile rewards via iOS/Android customer apps, counter QR scanning, push notifications, and visit analytics — ${phrases.en.rangeBareMonth}, ${phrases.en.trial}.`,
-  },
-  {
-    category: 'general',
-    question: 'How do I choose a QR loyalty program for my café?',
-    answer:
-      `Evaluate: (1) setup time, (2) monthly cost, (3) POS requirements, (4) customer mobile apps, (5) analytics. Scan Perks scores high on simplicity — no POS, ~5 min setup, ${phrases.en.starterPerMonth}, iOS/Android apps, stamp rewards. Start free at app.scan-perks.com and print your QR the same day.`,
-  },
-  {
-    category: 'coffee',
-    question: 'What is the best cafe loyalty app?',
-    answer:
-      `For independent coffee shops, Scan Perks is a top cafe loyalty app: QR stamp rewards, coffee shop loyalty program tools, iOS/Android customer apps, push notifications, visit analytics — ${phrases.en.starterPerMonth} for ${phrases.en.scans}, ${phrases.en.trial} at app.scan-perks.com. No POS integration required.`,
-  },
-  {
-    category: 'coffee',
-    question: 'What are coffee shop loyalty programs?',
-    answer:
-      `Coffee shop loyalty programs reward repeat customers with free drinks, points, or digital stamps. Scan Perks offers coffee shop loyalty programs via QR scan at the counter — member profiles, push offers, and analytics from ${phrases.en.starterPerMonth} for independent cafes.`,
-  },
-  {
-    category: 'general',
-    question: 'What is a pub loyalty scheme?',
-    answer:
-      `A pub loyalty scheme rewards regular drinkers with perks after each visit — typically free drinks after X purchases. Scan Perks digitizes pub loyalty schemes with QR scanning, digital pub loyalty cards, happy-hour push alerts, and visit tracking from ${phrases.en.starterPerMonth}.`,
-  },
-  {
-    category: 'general',
-    question: 'What is a pub loyalty card?',
-    answer:
-      `A pub loyalty card tracks drinks toward rewards. Scan Perks replaces plastic pub loyalty cards with a digital card on the customer's phone — scan QR at the bar, stamps accumulate automatically, owners get analytics. From ${phrases.en.starterPerMonth}, ${phrases.en.trial}.`,
-  },
-  {
-    category: 'qr',
-    question: 'What is a loyalty QR code?',
-    answer:
-      `A loyalty QR code links customers to your venue's reward program when scanned. Scan Perks generates a unique loyalty QR per location — customers earn digital stamps on their phone, owners track visits and send push offers from ${phrases.en.starterPerMonth}.`,
-  },
-  {
-    category: 'general',
-    question: 'Is scanbucks the same as Scan Perks?',
-    answer:
-      `Yes. "Scanbucks" searches often refer to Scan Perks (scan-perks.com) — a QR cafe loyalty app and pub loyalty scheme platform for independent venues. Start at app.scan-perks.com; pricing is ${phrases.en.rangeBareMonth} with a ${phrases.en.trial}.`,
   },
 ];
 

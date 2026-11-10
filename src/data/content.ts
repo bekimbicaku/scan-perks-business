@@ -429,21 +429,6 @@ export const landingContent: LandingContent = {
         `Plans start at ${phrases.en.starterPerMonth} for small venues and ${phrases.en.growthPerMonth} for high-traffic businesses. Every plan includes a ${phrases.en.trial}, no setup fees, and no long-term contracts.`,
     },
     {
-      question: 'Can Scan Perks help bars get more loyal customers?',
-      answer:
-        'Yes. Bars use Scan Perks for visit-based rewards, happy-hour push alerts, and customer profiles.',
-    },
-    {
-      question: 'Is Scan Perks good for restaurant loyal customers and retention?',
-      answer:
-        'Scan Perks is built for restaurant customer retention: tiered rewards, visit analytics, slow-night push offers, and local discovery in the consumer app.',
-    },
-    {
-      question: 'How do I grow my restaurant business with Scan Perks?',
-      answer:
-        'Increase repeat visits with rewards, re-engage guests via push notifications, and use dashboard insights to optimize peak hours and promotions. Affordable pricing means independent restaurants compete with chains.',
-    },
-    {
       question: 'What is a QR code loyalty program?',
       answer:
         'A QR loyalty program replaces punch cards with smartphone scanning. Each venue gets a unique QR code; customers scan to join and earn perks. Scan Perks includes print-ready materials and full analytics.',
@@ -467,21 +452,6 @@ export const landingContent: LandingContent = {
       question: 'Does Scan Perks work for coffee shops and small cafes?',
       answer:
         `Absolutely. The Starter plan (${phrases.en.starterPerMonth}) covers ${phrases.en.scans} — which suits a neighborhood cafe launching its first digital loyalty program.`,
-    },
-    {
-      question: 'How can Scan Perks help me increase customers and profits?',
-      answer:
-        `Scan Perks is built to grow repeat visits: a stamp card toward a free item, offers pushed to members for slow nights, and happy-hour double stamps — for ${phrases.en.rangeBareMonth}, far cheaper than constant paid advertising.`,
-    },
-    {
-      question: 'Can a loyalty program build customer trust for my business?',
-      answer:
-        'Yes. Transparent digital rewards show guests you value their loyalty. Consistent perks and a professional QR system build credibility — especially for independent bars and restaurants competing with chains.',
-    },
-    {
-      question: 'How do I increase foot traffic without expensive marketing?',
-      answer:
-        `Use Scan Perks local discovery listing, loyalty rewards for regulars, and targeted push notifications. All included from ${phrases.en.starterPerMonth} — designed for small hospitality businesses with limited marketing budgets.`,
     },
     {
       question: 'What is the ROI of Scan Perks for restaurant revenue?',

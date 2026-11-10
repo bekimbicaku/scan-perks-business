@@ -5,11 +5,6 @@ import Footer from '../components/Footer.astro';
 import LoyaltyLandingPage from '../components/LoyaltyLandingPage.astro';
 import LocalizedLanding from '../components/LocalizedLanding.astro';
 import { getLoyaltyPage, getAllLandingSlugs } from '../data/loyaltyPages';
-import {
-  barConversationalFaqs,
-  cafeConversationalFaqs,
-  qrConversationalFaqs,
-} from '../data/conversationalFaqs';
 import { getCanonicalOverrideForSlug } from '../data/seoCanonicals';
 import { buildLoyaltyServiceSchema, buildHowToSchema } from '../seo/schema';
 import { enNicheSlugPaths, findDefByEnSlug, getHreflangLinks } from '../i18n/pages';
@@ -30,19 +25,6 @@ export function getStaticPaths() {
   return [...loyalty, ...niches];
 }
 
-const conversationalBySlug: Record<string, typeof barConversationalFaqs> = {
-  'bar-loyalty-program': barConversationalFaqs,
-  'cafe-loyalty-program': cafeConversationalFaqs,
-  'cafe-loyalty-app': cafeConversationalFaqs,
-  'coffee-loyalty-app': cafeConversationalFaqs,
-  'coffee-shop-loyalty-app': cafeConversationalFaqs,
-  'coffee-shop-loyalty-programs': cafeConversationalFaqs,
-  'qr-loyalty-program': qrConversationalFaqs,
-  'qr-code-loyalty-program': qrConversationalFaqs,
-  'pub-loyalty-scheme': barConversationalFaqs,
-  'pub-loyalty-card': barConversationalFaqs,
-};
-
 const { slug } = Astro.params;
 const kind = Astro.props.kind as 'loyalty' | 'niche';
 
@@ -53,8 +35,7 @@ const page = kind === 'loyalty' ? getLoyaltyPage(slug!) : undefined;
 if (kind === 'loyalty' && !page) return Astro.redirect('/404');
 if (kind === 'niche' && !nicheDef) return Astro.redirect('/404');
 
-const extraFaqs = page ? conversationalBySlug[page.slug] ?? [] : [];
-const allFaqs = page ? [...page.faqs, ...extraFaqs] : nicheContent?.faqs ?? [];
+const allFaqs = page ? page.faqs : nicheContent?.faqs ?? [];
 
 const path = page ? `/${page.slug}/` : `/${nicheContent!.slug}/`;
 const canonicalOverride = page ? getCanonicalOverrideForSlug(page.slug) : undefined;

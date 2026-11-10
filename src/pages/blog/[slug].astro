@@ -7,7 +7,6 @@ import AppCta from '../../components/AppCta.astro';
 import NamedVendorTable from '../../components/NamedVendorTable.astro';
 import { blogArticles, getBlogArticle } from '../../data/blogArticles';
 import { SITE, appSignupUrl } from '../../data/content';
-import { cafeConversationalFaqs } from '../../data/conversationalFaqs';
 import { buildBlogPostingSchema } from '../../seo/schema';
 import { phrases } from '../../data/site-facts';
 
@@ -23,9 +22,7 @@ const path = `/blog/${article.slug}/`;
 const linkHref = (href: string, position: string) =>
   href.startsWith(SITE.appWebUrl) ? appSignupUrl(path, position) : href;
 
-const blogExtraFaqs =
-  article.slug === 'best-coffee-loyalty-programs' ? cafeConversationalFaqs : [];
-const allFaqs = [...article.faqs, ...blogExtraFaqs];
+const allFaqs = article.faqs;
 
 const schema = buildBlogPostingSchema({
   title: article.title,
