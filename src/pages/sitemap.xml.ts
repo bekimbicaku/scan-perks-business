@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { SITE } from '../data/content';
 import { alternativePages } from '../data/alternatives';
+import { businessTypePages } from '../data/businessTypes';
 import { loyaltyPages } from '../data/loyaltyPages';
 import { keywordLandings } from '../data/keywordLandings';
 import { blogArticles } from '../data/blogArticles';
@@ -164,6 +165,15 @@ export const GET: APIRoute = () => {
         alternates,
       });
     }
+  }
+
+  for (const p of businessTypePages) {
+    push({
+      path: `/${p.slug}/`,
+      priority: '0.8',
+      changefreq: 'monthly',
+      lastmod: '2026-11-10',
+    });
   }
 
   for (const u of urls) {

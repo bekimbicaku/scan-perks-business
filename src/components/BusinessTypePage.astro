@@ -1,0 +1,70 @@
+---
+import type { BusinessType } from '../data/businessTypes';
+import {
+  businessTypeAnswer,
+  businessTypeHow,
+  businessTypeMeta,
+  businessTypePrice,
+} from '../data/businessTypes';
+import AnswerFirst from './AnswerFirst.astro';
+import AppCta from './AppCta.astro';
+import FAQSection from './FAQSection.astro';
+import InternalLinks from './InternalLinks.astro';
+
+interface Props {
+  page: BusinessType;
+}
+
+const { page } = Astro.props;
+const meta = businessTypeMeta(page);
+const sections = [
+  { heading: 'How the stamp card works', body: businessTypeHow(page) },
+  { heading: page.limitHeading, body: page.limitBody },
+  { heading: 'Price', body: businessTypePrice() },
+];
+---
+
+<article>
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section__label">Stamp card</span>
+      <h1 class="page-hero__title">{page.heading}</h1>
+      <p class="page-hero__desc">{meta.description}</p>
+      <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
+        <AppCta class="btn btn--primary btn--lg" position="hero">Start free trial</AppCta>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container">
+      <AnswerFirst answer={businessTypeAnswer(page)} />
+      {sections.map((section) => (
+        <div class="glass-card reveal" style="margin-top:1.5rem;">
+          <h2 class="feature-card__title" style="font-size:1.35rem; margin-bottom:0.75rem;">{section.heading}</h2>
+          <p class="feature-card__desc" style="font-size:1rem;">{section.body}</p>
+          {section.heading === 'Price' && (
+            <p style="margin-top:0.75rem;">
+              <a href="/pricing/" style="color:var(--cyan-400); font-weight:600;">Starter and Growth →</a>
+            </p>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <FAQSection faqs={page.faqs} title="Owner questions" />
+  <InternalLinks />
+
+  <section class="section section--sm">
+    <div class="container reveal">
+      <div class="cta-banner">
+        <h2 class="cta-banner__title">Start the free trial</h2>
+        <p class="cta-banner__desc">{meta.description}</p>
+        <div class="cta-banner__actions">
+          <AppCta class="btn btn--primary btn--lg" position="bottom">Start free trial</AppCta>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
