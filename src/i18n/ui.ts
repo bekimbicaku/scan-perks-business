@@ -25,7 +25,7 @@ export const ui: Record<Locale, UiStrings> = {
       blog: 'Blog',
       about: 'About',
       contact: 'Contact',
-      getStarted: 'Open App',
+      getStarted: 'Start free trial',
     },
     footer: {
       tagline: `QR loyalty for cafes, bars & restaurants — from ${phrases.en.starterPerMonth}.`,
@@ -34,7 +34,7 @@ export const ui: Record<Locale, UiStrings> = {
       company: 'Company',
       language: 'Language',
     },
-    cta: { startTrial: 'Open App — Free Trial', viewPricing: 'View Pricing', leaveReview: 'Leave a G2 Review →' },
+    cta: { startTrial: 'Start free trial', viewPricing: 'View Pricing', leaveReview: 'Leave a G2 Review →' },
     common: { quickAnswer: 'Direct Answer', alsoSee: 'Also see', related: 'Related' },
   },
   es: {

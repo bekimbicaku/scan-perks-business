@@ -1,5 +1,5 @@
 ---
-import { SITE } from '../data/content';
+import { appSignupUrl } from '../data/content';
 import AppCta from './AppCta.astro';
 import { LOCALES, LOCALE_META } from '../i18n/config';
 import { getPageDef, pageHref } from '../i18n/pages';
@@ -40,7 +40,7 @@ function switchHref(target: (typeof LOCALES)[number]): string {
         </li>
       ))}
     </ul>
-    <div class="nav__cta" style="display:flex; align-items:center; gap:0.75rem;">
+    <div class="nav__cta">
       <label class="lang-switch" aria-label="Language">
         <span class="lang-switch__label">English</span>
         <select class="lang-switch__select" onchange="location.href=this.value">
@@ -51,7 +51,8 @@ function switchHref(target: (typeof LOCALES)[number]): string {
           ))}
         </select>
       </label>
-      <AppCta position="nav">Open App</AppCta>
+      <a class="nav__login" href={appSignupUrl(Astro.url.pathname, 'login')}>Log in</a>
+      <AppCta position="nav">Start free trial</AppCta>
     </div>
     <button class="nav__toggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -69,7 +70,8 @@ function switchHref(target: (typeof LOCALES)[number]): string {
       </a>
     ))}
   </div>
-  <AppCta class="btn btn--primary" position="nav-mobile">Open App</AppCta>
+  <a class="nav__login" href={appSignupUrl(Astro.url.pathname, 'login')}>Log in</a>
+  <AppCta class="btn btn--primary" position="nav-mobile">Start free trial</AppCta>
 </div>
 
 <style>
@@ -110,6 +112,20 @@ function switchHref(target: (typeof LOCALES)[number]): string {
   .lang-switch__select option {
     background: #0f172a;
     color: #fff;
+  }
+
+  .nav__cta {
+    gap: 0.75rem;
+  }
+
+  .nav__login {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .nav__login:hover {
+    color: var(--white);
   }
 
   @media (max-width: 1100px) {

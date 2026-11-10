@@ -74,6 +74,7 @@ export const phrases = {
     noCard,
     noCardCap: noCard.charAt(0).toUpperCase() + noCard.slice(1),
     noCreditCard: trial.cardRequired ? 'credit card required' : 'no credit card required',
+    noCardNeeded: trial.cardRequired ? 'Card needed' : 'No card needed',
     squarePerMonthLocation: `$${square.priceUsd}/month per ${square.per}`,
     squarePerLocation: `$${square.priceUsd} per ${square.per}`,
     squarePerMo: `$${square.priceUsd}/mo`,
