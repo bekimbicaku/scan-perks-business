@@ -3,9 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import AlternativePage from '../components/AlternativePage.astro';
+import BusinessTypePage from '../components/BusinessTypePage.astro';
 import LoyaltyLandingPage from '../components/LoyaltyLandingPage.astro';
 import LocalizedLanding from '../components/LocalizedLanding.astro';
 import { alternativeMeta, alternativePages, getAlternative } from '../data/alternatives';
+import { businessTypeMeta, businessTypePages, getBusinessType } from '../data/businessTypes';
 import { getLoyaltyPage, getAllLandingSlugs } from '../data/loyaltyPages';
 import { getCanonicalOverrideForSlug } from '../data/seoCanonicals';
 import { buildLoyaltyServiceSchema, buildHowToSchema } from '../seo/schema';
@@ -18,8 +20,9 @@ export function getStaticPaths() {
     props: { kind: 'loyalty' as const },
   }));
   const existing = new Set(getAllLandingSlugs());
+  const businessSlugs = new Set(businessTypePages.map((item) => item.slug));
   const niches = enNicheSlugPaths()
-    .filter(({ slug }) => !existing.has(slug))
+    .filter(({ slug }) => !existing.has(slug) && !businessSlugs.has(slug))
     .map(({ slug }) => ({
       params: { slug },
       props: { kind: 'niche' as const },
@@ -28,28 +31,36 @@ export function getStaticPaths() {
     params: { slug: item.slug },
     props: { kind: 'alternative' as const },
   }));
-  return [...loyalty, ...niches, ...alternatives];
+  const businessTypes = businessTypePages.map((item) => ({
+    params: { slug: item.slug },
+    props: { kind: 'business-type' as const },
+  }));
+  return [...loyalty, ...niches, ...alternatives, ...businessTypes];
 }
 
 const { slug } = Astro.params;
-const kind = Astro.props.kind as 'loyalty' | 'niche' | 'alternative';
+const kind = Astro.props.kind as 'loyalty' | 'niche' | 'alternative' | 'business-type';
 
 const nicheDef = kind === 'niche' ? findDefByEnSlug(slug!) : undefined;
 const nicheContent = nicheDef?.content.en;
 
 const page = kind === 'loyalty' ? getLoyaltyPage(slug!) : undefined;
 const alternative = kind === 'alternative' ? getAlternative(slug!) : undefined;
+const businessType = kind === 'business-type' ? getBusinessType(slug!) : undefined;
 if (kind === 'loyalty' && !page) return Astro.redirect('/404');
 if (kind === 'niche' && !nicheDef) return Astro.redirect('/404');
 if (kind === 'alternative' && !alternative) return Astro.redirect('/404');
+if (kind === 'business-type' && !businessType) return Astro.redirect('/404');
 
 const allFaqs = page ? page.faqs : nicheContent?.faqs ?? [];
 
 const path = alternative
   ? `/${alternative.slug}/`
-  : page
-    ? `/${page.slug}/`
-    : `/${nicheContent!.slug}/`;
+  : businessType
+    ? `/${businessType.slug}/`
+    : page
+      ? `/${page.slug}/`
+      : `/${nicheContent!.slug}/`;
 const canonicalOverride = page ? getCanonicalOverrideForSlug(page.slug) : undefined;
 const servicePath = canonicalOverride ?? path;
 
@@ -109,9 +120,28 @@ const pubHowTo =
 
 const loyaltyExtraSchema = [serviceSchema, pubHowTo, cafeHowTo].filter(Boolean) as Record<string, unknown>[];
 const altMeta = alternative ? alternativeMeta(alternative) : undefined;
+const businessMeta = businessType ? businessTypeMeta(businessType) : undefined;
+const businessNiche = businessType ? findDefByEnSlug(businessType.slug) : undefined;
 ---
 
-{alternative && altMeta ? (
+{businessType && businessMeta ? (
+  <BaseLayout
+    title={businessMeta.title}
+    description={businessMeta.description}
+    path={path}
+    lang="en"
+    hreflangLinks={businessNiche ? getHreflangLinks(businessNiche) : undefined}
+    faqs={businessType.faqs}
+    breadcrumbs={[
+      { name: 'Home', path: '/' },
+      { name: businessType.heading, path },
+    ]}
+  >
+    <Nav />
+    <BusinessTypePage page={businessType} />
+    <Footer />
+  </BaseLayout>
+) : alternative && altMeta ? (
   <BaseLayout
     title={altMeta.title}
     description={altMeta.description}

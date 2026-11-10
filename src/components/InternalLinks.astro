@@ -1,5 +1,6 @@
 ---
 import { alternativePages } from '../data/alternatives';
+import { businessTypePages } from '../data/businessTypes';
 import { phrases } from '../data/site-facts';
 /** Priority internal links — pub pages first (closest to top 10 in GSC) */
 ---
@@ -35,6 +36,12 @@ import { phrases } from '../data/site-facts';
       {alternativePages.map((item) => (
         <a href={`/${item.slug}/`} class="glass-card internal-links__card">
           <strong>{item.name} alternative</strong>
+          <span>{item.guideLine}</span>
+        </a>
+      ))}
+      {businessTypePages.map((item) => (
+        <a href={`/${item.slug}/`} class="glass-card internal-links__card">
+          <strong>{item.heading}</strong>
           <span>{item.guideLine}</span>
         </a>
       ))}
