@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import AppCta from '../../../components/AppCta.astro';
+import { phrases } from '../../../data/site-facts';
+
+const path = '/tools/stamp-card-cost/';
+---
+
+<BaseLayout
+  title="Stamp Card Cost Calculator | Scan Perks"
+  description="Enter the stamps for a reward, the usual price, and how many rewards you expect to give. The page shows that arithmetic and labels it as your numbers."
+  path={path}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Stamp card cost', path },
+  ]}
+>
+  <Nav pageId="home" />
+
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section__label">Free tool</span>
+      <h1 class="page-hero__title">Stamp card cost</h1>
+      <p class="page-hero__desc">
+        Type how many stamps a reward takes, the usual price, and how many rewards you expect to give.
+        The page multiplies those numbers and labels them as yours.
+      </p>
+      <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
+        <AppCta class="btn btn--primary btn--lg" position="hero">Start free trial</AppCta>
+        <a href="/tools/scan-for-stamps/" class="btn btn--glass btn--lg">Scan for stamps poster</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container cost-wrap">
+      <div class="glass-card contact-form">
+        <p class="cost-lead">
+          Use your own figures. The lines below multiply the numbers you type. This is not a measured Scan Perks result.
+        </p>
+        <div class="form-group">
+          <label for="stamps">Stamps for a reward</label>
+          <input id="stamps" type="text" inputmode="numeric" autocomplete="off" placeholder="8" />
+        </div>
+        <div class="form-group">
+          <label for="price">Usual price</label>
+          <input id="price" type="text" inputmode="decimal" autocomplete="off" placeholder="4.50" />
+          <p class="field-hint">The price you charge, in your currency. Up to two decimal places.</p>
+        </div>
+        <div class="form-group">
+          <label for="rewards">Rewards you expect to give</label>
+          <input id="rewards" type="text" inputmode="numeric" autocomplete="off" placeholder="20" />
+        </div>
+        <p id="cost-message" class="cost-message" role="status">Enter your three numbers to see the arithmetic.</p>
+        <div id="cost-output" class="cost-output" hidden>
+          <h2>Your numbers</h2>
+          <dl>
+            <div>
+              <dt>Stamps for a reward</dt>
+              <dd id="out-stamps"></dd>
+            </div>
+            <div>
+              <dt>Usual price</dt>
+              <dd id="out-price"></dd>
+            </div>
+            <div>
+              <dt>Rewards you expect to give</dt>
+              <dd id="out-rewards"></dd>
+            </div>
+          </dl>
+          <p class="cost-eq" id="out-price-eq"></p>
+          <p class="cost-eq" id="out-stamp-eq"></p>
+        </div>
+      </div>
+
+      <div class="tool-cta">
+        <AppCta class="btn btn--primary btn--lg" position="after-tool">Start free trial</AppCta>
+        <p>{phrases.en.trial}, {phrases.en.noCard}.</p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <script is:inline src="/js/stamp-cost.js" defer></script>
+</BaseLayout>
+
+<style>
+  .cost-wrap {
+    max-width: 640px;
+  }
+
+  .cost-lead,
+  .cost-message,
+  .field-hint {
+    color: var(--text-secondary);
+  }
+
+  .cost-lead {
+    margin-bottom: 1.25rem;
+  }
+
+  .field-hint {
+    margin-top: 0.35rem;
+    font-size: 0.8rem;
+  }
+
+  .cost-message {
+    font-size: 0.95rem;
+  }
+
+  .cost-output h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .cost-output dl {
+    display: grid;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .cost-output dt {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .cost-output dd {
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+
+  .cost-eq {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+  }
+
+  .tool-cta {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .tool-cta p {
+    margin-top: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+</style>

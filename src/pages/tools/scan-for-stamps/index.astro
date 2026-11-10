@@ -1,0 +1,198 @@
+---
+import QRCode from 'qrcode';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import AppCta from '../../../components/AppCta.astro';
+import { appSignupUrl } from '../../../data/content';
+import { phrases } from '../../../data/site-facts';
+
+const path = '/tools/scan-for-stamps/';
+const qrTarget = appSignupUrl(path, 'poster');
+const staffLine = 'Point your phone camera at this code. It opens our Scan Perks card.';
+const svg = await QRCode.toString(qrTarget, {
+  type: 'svg',
+  margin: 2,
+  errorCorrectionLevel: 'M',
+  color: { dark: '#0f172a', light: '#ffffff' },
+});
+const qrSvg = svg.replace(/^<\?xml[^>]*>\s*/i, '');
+---
+
+<BaseLayout
+  title="Scan for Stamps Poster | Scan Perks"
+  description="Type your venue name and reward, then print the poster. The code opens app.scan-perks.com. It is not a venue stamp code."
+  path={path}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Scan for stamps poster', path },
+  ]}
+>
+  <Nav pageId="home" />
+
+  <section class="page-hero no-print">
+    <div class="container reveal">
+      <span class="section__label">Free tool</span>
+      <h1 class="page-hero__title">Scan for stamps poster</h1>
+      <p class="page-hero__desc">
+        Type the venue name and the reward. The page shows a poster you can print.
+      </p>
+      <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
+        <AppCta class="btn btn--primary btn--lg" position="hero">Start free trial</AppCta>
+        <a href="/tools/stamp-card-cost/" class="btn btn--glass btn--lg">Stamp card cost</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sm tool-section">
+    <div class="container tool-grid">
+      <div class="no-print">
+        <div class="glass-card contact-form">
+          <div class="form-group">
+            <label for="venue-name">Venue name</label>
+            <input id="venue-name" type="text" autocomplete="organization" placeholder="Your venue" />
+          </div>
+          <div class="form-group">
+            <label for="reward">Reward</label>
+            <input id="reward" type="text" placeholder="8 stamps, one free coffee" />
+          </div>
+          <button type="button" class="btn btn--glass" id="print-poster">Print poster</button>
+        </div>
+        <p class="tool-note">
+          This code opens <a href={qrTarget}>app.scan-perks.com</a>. It is not a venue stamp code.
+          Your counter code is created when you start the trial. {phrases.en.stampLine}
+        </p>
+      </div>
+
+      <div class="poster" id="poster">
+        <p id="poster-name" class="poster__name is-empty">Your venue</p>
+        <p id="poster-reward" class="poster__reward is-empty">Your reward</p>
+        <div class="poster__qr" role="img" aria-label="QR code that opens app.scan-perks.com" set:html={qrSvg} />
+        <p class="poster__staff">{staffLine}</p>
+      </div>
+    </div>
+
+    <div class="container no-print tool-cta">
+      <AppCta class="btn btn--primary btn--lg" position="after-tool">Start free trial</AppCta>
+      <p>{phrases.en.trial}, {phrases.en.noCard}.</p>
+    </div>
+  </section>
+
+  <Footer />
+  <script is:inline src="/js/scan-poster.js" defer></script>
+</BaseLayout>
+
+<style>
+  .tool-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .tool-note {
+    margin-top: 1.25rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+
+  .tool-note a {
+    color: var(--cyan-400);
+    font-weight: 600;
+  }
+
+  .poster {
+    background: #fff;
+    color: #0f172a;
+    border-radius: 16px;
+    padding: 2rem 1.5rem 1.75rem;
+    text-align: center;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  }
+
+  .poster__name {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    overflow-wrap: anywhere;
+  }
+
+  .poster__reward {
+    margin-top: 0.5rem;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .poster__name.is-empty,
+  .poster__reward.is-empty {
+    color: #64748b;
+  }
+
+  .poster__qr {
+    margin: 1.25rem auto 0;
+    width: 240px;
+    max-width: 100%;
+  }
+
+  .poster__qr :global(svg) {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .poster__staff {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  .tool-cta {
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+
+  .tool-cta p {
+    margin-top: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+
+  @media (max-width: 800px) {
+    .tool-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media print {
+    :global(body) {
+      background: #fff !important;
+    }
+
+    :global(.bg-canvas),
+    :global(.nav),
+    :global(.nav__mobile),
+    :global(.footer) {
+      display: none !important;
+    }
+
+    .no-print {
+      display: none !important;
+    }
+
+    .tool-section {
+      padding: 0;
+    }
+
+    .tool-grid {
+      display: block;
+    }
+
+    .poster {
+      box-shadow: none;
+      margin: 0 auto;
+      max-width: 480px;
+    }
+  }
+</style>
