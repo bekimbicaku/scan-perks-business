@@ -55,10 +55,10 @@ export const localizedPages: LocalizedPageDef[] = [
     },
     es: {
       slug: '',
-      metaTitle: 'Programa de fidelización para cafeterías | Scan Perks',
+      metaTitle: 'Tarjeta de sellos QR para cafeterías, pubs y bares | Scan Perks',
       description:
         `Programa de fidelización QR para cafeterías, bares y restaurantes. Sellos digitales desde ${phrases.es.starterPerMonth}. Prueba ${phrases.es.trialDays} gratis.`,
-      h1: 'Programa de fidelización para cafeterías y bares',
+      h1: 'Tarjeta de sellos QR para cafeterías, pubs y bares',
       heroLine: `Fidelización QR para cafeterías independientes — desde ${phrases.es.starterPerMonth}.`,
       directAnswer:
         `Scan Perks es un programa de fidelización QR para cafeterías, bares y restaurantes independientes. Los clientes escanean un código QR para ganar sellos; el local gestiona recompensas en app.scan-perks.com desde ${phrases.es.starterPerMonth}, sin integrar el TPV.`,
@@ -80,14 +80,14 @@ export const localizedPages: LocalizedPageDef[] = [
             `Es un sistema de recompensas por visitas (sellos, puntos o bebidas gratis). Scan Perks lo digitaliza con QR: ${phrases.es.starterPerMonth}, apps iOS/Android, sin TPV.`,
         },
       ],
-      keywords: ['programa de fidelización para cafeterías', 'app fidelización café', 'tarjetas fidelización QR'],
+      keywords: ['tarjeta de sellos QR para cafeterías, pubs y bares', 'app fidelización café', 'tarjetas fidelización QR'],
     },
     de: {
       slug: '',
-      metaTitle: 'Digitales Treueprogramm für Cafés in Deutschland | Scan Perks',
+      metaTitle: 'QR-Stempelkarte für Cafés, Pubs und Bars | Scan Perks',
       description:
         `Digitales Treueprogramm für Cafés, Bars & Restaurants. QR-Stempel ab ${phrases.de.starterPerMonth}. ${phrases.de.trialDays} kostenlos testen.`,
-      h1: 'Digitales Treueprogramm für Cafés & Bars',
+      h1: 'QR-Stempelkarte für Cafés, Pubs und Bars',
       heroLine: `QR-Treueprogramm für unabhängige Cafés — ab ${phrases.de.starterPerMonth}.`,
       directAnswer:
         `Scan Perks ist ein digitales Treueprogramm für Cafés, Bars und Restaurants. Gäste scannen einen QR-Code und sammeln Stempel; Betreiber steuern Belohnungen unter app.scan-perks.com ab ${phrases.de.starterPerMonth} — ohne Kassensystem-Anbindung.`,
@@ -109,7 +109,7 @@ export const localizedPages: LocalizedPageDef[] = [
             `Ein System, das Stammgäste mit Stempeln oder Gratisgetränken belohnt. Scan Perks digitalisiert das per QR — ab ${phrases.de.starterPerMonth}, ohne POS.`,
         },
       ],
-      keywords: ['digitales Treueprogramm Café', 'Treueprogramm Café', 'QR Stempelkarte Café'],
+      keywords: ['QR-Stempelkarte für Cafés, Pubs und Bars', 'Treueprogramm Café', 'QR Stempelkarte Café'],
     },
     fr: {
       slug: '',
@@ -138,10 +138,10 @@ export const localizedPages: LocalizedPageDef[] = [
     },
     it: {
       slug: '',
-      metaTitle: 'Programma fedeltà digitale per bar e caffè | Scan Perks',
+      metaTitle: 'Carta a timbri QR per caffè, pub e bar | Scan Perks',
       description:
         `Programma loyalty QR per caffè, bar e ristoranti. Timbri digitali da ${phrases.it.starterPerMonth}. Prova ${phrases.it.trialDays} gratis.`,
-      h1: 'Programma fedeltà digitale per bar e caffè',
+      h1: 'Carta a timbri QR per caffè, pub e bar',
       heroLine: `Loyalty QR per locali indipendenti — da ${phrases.it.starterPerMonth}.`,
       directAnswer:
         `Scan Perks è un programma fedeltà QR per caffè, bar e ristoranti indipendenti. I clienti scansionano un QR per guadagnare timbri; il locale gestisce i premi su app.scan-perks.com da ${phrases.it.starterPerMonth}, senza collegare il POS.`,
@@ -159,7 +159,7 @@ export const localizedPages: LocalizedPageDef[] = [
             `Un sistema di premi per le visite (timbri, punti, bevande gratis). Scan Perks lo digitalizza con QR — da ${phrases.it.starterPerMonth}.`,
         },
       ],
-      keywords: ['programma fedeltà bar', 'programma fedeltà caffè', 'carta fedeltà QR'],
+      keywords: ['carta a timbri QR per caffè, pub e bar', 'programma fedeltà caffè', 'carta fedeltà QR'],
     },
   }),
 

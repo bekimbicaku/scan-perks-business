@@ -6,5 +6,6 @@ export default defineConfig({
   compressHTML: true,
   redirects: {
     '/press': '/',
+    '/blog/qr-code-loyalty-program-guide': '/qr-code-loyalty-program/',
   },
 });

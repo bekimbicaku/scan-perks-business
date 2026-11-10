@@ -45,6 +45,16 @@
       "source": "/coffee-shop-loyalty-app/",
       "destination": "/cafe-loyalty-app/",
       "permanent": true
+    },
+    {
+      "source": "/blog/qr-code-loyalty-program-guide",
+      "destination": "/qr-code-loyalty-program/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/qr-code-loyalty-program-guide/",
+      "destination": "/qr-code-loyalty-program/",
+      "permanent": true
     }
   ],
   "headers": [
