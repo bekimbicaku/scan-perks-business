@@ -1,0 +1,33 @@
+---
+import AppCta from './AppCta.astro';
+import { phrases } from '../data/site-facts';
+---
+
+<div class="pricing-grid">
+  <div class="glass-card pricing-card reveal">
+    <div class="pricing-card__name">Starter</div>
+    <div class="pricing-card__price">{phrases.en.starterPrice}<span>/month</span></div>
+    <p class="pricing-card__desc">Small cafes, bars, and coffee shops — {phrases.en.scansUpTo}.</p>
+    <ul class="pricing-card__features">
+      <li>One counter QR and digital stamp card</li>
+      <li>{phrases.en.scans}</li>
+      <li>Welcome stamp, birthday treats, happy hour</li>
+      <li>Offers pushed to members</li>
+      <li>Basic analytics</li>
+      <li>Listed in the app's Nearby list</li>
+    </ul>
+    <AppCta class="btn btn--glass" position="starter">Start free trial</AppCta>
+  </div>
+  <div class="glass-card pricing-card pricing-card--featured reveal">
+    <div class="pricing-card__name">Growth</div>
+    <div class="pricing-card__price">{phrases.en.growthPrice}<span>/month</span></div>
+    <p class="pricing-card__desc">Busy venues — {phrases.en.unlimitedScans}.</p>
+    <ul class="pricing-card__features">
+      <li>Everything in Starter</li>
+      <li>{phrases.en.unlimitedScansCap}</li>
+      <li>Advanced analytics</li>
+      <li>Priority support</li>
+    </ul>
+    <AppCta class="btn btn--primary" position="growth">Start free trial</AppCta>
+  </div>
+</div>

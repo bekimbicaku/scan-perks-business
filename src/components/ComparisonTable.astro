@@ -1,0 +1,52 @@
+---
+interface Column {
+  key: string;
+  label: string;
+  highlight?: boolean;
+}
+
+interface Props {
+  columns: Column[];
+  rows: Record<string, string>[];
+  intro?: string;
+}
+
+const { columns, rows, intro } = Astro.props;
+---
+
+{intro && <p class="comparison-intro">{intro}</p>}
+<div class="glass glass--strong comparison-wrap">
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        {columns.map((col) => <th scope="col">{col.label}</th>)}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((row) => (
+        <tr>
+          {columns.map((col) => (
+            <td class={col.highlight ? 'comparison-table__highlight' : undefined}>{row[col.key] ?? '—'}</td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .comparison-intro {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-5);
+    line-height: var(--leading-body);
+    max-width: 45rem;
+    font-size: var(--text-base);
+  }
+
+  .comparison-wrap {
+    padding: var(--space-6);
+    overflow-x: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+  }
+</style>

@@ -1,0 +1,23 @@
+---
+interface Props {
+  variant?: 'home' | 'page';
+}
+
+const { variant = 'page' } = Astro.props;
+---
+
+{variant === 'home' ? (
+  <section class="hero hero--home">
+    <div class="container">
+      <div class="hero__content">
+        <slot />
+      </div>
+    </div>
+  </section>
+) : (
+  <section class="page-hero">
+    <div class="container reveal">
+      <slot />
+    </div>
+  </section>
+)}

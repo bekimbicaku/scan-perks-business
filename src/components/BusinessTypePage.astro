@@ -10,6 +10,7 @@ import AnswerFirst from './AnswerFirst.astro';
 import AppCta from './AppCta.astro';
 import FAQSection from './FAQSection.astro';
 import InternalLinks from './InternalLinks.astro';
+import CTASection from './CTASection.astro';
 
 interface Props {
   page: BusinessType;
@@ -56,15 +57,7 @@ const sections = [
   <FAQSection faqs={page.faqs} title="Owner questions" />
   <InternalLinks />
 
-  <section class="section section--sm">
-    <div class="container reveal">
-      <div class="cta-banner">
-        <h2 class="cta-banner__title">Start the free trial</h2>
-        <p class="cta-banner__desc">{meta.description}</p>
-        <div class="cta-banner__actions">
-          <AppCta class="btn btn--primary btn--lg" position="bottom">Start free trial</AppCta>
-        </div>
-      </div>
-    </div>
-  </section>
+  <CTASection title="Start the free trial" description={meta.description}>
+    <AppCta class="btn btn--primary btn--lg" position="bottom">Start free trial</AppCta>
+  </CTASection>
 </article>

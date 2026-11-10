@@ -54,12 +54,12 @@ function switchHref(target: (typeof LOCALES)[number]): string {
       <a class="nav__login" href={appSignupUrl(Astro.url.pathname, 'login')}>Log in</a>
       <AppCta position="nav">Start free trial</AppCta>
     </div>
-    <button class="nav__toggle" aria-label="Toggle menu">
+    <button class="nav__toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
-<div class="nav__mobile">
+<div class="nav__mobile" id="site-nav">
   {links.map((link) => (
     <a href={link.href}>{link.label}</a>
   ))}
@@ -91,22 +91,24 @@ function switchHref(target: (typeof LOCALES)[number]): string {
 
   .lang-switch__select {
     appearance: none;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--glass-border);
-    color: var(--text-secondary);
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 0.4rem 1.75rem 0.4rem 0.65rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    min-height: var(--target-min);
+    padding: var(--space-2) var(--space-8) var(--space-2) var(--space-3);
     border-radius: var(--radius-sm);
     cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23b7c5d6' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 0.5rem center;
+    background-position: right 0.65rem center;
   }
 
-  .lang-switch__select:focus {
-    outline: none;
-    border-color: var(--cyan-400);
+  .lang-switch__select:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3px;
+    border-color: var(--color-accent);
   }
 
   .lang-switch__select option {
@@ -115,13 +117,16 @@ function switchHref(target: (typeof LOCALES)[number]): string {
   }
 
   .nav__cta {
-    gap: 0.75rem;
+    gap: var(--space-3);
   }
 
   .nav__login {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    font-weight: 600;
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    min-height: var(--target-min);
+    display: inline-flex;
+    align-items: center;
   }
 
   .nav__login:hover {

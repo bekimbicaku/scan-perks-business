@@ -66,7 +66,7 @@ const categories = [
           <div class="faq-list reveal">
             {catFaqs.map((f) => (
               <div class="faq-item">
-                <button class="faq-item__question" type="button">{f.question}</button>
+                <button class="faq-item__question" type="button" aria-expanded="false">{f.question}</button>
                 <div class="faq-item__answer"><p>{f.answer}</p></div>
               </div>
             ))}

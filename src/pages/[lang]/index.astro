@@ -5,6 +5,10 @@ import LangFooter from '../../components/LangFooter.astro';
 import AppCta from '../../components/AppCta.astro';
 import StoreBadges from '../../components/StoreBadges.astro';
 import ScanDemo from '../../components/ScanDemo.astro';
+import Hero from '../../components/Hero.astro';
+import StepList from '../../components/StepList.astro';
+import Step from '../../components/Step.astro';
+import CTASection from '../../components/CTASection.astro';
 import type { Locale } from '../../i18n/config';
 import { ui } from '../../i18n/ui';
 import { getPageDef, pageHref, getHreflangLinks } from '../../i18n/pages';
@@ -39,58 +43,45 @@ const how = getPageDef('how-it-works')!;
 >
   <LangNav locale={lang} active="home" pageId="home" />
 
-  <section class="hero hero--action">
-    <div class="container">
-      <div class="hero__content">
-        <div>
-          <div class="hero__badge">
-            <span class="hero__badge-dot"></span>
-            Scan Perks
-          </div>
-          <h1 class="hero__title">{content.h1}</h1>
-          <p class="hero__lead">
-            {content.heroLine}
-            <span>{content.bullets.slice(0, 3).join(' · ')}</span>
-          </p>
-          <div class="hero__actions">
-            <AppCta class="btn btn--primary btn--lg">{t.cta.startTrial}</AppCta>
-            <a href={g2Url} class="btn btn--glass btn--lg" rel="noopener noreferrer" target="_blank">
-              {t.cta.leaveReview}
-            </a>
-          </div>
-          <div class="hero__store-row">
-            <StoreBadges showHint={false} centered={false} />
-          </div>
-        </div>
-        <div class="hero__visual">
-          <ScanDemo />
-        </div>
+  <Hero variant="home">
+    <div>
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        Scan Perks
+      </div>
+      <h1 class="hero__title">{content.h1}</h1>
+      <p class="hero__lead">
+        {content.heroLine}
+        <span>{content.bullets.slice(0, 3).join(' · ')}</span>
+      </p>
+      <div class="hero__actions">
+        <AppCta class="btn btn--primary btn--lg">{t.cta.startTrial}</AppCta>
+        <a href={g2Url} class="btn btn--glass btn--lg" rel="noopener noreferrer" target="_blank">
+          {t.cta.leaveReview}
+        </a>
+      </div>
+      <div class="hero__store-row">
+        <StoreBadges showHint={false} centered={false} />
       </div>
     </div>
-  </section>
+    <div class="hero__visual">
+      <ScanDemo />
+    </div>
+  </Hero>
 
   <section class="section section--sm">
     <div class="container">
-      <div class="action-steps">
-        <div class="action-step reveal">
-          <span class="action-step__num">1</span>
-          <h2 class="action-step__title">{t.cta.startTrial}</h2>
-          <p class="action-step__desc">app.scan-perks.com</p>
+      <StepList>
+        <Step n={1} title={t.cta.startTrial} description="app.scan-perks.com">
           <AppCta class="btn btn--primary">{t.nav.getStarted}</AppCta>
-        </div>
-        <div class="action-step reveal">
-          <span class="action-step__num">2</span>
-          <h2 class="action-step__title">{t.nav.how}</h2>
-          <p class="action-step__desc">QR → stamps → rewards</p>
+        </Step>
+        <Step n={2} title={t.nav.how} description="QR → stamps → rewards">
           <a href={pageHref(how, lang)} class="btn btn--glass">{t.nav.how}</a>
-        </div>
-        <div class="action-step reveal">
-          <span class="action-step__num">3</span>
-          <h2 class="action-step__title">G2</h2>
-          <p class="action-step__desc">{t.cta.leaveReview}</p>
+        </Step>
+        <Step n={3} title="G2" description={t.cta.leaveReview}>
           <a href={g2Url} class="btn btn--glass" rel="noopener noreferrer" target="_blank">{t.cta.leaveReview}</a>
-        </div>
-      </div>
+        </Step>
+      </StepList>
     </div>
   </section>
 
@@ -105,128 +96,58 @@ const how = getPageDef('how-it-works')!;
     </div>
   </section>
 
-  <section class="section section--sm">
-    <div class="container reveal" style="text-align:center;">
-      <div class="cta-banner">
-        <h2 class="cta-banner__title">{content.h1}</h2>
-        <p class="cta-banner__desc">{content.heroLine}</p>
-        <div class="cta-banner__actions" style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;">
-          <AppCta class="btn btn--primary btn--lg">{t.cta.startTrial}</AppCta>
-          <a href={g2Url} class="btn btn--glass btn--lg" rel="noopener noreferrer" target="_blank">{t.cta.leaveReview}</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <CTASection title={content.h1} description={content.heroLine}>
+    <AppCta class="btn btn--primary btn--lg">{t.cta.startTrial}</AppCta>
+    <a href={g2Url} class="btn btn--glass btn--lg" rel="noopener noreferrer" target="_blank">{t.cta.leaveReview}</a>
+  </CTASection>
 
   <LangFooter locale={lang} />
 </BaseLayout>
 
 <style>
-  .hero--action {
-    padding-top: 7rem;
-    padding-bottom: 3rem;
-  }
-
-  .hero__lead {
-    font-size: 1.15rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
-    margin: 0 0 1.75rem;
-    max-width: 28rem;
-  }
-
-  .hero__lead span {
-    display: block;
-    margin-top: 0.4rem;
-    color: var(--blue-300);
-    font-weight: 600;
-    font-size: 0.95rem;
-  }
-
   .hero__store-row {
-    margin-top: 1.25rem;
+    margin-top: var(--space-5);
   }
 
   .hero__store-row :global(.store-badges) {
     justify-content: flex-start;
   }
 
-  .action-steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-  }
-
-  .action-step {
-    padding: 1.5rem;
-    border-radius: 16px;
-    border: 1px solid var(--glass-border);
-    background: rgba(255, 255, 255, 0.03);
-    text-align: center;
-  }
-
-  .action-step__num {
-    display: inline-flex;
-    width: 2rem;
-    height: 2rem;
-    align-items: center;
-    justify-content: center;
-    border-radius: 999px;
-    background: rgba(34, 211, 238, 0.15);
-    color: var(--cyan-400);
-    font-weight: 800;
-    font-size: 0.9rem;
-    margin-bottom: 0.85rem;
-  }
-
-  .action-step__title {
-    font-size: 1.1rem;
-    margin: 0 0 0.5rem;
-    color: #fff;
-  }
-
-  .action-step__desc {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin: 0 0 1.15rem;
-  }
-
   .venue-cta {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0.75rem;
+    gap: var(--space-3);
   }
 
   .venue-cta__card {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem 0.75rem;
-    border-radius: 10px;
-    border: 1px solid var(--glass-border);
-    background: rgba(255, 255, 255, 0.03);
-    color: var(--text-secondary);
-    font-weight: 600;
-    font-size: 0.85rem;
+    min-height: var(--target-min);
+    padding: var(--space-4) var(--space-3);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    font-weight: var(--weight-semibold);
+    font-size: var(--text-sm);
     text-align: center;
     transition: border-color 0.2s, color 0.2s, transform 0.2s;
   }
 
   .venue-cta__card:hover {
     border-color: rgba(34, 211, 238, 0.45);
-    color: #fff;
+    color: var(--color-text);
     transform: translateY(-2px);
   }
 
   .venue-cta__card--accent {
     border-color: rgba(34, 211, 238, 0.4);
-    color: var(--cyan-400);
+    color: var(--color-accent);
   }
 
   @media (max-width: 900px) {
-    .action-steps { grid-template-columns: 1fr; }
     .venue-cta { grid-template-columns: 1fr 1fr; }
     .hero__store-row :global(.store-badges) { justify-content: center; }
-    .hero__lead { margin-left: auto; margin-right: auto; }
   }
 </style>

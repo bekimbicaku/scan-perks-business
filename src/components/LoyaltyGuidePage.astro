@@ -2,6 +2,7 @@
 import type { LoyaltyGuide } from '../data/loyaltyGuide';
 import FAQSection from './FAQSection.astro';
 import AppCta from './AppCta.astro';
+import StepList from './StepList.astro';
 
 interface Props {
   guide: LoyaltyGuide;
@@ -54,11 +55,7 @@ const { guide } = Astro.props;
   <section class="section section--sm">
     <div class="container reveal">
       <h2 class="section__title" style="font-size:1.75rem; margin-bottom:1.5rem; text-align:center;">How to Start Online</h2>
-      <ol class="guide-steps glass glass--strong">
-        {guide.howToStart.map((step, i) => (
-          <li><span class="guide-steps__num">{i + 1}</span>{step}</li>
-        ))}
-      </ol>
+      <StepList items={guide.howToStart} />
       <div style="text-align:center; margin-top:2rem;">
         <AppCta class="btn btn--primary btn--lg">Start free trial</AppCta>
       </div>

@@ -14,15 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mobile menu toggle
   toggle?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('open');
-    toggle.classList.toggle('active');
+    const open = !mobileMenu?.classList.contains('open');
+    mobileMenu?.classList.toggle('open', open);
+    toggle.classList.toggle('active', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 
-  // Close mobile menu on link click
   mobileMenu?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('open');
       toggle?.classList.remove('active');
+      toggle?.setAttribute('aria-expanded', 'false');
     });
   });
 
@@ -45,8 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       const item = btn.parentElement;
       const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-item__question')?.setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 
