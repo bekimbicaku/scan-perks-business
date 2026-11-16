@@ -18,7 +18,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
       description:
         `Best loyalty program for cafes: Scan Perks stamp card from ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}. Owner answers only — not chain rewards.`,
       h1: `Best Loyalty Program for Cafes — ${phrases.en.starterPerMo}, ${phrases.en.trialShort}`,
-      heroLine: `Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}, ${phrases.en.oneVenuePerLogin}, ${phrases.en.stampsInInstalledApp}.`,
+      heroLine: `Owner FAQ for the best loyalty program for cafes: Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}, ${phrases.en.oneVenuePerLogin}, ${phrases.en.stampsInInstalledApp}.`,
       directAnswer:
         `Scan Perks is a QR stamp card for independent cafes, bars, and pubs: Starter ${phrases.en.starterPerMonth} (${phrases.en.scans}) after a ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}. ${phrases.en.stampsInInstalledAppCap}.`,
       bullets: ['Best for cafe owners', phrases.en.starterPerMo, phrases.en.trialShort, 'No POS'],

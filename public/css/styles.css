@@ -313,15 +313,16 @@ img {
 }
 
 .btn--glass {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--white);
-  border: 1px solid var(--glass-border);
+  background: rgba(248, 250, 252, 0.16);
+  color: var(--color-text);
+  border: 1px solid rgba(248, 250, 252, 0.45);
   backdrop-filter: blur(10px);
 }
 
 .btn--glass:hover {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: var(--glass-highlight);
+  background: rgba(248, 250, 252, 0.24);
+  border-color: rgba(248, 250, 252, 0.65);
+  color: var(--white);
 }
 
 .btn--lg {
@@ -442,6 +443,7 @@ img {
   font-weight: var(--weight-black);
   letter-spacing: var(--tracking-tight);
   line-height: var(--leading-tight);
+  color: var(--color-text);
   margin-bottom: var(--space-6);
 }
 
@@ -865,6 +867,7 @@ img {
 .page-hero {
   padding: calc(var(--nav-height) + var(--space-16)) 0 var(--space-16);
   text-align: center;
+  color: var(--color-text);
 }
 
 .page-hero__title {
@@ -873,6 +876,7 @@ img {
   letter-spacing: var(--tracking-tight);
   line-height: var(--leading-tight);
   margin-bottom: var(--space-4);
+  color: var(--color-text);
 }
 
 .page-hero__desc,
@@ -888,6 +892,13 @@ img {
   color: var(--color-link);
   font-weight: var(--weight-medium);
   margin-bottom: var(--space-4);
+}
+
+/* Heroes must read on first paint — do not wait for IntersectionObserver. */
+.page-hero > .reveal,
+.hero .reveal {
+  opacity: 1;
+  transform: none;
 }
 
 /* ─── About Page ─── */
@@ -1165,15 +1176,22 @@ img {
 }
 
 /* ─── Animations on scroll ─── */
+/* Copy stays fully opaque. Hiding with opacity:0 made navy/mist heroes fail
+   contrast until JS ran, and screenshots captured blank dark text. */
 .reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  opacity: 1;
+  transform: none;
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+@media (prefers-reduced-motion: no-preference) {
+  .reveal.visible {
+    animation: reveal-rise 0.55s ease both;
+  }
+}
+
+@keyframes reveal-rise {
+  from { transform: translateY(12px); }
+  to { transform: translateY(0); }
 }
 
 /* ─── Store badges ─── */
@@ -1518,12 +1536,23 @@ img {
   margin-bottom: 2rem;
   background: rgba(34, 211, 238, 0.06);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--color-text);
+}
+
+.quick-answer p {
+  color: var(--color-text-secondary);
 }
 
 .page-hero__note {
   margin-top: var(--space-3);
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
+}
+
+.page-hero a:not(.btn) {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 .quick-answer__label {
