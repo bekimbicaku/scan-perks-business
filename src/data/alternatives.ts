@@ -107,7 +107,7 @@ export function alternativeMeta(page: Alternative): { title: string; description
   const competitorPrice = competitorPriceLabel(page.price).text;
   return {
     title: `${page.name} Alternative for Cafe Owners — Starter ${phrases.en.starterPerMo}`,
-    description: `${page.name} alternative for owners: Scan Perks stamp card Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}. ${phrases.en.stampsInInstalledAppCap}. ${page.name} price: ${competitorPrice}.`,
+    description: `${page.name} alternative for cafe and pub owners. Scan Perks stamp card from ${phrases.en.starterPerMo} after a ${phrases.en.trialShort}. ${page.name} price: ${competitorPrice}.`,
     heading: `${page.name} alternative for cafe & pub owners`,
   };
 }
@@ -116,5 +116,5 @@ export function alternativeMeta(page: Alternative): { title: string; description
 export function alternativeOpening(page: Alternative): string {
   const competitorPrice = competitorPriceLabel(page.price).text;
   const pos = page.posRequired.endsWith('.') ? page.posRequired : `${page.posRequired}.`;
-  return `Owners comparing ${page.name} to Scan Perks: Scan Perks is a counter QR stamp card for cafes, pubs, and bars. Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scans} after a ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}. ${phrases.en.stampsInInstalledAppCap}. ${page.name} price: ${competitorPrice}. Customers join via ${page.joinMethod}. POS required: ${pos} When to pick ${page.name} instead: ${page.pickInstead}`;
+  return `Owners comparing ${page.name} to Scan Perks use a counter QR stamp card for cafes, pubs, and bars. Customers collect stamps only in the installed Scan Perks app; ${phrases.en.oneVenuePerLogin}. After a ${phrases.en.trial} with ${phrases.en.noCard}, Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scans} and Growth is ${phrases.en.growthPerMonth} for ${phrases.en.unlimitedScans} (not unlimited push). ${page.name} price: ${competitorPrice}. Customers join via ${page.joinMethod}. POS required: ${pos} When to pick ${page.name} instead: ${page.pickInstead}`;
 }

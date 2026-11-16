@@ -58,7 +58,7 @@ export interface LandingContent {
 export const landingContent: LandingContent = {
   metaTitle: `QR Stamp Card for Cafes, Pubs & Bars — ${phrases.en.starterPerMo} | Scan Perks`,
   metaDescription:
-    `Owner QR stamp card for cafes, pubs and bars. Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}. ${phrases.en.stampsInInstalledAppCap}. No POS.`,
+    `Owner QR stamp card for cafes, pubs and bars. ${phrases.en.trial} with ${phrases.en.noCard}, then Starter ${phrases.en.starterPerMo} for ${phrases.en.scans}. No POS.`,
   metaKeywords: [
     'qr code loyalty program',
     'qr code loyalty card',

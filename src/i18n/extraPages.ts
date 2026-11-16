@@ -194,10 +194,11 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
   page('how-it-works', '/how-it-works/', {
     en: {
       slug: 'how-it-works',
-      metaTitle: `Set Up Cafe & Pub Loyalty in 5 Minutes — QR, No POS, ${phrases.en.starterPerMo}`,
-      description: `Print a counter QR. Customers scan it in the free Scan Perks app. ${phrases.en.trial}, then ${phrases.en.starterPerMo}.`,
-      h1: 'How Scan Perks works: print a QR, customers scan, stamps go on their phone',
-      heroLine: 'One counter QR. Customers scan it in the Scan Perks app.',
+      metaTitle: 'How Owner QR Stamp Loyalty Works for Cafes & Bars | Scan Perks',
+      description:
+        'Owner setup: print one counter QR, customers collect stamps in the free Scan Perks app, you run the venue at app.scan-perks.com. About 5 minutes, no POS.',
+      h1: 'How owner QR stamp loyalty works',
+      heroLine: 'Print one counter QR — stamps in the Scan Perks app; dashboard at app.scan-perks.com.',
       directAnswer:
         'Create an account at app.scan-perks.com, set stamp rewards, print your counter QR. Customers scan it in the free Scan Perks app (iPhone or Android). Owners manage everything from the web dashboard. No POS.',
       bullets: ['1. Create account', '2. Set rewards', '3. Print QR', '4. Customers scan in the app'],
@@ -208,7 +209,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
         },
         {
           heading: 'For owners',
-          body: `Dashboard shows members, visits, and redemption. Send push offers for quiet hours. Pricing from ${phrases.en.starterPerMonth}.`,
+          body: `Dashboard at app.scan-perks.com shows members, visits, and redemption. Send push offers for quiet hours. After a ${phrases.en.trial} with ${phrases.en.noCard}, Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scans}; Growth is ${phrases.en.growthPerMonth} for ${phrases.en.unlimitedScans} (not unlimited push).`,
         },
       ],
       faqs: [

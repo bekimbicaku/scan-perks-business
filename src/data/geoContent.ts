@@ -26,9 +26,9 @@ export const directAnswers = {
   cafe:
     `An independent cafe can replace paper punch cards with a counter QR: customers collect stamps only in the installed Scan Perks app toward a free drink you choose. Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scans} after a ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}. No POS. Pick Loopy or LoyaltyPass if you want Apple/Google Wallet cards with no app; pick Square Loyalty if you already run Square POS.`,
   qr:
-    `A QR code loyalty program is one code at the counter that customers scan to earn a stamp per visit. With Scan Perks the customer scans it in the free Scan Perks app; a phone camera opens the venue page with the reward and the app link. It is ${phrases.en.starterPerMonth}, no POS, about 5 minutes to set up, with a ${phrases.en.trial}.`,
+    'A QR code loyalty program is one code at the counter that customers scan to earn a stamp per visit. With Scan Perks the customer scans it in the free Scan Perks app; a phone camera opens the venue page with the reward and the app link. Owners run the venue at app.scan-perks.com — about 5 minutes, no POS.',
   bar:
-    `Scan Perks runs pub loyalty schemes and bar loyalty cards with a QR at the bar: regulars scan it in the Scan Perks app, collect stamps toward a free drink, and can earn double stamps during your happy hour. ${phrases.en.rangeBareMonth} after a ${phrases.en.trial}. It replaces paper and plastic pub loyalty cards.`,
+    `Scan Perks runs pub loyalty schemes and bar loyalty cards with a QR at the bar: regulars scan it in the Scan Perks app, collect stamps toward a free drink, and can earn double stamps during your happy hour. Owners manage the venue at app.scan-perks.com — no POS. It replaces paper and plastic pub loyalty cards.`,
 } as const;
 
 export const platformStats = {

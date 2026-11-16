@@ -49,14 +49,18 @@ const directAnswer = page.quickAnswer ?? slugToAnswer[page.slug];
   <Hero>
     <span class="section__label">{page.primaryKeyword}</span>
     <h1 class="page-hero__title">{page.title}</h1>
-    {page.heroSeoLine && <p class="page-hero__seo-line">{page.heroSeoLine}</p>}
-    <p class="page-hero__desc">{page.description}</p>
+    {/* One offer line in the first viewport. Meta description stays on page.description for SERP. */}
+    {page.heroSeoLine ? (
+      <p class="page-hero__seo-line">{page.heroSeoLine}</p>
+    ) : (
+      <p class="page-hero__desc">{page.description}</p>
+    )}
     <div class="hero__actions hero__actions--center">
       <AppCta class="btn btn--primary btn--lg" position="hero">Start free trial</AppCta>
       <AppCta class="btn btn--glass btn--lg" position="hero-customer">Get the Rewards App</AppCta>
     </div>
     <p class="page-hero__note">
-      Customers: free. Owners: {phrases.en.trialShort} · No POS · From {phrases.en.starterPerMo}
+      Customers: free · Owners: web dashboard at app.scan-perks.com · No POS
     </p>
   </Hero>
 

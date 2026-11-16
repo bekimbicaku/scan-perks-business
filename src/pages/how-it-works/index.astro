@@ -48,8 +48,8 @@ const howToSchema = buildHowToSchema({
 ---
 
 <BaseLayout
-  title="How a QR Code Loyalty Program Works (Cafes & Bars) | Scan Perks"
-  description={`Print one counter QR. Customers scan it in the free Scan Perks app and collect stamps toward a free drink. Set up in 5 minutes, ${phrases.en.trial}, then ${phrases.en.starterPerMo}.`}
+  title="How Owner QR Stamp Loyalty Works for Cafes & Bars | Scan Perks"
+  description={`Owner setup: print one counter QR, customers collect stamps in the free Scan Perks app, you run the venue at app.scan-perks.com. About 5 minutes, no POS.`}
   path="/how-it-works/"
   lang="en"
   hreflangLinks={getHreflangLinks(getPageDef('how-it-works')!)}
@@ -62,27 +62,23 @@ const howToSchema = buildHowToSchema({
   <section class="page-hero">
     <div class="container reveal">
       <span class="section__label">How It Works</span>
-      <h1 class="page-hero__title">How a QR loyalty program works</h1>
-      <p class="page-hero__desc">
-        Print a counter QR. Customers scan it in the free Scan Perks app and collect stamps toward your reward. You track visits from app.scan-perks.com. About 5 minutes, {phrases.en.trial}, then from {phrases.en.starterPerMonth}.
+      <h1 class="page-hero__title">How owner QR stamp loyalty works</h1>
+      <p class="page-hero__seo-line">
+        Print one counter QR — customers stamp in the free Scan Perks app; you run the venue at app.scan-perks.com.
       </p>
       <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
         <AppCta class="btn btn--primary btn--lg">Start free trial</AppCta>
         <a href="/pricing/" class="btn btn--glass btn--lg">See Pricing</a>
       </div>
+      <p class="page-hero__note">
+        Customers: free · Owners: web dashboard · No POS
+      </p>
     </div>
   </section>
 
   <section class="section section--sm">
     <div class="container">
       <AnswerFirst answer={directAnswers.qr} />
-
-      <div class="stats-row reveal">
-        <div class="stats-row__item"><strong>{platformStats.freeTrialDays} days</strong><span>free trial, {phrases.en.noCard}</span></div>
-        <div class="stats-row__item"><strong>{platformStats.starterScans}</strong><span>scans/month on Starter</span></div>
-        <div class="stats-row__item"><strong>{platformStats.avgSetupMinutes} min</strong><span>typical setup</span></div>
-        <div class="stats-row__item"><strong>${platformStats.starterPrice}/mo</strong><span>starting price</span></div>
-      </div>
     </div>
   </section>
 
@@ -93,6 +89,12 @@ const howToSchema = buildHowToSchema({
         ordered
         items={howItWorksSteps.map((s, i) => `${s.name}: ${s.text}`)}
       />
+      <div class="stats-row reveal" style="margin-top:2rem;">
+        <div class="stats-row__item"><strong>{platformStats.freeTrialDays} days</strong><span>free trial, {phrases.en.noCard}</span></div>
+        <div class="stats-row__item"><strong>{platformStats.starterScans}</strong><span>scans/month on Starter</span></div>
+        <div class="stats-row__item"><strong>{platformStats.avgSetupMinutes} min</strong><span>typical setup</span></div>
+        <div class="stats-row__item"><strong>${platformStats.starterPrice}/mo</strong><span>starting price</span></div>
+      </div>
     </div>
   </section>
 
