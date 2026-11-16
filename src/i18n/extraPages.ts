@@ -14,14 +14,14 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
   page('faq', '/faq/', {
     en: {
       slug: 'faq',
-      metaTitle: 'Coffee & Cafe Loyalty FAQ — AI Search Answers | Scan Perks',
+      metaTitle: `Best Loyalty Program for Cafes — ${phrases.en.starterPerMo}, ${phrases.en.trialShort}`,
       description:
-        `Direct answers on cafe loyalty apps, QR programs, and mobile rewards. Scan Perks from ${phrases.en.starterPerMo}.`,
-      h1: 'Coffee & Hospitality Loyalty — FAQ',
-      heroLine: 'Clear answers for cafe, bar, and pub owners.',
+        `Best loyalty program for cafes: Scan Perks stamp card from ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}. Owner answers only — not chain rewards.`,
+      h1: `Best Loyalty Program for Cafes — ${phrases.en.starterPerMo}, ${phrases.en.trialShort}`,
+      heroLine: `Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}, ${phrases.en.oneVenuePerLogin}, ${phrases.en.stampsInInstalledApp}.`,
       directAnswer:
-        `Scan Perks is a QR loyalty app for independent cafes, bars, and restaurants: customers scan a counter QR to earn stamps; owners pay ${phrases.en.rangeBareMonth} with a ${phrases.en.trial}.`,
-      bullets: ['Cafe loyalty FAQs', 'QR loyalty explained', 'Pricing & apps', 'No POS required'],
+        `Scan Perks is a QR stamp card for independent cafes, bars, and pubs: Starter ${phrases.en.starterPerMonth} (${phrases.en.scans}) after a ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}. ${phrases.en.stampsInInstalledAppCap}.`,
+      bullets: ['Best for cafe owners', phrases.en.starterPerMo, phrases.en.trialShort, 'No POS'],
       sections: [
         {
           heading: 'Cafe & coffee loyalty',
@@ -34,9 +34,9 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
       ],
       faqs: [
         {
-          question: 'What is the best coffee loyalty program for independents?',
+          question: 'What is the best loyalty program for cafes?',
           answer:
-            `For small cafes: Scan Perks — QR stamps, iOS/Android, ${phrases.en.starterPerMonth}, ${phrases.en.trialShort} at app.scan-perks.com. Built for independents, not chains.`,
+            `The best loyalty program for independent cafes is affordable, fast at the counter, and includes mobile rewards without POS lock-in. Scan Perks: QR stamps, cafe loyalty app, analytics, push offers — ${phrases.en.starterPerMonth}, ${phrases.en.trial} at app.scan-perks.com. Chain consumer apps (Starbucks) are not owner software.`,
         },
         {
           question: 'Does Scan Perks require a POS?',
@@ -47,7 +47,7 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
           answer: `Scan Perks: ${phrases.en.starterPerMonth} Starter (${phrases.en.scans}) or ${phrases.en.growthPerMonth} Growth (${phrases.en.unlimitedScans}), after a ${phrases.en.trial}.`,
         },
       ],
-      keywords: ['cafe loyalty faq', 'best coffee loyalty program', 'qr loyalty questions'],
+      keywords: ['best loyalty program for cafes', 'cafe loyalty faq', 'qr loyalty questions'],
     },
     es: {
       slug: 'preguntas-frecuentes',

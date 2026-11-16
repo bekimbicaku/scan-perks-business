@@ -5,15 +5,15 @@ import { phrases, siteFacts } from './site-facts';
 export const keywordLandings: LoyaltyPage[] = [
   {
     slug: 'cafe-loyalty-app',
-    title: `Cafe Loyalty App for Owners — ${phrases.en.starterPerMo}, No POS`,
-    metaTitle: `Cafe Loyalty App for Owners — ${phrases.en.starterPerMo}, No POS`,
+    title: `Cafe Loyalty App for Owners — Starter ${phrases.en.starterPerMo}`,
+    metaTitle: `Cafe Loyalty App for Owners — Starter ${phrases.en.starterPerMo}`,
     description:
-      `For owners: a cafe loyalty app with one counter QR, 8 stamps for a free coffee, and no POS. Set up in 5 minutes. ${phrases.en.trial}, then ${phrases.en.starterPerMo}.`,
+      `Cafe loyalty app for owners: Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}. ${phrases.en.stampsInInstalledAppCap}. No POS.`,
     primaryKeyword: 'cafe loyalty app',
     heroSeoLine:
-      `The cafe loyalty app built for independent coffee shops — digital stamps, counter QR, iOS & Android from ${phrases.en.starterPerMonth}.`,
+      `Owner QR stamp card — Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}, ${phrases.en.oneVenuePerLogin}, ${phrases.en.stampsInInstalledApp}.`,
     quickAnswer:
-      `Scan Perks is a cafe loyalty app for coffee shop owners (not a chain consumer rewards app). You print one counter QR; customers scan it in the free Scan Perks app (iPhone or Android) and collect stamps toward a free drink you choose. You get visit analytics and can push offers to members. ${phrases.en.starterPerMonth} for ${phrases.en.scans} after a ${phrases.en.trial} with ${phrases.en.noCard}, at app.scan-perks.com. No POS integration.`,
+      `Scan Perks is a cafe loyalty app for coffee shop owners (not a chain consumer rewards app). You print one counter QR; customers collect stamps only in the installed Scan Perks app (iPhone or Android) toward a free drink you choose. Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scans} after a ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}. No POS — start at app.scan-perks.com.`,
     keywordCluster: [
       'cafe loyalty app',
       'coffee loyalty app',
@@ -24,7 +24,7 @@ export const keywordLandings: LoyaltyPage[] = [
       'best loyalty program for cafes',
       'mobile rewards program for coffee shops',
     ],
-    highlights: ['Counter QR', phrases.en.trial, phrases.en.starterPerMonth, '5-min setup'],
+    highlights: ['Counter QR', phrases.en.trial, `Starter ${phrases.en.starterPerMo}`, phrases.en.oneVenuePerLogin],
     featureBullets: [
       'Counter QR scanned in the free customer app (iOS and Android)',
       'Digital stamp rewards (for example 8 stamps, free coffee) with an optional welcome stamp',

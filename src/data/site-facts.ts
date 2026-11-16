@@ -81,6 +81,20 @@ export const phrases = {
     squarePrice: `$${square.priceUsd}`,
     checkedOn: formatCheckedOn(square.checkedOn),
     forOneVenue: siteFacts.venuesPerLogin === 1 ? 'for one venue' : `for ${siteFacts.venuesPerLogin} venues`,
+    oneVenuePerLogin:
+      siteFacts.venuesPerLogin === 1
+        ? 'one venue per login'
+        : `${siteFacts.venuesPerLogin} venues per login`,
+    oneVenuePerLoginCap:
+      siteFacts.venuesPerLogin === 1
+        ? 'One venue per login'
+        : `${siteFacts.venuesPerLogin} venues per login`,
+    stampsInInstalledApp: siteFacts.customerStampRequiresInstalledApp
+      ? 'stamps only in the installed app'
+      : 'stamps without installing the app',
+    stampsInInstalledAppCap: siteFacts.customerStampRequiresInstalledApp
+      ? 'Stamps only in the installed app'
+      : 'Stamps without installing the app',
     priceSchemaStarter: starter.priceUsd.toFixed(2),
     priceSchemaGrowth: growth.priceUsd.toFixed(2),
     stampLine: `${stampInstall} ${stampBrowser} Owners use the web dashboard.`,

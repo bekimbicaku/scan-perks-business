@@ -24,7 +24,7 @@ export const directAnswers = {
   pricing:
     `Scan Perks costs ${phrases.en.starterPerMonth} (Starter, ${phrases.en.scansUpTo}) or ${phrases.en.growthPerMonth} (Growth, ${phrases.en.unlimitedScans}). Every venue starts with a ${phrases.en.trial} with ${phrases.en.noCard}; no annual contract. Enterprise hospitality loyalty tools typically cost $200+/month; Scan Perks is built for single-location independents.`,
   cafe:
-    `An independent cafe can replace paper punch cards with a counter QR: customers scan it in the free Scan Perks app and collect stamps toward a free drink you choose. Scan Perks is ${phrases.en.starterPerMonth} (${phrases.en.scans}) after a ${phrases.en.trial}, with no POS. Pick Loopy or LoyaltyPass if you want Apple/Google Wallet cards with no app; pick Square Loyalty if you already run Square POS.`,
+    `An independent cafe can replace paper punch cards with a counter QR: customers collect stamps only in the installed Scan Perks app toward a free drink you choose. Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scans} after a ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}. No POS. Pick Loopy or LoyaltyPass if you want Apple/Google Wallet cards with no app; pick Square Loyalty if you already run Square POS.`,
   qr:
     `A QR code loyalty program is one code at the counter that customers scan to earn a stamp per visit. With Scan Perks the customer scans it in the free Scan Perks app; a phone camera opens the venue page with the reward and the app link. It is ${phrases.en.starterPerMonth}, no POS, about 5 minutes to set up, with a ${phrases.en.trial}.`,
   bar:

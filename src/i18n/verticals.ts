@@ -9,14 +9,14 @@ export const localizedVerticals: LocalizedPageDef[] = [
     content: {
       en: {
         slug: 'cafe-loyalty-app',
-        metaTitle: `Cafe Loyalty App — Counter QR Stamp Card, ${phrases.en.starterPerMo} | Scan Perks`,
+        metaTitle: `Cafe Loyalty App for Owners — Starter ${phrases.en.starterPerMo}`,
         description:
-          `Cafe loyalty app for independent coffee shops. One counter QR, scanned in the free Scan Perks app. No POS — ${phrases.en.trial}, then ${phrases.en.starterPerMo}.`,
-        h1: 'Cafe Loyalty App for Coffee Shop Owners',
-        heroLine: 'Customers scan your counter QR in the free Scan Perks app.',
+          `Cafe loyalty app for owners: Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}. ${phrases.en.stampsInInstalledAppCap}. No POS.`,
+        h1: `Cafe Loyalty App for Owners — Starter ${phrases.en.starterPerMo}`,
+        heroLine: `Owner QR stamp card — Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}, ${phrases.en.oneVenuePerLogin}, ${phrases.en.stampsInInstalledApp}.`,
         directAnswer:
-          `Independent cafes can replace paper punch cards with one counter QR: guests scan it in the free Scan Perks app and collect stamps toward a free drink. Scan Perks is ${phrases.en.starterPerMonth} for ${phrases.en.scans} after a ${phrases.en.trial}, no POS. Not a Starbucks/Dunkin consumer app.`,
-        bullets: ['For cafe owners', 'Counter QR', phrases.en.trial, phrases.en.starterPerMo],
+          `Scan Perks is a cafe loyalty app for coffee shop owners (not a chain consumer rewards app). You print one counter QR; customers collect stamps only in the installed Scan Perks app toward a free drink you choose. Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scans} after a ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}. No POS — start at app.scan-perks.com.`,
+        bullets: ['For cafe owners', phrases.en.trial, `Starter ${phrases.en.starterPerMo}`, phrases.en.oneVenuePerLogin],
         sections: [
           {
             heading: 'Built for cafe owners — not chain customers',
