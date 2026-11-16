@@ -4,7 +4,6 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import AppCta from '../components/AppCta.astro';
 import StoreBadges from '../components/StoreBadges.astro';
-import ScanDemo from '../components/ScanDemo.astro';
 import PromoVideos from '../components/PromoVideos.astro';
 import Hero from '../components/Hero.astro';
 import StepList from '../components/StepList.astro';
@@ -74,20 +73,20 @@ const homeFaqs = [
   <Nav active="home" pageId="home" />
 
   <Hero variant="home">
-    <div>
+    <div class="hero__copy hero__copy--solo">
       <p class="hero__brand-signal">Scan Perks</p>
       <h1 class="hero__title">QR stamp card for cafes, pubs and bars</h1>
       <p class="hero__lead">
-        One counter QR. Customers collect stamps in the free Scan Perks app toward your reward.
+        One counter QR. Customers open the Scan Perks app, tap Scan, and stamp at your poster.
         <span>Starter {phrases.en.starterPerMo} ({phrases.en.scans}) after a {phrases.en.trialShort} with {phrases.en.noCard}.</span>
       </p>
       <div class="hero__actions">
         <AppCta class="btn btn--primary btn--lg" position="hero">Start free trial</AppCta>
         <a href="#see-how-it-works" class="btn btn--glass btn--lg">See how it works</a>
       </div>
-    </div>
-    <div class="hero__visual">
-      <ScanDemo />
+      <p class="hero__note">
+        Phone camera may open the venue page with an app link — that does not add a stamp.
+      </p>
     </div>
   </Hero>
 
@@ -142,7 +141,7 @@ const homeFaqs = [
   <PromoVideos
     id="see-how-it-works"
     title="See how it works"
-    intro="Owner demos: customers scan your counter QR in the Scan Perks app, collect stamps, and get your offers — for cafes by day and bars after hours."
+    intro="Owner demos: customers open the Scan Perks app, tap Scan, and stamp at your counter QR. A phone camera may open the venue page with an app link — that is not a stamp."
   />
 
   <section class="section section--sm">
@@ -198,6 +197,34 @@ const homeFaqs = [
     text-transform: uppercase;
     color: var(--cyan-400);
     margin: 0 0 0.75rem;
+  }
+
+  .hero__copy--solo {
+    max-width: 40rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero__copy--solo :global(.hero__title),
+  .hero__copy--solo :global(.hero__lead) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__copy--solo :global(.hero__actions) {
+    justify-content: center;
+  }
+
+  .hero__note {
+    margin: -1.25rem 0 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  :global(.hero--home .hero__content) {
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 
   .owner-facts__intro {

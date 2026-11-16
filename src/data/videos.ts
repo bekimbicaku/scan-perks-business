@@ -13,9 +13,9 @@ export interface PromoVideo {
 export const promoVideos: PromoVideo[] = [
   {
     id: 'promo',
-    title: 'Scan Perks in 37 seconds — QR loyalty for cafes',
+    title: 'Scan Perks in 37 seconds — stamp in the app at the counter QR',
     description:
-      `Customers scan the QR on your counter in the Scan Perks app. Every visit earns a stamp, offers land on their phone, and you see every visit in the dashboard. ${phrases.en.starterPerMonth}, ${phrases.en.trial}, no contract, no POS.`,
+      `Customers open the Scan Perks app, tap Scan, and stamp at your counter QR. A phone camera may open the venue page with an app link — that is not a stamp. Offers land on their phone; you see visits in the dashboard. ${phrases.en.starterPerMonth}, ${phrases.en.trial}, no POS.`,
     src: '/videos/scan-perks-promo-9x16.mp4',
     poster: '/videos/scan-perks-promo-9x16.jpg',
     duration: 'PT37S',
@@ -23,9 +23,9 @@ export const promoVideos: PromoVideo[] = [
   },
   {
     id: 'after-hours',
-    title: 'Scan Perks after hours — loyalty for bars, pubs and late-night cafes',
+    title: 'Scan Perks after hours — bar QR stamps in the Scan Perks app',
     description:
-      'Replace paper stamp cards with a QR customers scan at the bar. Every visit is logged, and when a night is quiet you send an offer like double stamps till 6 pm. Turn first visits into regulars with Scan Perks.',
+      'Replace paper stamp cards with a bar QR. Regulars open the Scan Perks app, tap Scan, and collect stamps toward a free drink. When a night is quiet, send an offer like double stamps till 6 pm.',
     src: '/videos/scan-perks-after-hours-9x16.mp4',
     poster: '/videos/scan-perks-after-hours-9x16.jpg',
     duration: 'PT44S',
