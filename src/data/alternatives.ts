@@ -104,9 +104,17 @@ export function getAlternative(slug: string): Alternative | undefined {
 }
 
 export function alternativeMeta(page: Alternative): { title: string; description: string; heading: string } {
+  const competitorPrice = competitorPriceLabel(page.price).text;
   return {
-    title: `${page.name} Alternative | Scan Perks`,
-    description: `${page.name} alternative for cafe, pub, and bar owners. Compare how customers join and whether a POS is required. Scan Perks is ${phrases.en.rangePerMonth} after a ${phrases.en.trial}.`,
-    heading: `${page.name} alternative`,
+    title: `${page.name} Alternative for Cafe Owners — Starter ${phrases.en.starterPerMo}`,
+    description: `${page.name} alternative for owners: Scan Perks stamp card Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}. ${phrases.en.stampsInInstalledAppCap}. ${page.name} price: ${competitorPrice}.`,
+    heading: `${page.name} alternative for cafe & pub owners`,
   };
+}
+
+/** Opening answer for AlternativePage — Scan Perks facts only; competitor price via competitorPriceLabel. */
+export function alternativeOpening(page: Alternative): string {
+  const competitorPrice = competitorPriceLabel(page.price).text;
+  const pos = page.posRequired.endsWith('.') ? page.posRequired : `${page.posRequired}.`;
+  return `Owners comparing ${page.name} to Scan Perks: Scan Perks is a counter QR stamp card for cafes, pubs, and bars. Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scans} after a ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}. ${phrases.en.stampsInInstalledAppCap}. ${page.name} price: ${competitorPrice}. Customers join via ${page.joinMethod}. POS required: ${pos} When to pick ${page.name} instead: ${page.pickInstead}`;
 }

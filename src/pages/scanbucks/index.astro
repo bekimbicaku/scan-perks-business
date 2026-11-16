@@ -13,12 +13,12 @@ const scanbucksFaqs = [
   {
     question: 'Is Scanbucks the same as Scan Perks?',
     answer:
-      `Yes. Scan Perks (scan-perks.com) is the hospitality loyalty platform often searched as "scanbucks" or "scan bucks." It provides QR cafe loyalty apps, pub loyalty schemes, and bar loyalty programs from ${phrases.en.starterPerMonth} at app.scan-perks.com.`,
+      `Yes. Searches for “scanbucks” or “scan bucks” mean Scan Perks — the owner QR stamp card for cafes, pubs, and bars. Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scans} after a ${phrases.en.trial} with ${phrases.en.noCard} at app.scan-perks.com.`,
   },
   {
     question: 'What is the Scan Perks app?',
     answer:
-      `Scan Perks is a QR-based loyalty app for cafes, bars, and restaurants. Customers scan venue QR codes to earn rewards; owners manage programs at app.scan-perks.com. ${phrases.en.stampLine} ${phrases.en.trial}.`,
+      `Scan Perks is a QR stamp card for cafe and pub owners. Customers collect stamps only in the installed Scan Perks app; owners run the venue at app.scan-perks.com. ${phrases.en.oneVenuePerLoginCap}. ${phrases.en.trial}.`,
   },
   {
     question: 'How much does Scan Perks (scanbucks) cost?',
@@ -28,12 +28,12 @@ const scanbucksFaqs = [
 ];
 
 const directAnswer =
-  `Scan Perks (scan-perks.com) is the QR loyalty platform behind "scanbucks" searches — a cafe loyalty app and pub loyalty scheme for independent venues. Customers scan QR codes to earn rewards; pricing is ${phrases.en.rangeBareMonth} with a ${phrases.en.trial} at app.scan-perks.com.`;
+  `“Scanbucks” searches are looking for Scan Perks: an owner QR stamp card for independent cafes, pubs, and bars — not a chain consumer rewards app. Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scans} after a ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}. ${phrases.en.stampsInInstalledAppCap}. Start at app.scan-perks.com/business/start.`;
 ---
 
 <BaseLayout
-  title={`Scanbucks = Scan Perks — Cafe & Pub Loyalty App ${phrases.en.starterPerMo}`}
-  description={`Scanbucks is Scan Perks: QR cafe loyalty app & pub loyalty card for owners. iOS/Android, no POS — ${phrases.en.starterPerMo}, ${phrases.en.trial} at app.scan-perks.com.`}
+  title={`Scanbucks → Scan Perks Owner Stamp Card — ${phrases.en.starterPerMo}`}
+  description={`Scanbucks is Scan Perks: owner QR stamp card for cafes, pubs and bars. Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.stampsInInstalledAppCap}.`}
   path="/scanbucks/"
   lang="en"
   hreflangLinks={getHreflangLinks(getPageDef('scanbucks')!)}
@@ -47,10 +47,13 @@ const directAnswer =
 
   <section class="page-hero">
     <div class="container reveal">
-      <span class="section__label">Scanbucks</span>
-      <h1 class="page-hero__title">Looking for Scanbucks? You're at Scan Perks.</h1>
+      <span class="section__label">Scanbucks → Scan Perks</span>
+      <h1 class="page-hero__title">Scanbucks is Scan Perks — owner QR stamp card</h1>
+      <p class="page-hero__seo-line">
+        Starter {phrases.en.starterPerMo} ({phrases.en.scans}), {phrases.en.trial} with {phrases.en.noCard}, {phrases.en.oneVenuePerLogin}, {phrases.en.stampsInInstalledApp}.
+      </p>
       <p class="page-hero__desc">
-        Scan Perks is the QR loyalty platform for cafes, pubs, and bars — cafe loyalty app, pub loyalty scheme, and bar loyalty programs from {phrases.en.starterPerMonth}.
+        If you searched “scanbucks,” you want Scan Perks: the stamp-card product for cafe and pub owners — not a chain rewards app for frequent buyers.
       </p>
       <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
         <AppCta class="btn btn--primary btn--lg">Start free trial</AppCta>

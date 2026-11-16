@@ -543,23 +543,23 @@ export const extraLocalizedPages: LocalizedPageDef[] = [
   page('scanbucks', '/scanbucks/', {
     en: {
       slug: 'scanbucks',
-      metaTitle: 'Scanbucks → Scan Perks — Cafe & Pub Loyalty App',
-      description: `Looking for scanbucks? Scan Perks is the QR cafe loyalty app & pub loyalty scheme from ${phrases.en.starterPerMo}.`,
-      h1: 'Scanbucks is Scan Perks',
-      heroLine: 'Same QR loyalty platform — cafe & pub rewards.',
+      metaTitle: `Scanbucks → Scan Perks Owner Stamp Card — ${phrases.en.starterPerMo}`,
+      description: `Scanbucks is Scan Perks: owner QR stamp card for cafes, pubs and bars. Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}.`,
+      h1: 'Scanbucks is Scan Perks — owner QR stamp card',
+      heroLine: `Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}, ${phrases.en.oneVenuePerLogin}, ${phrases.en.stampsInInstalledApp}.`,
       directAnswer:
-        `Scanbucks searches refer to Scan Perks (scan-perks.com): QR loyalty for cafes and pubs, ${phrases.en.rangeBareMonth}, ${phrases.en.trial} at app.scan-perks.com.`,
-      bullets: ['Scanbucks = Scan Perks', 'QR cafe loyalty', 'Pub loyalty scheme', phrases.en.starterPerMo],
+        `“Scanbucks” searches mean Scan Perks: an owner QR stamp card for cafes, pubs, and bars. Starter ${phrases.en.starterPerMonth} for ${phrases.en.scans} after a ${phrases.en.trial} with ${phrases.en.noCard}.`,
+      bullets: ['Scanbucks = Scan Perks', 'Owner stamp card', phrases.en.trialShort, `Starter ${phrases.en.starterPerMo}`],
       sections: [
         {
           heading: 'Why people search “scanbucks”',
-          body: 'Scan Perks is often remembered as scanbucks / scan bucks. This page confirms the official product: QR hospitality loyalty.',
+          body: 'Scan Perks is often remembered as scanbucks / scan bucks. This page points that search to the owner stamp-card product, not a chain rewards app.',
         },
       ],
       faqs: [
         {
           question: 'Is Scanbucks the same as Scan Perks?',
-          answer: 'Yes. Scan Perks is the official name; scanbucks is a common search variant.',
+          answer: `Yes. Scan Perks is the official name; scanbucks is a common search variant for the owner QR stamp card at ${phrases.en.starterPerMonth}.`,
         },
       ],
       keywords: ['scanbucks', 'scan bucks', 'scan perks'],
