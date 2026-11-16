@@ -91,6 +91,7 @@ export const loyaltyPages: LoyaltyPage[] = [
         body: `Create the venue at app.scan-perks.com, set a free-drink rule (for example 10 stamps for a free pint), and print the bar QR. Guests collect stamps only in the installed Scan Perks app. ${phrases.en.oneVenuePerLoginCap}. After a ${phrases.en.trial} with ${phrases.en.noCard}, Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scans}; Growth is ${phrases.en.growthPerMonth} for ${phrases.en.unlimitedScans} (not unlimited push).`,
         links: [
           { href: '/pricing/', label: 'Starter vs Growth' },
+          { href: '/faq/', label: 'Owner FAQ' },
           { href: '/pub-loyalty-card/', label: 'Pub loyalty card' },
           { href: 'https://app.scan-perks.com/business/start', label: 'Start free trial' },
         ],
@@ -98,7 +99,10 @@ export const loyaltyPages: LoyaltyPage[] = [
       {
         heading: 'Affordable Bar Loyalty Software',
         body: `Enterprise loyalty tools cost $200+/month. Scan Perks is built for independent bars: self-serve setup in about 5 minutes, no hardware, cancel anytime. See pricing for Starter and Growth.`,
-        links: [{ href: '/pricing/', label: 'Pricing' }],
+        links: [
+          { href: '/pricing/', label: 'Pricing' },
+          { href: '/cafe-loyalty-app/', label: 'Cafe loyalty app' },
+        ],
       },
     ],
     comparison: [

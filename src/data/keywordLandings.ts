@@ -81,7 +81,12 @@ export const keywordLandings: LoyaltyPage[] = [
       {
         heading: 'When to pick Scan Perks vs Loopy vs Square',
         body: `Choose Square Loyalty if you already run Square: it is included in Square Plus at ${phrases.en.squarePerMonthLocation}. Choose Loopy Loyalty if you only want an Apple or Google Wallet stamp card ($25/month). Choose Scan Perks if you want cafes, pubs, and bars with a counter QR and a customer app that can receive your offers. Prices checked ${phrases.en.checkedOn}.`,
-        links: [{ href: '/blog/best-coffee-loyalty-programs/', label: 'Owner comparison (2026)' }],
+        links: [
+          { href: '/blog/best-coffee-loyalty-programs/', label: 'Owner comparison (2026)' },
+          { href: '/brewstamp-alternative/', label: 'Brewstamp alternative' },
+          { href: '/loopy-loyalty-alternative/', label: 'Loopy Loyalty alternative' },
+          { href: '/square-loyalty-alternative/', label: 'Square Loyalty alternative' },
+        ],
       },
       {
         heading: 'Best Loyalty Program for Cafes — Owner Checklist',
@@ -89,6 +94,7 @@ export const keywordLandings: LoyaltyPage[] = [
         links: [
           { href: '/faq/', label: 'FAQ — best loyalty program for cafes' },
           { href: '/pricing/', label: 'Pricing' },
+          { href: 'https://app.scan-perks.com/business/start', label: 'Start free trial' },
         ],
       },
     ],
@@ -103,7 +109,7 @@ export const keywordLandings: LoyaltyPage[] = [
       {
         question: 'Scan Perks vs Brewstamp — which cafe loyalty app?',
         answer:
-          `Brewstamp is coffee-only: free for the first 50 stamps, then $12/month, and customers do not install an app. Scan Perks is ${phrases.en.starterPerMonth} with a counter QR and no POS, and it also covers pubs and bars, but customers use the Scan Perks app. Start a ${phrases.en.trial} at app.scan-perks.com.`,
+          `Brewstamp is coffee-only: free for the first 50 stamps, then $12/month, and customers do not install an app. Scan Perks is ${phrases.en.starterPerMonth} with a counter QR and no POS, and it also covers pubs and bars, but customers use the Scan Perks app. See /brewstamp-alternative/ or start a ${phrases.en.trial} at app.scan-perks.com.`,
       },
       {
         question: 'What is the best cafe loyalty app for coffee shops?',
@@ -413,6 +419,7 @@ export const keywordLandings: LoyaltyPage[] = [
         links: [
           { href: '/cafe-loyalty-app/', label: 'Cafe loyalty app' },
           { href: '/blog/best-coffee-loyalty-programs/', label: 'Owner comparison of coffee loyalty tools' },
+          { href: '/brewstamp-alternative/', label: 'Brewstamp alternative' },
         ],
       },
       {
@@ -421,6 +428,7 @@ export const keywordLandings: LoyaltyPage[] = [
         links: [
           { href: '/pricing/', label: 'Starter vs Growth' },
           { href: '/faq/', label: 'Owner FAQ' },
+          { href: 'https://app.scan-perks.com/business/start', label: 'Start free trial' },
         ],
       },
     ],

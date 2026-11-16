@@ -409,10 +409,12 @@ export const blogArticles: BlogArticle[] = [
       {
         heading: '2. Loopy Loyalty — Wallet stamp cards at $25/mo',
         body: `Loopy issues stamp cards as Apple Wallet and Google Wallet passes, with no POS required. Starter is $25/month for one location (pricing page, ${phrases.en.checkedOn}). A fit if the card has to live in Wallet. Aimed at local businesses in general rather than hospitality.`,
+        links: [{ href: '/loopy-loyalty-alternative/', label: 'Loopy Loyalty alternative' }],
       },
       {
         heading: `3. Square Loyalty — included with Square Plus (${phrases.en.squarePerMo} per ${siteFacts.squarePlus.per})`,
         body: `Square Loyalty is tied to Square checkout: customers earn at the point of sale using their phone number. On the US pricing page it is included in Square Plus at ${phrases.en.squarePerMonthLocation} (checked ${phrases.en.checkedOn}), not sold as a separate add-on. If every payment already runs through Square, it is the least extra work. If you use another POS, you would have to switch payments to use it — Scan Perks, Loopy and Brewstamp do not need that.`,
+        links: [{ href: '/square-loyalty-alternative/', label: 'Square Loyalty alternative' }],
       },
       {
         heading: '4. LoyaltyPass — custom build, not a monthly cafe plan',
@@ -421,6 +423,7 @@ export const blogArticles: BlogArticle[] = [
       {
         heading: '5. Brewstamp — coffee-only, free for 50 stamps then $12/mo',
         body: `Brewstamp is a browser stamp card for coffee shops, with Apple and Google Wallet and no customer app. The first 50 stamps are free; Pro is $12/month for one shop (brewstamp.app, ${phrases.en.checkedOn}). Scan Perks is ${phrases.en.starterPerMonth} and also covers a pub or bar, but customers use the Scan Perks app.`,
+        links: [{ href: '/brewstamp-alternative/', label: 'Brewstamp alternative' }],
       },
       {
         heading: 'Which one should you pick?',
@@ -496,10 +499,10 @@ export const blogArticles: BlogArticle[] = [
       { href: '/pricing/', label: `Pricing — Starter ${phrases.en.starterPerMo}` },
       { href: '/faq/', label: 'FAQ — best loyalty program for cafes' },
       { href: 'https://app.scan-perks.com/business/start', label: 'Start free trial' },
+      { href: '/brewstamp-alternative/', label: 'Brewstamp alternative' },
+      { href: '/loopy-loyalty-alternative/', label: 'Loopy Loyalty alternative' },
       { href: '/coffee-shop-loyalty-programs/', label: 'Coffee shop loyalty programs' },
       { href: '/blog/best-mobile-loyalty-apps-coffee-shops-2026/', label: 'Wallet pass vs app: how customers join' },
-      { href: '/pub-loyalty-card/', label: 'Pub loyalty card' },
-      { href: '/qr-code-loyalty-program/', label: 'QR code loyalty program' },
     ],
   },
   {
@@ -562,6 +565,8 @@ export const blogArticles: BlogArticle[] = [
       { href: 'https://app.scan-perks.com/business/start', label: 'Start free trial' },
       { href: '/blog/best-coffee-loyalty-programs/', label: 'Best coffee loyalty programs for cafe owners' },
       { href: '/pricing/', label: `Pricing — Starter ${phrases.en.starterPerMo}` },
+      { href: '/faq/', label: 'Owner FAQ' },
+      { href: '/loopy-loyalty-alternative/', label: 'Loopy Loyalty alternative' },
       { href: '/how-it-works/', label: 'How QR loyalty works' },
     ],
   },

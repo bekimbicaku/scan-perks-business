@@ -166,12 +166,14 @@ export const localizedPages: LocalizedPageDef[] = [
   page('pricing', '/pricing/', {
     en: {
       slug: 'pricing',
-      metaTitle: `Cafe Loyalty App — ${phrases.en.starterPerMo}, ${phrases.en.trialCap} | Scan Perks`,
-      description: `Coffee shop & pub loyalty from ${phrases.en.starterPerMo}. QR rewards, push offers. No $200/mo contracts.`,
-      h1: `Cafe & Pub Loyalty — From ${phrases.en.starterPrice}/Month`,
-      heroLine: `Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scans}. Growth is ${phrases.en.growthPerMonth} for ${phrases.en.unlimitedScans}.`,
+      metaTitle: `Owner Loyalty Pricing — Starter ${phrases.en.starterPerMo}, Growth ${phrases.en.growthPerMo}`,
+      description:
+        `Cafe and pub owner pricing: Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), Growth ${phrases.en.growthPerMo} (${phrases.en.unlimitedScans}). ${phrases.en.trial} with ${phrases.en.noCard}. No POS.`,
+      h1: 'Owner loyalty pricing for cafes, pubs & bars',
+      heroLine:
+        `Starter ${phrases.en.starterPerMo} (${phrases.en.scans}) or Growth ${phrases.en.growthPerMo} (${phrases.en.unlimitedScans}) after a ${phrases.en.trialShort} with ${phrases.en.noCard}.`,
       directAnswer:
-        `Scan Perks costs ${phrases.en.starterPerMonth} (Starter, ${phrases.en.scans}) or ${phrases.en.growthPerMonth} (Growth, ${phrases.en.unlimitedScans}). ${phrases.en.trial} with ${phrases.en.noCard}, no annual contract.`,
+        `Scan Perks is self-serve owner pricing: Starter ${phrases.en.starterPerMonth} for ${phrases.en.scans}, Growth ${phrases.en.growthPerMonth} for ${phrases.en.unlimitedScans} (not unlimited push). ${phrases.en.trial} with ${phrases.en.noCard}, no annual contract.`,
       bullets: [`Starter ${phrases.en.starterPerMo}`, `Growth ${phrases.en.growthPerMo}`, phrases.en.trial, 'Cancel anytime'],
       sections: [],
       faqs: [

@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import AnswerFirst from '../../components/AnswerFirst.astro';
 import ComparisonTableGeo from '../../components/ComparisonTableGeo.astro';
 import AppCta from '../../components/AppCta.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
 import {
   masterGeoFaqs,
   directAnswers,
@@ -24,8 +25,8 @@ const categories = [
 ---
 
 <BaseLayout
-  title={`Best Loyalty Program for Cafes — ${phrases.en.starterPerMo}, ${phrases.en.trialShort}`}
-  description={`Best loyalty program for cafes: Scan Perks stamp card from ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}. Owner answers only — not chain rewards.`}
+  title={`Best Loyalty Program for Cafes — Starter ${phrases.en.starterPerMo}`}
+  description={`Owner FAQ for the best loyalty program for cafes: stamp card, ${phrases.en.trial} with ${phrases.en.noCard}, then Starter ${phrases.en.starterPerMo} for ${phrases.en.scans}. Not chain rewards.`}
   path="/faq/"
   lang="en"
   hreflangLinks={getHreflangLinks(getPageDef('faq')!)}
@@ -37,14 +38,17 @@ const categories = [
   <section class="page-hero">
     <div class="container reveal">
       <span class="section__label">FAQ</span>
-      <h1 class="page-hero__title">Best Loyalty Program for Cafes — {phrases.en.starterPerMo}, {phrases.en.trialShort}</h1>
-      <p class="page-hero__desc">
-        Owner FAQ for the best loyalty program for cafes: Starter {phrases.en.starterPerMo} ({phrases.en.scans}), {phrases.en.trial} with {phrases.en.noCard}, {phrases.en.oneVenuePerLogin}, {phrases.en.stampsInInstalledApp}. Answers cover QR stamps, pricing, and how Scan Perks compares to paper cards and POS-tied tools — not chain rewards.
+      <h1 class="page-hero__title">Best Loyalty Program for Cafes — Owner FAQ</h1>
+      <p class="page-hero__seo-line">
+        Owner stamp card — Starter {phrases.en.starterPerMo} ({phrases.en.scans}) after a {phrases.en.trialShort} with {phrases.en.noCard}.
       </p>
       <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
-        <AppCta class="btn btn--primary btn--lg">Start free trial</AppCta>
+        <AppCta class="btn btn--primary btn--lg" position="hero">Start free trial</AppCta>
         <a href="/cafe-loyalty-app/" class="btn btn--glass btn--lg">Cafe Loyalty App</a>
       </div>
+      <p class="page-hero__note">
+        Answers for owners — QR stamps, pricing, and comparisons · Not chain rewards
+      </p>
     </div>
   </section>
 
@@ -81,16 +85,18 @@ const categories = [
     </div>
   </section>
 
+  <InternalLinks />
+
   <section class="section section--sm">
     <div class="container reveal" style="text-align:center;">
-      <AppCta class="btn btn--primary btn--lg">Start free trial</AppCta>
+      <AppCta class="btn btn--primary btn--lg" position="bottom">Start free trial</AppCta>
       <p style="margin-top:1rem; font-size:0.9rem; color:var(--text-muted);">
         Also see:
-        <a href="/pub-loyalty-card/" style="color:var(--cyan-400);">Pub loyalty card</a>
-        {' · '}
-        <a href="/pub-loyalty-scheme/" style="color:var(--cyan-400);">Pub loyalty scheme</a>
+        <a href="/pricing/" style="color:var(--cyan-400);">Pricing</a>
         {' · '}
         <a href="/cafe-loyalty-app/" style="color:var(--cyan-400);">Cafe loyalty app</a>
+        {' · '}
+        <a href="/brewstamp-alternative/" style="color:var(--cyan-400);">Brewstamp alternative</a>
         {' · '}
         <a href="/blog/best-coffee-loyalty-programs/" style="color:var(--cyan-400);">Best coffee loyalty programs</a>
         {' · '}

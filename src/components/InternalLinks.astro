@@ -1,47 +1,48 @@
 ---
 import { alternativePages } from '../data/alternatives';
-import { businessTypePages } from '../data/businessTypes';
 import { phrases } from '../data/site-facts';
-/** Priority internal links — pub pages first (closest to top 10 in GSC) */
+/** Priority internal links for high-impression owner pages — no orphan URL spam. */
 ---
 
 <section class="section section--sm internal-links">
   <div class="container">
     <p class="internal-links__label">Loyalty guides for owners</p>
     <nav class="internal-links__grid" aria-label="Loyalty program pages">
-      <a href="/pub-loyalty-card/" class="glass-card internal-links__card">
-        <strong>Pub Loyalty Card</strong>
-        <span>Replace paper stamp cards — UK pubs from {phrases.en.starterPerMo}</span>
-      </a>
-      <a href="/pub-loyalty-scheme/" class="glass-card internal-links__card">
-        <strong>Pub Loyalty Scheme</strong>
-        <span>UK pubs &amp; US bars from {phrases.en.starterPerMo}</span>
-      </a>
-      <a href="/bar-loyalty-program/" class="glass-card internal-links__card">
-        <strong>Bar Loyalty Programs</strong>
-        <span>US bars — happy-hour pushes</span>
-      </a>
       <a href="/cafe-loyalty-app/" class="glass-card internal-links__card">
         <strong>Cafe Loyalty App</strong>
         <span>Coffee shop owners — counter QR stamp card</span>
       </a>
-      <a href="/qr-code-loyalty-program/" class="glass-card internal-links__card">
-        <strong>QR Code Loyalty Program</strong>
-        <span>Loyalty QR — live in 5 min</span>
+      <a href="/coffee-shop-loyalty-programs/" class="glass-card internal-links__card">
+        <strong>Coffee Shop Loyalty Programs</strong>
+        <span>Owner stamp programs — not chain rewards lists</span>
+      </a>
+      <a href="/pub-loyalty-card/" class="glass-card internal-links__card">
+        <strong>Pub Loyalty Card</strong>
+        <span>Replace paper stamp cards — UK pubs</span>
+      </a>
+      <a href="/pub-loyalty-scheme/" class="glass-card internal-links__card">
+        <strong>Pub Loyalty Scheme</strong>
+        <span>UK pubs &amp; US bars — happy-hour double stamps</span>
+      </a>
+      <a href="/bar-loyalty-program/" class="glass-card internal-links__card">
+        <strong>Bar Loyalty Programs</strong>
+        <span>US bars — QR stamp card for regulars</span>
+      </a>
+      <a href="/how-it-works/" class="glass-card internal-links__card">
+        <strong>How It Works</strong>
+        <span>Owner QR stamp setup in about 5 minutes</span>
       </a>
       <a href="/pricing/" class="glass-card internal-links__card">
-        <strong>{phrases.en.starterPerMo} — Free Trial</strong>
-        <span>{phrases.en.trialDays}, no contract</span>
+        <strong>Pricing — Starter {phrases.en.starterPerMo}</strong>
+        <span>Growth {phrases.en.growthPerMo} · {phrases.en.trialShort}, {phrases.en.noCard}</span>
+      </a>
+      <a href="/faq/" class="glass-card internal-links__card">
+        <strong>Owner FAQ</strong>
+        <span>Best loyalty program for cafes — stamp facts</span>
       </a>
       {alternativePages.map((item) => (
         <a href={`/${item.slug}/`} class="glass-card internal-links__card">
           <strong>{item.name} alternative</strong>
-          <span>{item.guideLine}</span>
-        </a>
-      ))}
-      {businessTypePages.map((item) => (
-        <a href={`/${item.slug}/`} class="glass-card internal-links__card">
-          <strong>{item.heading}</strong>
           <span>{item.guideLine}</span>
         </a>
       ))}

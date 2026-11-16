@@ -9,6 +9,7 @@ import NamedVendorTable from '../../components/NamedVendorTable.astro';
 import AppCta from '../../components/AppCta.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import PromoVideos from '../../components/PromoVideos.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
 import { promoVideos } from '../../data/videos';
 import {
   directAnswers,
@@ -146,9 +147,20 @@ const howToSchema = buildHowToSchema({
 
   <FAQSection faqs={howFaqs} title="QR loyalty questions" />
 
+  <InternalLinks />
+
   <section class="section section--sm">
     <div class="container reveal" style="text-align:center;">
-      <AppCta class="btn btn--primary btn--lg">Start free trial</AppCta>
+      <AppCta class="btn btn--primary btn--lg" position="bottom">Start free trial</AppCta>
+      <p style="margin-top:1rem; font-size:0.9rem; color:var(--text-muted);">
+        <a href="/pricing/" style="color:var(--cyan-400);">Pricing</a>
+        {' · '}
+        <a href="/faq/" style="color:var(--cyan-400);">Owner FAQ</a>
+        {' · '}
+        <a href="/cafe-loyalty-app/" style="color:var(--cyan-400);">Cafe loyalty app</a>
+        {' · '}
+        <a href="/brewstamp-alternative/" style="color:var(--cyan-400);">Brewstamp alternative</a>
+      </p>
     </div>
   </section>
 

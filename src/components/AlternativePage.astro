@@ -3,6 +3,7 @@ import type { Alternative } from '../data/alternatives';
 import {
   alternativeMeta,
   alternativeOpening,
+  alternativeSiblings,
   competitorPriceLabel,
   scanPerksColumn,
 } from '../data/alternatives';
@@ -18,6 +19,7 @@ interface Props {
 const { page } = Astro.props;
 const meta = alternativeMeta(page);
 const price = competitorPriceLabel(page.price);
+const siblings = alternativeSiblings(page.slug);
 const rows = [
   { feature: 'Price', scanPerks: `Starter ${phrases.en.starterPerMo} (${phrases.en.scans})`, them: price.text },
   { feature: 'Join method', scanPerks: scanPerksColumn.joinMethod, them: page.joinMethod },
@@ -33,12 +35,15 @@ const answer = alternativeOpening(page);
       <span class="section__label">Alternative</span>
       <h1 class="page-hero__title">{meta.heading}</h1>
       <p class="page-hero__seo-line">
-        Owner comparison: Scan Perks stamp card — Starter {phrases.en.starterPerMo} ({phrases.en.scans}), {phrases.en.trial} with {phrases.en.noCard}.
+        Owner comparison: Scan Perks stamp card — Starter {phrases.en.starterPerMo} ({phrases.en.scans}) after a {phrases.en.trialShort} with {phrases.en.noCard}.
       </p>
       <div class="hero__actions" style="justify-content:center; margin-top:1.5rem;">
         <AppCta class="btn btn--primary btn--lg" position="hero">Start free trial</AppCta>
         <a href="/cafe-loyalty-app/" class="btn btn--glass btn--lg">Cafe Loyalty App</a>
       </div>
+      <p class="page-hero__note">
+        Owners: web dashboard at app.scan-perks.com · No POS
+      </p>
     </div>
   </section>
 
@@ -79,6 +84,24 @@ const answer = alternativeOpening(page);
           </tbody>
         </table>
       </div>
+      <p style="margin-top:1.25rem; color:var(--text-secondary); line-height:1.65;">
+        Trial → Starter → Growth: after a {phrases.en.trial} with {phrases.en.noCard}, Starter is {phrases.en.starterPerMonth} for {phrases.en.scans}; Growth is {phrases.en.growthPerMonth} for {phrases.en.unlimitedScans} (not unlimited push). {phrases.en.oneVenuePerLoginCap}. {phrases.en.stampsInInstalledAppCap}.
+        {' '}
+        <a href="/pricing/" style="color:var(--cyan-400); font-weight:600;">Starter vs Growth →</a>
+        {' · '}
+        <a href="/faq/" style="color:var(--cyan-400); font-weight:600;">Owner FAQ →</a>
+      </p>
+      {siblings.length > 0 && (
+        <p style="margin-top:1rem; font-size:0.95rem; color:var(--text-muted);">
+          Other owner comparisons:
+          {siblings.map((s, i) => (
+            <>
+              {i > 0 && ' · '}
+              <a href={`/${s.slug}/`} style="color:var(--cyan-400);">{s.name}</a>
+            </>
+          ))}
+        </p>
+      )}
     </div>
   </section>
 

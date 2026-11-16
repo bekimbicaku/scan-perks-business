@@ -1,4 +1,4 @@
-import { phrases, siteFacts } from './site-facts';
+import { phrases } from './site-facts';
 /** CTR-optimized titles & descriptions (GSC Oct 2026: pricing pos~5 / how~7 / features~10, near-zero CTR) */
 
 export const featuresSeo = {
@@ -15,12 +15,12 @@ export const featuresSeo = {
 };
 
 export const pricingSeo = {
-  title: `${phrases.en.starterPerMo} Loyalty App — ${phrases.en.trialCap}, No Contract`,
+  title: `Owner Loyalty Pricing — Starter ${phrases.en.starterPerMo}, Growth ${phrases.en.growthPerMo}`,
   description:
-    `From ${phrases.en.starterPerMo} for cafe and pub owners. Square Plus is ${phrases.en.squarePerMo} per ${siteFacts.squarePlus.per} and includes loyalty. Loopy is $25/mo. ${phrases.en.trialShort}, no contract, no POS.`,
-  h1: `${phrases.en.starterPerMo} Loyalty App — ${phrases.en.trialCap}, No Contract`,
-  heroDesc:
-    `Starter ${phrases.en.starterPerMo} · Growth ${phrases.en.growthPerMo} · start your ${phrases.en.trial} in the app today.`,
+    `Cafe and pub owner pricing: Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), Growth ${phrases.en.growthPerMo} (${phrases.en.unlimitedScans}). ${phrases.en.trial} with ${phrases.en.noCard}. No POS.`,
+  h1: 'Owner loyalty pricing for cafes, pubs & bars',
+  heroSeoLine:
+    `Starter ${phrases.en.starterPerMo} (${phrases.en.scans}) or Growth ${phrases.en.growthPerMo} (${phrases.en.unlimitedScans}) after a ${phrases.en.trialShort} with ${phrases.en.noCard}.`,
   directAnswer:
-    `Scan Perks costs ${phrases.en.starterPerMonth} (Starter, ${phrases.en.scansUpTo}) or ${phrases.en.growthPerMonth} (Growth, ${phrases.en.unlimitedScans}). Every venue starts with a ${phrases.en.trial} with ${phrases.en.noCard}, and there is no annual contract. Enterprise hospitality loyalty tools typically cost $200+/month; Scan Perks targets single-location independents. Start at app.scan-perks.com.`,
+    `Scan Perks is self-serve owner pricing: Starter ${phrases.en.starterPerMonth} for ${phrases.en.scans}, Growth ${phrases.en.growthPerMonth} for ${phrases.en.unlimitedScans} (unlimited scans, not unlimited push). Every venue starts with a ${phrases.en.trial} with ${phrases.en.noCard} — billing starts when you add a card. No annual contract, no POS. Owners run the dashboard at app.scan-perks.com.`,
 };

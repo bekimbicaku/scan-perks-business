@@ -112,6 +112,11 @@ export function alternativeMeta(page: Alternative): { title: string; description
   };
 }
 
+/** Sibling alternatives for reciprocal links (exclude current slug). */
+export function alternativeSiblings(slug: string): Alternative[] {
+  return alternativePages.filter((page) => page.slug !== slug);
+}
+
 /** Opening answer for AlternativePage — Scan Perks facts only; competitor price via competitorPriceLabel. */
 export function alternativeOpening(page: Alternative): string {
   const competitorPrice = competitorPriceLabel(page.price).text;
