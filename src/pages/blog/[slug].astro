@@ -19,8 +19,11 @@ const article = getBlogArticle(slug!);
 if (!article) return Astro.redirect('/404');
 
 const path = `/blog/${article.slug}/`;
-const linkHref = (href: string, position: string) =>
-  href.startsWith(SITE.appWebUrl) ? appSignupUrl(path, position) : href;
+const linkHref = (href: string, position: string) => {
+  if (!href.startsWith(SITE.appWebUrl)) return href;
+  const appPath = new URL(href).pathname || '/';
+  return appSignupUrl(path, position, appPath);
+};
 
 const allFaqs = article.faqs;
 

@@ -93,7 +93,7 @@ const directAnswer = page.quickAnswer ?? slugToAnswer[page.slug];
               {section.links.map((l, i) => (
                 <>
                   {i > 0 && ' · '}
-                  <a href={l.href.startsWith(SITE.appWebUrl) ? appSignupUrl(Astro.url.pathname, 'section-link') : l.href} style="color:var(--cyan-400); font-weight:600;">{l.label} →</a>
+                  <a href={l.href.startsWith(SITE.appWebUrl) ? appSignupUrl(Astro.url.pathname, 'section-link', new URL(l.href).pathname || '/') : l.href} style="color:var(--cyan-400); font-weight:600;">{l.label} →</a>
                 </>
               ))}
             </p>

@@ -41,14 +41,14 @@ export const localizedPages: LocalizedPageDef[] = [
   page('home', '/', {
     en: {
       slug: '',
-      metaTitle: `Scan Perks — QR Loyalty for Cafes & Pubs, ${phrases.en.starterPerMo}`,
+      metaTitle: `QR Stamp Card for Cafes, Pubs & Bars — ${phrases.en.starterPerMo} | Scan Perks`,
       description:
-        `Scan Perks is a QR stamp card for independent cafes, pubs and bars. Print one counter QR; customers scan it in the free app. No POS. ${phrases.en.trial}, then ${phrases.en.starterPerMo}.`,
+        `Owner QR stamp card for cafes, pubs and bars. Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}. ${phrases.en.stampsInInstalledAppCap}. No POS.`,
       h1: 'Cafe Loyalty App & Pub Loyalty Scheme',
-      heroLine: `QR loyalty for cafe & bar owners — from ${phrases.en.starterPerMonth}.`,
+      heroLine: `QR stamp card for cafe & bar owners — Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trialShort}.`,
       directAnswer:
-        `Scan Perks is QR loyalty software for independent cafe, bar, and restaurant owners — not a chain consumer rewards app. Customers scan your venue QR to earn stamps; you manage programs at app.scan-perks.com from ${phrases.en.starterPerMonth}.`,
-      bullets: ['For venue owners', 'QR stamp rewards', 'iOS & Android', `${phrases.en.starterPerMo} Starter`],
+        `Scan Perks is a QR stamp card for independent cafe, pub, and bar owners — not a chain consumer rewards app. Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scans} after a ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}. ${phrases.en.stampsInInstalledAppCap}.`,
+      bullets: ['For venue owners', 'QR stamp card', phrases.en.trialShort, `Starter ${phrases.en.starterPerMo}`],
       sections: [],
       faqs: [],
       keywords: ['cafe loyalty app', 'pub loyalty scheme', 'qr code loyalty program'],

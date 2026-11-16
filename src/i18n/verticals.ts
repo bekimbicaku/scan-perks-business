@@ -132,14 +132,14 @@ export const localizedVerticals: LocalizedPageDef[] = [
     content: {
       en: {
         slug: 'pub-loyalty-scheme',
-        metaTitle: `Pub Loyalty Scheme for Bars — Digital QR ${phrases.en.starterPerMo} | Scan Perks`,
+        metaTitle: `Pub Loyalty Scheme for Owners — Starter ${phrases.en.starterPerMo}`,
         description:
-          `Pub loyalty scheme for independent pubs & US bars. Digital loyalty card, free-drink tiers, happy-hour pushes — ${phrases.en.starterPerMo}, ${phrases.en.trial}.`,
-        h1: 'Pub Loyalty Scheme',
-        heroLine: `QR rewards for independent pubs & bars — from ${phrases.en.starterPerMonth}.`,
+          `Pub loyalty scheme for owners: Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}. ${phrases.en.stampsInInstalledAppCap}. No POS.`,
+        h1: `Pub Loyalty Scheme for Owners — Starter ${phrases.en.starterPerMo}`,
+        heroLine: `Owner QR stamp scheme — Starter ${phrases.en.starterPerMo} (${phrases.en.scans}), ${phrases.en.trial} with ${phrases.en.noCard}, ${phrases.en.oneVenuePerLogin}, ${phrases.en.stampsInInstalledApp}.`,
         directAnswer:
-          `Scan Perks runs a digital pub loyalty scheme for pub and bar owners: guests scan a bar QR, earn free-drink tiers on a digital loyalty card, and receive happy-hour pushes — ${phrases.en.starterPerMonth}.`,
-        bullets: ['Digital loyalty card', 'Happy-hour push', 'Free-drink tiers', phrases.en.starterPerMo],
+          `Scan Perks is a pub loyalty scheme for independent pub and bar owners. You print one bar QR; customers collect stamps only in the installed Scan Perks app. Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scans} after a ${phrases.en.trial} with ${phrases.en.noCard}. ${phrases.en.oneVenuePerLoginCap}.`,
+        bullets: ['For pub owners', phrases.en.trial, `Starter ${phrases.en.starterPerMo}`, phrases.en.oneVenuePerLogin],
         sections: [
           {
             heading: 'Pub loyalty scheme vs punch cards',
