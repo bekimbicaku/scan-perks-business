@@ -10,14 +10,56 @@ import Hero from '../components/Hero.astro';
 import StepList from '../components/StepList.astro';
 import Step from '../components/Step.astro';
 import CTASection from '../components/CTASection.astro';
+import FAQSection from '../components/FAQSection.astro';
+import InternalLinks from '../components/InternalLinks.astro';
 import { landingContent } from '../data/content';
 import { promoVideos } from '../data/videos';
 import { buildVideoSchema } from '../seo/schema';
 import { getHreflangLinks, getPageDef } from '../i18n/pages';
-import { phrases } from '../data/site-facts';
+import { phrases, siteFacts } from '../data/site-facts';
 
 const c = landingContent;
 const homeDef = getPageDef('home')!;
+
+/** Owner FAQ on home — subset of /faq/ facts; cap for FAQPage JSON-LD. */
+const homeFaqs = [
+  {
+    question: 'How much does Scan Perks cost for cafe and pub owners?',
+    answer: `Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scans}. Growth is ${phrases.en.growthPerMonth} for ${phrases.en.unlimitedScans} — that means unlimited scans, not unlimited push. Every venue starts with a ${phrases.en.trial} with ${phrases.en.noCard}.`,
+  },
+  {
+    question: 'Do customers need to download an app?',
+    answer:
+      'Yes. Customers collect stamps only in the free Scan Perks app on iPhone or Android. A phone camera pointed at your QR opens your venue page with the reward and an app link — it does not add the stamp. Owners run the venue at app.scan-perks.com in the browser.',
+  },
+  {
+    question: 'Do I need to change my POS?',
+    answer:
+      'No. Scan Perks uses a printed counter QR only — no Square, Toast, or POS API required. Create the venue, print the QR, and put it by the till.',
+  },
+  {
+    question: 'What does one venue per login mean?',
+    answer: `${phrases.en.oneVenuePerLoginCap}. The Business tab at app.scan-perks.com is the owner dashboard for that venue: stamp rules, QR poster, members, and offers.`,
+  },
+  {
+    question: `What happens after the ${phrases.en.trial}?`,
+    answer: `Add a card to continue on Starter at ${phrases.en.starterPerMonth}. Without billing, the QR stops adding new stamps after day ${siteFacts.trial.days}; stamps customers already earned are kept.`,
+  },
+  {
+    question: 'How does the counter QR work?',
+    answer:
+      'You set a stamp rule (for example 8 stamps for a free coffee), tap Create my QR, and print it. Customers open the Scan Perks app, tap Scan, and point the camera at your poster. One stamp lands per visit (one scan per venue per day).',
+  },
+  {
+    question: 'Is Scan Perks for cafes only, or pubs and bars too?',
+    answer:
+      'Cafes, pubs, and bars use the same QR stamp product. Happy-hour double stamps suit quiet nights at the bar. See the cafe loyalty app, pub loyalty card, and bar loyalty program pages for owner detail.',
+  },
+  {
+    question: 'What is the best loyalty program for independent cafes?',
+    answer: `For independents who want no POS change: Scan Perks — counter QR stamp card, analytics, and push offers. Starter ${phrases.en.starterPerMonth} after a ${phrases.en.trial} at app.scan-perks.com. Full owner answers live on /faq/.`,
+  },
+];
 ---
 
 <BaseLayout
@@ -26,13 +68,14 @@ const homeDef = getPageDef('home')!;
   path="/"
   lang="en"
   hreflangLinks={getHreflangLinks(homeDef)}
-  faqs={c.faqs}
+  faqs={homeFaqs}
   extraSchema={promoVideos.map(buildVideoSchema)}
 >
   <Nav active="home" pageId="home" />
 
   <Hero variant="home">
     <div>
+      <p class="hero__brand-signal">Scan Perks</p>
       <h1 class="hero__title">QR stamp card for cafes, pubs and bars</h1>
       <p class="hero__lead">
         One counter QR. Customers collect stamps in the free Scan Perks app toward your reward.
@@ -40,21 +83,7 @@ const homeDef = getPageDef('home')!;
       </p>
       <div class="hero__actions">
         <AppCta class="btn btn--primary btn--lg" position="hero">Start free trial</AppCta>
-        <a href="/how-it-works/" class="btn btn--glass btn--lg">See how it works</a>
-      </div>
-      <div class="hero__stats">
-        <div>
-          <div class="hero__stat-value">5 min</div>
-          <div class="hero__stat-label">Typical setup</div>
-        </div>
-        <div>
-          <div class="hero__stat-value">No POS</div>
-          <div class="hero__stat-label">Counter QR only</div>
-        </div>
-        <div>
-          <div class="hero__stat-value">1 venue</div>
-          <div class="hero__stat-label">Per owner login</div>
-        </div>
+        <a href="#see-how-it-works" class="btn btn--glass btn--lg">See how it works</a>
       </div>
     </div>
     <div class="hero__visual">
@@ -66,71 +95,92 @@ const homeDef = getPageDef('home')!;
     <div class="container">
       <StepList>
         <Step n={1} title="Print your QR" description="Set stamp rewards and put the code on the counter.">
-          <a href="/how-it-works/" class="btn btn--glass">See how it works</a>
+          <a href="/how-it-works/" class="btn btn--glass">Setup steps</a>
         </Step>
-        <Step n={2} title="Customers scan" description="They open the free Scan Perks app (iPhone or Android), tap Scan, and get a stamp. A phone camera opens your venue page.">
-          <a href="/qr-code-loyalty-program/" class="btn btn--glass">QR code loyalty program</a>
+        <Step n={2} title="Customers scan in the app" description="They open the free Scan Perks app, tap Scan, and get a stamp. A phone camera opens your venue page with an app link.">
+          <a href="/qr-code-loyalty-program/" class="btn btn--glass">QR loyalty</a>
         </Step>
-        <Step n={3} title="Open the dashboard" description="Go to app.scan-perks.com. Track stamps and send slow-day offers.">
+        <Step n={3} title="Run the dashboard" description="Owners use app.scan-perks.com — members, visits, and slow-day offers. No POS tablet.">
           <AppCta class="btn btn--primary" position="steps">Start free trial</AppCta>
         </Step>
       </StepList>
     </div>
   </section>
 
-  <section class="section section--sm" aria-label="Owner dashboard and counter QR">
+  <section class="section section--sm" aria-labelledby="owner-facts-title">
     <div class="container">
-      <div class="product-shots">
-        <figure class="product-shot">
-          <img
-            src="/images/owner-dashboard.png"
-            alt="Owner dashboard in the Scan Perks app, with the venue plan, scan totals, and QR code"
-            width="780"
-            height="4060"
-          />
-          <figcaption>Owner dashboard</figcaption>
-        </figure>
-        <figure class="product-shot">
-          <img
-            src="/images/counter-qr.png"
-            alt="Counter QR in the Scan Perks app, on the poster a venue prints for the counter"
-            width="780"
-            height="1688"
-          />
-          <figcaption>QR for the counter</figcaption>
-        </figure>
+      <div class="section__header">
+        <h2 id="owner-facts-title" class="section__title" style="font-size:1.75rem;">What owners get</h2>
+        <p class="owner-facts__intro">True product limits from Scan Perks — not invented stats.</p>
+      </div>
+      <div class="owner-facts">
+        <div class="owner-facts__item">
+          <h3>Trial → Starter → Growth</h3>
+          <p>
+            A {phrases.en.trial} with {phrases.en.noCard} starts when you create your QR. Then Starter is {phrases.en.starterPerMonth} for {phrases.en.scans}; Growth is {phrases.en.growthPerMonth} for {phrases.en.unlimitedScans} (not unlimited push).
+          </p>
+          <a href="/pricing/">Starter vs Growth →</a>
+        </div>
+        <div class="owner-facts__item">
+          <h3>{phrases.en.oneVenuePerLoginCap}</h3>
+          <p>
+            {phrases.en.stampsInInstalledAppCap}. Owners manage that venue from the web dashboard at app.scan-perks.com.
+          </p>
+          <a href="/how-it-works/">How setup works →</a>
+        </div>
+        <div class="owner-facts__item">
+          <h3>No POS change</h3>
+          <p>
+            Print one counter QR. Customers stamp in the free Scan Perks app. You do not need Square, Toast, or new hardware.
+          </p>
+          <a href="/cafe-loyalty-app/">Cafe loyalty app →</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <PromoVideos />
+  <PromoVideos
+    id="see-how-it-works"
+    title="See how it works"
+    intro="Owner demos: customers scan your counter QR in the Scan Perks app, collect stamps, and get your offers — for cafes by day and bars after hours."
+  />
 
   <section class="section section--sm">
     <div class="container">
       <div class="venue-cta reveal">
-        <a href="/pub-loyalty-card/" class="venue-cta__card venue-cta__card--accent">Pub loyalty card</a>
+        <a href="/cafe-loyalty-app/" class="venue-cta__card venue-cta__card--accent">Cafe loyalty app</a>
+        <a href="/pub-loyalty-card/" class="venue-cta__card">Pub loyalty card</a>
         <a href="/pub-loyalty-scheme/" class="venue-cta__card">Pub loyalty scheme</a>
-        <a href="/cafe-loyalty-app/" class="venue-cta__card">Cafe loyalty app</a>
         <a href="/bar-loyalty-program/" class="venue-cta__card">Bar loyalty</a>
       </div>
     </div>
   </section>
 
+  <FAQSection faqs={homeFaqs} title="Owner FAQ" />
+  <p class="home-faq-more">
+    <a href="/faq/">Full owner FAQ →</a>
+    {' · '}
+    <a href="/pricing/">Pricing</a>
+    {' · '}
+    <a href="/brewstamp-alternative/">Brewstamp alternative</a>
+  </p>
+
   <section class="section section--sm">
     <div class="container reveal">
       <h2 class="stamps__title">Already collecting stamps?</h2>
+      <p class="stamps__hint">{phrases.en.stampLine}</p>
       <StoreBadges showHint={false} />
+      <p class="stamps__owner-note">
+        Owners: start at app.scan-perks.com · Customers: free Scan Perks app
+      </p>
     </div>
   </section>
 
-  <section class="section section--sm" aria-label="How a stamp is collected">
-    <div class="container">
-      <p class="fact-line">{phrases.en.stampLine}</p>
-    </div>
-  </section>
+  <InternalLinks />
 
-  <CTASection title="Ready to grow regulars?" description={`Open the app and start your ${phrases.en.trialShort}.`}>
+  <CTASection title="Ready to grow regulars?" description={`Open app.scan-perks.com and start your ${phrases.en.trialShort} with ${phrases.en.noCard}.`}>
     <AppCta class="btn btn--primary btn--lg" position="bottom">Start free trial</AppCta>
+    <AppCta class="btn btn--glass btn--lg" position="bottom-customer">Get the Rewards App</AppCta>
   </CTASection>
 
   <div class="trial-bar">
@@ -141,43 +191,67 @@ const homeDef = getPageDef('home')!;
 </BaseLayout>
 
 <style>
-  .product-shots {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-    align-items: start;
+  .hero__brand-signal {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cyan-400);
+    margin: 0 0 0.75rem;
   }
 
-  .product-shot {
-    margin: 0;
-    padding: 1.25rem 1.25rem 1rem;
-    border: 1px solid var(--color-border);
+  .owner-facts__intro {
+    color: var(--text-secondary);
+    max-width: 36rem;
+    margin: 0.5rem auto 0;
+    text-align: center;
+    line-height: 1.55;
+  }
+
+  .owner-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 1.75rem;
+  }
+
+  .owner-facts__item {
+    padding: 1.35rem 1.25rem;
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius-md, 16px);
     background: rgba(255, 255, 255, 0.03);
   }
 
-  .product-shot img {
-    display: block;
-    width: min(100%, 280px);
-    height: auto;
-    margin: 0 auto;
-    border-radius: 12px;
+  .owner-facts__item h3 {
+    margin: 0 0 0.65rem;
+    font-size: 1.05rem;
+    color: var(--blue-300);
   }
 
-  .product-shot figcaption {
-    margin: 0.9rem 0 0;
+  .owner-facts__item p {
+    margin: 0 0 0.85rem;
     color: var(--text-secondary);
     font-size: 0.95rem;
-    text-align: center;
+    line-height: 1.6;
   }
 
-  .fact-line {
-    max-width: 40rem;
-    margin: 0 auto;
-    color: var(--text-secondary);
-    font-size: 1.15rem;
-    line-height: 1.5;
+  .owner-facts__item a {
+    color: var(--cyan-400);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .home-faq-more {
     text-align: center;
+    margin: -0.5rem 0 0;
+    padding: 0 1rem 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .home-faq-more a {
+    color: var(--cyan-400);
+    font-weight: 600;
   }
 
   .venue-cta {
@@ -216,7 +290,23 @@ const homeDef = getPageDef('home')!;
   .stamps__title {
     text-align: center;
     font-size: clamp(1.6rem, 3vw, 2.1rem);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .stamps__hint {
+    max-width: 40rem;
+    margin: 0 auto 1.25rem;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .stamps__owner-note {
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
   }
 
   .trial-bar {
@@ -224,7 +314,7 @@ const homeDef = getPageDef('home')!;
   }
 
   @media (max-width: 900px) {
-    .product-shots {
+    .owner-facts {
       grid-template-columns: 1fr;
     }
 

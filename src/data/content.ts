@@ -1,4 +1,4 @@
-import { phrases } from './site-facts';
+import { phrases, siteFacts } from './site-facts';
 export const SITE = {
   name: 'Scan Perks',
   alternateName: ['ScanPerks', 'Scan-Perks'],
@@ -419,46 +419,41 @@ export const landingContent: LandingContent = {
       label: 'Increase profits →',
     },
   ],
+  /** Kept in sync with home owner FAQ (≤8). Index.astro passes the live set to FAQPage schema. */
   faqs: [
     {
-      question: 'What is Scan Perks and how does the business loyalty program work?',
-      answer:
-        `Scan Perks is a QR-based loyalty platform for bars, cafes, and restaurants. Customers scan your unique code to collect digital rewards. You manage perks, track visits, and send push offers from one dashboard — starting at ${phrases.en.starterPerMonth}.`,
+      question: 'How much does Scan Perks cost for cafe and pub owners?',
+      answer: `Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scans}. Growth is ${phrases.en.growthPerMonth} for ${phrases.en.unlimitedScans} — unlimited scans, not unlimited push. Every venue starts with a ${phrases.en.trial} with ${phrases.en.noCard}.`,
     },
     {
-      question: 'How much does a business loyalty program cost with Scan Perks?',
+      question: 'Do customers need to download an app?',
       answer:
-        `Plans start at ${phrases.en.starterPerMonth} for small venues and ${phrases.en.growthPerMonth} for high-traffic businesses. Every plan includes a ${phrases.en.trial}, no setup fees, and no long-term contracts.`,
+        'Yes. Customers collect stamps only in the free Scan Perks app on iPhone or Android. Owners run the venue at app.scan-perks.com in the browser.',
     },
     {
-      question: 'What is a QR code loyalty program?',
-      answer:
-        'A QR loyalty program replaces punch cards with smartphone scanning. Each venue gets a unique QR code; customers scan to join and earn perks. Scan Perks includes print-ready materials and full analytics.',
+      question: 'Do I need to change my POS?',
+      answer: 'No. Scan Perks uses a printed counter QR only — no POS API or new hardware required.',
     },
     {
-      question: 'Do I need special hardware for a cafe loyalty program?',
-      answer:
-        'No hardware required. Print your QR code and place it at the counter. Staff and customers use smartphones only — setup takes under 5 minutes.',
+      question: 'What does one venue per login mean?',
+      answer: `${phrases.en.oneVenuePerLoginCap}. Owners manage that venue from app.scan-perks.com.`,
     },
     {
-      question: 'How is Scan Perks different from paper punch cards?',
-      answer:
-        'Punch cards offer no data and no re-engagement. Scan Perks gives visit tracking, push notifications, customer profiles, and local discovery — while staying as simple as a scan.',
+      question: `What happens after the ${phrases.en.trial}?`,
+      answer: `Add a card to continue on Starter at ${phrases.en.starterPerMonth}. Without billing, the QR stops adding new stamps after day ${siteFacts.trial.days}; stamps already earned are kept.`,
     },
     {
-      question: 'Can I cancel my loyalty program subscription anytime?',
+      question: 'How does the counter QR work?',
       answer:
-        'Yes. Cancel anytime with no penalties. Your data is retained for 30 days if you return; after that it is permanently deleted per our privacy policy.',
+        'Set a stamp rule, create and print your QR, and customers scan it in the Scan Perks app. One stamp per visit (one scan per venue per day).',
     },
     {
-      question: 'Does Scan Perks work for coffee shops and small cafes?',
-      answer:
-        `Absolutely. The Starter plan (${phrases.en.starterPerMonth}) covers ${phrases.en.scans} — which suits a neighborhood cafe launching its first digital loyalty program.`,
+      question: 'Is Scan Perks for cafes only, or pubs and bars too?',
+      answer: 'Cafes, pubs, and bars use the same QR stamp product.',
     },
     {
-      question: 'What is the ROI of Scan Perks for restaurant revenue?',
-      answer:
-        `Scan Perks costs ${phrases.en.rangeBareMonth} after a ${phrases.en.trial} with ${phrases.en.noCard}.`,
+      question: 'What is the best loyalty program for independent cafes?',
+      answer: `For independents who want no POS change: Scan Perks — counter QR stamp card after a ${phrases.en.trial}. See /faq/ for the full owner FAQ.`,
     },
   ],
 };

@@ -4,15 +4,17 @@ import { promoVideos } from '../data/videos';
 interface Props {
   title?: string;
   intro?: string;
+  id?: string;
 }
 
 const {
   title = 'See Scan Perks in 40 seconds',
   intro = 'How customers scan your QR in the Scan Perks app, collect stamps, and get your offers — for cafes by day and bars after hours.',
+  id,
 } = Astro.props;
 ---
 
-<section class="section section--sm" aria-labelledby="promo-videos-title">
+<section class="section section--sm" id={id} aria-labelledby="promo-videos-title" style={id ? 'scroll-margin-top:6rem;' : undefined}>
   <div class="container reveal">
     <div class="section__header">
       <h2 id="promo-videos-title" class="section__title" style="font-size:1.75rem;">{title}</h2>
