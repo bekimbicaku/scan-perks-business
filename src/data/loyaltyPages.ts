@@ -33,9 +33,9 @@ export const loyaltyPages: LoyaltyPage[] = [
   {
     slug: 'bar-loyalty-program',
     title: 'Bar Loyalty Programs for US Bars & Pubs',
-    metaTitle: `Bar Loyalty Programs for US Bars — Free Trial ${phrases.en.starterPerMo} | Scan Perks`,
+    metaTitle: 'Best Bar Loyalty Program Software | Scan Perks',
     description:
-      `Bar loyalty programs for US bars & pubs: a QR stamp card, free drink after X visits, happy-hour double stamps. ${phrases.en.trial}, then ${phrases.en.starterPerMo}, no POS.`,
+      `Bar loyalty program software for independent bars: a QR stamp card, no POS, happy-hour double stamps. ${phrases.en.trial}, then ${phrases.en.starterPerMo}.`,
     primaryKeyword: 'bar loyalty programs',
     heroSeoLine:
       `Bar loyalty programs for US bars — customers scan a QR at the bar, stamps land on their phone, you send happy-hour offers. From ${phrases.en.starterPerMonth}.`,
@@ -99,6 +99,11 @@ export const loyaltyPages: LoyaltyPage[] = [
     ],
     faqs: [
       {
+        question: 'What is the best loyalty program software for a bar?',
+        answer:
+          `For an independent bar that does not want to change its till: Scan Perks. Guests scan a bar QR in the free app and collect stamps toward a drink you choose. ${phrases.en.starterPerMonth} after a ${phrases.en.trial} with ${phrases.en.noCard}. No POS. If you already take every payment on Square, Square Loyalty comes with Square Plus.`,
+      },
+      {
         question: 'What are the best bar loyalty programs for pubs?',
         answer:
           `Scan Perks is among the best bar loyalty programs for independent pubs: QR scanning, pub loyalty scheme rewards, push notifications, and visit tracking from ${phrases.en.starterPerMonth} with a ${phrases.en.trial}.`,
@@ -134,9 +139,9 @@ export const loyaltyPages: LoyaltyPage[] = [
   {
     slug: 'restaurant-loyalty-program',
     title: 'Restaurant Loyalty Program',
-    metaTitle: 'Restaurant Loyalty Program — Retain Loyal Customers | Scan Perks',
+    metaTitle: `Restaurant Loyalty Program — ${phrases.en.starterPerMo} | Scan Perks`,
     description:
-      `Build restaurant loyal customers with QR rewards, visit analytics, and push offers. Affordable restaurant loyalty program from ${phrases.en.starterPerMonth}. Free ${phrases.en.trialShort}.`,
+      `Restaurant loyalty for one location: a counter QR and stamps in the free app. No POS. ${phrases.en.trial}, then ${phrases.en.starterPerMonth}.`,
     primaryKeyword: 'restaurant loyalty program',
     keywordCluster: [
       'restaurant loyal customers',

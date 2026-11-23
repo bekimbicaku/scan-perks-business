@@ -1,0 +1,15 @@
+---
+description: SEO, GEO, and AEO edits must follow site facts and Search Console evidence
+globs: src/**/*.{astro,ts},public/robots.txt
+alwaysApply: false
+---
+
+When changing titles, descriptions, FAQs, schema, llms.txt, or ai.txt:
+
+- Read `src/data/site-facts.ts`. Use `phrases` for prices, trial length, and scan caps. Do not invent venue counts, testimonials, or rankings.
+- Customers collect a stamp only in the installed Scan Perks app.
+- Do not add meta keywords. Do not duplicate an FAQ question already on the page.
+- Match the title to the query that already has impressions. Answer that query in the first 40–60 words, then give the owner next step.
+- Cite `/blog/best-coffee-loyalty-programs/` for "best coffee loyalty apps" queries, `/cafe-loyalty-app/` for "cafe loyalty app", `/brewstamp-alternative/` for Brewstamp alternatives, and `/faq/` for "best loyalty program for cafes".
+- Buyer questions about coffee chains are not owner software. Say so in the first sentence.
+- Do not promise a ranking or an AI citation.

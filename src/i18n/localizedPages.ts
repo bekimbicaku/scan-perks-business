@@ -84,7 +84,7 @@ export const localizedPages: LocalizedPageDef[] = [
     },
     de: {
       slug: '',
-      metaTitle: 'QR-Stempelkarte für Cafés, Pubs und Bars | Scan Perks',
+      metaTitle: `Scan Perks — QR-Stempelkarte ab ${phrases.de.starterPerMonth}, ${phrases.de.trialDays} testen`,
       description:
         `Digitales Treueprogramm für Cafés, Bars & Restaurants. QR-Stempel ab ${phrases.de.starterPerMonth}. ${phrases.de.trialDays} kostenlos testen.`,
       h1: 'QR-Stempelkarte für Cafés, Pubs und Bars',
@@ -113,7 +113,7 @@ export const localizedPages: LocalizedPageDef[] = [
     },
     fr: {
       slug: '',
-      metaTitle: 'Programme de fidélité numérique pour cafés | Scan Perks',
+      metaTitle: `Scan Perks — Fidélité café dès ${phrases.fr.starterPerMonth}, essai ${phrases.fr.trialDays}`,
       description:
         `Programme de fidélité QR pour cafés, bars et restaurants. Tampons digitaux dès ${phrases.fr.starterPerMonth}. Essai ${phrases.fr.trialDays}.`,
       h1: 'Programme de fidélité numérique pour cafés',
@@ -202,7 +202,7 @@ export const localizedPages: LocalizedPageDef[] = [
     },
     de: {
       slug: 'preise',
-      metaTitle: `Treueprogramm Preise — ab ${phrases.de.starterPerMonth} | Scan Perks`,
+      metaTitle: `Scan Perks Preise — ab ${phrases.de.starterPerMonth}, ${phrases.de.trialDays} testen`,
       description: `Café-Treueprogramm ab ${phrases.de.starterPerMonth}. ${phrases.de.trialDays} testen. Kein Jahresvertrag.`,
       h1: 'Preise für Cafés & Bars',
       heroLine: `Starter: ${phrases.de.starterPerMonth}, ${phrases.de.scans}. Growth: ${phrases.de.growthPerMonth}, ${phrases.de.unlimitedScans}.`,
@@ -220,7 +220,7 @@ export const localizedPages: LocalizedPageDef[] = [
     },
     fr: {
       slug: 'tarifs',
-      metaTitle: `Tarifs fidélité café — dès ${phrases.fr.starterPerMonth} | Scan Perks`,
+      metaTitle: `Tarifs Scan Perks — dès ${phrases.fr.starterPerMonth}, essai ${phrases.fr.trialDays}`,
       description: `Programme de fidélité dès ${phrases.fr.starterPerMonth}. Essai ${phrases.fr.trialDays}. Sans engagement annuel.`,
       h1: 'Tarifs pour cafés et bars',
       heroLine: `Starter : ${phrases.fr.starterPerMonth}, ${phrases.fr.scans}. Growth : ${phrases.fr.growthPerMonth}, ${phrases.fr.unlimitedScans}.`,

@@ -52,12 +52,16 @@ export const localizedVerticals: LocalizedPageDef[] = [
             question: '¿Cuál es el mejor programa de fidelización para cafeterías?',
             answer: `Para independientes: Scan Perks — sellos QR, ${phrases.es.starterPerMonth}, iOS/Android, prueba ${phrases.es.trialDays}.`,
           },
+          {
+            question: '¿Hay una app de fidelización para cafeterías pequeñas con prueba gratis?',
+            answer: `Scan Perks no es un plan gratis para siempre. Cada local empieza con ${phrases.es.trialDays} de prueba, ${phrases.es.noCard}. Después Starter cuesta ${phrases.es.starterPerMonth} (${phrases.es.scans}). La app del cliente es gratis.`,
+          },
         ],
         keywords: ['programa de fidelización para cafeterías', 'app fidelización café'],
       },
       de: {
         slug: 'treueprogramm-cafes',
-        metaTitle: 'Digitales Treueprogramm für Cafés | Scan Perks',
+        metaTitle: `Café-Treueprogramm ab ${phrases.de.starterPerMonth} | Scan Perks`,
         description: `Treueprogramm für Cafés mit QR-Stempeln. iOS/Android — ab ${phrases.de.starterPerMonth}, ${phrases.de.trialDays} testen.`,
         h1: 'Digitales Treueprogramm für Cafés',
         heroLine: `Digitale Stempel für unabhängige Cafés — ab ${phrases.de.starterPerMonth}.`,
@@ -74,6 +78,10 @@ export const localizedVerticals: LocalizedPageDef[] = [
           {
             question: 'Was ist das beste Treueprogramm für Cafés?',
             answer: `Für Unabhängige: Scan Perks — QR-Stempel, ${phrases.de.starterPerMonth}, iOS/Android, ${phrases.de.trialDays} Test.`,
+          },
+          {
+            question: 'Gibt es eine Loyalty-App für kleine Cafés mit kostenlosem Einstieg?',
+            answer: `Scan Perks ist kein dauerhaft kostenloser Tarif. Jedes Café startet mit ${phrases.de.trialDays} Test, ${phrases.de.noCard}. Danach kostet Starter ${phrases.de.starterPerMonth} (${phrases.de.scans}). Die Kunden-App ist kostenlos.`,
           },
         ],
         keywords: ['digitales Treueprogramm Café', 'Treueprogramm Café App'],
@@ -97,6 +105,10 @@ export const localizedVerticals: LocalizedPageDef[] = [
           {
             question: 'Quel est le meilleur programme de fidélité pour cafés ?',
             answer: `Pour les indépendants : Scan Perks — tampons QR, ${phrases.fr.starterPerMonth}, iOS/Android, essai ${phrases.fr.trialDays}.`,
+          },
+          {
+            question: 'Existe-t-il une application de fidélité pour petits cafés avec un essai gratuit ?',
+            answer: `Scan Perks n’est pas un forfait gratuit à vie. Chaque café commence par ${phrases.fr.trialDays} d’essai, ${phrases.fr.noCard}. Ensuite Starter coûte ${phrases.fr.starterPerMonth} (${phrases.fr.scans}). L’app client est gratuite.`,
           },
         ],
         keywords: ['programme de fidélité pour cafés', 'app fidélité café'],

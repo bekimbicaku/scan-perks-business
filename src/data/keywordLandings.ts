@@ -5,10 +5,10 @@ import { phrases, siteFacts } from './site-facts';
 export const keywordLandings: LoyaltyPage[] = [
   {
     slug: 'cafe-loyalty-app',
-    title: `Cafe Loyalty App for Owners — ${phrases.en.starterPerMo}, No POS`,
-    metaTitle: `Cafe Loyalty App for Owners — ${phrases.en.starterPerMo}, No POS`,
+    title: `Cafe Loyalty App — ${phrases.en.trialCap} | Scan Perks`,
+    metaTitle: `Cafe Loyalty App — ${phrases.en.trialCap} | Scan Perks`,
     description:
-      `For owners: a cafe loyalty app with one counter QR, 8 stamps for a free coffee, and no POS. Set up in 5 minutes. ${phrases.en.trial}, then ${phrases.en.starterPerMo}.`,
+      `Scan Perks is a cafe loyalty app for coffee shop owners. One counter QR, stamps in the free app, no POS. ${phrases.en.trial}, then ${phrases.en.starterPerMo}.`,
     primaryKeyword: 'cafe loyalty app',
     heroSeoLine:
       `The cafe loyalty app built for independent coffee shops — digital stamps, counter QR, iOS & Android from ${phrases.en.starterPerMonth}.`,
@@ -83,6 +83,14 @@ export const keywordLandings: LoyaltyPage[] = [
         ],
       },
       {
+        heading: 'Coffee rewards app for owners',
+        body: `A coffee rewards app is the phone app your regulars use to collect a free drink. Chain apps (Starbucks, Dunkin) are for their customers, not software you install at your shop. Scan Perks is the owner tool: you print a counter QR, customers collect stamps in the free Scan Perks app, and you pick the reward. One stamp per customer per venue per day. ${phrases.en.starterPerMonth} after a ${phrases.en.trial} with ${phrases.en.noCard}. No POS.`,
+        links: [
+          { href: '/blog/how-to-start-a-coffee-shop-loyalty-program/', label: 'How to start a coffee shop loyalty program' },
+          { href: '/blog/best-coffee-loyalty-programs/', label: '5 coffee loyalty apps compared' },
+        ],
+      },
+      {
         heading: 'Cafe Loyalty App Pricing',
         body: `Starter: ${phrases.en.starterPerMonth} for ${phrases.en.scansUpTo}. Growth: ${phrases.en.growthPerMonth} for ${phrases.en.unlimitedScans}. Both include the stamp card, counter QR, analytics, and offers pushed to members. Every venue starts with a ${phrases.en.trial}, ${phrases.en.noCard} — cancel anytime. Open app.scan-perks.com to start.`,
       },
@@ -99,6 +107,16 @@ export const keywordLandings: LoyaltyPage[] = [
         question: 'Scan Perks vs Brewstamp — which cafe loyalty app?',
         answer:
           `Brewstamp is coffee-only: free for the first 50 stamps, then $12/month, and customers do not install an app. Scan Perks is ${phrases.en.starterPerMonth} with a counter QR and no POS, and it also covers pubs and bars, but customers use the Scan Perks app. Start a ${phrases.en.trial} at app.scan-perks.com.`,
+      },
+      {
+        question: 'What is a coffee rewards app?',
+        answer:
+          `For a customer, it is the app their cafe already uses. For an owner, it is the tool that runs that stamp card. Scan Perks is the owner tool: counter QR, stamps in the free Scan Perks app, ${phrases.en.starterPerMonth} after a ${phrases.en.trial}. It is not a chain rewards account.`,
+      },
+      {
+        question: 'Is there a loyalty app for small cafes with a free starter plan?',
+        answer:
+          `Scan Perks is not a forever-free plan. Every venue starts with a ${phrases.en.trial} with ${phrases.en.noCard}. After that, Starter is ${phrases.en.starterPerMonth} for ${phrases.en.scans}. The customer app is free to install.`,
       },
       {
         question: 'What is the best cafe loyalty app for coffee shops?',
@@ -138,9 +156,9 @@ export const keywordLandings: LoyaltyPage[] = [
   {
     slug: 'pub-loyalty-scheme',
     title: 'Pub Loyalty Scheme for Independent Pubs & Bars',
-    metaTitle: `Pub Loyalty Scheme for UK Pubs — Digital Stamp Card, ${phrases.en.starterPerMo}`,
+    metaTitle: `Pub Loyalty Scheme — ${phrases.en.starterPerMo} Free Trial | Scan Perks`,
     description:
-      `Pub loyalty scheme for UK pubs: a free pint after 10 stamps, happy-hour double stamps, offers pushed to regulars. From ${phrases.en.starterPerMo}, no POS, ${phrases.en.trial}.`,
+      `A pub loyalty scheme for independent pubs: bar QR, stamps in the free app, happy-hour double stamps. ${phrases.en.trial}, then ${phrases.en.starterPerMo}. No POS.`,
     primaryKeyword: 'pub loyalty scheme',
     heroSeoLine:
       `Pub loyalty scheme for independent pubs and bars — QR rewards, digital loyalty card, happy-hour push alerts from ${phrases.en.starterPerMonth}.`,
@@ -248,9 +266,9 @@ export const keywordLandings: LoyaltyPage[] = [
   {
     slug: 'pub-loyalty-card',
     title: 'Pub Loyalty Card for Pubs & Bars',
-    metaTitle: `Pub Loyalty Cards — Digital Stamp Card for Pubs, from ${phrases.en.starterPerMo}`,
+    metaTitle: `Pub & Bar Loyalty Cards — Digital Stamp Card | Scan Perks`,
     description:
-      `Replace paper pub loyalty cards with a digital stamp card. Regulars scan your bar QR in the Scan Perks app — no lost cards. From ${phrases.en.starterPerMo}, ${phrases.en.trial}.`,
+      `Pub loyalty cards and bar loyalty cards on the customer's phone. They scan your bar QR in the free Scan Perks app. ${phrases.en.trial}, then ${phrases.en.starterPerMo}.`,
     primaryKeyword: 'pub loyalty card',
     heroSeoLine:
       `Digital pub loyalty card for independent pubs and bars — scan at the bar, never lose a card, analytics from ${phrases.en.starterPerMonth}.`,
@@ -341,6 +359,11 @@ export const keywordLandings: LoyaltyPage[] = [
           'A full card gives the regular a reward QR in the app. You scan it from the Scan Perks app signed in as the venue, and each reward can be used once.',
       },
       {
+        question: 'What are bar loyalty cards?',
+        answer:
+          `Bar loyalty cards are the same idea as a pub loyalty card: a stamp card for regulars at the bar. With Scan Perks the card lives in the free app. Guests scan your bar QR and get one stamp per customer per day at that bar. You choose the free-drink rule. ${phrases.en.starterPerMonth} after a ${phrases.en.trial}. US bars can use this page; the US-worded guide is /bar-loyalty-program/.`,
+      },
+      {
         question: 'Can US bars use a pub loyalty card?',
         answer:
           'Yes. US bars use the same digital loyalty card product — often called a bar loyalty card. Scan Perks works for pubs and bars without POS integration.',
@@ -357,9 +380,9 @@ export const keywordLandings: LoyaltyPage[] = [
   {
     slug: 'coffee-shop-loyalty-programs',
     title: 'Coffee Shop Loyalty Programs for Independents',
-    metaTitle: `Coffee Shop Loyalty Programs for Owners — Free Trial ${phrases.en.starterPerMo} | Scan Perks`,
+    metaTitle: `Coffee Shop Loyalty Programs — ${phrases.en.starterPerMo} | Scan Perks`,
     description:
-      `Run coffee shop loyalty programs without a chain app. QR stamps, mobile rewards, analytics for independents — start free trial at app.scan-perks.com (${phrases.en.starterPerMo}).`,
+      `Coffee shop loyalty programs for independent owners, not chain apps. Counter QR, stamps in the free app. ${phrases.en.trial}, then ${phrases.en.starterPerMo}.`,
     primaryKeyword: 'coffee shop loyalty programs',
     heroSeoLine:
       `Coffee shop loyalty programs for independent cafes — digital stamps, free drinks, and analytics from ${phrases.en.starterPerMonth}.`,
@@ -423,9 +446,9 @@ export const keywordLandings: LoyaltyPage[] = [
   {
     slug: 'qr-code-loyalty-program',
     title: 'QR Code Loyalty Program for Cafe & Bar Owners',
-    metaTitle: `QR Code Loyalty Program for Cafes & Bars — ${phrases.en.starterPerMo} | Scan Perks`,
+    metaTitle: `QR Code Loyalty Program — ${phrases.en.starterPerMo} | Scan Perks`,
     description:
-      `How a QR code loyalty program works: one counter QR, a stamp per visit, a free item at the end. Live in 5 minutes, no POS. ${phrases.en.trial}, then ${phrases.en.starterPerMo}.`,
+      `A QR code loyalty program for cafes and bars: one counter QR, one stamp per customer per day, no POS. ${phrases.en.trial}, then ${phrases.en.starterPerMo}.`,
     primaryKeyword: 'qr code loyalty program',
     heroSeoLine:
       `QR code loyalty program for hospitality — loyalty QR codes, digital cards, and visit analytics from ${phrases.en.starterPerMonth}.`,

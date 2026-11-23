@@ -104,6 +104,13 @@ export function getAlternative(slug: string): Alternative | undefined {
 }
 
 export function alternativeMeta(page: Alternative): { title: string; description: string; heading: string } {
+  if (page.slug === 'brewstamp-alternative') {
+    return {
+      title: 'Brewstamp Alternatives (2026) | Scan Perks',
+      description: `Brewstamp alternatives for cafe and pub owners. Compare how customers join and whether a POS is required. Scan Perks is ${phrases.en.rangePerMonth} after a ${phrases.en.trial}.`,
+      heading: 'Brewstamp alternatives',
+    };
+  }
   return {
     title: `${page.name} Alternative | Scan Perks`,
     description: `${page.name} alternative for cafe, pub, and bar owners. Compare how customers join and whether a POS is required. Scan Perks is ${phrases.en.rangePerMonth} after a ${phrases.en.trial}.`,

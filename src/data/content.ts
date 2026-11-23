@@ -56,9 +56,9 @@ export interface LandingContent {
 }
 
 export const landingContent: LandingContent = {
-  metaTitle: `Scan Perks — QR Stamp Card for Cafes & Pubs | ${phrases.en.trialCap}`,
+  metaTitle: 'Scan Perks — Official Cafe & Pub Loyalty App',
   metaDescription:
-    `Scan Perks is a QR stamp card for independent cafes, pubs and bars. Print one counter QR; customers scan it in the free app. No POS. ${phrases.en.trial}, then ${phrases.en.starterPerMo}.`,
+    `Official Scan Perks website. QR stamp card for cafes, pubs and bars. Customers scan in the free app. ${phrases.en.trial}, then ${phrases.en.starterPerMo}. No POS.`,
   metaKeywords: [
     'qr code loyalty program',
     'qr code loyalty card',

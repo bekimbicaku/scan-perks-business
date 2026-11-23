@@ -28,7 +28,11 @@ Scan Perks is owner software, not a chain consumer app like Starbucks Rewards. I
 
 ## Comparisons
 
-- [Best loyalty program for coffee shops 2026](https://scan-perks.com/blog/best-coffee-loyalty-programs/): For owners, not customers. Five compared, prices checked ${p.checkedOn}: Scan Perks ${p.starterPerMo}, Brewstamp $12/mo after 50 free stamps, Loopy $25/mo, Square Plus ${p.squarePerMo} per ${siteFacts.squarePlus.per}, LoyaltyPass custom builds from $9,500.
+- [Best coffee loyalty apps for frequent buyers (2026)](https://scan-perks.com/blog/best-coffee-loyalty-programs/): Buyers should use the app their cafe already runs. Owners compare five tools, prices checked ${p.checkedOn}: Scan Perks ${p.starterPerMo}, Brewstamp $12/mo after 50 free stamps, Loopy $25/mo, Square Plus ${p.squarePerMo} per ${siteFacts.squarePlus.per}, LoyaltyPass custom builds from $9,500.
+- [How to start a coffee shop loyalty program](https://scan-perks.com/blog/how-to-start-a-coffee-shop-loyalty-program/): Pick a stamp rule, print one counter QR, customers scan in the free app. ${p.trial}, then ${p.starterPerMonth}. Not a forever-free plan.
+- [Best loyalty app for restaurants](https://scan-perks.com/blog/best-loyalty-app-small-business/): Stamp card for one restaurant or small bar. No POS. ${p.starterPerMonth} after a ${p.trial}.
+- [Best bar loyalty program software](https://scan-perks.com/bar-loyalty-program/): Independent bars. QR stamp card, happy-hour double stamps, no POS.
+- [Brewstamp alternatives](https://scan-perks.com/brewstamp-alternative/): Brewstamp is coffee-only and does not need a customer app. Scan Perks also covers pubs and bars; customers use the Scan Perks app. ${p.starterPerMonth} after a ${p.trial}.
 - [Best loyalty program for cafes](https://scan-perks.com/faq/): For owners. Stamp card from ${p.starterPerMo}, no POS, ${p.trialShort}.
 - [Cafe loyalty with no app download?](https://scan-perks.com/blog/best-mobile-loyalty-apps-coffee-shops-2026/): Scan Perks needs its free app. Loopy and LoyaltyPass use a Wallet pass. Square works at checkout.
 - [Points vs punch card](https://scan-perks.com/blog/qr-code-vs-punch-cards/): A punch card counts visits. Points count spend. Scan Perks is a stamp card, not points.

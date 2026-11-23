@@ -25,4 +25,7 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
 Sitemap: https://scan-perks.com/sitemap.xml

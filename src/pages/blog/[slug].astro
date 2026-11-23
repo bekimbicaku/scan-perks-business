@@ -84,6 +84,15 @@ if (article.namedVendors) {
           <p>{article.answer}</p>
         </div>
 
+        {article.namedVendors && (
+          <div class="reveal" style="margin:1.5rem 0;">
+            <h2 class="feature-card__title" style="font-size:1.25rem; margin-bottom:1rem;">
+              5 coffee loyalty apps compared
+            </h2>
+            <NamedVendorTable />
+          </div>
+        )}
+
         <div class="glass-card reveal" style="margin-bottom:1.5rem;">
           <p class="feature-card__desc" style="font-size:1rem;">
             <strong>Own a cafe, pub or bar?</strong> Scan Perks is a counter-QR stamp card: customers scan it in the free
@@ -112,15 +121,6 @@ if (article.namedVendors) {
             )}
           </div>
         ))}
-
-        {article.namedVendors && (
-          <div class="reveal" style="margin-bottom:1.5rem;">
-            <h2 class="feature-card__title" style="font-size:1.25rem; margin-bottom:1rem;">
-              Coffee shop loyalty apps compared
-            </h2>
-            <NamedVendorTable />
-          </div>
-        )}
 
         {article.comparison && article.comparison.length > 0 && (
           <div class="glass-card reveal" style="margin-bottom:1.5rem; overflow-x:auto;">

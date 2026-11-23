@@ -2,10 +2,10 @@ import { phrases, siteFacts } from './site-facts';
 /** CTR-optimized titles & descriptions (GSC Oct 2026: pricing pos~5 / how~7 / features~10, near-zero CTR) */
 
 export const featuresSeo = {
-  title: 'Cafe Loyalty Features — QR Stamps, Push Offers, Free Trial | Scan Perks',
+  title: `Scan Perks Features — QR Stamps & Offers | ${phrases.en.trialCap}`,
   description:
-    `Cafe & pub loyalty features: counter QR stamps, iOS/Android customer app, analytics, push offers, happy hour. No POS. ${phrases.en.trial}, then ${phrases.en.starterPerMo}.`,
-  h1: 'Cafe Loyalty App & Pub Loyalty Features',
+    `Scan Perks features for cafes and pubs: counter QR, free customer app, offers, analytics. ${phrases.en.trial}, then ${phrases.en.starterPerMo}. No POS.`,
+  h1: 'Scan Perks Features for Cafes and Pubs',
   heroSeoLine:
     'Everything owners need for a cafe loyalty app or pub loyalty card — without $200/mo enterprise tools.',
   heroDesc:
@@ -15,7 +15,7 @@ export const featuresSeo = {
 };
 
 export const pricingSeo = {
-  title: `${phrases.en.starterPerMo} Loyalty App — ${phrases.en.trialCap}, No Contract`,
+  title: `Scan Perks Pricing — ${phrases.en.starterPerMo}, ${phrases.en.trialCap}`,
   description:
     `From ${phrases.en.starterPerMo} for cafe and pub owners. Square Plus is ${phrases.en.squarePerMo} per ${siteFacts.squarePlus.per} and includes loyalty. Loopy is $25/mo. ${phrases.en.trialShort}, no contract, no POS.`,
   h1: `${phrases.en.starterPerMo} Loyalty App — ${phrases.en.trialCap}, No Contract`,

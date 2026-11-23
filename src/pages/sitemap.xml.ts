@@ -137,7 +137,10 @@ export const GET: APIRoute = () => {
     const priorityBlog = ['best-coffee-loyalty-programs', 'qr-code-vs-punch-cards', 'bar-customer-retention-tips'].includes(
       a.slug
     );
-    const supportBlog = ['best-loyalty-app-small-business'].includes(a.slug);
+    const supportBlog = [
+      'best-loyalty-app-small-business',
+      'how-to-start-a-coffee-shop-loyalty-program',
+    ].includes(a.slug);
     push({
       path: `/blog/${a.slug}/`,
       priority: priorityBlog ? '0.95' : supportBlog ? '0.78' : weakBlog ? '0.55' : '0.65',
