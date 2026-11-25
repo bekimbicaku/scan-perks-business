@@ -2,6 +2,10 @@
 import { SITE, appSignupUrl } from '../data/content';
 import { G2_LISTING } from '../data/g2AndOutreach';
 import { phrases } from '../data/site-facts';
+import { LOCALES, LOCALE_META } from '../i18n/config';
+import { getPageDef, pageHref } from '../i18n/pages';
+
+const home = getPageDef('home')!;
 ---
 
 <footer class="footer">
@@ -60,6 +64,17 @@ import { phrases } from '../data/site-facts';
             </a>
           </li>
         </ul>
+        <p style="margin-top:1rem; font-size:0.75rem; color:var(--text-muted);">Language</p>
+        <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.35rem;">
+          {LOCALES.map((l) => (
+            <a
+              href={pageHref(home, l)}
+              style={`font-size:0.8rem; ${l === 'en' ? 'color:var(--cyan-400);font-weight:700;' : 'color:var(--text-secondary);'}`}
+            >
+              {LOCALE_META[l].nativeName}
+            </a>
+          ))}
+        </div>
       </div>
     </div>
     <div class="footer__bottom">

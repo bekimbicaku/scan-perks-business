@@ -28,6 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Language switch — CSP blocks inline onchange handlers (script-src 'self')
+  document.querySelectorAll('[data-lang-switch]').forEach(select => {
+    select.addEventListener('change', () => {
+      const href = select.value;
+      if (href) window.location.assign(href);
+    });
+  });
+
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(
