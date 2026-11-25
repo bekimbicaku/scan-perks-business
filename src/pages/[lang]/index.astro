@@ -5,6 +5,8 @@ import LangFooter from '../../components/LangFooter.astro';
 import AppCta from '../../components/AppCta.astro';
 import StoreBadges from '../../components/StoreBadges.astro';
 import ScanDemo from '../../components/ScanDemo.astro';
+import PromoVideos from '../../components/PromoVideos.astro';
+import GuideScreens from '../../components/GuideScreens.astro';
 import Hero from '../../components/Hero.astro';
 import StepList from '../../components/StepList.astro';
 import Step from '../../components/Step.astro';
@@ -14,6 +16,9 @@ import { ui } from '../../i18n/ui';
 import { getPageDef, pageHref, getHreflangLinks } from '../../i18n/pages';
 import { G2_LISTING } from '../../data/g2AndOutreach';
 import { SITE } from '../../data/content';
+import { promoVideos } from '../../data/videos';
+import { homeGuideScreenIds } from '../../data/guideScreens';
+import { buildVideoSchema } from '../../seo/schema';
 
 export function getStaticPaths() {
   return (['es', 'de', 'fr', 'it'] as const).map((lang) => ({ params: { lang } }));
@@ -40,6 +45,7 @@ const how = getPageDef('how-it-works')!;
   lang={lang}
   hreflangLinks={getHreflangLinks(home)}
   faqs={content.faqs}
+  extraSchema={promoVideos.map(buildVideoSchema)}
 >
   <LangNav locale={lang} active="home" pageId="home" />
 
@@ -84,6 +90,15 @@ const how = getPageDef('how-it-works')!;
       </StepList>
     </div>
   </section>
+
+  <GuideScreens
+    ids={homeGuideScreenIds}
+    title={t.media.homeGuideTitle}
+    intro={t.media.homeGuideIntro}
+    labelledBy="home-guide-screens-title"
+  />
+
+  <PromoVideos title={t.media.videosTitle} intro={t.media.videosIntro} />
 
   <section class="section section--sm">
     <div class="container">

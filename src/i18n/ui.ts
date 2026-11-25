@@ -12,6 +12,14 @@ export interface UiStrings {
   };
   cta: { startTrial: string; viewPricing: string; leaveReview: string };
   common: { quickAnswer: string; alsoSee: string; related: string };
+  media: {
+    homeGuideTitle: string;
+    homeGuideIntro: string;
+    howGuideTitle: string;
+    howGuideIntro: string;
+    videosTitle: string;
+    videosIntro: string;
+  };
 }
 
 export const ui: Record<Locale, UiStrings> = {
@@ -36,6 +44,17 @@ export const ui: Record<Locale, UiStrings> = {
     },
     cta: { startTrial: 'Start free trial', viewPricing: 'View Pricing', leaveReview: 'Leave a G2 Review →' },
     common: { quickAnswer: 'Direct Answer', alsoSee: 'Also see', related: 'Related' },
+    media: {
+      homeGuideTitle: 'Inside Scan Perks',
+      homeGuideIntro:
+        'Real screens from the customer app and owner tools — stamp cards, your counter QR, visit analytics, and member offers.',
+      howGuideTitle: 'What you and your customers see',
+      howGuideIntro:
+        'Screens from the Scan Perks how-to guide: customer stamp card and Scan view, your counter QR, reviews and hours, analytics, segments, happy hour, and member offers.',
+      videosTitle: 'See how it works',
+      videosIntro:
+        'How customers scan your QR in the Scan Perks app, collect stamps, and get your offers — for cafes by day and bars after hours.',
+    },
   },
   es: {
     nav: {
@@ -58,6 +77,17 @@ export const ui: Record<Locale, UiStrings> = {
     },
     cta: { startTrial: 'Abrir app — prueba gratis', viewPricing: 'Ver precios', leaveReview: 'Dejar reseña en G2 →' },
     common: { quickAnswer: 'Respuesta directa', alsoSee: 'Ver también', related: 'Relacionado' },
+    media: {
+      homeGuideTitle: 'Dentro de Scan Perks',
+      homeGuideIntro:
+        'Pantallas reales de la app del cliente y las herramientas del dueño: tarjetas de sellos, tu QR del mostrador, analítica de visitas y ofertas a miembros.',
+      howGuideTitle: 'Lo que ven tú y tus clientes',
+      howGuideIntro:
+        'Pantallas de la guía de Scan Perks: tarjeta de sellos y vista Scan, tu QR del mostrador, reseñas y horario, analítica, segmentos, happy hour y ofertas a miembros.',
+      videosTitle: 'Mira cómo funciona',
+      videosIntro:
+        'Cómo los clientes escanean tu QR en la app Scan Perks, acumulan sellos y reciben ofertas — para cafeterías de día y bares de noche.',
+    },
   },
   de: {
     nav: {
@@ -80,6 +110,17 @@ export const ui: Record<Locale, UiStrings> = {
     },
     cta: { startTrial: `App öffnen — ${phrases.de.trialDays} gratis`, viewPricing: 'Preise ansehen', leaveReview: 'G2-Bewertung schreiben →' },
     common: { quickAnswer: 'Kurze Antwort', alsoSee: 'Siehe auch', related: 'Ähnlich' },
+    media: {
+      homeGuideTitle: 'Einblick in Scan Perks',
+      homeGuideIntro:
+        'Echte Screens aus der Kunden-App und den Owner-Tools — Stempelkarten, dein Theken-QR, Besuchsanalytik und Angebote für Mitglieder.',
+      howGuideTitle: 'Was du und deine Gäste sehen',
+      howGuideIntro:
+        'Screens aus dem Scan-Perks-How-to: Stempelkarte und Scan-Ansicht, dein Theken-QR, Bewertungen und Öffnungszeiten, Analytics, Segmente, Happy Hour und Mitgliederangebote.',
+      videosTitle: 'So funktioniert’s',
+      videosIntro:
+        'So scannen Gäste deinen QR in der Scan-Perks-App, sammeln Stempel und erhalten Angebote — für Cafés tagsüber und Bars abends.',
+    },
   },
   fr: {
     nav: {
@@ -102,6 +143,17 @@ export const ui: Record<Locale, UiStrings> = {
     },
     cta: { startTrial: 'Ouvrir l’app — essai gratuit', viewPricing: 'Voir les tarifs', leaveReview: 'Laisser un avis G2 →' },
     common: { quickAnswer: 'Réponse directe', alsoSee: 'Voir aussi', related: 'Connexe' },
+    media: {
+      homeGuideTitle: 'Dans Scan Perks',
+      homeGuideIntro:
+        'Vraies captures de l’app client et des outils propriétaire — cartes de tampons, votre QR comptoir, analytics de visites et offres membres.',
+      howGuideTitle: 'Ce que voient vous et vos clients',
+      howGuideIntro:
+        'Écrans du guide Scan Perks : carte de tampons et vue Scan, votre QR comptoir, avis et horaires, analytics, segments, happy hour et offres membres.',
+      videosTitle: 'Voir comment ça marche',
+      videosIntro:
+        'Comment les clients scannent votre QR dans l’app Scan Perks, collectent des tampons et reçoivent vos offres — pour les cafés le jour et les bars le soir.',
+    },
   },
   it: {
     nav: {
@@ -124,5 +176,16 @@ export const ui: Record<Locale, UiStrings> = {
     },
     cta: { startTrial: 'Apri app — prova gratis', viewPricing: 'Vedi prezzi', leaveReview: 'Lascia una recensione G2 →' },
     common: { quickAnswer: 'Risposta diretta', alsoSee: 'Vedi anche', related: 'Correlati' },
+    media: {
+      homeGuideTitle: 'Dentro Scan Perks',
+      homeGuideIntro:
+        'Schermate reali dell’app cliente e degli strumenti owner — carte timbri, il QR del bancone, analytics delle visite e offerte ai membri.',
+      howGuideTitle: 'Cosa vedi tu e i tuoi clienti',
+      howGuideIntro:
+        'Schermate dalla guida Scan Perks: carta timbri e vista Scan, il QR del bancone, recensioni e orari, analytics, segmenti, happy hour e offerte ai membri.',
+      videosTitle: 'Guarda come funziona',
+      videosIntro:
+        'Come i clienti scansionano il tuo QR nell’app Scan Perks, raccolgono timbri e ricevono le offerte — per caffè di giorno e bar di sera.',
+    },
   },
 };
