@@ -9,7 +9,9 @@ import NamedVendorTable from '../../components/NamedVendorTable.astro';
 import AppCta from '../../components/AppCta.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import PromoVideos from '../../components/PromoVideos.astro';
+import GuideScreens from '../../components/GuideScreens.astro';
 import { promoVideos } from '../../data/videos';
+import { howItWorksGuideScreenIds } from '../../data/guideScreens';
 import {
   directAnswers,
   howItWorksSteps,
@@ -96,7 +98,14 @@ const howToSchema = buildHowToSchema({
     </div>
   </section>
 
-  <PromoVideos title="Watch it work" />
+  <GuideScreens
+    ids={howItWorksGuideScreenIds}
+    title="What you and your customers see"
+    intro="Screens from the Scan Perks how-to guide: customer stamp card and Scan view, your counter QR, reviews and hours, analytics, segments, happy hour, and member offers."
+    labelledBy="how-guide-screens-title"
+  />
+
+  <PromoVideos title="See how it works" />
 
   <section class="section section--sm">
     <div class="container">

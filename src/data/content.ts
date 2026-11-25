@@ -12,7 +12,7 @@ export const SITE = {
   social: {
     twitter: 'https://twitter.com/scanperks',
     instagram: 'https://instagram.com/scanperks',
-    linkedin: 'https://linkedin.com/company/scanperks',
+    linkedin: 'https://www.linkedin.com/company/scan-perks/',
     g2: 'https://www.g2.com/products/scan-perks/reviews',
   },
 } as const;
