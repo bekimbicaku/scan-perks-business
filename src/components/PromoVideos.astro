@@ -1,15 +1,34 @@
 ---
 import { promoVideos } from '../data/videos';
+import { DEFAULT_LOCALE, type Locale } from '../i18n/config';
+import {
+  captionTrackSrc,
+  getPromoVideoCopy,
+  promoCaptionMeta,
+} from '../i18n/promoVideoCopy';
 
 interface Props {
   title?: string;
   intro?: string;
+  locale?: Locale;
 }
 
 const {
   title = 'See Scan Perks in 40 seconds',
   intro = 'How customers scan your QR in the Scan Perks app, collect stamps, and get your offers — for cafes by day and bars after hours.',
+  locale = DEFAULT_LOCALE,
 } = Astro.props;
+
+const caption = promoCaptionMeta[locale];
+const videos = promoVideos.map((v) => {
+  const copy = getPromoVideoCopy(v.id, locale);
+  return {
+    ...v,
+    title: copy.title,
+    description: copy.description,
+    captionSrc: captionTrackSrc(v.src, locale),
+  };
+});
 ---
 
 <section class="section section--sm" aria-labelledby="promo-videos-title">
@@ -19,7 +38,7 @@ const {
       <p class="promo-videos__intro">{intro}</p>
     </div>
     <div class="promo-videos">
-      {promoVideos.map((v) => (
+      {videos.map((v) => (
         <figure class="promo-videos__item">
           <video
             class="promo-videos__video"
@@ -34,9 +53,9 @@ const {
           >
             <track
               kind="captions"
-              src={v.src.replace('.mp4', '.vtt')}
-              srclang="en"
-              label="English"
+              src={v.captionSrc}
+              srclang={caption.srclang}
+              label={caption.label}
               default
             />
           </video>

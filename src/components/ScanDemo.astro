@@ -1,11 +1,20 @@
 ---
 /** Animated demo: phone scans QR → stamps fill → perk unlocks */
+import { DEFAULT_LOCALE, type Locale } from '../i18n/config';
+import { ui } from '../i18n/ui';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = DEFAULT_LOCALE } = Astro.props;
+const demo = ui[locale].demo;
 ---
 
 <div class="scan-demo" aria-hidden="true">
   <div class="scan-demo__stage">
     <div class="scan-demo__poster">
-      <div class="scan-demo__poster-label">Scan for rewards</div>
+      <div class="scan-demo__poster-label">{demo.posterLabel}</div>
       <div class="scan-demo__qr">
         {Array.from({ length: 36 }).map((_, i) => (
           <span class:list={[{ 'scan-demo__qr-cell--dark': [0,1,2,5,6,7,8,9,14,16,18,21,23,25,28,29,30,33,34,35].includes(i) }]}></span>
@@ -26,8 +35,8 @@
           ))}
         </div>
         <div class="scan-demo__unlock">
-          <strong>Free drink unlocked!</strong>
-          <span>9th coffee is on us</span>
+          <strong>{demo.unlockTitle}</strong>
+          <span>{demo.unlockSub}</span>
         </div>
       </div>
     </div>

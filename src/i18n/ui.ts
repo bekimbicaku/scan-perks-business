@@ -11,7 +11,10 @@ export interface UiStrings {
     language: string;
   };
   cta: { startTrial: string; viewPricing: string; leaveReview: string };
-  common: { quickAnswer: string; alsoSee: string; related: string };
+  common: { quickAnswer: string; alsoSee: string; related: string; faqTitle: string; faqLabel: string; toggleMenu: string };
+  home: { stepHowDesc: string };
+  demo: { posterLabel: string; unlockTitle: string; unlockSub: string };
+  stores: { openWeb: string; getOn: string; downloadOn: string };
   media: {
     homeGuideTitle: string;
     homeGuideIntro: string;
@@ -43,7 +46,25 @@ export const ui: Record<Locale, UiStrings> = {
       language: 'Language',
     },
     cta: { startTrial: 'Start free trial', viewPricing: 'View Pricing', leaveReview: 'Leave a G2 Review →' },
-    common: { quickAnswer: 'Direct Answer', alsoSee: 'Also see', related: 'Related' },
+    common: {
+      quickAnswer: 'Direct Answer',
+      alsoSee: 'Also see',
+      related: 'Related',
+      faqTitle: 'Frequently Asked Questions',
+      faqLabel: 'FAQ',
+      toggleMenu: 'Toggle menu',
+    },
+    home: { stepHowDesc: 'QR → stamps → rewards' },
+    demo: {
+      posterLabel: 'Scan for rewards',
+      unlockTitle: 'Free drink unlocked!',
+      unlockSub: '9th coffee is on us',
+    },
+    stores: {
+      openWeb: 'Open web app',
+      getOn: 'Get it on',
+      downloadOn: 'Download on the',
+    },
     media: {
       homeGuideTitle: 'Inside Scan Perks',
       homeGuideIntro:
@@ -76,7 +97,25 @@ export const ui: Record<Locale, UiStrings> = {
       language: 'Idioma',
     },
     cta: { startTrial: 'Abrir app — prueba gratis', viewPricing: 'Ver precios', leaveReview: 'Dejar reseña en G2 →' },
-    common: { quickAnswer: 'Respuesta directa', alsoSee: 'Ver también', related: 'Relacionado' },
+    common: {
+      quickAnswer: 'Respuesta directa',
+      alsoSee: 'Ver también',
+      related: 'Relacionado',
+      faqTitle: 'Preguntas frecuentes',
+      faqLabel: 'FAQ',
+      toggleMenu: 'Abrir o cerrar menú',
+    },
+    home: { stepHowDesc: 'QR → sellos → recompensas' },
+    demo: {
+      posterLabel: 'Escanea para recompensas',
+      unlockTitle: '¡Bebida gratis desbloqueada!',
+      unlockSub: 'El 9.º café corre de nuestra cuenta',
+    },
+    stores: {
+      openWeb: 'Abrir app web',
+      getOn: 'Disponible en',
+      downloadOn: 'Descargar en',
+    },
     media: {
       homeGuideTitle: 'Dentro de Scan Perks',
       homeGuideIntro:
@@ -109,7 +148,25 @@ export const ui: Record<Locale, UiStrings> = {
       language: 'Sprache',
     },
     cta: { startTrial: `App öffnen — ${phrases.de.trialDays} gratis`, viewPricing: 'Preise ansehen', leaveReview: 'G2-Bewertung schreiben →' },
-    common: { quickAnswer: 'Kurze Antwort', alsoSee: 'Siehe auch', related: 'Ähnlich' },
+    common: {
+      quickAnswer: 'Kurze Antwort',
+      alsoSee: 'Siehe auch',
+      related: 'Ähnlich',
+      faqTitle: 'Häufige Fragen',
+      faqLabel: 'FAQ',
+      toggleMenu: 'Menü öffnen oder schließen',
+    },
+    home: { stepHowDesc: 'QR → Stempel → Belohnungen' },
+    demo: {
+      posterLabel: 'Für Belohnungen scannen',
+      unlockTitle: 'Gratisgetränk freigeschaltet!',
+      unlockSub: 'Der 9. Kaffee geht auf uns',
+    },
+    stores: {
+      openWeb: 'Web-App öffnen',
+      getOn: 'Jetzt bei',
+      downloadOn: 'Laden im',
+    },
     media: {
       homeGuideTitle: 'Einblick in Scan Perks',
       homeGuideIntro:
@@ -142,7 +199,25 @@ export const ui: Record<Locale, UiStrings> = {
       language: 'Langue',
     },
     cta: { startTrial: 'Ouvrir l’app — essai gratuit', viewPricing: 'Voir les tarifs', leaveReview: 'Laisser un avis G2 →' },
-    common: { quickAnswer: 'Réponse directe', alsoSee: 'Voir aussi', related: 'Connexe' },
+    common: {
+      quickAnswer: 'Réponse directe',
+      alsoSee: 'Voir aussi',
+      related: 'Connexe',
+      faqTitle: 'Questions fréquentes',
+      faqLabel: 'FAQ',
+      toggleMenu: 'Ouvrir ou fermer le menu',
+    },
+    home: { stepHowDesc: 'QR → tampons → récompenses' },
+    demo: {
+      posterLabel: 'Scannez pour les récompenses',
+      unlockTitle: 'Boisson offerte débloquée !',
+      unlockSub: 'Le 9e café est pour nous',
+    },
+    stores: {
+      openWeb: 'Ouvrir l’app web',
+      getOn: 'Disponible sur',
+      downloadOn: 'Télécharger sur',
+    },
     media: {
       homeGuideTitle: 'Dans Scan Perks',
       homeGuideIntro:
@@ -157,7 +232,7 @@ export const ui: Record<Locale, UiStrings> = {
   },
   it: {
     nav: {
-      home: 'Home',
+      home: 'Inizio',
       features: 'Funzioni',
       pricing: 'Prezzi',
       faq: 'FAQ',
@@ -175,7 +250,25 @@ export const ui: Record<Locale, UiStrings> = {
       language: 'Lingua',
     },
     cta: { startTrial: 'Apri app — prova gratis', viewPricing: 'Vedi prezzi', leaveReview: 'Lascia una recensione G2 →' },
-    common: { quickAnswer: 'Risposta diretta', alsoSee: 'Vedi anche', related: 'Correlati' },
+    common: {
+      quickAnswer: 'Risposta diretta',
+      alsoSee: 'Vedi anche',
+      related: 'Correlati',
+      faqTitle: 'Domande frequenti',
+      faqLabel: 'FAQ',
+      toggleMenu: 'Apri o chiudi il menu',
+    },
+    home: { stepHowDesc: 'QR → timbri → premi' },
+    demo: {
+      posterLabel: 'Scansiona per i premi',
+      unlockTitle: 'Bevanda gratis sbloccata!',
+      unlockSub: 'Il 9° caffè è offerto da noi',
+    },
+    stores: {
+      openWeb: 'Apri app web',
+      getOn: 'Disponibile su',
+      downloadOn: 'Scarica su',
+    },
     media: {
       homeGuideTitle: 'Dentro Scan Perks',
       homeGuideIntro:
