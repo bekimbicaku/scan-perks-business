@@ -43,7 +43,7 @@ function switchHref(target: (typeof LOCALES)[number]): string {
     <div class="nav__cta">
       <label class="lang-switch" aria-label="Language">
         <span class="lang-switch__label">English</span>
-        <select class="lang-switch__select" onchange="location.href=this.value">
+        <select class="lang-switch__select" data-lang-switch>
           {LOCALES.map((l) => (
             <option value={switchHref(l)} selected={l === 'en'}>
               {LOCALE_META[l].nativeName}
