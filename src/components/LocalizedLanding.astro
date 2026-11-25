@@ -3,20 +3,25 @@ import type { Locale } from '../i18n/config';
 import type { LocalizedPageContent } from '../i18n/localizedPages';
 import { ui } from '../i18n/ui';
 import { getPageDef, pageHref } from '../i18n/pages';
+import { howItWorksGuideScreenIds } from '../data/guideScreens';
 import AppCta from './AppCta.astro';
 import FAQSection from './FAQSection.astro';
 import FeatureBulletList from './FeatureBulletList.astro';
 import AnswerFirst from './AnswerFirst.astro';
+import GuideScreens from './GuideScreens.astro';
+import PromoVideos from './PromoVideos.astro';
 
 interface Props {
   locale: Locale;
   content: LocalizedPageContent;
+  pageId?: string;
 }
 
-const { locale, content } = Astro.props;
+const { locale, content, pageId } = Astro.props;
 const t = ui[locale];
 const pricingDef = getPageDef('pricing')!;
 const pricingHref = pageHref(pricingDef, locale);
+const showHowMedia = pageId === 'how-it-works';
 ---
 
 <article>
@@ -44,6 +49,18 @@ const pricingHref = pageHref(pricingDef, locale);
       ))}
     </div>
   </section>
+
+  {showHowMedia && (
+    <>
+      <GuideScreens
+        ids={howItWorksGuideScreenIds}
+        title={t.media.howGuideTitle}
+        intro={t.media.howGuideIntro}
+        labelledBy="how-guide-screens-title"
+      />
+      <PromoVideos title={t.media.videosTitle} intro={t.media.videosIntro} />
+    </>
+  )}
 
   {content.faqs.length > 0 && <FAQSection faqs={content.faqs} />}
 </article>

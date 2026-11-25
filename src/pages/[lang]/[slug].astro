@@ -12,6 +12,8 @@ import {
   pageHref,
   PREFIXED_LOCALES,
 } from '../../i18n/pages';
+import { promoVideos } from '../../data/videos';
+import { buildVideoSchema } from '../../seo/schema';
 
 export function getStaticPaths() {
   const paths: { params: { lang: string; slug: string }; props: { pageId: string } }[] = [];
@@ -35,6 +37,7 @@ if (!hit) return Astro.redirect('/404');
 const { def, content } = hit;
 const path = pageHref(def, lang);
 const home = getPageDef('home')!;
+const videoSchema = def.id === 'how-it-works' ? promoVideos.map(buildVideoSchema) : undefined;
 ---
 
 <BaseLayout
@@ -48,12 +51,13 @@ const home = getPageDef('home')!;
     { name: 'Home', path: pageHref(home, lang) },
     { name: content.h1, path },
   ]}
+  extraSchema={videoSchema}
 >
   <LangNav
     locale={lang}
     active={def.id === 'features' ? 'features' : def.id === 'pricing' ? 'pricing' : ''}
     pageId={def.id}
   />
-  <LocalizedLanding locale={lang} content={content} />
+  <LocalizedLanding locale={lang} content={content} pageId={def.id} />
   <LangFooter locale={lang} />
 </BaseLayout>
