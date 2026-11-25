@@ -1,17 +1,25 @@
 ---
+import { DEFAULT_LOCALE, type Locale } from '../i18n/config';
+import { ui } from '../i18n/ui';
+
 interface Props {
   faqs: { question: string; answer: string }[];
   title?: string;
+  label?: string;
+  locale?: Locale;
 }
 
-const { faqs, title = 'Frequently Asked Questions' } = Astro.props;
+const { faqs, locale = DEFAULT_LOCALE } = Astro.props;
+const t = ui[locale];
+const title = Astro.props.title ?? t.common.faqTitle;
+const label = Astro.props.label ?? t.common.faqLabel;
 const baseId = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'faq';
 ---
 
 <section class="section section--sm" id="faq">
   <div class="container">
     <div class="section__header reveal">
-      <span class="section__label">FAQ</span>
+      <span class="section__label">{label}</span>
       <h2 class="section__title">{title}</h2>
     </div>
     <div class="faq-list reveal">

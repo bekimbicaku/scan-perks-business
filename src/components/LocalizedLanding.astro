@@ -57,12 +57,13 @@ const showHowMedia = pageId === 'how-it-works';
         title={t.media.howGuideTitle}
         intro={t.media.howGuideIntro}
         labelledBy="how-guide-screens-title"
+        locale={locale}
       />
-      <PromoVideos title={t.media.videosTitle} intro={t.media.videosIntro} />
+      <PromoVideos title={t.media.videosTitle} intro={t.media.videosIntro} locale={locale} />
     </>
   )}
 
-  {content.faqs.length > 0 && <FAQSection faqs={content.faqs} />}
+  {content.faqs.length > 0 && <FAQSection faqs={content.faqs} locale={locale} />}
 </article>
 
 <style>

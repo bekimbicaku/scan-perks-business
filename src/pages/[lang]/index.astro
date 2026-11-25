@@ -67,11 +67,11 @@ const how = getPageDef('how-it-works')!;
         </a>
       </div>
       <div class="hero__store-row">
-        <StoreBadges showHint={false} centered={false} />
+        <StoreBadges showHint={false} centered={false} locale={lang} />
       </div>
     </div>
     <div class="hero__visual">
-      <ScanDemo />
+      <ScanDemo locale={lang} />
     </div>
   </Hero>
 
@@ -81,7 +81,7 @@ const how = getPageDef('how-it-works')!;
         <Step n={1} title={t.cta.startTrial} description="app.scan-perks.com">
           <AppCta class="btn btn--primary">{t.nav.getStarted}</AppCta>
         </Step>
-        <Step n={2} title={t.nav.how} description="QR → stamps → rewards">
+        <Step n={2} title={t.nav.how} description={t.home.stepHowDesc}>
           <a href={pageHref(how, lang)} class="btn btn--glass">{t.nav.how}</a>
         </Step>
         <Step n={3} title="G2" description={t.cta.leaveReview}>
@@ -96,9 +96,10 @@ const how = getPageDef('how-it-works')!;
     title={t.media.homeGuideTitle}
     intro={t.media.homeGuideIntro}
     labelledBy="home-guide-screens-title"
+    locale={lang}
   />
 
-  <PromoVideos title={t.media.videosTitle} intro={t.media.videosIntro} />
+  <PromoVideos title={t.media.videosTitle} intro={t.media.videosIntro} locale={lang} />
 
   <section class="section section--sm">
     <div class="container">

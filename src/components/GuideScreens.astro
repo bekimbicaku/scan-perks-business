@@ -3,16 +3,29 @@ import {
   guideScreens,
   type GuideScreenId,
 } from '../data/guideScreens';
+import { DEFAULT_LOCALE, type Locale } from '../i18n/config';
+import { getGuideScreenCopy } from '../i18n/guideScreenCopy';
 
 interface Props {
   ids: GuideScreenId[];
   title: string;
   intro?: string;
   labelledBy?: string;
+  locale?: Locale;
 }
 
-const { ids, title, intro, labelledBy = 'guide-screens-title' } = Astro.props;
-const screens = ids.map((id) => guideScreens[id]);
+const {
+  ids,
+  title,
+  intro,
+  labelledBy = 'guide-screens-title',
+  locale = DEFAULT_LOCALE,
+} = Astro.props;
+const screens = ids.map((id) => {
+  const screen = guideScreens[id];
+  const copy = getGuideScreenCopy(id, locale);
+  return { ...screen, ...copy };
+});
 ---
 
 <section class="section section--sm" aria-labelledby={labelledBy}>

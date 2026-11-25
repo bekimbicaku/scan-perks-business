@@ -12,6 +12,7 @@ import {
   pageHref,
   PREFIXED_LOCALES,
 } from '../../i18n/pages';
+import { ui } from '../../i18n/ui';
 import { promoVideos } from '../../data/videos';
 import { buildVideoSchema } from '../../seo/schema';
 
@@ -37,6 +38,7 @@ if (!hit) return Astro.redirect('/404');
 const { def, content } = hit;
 const path = pageHref(def, lang);
 const home = getPageDef('home')!;
+const t = ui[lang];
 const videoSchema = def.id === 'how-it-works' ? promoVideos.map(buildVideoSchema) : undefined;
 ---
 
@@ -48,7 +50,7 @@ const videoSchema = def.id === 'how-it-works' ? promoVideos.map(buildVideoSchema
   hreflangLinks={getHreflangLinks(def)}
   faqs={content.faqs}
   breadcrumbs={[
-    { name: 'Home', path: pageHref(home, lang) },
+    { name: t.nav.home, path: pageHref(home, lang) },
     { name: content.h1, path },
   ]}
   extraSchema={videoSchema}
